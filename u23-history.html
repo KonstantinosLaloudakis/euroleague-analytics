@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>U23 Historical Stats — Euroleague Analytics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="docs/style.css">
+  <style>
+    .u23-page { max-width: 1400px; margin: 0 auto; padding: 32px 16px; }
+
+    .page-header { margin-bottom: 24px; }
+    .page-header h1 { font-size: 22px; font-weight: 800; color: var(--text-primary); margin: 0 0 6px; }
+    .page-header p  { font-size: 12px; color: var(--text-muted); margin: 0; }
+
+    .controls {
+      display: flex; align-items: center; gap: 8px; margin-bottom: 16px;
+    }
+    .toggle-btn {
+      padding: 6px 16px; border-radius: 8px; font-size: 12px; font-weight: 600;
+      cursor: pointer; border: 1px solid var(--border); background: transparent;
+      color: var(--text-muted); font-family: inherit; transition: var(--transition);
+    }
+    .toggle-btn.active {
+      background: var(--bg-secondary); color: var(--text-primary);
+      border-color: var(--accent-blue);
+    }
+    .toggle-btn:hover:not(.active) { color: var(--text-secondary); }
+
+    .row-count { font-size: 11px; color: var(--text-muted); margin-left: 8px; }
+
+    .table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); }
+
+    #u23-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+
+    #u23-table thead th {
+      padding: 8px 12px; font-size: 10px; font-weight: 700; color: var(--text-muted);
+      text-transform: uppercase; letter-spacing: .06em; background: var(--bg-secondary);
+      text-align: right; white-space: nowrap; cursor: pointer; user-select: none;
+      border-bottom: 1px solid var(--border); transition: color .15s;
+    }
+    #u23-table thead th:first-child  { text-align: center; width: 36px; cursor: default; }
+    #u23-table thead th:nth-child(2) { text-align: left; }
+    #u23-table thead th:hover:not(:first-child) { color: var(--text-primary); }
+
+    #u23-table thead th.sort-desc::after { content: ' ↓'; color: var(--accent-blue); }
+    #u23-table thead th.sort-asc::after  { content: ' ↑'; color: var(--accent-blue); }
+    #u23-table thead th.sort-desc,
+    #u23-table thead th.sort-asc { color: var(--text-primary); }
+
+    #u23-table tbody tr { border-bottom: 1px solid #1a1b2e; transition: background .1s; }
+    #u23-table tbody tr:last-child { border-bottom: none; }
+    #u23-table tbody tr:hover { background: #1e2035; }
+
+    #u23-table tbody td {
+      padding: 8px 12px; text-align: right;
+      color: var(--text-secondary); white-space: nowrap;
+    }
+    #u23-table tbody td:first-child  { text-align: center; font-weight: 700; font-size: 11px; color: var(--text-muted); }
+    #u23-table tbody td:nth-child(2) { text-align: left; font-weight: 600; color: var(--text-primary); }
+    #u23-table tbody td.col-pir      { color: var(--accent-gold); font-weight: 700; }
+
+    .rank-1 { color: var(--accent-gold) !important; }
+    .rank-2 { color: #94a3b8 !important; }
+    .rank-3 { color: #cd7c2f !important; }
+
+    .error-msg {
+      text-align: center; padding: 60px 16px; color: var(--text-muted); font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <main class="u23-page">
+    <div class="page-header">
+      <h1>🏀 Best U23 Seasons in Euroleague History</h1>
+      <p>145 qualifying seasons &middot; age &lt; 23.5 at season midpoint &middot; min 15 GP &middot; min 12 MPG &middot; min PIR 5 &middot; seasons 2007–2025</p>
+    </div>
+
+    <div class="controls">
+      <button id="btn-pergame" class="toggle-btn">Per Game</button>
+      <button id="btn-per36"   class="toggle-btn active">Per 36 Min</button>
+      <span class="row-count" id="row-count"></span>
+    </div>
+
+    <div class="table-wrap">
+      <table id="u23-table">
+        <thead>
+          <tr>
+            <th data-col="#">#</th>
+            <th data-col="name">Player</th>
+            <th data-col="season">Season</th>
+            <th data-col="team">Team</th>
+            <th data-col="age">Age</th>
+            <th data-col="gp">GP</th>
+            <th data-col="mpg">MPG</th>
+            <th data-col="pts">PTS</th>
+            <th data-col="reb">REB</th>
+            <th data-col="ast">AST</th>
+            <th data-col="stl">STL</th>
+            <th data-col="blk">BLK</th>
+            <th data-col="pir">PIR</th>
+          </tr>
+        </thead>
+        <tbody id="u23-tbody"></tbody>
+        <tfoot>
+          <tr>
+            <td colspan="13" style="padding:10px 12px;font-size:10px;color:var(--text-muted);text-align:left;border-top:1px solid var(--border);">
+              Qualifiers: age &lt; 23.5 at season midpoint · GP ≥ 15 · MPG ≥ 12 · PIR &gt; 5.
+              Per 36 = stat ÷ MPG × 36. Data: Euroleague API 2007–2025.
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <p id="error-msg" class="error-msg" style="display:none">
+      Could not load data — make sure you're serving the file from a local server
+      (e.g. <code>python -m http.server 8000</code> from the project root, then open
+      <code>http://localhost:8000/u23-history.html</code>).
+    </p>
+  </main>
+
+  <script>
+    // ── State ──────────────────────────────────────────────────────
+    let allData  = [];
+    let sortCol  = 'pir_per36';
+    let sortAsc  = false;
+    let mode     = 'per36';
+
+    const STAT_MAP = {
+      pts: { pg: 'ppg',  p36: 'pts_per36' },
+      reb: { pg: 'rpg',  p36: 'reb_per36' },
+      ast: { pg: 'apg',  p36: 'ast_per36' },
+      stl: { pg: 'spg',  p36: 'stl_per36' },
+      blk: { pg: 'bpg',  p36: 'blk_per36' },
+      pir: { pg: 'pir',  p36: 'pir_per36' },
+    };
+
+    const FIXED_COLS = new Set(['name', 'season', 'team', 'age', 'gp', 'mpg']);
+
+    function activeKey(col) {
+      if (FIXED_COLS.has(col)) return col;
+      const m = STAT_MAP[col];
+      return m ? (mode === 'per36' ? m.p36 : m.pg) : col;
+    }
+
+    // ── Sort ────────────────────────────────────────────────────────
+    function sortData(data) {
+      return [...data].sort((a, b) => {
+        let av = a[sortCol];
+        let bv = b[sortCol];
+        if (av == null && bv == null) return 0;
+        if (av == null) return 1;
+        if (bv == null) return -1;
+        if (typeof av === 'string') return sortAsc ? av.localeCompare(bv) : bv.localeCompare(av);
+        return sortAsc ? av - bv : bv - av;
+      });
+    }
+
+    // ── Render ──────────────────────────────────────────────────────
+    function render() {
+      const sorted = sortData(allData);
+      const tbody  = document.getElementById('u23-tbody');
+
+      tbody.innerHTML = sorted.map((row, i) => {
+        const rank = i + 1;
+        const rankClass = rank === 1 ? 'rank-1' : rank === 2 ? 'rank-2' : rank === 3 ? 'rank-3' : '';
+
+        const statCells = Object.entries(STAT_MAP).map(([col, keys]) => {
+          const key = mode === 'per36' ? keys.p36 : keys.pg;
+          const val = row[key];
+          const isPir = col === 'pir';
+          const display = val != null ? val.toFixed(1) : '—';
+          return `<td${isPir ? ' class="col-pir"' : ''}>${display}</td>`;
+        }).join('');
+
+        return `<tr>
+          <td class="${rankClass}">${rank}</td>
+          <td>${row.name}</td>
+          <td>${row.season}</td>
+          <td>${row.team}</td>
+          <td>${row.age != null ? row.age.toFixed(1) : '—'}</td>
+          <td>${row.gp != null ? row.gp : '—'}</td>
+          <td>${row.mpg != null ? row.mpg.toFixed(1) : '—'}</td>
+          ${statCells}
+        </tr>`;
+      }).join('');
+
+      document.querySelectorAll('#u23-table thead th').forEach(th => {
+        th.classList.remove('sort-asc', 'sort-desc');
+        const col = th.dataset.col;
+        if (!col || col === '#') return;
+        if (activeKey(col) === sortCol) {
+          th.classList.add(sortAsc ? 'sort-asc' : 'sort-desc');
+        }
+      });
+    }
+
+    // ── Sort click ──────────────────────────────────────────────────
+    document.querySelector('#u23-table thead').addEventListener('click', e => {
+      const th = e.target.closest('th');
+      if (!th) return;
+      const col = th.dataset.col;
+      if (!col || col === '#') return;
+
+      const key = activeKey(col);
+      if (sortCol === key) {
+        sortAsc = !sortAsc;
+      } else {
+        sortCol = key;
+        sortAsc = false;
+      }
+      render();
+    });
+
+    // ── Toggle ──────────────────────────────────────────────────────
+    function setMode(newMode) {
+      for (const [col, keys] of Object.entries(STAT_MAP)) {
+        if (sortCol === keys.pg || sortCol === keys.p36) {
+          sortCol = newMode === 'per36' ? keys.p36 : keys.pg;
+          break;
+        }
+      }
+      mode = newMode;
+      document.getElementById('btn-pergame').classList.toggle('active', mode === 'pergame');
+      document.getElementById('btn-per36').classList.toggle('active',   mode === 'per36');
+      render();
+    }
+
+    document.getElementById('btn-pergame').addEventListener('click', () => setMode('pergame'));
+    document.getElementById('btn-per36').addEventListener('click',   () => setMode('per36'));
+
+    // ── Fetch ───────────────────────────────────────────────────────
+    fetch('data_cache/u23_historical_stats.json')
+      .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(data => {
+        allData = data;
+        document.getElementById('row-count').textContent = data.length + ' seasons';
+        render();
+      })
+      .catch(() => {
+        document.getElementById('error-msg').style.display = 'block';
+      });
+  </script>
+</body>
+</html>
