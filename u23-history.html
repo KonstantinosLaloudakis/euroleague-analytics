@@ -74,7 +74,7 @@
   <main class="u23-page">
     <div class="page-header">
       <h1>🏀 Best U23 Seasons in Euroleague History</h1>
-      <p>145 qualifying seasons &middot; age &lt; 23.5 at season midpoint &middot; min 15 GP &middot; min 12 MPG &middot; min PIR 5 &middot; seasons 2007–2025</p>
+      <p>age &lt; 23.5 at season midpoint &middot; min 15 GP &middot; min 12 MPG &middot; min PIR 5 &middot; seasons 2007–2025</p>
     </div>
 
     <div class="controls">
@@ -122,6 +122,10 @@
   </main>
 
   <script>
+    function esc(s) {
+      return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
     // ── State ──────────────────────────────────────────────────────
     let allData  = [];
     let sortCol  = 'pir_per36';
@@ -177,9 +181,9 @@
 
         return `<tr>
           <td class="${rankClass}">${rank}</td>
-          <td>${row.name}</td>
-          <td>${row.season}</td>
-          <td>${row.team}</td>
+          <td>${esc(row.name)}</td>
+          <td>${esc(row.season)}</td>
+          <td>${esc(row.team)}</td>
           <td>${row.age != null ? row.age.toFixed(1) : '—'}</td>
           <td>${row.gp != null ? row.gp : '—'}</td>
           <td>${row.mpg != null ? row.mpg.toFixed(1) : '—'}</td>
