@@ -1,28 +1,25 @@
-import pandas as pd
-from euroleague_api import play_by_play_data
 import os
-
 import sys
 
-def fetch_and_cache_pbp():
-    file_path = 'pbp_2025.csv'
-    force_fetch = '--force' in sys.argv
-    if os.path.exists(file_path) and not force_fetch:
-        print(f"Loading cached Play-By-Play data from {file_path}")
-        df = pd.read_csv(file_path)
-    else:
-        print(f"Fetching full Play-By-Play data for 2025 season...")
-        pbp = play_by_play_data.PlayByPlay()
-        df = pbp.get_game_play_by_play_data_range_seasons(2025, 2025)
-        
-        # Clean up some types to save space
-        if not df.empty:
-            df.to_csv(file_path, index=False)
-            print(f"Saved {len(df)} play-by-play events to {file_path}")
-        else:
-            print("Failed to fetch PbP data.")
-            
-    return df
+from euroleague_api import play_by_play_data
+
+from incremental_fetch import fetch_missing_games, played_gamecodes
+from season_config import CURRENT_SEASON
+
+
+def fetch_and_cache_pbp(season=CURRENT_SEASON):
+    file_path = f'pbp_{season}.csv'
+    if '--rebuild' in sys.argv and os.path.exists(file_path):
+        os.remove(file_path)
+    pbp = play_by_play_data.PlayByPlay()
+    gamecodes = played_gamecodes(f'schedule_{season}.json')
+    print(f"Play-by-play {season}: {len(gamecodes)} played games in schedule")
+    df, failed = fetch_missing_games(
+        file_path, gamecodes, lambda gc: pbp.get_game_play_by_play_data(season, gc))
+    print(f"{file_path}: {len(df)} events, {df['Gamecode'].nunique() if not df.empty else 0} games")
+    return df, failed
+
 
 if __name__ == '__main__':
-    fetch_and_cache_pbp()
+    df, failed = fetch_and_cache_pbp()
+    sys.exit(1 if df.empty else 0)
