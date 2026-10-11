@@ -9,7 +9,7 @@
     <meta name="description"
         content="Data sources, metrics, models, and methodology behind the Euroleague Analytics dashboard.">
     <meta property="og:title" content="About & Methodology — Euroleague Analytics">
-    <meta property="og:description" content="Data sources, metrics, models, and methodology behind 19 seasons of Euroleague analytics.">
+    <meta property="og:description" content="Data sources, metrics, models, and methodology behind 20 seasons of Euroleague analytics.">
     <meta property="og:image" content="og-image.png">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
@@ -246,8 +246,8 @@
 
             <div class="data-stats-row">
                 <div class="data-stat">
-                    <span class="data-stat-val">19</span>
-                    <span class="data-stat-label">Seasons (2007-2025)</span>
+                    <span class="data-stat-val">20</span>
+                    <span class="data-stat-label">Seasons (2007-2026)</span>
                 </div>
                 <div class="data-stat">
                     <span class="data-stat-val">5,000+</span>
@@ -269,6 +269,7 @@
                 <li><span class="metric-name">Box Score Data</span> — Per-player, per-game statistics including points, rebounds, assists, steals, blocks, turnovers, plus-minus, and the official PIR valuation.</li>
                 <li><span class="metric-name">Game Metadata</span> — Schedule, results, home/away designations, and round structure for each season.</li>
             </ul>
+            <p>Season-aware since 2026-27: the pipeline tracks the live season, and last season's final playoffs remain browsable until the new playoffs begin.</p>
         </div>
 
         <!-- ── Dashboard Pages ────────────────────────────────────── -->
@@ -289,7 +290,7 @@
                 <li><span class="metric-name">Series Hub</span> — A dedicated page per playoff matchup (quarterfinals, semifinals, final). Each bracket matchup line and recap card clicks through to a hub with the series hero (seeds, best-of-5 format, live series-win probability bar), a <strong>Tale of the Tape</strong> (8-row stat comparison covering pace, adjusted ratings, shooting splits, FT rate, and bench share, plus a deterministic <em>Edges</em> panel surfacing the three sharpest matchup advantages including regular-season head-to-head), a <strong>Series Momentum</strong> chart that tracks series win probability after each completed game with a biggest-swing callout, a game-by-game timeline with scheduled tip-off dates and times for upcoming games (sourced from the official Euroleague schedule), scores and replay links for completed ones, the regular-season head-to-head between the two teams with combined margin, and the full set of playoff recap cards for that matchup.</li>
                 <li><span class="metric-name">MVP Race</span> — Composite MVP rankings with sortable columns, plus a race chart showing how rankings evolved across rounds.</li>
                 <li><span class="metric-name">Game Control</span> — How teams win, not just that they win. The Game Control Index (GCI) uses Win Probability trajectory analysis to measure dominance, drama, comeback resilience, crunch-time performance, and killer instinct for every game and team.</li>
-                <li><span class="metric-name">GCI History</span> — 19 seasons of Euroleague evolution through the GCI lens. Hero trend cards with sparklines show how drama, comebacks, and GCI spread changed from 2007 to 2025. Interactive team comparison chart across all 33 historical teams, era breakdown (Expansion, Contraction, Modern), and all-time superlatives for most dramatic game, biggest comeback, most dominant game, and highest single-season GCI.</li>
+                <li><span class="metric-name">GCI History</span> — 20 seasons of Euroleague evolution through the GCI lens. Hero trend cards with sparklines show how drama, comebacks, and GCI spread changed from 2007 to 2025. Interactive team comparison chart across all 33 historical teams, era breakdown (Expansion, Contraction, Modern), and all-time superlatives for most dramatic game, biggest comeback, most dominant game, and highest single-season GCI.</li>
             </ul>
         </div>
 
@@ -376,7 +377,7 @@
                     <br>
                     A rolling rating system adapted from chess. Each game updates both teams' ratings based on the result
                     and pre-game expectation. Parameters: K-factor = 10, home court advantage = 50 Elo points,
-                    75% carryover between seasons with regression to the mean. Spans all 19 seasons continuously.
+                    75% carryover between seasons with regression to the mean. Spans all 20 seasons continuously.
                 </li>
 
                 <li>
@@ -523,7 +524,7 @@
             <h4 style="margin-top:1.2rem;color:var(--text-primary);">Historical GCI Trends</h4>
             <p>
                 The <a href="gci-history.html" style="color:var(--accent-teal);">GCI History</a> page extends
-                the Game Control Index across all 19 Euroleague seasons (2007–2025), covering 5,000+ games.
+                the Game Control Index across all 20 Euroleague seasons (2007–2026), covering 5,000+ games.
                 The same six sub-metrics and GCI Rating formula are applied to each historical season independently,
                 with z-normalization computed within each season (so a GCI of 70 in 2007 means the same relative
                 dominance as 70 in 2024).
@@ -531,9 +532,9 @@
             <p>
                 Teams are included in trend comparisons only if they have 3 or more seasons of data.
                 The 10 "legacy" teams (Olympiacos, Barcelona, Real Madrid, Panathinaikos, Maccabi Tel Aviv,
-                Anadolu Efes, Fenerbahce, Baskonia, EA7 Milano, Zalgiris) have been present in all 19 seasons.
+                Anadolu Efes, Fenerbahce, Baskonia, EA7 Milano, Zalgiris) have been present in all 20 seasons.
                 Era breakdowns use three periods: Expansion Era (2007–2015, 24 teams), Contraction Era (2016–2019,
-                16 teams), and Modern Era (2020–2025, 18–20 teams).
+                16 teams), and Modern Era (2020–2026, 18–20 teams).
             </p>
         </div>
 
@@ -566,7 +567,7 @@
         <div class="about-section">
             <h3>All-Time Records</h3>
             <p>
-                The All-Time Records page ranks every player across all 19 Euroleague seasons (2007–08 to 2025–26) for career leaders and single-season bests. Data comes from <code style="color:var(--accent-blue)">player_career_stats.json</code>, which is refreshed weekly.
+                The All-Time Records page ranks every player across all 20 Euroleague seasons (2007–08 to 2026–27) for career leaders and single-season bests. Data comes from <code style="color:var(--accent-blue)">player_career_stats.json</code>, which is refreshed weekly.
             </p>
             <h4 style="margin-top:1.2rem;color:var(--text-primary);">Career Leaders</h4>
             <p>
@@ -667,7 +668,7 @@
             <span class="footer-sep">·</span>
             <a href="https://github.com/KonstantinosLaloudakis" target="_blank" rel="noopener">GitHub</a>
         </div>
-        <div>19 seasons · 7,000+ games · Updated daily</div>
+        <div>20 seasons · 7,000+ games · Updated daily</div>
     </footer>
 
 <!-- Cloudflare Web Analytics -->
