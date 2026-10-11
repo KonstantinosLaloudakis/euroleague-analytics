@@ -12,8 +12,9 @@ import json
 import os
 import math
 import glob
+import argparse
 
-from season_config import CURRENT_SEASON
+from season_config import ALL_SEASONS, season_label
 
 from wp_model_utils import get_elo_diff
 
@@ -447,15 +448,37 @@ def process_season(year):
         json.dump(games_index, f, separators=(',', ':'))
 
     print(f"    Processed {len(games_index)} games for {year}")
-    return {'season': year, 'label': f'{year}-{str(year+1)[-2:]}', 'count': len(games_index)}
+    return {'season': year, 'label': season_label(year), 'count': len(games_index)}
 
 
-def main():
+def existing_season_meta(year, data_root='docs/data'):
+    """seasons.json entry for a season that was not reprocessed this run."""
+    index_file = os.path.join(data_root, str(year), 'games.json')
+    if not os.path.exists(index_file):
+        return None
+    with open(index_file) as f:
+        count = len(json.load(f))
+    return {'season': year, 'label': season_label(year), 'count': count}
+
+
+def parse_args(argv=None):
+    parser = argparse.ArgumentParser(description='Build WP replay JSON from data_cache/pbp_{year}.csv')
+    parser.add_argument('--seasons', type=int, nargs='+', default=None,
+                        help='Seasons to (re)process (default: every season). '
+                             'seasons.json always lists every season with replay data.')
+    return parser.parse_args(argv)
+
+
+def main(argv=None):
+    args = parse_args(argv)
+    targets = set(args.seasons) if args.seasons else set(ALL_SEASONS)
     os.makedirs('docs/data', exist_ok=True)
     seasons_meta = []
 
-    for year in range(2007, CURRENT_SEASON + 1):
-        result = process_season(year)
+    for year in sorted(set(ALL_SEASONS) | targets):
+        result = process_season(year) if year in targets else None
+        if result is None:
+            result = existing_season_meta(year)
         if result:
             seasons_meta.append(result)
 
@@ -463,7 +486,7 @@ def main():
     with open('docs/data/seasons.json', 'w') as f:
         json.dump(seasons_meta, f, indent=2)
 
-    print(f"\nDone! Processed {len(seasons_meta)} seasons.")
+    print(f"\nDone! Processed {len(targets)} season(s); seasons.json lists {len(seasons_meta)}.")
     print(f"Total games: {sum(s['count'] for s in seasons_meta)}")
 
 

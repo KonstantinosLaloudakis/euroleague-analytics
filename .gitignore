@@ -20,8 +20,8 @@ env/
 local_config.py
 
 mvp_race_images/
-pbp_2025.csv
-mvp_all_game_stats_2025.json
+/pbp_2025.csv
+/mvp_all_game_stats_2025.json
 
 # Tooling state (Claude Code, Playwright MCP, superpowers)
 .claude/

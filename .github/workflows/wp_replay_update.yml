@@ -24,15 +24,18 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pandas numpy plotly euroleague-api
+        # same pinned deps as the refresh pipeline (scikit-learn/joblib load the
+        # WP model; without them replays silently use the analytic fallback)
+        pip install -r requirements.txt
 
     - name: Fetch Latest Season Data
       run: |
         python fetch_all_seasons.py
 
-    - name: Preprocess WP JSON Data
+    - name: Preprocess WP JSON Data (current season only)
       run: |
-        python preprocess_wp_data.py
+        SEASON=$(python -c "import season_config as s; print(s.CURRENT_SEASON)")
+        python preprocess_wp_data.py --seasons "$SEASON"
 
     - name: Commit and Push Changes
       run: |
