@@ -6,9 +6,12 @@ from euroleague_api.play_by_play_data import PlayByPlay
 import os
 import time
 
+import fetch_lineups
+from season_config import CURRENT_SEASON
+
 # --- Configuration ---
-START_SEASON = 2025
-END_SEASON = 2025
+START_SEASON = CURRENT_SEASON
+END_SEASON = CURRENT_SEASON
 MIN_MINUTES_5MAN = 50
 MIN_MINUTES_2MAN = 150
 MIN_MINUTES_ANCHOR = 150
@@ -17,78 +20,8 @@ CACHE_DIR = "data_cache"
 os.makedirs(CACHE_DIR, exist_ok=True)
 
 def fetch_pbp_with_lineups(season):
-    """
-    Fetches PBP data with lineups for a specific season.
-    Checks for cached CSV first.
-    If not found, iterates through game codes to build the dataset.
-    """
-    cache_file = os.path.join(CACHE_DIR, f"pbp_lineups_{season}.csv")
-    
-    existing_df = pd.DataFrame()
-    processed_games = set()
-    
-    if os.path.exists(cache_file):
-        print(f"Loading partial cache for {season} from {cache_file}...")
-        existing_df = pd.read_csv(cache_file, low_memory=False)
-        if not existing_df.empty and 'GameCode' in existing_df.columns:
-            processed_games = set(existing_df['GameCode'].unique())
-            print(f"  Found {len(processed_games)} games already cached.")
-    
-    print(f"Fetching remaining lineup data for {season}...")
-    pbp_api = PlayByPlay()
-    new_games = []
-    
-    # Heuristic: Loop reasonably high. Regular season ~306 games. + Playoffs.
-    consecutive_empty = 0
-    max_consecutive_empty = 50 
-    
-    # Try range. 
-    for game_code in range(1, 400):
-        if game_code in processed_games:
-            continue
-            
-        try:
-            if game_code % 5 == 0:
-                print(f"  Fetching game {game_code}...")
-                
-            df = pbp_api.get_pbp_data_with_lineups(season, game_code)
-            
-            if not df.empty:
-                # Add GameCode for reference if not present (usually present)
-                if 'GameCode' not in df.columns:
-                    df['GameCode'] = game_code
-                df['Season'] = season
-                new_games.append(df)
-                consecutive_empty = 0
-            else:
-                consecutive_empty += 1
-                
-        except Exception as e:
-            # print(f"    Error fetching game {game_code}: {e}")
-            consecutive_empty += 1
-            
-        if consecutive_empty >= max_consecutive_empty:
-            print(f"  Stopped at game {game_code} after {max_consecutive_empty} consecutive misses.")
-            break
-            
-        # Periodic Save regarding NEW games
-        if len(new_games) > 0 and len(new_games) % 10 == 0:
-             print(f"  Saving progress (added {len(new_games)} new games)...")
-             # Merge and Save
-             combined_df = pd.concat([existing_df] + new_games, ignore_index=True)
-             combined_df.to_csv(cache_file, index=False)
-            
-    if new_games:
-        full_df = pd.concat([existing_df] + new_games, ignore_index=True)
-        print(f"Saving updated coverage ({len(full_df)} rows) to {cache_file}...")
-        full_df.to_csv(cache_file, index=False)
-        return full_df
-    elif not existing_df.empty:
-        print("No new games found. Using existing cache.")
-        return existing_df
-    else:
-        print(f"No data found for season {season}.")
-        return pd.DataFrame()
+    """Fetches PBP data with lineups for a season (delegates to fetch_lineups)."""
+    return fetch_lineups.fetch_lineups(season)
 
 def process_time_str(t_str):
     """Converts MM:SS string to seconds."""
