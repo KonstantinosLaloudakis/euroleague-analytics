@@ -66,7 +66,7 @@
         </p>
         <div class="hero-stats">
             <div class="hero-stat">
-                <div class="hero-stat-number">19</div>
+                <div class="hero-stat-number" id="hero-season-count">20</div>
                 <div class="hero-stat-label">Seasons</div>
             </div>
             <div class="hero-stat">
@@ -238,6 +238,9 @@
 <script>
 fetchJSON('data/current/dashboard.json')
     .then(d => { if (playoffsStarted(d)) document.getElementById('playoff-banner').classList.remove('hidden'); })
+    .catch(() => {});
+fetchJSON('data/seasons.json')
+    .then(s => { if (Array.isArray(s) && s.length) document.getElementById('hero-season-count').textContent = s.length; })
     .catch(() => {});
 </script>
 <!-- Cloudflare Web Analytics -->

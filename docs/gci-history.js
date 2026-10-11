@@ -170,7 +170,7 @@ function renderHero() {
 
     // Summary banner
     document.getElementById('hero-banner').innerHTML =
-        `<strong>19 Seasons · ${_hist.total_games.toLocaleString()}+ Games · Every Play Analyzed</strong>`;
+        `<strong>${_hist.league_trends.seasons.length} Seasons · ${_hist.total_games.toLocaleString()}+ Games · Every Play Analyzed</strong>`;
 }
 
 /* ── Sparkline SVG ─────────────────────────────────────────────────────── */
