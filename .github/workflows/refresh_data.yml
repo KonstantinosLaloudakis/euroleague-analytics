@@ -27,22 +27,39 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
+    - name: Resolve current season
+      id: season
+      run: echo "season=$(python -c 'import season_config as s; print(s.CURRENT_SEASON)')" >> "$GITHUB_OUTPUT"
+
+    # Large current-season fetch caches are not committed; persist them between
+    # runs so fetchers only request new games. Saved even if the pipeline fails.
     - name: Restore fetch caches
-      uses: actions/cache@v4
+      uses: actions/cache/restore@v4
       with:
         path: |
-          pbp_*.csv
-          shot_data_*.csv
-          data/shot_data_*.csv
-          data_cache/pbp_lineups_*.csv
-        key: fetch-cache-${{ github.run_id }}
-        restore-keys: fetch-cache-
+          pbp_${{ steps.season.outputs.season }}.csv
+          shot_data_${{ steps.season.outputs.season }}_${{ steps.season.outputs.season }}.csv
+          data/shot_data_${{ steps.season.outputs.season }}_${{ steps.season.outputs.season }}.csv
+          data_cache/pbp_lineups_${{ steps.season.outputs.season }}.csv
+        key: fetch-cache-${{ steps.season.outputs.season }}-${{ github.run_id }}
+        restore-keys: fetch-cache-${{ steps.season.outputs.season }}-
 
     - name: Run refresh pipeline (skip WP model training — model is in repo)
       run: python refresh_all.py --skip-wp-train
       env:
         MPLBACKEND: Agg
       timeout-minutes: 30
+
+    - name: Save fetch caches
+      if: always()
+      uses: actions/cache/save@v4
+      with:
+        path: |
+          pbp_${{ steps.season.outputs.season }}.csv
+          shot_data_${{ steps.season.outputs.season }}_${{ steps.season.outputs.season }}.csv
+          data/shot_data_${{ steps.season.outputs.season }}_${{ steps.season.outputs.season }}.csv
+          data_cache/pbp_lineups_${{ steps.season.outputs.season }}.csv
+        key: fetch-cache-${{ steps.season.outputs.season }}-${{ github.run_id }}
 
     - name: Commit and push if changed
       run: |
