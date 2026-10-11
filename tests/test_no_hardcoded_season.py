@@ -9,7 +9,9 @@ ALLOWED = {'season_config.py', 'train_wp_model.py'}   # train: historical split
 def _pipeline_scripts():
     src = open(os.path.join(ROOT, 'refresh_all.py'), encoding='utf-8').read()
     names = set(re.findall(r"['\"]([a-z_0-9]+\.py)['\"]", src))
-    names |= {'refresh_all.py', 'fetch_all_seasons.py', 'incremental_fetch.py'}
+    names |= {'refresh_all.py', 'fetch_all_seasons.py', 'incremental_fetch.py',
+              'preprocess_wp_data.py', 'calculate_gci_historical.py',
+              'fetch_lineups.py', 'generate_clutch_data.py'}
     return sorted(n for n in names if os.path.exists(os.path.join(ROOT, n)))
 
 
@@ -23,3 +25,10 @@ def test_no_literal_current_years():
             if re.search(r'\b202[5-9]\b', code):
                 offenders.append(f'{name}:{i}: {line.strip()}')
     assert not offenders, '\n'.join(offenders)
+
+
+def test_guarded_scripts_are_scanned():
+    scanned = set(_pipeline_scripts())
+    for name in ('preprocess_wp_data.py', 'calculate_gci_historical.py',
+                 'fetch_lineups.py', 'generate_clutch_data.py', 'fetch_all_seasons.py'):
+        assert name in scanned, name
