@@ -30,3 +30,4 @@ mvp_race_images/
 
 # Root-level screenshots / verification PNGs
 /*.png
+/data/pbp_2025.csv
