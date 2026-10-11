@@ -6,14 +6,15 @@
 
 // ── Team lookup tables ───────────────────────────────────────────────────
 const TEAM_COLORS = {
-    // Current season (2025)
-    BER:'#005CA9', IST:'#E30613', MCO:'#D4AF37', BAS:'#B50031',
+    // Current season
+    IST:'#E30613', BAS:'#B50031',
     RED:'#CC0000', MIL:'#C8102E', BAR:'#004D98', MUN:'#0066B2',
     ULK:'#003366', ASV:'#222222', TEL:'#F6C300', OLY:'#E2001A',
     PAN:'#007F3D', PAR:'#333333', PRS:'#1a1a2e', MAD:'#6d4c94',
     PAM:'#EB7622', VIR:'#1a1a1a', ZAL:'#006233', DUB:'#555555',
-    HTA:'#cc0000',
-    // Historical (pre-2025)
+    HTA:'#cc0000', BES:'#d9d9d9',
+    // Historical
+    BER:'#005CA9', MCO:'#D4AF37',
     BAM:'#8B0000', CED:'#F47B20', CIB:'#003DA5', CSK:'#CC0000',
     DAR:'#00843D', DYR:'#0047AB', GAL:'#FF6600', KHI:'#FFCC00',
     LIE:'#1A5C2A', LJU:'#00843D', MAL:'#007848', ROM:'#FFD700',
@@ -21,14 +22,15 @@ const TEAM_COLORS = {
 };
 
 const TEAM_NAMES = {
-    // Current season (2025)
-    BER:'ALBA Berlin', IST:'Anadolu Efes', MCO:'AS Monaco', BAS:'Baskonia',
+    // Current season
+    IST:'Anadolu Efes', BAS:'Baskonia',
     RED:'Crvena Zvezda', MIL:'EA7 Milan', BAR:'FC Barcelona', MUN:'Bayern Munich',
     ULK:'Fenerbahce', ASV:'ASVEL', TEL:'Maccabi Tel Aviv', OLY:'Olympiacos',
     PAN:'Panathinaikos', PAR:'Partizan', PRS:'Paris Basketball', MAD:'Real Madrid',
     PAM:'Valencia Basket', VIR:'Virtus Bologna', ZAL:'Zalgiris', DUB:'Dubai Basketball',
-    HTA:'Hapoel Tel Aviv',
-    // Historical (pre-2025)
+    HTA:'Hapoel Tel Aviv', BES:'Besiktas Istanbul',
+    // Historical
+    BER:'ALBA Berlin', MCO:'AS Monaco',
     BAM:'Brose Bamberg', CED:'Cedevita Zagreb', CIB:'Cibona Zagreb', CSK:'CSKA Moscow',
     DAR:'Darussafaka', DYR:'Zenit St Petersburg', GAL:'Galatasaray', KHI:'Khimki',
     LIE:'Lietuvos Rytas', LJU:'Olimpija Ljubljana', MAL:'Unicaja Malaga', ROM:'Virtus Roma',

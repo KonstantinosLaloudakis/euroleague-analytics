@@ -61,13 +61,13 @@ def calculate_expected_wins():
         'HTA': 'Hapoel TA', 'PAR': 'Partizan', 'RED': 'C. Zvezda',
         'TEL': 'Maccabi', 'BAS': 'Baskonia', 'MUN': 'Bayern',
         'VIR': 'Virtus', 'PAM': 'Valencia', 'ASV': 'ASVEL',
-        'PRS': 'Paris', 'BER': 'ALBA Berlin', 'MIL': 'EA7 Milan'
+        'PRS': 'Paris', 'BER': 'ALBA Berlin', 'MIL': 'EA7 Milan', 'BES': 'Besiktas'
     }
     
     team_colors = {
         'OLY': '#E2001A', 'ULK': '#002B5C', 'PAN': '#007F3D', 
         'MAD': '#645486', 'BAR': '#004D98', 'MCO': '#D4AF37',
-        'ZAL': '#006233', 'DUB': '#1a1a2e', 'IST': '#003366',
+        'ZAL': '#006233', 'DUB': '#1a1a2e', 'IST': '#003366', 'BES': '#d9d9d9',
         'HTA': '#C8102E', 'PAR': '#000000', 'RED': '#CC0000', 
         'TEL': '#F6C300', 'BAS': '#B50031', 'MUN': '#0066B2',
         'VIR': '#000000', 'PAM': '#EB7622', 'ASV': '#1a1a2e',

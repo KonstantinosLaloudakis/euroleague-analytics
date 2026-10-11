@@ -30,7 +30,7 @@ CODE_TO_SHORT = {
 
 TEAM_COLORS = {
     'ULK': '#FFD700', 'OLY': '#CC0000', 'MAD': '#FEBE10',
-    'BES': '#9E9E9E',
+    'BES': '#d9d9d9',
     'PAM': '#FF6600', 'MCO': '#CC0000', 'BAR': '#A50044',
     'ZAL': '#006633', 'RED': '#CC0000', 'PAN': '#006633',
     'MIL': '#CE2B37', 'BAS': '#003DA5', 'MUN': '#DD0000',

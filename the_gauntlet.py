@@ -41,6 +41,7 @@ TEAM_NAME_OVERRIDES = {
     "ASV": "ASVEL",
     "PRS": "Paris",
     "DUB": "Dubai BC",
+    "BES": "Besiktas",
     "MAD": "Real Madrid",
     "ULK": "Fenerbahce",
     "HTA": "Hapoel Tel Aviv",

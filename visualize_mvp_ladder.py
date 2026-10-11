@@ -40,6 +40,7 @@ def plot_mvp_ladder():
         'MCO': '#D4AF37', # Gold (Monaco)
         'ZAL': '#006233', # Green
         'DUB': '#000000', # Black
+        'BES': '#d9d9d9', # Besiktas (light grey)
         'IST': '#003366', # Navy
         'HTA': '#000000', # Black
         'PAR': '#000000', # Black

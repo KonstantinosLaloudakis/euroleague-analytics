@@ -188,6 +188,7 @@ def simulate_mvp_race():
             'MCO': '#D4AF37', # Gold (Monaco) - Changed from Red to avoid OLY clash
             'ZAL': '#006233', # Green
             'DUB': '#000000', # Black?
+            'BES': '#d9d9d9', # Besiktas (light grey)
             'IST': '#003366', # Navy (Efes)
             'HTA': '#000000', # Black?
             'PAR': '#000000', # Partizaan (Black)

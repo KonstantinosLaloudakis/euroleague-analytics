@@ -21,7 +21,7 @@ TEAM_NAMES = {
     "MAC": "Maccabi Tel Aviv", "VIR": "Virtus Bologna", "ASV": "Anadolu Efes",
     "RED": "Crvena Zvezda", "IST": "Anadolu Efes",
     "TEL": "Maccabi Tel Aviv", "PRS": "Paris Basketball",
-    "MUN": "Bayern Munich", "DUB": "Dubai", "HTA": "Hapoel Tel Aviv",
+    "MUN": "Bayern Munich", "DUB": "Dubai", "BES": "Besiktas", "HTA": "Hapoel Tel Aviv",
     "PAM": "Valencia Basket", "PAN": "Panathinaikos",
 }
 
