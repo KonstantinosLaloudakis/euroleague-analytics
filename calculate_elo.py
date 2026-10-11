@@ -75,7 +75,7 @@ def compute_elo_ratings():
     current_season = CURRENT_SEASON
 
     # Warm-start Elo from prior season snapshot
-    prior_elos = _load_prior_season_elos(current_season) if current_season else {}
+    prior_elos = _load_prior_season_elos(current_season)
 
     # Initialize Elo ratings — use warm-start values where available
     elo = {}

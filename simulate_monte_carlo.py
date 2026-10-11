@@ -225,27 +225,7 @@ def run_monte_carlo(num_simulations=10000):
     print(f"Built head-to-head matrix ({num_teams}x{num_teams}) from played games.")
 
     # 2. Extract Unplayed Games
-    name_to_code = {
-        'ALBA BERLIN': 'BER', 'ANADOLU EFES ISTANBUL': 'IST', 'AS MONACO': 'MCO',
-        'BASKONIA VITORIA-GASTEIZ': 'BAS', 'KOSNER BASKONIA VITORIA-GASTEIZ': 'BAS',
-        'CRVENA ZVEZDA MERIDIANBET BELGRADE': 'RED',
-        'EA7 EMPORIO ARMANI MILAN': 'MIL', 
-        'FC BARCELONA': 'BAR', 'FC BAYERN MUNICH': 'MUN',
-        'FENERBAHCE BEKO ISTANBUL': 'ULK', 
-        'LDLC ASVEL VILLEURBANNE': 'ASV',
-        'MACCABI PLAYTIKA TEL AVIV': 'TEL', 'MACCABI RAPYD TEL AVIV': 'TEL',
-        'OLYMPIACOS PIRAEUS': 'OLY',
-        'PANATHINAIKOS AKTOR ATHENS': 'PAN', 
-        'PARTIZAN MOZZART BET BELGRADE': 'PAR',
-        'PARIS BASKETBALL': 'PRS', 
-        'REAL MADRID': 'MAD', 
-        'BESIKTAS ISTANBUL': 'BES', 'ARMANI OLIMPIA MILAN': 'MIL', 'FENERBAHCE TARFIN ISTANBUL': 'ULK',
-        'VALENCIA BASKET': 'PAM', 
-        'VIRTUS SEGAFREDO BOLOGNA': 'VIR', 'VIRTUS BOLOGNA': 'VIR',
-        'ZALGIRIS KAUNAS': 'ZAL', 
-        'DUBAI BASKETBALL': 'DUB',
-        'HAPOEL IBI TEL AVIV': 'HTA'
-    }
+    from team_aliases import NAME_TO_CODE as name_to_code
 
     try:
         tree = ET.parse(f'official_schedule_{CURRENT_SEASON}.xml')

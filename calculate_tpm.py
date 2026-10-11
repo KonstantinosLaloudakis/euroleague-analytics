@@ -10,6 +10,7 @@ import numpy as np
 import os
 
 from season_config import CURRENT_SEASON, season_label
+from chart_utils import ratings_path
 
 def calculate_tpm():
     with open(f'mvp_all_game_stats_{CURRENT_SEASON}.json', 'r') as f:
@@ -17,14 +18,13 @@ def calculate_tpm():
         
     # Load opponent quality adjustments for more advanced TPM later if needed
     adj_net = {}
-    round_suffix = os.environ.get('EUROLEAGUE_ROUND_SUFFIX', '')
-    in_file = f'adjusted_ratings{round_suffix}.json'
-    if not os.path.exists(in_file):
-        in_file = 'adjusted_ratings.json'
-    if os.path.exists(in_file):
-        with open(in_file, 'r') as f:
-            for e in json.load(f):
-                adj_net[e['Team']] = e['Adj_Net']
+    in_file = ratings_path('adjusted_ratings')
+    if not in_file:
+        print("No adjusted_ratings for this round yet - skipping TPM.")
+        return
+    with open(in_file, 'r') as f:
+        for e in json.load(f):
+            adj_net[e['Team']] = e['Adj_Net']
                 
     player_data = {}
 
@@ -93,7 +93,7 @@ def calculate_tpm():
     df = pd.DataFrame(rows)
     print(f"Processed {len(df)} players with >10 GP and >10 MPG")
     if df.empty:
-        print(f"No players meet the minimum-games threshold yet - skipping TPM.")
+        print("No players meet the minimum-games threshold yet - skipping TPM.")
         return
     
     # Sort and rank

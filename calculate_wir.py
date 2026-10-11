@@ -103,7 +103,7 @@ def calculate_wir():
     df = pd.DataFrame(rows)
     print(f"Processed {len(df)} players with >10 GP and >10 MPG")
     if df.empty:
-        print(f"No players meet the minimum-games threshold yet - skipping WIR.")
+        print("No players meet the minimum-games threshold yet - skipping WIR.")
         return
     
     fg_miss = df['fga'] - df['fgm']
