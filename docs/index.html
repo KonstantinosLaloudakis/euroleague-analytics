@@ -50,7 +50,7 @@
         <a href="about.html" class="nav-link">About</a>
     </nav>
 
-    <a class="playoff-banner" href="playoffs.html">
+    <a class="playoff-banner hidden" id="playoff-banner" href="playoffs.html">
         <span class="playoff-banner-label">🏆 Euroleague Playoffs</span>
         <span class="playoff-banner-text">Play-ins tip off this week — see the bracket</span>
         <span class="playoff-banner-arrow">→</span>
@@ -235,6 +235,11 @@
 
     <script src="constants.js"></script>
 <script src="season.js"></script>
+<script>
+fetchJSON('data/current/dashboard.json')
+    .then(d => { if (playoffsStarted(d)) document.getElementById('playoff-banner').classList.remove('hidden'); })
+    .catch(() => {});
+</script>
 <!-- Cloudflare Web Analytics -->
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5f641b8c23db459fa52246a9414adfb3"}'></script>
 <!-- End Cloudflare Web Analytics -->

@@ -136,14 +136,16 @@ function isEmptyData(v) {
     if (typeof v === 'object') return Object.keys(v).length === 0;
     return false;
 }
+// Playoffs have started once any series has games played. Pre-playoff
+// projections export every slot as 'awaiting_teams' or 'not_started'.
+function playoffsStarted(dash) {
+    return Object.values((dash && dash.series) || {}).some(
+        s => s && s.status !== 'awaiting_teams' && s.status !== 'not_started');
+}
 // Playoff-only pages show last season's final playoffs until the new ones start.
 async function loadPlayoffDashboard() {
     const cur = await fetchJSON('data/current/dashboard.json');
-    // Playoffs have started once any series has games played. Pre-playoff
-    // projections export every slot as 'awaiting_teams' or 'not_started'.
-    const started = Object.values(cur.series || {}).some(
-        s => s && s.status !== 'awaiting_teams' && s.status !== 'not_started');
-    if (started) return { dash: cur, archived: false };
+    if (playoffsStarted(cur)) return { dash: cur, archived: false };
     const prev = dashboardSeason(cur) - 1;
     try {
         const old = await fetchJSON(`data/archive/${prev}/dashboard.json`);

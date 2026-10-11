@@ -3267,7 +3267,8 @@ def main():
             try:
                 with open(prev_dashboard_path, 'r', encoding='utf-8') as f:
                     prev_data = json.load(f)
-                championship_odds_history = prev_data.get('championship_odds_history', [])
+                championship_odds_history = (prev_data.get('championship_odds_history', [])
+                                             if prev_data.get('season') == CURRENT_SEASON else [])
                 # Previous odds = last entry in history, or empty
                 if championship_odds_history:
                     prev_odds = championship_odds_history[-1].get('odds', {})
@@ -3329,7 +3330,8 @@ def main():
             try:
                 with open(prev_dashboard_path, 'r', encoding='utf-8') as f:
                     prev_data = json.load(f)
-                championship_odds_history = prev_data.get('championship_odds_history', [])
+                championship_odds_history = (prev_data.get('championship_odds_history', [])
+                                             if prev_data.get('season') == CURRENT_SEASON else [])
             except Exception:
                 pass
 
