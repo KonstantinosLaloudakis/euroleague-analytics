@@ -14,6 +14,10 @@ import glob
 import re
 import pandas as pd
 
+from season_config import CURRENT_SEASON, COMPLETED_SEASONS, season_label
+
+S = CURRENT_SEASON
+
 # ── Team name mapping ────────────────────────────────────────────────────────
 TEAM_NAMES = {
     'BER': 'ALBA Berlin',
@@ -36,6 +40,7 @@ TEAM_NAMES = {
     'VIR': 'Virtus Bologna',
     'ZAL': 'Zalgiris',
     'DUB': 'Dubai Basketball',
+    'BES': 'Besiktas Istanbul',
     'HTA': 'Hapoel Tel Aviv',
 }
 
@@ -50,10 +55,17 @@ def load_json(path):
         return None
 
 
-def load_with_fallback(suffix, base_name, fallback_name=None):
-    """Try loading base_name+suffix first, fall back to fallback_name or base_name."""
+def load_with_fallback(suffix, base_name, fallback_name=None, strict=False):
+    """Try loading base_name+suffix first, fall back to fallback_name or base_name.
+
+    strict=True: with a round suffix, return None when this round's file is
+    missing instead of falling back to a stale unsuffixed (previous-season) file.
+    """
     if suffix:
         candidate = base_name.replace('.json', f'{suffix}.json')
+        if strict and not os.path.exists(candidate):
+            print(f"  [SKIP] {candidate} not found (no stale fallback)")
+            return None
         data = load_json(candidate)
         if data is not None:
             print(f"  Loaded: {candidate}")
@@ -66,11 +78,11 @@ def load_with_fallback(suffix, base_name, fallback_name=None):
 
 
 def parse_schedule_dates():
-    """Parse official_schedule_2025.xml → {(homecode, awaycode): {'date': ..., 'time': ...}}."""
+    """Parse the current season official schedule XML → {(homecode, awaycode): {'date': ..., 'time': ...}}."""
     dates = {}
     try:
         import xml.etree.ElementTree as ET
-        tree = ET.parse('official_schedule_2025.xml')
+        tree = ET.parse(f'official_schedule_{S}.xml')
         for item in tree.getroot().iter('item'):
             home = (item.findtext('homecode') or '').strip()
             away = (item.findtext('awaycode') or '').strip()
@@ -120,10 +132,10 @@ def find_latest_player_forecast(oracle_round):
 
 
 def build_player_stats(mvp_data):
-    """Aggregate per-player season averages from mvp_all_game_stats_2025.json."""
+    """Aggregate per-player season averages from mvp_all_game_stats for the current season."""
     from collections import defaultdict
 
-    all_stats = load_json('mvp_all_game_stats_2025.json')
+    all_stats = load_json(f'mvp_all_game_stats_{S}.json')
     if not all_stats:
         return []
 
@@ -213,7 +225,7 @@ def build_playoff_player_stats():
     """Aggregate per-player averages from playoff games only (Gamecode > 380)."""
     from collections import defaultdict
 
-    all_stats = load_json('mvp_all_game_stats_2025.json')
+    all_stats = load_json(f'mvp_all_game_stats_{S}.json')
     if not all_stats:
         return []
 
@@ -279,11 +291,10 @@ def build_playoff_player_stats():
 def build_shot_stats():
     """Aggregate shot data by zone for league, team, and player breakdowns."""
     import csv
-    shot_file = glob.glob('shot_data_*_*.csv')
-    if not shot_file:
-        print("  No shot data CSV found — skipping shot stats.")
+    shot_file = f'shot_data_{S}_{S}.csv'
+    if not os.path.exists(shot_file):
+        print(f"  {shot_file} not found — skipping shot stats.")
         return None
-    shot_file = sorted(shot_file)[-1]  # latest
     print(f"\n--- Building shot stats from {shot_file} ---")
 
     from collections import defaultdict
@@ -437,9 +448,9 @@ def build_paint_profiles():
     """Build paint finishing profiles: L/R/C breakdown for players and teams."""
     import csv
     import math
-    shot_file = 'shot_data_2025_2025.csv'
+    shot_file = f'shot_data_{S}_{S}.csv'
     if not os.path.exists(shot_file):
-        print("  shot_data_2025_2025.csv not found — skipping paint profiles.")
+        print(f"  shot_data_{S}_{S}.csv not found — skipping paint profiles.")
         return None
 
     # Accumulators: {key: {left_att, left_made, right_att, right_made, center_att, center_made}}
@@ -534,7 +545,7 @@ def build_paint_profiles():
         # We need opponent info — load game data for team mapping
     # Simpler approach: use game-level data
     # Load all game stats to map gamecodes to home/away teams
-    all_stats = load_json('mvp_all_game_stats_2025.json') or []
+    all_stats = load_json(f'mvp_all_game_stats_{S}.json') or []
     game_teams = {}
     for g in all_stats:
         gc = g.get('Gamecode', g.get('GameCode'))
@@ -603,7 +614,7 @@ def build_assist_network():
     import csv
     from collections import defaultdict
 
-    pbp_file = 'data_cache/pbp_2025.csv'
+    pbp_file = f'data_cache/pbp_{S}.csv'
     if not os.path.exists(pbp_file):
         print("  No PBP data found — skipping assist network.")
         return None
@@ -790,7 +801,7 @@ def build_assist_network():
 
 def build_game_recaps():
     """Build per-round game recaps with box scores from game stats + backtest."""
-    all_stats = load_json('mvp_all_game_stats_2025.json')
+    all_stats = load_json(f'mvp_all_game_stats_{S}.json')
     backtest = load_json('oracle_backtest_predictions.json')
     if not all_stats or not backtest:
         print("  Missing game stats or backtest — skipping game recaps.")
@@ -805,7 +816,7 @@ def build_game_recaps():
     sched_lookup = {}
     try:
         import xml.etree.ElementTree as ET
-        tree = ET.parse('official_schedule_2025.xml')
+        tree = ET.parse(f'official_schedule_{S}.xml')
         for item in tree.getroot().iter('item'):
             home = (item.findtext('homecode') or '').strip()
             away = (item.findtext('awaycode') or '').strip()
@@ -958,7 +969,7 @@ def compute_team_box_metrics(all_game_stats, gamecode_to_teams):
     Aggregate per-team season box-score metrics from raw box scores.
 
     Args:
-        all_game_stats: list of game dicts from mvp_all_game_stats_2025.json
+        all_game_stats: list of game dicts from the current season mvp_all_game_stats file
         gamecode_to_teams: dict[int, tuple[str, str]] mapping
             GameCode -> (local_team_code, road_team_code)
 
@@ -1488,14 +1499,14 @@ def build_tale_of_the_tape(high_team, low_team, teams_by_code,
 
 def compute_championship_finals_history():
     """
-    For each season 2007-2025, load the championship final WP replay JSON
+    For each completed season (COMPLETED_SEASONS), load the championship final WP replay JSON
     (highest gamecode in docs/data/{season}/), compute lead changes / times
     tied / max deficit, and return a list sorted by lead_changes descending.
     """
     results = []
     replay_base = os.path.join('docs', 'data')
 
-    for season in range(2007, 2026):
+    for season in COMPLETED_SEASONS:
         season_dir = os.path.join(replay_base, str(season))
         if not os.path.isdir(season_dir):
             continue
@@ -1603,7 +1614,7 @@ def main():
     adjusted = load_with_fallback(suffix, 'adjusted_ratings.json')
     elo_data = load_with_fallback(suffix, 'elo_ratings.json')
     mc_data = load_with_fallback(suffix, 'monte_carlo_results.json')
-    mvp_data = load_with_fallback(suffix, 'mvp_rankings_2025.json')
+    mvp_data = load_with_fallback(suffix, f'mvp_rankings_{S}.json', strict=True)
     standings_data = load_json('mvp_standings_derived.json')
     # Accuracy: try oracle_accuracy{suffix}.json first (no _ml infix), then ml variant, then bare
     accuracy_data = None
@@ -1769,7 +1780,12 @@ def main():
             })
 
     # ── Build MVP race timeline ─────────────────────────────────────────────
+    # mvp_race_timeline.json has no season marker or producer script; a file with
+    # rounds beyond the current round is a previous season's and must not be shown.
     mvp_race = load_json('mvp_race_timeline.json') or []
+    if mvp_race and max(r.get('round', 0) for r in mvp_race) > round_num:
+        print("  [SKIP] mvp_race_timeline.json is ahead of the current round (stale) - emitting []")
+        mvp_race = []
     if mvp_race:
         rounds_in_race = len(set(r['round'] for r in mvp_race))
         print(f"  MVP race timeline: {len(mvp_race)} data points across {rounds_in_race} rounds")
@@ -1779,14 +1795,14 @@ def main():
     print(f"  Player stats: {len(player_stats)} players")
 
     # ── Load RAPM ratings ────────────────────────────────────────────────────
-    rapm_data = load_with_fallback(suffix, 'rapm_ratings.json')
+    rapm_data = load_with_fallback(suffix, 'rapm_ratings.json', strict=True)
     if rapm_data:
         print(f"  RAPM ratings: {len(rapm_data)} players")
     else:
         rapm_data = []
 
     # ── Load WPA ratings (normalize keys) ──────────────────────────────────
-    wpa_raw = load_with_fallback(suffix, 'wpa_ratings.json')
+    wpa_raw = load_with_fallback(suffix, 'wpa_ratings.json', strict=True)
     wpa_data = []
     if wpa_raw:
         for r in wpa_raw:
@@ -1800,7 +1816,7 @@ def main():
         print(f"  WPA ratings: {len(wpa_data)} players")
 
     # ── Load TPM ratings (normalize keys) ──────────────────────────────────
-    tpm_raw = load_with_fallback(suffix, 'tpm_ratings.json')
+    tpm_raw = load_with_fallback(suffix, 'tpm_ratings.json', strict=True)
     tpm_data = []
     if tpm_raw:
         for r in tpm_raw:
@@ -1816,7 +1832,7 @@ def main():
         print(f"  TPM ratings: {len(tpm_data)} players")
 
     # ── Load WIR ratings (normalize keys) ──────────────────────────────────
-    wir_raw = load_with_fallback(suffix, 'wir_ratings.json')
+    wir_raw = load_with_fallback(suffix, 'wir_ratings.json', strict=True)
     wir_data = []
     if wir_raw:
         for r in wir_raw:
@@ -1835,7 +1851,7 @@ def main():
         print(f"  WIR ratings: {len(wir_data)} players")
 
     # ── Load GCI ratings ─────────────────────────────────────────────────
-    gci_raw = load_with_fallback(suffix, 'gci_ratings.json')
+    gci_raw = load_with_fallback(suffix, 'gci_ratings.json', strict=True)
     gci_data = None
     if gci_raw:
         gci_data = {
@@ -2020,7 +2036,7 @@ def main():
         gc_to_phase = {}
         gc_to_date = {}
         try:
-            tree = ET.parse('official_schedule_2025.xml')
+            tree = ET.parse(f'official_schedule_{S}.xml')
             for item in tree.getroot().findall('item'):
                 gc_el = item.find('gamecode')
                 round_el = item.find('round')
@@ -3189,7 +3205,7 @@ def main():
 
     # Build RS games df for Series Hub H2H lookups.
     # Uses mvp_game_results.json (has both legs of each home/away pair);
-    # data_cache/games_2025.csv only tracks one leg per pair.
+    # data_cache/games_{S}.csv only tracks one leg per pair.
     games_df = None
     try:
         h2h_src = load_json('mvp_game_results.json') or []
@@ -3219,7 +3235,7 @@ def main():
     # Excludes RS and PI rounds; only QF/SF/Final pairings are kept.
     schedule_index = {}
     try:
-        sched_rows = load_json('schedule_2025.json') or []
+        sched_rows = load_json(f'schedule_{S}.json') or []
         for row in sched_rows:
             rnd = row.get('round')
             if rnd in ('RS', 'PI') or not rnd:
@@ -3293,7 +3309,7 @@ def main():
 
             # Build Series Hub data
             teams_by_code = {t['team']: t for t in teams}
-            all_game_stats = load_json('mvp_all_game_stats_2025.json') or []
+            all_game_stats = load_json(f'mvp_all_game_stats_{S}.json') or []
             gamecode_to_teams = {
                 int(r['GameCode']): (r['LocalTeam'], r['RoadTeam'])
                 for r in (load_json('mvp_game_results.json') or [])
@@ -3346,7 +3362,7 @@ def main():
                     -e['championship_odds'],
                 ))
                 teams_by_code = {t['team']: t for t in teams}
-                all_game_stats = load_json('mvp_all_game_stats_2025.json') or []
+                all_game_stats = load_json(f'mvp_all_game_stats_{S}.json') or []
                 gamecode_to_teams = {
                     int(r['GameCode']): (r['LocalTeam'], r['RoadTeam'])
                     for r in (load_json('mvp_game_results.json') or [])
@@ -3362,6 +3378,8 @@ def main():
 
     output = {
         'round': round_num,
+        'season': CURRENT_SEASON,
+        'season_label': season_label(),
         'updated': datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ'),
         'teams': teams,
         'mvp': mvp_list,
