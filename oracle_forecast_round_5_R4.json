@@ -7,12 +7,12 @@
       "LocalName": "Partizan",
       "Road": "PAN",
       "RoadName": "Panathinaikos",
-      "Margin": -14.35,
+      "Margin": -14.39,
       "Winner": "PAN",
       "WinnerName": "Panathinaikos",
-      "HomeWinProb": 28.3,
-      "Conf": 71.7,
-      "Insight": "\ud83c\udfdf\ufe0f FORTRESS: Partizan 100% at Home\nAdj Net: -1.4 v +21.7  |  Elo: 1457 v 1507\nL5: 3-2 v 4-1  |  H: 1-0 v A: 0-0\nKey players \u2014 H: Jones  |  A: Francisco"
+      "HomeWinProb": 30.7,
+      "Conf": 69.3,
+      "Insight": "\ud83c\udfdf\ufe0f FORTRESS: Partizan 100% at Home\nAdj Net: -1.4 v +21.7  |  Elo: 1485 v 1540\nL5: 3-2 v 4-1  |  H: 1-0 v A: 0-0\nKey players \u2014 H: Jones  |  A: Francisco"
     },
     {
       "Round": 5,
@@ -20,12 +20,12 @@
       "LocalName": "Fenerbahce",
       "Road": "ZAL",
       "RoadName": "Zalgiris",
-      "Margin": 7.08,
+      "Margin": 7.46,
       "Winner": "ULK",
       "WinnerName": "Fenerbahce",
-      "HomeWinProb": 78.9,
-      "Conf": 78.9,
-      "Insight": "\ud83c\udfdf\ufe0f FORTRESS: Fenerbahce 100% at Home\nAdj Net: +8.6 v +3.9  |  Elo: 1561 v 1520\nL5: 3-2 v 2-3  |  H: 3-0 v A: 2-1\nKey players \u2014 H: Key  |  A: Edwards"
+      "HomeWinProb": 82.2,
+      "Conf": 82.2,
+      "Insight": "\ud83c\udfdf\ufe0f FORTRESS: Fenerbahce 100% at Home\nAdj Net: +8.6 v +3.9  |  Elo: 1583 v 1504\nL5: 3-2 v 2-3  |  H: 3-0 v A: 2-1\nKey players \u2014 H: Key  |  A: Edwards"
     },
     {
       "Round": 5,
@@ -33,12 +33,12 @@
       "LocalName": "Anadolu Efes",
       "Road": "MUN",
       "RoadName": "Bayern",
-      "Margin": 5.93,
+      "Margin": 6.1,
       "Winner": "IST",
       "WinnerName": "Anadolu Efes",
-      "HomeWinProb": 66.4,
-      "Conf": 66.4,
-      "Insight": "\ud83c\udfdf\ufe0f FORTRESS: Anadolu Efes 100% at Home\nAdj Net: -4.8 v -7.3  |  Elo: 1454 v 1480\nL5: 1-4 v 1-4  |  H: 1-0 v A: 1-1\nKey players \u2014 H: Saric  |  A: Thiemann"
+      "HomeWinProb": 66.6,
+      "Conf": 66.6,
+      "Insight": "\ud83c\udfdf\ufe0f FORTRESS: Anadolu Efes 100% at Home\nAdj Net: -4.8 v -7.3  |  Elo: 1472 v 1481\nL5: 1-4 v 1-4  |  H: 1-0 v A: 1-1\nKey players \u2014 H: Saric  |  A: Thiemann"
     },
     {
       "Round": 5,
@@ -46,12 +46,12 @@
       "LocalName": "Valencia",
       "Road": "OLY",
       "RoadName": "Olympiacos",
-      "Margin": 4.47,
+      "Margin": 4.11,
       "Winner": "PAM",
       "WinnerName": "Valencia",
-      "HomeWinProb": 69.1,
-      "Conf": 69.1,
-      "Insight": "\ud83c\udfdf\ufe0f FORTRESS: Valencia 100% at Home\nAdj Net: +10.2 v +7.8  |  Elo: 1536 v 1534\nL5: 4-1 v 3-2  |  H: 2-0 v A: 2-1\nKey players \u2014 H: Shorts  |  A: Vezenkov"
+      "HomeWinProb": 66.4,
+      "Conf": 66.4,
+      "Insight": "\ud83c\udfdf\ufe0f FORTRESS: Valencia 100% at Home\nAdj Net: +10.2 v +7.8  |  Elo: 1540 v 1575\nL5: 4-1 v 3-2  |  H: 2-0 v A: 2-1\nKey players \u2014 H: Shorts  |  A: Vezenkov"
     },
     {
       "Round": 5,
@@ -59,12 +59,12 @@
       "LocalName": "EA7 Milan",
       "Road": "MAD",
       "RoadName": "Real Madrid",
-      "Margin": -4.41,
-      "Winner": "MIL",
-      "WinnerName": "EA7 Milan",
-      "HomeWinProb": 50.6,
-      "Conf": 50.6,
-      "Insight": "\ud83c\udfdf\ufe0f FORTRESS: EA7 Milan 100% at Home\nAdj Net: -15.3 v -4.9  |  Elo: 1494 v 1530\nL5: 1-4 v 1-4  |  H: 1-0 v A: 0-3\nKey players \u2014 H: Hall  |  A: Maledon"
+      "Margin": -4.59,
+      "Winner": "MAD",
+      "WinnerName": "Real Madrid",
+      "HomeWinProb": 45.7,
+      "Conf": 54.3,
+      "Insight": "\ud83c\udfdf\ufe0f FORTRESS: EA7 Milan 100% at Home\nAdj Net: -15.3 v -4.9  |  Elo: 1490 v 1544\nL5: 1-4 v 1-4  |  H: 1-0 v A: 0-3\nKey players \u2014 H: Hall  |  A: Maledon"
     },
     {
       "Round": 5,
@@ -72,12 +72,12 @@
       "LocalName": "Hapoel Tel Aviv",
       "Road": "BES",
       "RoadName": "Besiktas",
-      "Margin": 0.59,
+      "Margin": 0.56,
       "Winner": "HTA",
       "WinnerName": "Hapoel Tel Aviv",
-      "HomeWinProb": 58.5,
-      "Conf": 58.5,
-      "Insight": "\u2708\ufe0f Besiktas 100% Away Win Rate\nAdj Net: -1.5 v +1.1  |  Elo: 1519 v 1500\nL5: 2-3 v 2-3  |  H: 1-1 v A: 2-0\nKey players \u2014 H: Blakeney  |  A: Wilbekin"
+      "HomeWinProb": 61.0,
+      "Conf": 61.0,
+      "Insight": "\u2708\ufe0f Besiktas 100% Away Win Rate\nAdj Net: -1.5 v +1.1  |  Elo: 1515 v 1500\nL5: 2-3 v 2-3  |  H: 1-1 v A: 2-0\nKey players \u2014 H: Blakeney  |  A: Wilbekin"
     },
     {
       "Round": 5,
@@ -85,12 +85,12 @@
       "LocalName": "Paris Basketball",
       "Road": "VIR",
       "RoadName": "Virtus Bologna",
-      "Margin": 3.13,
+      "Margin": 3.37,
       "Winner": "PRS",
       "WinnerName": "Paris Basketball",
-      "HomeWinProb": 66.4,
-      "Conf": 66.4,
-      "Insight": "\u2696\ufe0f Evenly matched (Adj Net gap: 1.1)\nAdj Net: -1.4 v -2.6  |  Elo: 1469 v 1487\nL5: 1-4 v 2-3  |  H: 1-2 v A: 1-2\nKey players \u2014 H: Hifi  |  A: Carr"
+      "HomeWinProb": 69.1,
+      "Conf": 69.1,
+      "Insight": "\u2696\ufe0f Evenly matched (Adj Net gap: 1.1)\nAdj Net: -1.4 v -2.6  |  Elo: 1476 v 1471\nL5: 1-4 v 2-3  |  H: 1-2 v A: 1-2\nKey players \u2014 H: Hifi  |  A: Carr"
     },
     {
       "Round": 5,
@@ -98,12 +98,12 @@
       "LocalName": "ASVEL",
       "Road": "RED",
       "RoadName": "Crvena Zvezda",
-      "Margin": -0.22,
+      "Margin": -0.07,
       "Winner": "RED",
       "WinnerName": "Crvena Zvezda",
-      "HomeWinProb": 47.4,
-      "Conf": 52.6,
-      "Insight": "\u2708\ufe0f Crvena Zvezda 100% Away Win Rate\nAdj Net: +0.9 v +3.5  |  Elo: 1437 v 1520\nL5: 2-3 v 2-3  |  H: 1-1 v A: 1-0\nKey players \u2014 H: Mills  |  A: Nwora"
+      "HomeWinProb": 45.7,
+      "Conf": 54.3,
+      "Insight": "\u2708\ufe0f Crvena Zvezda 100% Away Win Rate\nAdj Net: +0.9 v +3.5  |  Elo: 1436 v 1504\nL5: 2-3 v 2-3  |  H: 1-1 v A: 1-0\nKey players \u2014 H: Mills  |  A: Nwora"
     },
     {
       "Round": 5,
@@ -111,12 +111,12 @@
       "LocalName": "Baskonia",
       "Road": "DUB",
       "RoadName": "Dubai BC",
-      "Margin": -0.36,
+      "Margin": -0.43,
       "Winner": "DUB",
       "WinnerName": "Dubai BC",
       "HomeWinProb": 47.4,
       "Conf": 52.6,
-      "Insight": "\u2696\ufe0f Evenly matched (Adj Net gap: 3.2)\nAdj Net: -7.5 v -4.2  |  Elo: 1457 v 1508\nL5: 1-4 v 2-3  |  H: 1-2 v A: 0-1\nKey players \u2014 H: Duarte  |  A: Bacon"
+      "Insight": "\u2696\ufe0f Evenly matched (Adj Net gap: 3.2)\nAdj Net: -7.5 v -4.2  |  Elo: 1450 v 1508\nL5: 1-4 v 2-3  |  H: 1-2 v A: 0-1\nKey players \u2014 H: Duarte  |  A: Bacon"
     },
     {
       "Round": 5,
@@ -124,12 +124,12 @@
       "LocalName": "Barcelona",
       "Road": "TEL",
       "RoadName": "Maccabi",
-      "Margin": 5.71,
+      "Margin": 6.01,
       "Winner": "BAR",
       "WinnerName": "Barcelona",
-      "HomeWinProb": 72.5,
-      "Conf": 72.5,
-      "Insight": "\ud83d\udcc8 Barcelona +5.2 Adj Net advantage\nAdj Net: -0.4 v -5.6  |  Elo: 1517 v 1503\nL5: 2-3 v 1-4  |  H: 1-1 v A: 0-2\nKey players \u2014 H: Punter  |  A: Sorkin"
+      "HomeWinProb": 77.8,
+      "Conf": 77.8,
+      "Insight": "\ud83d\udcc8 Barcelona +5.2 Adj Net advantage\nAdj Net: -0.4 v -5.6  |  Elo: 1530 v 1485\nL5: 2-3 v 1-4  |  H: 1-1 v A: 0-2\nKey players \u2014 H: Punter  |  A: Sorkin"
     }
   ],
   "mvp_candidates": [],
