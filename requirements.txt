@@ -7,4 +7,5 @@ plotly
 Pillow
 requests
 adjustText
-euroleague-api
+euroleague-api==0.1.0
+xmltodict
