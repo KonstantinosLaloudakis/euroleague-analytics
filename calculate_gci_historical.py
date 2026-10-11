@@ -1,7 +1,7 @@
 """
 Historical GCI Trends — cross-season Game Control Index analysis.
 
-Processes all completed seasons (2007-2024) of WP replay data,
+Processes all completed seasons (season_config.COMPLETED_SEASONS) of WP replay data,
 derives game results directly from WP replay files, and computes
 per-season GCI, league-wide trends, per-team trends, era breakdowns,
 superlatives, and season leaderboards.
@@ -32,7 +32,7 @@ OUTPUT_PATH = os.path.join("docs", "gci_historical.json")
 ERA_DEFINITIONS = [
     {"name": "Expansion Era",   "start": 2007, "end": 2015},
     {"name": "Contraction Era", "start": 2016, "end": 2019},
-    {"name": "Modern Era",      "start": 2020, "end": 2024},
+    {"name": "Modern Era",      "start": 2020, "end": COMPLETED_SEASONS[-1]},  # open-ended
 ]
 
 
