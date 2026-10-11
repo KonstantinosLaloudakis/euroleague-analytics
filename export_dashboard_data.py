@@ -61,6 +61,9 @@ def load_with_fallback(suffix, base_name, fallback_name=None, strict=False):
     strict=True: with a round suffix, return None when this round's file is
     missing instead of falling back to a stale unsuffixed (previous-season) file.
     """
+    if strict and not suffix:
+        print(f"  [SKIP] {base_name}: no round suffix, cannot trust an unsuffixed file (strict)")
+        return None
     if suffix:
         candidate = base_name.replace('.json', f'{suffix}.json')
         if strict and not os.path.exists(candidate):
@@ -131,7 +134,7 @@ def find_latest_player_forecast(oracle_round):
     return None
 
 
-def build_player_stats(mvp_data):
+def build_player_stats(mvp_data, current_round=5):
     """Aggregate per-player season averages from mvp_all_game_stats for the current season."""
     from collections import defaultdict
 
@@ -189,7 +192,7 @@ def build_player_stats(mvp_data):
     result = []
     for code, d in agg.items():
         gp = len(d['pts'])
-        if gp < 5:
+        if gp < min(5, max(1, current_round)):
             continue
         fgm = d['fg2m'] + d['fg3m']
         fga = d['fg2a'] + d['fg3a']
@@ -1611,21 +1614,16 @@ def main():
         print(f"Round suffix: '{suffix}' (auto-derived from mvp_standings_derived.json max GP)")
 
     # ── Load all source data ─────────────────────────────────────────────────
-    adjusted = load_with_fallback(suffix, 'adjusted_ratings.json')
-    elo_data = load_with_fallback(suffix, 'elo_ratings.json')
-    mc_data = load_with_fallback(suffix, 'monte_carlo_results.json')
+    adjusted = load_with_fallback(suffix, 'adjusted_ratings.json', strict=True)
+    elo_data = load_with_fallback(suffix, 'elo_ratings.json', strict=True)
+    mc_data = load_with_fallback(suffix, 'monte_carlo_results.json', strict=True)
     mvp_data = load_with_fallback(suffix, f'mvp_rankings_{S}.json', strict=True)
     standings_data = load_json('mvp_standings_derived.json')
     # Accuracy: try oracle_accuracy{suffix}.json first (no _ml infix), then ml variant, then bare
-    accuracy_data = None
-    if suffix:
-        accuracy_data = load_json(f'oracle_accuracy{suffix}.json')
-        if accuracy_data is not None:
-            print(f"  Loaded: oracle_accuracy{suffix}.json")
+    # Accuracy is per season: strict (this round's file or nothing).
+    accuracy_data = load_with_fallback(suffix, 'oracle_accuracy.json', strict=True)
     if accuracy_data is None:
-        accuracy_data = load_with_fallback(suffix, 'oracle_accuracy_ml.json', 'oracle_accuracy_ml.json')
-    if accuracy_data is None:
-        accuracy_data = load_with_fallback(suffix, 'oracle_accuracy.json')
+        accuracy_data = load_with_fallback(suffix, 'oracle_accuracy_ml.json', strict=True)
 
     oracle_path, oracle_round = find_latest_oracle_forecast()
     oracle_data = load_json(oracle_path) if oracle_path else None
@@ -1791,7 +1789,7 @@ def main():
         print(f"  MVP race timeline: {len(mvp_race)} data points across {rounds_in_race} rounds")
 
     # ── Build player stats leaderboard ───────────────────────────────────────
-    player_stats = build_player_stats(mvp_data)
+    player_stats = build_player_stats(mvp_data, round_num)
     print(f"  Player stats: {len(player_stats)} players")
 
     # ── Load RAPM ratings ────────────────────────────────────────────────────
