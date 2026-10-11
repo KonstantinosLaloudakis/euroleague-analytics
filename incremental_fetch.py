@@ -21,8 +21,14 @@ def played_gamecodes(schedule_path):
     return sorted(codes)
 
 
+def _write_atomic(df, cache_path):
+    tmp = cache_path + '.tmp'
+    df.to_csv(tmp, index=False)
+    os.replace(tmp, cache_path)
+
+
 def fetch_missing_games(cache_path, gamecodes, fetch_one, gamecode_col='Gamecode',
-                        delay=0.5, max_retries=4, sleep=time.sleep):
+                        delay=0.5, max_retries=4, sleep=time.sleep, flush_every=10):
     """Fetch games in `gamecodes` that aren't in the CSV at `cache_path`.
 
     Returns (full DataFrame, list of gamecodes that still failed).
@@ -57,11 +63,15 @@ def fetch_missing_games(cache_path, gamecodes, fetch_one, gamecode_col='Gamecode
         if gamecode_col not in df.columns:
             df[gamecode_col] = gc
         new_frames.append(df)
+        if len(new_frames) >= flush_every:
+            existing = pd.concat([existing, *new_frames], ignore_index=True)
+            new_frames = []
+            _write_atomic(existing, cache_path)   # survive CI kill mid-backfill
         sleep(delay)
 
     if new_frames:
         existing = pd.concat([existing, *new_frames], ignore_index=True)
-        existing.to_csv(cache_path, index=False)
+        _write_atomic(existing, cache_path)
     if failed:
         print(f"  WARNING: {len(failed)} games failed, will retry next run: {failed}")
     return existing, failed

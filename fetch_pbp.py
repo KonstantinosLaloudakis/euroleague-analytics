@@ -22,4 +22,6 @@ def fetch_and_cache_pbp(season=CURRENT_SEASON):
 
 if __name__ == '__main__':
     df, failed = fetch_and_cache_pbp()
-    sys.exit(1 if df.empty else 0)
+    # exit 1 only if games were played but nothing could be cached
+    n_played = len(played_gamecodes(f'schedule_{CURRENT_SEASON}.json'))
+    sys.exit(1 if (n_played and df.empty) else 0)

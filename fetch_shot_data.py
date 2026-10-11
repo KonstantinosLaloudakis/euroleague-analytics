@@ -43,4 +43,6 @@ if __name__ == '__main__':
     parser.add_argument('--rebuild', action='store_true', help='Discard cache and re-fetch everything')
     args = parser.parse_args()
     df, failed = fetch_and_cache_shot_data(season=args.season)
-    sys.exit(1 if df.empty else 0)
+    # exit 1 only if games were played but nothing could be cached
+    n_played = len(played_gamecodes(f'schedule_{CURRENT_SEASON}.json'))
+    sys.exit(1 if (n_played and df.empty) else 0)

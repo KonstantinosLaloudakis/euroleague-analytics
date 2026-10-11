@@ -66,3 +66,20 @@ def test_exception_then_success(tmp_path):
 def test_nothing_missing_no_write(tmp_path):
     df, failed = fetch_missing_games(str(tmp_path / 'none.csv'), [], lambda gc: None, sleep=lambda s: None)
     assert df.empty and failed == [] and not (tmp_path / 'none.csv').exists()
+
+
+def test_flushes_every_10_games_survives_interrupt(tmp_path):
+    import pytest
+    cache = tmp_path / 'c.csv'
+    n = {'n': 0}
+
+    def fetch_one(gc):
+        n['n'] += 1
+        if n['n'] == 12:
+            raise KeyboardInterrupt()
+        return pd.DataFrame({'Gamecode': [gc]})
+
+    with pytest.raises(KeyboardInterrupt):
+        fetch_missing_games(str(cache), list(range(1, 21)), fetch_one, sleep=lambda s: None)
+    assert sorted(pd.read_csv(cache)['Gamecode']) == list(range(1, 11))
+    assert not (tmp_path / 'c.csv.tmp').exists()
