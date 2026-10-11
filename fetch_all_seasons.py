@@ -1,15 +1,16 @@
 """
-Fetch PBP data for all Euroleague seasons from 2007-08 to 2025-26.
+Fetch PBP data for all Euroleague seasons from 2007-08 to the current season.
 Saves each season as data_cache/pbp_{year}.csv.
 Skips seasons that already exist.
 """
 import os
 import shutil
+from season_config import ALL_SEASONS, CURRENT_SEASON
 from euroleague_api import play_by_play_data
 
-SEASONS = list(range(2007, 2026))  # 2007 through 2025
-CURRENT_SEASON = max(SEASONS)  # in-progress season — always re-fetch so
-                               # play-in / playoff games show up as they happen
+SEASONS = ALL_SEASONS
+# CURRENT_SEASON (from season_config) is the in-progress season — always re-fetch so
+# play-in / playoff games show up as they happen
 CACHE_DIR = 'data_cache'
 
 os.makedirs(CACHE_DIR, exist_ok=True)

@@ -1,8 +1,9 @@
 import json
 import pandas as pd
+from season_config import CURRENT_SEASON
 
 def parse_game_data():
-    with open('mvp_all_game_stats_2025.json', 'r') as f:
+    with open(f'mvp_all_game_stats_{CURRENT_SEASON}.json', 'r') as f:
         games = json.load(f)
     
     player_stats_list = []

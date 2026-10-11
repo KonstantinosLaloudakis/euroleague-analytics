@@ -4,12 +4,12 @@ import sys
 import unicodedata
 import pandas as pd
 from euroleague_api.player_stats import PlayerStats
+from season_config import ALL_SEASONS
 
 OUT_FULL  = os.path.join('docs', 'data', 'current', 'player_career_stats.json')
 OUT_INDEX = os.path.join('docs', 'data', 'current', 'player_index.json')
 
-# Seasons: 2007-08 through 2025-26 (19 seasons) — bump upper bound each new season
-SEASONS = list(range(2007, 2026))
+SEASONS = ALL_SEASONS
 
 
 def season_label(code):
@@ -53,7 +53,7 @@ def fetch_career_stats():
         print("player_career_stats.json exists — use --force to re-fetch")
         return
 
-    print("Fetching per-season player traditional stats (2007-2025)…")
+    print(f"Fetching per-season player traditional stats ({SEASONS[0]}-{SEASONS[-1]})…")
     ps = PlayerStats()
 
     frames = []

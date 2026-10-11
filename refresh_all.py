@@ -16,6 +16,8 @@ import sys
 import time
 import os
 
+from season_config import CURRENT_SEASON, season_label
+
 # Colors for terminal output
 GREEN = '\033[92m'
 YELLOW = '\033[93m'
@@ -23,6 +25,8 @@ RED = '\033[91m'
 CYAN = '\033[96m'
 BOLD = '\033[1m'
 RESET = '\033[0m'
+
+os.environ.setdefault('EUROLEAGUE_SEASON', str(CURRENT_SEASON))  # child scripts agree
 
 PYTHON = os.path.join('.venv', 'Scripts', 'python.exe') if os.name == 'nt' else 'python3'
 
@@ -58,6 +62,7 @@ def main():
     print(f"\n{BOLD}{YELLOW}{'='*60}{RESET}")
     print(f"{BOLD}{YELLOW}  🏀 EUROLEAGUE ANALYTICS - FULL REFRESH PIPELINE{RESET}")
     print(f"{BOLD}{YELLOW}{'='*60}{RESET}")
+    print(f"Season: {season_label()}")
     
     start_time = time.time()
     results = []
@@ -65,6 +70,11 @@ def main():
     # ── PHASE 1: DATA FETCH ──
     if not skip_fetch and not viz_only:
         print(f"\n{BOLD}📡 PHASE 1: Fetching Latest Data{RESET}")
+        results.append(('Fetch Schedule', run_step(
+            'Fetching season schedule (dates + tip-off times)',
+            'fetch_schedule.py',
+            ['--force']
+        )))
         results.append(('Fetch Game Stats', run_step(
             'Fetching game stats from Euroleague API',
             'fetch_mvp_data_v2.py'
@@ -79,10 +89,9 @@ def main():
             'fetch_shot_data.py',
             ['--force']
         )))
-        results.append(('Fetch Schedule', run_step(
-            'Fetching season schedule (dates + tip-off times)',
-            'fetch_schedule.py',
-            ['--force']
+        results.append(('Fetch Lineups', run_step(
+            'Fetching lineups and game metadata',
+            'fetch_lineups.py'
         )))
         results.append(('Fetch Player Career Stats', run_step(
             'Fetching all-season player career stats from Euroleague API',
@@ -92,6 +101,10 @@ def main():
         results.append(('Parse Game Data', run_step(
             'Parsing game results',
             'parse_mvp_data.py'
+        )))
+        results.append(('Clutch Stats', run_step(
+            'Generating clutch stats from play-by-play',
+            'generate_clutch_data.py'
         )))
     else:
         print(f"\n{YELLOW}⏭️  Skipping data fetch{RESET}")
