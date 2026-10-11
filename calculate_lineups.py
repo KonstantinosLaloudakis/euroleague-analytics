@@ -16,7 +16,7 @@ from itertools import combinations
 
 import pandas as pd
 
-from lineup_utils import extract_stints
+from lineup_utils import extract_stints, order_lineup_cols
 
 CACHE_DIR    = "data_cache"
 OUT_FILE     = os.path.join("docs", "data", "current", "lineups.json")
@@ -24,10 +24,22 @@ MIN_POSS_5   = 75
 MIN_POSS_2   = 150
 
 
+def load_home_map(season):
+    """gamecode -> home team code from data_cache/games_{season}.csv ({} if absent)."""
+    path = os.path.join(CACHE_DIR, f"games_{season}.csv")
+    if not os.path.exists(path):
+        return {}
+    gdf = pd.read_csv(path)
+    if 'gamenumber' not in gdf.columns or 'homecode' not in gdf.columns:
+        return {}
+    return dict(zip(gdf['gamenumber'], gdf['homecode']))
+
+
 def process_season(season):
     path = os.path.join(CACHE_DIR, f"pbp_lineups_{season}.csv")
     df = pd.read_csv(path, low_memory=False)
     print(f"  Season {season}: {len(df):,} rows, {df['Gamecode'].nunique()} games")
+    home_map = load_home_map(season)
 
     fiveman = defaultdict(lambda: {'poss': 0.0, 'pts_for': 0.0, 'pts_against': 0.0, 'games': set()})
     pairs   = defaultdict(lambda: {'poss': 0.0, 'pts_for': 0.0, 'pts_against': 0.0, 'games': set()})
@@ -38,7 +50,8 @@ def process_season(season):
         if len(lineup_cols) != 2:
             continue
 
-        col_a, col_b = lineup_cols[0], lineup_cols[1]
+        # POINTS_A (home) team first - CSV column order is not home/away
+        col_a, col_b = order_lineup_cols(game_df, lineup_cols, home_map.get(gc))
         stints = extract_stints(game_df, col_a, col_b)
         gamecode = int(gc)
 

@@ -1,4 +1,6 @@
 import ast
+from collections import Counter
+
 import pandas as pd
 import numpy as np
 
@@ -19,6 +21,54 @@ def parse_lineup(val):
     except Exception:
         pass
     return None
+
+
+def infer_team_a(game_df, teams):
+    """Team whose baskets move POINTS_A (the home side in the Euroleague feed).
+
+    Votes over every scoring event: a basket by team T that raises only
+    POINTS_A means T is side A; one that raises only POINTS_B means the other
+    team is. Returns None if the game has no usable scoring events.
+    """
+    teams = list(teams)
+    if len(teams) != 2 or 'POINTS_A' not in game_df or 'POINTS_B' not in game_df:
+        return None
+    if 'NUMBEROFPLAY' in game_df:
+        game_df = game_df.sort_values('NUMBEROFPLAY')
+    pa = pd.to_numeric(game_df['POINTS_A'], errors='coerce')
+    pb = pd.to_numeric(game_df['POINTS_B'], errors='coerce')
+    votes = Counter()
+    prev_a = prev_b = 0.0
+    for team, a, b in zip(game_df['CODETEAM'], pa, pb):
+        if pd.isna(a) and pd.isna(b):
+            continue
+        a = prev_a if pd.isna(a) else a
+        b = prev_b if pd.isna(b) else b
+        if team in teams:
+            other = teams[1] if team == teams[0] else teams[0]
+            if a > prev_a and b == prev_b:
+                votes[team] += 1
+            elif b > prev_b and a == prev_a:
+                votes[other] += 1
+        prev_a, prev_b = a, b
+    return votes.most_common(1)[0][0] if votes else None
+
+
+def order_lineup_cols(game_df, lineup_cols, home_code=None):
+    """Return (col_a, col_b): the POINTS_A (home) team's lineup column first.
+
+    CSV column order is first-appearance order across the season, not
+    home/away, so it must not be trusted. Uses the known home team when
+    `home_code` names one of the two columns, else infers it from scoring.
+    """
+    by_team = {c.replace('Lineup_', ''): c for c in lineup_cols}
+    if len(by_team) != 2:
+        return tuple(lineup_cols)
+    team_a = home_code if home_code in by_team else infer_team_a(game_df, list(by_team))
+    if team_a is None:
+        return tuple(lineup_cols)
+    team_b = next(t for t in by_team if t != team_a)
+    return by_team[team_a], by_team[team_b]
 
 
 def extract_stints(game_df, lineup_col_a, lineup_col_b):

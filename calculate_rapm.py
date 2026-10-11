@@ -29,7 +29,7 @@ import os
 from scipy.sparse import lil_matrix, csr_matrix
 from sklearn.linear_model import RidgeCV, Ridge
 from season_config import CURRENT_SEASON
-from lineup_utils import parse_lineup, extract_stints, FGA_TYPES, TO_TYPES, FTA_TYPES, OREB_TYPES
+from lineup_utils import parse_lineup, extract_stints, order_lineup_cols, FGA_TYPES, TO_TYPES, FTA_TYPES, OREB_TYPES
 
 SEASON = CURRENT_SEASON
 CACHE_DIR = "data_cache"
@@ -229,8 +229,12 @@ def calculate_rapm():
             skipped += 1
             continue
 
-        ta = lineup_cols[0].replace('Lineup_', '')
-        tb = lineup_cols[1].replace('Lineup_', '')
+        # Column order is first-appearance order, not home/away: put the
+        # POINTS_A (home) team first so pts_a/lineup_a refer to the same side.
+        home_code = home_map.get(gc)
+        col_a, col_b = order_lineup_cols(game_df, lineup_cols, home_code)
+        ta = col_a.replace('Lineup_', '')
+        tb = col_b.replace('Lineup_', '')
         if ta not in EL_TEAMS or tb not in EL_TEAMS:
             skipped += 1
             continue
@@ -242,10 +246,9 @@ def calculate_rapm():
             skipped += 1
             continue
 
-        home_code = home_map.get(gc)
-        stints = extract_stints(game_df, lineup_cols[0], lineup_cols[1])
+        stints = extract_stints(game_df, col_a, col_b)
         for s in stints:
-            s['home_team'] = home_code
+            s['home_team'] = home_code or ta   # side A is the home team
         all_stints.extend(stints)
 
         if gc % 50 == 0:
