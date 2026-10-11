@@ -2,15 +2,17 @@ import json
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 from chart_utils import add_logo
+from chart_utils import ratings_path
 
 def create_playoff_matrix():
     print("Generating Playoff Matrix Visualization...")
     
     import os
     round_suffix = os.environ.get('EUROLEAGUE_ROUND_SUFFIX', '')
-    in_file = f'monte_carlo_results{round_suffix}.json'
-    if not os.path.exists(in_file):
-        in_file = 'monte_carlo_results.json'
+    in_file = ratings_path('monte_carlo_results')
+    if in_file is None:
+        print("No monte_carlo_results for this round yet - skipping playoff matrix.")
+        return
         
     with open(in_file, 'r') as f:
         data = json.load(f)

@@ -49,7 +49,7 @@ Phase 5: Git       → auto-commit round-suffixed files (optional)
 
 **Annual season rollover:**
 1. Bump `CURRENT_SEASON` in `season_config.py`.
-2. Move root `*_R[0-9]*.*` and `oracle_forecast_round_*` files to `archive/{prev}/`.
+2. Move root `*_R[0-9]*.*` and `oracle_forecast_round_*` files to `archive/{prev}/`, plus last season's unsuffixed outputs (`adjusted_ratings.json`, `elo_ratings.json`, `monte_carlo_results.json`, `wpa_ratings.json`, `tpm_ratings.json`, `wir_ratings.json`, `rapm_ratings.json`, `oracle_accuracy_ml.json`, `team_advanced_stats.json`), `player_forecast_*`, `manual_round_*` and `mvp_race_timeline.json`.
 3. Copy `docs/data/current/dashboard.json` to `docs/data/archive/{prev}/dashboard.json`.
 4. Check new teams in `team_aliases.py`, `docs/constants.js`, and the Python color dicts.
 5. Switch the `refresh_data.yml` cron back to Wed–Sat (`'0 1 * * 3,4,5,6'`).
@@ -80,7 +80,7 @@ Static site deployed via GitHub Pages from the `docs/` folder.
 
 ### Team Code Conventions
 
-20 teams in the current season. Team codes (3-letter, e.g. OLY, PAN, BAR) are used everywhere. `TEAM_NAMES` and `TEAM_COLORS` live only in `docs/constants.js` (plus season helpers `dashboardSeason`, `seasonLabel`, `playoffsStarted`, `loadPlayoffDashboard`). Schedule team-name variants map to codes in `team_aliases.py` (`team_code()`); add new variants there when a club renames. Some teams have changed codes across seasons (e.g., Panathinaikos: PAN/PAM).
+20 teams in the current season. Team codes (3-letter, e.g. OLY, PAN, BAR) are used everywhere. `TEAM_NAMES` and `TEAM_COLORS` live only in `docs/constants.js` (plus season helpers `dashboardSeason`, `seasonLabel`, `playoffsStarted`, `loadPlayoffDashboard`). Schedule team-name variants map to codes in `team_aliases.py` (`team_code()`); add new variants there when a club renames. Codes can be counter-intuitive: `PAN` is Panathinaikos, `PAM` is Valencia Basket; teams that leave (e.g., `MCO` Monaco after 2025-26, `BER` ALBA Berlin after 2024-25) only appear in older seasons' data.
 
 ## Key Patterns
 

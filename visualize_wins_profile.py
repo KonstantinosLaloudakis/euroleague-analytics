@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 import numpy as np
 from chart_utils import add_logo
+from chart_utils import ratings_path
 
 
 CODE_TO_FULL_NAME = {
@@ -47,9 +48,10 @@ def create_wins_profile():
     round_suffix = os.environ.get('EUROLEAGUE_ROUND_SUFFIX', '')
     
     # Load Monte Carlo results
-    mc_file = f'monte_carlo_results{round_suffix}.json'
-    if not os.path.exists(mc_file): 
-        mc_file = 'monte_carlo_results.json'
+    mc_file = ratings_path('monte_carlo_results')
+    if mc_file is None:
+        print("No monte_carlo_results for this round yet - skipping wins profile matrix.")
+        return
     with open(mc_file, 'r') as f:
         mc_data = json.load(f)
     

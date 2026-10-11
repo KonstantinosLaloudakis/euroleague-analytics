@@ -11,6 +11,7 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 import numpy as np
 from chart_utils import add_logo
+from chart_utils import ratings_path
 
 
 # Full team name mapping for display
@@ -34,9 +35,10 @@ def create_sos_table():
     
     import os
     round_suffix = os.environ.get('EUROLEAGUE_ROUND_SUFFIX', '')
-    in_file = f'adjusted_ratings{round_suffix}.json'
-    if not os.path.exists(in_file):
-        in_file = 'adjusted_ratings.json'
+    in_file = ratings_path('adjusted_ratings')
+    if in_file is None:
+        print("No adjusted_ratings for this round yet - skipping remaining SOS table.")
+        return
         
     with open(in_file, 'r') as f:
         data = json.load(f)

@@ -121,8 +121,11 @@ def run_oracle(target_round=None):
 
     # 3.2 Load Rolling Elo Ratings
     elo_lookup = {}
-    if os.path.exists('elo_ratings.json'):
-        with open('elo_ratings.json', 'r') as f:
+    elo_file = f'elo_ratings{round_suffix}.json'
+    if not os.path.exists(elo_file):
+        elo_file = 'elo_ratings.json'
+    if os.path.exists(elo_file):
+        with open(elo_file, 'r') as f:
             elo_data = json.load(f)
         for entry in elo_data:
             elo_lookup[entry['Team']] = entry['Elo']

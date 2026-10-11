@@ -10,6 +10,7 @@ import matplotlib.patches as patches
 import matplotlib.colors as mcolors
 import numpy as np
 from chart_utils import add_logo
+from chart_utils import ratings_path
 
 
 CODE_TO_SHORT = {
@@ -32,9 +33,10 @@ def create_seed_heatmap():
     
     import os
     round_suffix = os.environ.get('EUROLEAGUE_ROUND_SUFFIX', '')
-    in_file = f'monte_carlo_results{round_suffix}.json'
-    if not os.path.exists(in_file):
-        in_file = 'monte_carlo_results.json'
+    in_file = ratings_path('monte_carlo_results')
+    if in_file is None:
+        print("No monte_carlo_results for this round yet - skipping seed distribution.")
+        return
     with open(in_file, 'r') as f:
         mc_data = json.load(f)
     
