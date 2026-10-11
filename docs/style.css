@@ -2000,3 +2000,14 @@ footer {
   .series-vs { justify-self: center; }
   .series-hero-top { flex-direction: column; }
 }
+
+/* Archived-season notice on playoff-only pages */
+.season-banner {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    padding: 0.6rem 1rem;
+    margin-bottom: 1rem;
+}

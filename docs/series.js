@@ -1,3 +1,4 @@
+let _dashSeason = 2025;
 const VALID_SLOTS = ['qf1', 'qf2', 'qf3', 'qf4', 'sf1', 'sf2', 'final'];
 
 function getSlotId() {
@@ -28,10 +29,12 @@ async function main() {
   const root = document.getElementById('series-root');
   const slotId = getSlotId();
 
-  let dashboard;
+  let dashboard, banner = '';
   try {
-    const res = await fetch('data/current/dashboard.json');
-    dashboard = await res.json();
+    const r = await loadPlayoffDashboard();
+    dashboard = r.dash;
+    banner = seasonBannerHTML(r);
+    _dashSeason = dashboardSeason(dashboard);
   } catch (err) {
     renderError(root, 'Could not load dashboard data.');
     return;
@@ -40,6 +43,7 @@ async function main() {
   const series = dashboard.series || {};
   if (!slotId) {
     renderIndex(root, series);
+    root.insertAdjacentHTML('afterbegin', banner);
     return;
   }
   if (!VALID_SLOTS.includes(slotId)) {
@@ -54,6 +58,7 @@ async function main() {
   }
 
   renderSeries(root, entry, dashboard);
+  root.insertAdjacentHTML('afterbegin', banner);
 }
 
 function renderSeries(root, entry, dashboard) {
@@ -190,7 +195,7 @@ function renderGameBox(g, entry) {
   if (g.status === 'completed') {
     const winnerCls = g.winner === g.home ? 'home-win' : 'away-win';
     const link = g.gamecode
-      ? `replay.html?season=2025&gamecode=${g.gamecode}`
+      ? `replay.html?season=${_dashSeason}&gamecode=${g.gamecode}`
       : null;
     const inner = `
       <div class="series-game-num">${num}</div>

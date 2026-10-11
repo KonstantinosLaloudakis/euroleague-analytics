@@ -53,7 +53,11 @@ function renderHero(checkpoints) {
 document.addEventListener('DOMContentLoaded', async () => {
   let dashboard;
   try {
-    dashboard = await fetchJSON(DASHBOARD_URL);
+    const r = await loadPlayoffDashboard();
+    dashboard = r.dash;
+    const season = r.archived ? r.archivedSeason : dashboardSeason(dashboard);
+    document.getElementById('chase-title').textContent = `🏆 ${seasonLabel(season)} Championship Chase`;
+    document.getElementById('chase-banner').innerHTML = seasonBannerHTML(r);
   } catch {
     document.getElementById('chase-hero').innerHTML =
       '<p style="color:var(--text-muted);padding:40px;text-align:center">Could not load data.</p>';

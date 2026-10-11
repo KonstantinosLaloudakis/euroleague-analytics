@@ -12,12 +12,6 @@ let _activeMetric = 'gci';
 /* ── Legacy teams shown by default ────────────────────────────────────── */
 const LEGACY_TEAMS = ['OLY', 'BAR', 'MAD', 'PAN', 'TEL', 'IST', 'ULK', 'BAS', 'MIL', 'ZAL'];
 
-/* ── Season label helper: 2007 → "2007-08", 2024 → "2024-25" ─────────── */
-function seasonLabel(year) {
-    const next = (year + 1) % 100;
-    return `${year}-${String(next).padStart(2, '0')}`;
-}
-
 /* ── Boot ──────────────────────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
     Promise.all([
@@ -25,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         fetchJSON('data/current/dashboard.json'),
     ])
         .then(([hist, dashboard]) => {
-            _hist = merge2025(hist, dashboard);
+            _hist = mergeCurrentSeason(hist, dashboard);
             document.getElementById('loading').classList.add('hidden');
             document.getElementById('content').classList.remove('hidden');
             renderHero();
@@ -41,9 +35,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 });
 
-/* ── Merge 2025 data from dashboard.json into historical ──────────────── */
-function merge2025(hist, dashboard) {
-    const gc = dashboard.game_control;
+/* ── Merge live-season data from dashboard.json into historical ──────────────── */
+function mergeCurrentSeason(hist, dashboard) {
+    const yr = dashboardSeason(dashboard);
+    // Historical file may already include the live season (guards double counting)
+    if (hist.league_trends.seasons.includes(yr)) return hist;
+    const gc = dashboard.game_control || {};
+    // No live-season data yet (early season): don't add an all-zero point
+    if (!Object.keys(gc.teams || {}).length) return hist;
     const teamsStandings = dashboard.teams || [];  // array with win_pct
 
     // Build win_pct lookup from standings array
@@ -54,32 +53,32 @@ function merge2025(hist, dashboard) {
         });
     }
 
-    // Append 2025 to league_trends
+    // Append live season to league_trends
     const gcTeams = gc.teams || {};
     const gcArr = Object.values(gcTeams);
-    const avg_drama_2025 = gcArr.length
+    const avg_drama_cur = gcArr.length
         ? gcArr.reduce((s, t) => s + (t.drama_avg || 0), 0) / gcArr.length
         : 0;
-    const comeback_count_2025 = gcArr.reduce((s, t) => s + (t.comeback_count || 0), 0);
+    const comeback_count_cur = gcArr.reduce((s, t) => s + (t.comeback_count || 0), 0);
     const gcis = gcArr.map(t => t.gci || 0).filter(v => v > 0);
-    const avg_gci_spread_2025 = gcis.length > 1
+    const avg_gci_spread_cur = gcis.length > 1
         ? Math.max(...gcis) - Math.min(...gcis)
         : 0;
-    const game_count_2025 = gcArr.length > 0
+    const game_count_cur = gcArr.length > 0
         ? Math.max(...gcArr.map(t => (t.game_log || []).length))
         : 0;
 
-    hist.league_trends.seasons.push(2025);
-    hist.league_trends.avg_drama.push(parseFloat(avg_drama_2025.toFixed(4)));
-    hist.league_trends.comeback_count.push(comeback_count_2025);
-    hist.league_trends.avg_gci_spread.push(parseFloat(avg_gci_spread_2025.toFixed(1)));
-    hist.league_trends.game_count.push(game_count_2025);
+    hist.league_trends.seasons.push(yr);
+    hist.league_trends.avg_drama.push(parseFloat(avg_drama_cur.toFixed(4)));
+    hist.league_trends.comeback_count.push(comeback_count_cur);
+    hist.league_trends.avg_gci_spread.push(parseFloat(avg_gci_spread_cur.toFixed(1)));
+    hist.league_trends.game_count.push(game_count_cur);
 
-    // Append 2025 to each team's trend if they exist in the current season
+    // Append live season to each team's trend if they exist in the current season
     Object.entries(gcTeams).forEach(([code, t]) => {
         const winPct = winPctMap[code] !== undefined ? winPctMap[code] : null;
         if (hist.team_trends[code]) {
-            hist.team_trends[code].seasons.push(2025);
+            hist.team_trends[code].seasons.push(yr);
             hist.team_trends[code].gci.push(parseFloat((t.gci || 0).toFixed(1)));
             hist.team_trends[code].win_pct.push(winPct !== null ? parseFloat(winPct.toFixed(4)) : null);
             hist.team_trends[code].avg_drama.push(parseFloat((t.drama_avg || 0).toFixed(4)));
@@ -89,7 +88,7 @@ function merge2025(hist, dashboard) {
         } else {
             // New team not in historical data
             hist.team_trends[code] = {
-                seasons: [2025],
+                seasons: [yr],
                 gci: [parseFloat((t.gci || 0).toFixed(1))],
                 win_pct: [winPct !== null ? parseFloat(winPct.toFixed(4)) : null],
                 avg_drama: [parseFloat((t.drama_avg || 0).toFixed(4))],
@@ -101,18 +100,18 @@ function merge2025(hist, dashboard) {
     });
 
     // Update total games
-    hist.total_games = (hist.total_games || 0) + game_count_2025;
+    hist.total_games = (hist.total_games || 0) + game_count_cur;
 
-    // Update era: extend Modern Era end to 2025
+    // Update era: extend Modern Era end to the live season
     const modernEra = hist.eras.find(e => e.name === 'Modern Era');
     if (modernEra) {
-        modernEra.end = 2025;
+        modernEra.end = yr;
         modernEra.seasons_included = (modernEra.seasons_included || 5) + 1;
-        modernEra.total_games = (modernEra.total_games || 0) + game_count_2025;
+        modernEra.total_games = (modernEra.total_games || 0) + game_count_cur;
         // Recompute avg drama for modern era
         const modernSeasons = hist.league_trends.seasons
             .map((y, i) => ({ year: y, drama: hist.league_trends.avg_drama[i] }))
-            .filter(s => s.year >= modernEra.start && s.year <= 2025);
+            .filter(s => s.year >= modernEra.start && s.year <= yr);
         if (modernSeasons.length) {
             modernEra.avg_drama = modernSeasons.reduce((s, x) => s + x.drama, 0) / modernSeasons.length;
         }

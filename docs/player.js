@@ -1,6 +1,14 @@
 // player.js
 const DATA_URL = 'data/current/player_career_stats.json';
-const CURRENT_SEASON_CODE = 'E2025';
+let CURRENT_SEASON_CODE = 'E2025';  // overwritten from dashboard.json season
+
+// Season of the live dashboard (pre-2026 dashboards had no field -> 2025).
+async function loadCurrentSeasonCode() {
+    try {
+        const dash = await fetch('data/current/dashboard.json').then(r => r.json());
+        CURRENT_SEASON_CODE = 'E' + (dash.season || 2025);
+    } catch { /* keep default */ }
+}
 
 let careerData = null;
 
@@ -8,6 +16,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const code = new URLSearchParams(window.location.search).get('code');
     if (!code) { await showWelcome(); return; }
 
+    await loadCurrentSeasonCode();
     try {
         careerData = await fetch(DATA_URL).then(r => r.json());
     } catch (e) {
@@ -220,8 +229,14 @@ async function showWelcome() {
         const data = await fetch(DATA_URL).then(r => r.json());
         index = data.index;
         careerData = data;
+        const years = new Set();
+        Object.values(data.players || {}).forEach(p => (p.seasons || []).forEach(s => {
+            const y = parseInt(String(s.season_code).slice(1), 10);
+            if (y) years.add(y);
+        }));
+        const lastYear = years.size ? Math.max(...years) : 2025;
         document.getElementById('player-count').textContent =
-            `${index.length.toLocaleString()} players · 19 seasons · 2007–2025`;
+            `${index.length.toLocaleString()} players · ${years.size} seasons · 2007–${lastYear}`;
     } catch { return; }
 
     const input = document.getElementById('welcome-search');

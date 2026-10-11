@@ -47,6 +47,7 @@ let _realResults = null;  // locked playoff results from backend
 let _serverOdds = null;   // server-computed championship odds (authoritative initial view)
 let _seriesWinProbs = {}; // live series win probs from backend, keyed by slot id (qf1..qf4 etc)
 let _hasUserInteracted = false;  // set true on bracket click — switches MC to live sim
+let _dashSeason = 2025;
 let _currentRound = 0;           // current season round, used to invalidate stale localStorage brackets
 
 // ── Elo win probability (fallback) ──────────────────────────────────────
@@ -189,6 +190,9 @@ async function init() {
         _realResults = data.playoff_results || null;
         _serverOdds = data.championship_odds || null;
         _currentRound = data.round || 0;
+        _dashSeason = dashboardSeason(data);
+        const _ph = document.getElementById('playoffs-heading');
+        if (_ph) _ph.textContent = `${seasonLabel(_dashSeason)} Euroleague Playoffs`;
 
         // Extract per-slot series win probabilities from series hub data.
         // These are computed by the backend accounting for games already played.
@@ -1221,7 +1225,7 @@ function renderPlayoffRecaps(recaps) {
 
         const slotId = _slotIdForRecapRound(r);
         const replayHTML = r.gamecode
-            ? `<a class="recap-replay-link" href="replay.html?season=2025&gamecode=${r.gamecode}" onclick="event.stopPropagation()">▶ Replay</a>`
+            ? `<a class="recap-replay-link" href="replay.html?season=${_dashSeason}&gamecode=${r.gamecode}" onclick="event.stopPropagation()">▶ Replay</a>`
             : '';
         const cardInner = `<div class="recap-card${upsetClass}">
             <div class="recap-team${isHomeWinner ? '' : ' loser'}">

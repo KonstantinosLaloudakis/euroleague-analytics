@@ -28,7 +28,14 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data => {
             _data = data;
             _gc = data.game_control;
-            if (!_gc) throw new Error('game_control key missing from dashboard.json');
+            if (isEmptyData(_gc)) {
+                // Early season: no Game Control data yet — show empty state
+                document.getElementById('loading').classList.add('hidden');
+                const le = document.getElementById('load-error');
+                le.querySelector('p').textContent = 'Game Control data will appear once this season has enough games.';
+                le.classList.remove('hidden');
+                return;
+            }
             document.getElementById('loading').classList.add('hidden');
             document.getElementById('content').classList.remove('hidden');
             renderStorylines();
@@ -118,7 +125,7 @@ function renderGameOfRound() {
     tagsHtml += `<span class="gor-tag" style="background:rgba(78,205,196,0.12);color:#4ecdc4">Crunch: ${g.crunch_home > 0 ? '+' : ''}${g.crunch_home.toFixed(2)}</span>`;
 
     const replayLink = g.gamecode
-        ? `<a href="replay.html?season=2025&game=${g.gamecode}"
+        ? `<a href="replay.html?season=${dashboardSeason(_data)}&game=${g.gamecode}"
               style="display:inline-block;margin-top:0.8rem;padding:0.5rem 1.2rem;background:linear-gradient(135deg,#4ecdc4,#45b7aa);color:#0f1117;border-radius:8px;text-decoration:none;font-weight:700;font-size:0.78rem;transition:opacity 0.2s;"
               onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
               ▶ Watch Full WP Replay</a>`
