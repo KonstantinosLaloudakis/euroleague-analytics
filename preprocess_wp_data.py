@@ -13,6 +13,8 @@ import os
 import math
 import glob
 
+from season_config import CURRENT_SEASON
+
 from wp_model_utils import get_elo_diff
 
 
@@ -452,7 +454,7 @@ def main():
     os.makedirs('docs/data', exist_ok=True)
     seasons_meta = []
 
-    for year in range(2007, 2026):
+    for year in range(2007, CURRENT_SEASON + 1):
         result = process_season(year)
         if result:
             seasons_meta.append(result)
