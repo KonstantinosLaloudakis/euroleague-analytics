@@ -79,12 +79,30 @@ def normalize_games_metadata(df):
     return df
 
 
-def fetch_games_metadata(season=CURRENT_SEASON):
+def fetch_games_metadata(season=CURRENT_SEASON, meta=None, gamecodes=None, sleep=None):
+    """Incrementally cache per-game metadata in data_cache/games_{season}.csv.
+
+    Only played games missing from the cache are requested (one Header call
+    each, with retry/backoff), so a throttled run can only add rows - it never
+    replaces the file with fewer games. API errors leave the cache untouched.
+    """
     path = os.path.join(CACHE_DIR, f'games_{season}.csv')
-    df = GameMetadata().get_game_metadata_single_season(season)
-    df = normalize_games_metadata(df)
+    meta = meta or GameMetadata()
+    if gamecodes is None:
+        gamecodes = played_gamecodes(f'schedule_{season}.json')
+
+    def fetch_one(gc):
+        g = meta.get_game_metadata(season, gc)
+        return normalize_games_metadata(g) if g is not None and not g.empty else g
+
     os.makedirs(CACHE_DIR, exist_ok=True)
-    df.to_csv(path, index=False)
+    kwargs = {} if sleep is None else {'sleep': sleep}
+    try:
+        df, _failed = fetch_missing_games(path, gamecodes, fetch_one, **kwargs)
+    except Exception as e:
+        print(f"  WARNING: game metadata fetch failed ({type(e).__name__}: {e}); "
+              f"keeping existing {path}")
+        df = pd.read_csv(path) if os.path.exists(path) else pd.DataFrame()
     print(f"{path}: {len(df)} games")
     return df
 

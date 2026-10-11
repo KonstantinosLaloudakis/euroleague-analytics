@@ -21,6 +21,34 @@ def played_gamecodes(schedule_path):
     return sorted(codes)
 
 
+def _is_empty(result):
+    if result is None:
+        return True
+    if isinstance(result, pd.DataFrame):
+        return result.empty
+    return len(result) == 0
+
+
+def fetch_with_retry(fetch_one, gc, max_retries=4, sleep=time.sleep):
+    """Call fetch_one(gc), retrying with exponential backoff (4, 8, 16, 32s).
+
+    An exception or an empty result (euroleague_api turns 429s into empty
+    frames) counts as a failure. Returns the first non-empty result, or None
+    if every attempt failed.
+    """
+    for attempt in range(1 + max_retries):
+        try:
+            result = fetch_one(gc)
+        except Exception as e:
+            print(f"    game {gc}: {type(e).__name__}: {e}")
+            result = None
+        if not _is_empty(result):
+            return result
+        if attempt < max_retries:
+            sleep(4 * 2 ** attempt)
+    return None
+
+
 def _write_atomic(df, cache_path):
     tmp = cache_path + '.tmp'
     df.to_csv(tmp, index=False)
@@ -46,18 +74,8 @@ def fetch_missing_games(cache_path, gamecodes, fetch_one, gamecode_col='Gamecode
 
     new_frames, failed = [], []
     for gc in missing:
-        df = None
-        for attempt in range(1 + max_retries):
-            try:
-                df = fetch_one(gc)
-            except Exception as e:
-                print(f"    game {gc}: {type(e).__name__}: {e}")
-                df = None
-            if df is not None and not df.empty:
-                break
-            if attempt < max_retries:
-                sleep(4 * 2 ** attempt)   # 4, 8, 16, 32s
-        if df is None or df.empty:
+        df = fetch_with_retry(fetch_one, gc, max_retries=max_retries, sleep=sleep)
+        if df is None:
             failed.append(gc)
             continue
         if gamecode_col not in df.columns:
