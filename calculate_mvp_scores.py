@@ -2,6 +2,7 @@ import pandas as pd
 import json
 import numpy as np
 import os
+from season_config import CURRENT_SEASON
 
 
 def z_normalize(series, clip=3.0):
@@ -22,9 +23,9 @@ def calculate_mvp_scores():
         df_games = pd.read_json('mvp_parsed_games.json')
         with open('mvp_standings_derived.json', 'r') as f:
             standings = json.load(f)
-        with open('clutch_stats_2025_2025.json', 'r') as f:
+        with open(f'clutch_stats_{CURRENT_SEASON}_{CURRENT_SEASON}.json', 'r') as f:
             clutch_data = json.load(f)
-            df_clutch = pd.DataFrame(clutch_data.get('2025', []))
+            df_clutch = pd.DataFrame(clutch_data.get(str(CURRENT_SEASON), []))
     except Exception as e:
         print(f"Error loading data: {e}")
         return
@@ -146,7 +147,7 @@ def calculate_mvp_scores():
         'MVP_Rank', 'PlayerName', 'TeamCode', 'MVP_Score',
         'AvgPIR', 'AvgGmSc', 'WPA', 'TeamWinPct', 'ClutchPoints', 'ClutchEff', 'Consistency', 'GP'
     ]
-    outfile = f'mvp_rankings_2025{round_suffix}.json'
+    outfile = f'mvp_rankings_{CURRENT_SEASON}{round_suffix}.json'
     merged[final_cols].to_json(outfile, orient='records', indent=4)
     print(f"\nSaved {outfile}")
 

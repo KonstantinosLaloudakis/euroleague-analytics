@@ -10,16 +10,19 @@ def get_seconds_from_time(time_str):
     except (ValueError, AttributeError):
         return 0
 
-def analyze_clutch_stats(start_season=2023, end_season=2024):
-    pbp = play_by_play_data.PlayByPlay()
-    
-    print(f"Fetching play-by-play data for seasons {start_season}-{end_season}...")
-    try:
-        # Use bulk fetch method
-        full_df = pbp.get_game_play_by_play_data_range_seasons(start_season, end_season)
-    except Exception as e:
-        print(f"Error fetching data: {e}")
-        return
+def analyze_clutch_stats(start_season=2023, end_season=2024, full_df=None,
+                         output_path='clutch_stats_multiple_seasons.json'):
+    """Compute clutch stats per season. Pass full_df (play-by-play) to skip the API fetch."""
+    if full_df is None:
+        pbp = play_by_play_data.PlayByPlay()
+
+        print(f"Fetching play-by-play data for seasons {start_season}-{end_season}...")
+        try:
+            # Use bulk fetch method
+            full_df = pbp.get_game_play_by_play_data_range_seasons(start_season, end_season)
+        except Exception as e:
+            print(f"Error fetching data: {e}")
+            return
 
     if full_df.empty:
         print("No data fetched.")
@@ -177,10 +180,10 @@ def analyze_clutch_stats(start_season=2023, end_season=2024):
         results_by_season[season] = season_results
 
     # Save to JSON
-    with open('clutch_stats_multiple_seasons.json', 'w', encoding='utf-8') as f:
+    with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(results_by_season, f, indent=4, ensure_ascii=False)
         
-    print("Saved results to clutch_stats_multiple_seasons.json")
+    print(f"Saved results to {output_path}")
     
     for season, data in results_by_season.items():
         print(f"\nTop 5 Clutch Scorers Season {season}:")

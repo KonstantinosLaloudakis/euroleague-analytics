@@ -14,7 +14,7 @@ def plot_clutch_ts_2025():
             break
             
     if not data_file:
-        print("Data file not found. Please run generate_clutch_data_2025.py first.")
+        print("Data file not found. Please run generate_clutch_data.py first.")
         return
 
     with open(data_file, 'r', encoding='utf-8') as f:
