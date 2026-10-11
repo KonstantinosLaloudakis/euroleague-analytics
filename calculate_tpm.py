@@ -1,5 +1,5 @@
 """
-True Plus-Minus (TPM) Calculator — 2025-26 Season Only
+True Plus-Minus (TPM) Calculator — Current Season Only
 Measures the actual point differential when a player is on the floor,
 normalized per 40 minutes, ignoring traditional box score stats.
 """
@@ -9,8 +9,10 @@ import pandas as pd
 import numpy as np
 import os
 
-def calculate_tpm_2025():
-    with open('mvp_all_game_stats_2025.json', 'r') as f:
+from season_config import CURRENT_SEASON, season_label
+
+def calculate_tpm():
+    with open(f'mvp_all_game_stats_{CURRENT_SEASON}.json', 'r') as f:
         games = json.load(f)
         
     # Load opponent quality adjustments for more advanced TPM later if needed
@@ -90,6 +92,9 @@ def calculate_tpm_2025():
                 
     df = pd.DataFrame(rows)
     print(f"Processed {len(df)} players with >10 GP and >10 MPG")
+    if df.empty:
+        print(f"No players meet the minimum-games threshold yet - skipping TPM.")
+        return
     
     # Sort and rank
     df = df.sort_values('TPM_40', ascending=False).reset_index(drop=True)
@@ -97,7 +102,7 @@ def calculate_tpm_2025():
     
     # === PRINT RESULTS ===
     print(f"\n{'='*75}")
-    print(f"  TRUE PLUS-MINUS (TPM) per 40 mins — Euroleague 2025-26")
+    print(f"  TRUE PLUS-MINUS (TPM) per 40 mins — Euroleague {season_label()}")
     print(f"{'='*75}")
     print(f"  {'Rank':<4} {'Player':<25} {'Team':<5} {'TPM/40':>8} {'Total PM':>8}")
     print(f"  {'-'*65}")
@@ -120,4 +125,4 @@ def calculate_tpm_2025():
 
 
 if __name__ == '__main__':
-    calculate_tpm_2025()
+    calculate_tpm()

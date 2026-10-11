@@ -1,7 +1,7 @@
 """
 Train an ML-based Win Probability model for Euroleague basketball.
 
-Uses 19 seasons of play-by-play data (2007-2025) to learn how margin,
+Uses every completed season's play-by-play data to learn how margin,
 time remaining, team strength, momentum, and game context affect the
 probability that Team A (home) wins.
 

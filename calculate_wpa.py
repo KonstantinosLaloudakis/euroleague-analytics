@@ -1,5 +1,5 @@
 """
-Win Probability Added (WPA) Calculator — 2025-26 Season
+Win Probability Added (WPA) Calculator — Current Season
 Calculates the True Win Probability at every play-by-play event,
 and assigns the delta (change) in WP to the player who made the play.
 
@@ -11,6 +11,7 @@ import pandas as pd
 import numpy as np
 import math
 
+from season_config import CURRENT_SEASON, season_label
 from wp_model_utils import predict_wp, get_elo_diff
 
 
@@ -26,8 +27,8 @@ def get_seconds(time_str):
         return 0
 
 def calculate_action_wpa():
-    print("Loading pbp_2025.csv...")
-    df = pd.read_csv('pbp_2025.csv')
+    print(f"Loading pbp_{CURRENT_SEASON}.csv...")
+    df = pd.read_csv(f'pbp_{CURRENT_SEASON}.csv')
     
     # Sort chronologically
     df = df.sort_values(['Gamecode', 'NUMBEROFPLAY']).reset_index(drop=True)
@@ -54,7 +55,7 @@ def calculate_action_wpa():
     df['SecondsRemaining'] = df.apply(calc_game_seconds, axis=1)
     
     # Load per-game Elo diffs (season = first Season value in file)
-    season = int(df['Season'].iloc[0]) if 'Season' in df.columns else 2025
+    season = int(df['Season'].iloc[0]) if 'Season' in df.columns else CURRENT_SEASON
     elo_diff_map = {gc: get_elo_diff(season, gc) for gc in df['Gamecode'].unique()}
     df['EloDiff'] = df['Gamecode'].map(elo_diff_map).fillna(0.0)
 
@@ -120,7 +121,7 @@ def calculate_action_wpa():
     res_df['WPA_Rank'] = res_df.index + 1
     
     print(f"\n{'='*65}")
-    print(f"  ACTION WIN PROBABILITY ADDED (WPA) — Euroleague 2025-26")
+    print(f"  ACTION WIN PROBABILITY ADDED (WPA) — Euroleague {season_label()}")
     print(f"{'='*65}")
     print(f"  {'Rank':<4} {'Player':<25} {'Team':<5} {'Total WPA':>10}")
     print(f"  {'-'*55}")

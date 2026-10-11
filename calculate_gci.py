@@ -12,8 +12,10 @@ import json
 import os
 import statistics
 
+from season_config import CURRENT_SEASON
 
-SEASON = "2025"
+
+SEASON = str(CURRENT_SEASON)
 WP_DATA_DIR = os.path.join("docs", "data", SEASON)
 GAME_RESULTS_PATH = "mvp_game_results.json"
 
@@ -423,6 +425,10 @@ def main():
             game_metrics[gc] = metrics
             wp_timelines[gc] = extract_wp_curve(timeline)
     print(f"  Computed metrics for {len(game_metrics)} games ({skipped} skipped)")
+
+    if not game_metrics:
+        print(f"  No WP replay data for season {SEASON} in {WP_DATA_DIR} yet - skipping GCI.")
+        return
 
     # Aggregate team profiles
     print("  Aggregating team profiles...")

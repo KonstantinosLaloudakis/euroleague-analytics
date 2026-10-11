@@ -4,6 +4,7 @@ import xml.etree.ElementTree as ET
 import json
 import os
 
+from season_config import CURRENT_SEASON
 from wp_model_utils import predict_wp
 
 
@@ -246,7 +247,7 @@ def run_monte_carlo(num_simulations=10000):
     }
 
     try:
-        tree = ET.parse('official_schedule_2025.xml')
+        tree = ET.parse(f'official_schedule_{CURRENT_SEASON}.xml')
         root = tree.getroot()
         all_items = root.findall('item')
         

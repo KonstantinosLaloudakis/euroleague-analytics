@@ -13,6 +13,8 @@ import json
 import numpy as np
 import os
 
+from season_config import CURRENT_SEASON
+
 
 # --- Elo Parameters (optimized via backtest) ---
 K_FACTOR = 10        # Conservative K for single-season stability
@@ -70,23 +72,9 @@ def compute_elo_ratings():
         print("No played games found.")
         return {}
 
-    # Determine current season: env var > latest pbp_*.csv in data/ > skip warm-start
-    current_season = None
-    _season_env = os.environ.get('EUROLEAGUE_SEASON')
-    if _season_env:
-        current_season = int(_season_env)
-    else:
-        import glob as _glob
-        pbp_files = sorted(_glob.glob('data/pbp_*.csv'))
-        if pbp_files:
-            current_season = max(
-                int(os.path.basename(f).replace('pbp_', '').replace('.csv', ''))
-                for f in pbp_files
-            )
-    if current_season is None:
-        print("[Elo] Could not determine current season — skipping warm-start")
+    current_season = CURRENT_SEASON
 
-    # Warm-start Elo from prior season snapshot (skipped if season unknown)
+    # Warm-start Elo from prior season snapshot
     prior_elos = _load_prior_season_elos(current_season) if current_season else {}
 
     # Initialize Elo ratings — use warm-start values where available

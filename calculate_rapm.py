@@ -1,5 +1,5 @@
 """
-Regularized Adjusted Plus-Minus (RAPM) — Euroleague 2025
+Regularized Adjusted Plus-Minus (RAPM) — Euroleague (current season)
 =========================================================
 Uses Ridge Regression on stint-level data to isolate individual player impact,
 controlling for teammate and opponent quality.
@@ -28,17 +28,12 @@ import json
 import os
 from scipy.sparse import lil_matrix, csr_matrix
 from sklearn.linear_model import RidgeCV, Ridge
+from season_config import CURRENT_SEASON
 from lineup_utils import parse_lineup, extract_stints, FGA_TYPES, TO_TYPES, FTA_TYPES, OREB_TYPES
 
-SEASON = 2025
+SEASON = CURRENT_SEASON
 CACHE_DIR = "data_cache"
 MIN_MINUTES = 200  # Minimum estimated minutes for inclusion in output
-
-# Euroleague 2025 team whitelist
-EL_TEAMS = {
-    'BER', 'IST', 'MCO', 'BAS', 'RED', 'MIL', 'BAR', 'MUN', 'ULK', 'ASV',
-    'TEL', 'OLY', 'PAN', 'PRS', 'PAR', 'MAD', 'VIR', 'ZAL', 'PAM', 'DUB', 'HTA'
-}
 
 BOX_FEATURES = [
     'pts_per_min', 'ast_per_min', 'orb_per_min', 'drb_per_min',
@@ -56,7 +51,7 @@ def load_box_score_features():
     Load per-minute box-score rate stats from game data.
     Returns dict: player_name -> {feature_name: value, ...}
     """
-    stats_file = 'mvp_all_game_stats_2025.json'
+    stats_file = f'mvp_all_game_stats_{SEASON}.json'
     if not os.path.exists(stats_file):
         print(f"  Warning: {stats_file} not found. Prior disabled.")
         return {}
@@ -210,6 +205,10 @@ def calculate_rapm():
     print(f"Loading {cache_file}...")
     df = pd.read_csv(cache_file, low_memory=False)
     print(f"  {len(df):,} rows, {df['Gamecode'].nunique()} games")
+
+    # Team whitelist = teams in the current standings
+    with open('mvp_standings_derived.json', encoding='utf-8') as f:
+        EL_TEAMS = set(json.load(f).keys())
 
     # Load home/away mapping
     games_file = os.path.join(CACHE_DIR, f"games_{SEASON}.csv")

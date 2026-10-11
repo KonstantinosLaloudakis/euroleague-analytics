@@ -13,6 +13,8 @@ import json
 import os
 import statistics
 
+from season_config import COMPLETED_SEASONS
+
 from calculate_gci import (
     compute_game_metrics,
     aggregate_team_profiles,
@@ -23,7 +25,7 @@ from calculate_gci import (
 # Constants
 # ---------------------------------------------------------------------------
 
-SEASONS = list(range(2007, 2025))          # 18 completed seasons: 2007-2024
+SEASONS = COMPLETED_SEASONS
 WP_DATA_ROOT = os.path.join("docs", "data")
 OUTPUT_PATH = os.path.join("docs", "gci_historical.json")
 

@@ -1,5 +1,5 @@
 """
-Weighted Impact Rating (WIR) Calculator — 2025-26 Season Only
+Weighted Impact Rating (WIR) Calculator — Current Season Only
 Replaces Euroleague's flawed PIR metric with an efficiency-adjusted, 
 per-minute normalized impact score. Uses local game-by-game data.
 """
@@ -8,8 +8,10 @@ import json
 import pandas as pd
 import numpy as np
 
-def calculate_wir_2025():
-    with open('mvp_all_game_stats_2025.json', 'r') as f:
+from season_config import CURRENT_SEASON, season_label
+
+def calculate_wir():
+    with open(f'mvp_all_game_stats_{CURRENT_SEASON}.json', 'r') as f:
         games = json.load(f)
         
     player_data = {}
@@ -100,6 +102,9 @@ def calculate_wir_2025():
                 
     df = pd.DataFrame(rows)
     print(f"Processed {len(df)} players with >10 GP and >10 MPG")
+    if df.empty:
+        print(f"No players meet the minimum-games threshold yet - skipping WIR.")
+        return
     
     fg_miss = df['fga'] - df['fgm']
     ft_miss = df['fta'] - df['ftm']
@@ -136,7 +141,7 @@ def calculate_wir_2025():
     
     # === PRINT RESULTS ===
     print(f"\n{'='*90}")
-    print(f"  WEIGHTED IMPACT RATING (WIR) vs PIR per 40 mins — Euroleague 2025-26")
+    print(f"  WEIGHTED IMPACT RATING (WIR) vs PIR per 40 mins — Euroleague {season_label()}")
     print(f"{'='*90}")
     print(f"  {'Rank':<4} {'Player':<20} {'Team':<5} {'WIR/40':>8} {'PIR/40':>8} {'TS%':>6}  {'PIR Rank':>8}  {'Diff':>6}")
     print(f"  {'-'*76}")
@@ -169,4 +174,4 @@ def calculate_wir_2025():
 
 
 if __name__ == '__main__':
-    calculate_wir_2025()
+    calculate_wir()

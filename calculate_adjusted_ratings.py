@@ -1,5 +1,5 @@
 """
-KenPom-Style Adjusted Net Rating Engine for Euroleague 2025.
+KenPom-Style Adjusted Net Rating Engine for Euroleague (current season).
 Calculates Adjusted Offensive, Defensive, and Net Ratings for all teams
 using an iterative convergence algorithm that accounts for Strength of Schedule.
 
@@ -15,6 +15,8 @@ import json
 import os
 import xml.etree.ElementTree as ET
 import numpy as np
+
+from season_config import CURRENT_SEASON
 
 
 # --- Configuration ---
@@ -51,7 +53,7 @@ def load_gamecode_to_round():
     Used so recency decay is applied per round, not per game code (which
     would be ~10× more aggressive given 10 games per round).
     """
-    tree = ET.parse('official_schedule_2025.xml')
+    tree = ET.parse(f'official_schedule_{CURRENT_SEASON}.xml')
     mapping = {}
     for item in tree.getroot().findall('item'):
         gc_el = item.find('gamecode')
@@ -273,7 +275,7 @@ def calculate_remaining_sos(adj_net, teams):
     
     # Parse schedule XML
     try:
-        tree = ET.parse('official_schedule_2025.xml')
+        tree = ET.parse(f'official_schedule_{CURRENT_SEASON}.xml')
         root = tree.getroot()
         all_items = root.findall('item')
     except Exception as e:
