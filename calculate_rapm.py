@@ -199,7 +199,7 @@ def calculate_rapm():
     # ── 1. Load lineup data ──
     cache_file = os.path.join(CACHE_DIR, f"pbp_lineups_{SEASON}.csv")
     if not os.path.exists(cache_file):
-        print(f"Error: {cache_file} not found. Run the_lineup_analyzer.py first.")
+        print(f"{cache_file} not found (no games played yet?) - skipping RAPM.")
         return
 
     print(f"Loading {cache_file}...")

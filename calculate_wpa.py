@@ -10,6 +10,7 @@ to the analytic formula.
 import pandas as pd
 import numpy as np
 import math
+import os
 
 from season_config import CURRENT_SEASON, season_label
 from wp_model_utils import predict_wp, get_elo_diff
@@ -27,8 +28,12 @@ def get_seconds(time_str):
         return 0
 
 def calculate_action_wpa():
-    print(f"Loading pbp_{CURRENT_SEASON}.csv...")
-    df = pd.read_csv(f'pbp_{CURRENT_SEASON}.csv')
+    pbp_path = f'pbp_{CURRENT_SEASON}.csv'
+    if not os.path.exists(pbp_path):
+        print(f"{pbp_path} not found (no games played yet?) - skipping WPA.")
+        return None
+    print(f"Loading {pbp_path}...")
+    df = pd.read_csv(pbp_path)
     
     # Sort chronologically
     df = df.sort_values(['Gamecode', 'NUMBEROFPLAY']).reset_index(drop=True)
@@ -129,7 +134,6 @@ def calculate_action_wpa():
         print(f"  {row['WPA_Rank']:<4} {row['Player']:<25} {row['Team']:<5} {row['Action_WPA']:>9.1f}%")
         
     # Save to JSON
-    import os
     round_suffix = os.environ.get('EUROLEAGUE_ROUND_SUFFIX', '')
     outfile = f'wpa_ratings{round_suffix}.json'
     res_df.to_json(outfile, orient='records', indent=4)
