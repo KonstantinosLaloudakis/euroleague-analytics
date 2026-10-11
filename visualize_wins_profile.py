@@ -19,6 +19,7 @@ CODE_TO_FULL_NAME = {
     'TEL': 'Maccabi Tel Aviv', 'OLY': 'Olympiacos',
     'PAN': 'Panathinaikos', 'PAR': 'Partizan',
     'PRS': 'Paris Basketball', 'MAD': 'Real Madrid',
+    'BES': 'Besiktas',
     'PAM': 'Valencia Basket', 'VIR': 'Virtus Bologna',
     'ZAL': 'Zalgiris Kaunas', 'DUB': 'Dubai Basketball',
     'HTA': 'Hapoel Tel Aviv'

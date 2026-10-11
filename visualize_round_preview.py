@@ -4,6 +4,7 @@ Generates a visual preview of the next upcoming round's matchups,
 with win probabilities, team form, and stakes for each game.
 """
 
+from season_config import CURRENT_SEASON
 import json
 import xml.etree.ElementTree as ET
 import numpy as np
@@ -20,6 +21,7 @@ CODE_TO_FULL = {
     'TEL': 'Maccabi Tel Aviv', 'OLY': 'Olympiacos',
     'PAN': 'Panathinaikos', 'PAR': 'Partizan',
     'PRS': 'Paris Basketball', 'MAD': 'Real Madrid',
+    'BES': 'Besiktas',
     'PAM': 'Valencia Basket', 'VIR': 'Virtus Bologna',
     'ZAL': 'Zalgiris Kaunas', 'DUB': 'Dubai Basketball',
     'HTA': 'Hapoel Tel Aviv'
@@ -39,6 +41,7 @@ NAME_TO_CODE = {
     'PARTIZAN MOZZART BET BELGRADE': 'PAR',
     'PARIS BASKETBALL': 'PRS',
     'REAL MADRID': 'MAD',
+    'BESIKTAS ISTANBUL': 'BES', 'ARMANI OLIMPIA MILAN': 'MIL', 'FENERBAHCE TARFIN ISTANBUL': 'ULK',
     'VALENCIA BASKET': 'PAM',
     'VIRTUS SEGAFREDO BOLOGNA': 'VIR', 'VIRTUS BOLOGNA': 'VIR',
     'ZALGIRIS KAUNAS': 'ZAL',
@@ -49,7 +52,7 @@ NAME_TO_CODE = {
 
 def get_next_round_games():
     """Find the next round's games from the schedule."""
-    tree = ET.parse('official_schedule_2025.xml')
+    tree = ET.parse(f'official_schedule_{CURRENT_SEASON}.xml')
     root = tree.getroot()
     
     # Cross-check played games

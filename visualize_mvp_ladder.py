@@ -1,3 +1,4 @@
+from season_config import CURRENT_SEASON, season_label
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -6,13 +7,17 @@ import os
 def plot_mvp_ladder():
     # Load rankings (respects EUROLEAGUE_ROUND_SUFFIX env var)
     round_suffix = os.environ.get('EUROLEAGUE_ROUND_SUFFIX', '')
-    in_file = f'mvp_rankings_2025{round_suffix}.json'
+    in_file = f'mvp_rankings_{CURRENT_SEASON}{round_suffix}.json'
     if not os.path.exists(in_file):
-        in_file = 'mvp_rankings_2025.json'
+        in_file = f'mvp_rankings_{CURRENT_SEASON}.json'
     try:
         df = pd.read_json(in_file)
     except Exception as e:
         print(f"Error loading rankings: {e}")
+        return
+
+    if df.empty:
+        print(f"No MVP rankings yet for {season_label()} (no players meet the games-played minimum) - skipping ladder.")
         return
 
     # Take Top 10
@@ -64,7 +69,7 @@ def plot_mvp_ladder():
         
     # Add Titles and Labels
     round_label = round_suffix.lstrip('_') if round_suffix else 'Current'
-    plt.title(f'Euroleague 2025-26 MVP Ladder ({round_label})', fontsize=16, fontweight='bold', pad=20)
+    plt.title(f'Euroleague {season_label()} MVP Ladder ({round_label})', fontsize=16, fontweight='bold', pad=20)
     plt.xlabel('MVP Score (PIR 45% · WPA 25% · Team 15% · Clutch 10% · Consistency 5%)', fontsize=10)
     plt.ylabel('Player', fontsize=12)
     
@@ -78,7 +83,7 @@ def plot_mvp_ladder():
     plt.xlim(0, top_10['MVP_Score'].max() * 1.15)
     
     plt.tight_layout()
-    outfile = f'mvp_ladder_2025{round_suffix}.png'
+    outfile = f'mvp_ladder_{CURRENT_SEASON}{round_suffix}.png'
     plt.savefig(outfile, dpi=300)
     print(f"Saved {outfile}")
 

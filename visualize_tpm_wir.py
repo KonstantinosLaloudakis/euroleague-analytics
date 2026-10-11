@@ -1,11 +1,21 @@
+from season_config import season_label
 import pandas as pd
+from chart_utils import ratings_path
 import matplotlib.pyplot as plt
 from adjustText import adjust_text
 
 def create_tpm_wir_chart():
     # Load both datasets
-    tpm_df = pd.read_json('tpm_ratings.json')
-    wir_df = pd.read_json('wir_ratings.json')
+    tpm_path = ratings_path('tpm_ratings')
+    if not tpm_path:
+        print("No tpm_ratings for this round yet - skipping TPM vs WIR chart.")
+        return
+    wir_path = ratings_path('wir_ratings')
+    if not wir_path:
+        print("No wir_ratings for this round yet - skipping TPM vs WIR chart.")
+        return
+    tpm_df = pd.read_json(tpm_path)
+    wir_df = pd.read_json(wir_path)
     
     # Merge on player code
     df = pd.merge(tpm_df, wir_df, on='player.code', suffixes=('_tpm', '_wir'))
@@ -79,7 +89,7 @@ def create_tpm_wir_chart():
                 ensure_inside_axes=False, time_lim=5)
     
     # Formatting
-    ax.set_title("True Plus-Minus (TPM) vs Weighted Impact Rating (WIR)\nEuroleague 2025-26 Season (>15 MPG)", 
+    ax.set_title(f"True Plus-Minus (TPM) vs Weighted Impact Rating (WIR)\nEuroleague {season_label()} Season (>15 MPG)", 
                  fontsize=16, color='#e6edf3', fontweight='bold', pad=20)
     ax.set_xlabel('True Plus-Minus per 40 mins (Team Point Differential)', fontsize=12, color='#8b949e', fontweight='bold')
     ax.set_ylabel('Weighted Impact Rating per 40 (Individual Efficiency)', fontsize=12, color='#8b949e', fontweight='bold')

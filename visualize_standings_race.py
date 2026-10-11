@@ -4,6 +4,7 @@ Creates an animated GIF showing the standings evolve round by round.
 Bar chart races where each frame = one round's cumulative standings.
 """
 
+from season_config import season_label
 import json
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
@@ -21,6 +22,7 @@ CODE_TO_SHORT = {
     'TEL': 'Maccabi', 'OLY': 'Olympiacos',
     'PAN': 'Panathinaikos', 'PAR': 'Partizan',
     'PRS': 'Paris', 'MAD': 'R. Madrid',
+    'BES': 'Besiktas',
     'PAM': 'Valencia', 'VIR': 'Virtus',
     'ZAL': 'Zalgiris', 'DUB': 'Dubai',
     'HTA': 'Hapoel'
@@ -28,6 +30,7 @@ CODE_TO_SHORT = {
 
 TEAM_COLORS = {
     'ULK': '#FFD700', 'OLY': '#CC0000', 'MAD': '#FEBE10',
+    'BES': '#9E9E9E',
     'PAM': '#FF6600', 'MCO': '#CC0000', 'BAR': '#A50044',
     'ZAL': '#006633', 'RED': '#CC0000', 'PAN': '#006633',
     'MIL': '#CE2B37', 'BAS': '#003DA5', 'MUN': '#DD0000',
@@ -89,7 +92,7 @@ def create_standings_race():
         ax.axis('off')
         
         # Title
-        ax.text(0.50, 0.97, "EUROLEAGUE STANDINGS RACE 2025",
+        ax.text(0.50, 0.97, f"EUROLEAGUE STANDINGS RACE {season_label()}",
                 ha='center', va='center', fontsize=22, color='#fbbf24',
                 fontweight='bold')
         ax.text(0.50, 0.94, f"After Round {round_num}",

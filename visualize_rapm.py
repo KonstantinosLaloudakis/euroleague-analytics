@@ -1,10 +1,12 @@
 """
-RAPM Visualizations — Euroleague 2025
+RAPM Visualizations — Euroleague (current season)
 ======================================
 1. O-RAPM vs D-RAPM scatter (offensive vs defensive impact)
 2. RAPM vs TPM comparison (context-adjusted vs raw plus-minus)
 """
 
+from season_config import season_label
+from chart_utils import ratings_path
 import pandas as pd
 import matplotlib.pyplot as plt
 from adjustText import adjust_text
@@ -33,7 +35,11 @@ def clean_name(raw):
 
 def create_orapm_drapm_chart():
     """Quadrant scatter: Offensive RAPM vs Defensive RAPM."""
-    df = pd.read_json('rapm_ratings.json')
+    rapm_path = ratings_path('rapm_ratings')
+    if not rapm_path:
+        print("No rapm_ratings for this round yet - skipping O/D RAPM chart.")
+        return
+    df = pd.read_json(rapm_path)
     df = df[df['est_minutes'] >= 300].copy()
 
     fig, ax = plt.subplots(figsize=(13, 10))
@@ -92,7 +98,7 @@ def create_orapm_drapm_chart():
                 force_text=(2.0, 2.5), force_points=(1.5, 2.0), expand=(2.5, 2.5),
                 ensure_inside_axes=False, time_lim=5)
 
-    ax.set_title("Offensive RAPM vs Defensive RAPM\nEuroleague 2025-26 (min 300 est. minutes)",
+    ax.set_title(f"Offensive RAPM vs Defensive RAPM\nEuroleague {season_label()} (min 300 est. minutes)",
                  fontsize=16, color=TEXT_MAIN, fontweight='bold', pad=20)
     ax.set_xlabel('O-RAPM (Offensive Impact per 100 Possessions)', fontsize=12, color=TEXT_DIM, fontweight='bold')
     ax.set_ylabel('D-RAPM (Defensive Impact per 100 Possessions)', fontsize=12, color=TEXT_DIM, fontweight='bold')
@@ -114,15 +120,12 @@ def create_orapm_drapm_chart():
 
 def create_rapm_vs_tpm_chart():
     """Show how RAPM differs from raw TPM — who gains/loses from context adjustment."""
-    rapm_df = pd.read_json('rapm_ratings.json')
-
-    tpm_file = 'tpm_ratings.json'
-    round_suffix = os.environ.get('EUROLEAGUE_ROUND_SUFFIX', '')
-    if round_suffix and os.path.exists(f'tpm_ratings{round_suffix}.json'):
-        tpm_file = f'tpm_ratings{round_suffix}.json'
-    if not os.path.exists(tpm_file):
-        print(f"Warning: {tpm_file} not found. Skipping RAPM vs TPM chart.")
+    rapm_path = ratings_path('rapm_ratings')
+    tpm_file = ratings_path('tpm_ratings')
+    if not rapm_path or not tpm_file:
+        print("Missing rapm/tpm ratings for this round - skipping RAPM vs TPM chart.")
         return
+    rapm_df = pd.read_json(rapm_path)
 
     tpm_df = pd.read_json(tpm_file)
 

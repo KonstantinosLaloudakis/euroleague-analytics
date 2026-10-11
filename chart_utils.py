@@ -113,3 +113,14 @@ def plot_diverging_bar_chart_with_logos(
     
     # Close the figure to free memory
     plt.close(fig)
+
+
+def ratings_path(base):
+    """Path of this round's ratings file (e.g. 'wpa_ratings' -> 'wpa_ratings_R4.json').
+
+    Returns None if the file does not exist, so callers skip instead of
+    silently charting a previous season's unsuffixed file.
+    """
+    round_suffix = os.environ.get('EUROLEAGUE_ROUND_SUFFIX', '')
+    path = f'{base}{round_suffix}.json'
+    return path if os.path.exists(path) else None

@@ -1,5 +1,5 @@
 """
-Visualize Remaining Strength of Schedule for all Euroleague 2025 teams.
+Visualize Remaining Strength of Schedule for all Euroleague teams (current season).
 Creates a clean table-style visualization with color-coded rows.
 SOS is expressed as average opponent Win% (intuitive percentage format).
 
@@ -22,6 +22,7 @@ CODE_TO_FULL_NAME = {
     'TEL': 'Maccabi Tel Aviv', 'OLY': 'Olympiacos Piraeus',
     'PAN': 'Panathinaikos Athens', 'PAR': 'Partizan Belgrade',
     'PRS': 'Paris Basketball', 'MAD': 'Real Madrid',
+    'BES': 'Besiktas',
     'PAM': 'Valencia Basket', 'VIR': 'Virtus Bologna',
     'ZAL': 'Zalgiris Kaunas', 'DUB': 'Dubai Basketball',
     'HTA': 'Hapoel Tel Aviv'

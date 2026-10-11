@@ -5,6 +5,7 @@ Impact = how much the average league-wide playoff probabilities swing
 if Team A wins vs Team B wins.
 """
 
+from season_config import CURRENT_SEASON
 import json
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
@@ -20,6 +21,7 @@ CODE_TO_SHORT = {
     'TEL': 'Maccabi', 'OLY': 'Olympiacos',
     'PAN': 'Pana', 'PAR': 'Partizan',
     'PRS': 'Paris', 'MAD': 'R. Madrid',
+    'BES': 'Besiktas',
     'PAM': 'Valencia', 'VIR': 'Virtus',
     'ZAL': 'Zalgiris', 'DUB': 'Dubai',
     'HTA': 'Hapoel'
@@ -62,6 +64,7 @@ def calculate_clutch_games():
         'PARTIZAN MOZZART BET BELGRADE': 'PAR',
         'PARIS BASKETBALL': 'PRS',
         'REAL MADRID': 'MAD',
+        'BESIKTAS ISTANBUL': 'BES', 'ARMANI OLIMPIA MILAN': 'MIL', 'FENERBAHCE TARFIN ISTANBUL': 'ULK',
         'VALENCIA BASKET': 'PAM',
         'VIRTUS SEGAFREDO BOLOGNA': 'VIR', 'VIRTUS BOLOGNA': 'VIR',
         'ZALGIRIS KAUNAS': 'ZAL',
@@ -69,7 +72,7 @@ def calculate_clutch_games():
         'HAPOEL IBI TEL AVIV': 'HTA'
     }
     
-    tree = ET.parse('official_schedule_2025.xml')
+    tree = ET.parse(f'official_schedule_{CURRENT_SEASON}.xml')
     root = tree.getroot()
     
     # Cross-check: build set of played game codes from actual results

@@ -5,6 +5,7 @@ color-coded by opponent strength (green=easy, yellow=mid, red=hard).
 Home games marked with filled cells, away games with bordered cells.
 """
 
+from season_config import CURRENT_SEASON
 import json
 import xml.etree.ElementTree as ET
 import matplotlib.pyplot as plt
@@ -21,6 +22,7 @@ CODE_TO_SHORT = {
     'TEL': 'MAC', 'OLY': 'OLY',
     'PAN': 'PAN', 'PAR': 'PAR',
     'PRS': 'PRS', 'MAD': 'MAD',
+    'BES': 'BJK',
     'PAM': 'VAL', 'VIR': 'VIR',
     'ZAL': 'ZAL', 'DUB': 'DUB',
     'HTA': 'HAP'
@@ -34,6 +36,7 @@ CODE_TO_FULL = {
     'TEL': 'Maccabi', 'OLY': 'Olympiacos',
     'PAN': 'Pana', 'PAR': 'Partizan',
     'PRS': 'Paris', 'MAD': 'R. Madrid',
+    'BES': 'Besiktas',
     'PAM': 'Valencia', 'VIR': 'Virtus',
     'ZAL': 'Zalgiris', 'DUB': 'Dubai',
     'HTA': 'Hapoel'
@@ -53,6 +56,7 @@ NAME_TO_CODE = {
     'PARTIZAN MOZZART BET BELGRADE': 'PAR',
     'PARIS BASKETBALL': 'PRS',
     'REAL MADRID': 'MAD',
+    'BESIKTAS ISTANBUL': 'BES', 'ARMANI OLIMPIA MILAN': 'MIL', 'FENERBAHCE TARFIN ISTANBUL': 'ULK',
     'VALENCIA BASKET': 'PAM',
     'VIRTUS SEGAFREDO BOLOGNA': 'VIR', 'VIRTUS BOLOGNA': 'VIR',
     'ZALGIRIS KAUNAS': 'ZAL',
@@ -78,7 +82,7 @@ def create_schedule_grid():
     losses_lookup = {t['Team']: t['Losses'] for t in adj_data}
     
     # Parse schedule XML for remaining games with round info
-    tree = ET.parse('official_schedule_2025.xml')
+    tree = ET.parse(f'official_schedule_{CURRENT_SEASON}.xml')
     root = tree.getroot()
     
     # Cross-check: build set of played game codes from actual results

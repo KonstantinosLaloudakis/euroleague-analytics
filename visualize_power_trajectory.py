@@ -20,6 +20,7 @@ CODE_TO_SHORT = {
     'TEL': 'Maccabi', 'OLY': 'Olympiacos',
     'PAN': 'Panathinaikos', 'PAR': 'Partizan',
     'PRS': 'Paris', 'MAD': 'Real Madrid',
+    'BES': 'Besiktas',
     'PAM': 'Valencia', 'VIR': 'Virtus',
     'ZAL': 'Zalgiris', 'DUB': 'Dubai',
     'HTA': 'Hapoel'
@@ -28,6 +29,7 @@ CODE_TO_SHORT = {
 # Distinct team colors
 TEAM_COLORS = {
     'ULK': '#FFD700', 'OLY': '#CC0000', 'MAD': '#FEBE10',
+    'BES': '#9E9E9E',
     'PAM': '#FF6600', 'MCO': '#CC0000', 'BAR': '#A50044',
     'ZAL': '#006633', 'RED': '#CC0000', 'PAN': '#006633',
     'MIL': '#CE2B37', 'BAS': '#003DA5', 'MUN': '#DD0000',

@@ -1,3 +1,4 @@
+from season_config import CURRENT_SEASON
 import pandas as pd
 import matplotlib.pyplot as plt
 import argparse
@@ -77,6 +78,7 @@ def run_oracle(target_round=None):
         'ZAL': 'Zalgiris', 'DUB': 'Dubai BC', 'IST': 'Anadolu Efes',
         'HTA': 'Hapoel Tel Aviv', 'PAR': 'Partizan', 'RED': 'Crvena Zvezda',
         'TEL': 'Maccabi', 'BAS': 'Baskonia', 'MUN': 'Bayern',
+        'BES': 'Besiktas',
         'VIR': 'Virtus Bologna', 'PAM': 'Valencia', 'ASV': 'ASVEL',
         'PRS': 'Paris Basketball', 'BER': 'ALBA Berlin',
         'MIL': 'EA7 Milan'
@@ -243,6 +245,7 @@ def run_oracle(target_round=None):
         'PARTIZAN MOZZART BET BELGRADE': 'PAR',
         'PARIS BASKETBALL': 'PRS',
         'REAL MADRID': 'MAD',
+        'BESIKTAS ISTANBUL': 'BES', 'ARMANI OLIMPIA MILAN': 'MIL', 'FENERBAHCE TARFIN ISTANBUL': 'ULK',
         'VALENCIA BASKET': 'PAM',
         'VIRTUS SEGAFREDO BOLOGNA': 'VIR', 'VIRTUS BOLOGNA': 'VIR',
         'ZALGIRIS KAUNAS': 'ZAL',
@@ -253,7 +256,7 @@ def run_oracle(target_round=None):
     round_games = pd.DataFrame()
     
     # Strategy 1: Official XML schedule
-    xml_path = 'official_schedule_2025.xml'
+    xml_path = f'official_schedule_{CURRENT_SEASON}.xml'
     if os.path.exists(xml_path):
         try:
             tree = ET.parse(xml_path)
@@ -534,6 +537,7 @@ def run_oracle(target_round=None):
         'ZAL': '#006233', 'DUB': '#000000', 'IST': '#003366',
         'HTA': '#000000', 'PAR': '#000000', 'RED': '#CC0000', 
         'TEL': '#F6C300', 'BAS': '#B50031', 'MUN': '#0066B2',
+        'BES': '#000000',
         'VIR': '#000000', 'PAM': '#EB7622', 'ASV': '#000000',
         'PRS': '#000000' # Paris
     }

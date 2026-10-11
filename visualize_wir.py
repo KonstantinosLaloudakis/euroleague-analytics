@@ -1,10 +1,15 @@
 import pandas as pd
+from chart_utils import ratings_path
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 
 def create_wir_visualization():
     # Load rankings
-    df = pd.read_json('wir_ratings.json')
+    wir_path = ratings_path('wir_ratings')
+    if not wir_path:
+        print("No wir_ratings for this round yet - skipping WIR chart.")
+        return
+    df = pd.read_json(wir_path)
     
     # Visualization
     fig, ax = plt.subplots(figsize=(12, 10))

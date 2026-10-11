@@ -1,9 +1,15 @@
+from season_config import season_label
 import pandas as pd
+from chart_utils import ratings_path
 import matplotlib.pyplot as plt
 import seaborn as sns
 
 def create_wpa_chart():
-    df = pd.read_json('wpa_ratings.json')
+    wpa_path = ratings_path('wpa_ratings')
+    if not wpa_path:
+        print("No wpa_ratings for this round yet - skipping WPA chart.")
+        return
+    df = pd.read_json(wpa_path)
     
     # Convert from percentage points to "Wins Added"
     df['Wins_Added'] = df['Action_WPA'] / 100.0
@@ -32,7 +38,7 @@ def create_wpa_chart():
                 va='center', fontsize=10, color='#e6edf3', fontweight='bold')
                 
     # Formatting
-    ax.set_title("Action Win Probability Added (WPA) Leaders\nEuroleague 2025-26 Season", 
+    ax.set_title(f"Action Win Probability Added (WPA) Leaders\nEuroleague {season_label()} Season", 
                  fontsize=16, color='#e6edf3', fontweight='bold', pad=20)
     ax.set_xlabel('Total Expected Wins Added (via Individual Actions)', fontsize=12, color='#8b949e', fontweight='bold')
     ax.set_ylabel('')

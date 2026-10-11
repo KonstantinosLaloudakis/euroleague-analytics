@@ -20,6 +20,7 @@ CODE_TO_SHORT = {
     'TEL': 'Maccabi', 'OLY': 'Olympiacos',
     'PAN': 'Pana', 'PAR': 'Partizan',
     'PRS': 'Paris', 'MAD': 'Real Madrid',
+    'BES': 'Besiktas',
     'PAM': 'Valencia', 'VIR': 'Virtus',
     'ZAL': 'Zalgiris', 'DUB': 'Dubai',
     'HTA': 'Hapoel'

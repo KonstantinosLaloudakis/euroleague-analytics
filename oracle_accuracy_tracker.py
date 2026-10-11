@@ -14,6 +14,7 @@ Usage:
     python oracle_accuracy_tracker.py --no-backtest  # skip backtest regeneration
 """
 
+from season_config import CURRENT_SEASON
 import json
 import os
 import argparse
@@ -44,6 +45,7 @@ NAME_TO_CODE = {
     'OLYMPIACOS PIRAEUS': 'OLY', 'PANATHINAIKOS AKTOR ATHENS': 'PAN',
     'PARTIZAN MOZZART BET BELGRADE': 'PAR', 'PARIS BASKETBALL': 'PRS',
     'REAL MADRID': 'MAD', 'VALENCIA BASKET': 'PAM',
+    'BESIKTAS ISTANBUL': 'BES', 'ARMANI OLIMPIA MILAN': 'MIL', 'FENERBAHCE TARFIN ISTANBUL': 'ULK',
     'VIRTUS SEGAFREDO BOLOGNA': 'VIR', 'VIRTUS BOLOGNA': 'VIR',
     'ZALGIRIS KAUNAS': 'ZAL', 'DUBAI BASKETBALL': 'DUB', 'HAPOEL IBI TEL AVIV': 'HTA',
 }
@@ -104,8 +106,8 @@ def run_backtest():
 
     # Load XML schedule for round mapping
     round_map = {}  # GameCode int → round number
-    if os.path.exists('official_schedule_2025.xml'):
-        tree = ET.parse('official_schedule_2025.xml')
+    if os.path.exists(f'official_schedule_{CURRENT_SEASON}.xml'):
+        tree = ET.parse(f'official_schedule_{CURRENT_SEASON}.xml')
         for item in tree.getroot().findall('item'):
             gc_el = item.find('gamecode')
             gd_el = item.find('gameday')
