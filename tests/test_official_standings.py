@@ -34,10 +34,10 @@ def test_two_way_tie_uses_head_to_head():
 def test_three_way_tie_mini_table():
     # Round robin among AAA, BBB, CCC where each wins once → mini-table tied 1-1,
     # resolved by H2H point difference: AAA +10-2=+8, BBB -10+10=0, CCC -10+2=-8.
-    sched = _sched([(1, 1, 'AAA', 'BBB'), (2, 2, 'BBB', 'CCC'), (3, 3, 'CCC', 'AAA')])
-    res = _res([(1, 'AAA', 'BBB', 80, 70), (2, 'BBB', 'CCC', 80, 70), (3, 'CCC', 'AAA', 72, 70)])
+    sched = _sched([(1, 1, 'ZZZ', 'MMM'), (2, 2, 'MMM', 'AAA'), (3, 3, 'AAA', 'ZZZ')])
+    res = _res([(1, 'ZZZ', 'MMM', 80, 70), (2, 'MMM', 'AAA', 80, 70), (3, 'AAA', 'ZZZ', 72, 70)])
     order, _ = official_standings(res, sched)
-    assert order == ['AAA', 'BBB', 'CCC']
+    assert order == ['ZZZ', 'MMM', 'AAA']
 
 
 def test_rank_history_is_a_permutation_each_round():
