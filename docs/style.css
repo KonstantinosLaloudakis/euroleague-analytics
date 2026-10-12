@@ -985,8 +985,10 @@ footer {
 }
 
 .cutoff-label {
-    display: block;
-    text-align: right;
+    display: inline-block;
+    position: sticky;
+    left: 0;
+    text-align: left;
     font-size: 0.65rem;
     font-weight: 600;
     letter-spacing: 0.05em;
