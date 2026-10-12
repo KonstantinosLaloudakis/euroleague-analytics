@@ -137,3 +137,14 @@ def test_used_api_flag():
     assert official_standings(res, sched, api)[3] is True
     partial = {'rounds': {'1': _api_round(['CCC', 'BBB', 'AAA'])}}
     assert official_standings(res, sched, partial)[3] is False
+
+
+def test_latest_from_api_false_when_api_is_a_round_behind():
+    sched = _sched(SCHED4)
+    res = _res([(1, 'AAA', 'BBB', 80, 70), (2, 'CCC', 'DDD', 80, 70),
+                (3, 'AAA', 'CCC', 80, 70), (4, 'BBB', 'DDD', 80, 70)])
+    api = {'rounds': {'1': _api_round(['DDD', 'CCC', 'BBB', 'AAA'])}}
+    order, hist, _, latest_from_api = official_standings(res, sched, api)
+    assert latest_from_api is False
+    assert len(hist['AAA']) == 2
+    assert sorted(h[1] for h in hist.values()) == [1, 2, 3, 4]

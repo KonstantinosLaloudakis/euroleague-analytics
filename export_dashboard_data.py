@@ -1555,7 +1555,8 @@ def official_standings(game_results, schedule_rows, api_standings=None):
     applied in-season. A game counts toward round R when its scheduled gameday
     <= R and it has been played.
     Returns (codes in current order, {code: [rank after round 1..R]},
-    {code: [[wins, losses] after round 1..R]}, used_api: bool)."""
+    {code: [[wins, losses] after round 1..R]}, latest_from_api: bool — the latest
+    round's snapshot came from the official API, not the fallback)."""
     from team_aliases import team_code
 
     gc_round, codes = {}, set()
@@ -1619,14 +1620,17 @@ def official_standings(game_results, schedule_rows, api_standings=None):
             history[t].append(snap[t][0])
             records[t].append(snap[t][1])
     order = sorted(codes, key=lambda t: (history[t][-1], t)) if last_round else codes
-    return order, history, records, use_api
+    latest_from_api = (use_api and last_round in api_rounds
+                       and set(codes) <= set(api_rounds[last_round]))
+    return order, history, records, latest_from_api
 
 
 def remaining_games(teams_wl, schedule_rows):
     """Regular-season games left per team = scheduled fixtures minus W-L played,
     so remaining is consistent with the wins used for clinching. teams_wl is
     {code: (wins, losses)}. Returns None when the schedule can't cover every
-    team (callers must then not mark anything clinched / eliminated)."""
+    team or more results than fixtures exist (callers must then not mark
+    anything clinched / eliminated)."""
     from team_aliases import team_code
     total = {}
     for row in schedule_rows or []:
@@ -1637,7 +1641,9 @@ def remaining_games(teams_wl, schedule_rows):
             total[code] = total.get(code, 0) + 1
     if not teams_wl or any(total.get(c, 0) == 0 for c in teams_wl):
         return None
-    return {c: max(0, total[c] - w - l) for c, (w, l) in teams_wl.items()}
+    if any(w + l > total[c] for c, (w, l) in teams_wl.items()):
+        return None
+    return {c: total[c] - w - l for c, (w, l) in teams_wl.items()}
 
 
 def final_status_from_positions(positions, cutoffs=(4, 6, 10)):
@@ -1662,6 +1668,21 @@ def clinch_status(wins, remaining, cutoffs=(4, 6, 10)):
             'eliminated': {str(n): already_above >= n for n in cutoffs},
         }
     return out
+
+
+def season_status(wins, positions, remaining, latest_from_api, cutoffs=(4, 6, 10)):
+    """Clinched / eliminated per team for the odds display.
+    remaining None (data can't be trusted) → nothing decided.
+    Regular season over (all remaining 0) and the latest standings came from
+    the official API → settled from official positions.
+    Otherwise → mathematical clinch / elimination (ties never decide)."""
+    if remaining is None:
+        return {t: {'clinched': {str(n): False for n in cutoffs},
+                    'eliminated': {str(n): False for n in cutoffs}} for t in wins}
+    if (latest_from_api and remaining and all(v == 0 for v in remaining.values())
+            and all(positions.get(t) is not None for t in wins)):
+        return final_status_from_positions(positions, cutoffs)
+    return clinch_status(wins, remaining, cutoffs)
 
 
 def compute_championship_finals_history():
@@ -1923,14 +1944,10 @@ def main():
     remaining = remaining_games({t['team']: (t['wins'], t['losses']) for t in teams},
                                 load_json(f'schedule_{S}.json'))
     if remaining is None:
-        print('  [WARN] Clinch status skipped: schedule does not cover every team')
-        status = {t['team']: {'clinched': {k: False for k in ('4', '6', '10')},
-                              'eliminated': {k: False for k in ('4', '6', '10')}}
-                  for t in teams}
-    elif used_api and all(v == 0 for v in remaining.values())             and all(t['position'] is not None for t in teams):
-        status = final_status_from_positions({t['team']: t['position'] for t in teams})
-    else:
-        status = clinch_status({t['team']: t['wins'] for t in teams}, remaining)
+        print('  [WARN] Clinch status skipped: schedule missing a team or results exceed fixtures')
+    status = season_status({t['team']: t['wins'] for t in teams},
+                           {t['team']: t['position'] for t in teams},
+                           remaining, used_api)
     for t in teams:
         t['clinched'] = status[t['team']]['clinched']
         t['eliminated'] = status[t['team']]['eliminated']

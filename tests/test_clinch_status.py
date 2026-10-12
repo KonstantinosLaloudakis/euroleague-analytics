@@ -81,3 +81,44 @@ def test_final_status_from_positions():
     assert s['T04']['clinched'] == {'4': False, '6': True, '10': True}
     assert s['T04']['eliminated'] == {'4': True, '6': False, '10': False}
     assert s['T19']['eliminated'] == {'4': True, '6': True, '10': True}
+
+
+def test_remaining_none_when_more_results_than_fixtures():
+    rows = _sched_rows([('AAA', 'BBB')])
+    assert remaining_games({'AAA': (1, 1), 'BBB': (0, 1)}, rows) is None
+
+
+from export_dashboard_data import season_status
+
+
+def _flat(s):
+    return [s[t][k][n] for t in s for k in ('clinched', 'eliminated') for n in ('4', '6', '10')]
+
+
+def test_season_status_untrusted_data_decides_nothing():
+    w, _ = _teams(20, list(range(20)), [0] * 20)
+    s = season_status(w, {t: i + 1 for i, t in enumerate(w)}, None, True)
+    assert set(s) == set(w) and not any(_flat(s))
+
+
+def test_season_status_season_over_uses_official_positions():
+    w, r = _teams(20, [10] * 20, [0] * 20)
+    pos = {t: i + 1 for i, t in enumerate(w)}
+    s = season_status(w, pos, r, True)
+    assert s['T00']['clinched']['4'] is True
+    assert s['T03']['clinched']['4'] is True
+    assert s['T10']['eliminated']['10'] is True
+
+
+def test_season_status_season_over_without_api_uses_math_only():
+    w, r = _teams(20, [20, 19, 18, 17, 17] + [5] * 15, [0] * 20)
+    pos = {t: i + 1 for i, t in enumerate(w)}
+    s = season_status(w, pos, r, False)
+    for t in ('T03', 'T04'):
+        assert s[t]['clinched']['4'] is False and s[t]['eliminated']['4'] is False
+
+
+def test_season_status_in_season_uses_math():
+    w, r = _teams(20, [30, 28, 28, 28] + [20] * 16, [2] * 20)
+    pos = {t: i + 1 for i, t in enumerate(w)}
+    assert season_status(w, pos, r, True) == clinch_status(w, r)
