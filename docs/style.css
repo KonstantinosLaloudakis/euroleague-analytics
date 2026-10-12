@@ -718,7 +718,7 @@ footer {
     width: 100%;
 }
 
-/* ── Compact nav: menu button below 1366px ─────────────────── */
+/* ── Compact nav: menu button below 1440px (89.9375em) ─────────────────── */
 .nav-toggle {
     display: none;
     margin-left: auto;
@@ -735,7 +735,7 @@ footer {
 }
 .nav-toggle:focus-visible { outline: 2px solid var(--accent-purple); outline-offset: 2px; }
 
-@media (max-width: 1439px) {
+@media (max-width: 89.9375em) {
     .site-nav { flex-wrap: wrap; overflow: visible; }
     .nav-toggle { display: inline-flex; align-items: center; gap: 0.35rem; }
     .site-nav-brand { margin-right: 0; }
@@ -743,6 +743,8 @@ footer {
     .site-nav > .nav-more { display: none; }
     .site-nav.nav-open {
         max-height: 100vh;
+        max-height: 100dvh;
+        overscroll-behavior: contain;
         overflow-y: auto;
     }
     .site-nav.nav-open > .nav-link,
@@ -987,6 +989,7 @@ footer {
 
 .cutoff-label {
     display: inline-block;
+    vertical-align: top;
     position: sticky;
     left: 0;
     text-align: left;
@@ -1552,6 +1555,7 @@ footer {
 }
 
 @media (max-width: 480px) {
+    .nav-toggle { min-height: 40px; }
     .site-nav {
         padding: 0.5rem 0.75rem;
     }
