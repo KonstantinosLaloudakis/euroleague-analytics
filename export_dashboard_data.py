@@ -1622,6 +1622,22 @@ def official_standings(game_results, schedule_rows, api_standings=None):
     return order, history, records
 
 
+def clinch_status(wins, remaining, cutoffs=(4, 6, 10)):
+    """Which teams have mathematically clinched / been eliminated from each
+    top-N cutoff. Conservative: a possible tie never clinches or eliminates
+    (tiebreakers can't be known in advance)."""
+    out = {}
+    for t in wins:
+        w, max_w = wins[t], wins[t] + remaining.get(t, 0)
+        can_catch = sum(1 for o in wins if o != t and wins[o] + remaining.get(o, 0) >= w)
+        already_above = sum(1 for o in wins if o != t and wins[o] > max_w)
+        out[t] = {
+            'clinched': {str(n): can_catch < n for n in cutoffs},
+            'eliminated': {str(n): already_above >= n for n in cutoffs},
+        }
+    return out
+
+
 def compute_championship_finals_history():
     """
     For each completed season (COMPLETED_SEASONS), load the championship final WP replay JSON
@@ -1876,6 +1892,20 @@ def main():
         t['record_history'] = record_history.get(t['team'], [])
     teams.sort(key=lambda t: (t['position'] is None, t['position'] or 0,
                               -t['wins'], -t['adj_net']))
+
+    # Mathematical clinch / elimination (for honest 100% / 0% display)
+    from team_aliases import team_code
+    rs_remaining = {}
+    for row in load_json(f'schedule_{S}.json') or []:
+        if row.get('round') == 'RS' and str(row.get('played', '')).lower() != 'true':
+            for name_key, code_key in (('hometeam', 'homecode'), ('awayteam', 'awaycode')):
+                code = team_code(row.get(name_key), default=row.get(code_key) or 'UNK')
+                rs_remaining[code] = rs_remaining.get(code, 0) + 1
+    status = clinch_status({t['team']: t['wins'] for t in teams},
+                           {t['team']: rs_remaining.get(t['team'], 0) for t in teams})
+    for t in teams:
+        t['clinched'] = status[t['team']]['clinched']
+        t['eliminated'] = status[t['team']]['eliminated']
 
     # ── Build MVP list (top 15) with component breakdowns ─────────────────────
     mvp_list = []
