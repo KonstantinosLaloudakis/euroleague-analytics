@@ -174,6 +174,41 @@ def _rank_with_h2h(sim_wins, sim_pd, sim_h2h_wins, sim_h2h_pd, num_teams, num_si
     return team_ranks
 
 
+def load_rs_fixtures(items, name_to_code):
+    """Regular-season fixtures from schedule XML <item> elements.
+
+    Returns (fixtures, unmapped_names): fixtures is a list of
+    (gamecode, home_code, away_code, xml_played) for regular-season games only
+    (<round> == 'RS'; if <round> is absent, gamecode <= 380). Play-In / Playoff /
+    Final Four rows are excluded. unmapped_names is the sorted list of team names
+    missing from name_to_code (those games are skipped).
+    """
+    fixtures = []
+    unmapped = set()
+    for item in items:
+        gc_text = item.find('gamecode').text
+        gc = int(gc_text.split('_')[1]) if '_' in gc_text else int(gc_text)
+        round_el = item.find('round')
+        if round_el is not None:
+            if (round_el.text or '').strip().upper() != 'RS':
+                continue
+        elif gc > 380:
+            continue
+        h_name = item.find('hometeam').text
+        a_name = item.find('awayteam').text
+        h = name_to_code.get(h_name, "UNK")
+        a = name_to_code.get(a_name, "UNK")
+        if h == "UNK":
+            unmapped.add(h_name)
+        if a == "UNK":
+            unmapped.add(a_name)
+        played_el = item.find('played')
+        xml_played = played_el is not None and (played_el.text or '').lower() == 'true'
+        if h != "UNK" and a != "UNK":
+            fixtures.append((gc, h, a, xml_played))
+    return fixtures, sorted(unmapped)
+
+
 def run_monte_carlo(num_simulations=10000):
     print("--- 🏀 Euroleague Monte Carlo Playoff Matrix 🏀 ---")
     print(f"Running {num_simulations} simulations of the remaining season...")
@@ -187,16 +222,10 @@ def run_monte_carlo(num_simulations=10000):
     except Exception as e:
         print(f"Error loading schedule: {e}")
         return
-    fixtures = []  # (gamecode, home, away, xml_played)
-    for item in items:
-        gc_text = item.find('gamecode').text
-        gc = int(gc_text.split('_')[1]) if '_' in gc_text else int(gc_text)
-        h = name_to_code.get(item.find('hometeam').text, "UNK")
-        a = name_to_code.get(item.find('awayteam').text, "UNK")
-        played_el = item.find('played')
-        xml_played = played_el is not None and (played_el.text or '').lower() == 'true'
-        if h != "UNK" and a != "UNK":
-            fixtures.append((gc, h, a, xml_played))
+    fixtures, unmapped_names = load_rs_fixtures(items, name_to_code)
+    if unmapped_names:
+        print("Warning: schedule team names not in team_aliases (games skipped): "
+              + ", ".join(unmapped_names))
     team_list = sorted({t for _, h, a, _ in fixtures for t in (h, a)})
     team_to_idx = {t: i for i, t in enumerate(team_list)}
     num_teams = len(team_list)
@@ -204,6 +233,10 @@ def run_monte_carlo(num_simulations=10000):
 
     # 2. Results: regular-season games only (gamecodes that are in the RS schedule)
     game_scores = {}
+    if not os.path.exists('mvp_game_results.json') and any(f[3] for f in fixtures):
+        print("Error: mvp_game_results.json is missing but the schedule has played games; "
+              "refusing to simulate without results.")
+        return
     if os.path.exists('mvp_game_results.json'):
         df = pd.read_json('mvp_game_results.json')
         if len(df):

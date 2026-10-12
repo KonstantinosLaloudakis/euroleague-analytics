@@ -3,10 +3,11 @@ import os
 import sys
 
 import numpy as np
+import xml.etree.ElementTree as ET
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-from simulate_monte_carlo import (HCA_PTS, TAU_STRENGTH, posterior_strength,
-                                  simulate_season)
+from simulate_monte_carlo import (HCA_PTS, TAU_STRENGTH, load_rs_fixtures,
+                                  posterior_strength, simulate_season)
 
 
 def _round_robin(n):
@@ -111,3 +112,43 @@ def test_team_with_no_games_is_simulated():
     ranks, wins = simulate_season(n, played, remaining, np.zeros(n), 500,
                                   np.random.default_rng(7))
     assert wins[:, 2].max() >= 1 and wins[:, 3].max() >= 1
+
+
+def _item(gc, rnd, home, away, played="false"):
+    r = f"<round>{rnd}</round>" if rnd is not None else ""
+    return (f"<item><gamecode>{gc}</gamecode>{r}<hometeam>{home}</hometeam>"
+            f"<awayteam>{away}</awayteam><played>{played}</played></item>")
+
+
+def _items(*xml_items):
+    return ET.fromstring("<root>" + "".join(xml_items) + "</root>").findall('item')
+
+
+def test_load_rs_fixtures_excludes_playoff_games():
+    names = {"Alpha": "ALP", "Beta": "BET", "Gamma": "GAM"}
+    items = _items(
+        _item("E2026_1", "RS", "Alpha", "Beta", "true"),
+        _item("E2026_2", "RS", "Beta", "Gamma"),
+        _item("E2026_301", "PO", "Alpha", "Gamma", "true"),
+        _item("E2026_385", None, "Alpha", "Beta"),
+    )
+    fixtures, unmapped = load_rs_fixtures(items, names)
+    assert fixtures == [(1, "ALP", "BET", True), (2, "BET", "GAM", False)]
+    assert unmapped == []
+
+
+def test_load_rs_fixtures_missing_round_falls_back_to_gamecode():
+    names = {"Alpha": "ALP", "Beta": "BET"}
+    items = _items(_item("E2026_380", None, "Alpha", "Beta"),
+                   _item("E2026_381", None, "Beta", "Alpha"))
+    fixtures, _ = load_rs_fixtures(items, names)
+    assert [f[0] for f in fixtures] == [380]
+
+
+def test_load_rs_fixtures_reports_unmapped_names():
+    names = {"Alpha": "ALP", "Beta": "BET"}
+    items = _items(_item("E2026_1", "RS", "Alpha", "Beta"),
+                   _item("E2026_2", "RS", "Alpha", "Mystery FC"))
+    fixtures, unmapped = load_rs_fixtures(items, names)
+    assert [f[0] for f in fixtures] == [1]
+    assert unmapped == ["Mystery FC"]

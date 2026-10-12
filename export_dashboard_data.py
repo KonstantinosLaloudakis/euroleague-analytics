@@ -1912,7 +1912,7 @@ def main():
                     z += platt_intercept
                 return 1.0 / (1.0 + math.exp(-z))
 
-            # Load game results for HCA data (mirrors simulate_monte_carlo.py)
+            # Load game results for HCA data (legacy oracle formula: 75% adjusted net / 25% Elo margin, blended HCA, ML win probability; independent of the season simulator)
             game_results = load_json('mvp_game_results.json')
             hca_global = 0.0
             home_net_map = {}   # team code → home net rating per game
@@ -1944,7 +1944,7 @@ def main():
                 a_elo, b_elo = team_a['elo'], team_b['elo']
 
                 if venue == 'home':
-                    # A is home — mirror simulate_monte_carlo formula
+                    # A is home — legacy oracle formula (see above), not the season simulator
                     elo_margin = (a_elo - b_elo + 50) / 25
                     margin_raw = (a_adj - b_adj) * 0.75 + elo_margin * 0.25
                     team_hca = home_net_map.get(team_a['team'], 0) - net_map.get(team_a['team'], 0)
