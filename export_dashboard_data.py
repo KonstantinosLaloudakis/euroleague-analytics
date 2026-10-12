@@ -1508,10 +1508,45 @@ def build_tale_of_the_tape(high_team, low_team, teams_by_code,
     return {'rows': rows, 'edges': edges}
 
 
+def championship_final_gamecode(season, pbp_dir='data_cache'):
+    """Gamecode of the season's championship final: the highest Final Four
+    (Phase 'FF') gamecode in the play-by-play. None when the season had no
+    Final Four (2019-20 was cancelled) or its pbp file is missing."""
+    path = os.path.join(pbp_dir, f'pbp_{season}.csv')
+    if not os.path.exists(path):
+        return None
+    pbp = pd.read_csv(path, usecols=['Phase', 'Gamecode'], low_memory=False)
+    ff = pbp.loc[pbp['Phase'] == 'FF', 'Gamecode']
+    return int(ff.max()) if len(ff) else None
+
+
+def game_flow(plays):
+    """(lead_changes, times_tied) for a sequence of (a, b) scores.
+    A lead change is the leader switching sides (the first lead is not a
+    change); a tie counts when the score becomes level after someone led.
+    Consecutive identical scores are one moment."""
+    lead_changes = times_tied = 0
+    leader = 0          # +1 a leads, -1 b leads, 0 nobody has led yet
+    prev = None
+    for a, b in plays:
+        if (a, b) == prev:
+            continue
+        prev = (a, b)
+        if a == b:
+            if leader != 0:
+                times_tied += 1
+            continue
+        side = 1 if a > b else -1
+        if leader != 0 and side != leader:
+            lead_changes += 1
+        leader = side
+    return lead_changes, times_tied
+
+
 def compute_championship_finals_history():
     """
     For each completed season (COMPLETED_SEASONS), load the championship final WP replay JSON
-    (highest gamecode in docs/data/{season}/), compute lead changes / times
+    (the season's highest Final Four gamecode, see championship_final_gamecode), compute lead changes / times
     tied / max deficit, and return a list sorted by lead_changes descending.
     """
     results = []
@@ -1522,14 +1557,10 @@ def compute_championship_finals_history():
         if not os.path.isdir(season_dir):
             continue
 
-        # Championship final = highest gamecode in the season directory
-        gc_files = [
-            f for f in os.listdir(season_dir)
-            if f.endswith('.json') and f[:-5].isdigit()
-        ]
-        if not gc_files:
+        final_gc = championship_final_gamecode(season)
+        if final_gc is None:
+            print(f'  [INFO] championship finals {season}: no Final Four in pbp, skipping')
             continue
-        final_gc = max(int(f[:-5]) for f in gc_files)
 
         path = os.path.join(season_dir, f'{final_gc}.json')
         try:
@@ -1555,20 +1586,7 @@ def compute_championship_finals_history():
         winner = ta if final_a > final_b else tb
 
         # ── Lead changes & times tied ────────────────────────────────────
-        lead_changes = 0
-        times_tied = 0
-        prev_sign = 0  # sign of (a - b) after last non-zero moment
-
-        for a, b in plays:
-            if a == b:
-                if prev_sign != 0:
-                    times_tied += 1
-                # Don't update prev_sign — keep memory of who was last leading
-            else:
-                curr_sign = 1 if a > b else -1
-                if curr_sign != prev_sign:
-                    lead_changes += 1
-                prev_sign = curr_sign
+        lead_changes, times_tied = game_flow(plays)
 
         # ── Max deficit overcome by winner ───────────────────────────────
         max_deficit = 0
