@@ -209,7 +209,11 @@ function _lbToggleShowAll() {
 function renderMvpRace(mvpList, playerStats) {
     if (!mvpList.length) {
         document.getElementById('mvp-podium').innerHTML = mvpPendingHTML(_round);
-        document.getElementById('mvp-race-table').innerHTML = '';
+        const rt = document.getElementById('mvp-race-table');
+        if (rt) {
+            const card = rt.closest('.stat-card');
+            if (card) card.style.display = 'none';
+        }
         return;
     }
     // Enrich mvp entries with full stats from player_stats

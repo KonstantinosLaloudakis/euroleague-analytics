@@ -285,9 +285,12 @@ function buildRadar(pctls, pctlMap, color) {
 function renderRaceChart() {
     const container = document.getElementById('race-chart');
     if (!_raceData.length) {
-        container.innerHTML = _mvpData.length
-            ? '<p style="color:var(--text-muted);text-align:center;padding:2rem">No historical snapshots available.</p>'
-            : mvpPendingHTML(_round);
+        if (_mvpData.length) {
+            container.innerHTML = '<p style="color:var(--text-muted);text-align:center;padding:2rem">No historical snapshots available.</p>';
+        } else {
+            container.style.height = 'auto';
+            container.innerHTML = mvpPendingHTML(_round);
+        }
         return;
     }
 

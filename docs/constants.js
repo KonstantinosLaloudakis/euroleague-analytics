@@ -163,6 +163,10 @@ function seasonBannerHTML(r) {
 // the MVP list is empty and pages show this message instead.
 const MVP_MIN_GP = 5;
 function mvpPendingHTML(round) {
+    if (round >= MVP_MIN_GP) {
+        return `<p class="empty-state" style="color:var(--text-muted);text-align:center;padding:2rem 1rem">` +
+            `MVP rankings are temporarily unavailable — check back after the next update.</p>`;
+    }
     const now = round ? ` We're at Round ${round}.` : '';
     return `<p class="empty-state" style="color:var(--text-muted);text-align:center;padding:2rem 1rem">` +
         `The MVP race opens once players have ${MVP_MIN_GP} games — after Round ${MVP_MIN_GP}.${now}</p>`;
