@@ -361,6 +361,7 @@ function renderRadarChart(a, b) {
             x: 0.5, xanchor: 'center', y: -0.05,
         },
         font: { family: 'Inter, sans-serif' },
+        hoverlabel: { font: { color: '#111111' } },
     };
 
     document.getElementById('h2h-radar').innerHTML = '';

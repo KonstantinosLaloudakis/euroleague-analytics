@@ -327,6 +327,7 @@ function renderComparison() {
             font: { size: 11, color: '#9ca3af' },
             bgcolor: 'transparent',
         },
+        hoverlabel: { font: { color: '#111111' } },
         hovermode: 'closest',
     });
 

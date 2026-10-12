@@ -339,6 +339,7 @@ function renderMVPRace(mvp) {
             tickfont: { size: 12, color: '#f0f0f5' },
         },
         showlegend: false,
+        hoverlabel: { font: { color: '#111111' } },
         hovermode: 'closest',
     };
 
@@ -950,6 +951,7 @@ function renderStandingsTimeline(teams) {
             x: 0.5, xanchor: 'center', y: -0.15,
         },
         font: { family: 'Inter, sans-serif' },
+        hoverlabel: { font: { color: '#111111' } },
         hovermode: 'closest',
     };
 

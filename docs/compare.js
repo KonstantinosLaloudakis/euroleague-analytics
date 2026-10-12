@@ -51,7 +51,8 @@ function updateURL() {
 }
 
 function lastTeamCode(player) {
-  return player.seasons && player.seasons[0] && player.seasons[0].team_code;
+  const raw = player.seasons && player.seasons[0] && player.seasons[0].team_code;
+  return raw ? String(raw).split(';')[0] : raw;
 }
 
 // Raw brand colour: solid fills that carry text (pair with lastTeamOn)
@@ -63,7 +64,7 @@ function lastTeamColor(player) {
 // Readable-on-dark colour for text, accent stripes and small bars
 function lastTeamInk(player) {
   const code = lastTeamCode(player);
-  return (code && typeof TEAM_COLORS !== 'undefined' && TEAM_COLORS[code]) ? teamInk(code) : '#1d4ed8';
+  return teamInk((code || '').split(';')[0]);
 }
 
 // Text colour for use on a solid lastTeamColor background

@@ -32,7 +32,8 @@ def colors():
     if not NODE:
         pytest.skip('node not installed')
     res = subprocess.run([NODE, '-e', SCRIPT, os.path.join(ROOT, 'docs', 'constants.js')],
-                         capture_output=True, text=True, check=True)
+                         capture_output=True, text=True, check=False)
+    assert res.returncode == 0, res.stderr
     return json.loads(res.stdout)
 
 

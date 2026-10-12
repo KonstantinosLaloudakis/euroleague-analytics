@@ -33,7 +33,6 @@ fetchJSON('data/current/dashboard.json')
 function renderSelector(teams) {
     const grid = document.getElementById('team-selector-grid');
     grid.innerHTML = teams.map(t => {
-        const color = getTeamColor(t.team);
         const name  = TEAM_NAMES[t.team]  || t.team;
         return `<div class="team-chip" id="chip-${t.team}"
                     onclick="selectTeam('${t.team}')"

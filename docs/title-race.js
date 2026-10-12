@@ -141,6 +141,7 @@ function renderChart(checkpoints) {
     margin: { t: 16, r: 16, b: 80, l: 60 },
     shapes: [],
     annotations: [],
+    hoverlabel: { font: { color: '#111111' } },
   };
 
   Plotly.newPlot('chase-chart', traces, layout, { displayModeBar: false, responsive: true });

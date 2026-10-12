@@ -143,8 +143,7 @@ function _renderLeaderboard() {
     const sortColIdx = LB_COLS.findIndex(c => c.key === _lbSort.key); // 0-based among stat cols
 
     const bodyRows = displayed.map((p, i) => {
-        const color = getTeamColor(p.team);
-        const badge = `<span class="lb-team-badge" title="${TEAM_NAMES[p.team] || p.team}" style="color:${teamInk(p.team)};border-color:${color}30;background:${color}15">${p.team}</span>`;
+        const badge = `<span class="lb-team-badge" title="${TEAM_NAMES[p.team] || p.team}" style="color:${teamInk(p.team)};border-color:${teamInk(p.team)}30;background:${teamInk(p.team)}15">${p.team}</span>`;
         const statCells = LB_COLS.map((c, ci) => {
             const isActive = ci === sortColIdx;
             const style = isActive ? ' style="background:rgba(59,130,246,0.08);color:var(--text-primary);font-weight:600"' : '';
@@ -230,7 +229,6 @@ function renderMvpRace(mvpList, playerStats) {
     // Podium (top 3)
     const medals = ['🥇','🥈','🥉'];
     const podiumHtml = enriched.slice(0, 3).map((m, i) => {
-        const color   = getTeamColor(m.team);
         const pct     = Math.round((m.mvp_score / maxScore) * 100);
         const avgPir  = m.avg_pir ?? m.avg_pir ?? '—';
         const avgPts  = m.avg_pts ?? '—';
@@ -239,7 +237,7 @@ function renderMvpRace(mvpList, playerStats) {
             <div class="mvp-medal">${medals[i]}</div>
             <div class="mvp-card-name">${m.player}</div>
             <div class="mvp-card-team">
-                <span class="lb-team-badge" title="${TEAM_NAMES[m.team] || m.team}" style="color:${teamInk(m.team)};border-color:${color}30;background:${color}15">${m.team}</span>
+                <span class="lb-team-badge" title="${TEAM_NAMES[m.team] || m.team}" style="color:${teamInk(m.team)};border-color:${teamInk(m.team)}30;background:${teamInk(m.team)}15">${m.team}</span>
                 ${m.gp} GP
             </div>
             <div class="mvp-score-bar-wrap"><div class="mvp-score-bar" style="width:${pct}%"></div></div>
@@ -256,8 +254,7 @@ function renderMvpRace(mvpList, playerStats) {
 
     // Full rankings table
     const tableRows = enriched.map((m, i) => {
-        const color = getTeamColor(m.team);
-        const badge = `<span class="lb-team-badge" title="${TEAM_NAMES[m.team] || m.team}" style="color:${teamInk(m.team)};border-color:${color}30;background:${color}15">${m.team}</span>`;
+        const badge = `<span class="lb-team-badge" title="${TEAM_NAMES[m.team] || m.team}" style="color:${teamInk(m.team)};border-color:${teamInk(m.team)}30;background:${teamInk(m.team)}15">${m.team}</span>`;
         const avgPir  = m.avg_pir ?? '—';
         const avgPts  = m.avg_pts ?? '—';
         const consist = m.consistency ? (m.consistency * 100).toFixed(0) + '%' : '—';
@@ -396,9 +393,8 @@ function _renderRapmTeamSummary(team, rows) {
 
     const fmtV = v => { const s = v > 0 ? '+' : ''; return `<span class="rapm-val ${v > 0.1 ? 'positive' : v < -0.1 ? 'negative' : 'neutral'}">${s}${v.toFixed(2)}</span>`; };
 
-    const color = getTeamColor(team);
     el.innerHTML = `<div class="rapm-team-summary">
-        <div><span class="lb-team-badge" style="color:${teamInk(team)};border-color:${color}30;background:${color}15;font-size:0.85rem">${team}</span> <strong style="color:var(--text-primary)">${TEAM_NAMES[team] || team}</strong></div>
+        <div><span class="lb-team-badge" style="color:${teamInk(team)};border-color:${teamInk(team)}30;background:${teamInk(team)}15;font-size:0.85rem">${team}</span> <strong style="color:var(--text-primary)">${TEAM_NAMES[team] || team}</strong></div>
         <div><span class="rapm-ts-label">Team Avg RAPM</span><br>${fmtV(teamRapm)}</div>
         <div><span class="rapm-ts-label">Offense</span><br>${fmtV(teamOrapm)}</div>
         <div><span class="rapm-ts-label">Defense</span><br>${fmtV(teamDrapm)}</div>
@@ -454,8 +450,7 @@ function _renderRapm() {
     const sortIdx = cols.findIndex(c => c.key === _rapmSort.key);
 
     const bodyHtml = displayed.map((p, i) => {
-        const color = getTeamColor(p.team);
-        const badge = `<span class="lb-team-badge" title="${TEAM_NAMES[p.team] || p.team}" style="color:${teamInk(p.team)};border-color:${color}30;background:${color}15">${p.team}</span>`;
+        const badge = `<span class="lb-team-badge" title="${TEAM_NAMES[p.team] || p.team}" style="color:${teamInk(p.team)};border-color:${teamInk(p.team)}30;background:${teamInk(p.team)}15">${p.team}</span>`;
 
         const cells = cols.map((c, ci) => {
             const f = _fmtRapm(p[c.key]);

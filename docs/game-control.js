@@ -183,6 +183,7 @@ function renderScatter() {
         xaxis: Object.assign({}, PLOTLY_THEME.xaxis, { title: 'GCI Rating' }),
         yaxis: Object.assign({}, PLOTLY_THEME.yaxis, { title: 'Drama Index' }),
         margin: { t: 20, r: 20, b: 50, l: 55 },
+        hoverlabel: { font: { color: '#111111' } },
         annotations: [
             { x: Math.max(...x) * 0.95, y: Math.max(...y) * 0.95, text: 'High Control<br>High Drama', showarrow: false, font: { size: 9, color: '#6b7280' } },
             { x: Math.min(...x) * 1.05 || xMid * 0.5, y: Math.max(...y) * 0.95, text: 'Low Control<br>High Drama', showarrow: false, font: { size: 9, color: '#6b7280' } },

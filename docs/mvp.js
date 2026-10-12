@@ -110,7 +110,6 @@ function renderLadder() {
     // Build rows
     let html = '';
     for (const { m, i } of indexed) {
-        const color = TEAM_COLORS[m.team] || '#555';
         const rankCls = m.rank === 1 ? 'top1' : m.rank <= 3 ? 'top3' : '';
 
         let barHtml = '';
@@ -335,6 +334,7 @@ function renderRaceChart() {
             xanchor: 'center',
             font: { size: 11 },
         },
+        hoverlabel: { font: { color: '#111111' } },
         hovermode: 'closest',
     };
 
