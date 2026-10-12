@@ -55,6 +55,14 @@ def load_json(path):
         return None
 
 
+def regular_season_complete(schedule_rows):
+    """True once every regular-season game in the schedule has been played.
+    Playoff forecasts (championship odds, path to title, series) are only
+    meaningful once the seeds are final."""
+    rs = [r for r in (schedule_rows or []) if r.get('round') == 'RS']
+    return bool(rs) and all(str(r.get('played', '')).lower() == 'true' for r in rs)
+
+
 def load_with_fallback(suffix, base_name, fallback_name=None, strict=False):
     """Try loading base_name+suffix first, fall back to fallback_name or base_name.
 
@@ -3248,6 +3256,7 @@ def main():
     except Exception as e:
         print(f"  [WARN] Could not build schedule index for Series Hub: {e}")
 
+    rs_complete = regular_season_complete(load_json(f'schedule_{S}.json'))
     game_results_raw = load_json('mvp_game_results.json')
     if game_results_raw and len(teams) >= 10:
         seeded = teams[:10]  # Already sorted by wins desc, adj_net desc
@@ -3335,7 +3344,14 @@ def main():
             except Exception:
                 pass
 
-            if playoff_matchup_probs and len(teams) >= 10:
+            if not rs_complete:
+                # Seeds aren't final: no championship odds, path to title or
+                # series yet, and drop any stale mid-season "Pre-Playoff" baseline.
+                championship_odds_history = []
+                print("  Regular season in progress — playoff forecasts skipped "
+                      "(bracket stays a what-if)")
+
+            if rs_complete and playoff_matchup_probs and len(teams) >= 10:
                 seeded = teams[:10]
                 # Always run the MC sim pre-playoff so the Series Hub can show
                 # current per-series win probabilities. Only seed the history
@@ -3380,6 +3396,7 @@ def main():
         'round': round_num,
         'season': CURRENT_SEASON,
         'season_label': season_label(),
+        'regular_season_complete': rs_complete,
         'updated': datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ'),
         'teams': teams,
         'mvp': mvp_list,
