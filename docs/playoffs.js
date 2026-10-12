@@ -193,6 +193,26 @@ async function init() {
         _dashSeason = dashboardSeason(data);
         const _ph = document.getElementById('playoffs-heading');
         if (_ph) _ph.textContent = `${seasonLabel(_dashSeason)} Euroleague Playoffs`;
+        // Before the regular season ends the seeds are just today's table:
+        // label everything as a what-if, not a forecast. Older dashboards
+        // have no flag — treat them as complete.
+        const whatIf = data.regular_season_complete === false && !_realResults;
+        if (whatIf) {
+            if (_ph) _ph.textContent = `${seasonLabel(_dashSeason)} Playoffs — If the Season Ended Today`;
+            const sub = document.getElementById('playoffs-subtitle');
+            if (sub) sub.textContent = 'What-if bracket seeded from the current standings. Click a team to advance, click a winner to undo.';
+            const banner = document.getElementById('whatif-banner');
+            if (banner) {
+                banner.innerHTML = `Regular season in progress (Round ${data.round || '?'}). Seeds below are today's standings, ` +
+                    `not a forecast — for projected finishes see the <a href="index.html">Top 4 / 6 / 10 odds on the Season Hub</a>. ` +
+                    `Championship odds and Path to Title appear once the regular season ends.`;
+                banner.style.display = '';
+            }
+            const mh = document.getElementById('mc-heading');
+            if (mh) mh.textContent = 'What-If Championship Odds (if the season ended today)';
+            const md = document.getElementById('mc-desc');
+            if (md) md.textContent = 'Plays this what-if bracket 10,000 times from the current standings. Not a title forecast — the seeds will change.';
+        }
 
         // Extract per-slot series win probabilities from series hub data.
         // These are computed by the backend accounting for games already played.
