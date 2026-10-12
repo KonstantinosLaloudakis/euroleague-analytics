@@ -118,6 +118,46 @@ const PLOTLY_CONFIG = { displayModeBar: false, responsive: true };
 // ── Team color helper ──────────────────────────────────────────────────
 function getTeamColor(code) { return TEAM_COLORS[code] || '#6b7280'; }
 
+// ── Readable team colours on the dark theme ────────────────────────────
+// teamInk: brand colour lifted toward white just enough for 4.5:1 contrast
+// on --bg-card (the lightest dark surface). Use for text, lines, markers.
+// teamOnColor: text colour for a solid team-colour background (badges).
+const INK_BG = '#1f2029';
+function _rgb(hex) {
+    const n = parseInt(hex.slice(1), 16);
+    return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+}
+function _luminance(hex) {
+    const [r, g, b] = _rgb(hex).map(v => {
+        v /= 255;
+        return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+    });
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+}
+function contrastRatio(a, b) {
+    const [hi, lo] = [_luminance(a), _luminance(b)].sort((x, y) => y - x);
+    return (hi + 0.05) / (lo + 0.05);
+}
+function _towardWhite(hex, t) {
+    return '#' + _rgb(hex)
+        .map(v => Math.round(v + (255 - v) * t).toString(16).padStart(2, '0'))
+        .join('');
+}
+const _inkCache = {};
+function teamInk(code) {
+    if (_inkCache[code]) return _inkCache[code];
+    const base = getTeamColor(code).toLowerCase();
+    let ink = base;
+    for (let t = 0.05; contrastRatio(ink, INK_BG) < 4.5 && t <= 1.0001; t += 0.05) {
+        ink = _towardWhite(base, Math.min(t, 1));
+    }
+    return (_inkCache[code] = ink);
+}
+function teamOnColor(code) {
+    const bg = getTeamColor(code);
+    return contrastRatio('#ffffff', bg) >= contrastRatio('#111111', bg) ? '#ffffff' : '#111111';
+}
+
 // ── Safe fetch with resp.ok check ───────────────────────────────────────
 function fetchJSON(url) {
     return fetch(url).then(r => {
