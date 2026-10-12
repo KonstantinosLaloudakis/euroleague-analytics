@@ -78,8 +78,8 @@ function renderH2H(a, b) {
 
 // ── VS header ─────────────────────────────────────────────────────────────
 function renderHeader(a, b) {
-    const colA = getTeamColor(a.team);
-    const colB = getTeamColor(b.team);
+    const colA = teamInk(a.team);
+    const colB = teamInk(b.team);
     const formDots = team => (team.last5 || []).map(r =>
         `<span class="form-dot ${r === 'W' ? 'form-w' : 'form-l'}">${r}</span>`
     ).join('');
@@ -104,8 +104,8 @@ function renderStatBars(a, b) {
         return sorted.findIndex(t => t.team === team) + 1;
     };
 
-    const colA = getTeamColor(a.team);
-    const colB = getTeamColor(b.team);
+    const colA = teamInk(a.team);
+    const colB = teamInk(b.team);
 
     const stats = [
         { label: 'Win %',            valA: a.win_pct,  valB: b.win_pct,  fmtA: a.win_pct + '%', fmtB: b.win_pct + '%' },
@@ -170,8 +170,8 @@ function renderMatchupHistory(codeA, codeB) {
         return;
     }
 
-    const colA = getTeamColor(codeA);
-    const colB = getTeamColor(codeB);
+    const colA = teamInk(codeA);
+    const colB = teamInk(codeB);
 
     // H2H record
     const winsA = games.filter(g => g.ActualWinner === codeA).length;
@@ -187,13 +187,13 @@ function renderMatchupHistory(codeA, codeB) {
                 <th>Round</th><th>Home</th><th>Away</th><th>Winner</th><th>Oracle</th>
             </tr></thead>
             <tbody>${games.map(g => {
-                const winColor = getTeamColor(g.ActualWinner);
+                const winColor = teamInk(g.ActualWinner);
                 const oracleOk = g.Correct;
                 return `<tr>
                     <td>R${g.Round}</td>
-                    <td style="color:${TEAM_COLORS[g.Home]||'#6b7280'};font-weight:600">${g.Home}</td>
-                    <td style="color:${TEAM_COLORS[g.Away]||'#6b7280'};font-weight:600">${g.Away}</td>
-                    <td><span class="h2h-winner-badge" style="color:${winColor};background:${winColor}18;border:1px solid ${winColor}40">${TEAM_NAMES[g.ActualWinner] || g.ActualWinner}</span></td>
+                    <td style="color:${teamInk(g.Home)};font-weight:600">${g.Home}</td>
+                    <td style="color:${teamInk(g.Away)};font-weight:600">${g.Away}</td>
+                    <td><span class="h2h-winner-badge" style="color:${winColor};background:${winColor}18;border:1px solid ${winColor}99">${TEAM_NAMES[g.ActualWinner] || g.ActualWinner}</span></td>
                     <td><span class="${oracleOk ? 'h2h-oracle-correct' : 'h2h-oracle-wrong'}">${oracleOk ? 'Correct' : 'Wrong'}</span></td>
                 </tr>`;
             }).join('')}</tbody>
@@ -217,7 +217,7 @@ function renderOraclePrediction(codeA, codeB) {
     }
 
     const winnerCode  = match.Winner;
-    const winnerColor = getTeamColor(winnerCode);
+    const winnerColor = teamInk(winnerCode);
     const winnerName  = TEAM_NAMES[winnerCode] || winnerCode;
     const conf        = match.Conf;
     const margin      = Math.abs(match.Margin).toFixed(1);
@@ -237,11 +237,11 @@ function renderOraclePrediction(codeA, codeB) {
                 ${isHome ? 'Home' : 'Away'} win · ${conf}% confidence · ${margin}pt predicted margin
             </div>
             <div style="display:flex;gap:0.5rem;justify-content:center;margin-top:0.6rem">
-                <span style="font-size:0.78rem;color:${TEAM_COLORS[match.Local]||'#6b7280'};font-weight:600">
+                <span style="font-size:0.78rem;color:${teamInk(match.Local)};font-weight:600">
                     ${match.Local} ${homeProb}%
                 </span>
                 <span style="font-size:0.78rem;color:var(--text-muted)">–</span>
-                <span style="font-size:0.78rem;color:${TEAM_COLORS[match.Road]||'#6b7280'};font-weight:600">
+                <span style="font-size:0.78rem;color:${teamInk(match.Road)};font-weight:600">
                     ${match.Road} ${(100 - homeProb).toFixed(1)}%
                 </span>
             </div>
@@ -255,8 +255,8 @@ function renderPlayerComparison(codeA, codeB) {
         .sort((a, b) => b.avg_pir - a.avg_pir)
         .slice(0, 3);
 
-    const colA = getTeamColor(codeA);
-    const colB = getTeamColor(codeB);
+    const colA = teamInk(codeA);
+    const colB = teamInk(codeB);
 
     const renderSide = (players, color, name) => {
         if (!players.length) return `<p style="color:var(--text-muted)">No player data.</p>`;
@@ -310,8 +310,8 @@ function renderRadarChart(a, b) {
         pctRank(b, 'sos', false),
     ];
 
-    const colA = getTeamColor(a.team);
-    const colB = getTeamColor(b.team);
+    const colA = teamInk(a.team);
+    const colB = teamInk(b.team);
 
     const traces = [
         {

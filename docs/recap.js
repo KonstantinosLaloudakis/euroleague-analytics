@@ -115,7 +115,7 @@ function renderRound() {
         <div class="game-card" id="game-${i}" onclick="toggleBoxScore(${i})">
             <div class="game-card-header">
                 <div class="game-card-team">
-                    <div class="game-card-code" style="color:${TEAM_COLORS[g.home] || '#fff'}">${g.home}</div>
+                    <div class="game-card-code" style="color:${teamInk(g.home)}">${g.home}</div>
                     <div class="game-card-name">${g.homeName}</div>
                 </div>
                 <div class="game-card-score">
@@ -124,7 +124,7 @@ function renderRound() {
                     <span class="${homeWon ? 'loser-score' : 'winner-score'}">${g.awayPts}</span>
                 </div>
                 <div class="game-card-team">
-                    <div class="game-card-code" style="color:${TEAM_COLORS[g.away] || '#fff'}">${g.away}</div>
+                    <div class="game-card-code" style="color:${teamInk(g.away)}">${g.away}</div>
                     <div class="game-card-name">${g.awayName}</div>
                 </div>
             </div>
@@ -214,7 +214,7 @@ async function showTab(idx, side) {
     const roster = side === 'home' ? g.homeRoster : g.awayRoster;
     const totals = side === 'home' ? g.homeTotals : g.awayTotals;
     const teamCode = side === 'home' ? g.home : g.away;
-    const color = TEAM_COLORS[teamCode] || '#3b82f6';
+    const color = teamInk(teamCode);
 
     await renderBoxScore(idx, roster, totals, color);
 }

@@ -50,9 +50,26 @@ function updateURL() {
   history.replaceState(null, '', qs ? `?${qs}` : window.location.pathname);
 }
 
+function lastTeamCode(player) {
+  return player.seasons && player.seasons[0] && player.seasons[0].team_code;
+}
+
+// Raw brand colour: solid fills that carry text (pair with lastTeamOn)
 function lastTeamColor(player) {
-  const code = player.seasons && player.seasons[0] && player.seasons[0].team_code;
+  const code = lastTeamCode(player);
   return (code && typeof TEAM_COLORS !== 'undefined' && TEAM_COLORS[code]) || '#1d4ed8';
+}
+
+// Readable-on-dark colour for text, accent stripes and small bars
+function lastTeamInk(player) {
+  const code = lastTeamCode(player);
+  return (code && typeof TEAM_COLORS !== 'undefined' && TEAM_COLORS[code]) ? teamInk(code) : '#1d4ed8';
+}
+
+// Text colour for use on a solid lastTeamColor background
+function lastTeamOn(player) {
+  const code = lastTeamCode(player);
+  return (code && typeof TEAM_COLORS !== 'undefined' && TEAM_COLORS[code]) ? teamOnColor(code) : '#ffffff';
 }
 
 function playerInitials(player) {
@@ -147,6 +164,8 @@ function setupSearch(slot) {
 
 function renderHeroCard(player) {
   const color    = lastTeamColor(player);
+  const ink      = lastTeamInk(player);
+  const onColor  = lastTeamOn(player);
   const initials = playerInitials(player);
   const current  = player.seasons && player.seasons[0];
   const first    = player.seasons && player.seasons[player.seasons.length - 1];
@@ -166,11 +185,11 @@ function renderHeroCard(player) {
   const avatarHtml = player.image
     ? `<img class="compare-avatar" src="${player.image}" alt="${player.name}"
            style="--team-color:${color}"
-           onerror="this.outerHTML='<div class=\\'compare-avatar\\' style=\\'--team-color:${color}\\'>${initials}</div>'">`
-    : `<div class="compare-avatar" style="--team-color:${color}">${initials}</div>`;
+           onerror="this.outerHTML='<div class=\\'compare-avatar\\' style=\\'--team-color:${color};color:${onColor}\\'>${initials}</div>'">`
+    : `<div class="compare-avatar" style="--team-color:${color};color:${onColor}">${initials}</div>`;
 
   return `
-    <div class="compare-hero-card" style="--team-color:${color}">
+    <div class="compare-hero-card" style="--team-color:${ink}">
       ${avatarHtml}
       <div>
         <div class="compare-hero-name">${player.name}</div>
@@ -210,8 +229,8 @@ function renderToT() {
 
   const careerA = _slotA.career || {};
   const careerB = _slotB.career || {};
-  const colorA  = lastTeamColor(_slotA);
-  const colorB  = lastTeamColor(_slotB);
+  const colorA  = lastTeamInk(_slotA);
+  const colorB  = lastTeamInk(_slotB);
 
   const rowsHtml = TOT_STATS.map(({ key, label, pct }) => {
     const vA = careerA[key];
@@ -282,7 +301,7 @@ function buildSeasonTable(player) {
 
   return `
     <div class="compare-table-wrap">
-      <div class="compare-table-header" style="background:${color}">${player.name}</div>
+      <div class="compare-table-header" style="background:${color};color:${lastTeamOn(player)}">${player.name}</div>
       <table class="stat-table">
         <thead>
           <tr>

@@ -46,11 +46,11 @@ function renderTeamGrid() {
         return na.localeCompare(nb);
     });
     grid.innerHTML = codes.map(code => {
-        const color = getTeamColor(code);
+        const color = teamInk(code);
         const name = TEAM_NAMES[code] || code;
         return `<div class="team-chip" id="chip-${code}"
                      onclick="selectTeam('${code}')"
-                     style="border-top:3px solid ${color}40">
+                     style="border-top:3px solid ${color}99">
             <span class="team-chip-name" style="color:${color}">${name}</span>
         </div>`;
     }).join('');
@@ -397,7 +397,7 @@ function showPlayerDetail(playerId) {
     const player = team.players.find(p => p.id === playerId);
     if (!player) return;
 
-    const color = getTeamColor(_selected);
+    const color = teamInk(_selected);
     const teamName = TEAM_NAMES[_selected] || _selected;
 
     document.getElementById('pd-name').textContent = formatPlayerName(player.name);
@@ -468,7 +468,7 @@ const COMBO_COLS = [
     { key: '#',        label: '#',       fmt: (_, i) => i + 1 },
     { key: 'passer',   label: 'Passer',  fmt: v => formatPlayerName(v) },
     { key: 'scorer',   label: 'Scorer',  fmt: v => formatPlayerName(v) },
-    { key: 'team',     label: 'Team',    fmt: v => `<span class="tbl-team-badge" style="background:${(TEAM_COLORS[v]||'#555')}22;color:${TEAM_COLORS[v]||'#999'}">${v}</span>` },
+    { key: 'team',     label: 'Team',    fmt: v => `<span class="tbl-team-badge" style="background:${(TEAM_COLORS[v]||'#555')}22;color:${teamInk(v)}">${v}</span>` },
     { key: 'count',    label: 'AST',     fmt: v => v },
     { key: 'fg2',      label: '2PT',     fmt: v => v },
     { key: 'fg3',      label: '3PT',     fmt: v => v },
@@ -478,7 +478,7 @@ const COMBO_COLS = [
 const PLAYMAKER_COLS = [
     { key: '#',              label: '#',          fmt: (_, i) => i + 1 },
     { key: 'player',         label: 'Player',     fmt: v => formatPlayerName(v) },
-    { key: 'team',           label: 'Team',       fmt: v => `<span class="tbl-team-badge" style="background:${(TEAM_COLORS[v]||'#555')}22;color:${TEAM_COLORS[v]||'#999'}">${v}</span>` },
+    { key: 'team',           label: 'Team',       fmt: v => `<span class="tbl-team-badge" style="background:${(TEAM_COLORS[v]||'#555')}22;color:${teamInk(v)}">${v}</span>` },
     { key: 'ast',            label: 'AST',        fmt: v => v },
     { key: 'per_game',       label: '/Game',      fmt: v => v.toFixed(1) },
     { key: 'unique_targets', label: 'Targets',    fmt: v => v },

@@ -76,7 +76,7 @@ function renderStorylines() {
     }
     wrap.innerHTML = _gc.storylines.map(s => {
         const name = TEAM_NAMES[s.team] || s.team;
-        const color = getTeamColor(s.team);
+        const color = teamInk(s.team);
         const badges = [s.stat_label, s.stat_sub].filter(Boolean).map(b =>
             `<span class="storyline-badge" style="background:${color}22;color:${color}">${b}</span>`
         ).join('');
@@ -98,8 +98,8 @@ function renderGameOfRound() {
         return;
     }
 
-    const homeColor = getTeamColor(g.home);
-    const awayColor = getTeamColor(g.away);
+    const homeColor = teamInk(g.home);
+    const awayColor = teamInk(g.away);
     const homeName = TEAM_NAMES[g.home] || g.home;
     const awayName = TEAM_NAMES[g.away] || g.away;
 
@@ -161,7 +161,7 @@ function renderScatter() {
     const codes = Object.keys(teams);
     const x = codes.map(c => teams[c].gci);
     const y = codes.map(c => teams[c].drama_avg);
-    const colors = codes.map(c => getTeamColor(c));
+    const colors = codes.map(c => teamInk(c));
     const names = codes.map(c => TEAM_NAMES[c] || c);
 
     const trace = {
@@ -228,7 +228,7 @@ function renderLeaderboard() {
     table.querySelector('tbody').innerHTML = codes.map((code, i) => {
         const t = teams[code];
         const name = TEAM_NAMES[code] || code;
-        const color = getTeamColor(code);
+        const color = teamInk(code);
         const sel = code === _selectedTeam ? ' selected' : '';
         const cells = COLS.map(c => `<td>${c.fmt(t[c.key] ?? 0)}</td>`).join('');
         return `<tr class="${sel}" onclick="selectTeam('${code}')">
@@ -259,7 +259,7 @@ function renderTeamGrid() {
     });
     grid.innerHTML = codes.map(code => {
         const name = TEAM_NAMES[code] || code;
-        const color = getTeamColor(code);
+        const color = teamInk(code);
         const sel = code === _selectedTeam ? ' selected' : '';
         return `<div class="team-chip${sel}" id="chip-${code}" onclick="selectTeam('${code}')">
             <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${color};margin-right:4px;vertical-align:middle;"></span>
@@ -301,7 +301,7 @@ function renderTeamDetail(code) {
     if (!t) { wrap.innerHTML = ''; return; }
 
     const name = TEAM_NAMES[code] || code;
-    const color = getTeamColor(code);
+    const color = teamInk(code);
 
     // Radar data: normalize each metric 0-1 across league
     const radarMetrics = [
@@ -328,7 +328,7 @@ function renderTeamDetail(code) {
     const gameLog = (t.game_log || []).slice(-10).reverse();
     const logRows = gameLog.map(g => {
         const opp = TEAM_NAMES[g.opponent] || g.opponent;
-        const oppColor = getTeamColor(g.opponent);
+        const oppColor = teamInk(g.opponent);
         const result = g.is_win ? 'W' : 'L';
         const resultColor = g.is_win ? '#4ecdc4' : '#f87171';
         const prefix = g.is_home ? 'vs' : '@';

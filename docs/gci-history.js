@@ -212,7 +212,7 @@ function initTeamPills() {
         allTeams.forEach(code => {
             const isLegacy = LEGACY_TEAMS.includes(code);
             const isActive = _activePills.has(code);
-            const color = getTeamColor(code);
+            const color = teamInk(code);
             const name = TEAM_NAMES[code] || code;
             const hidden = !isLegacy && !showAllVisible && !isActive ? ' hidden-pill' : '';
 
@@ -282,7 +282,7 @@ function renderComparison() {
         const td = _hist.team_trends[code];
         if (!td) return;
 
-        const color = getTeamColor(code);
+        const color = teamInk(code);
         const name = TEAM_NAMES[code] || code;
 
         let rawVals = td[metricKey] || [];
@@ -386,7 +386,7 @@ function renderSuperlatives() {
                 const d = s.highest_gci;
                 if (!d) return null;
                 const name = TEAM_NAMES[d.team] || d.team;
-                const color = getTeamColor(d.team);
+                const color = teamInk(d.team);
                 return {
                     matchup: `<span style="color:${color}">${name}</span>`,
                     value: `GCI ${d.gci.toFixed(1)}`,
@@ -402,8 +402,8 @@ function renderSuperlatives() {
             buildContent: () => {
                 const d = s.most_dramatic;
                 if (!d) return null;
-                const homeColor = getTeamColor(d.home);
-                const awayColor = getTeamColor(d.away);
+                const homeColor = teamInk(d.home);
+                const awayColor = teamInk(d.away);
                 const homeName = TEAM_NAMES[d.home] || d.home;
                 const awayName = TEAM_NAMES[d.away] || d.away;
                 return {
@@ -421,8 +421,8 @@ function renderSuperlatives() {
             buildContent: () => {
                 const d = s.biggest_comeback;
                 if (!d) return null;
-                const homeColor = getTeamColor(d.home);
-                const awayColor = getTeamColor(d.away);
+                const homeColor = teamInk(d.home);
+                const awayColor = teamInk(d.away);
                 const homeName = TEAM_NAMES[d.home] || d.home;
                 const awayName = TEAM_NAMES[d.away] || d.away;
                 const winnerName = TEAM_NAMES[d.winner] || d.winner;
@@ -444,8 +444,8 @@ function renderSuperlatives() {
             buildContent: () => {
                 const d = s.most_dominant;
                 if (!d) return null;
-                const homeColor = getTeamColor(d.home);
-                const awayColor = getTeamColor(d.away);
+                const homeColor = teamInk(d.home);
+                const awayColor = teamInk(d.away);
                 const homeName = TEAM_NAMES[d.home] || d.home;
                 const awayName = TEAM_NAMES[d.away] || d.away;
                 return {

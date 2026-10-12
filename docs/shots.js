@@ -468,7 +468,7 @@ function renderPaintPlayers() {
     if (!_paintData || !_paintData.players) { tbody.innerHTML = ''; return; }
 
     const rows = _paintData.players.map((p, i) => {
-        const color = TEAM_COLORS[p.team] || '#555';
+        const color = teamInk(p.team);
         return `<tr class="paint-row" onclick="selectPaintPlayer(${i})">
             <td class="zone-name-cell">${p.player}</td>
             <td><span style="color:${color};font-weight:600">${p.team}</span></td>
@@ -494,7 +494,7 @@ function renderPaintTeams() {
 
     const rows = entries.map(([code, p]) => {
         const name = TEAM_NAMES[code] || code;
-        const color = TEAM_COLORS[code] || '#555';
+        const color = teamInk(code);
         return `<tr>
             <td class="zone-name-cell"><span style="color:${color};font-weight:700">${name}</span></td>
             <td>${p.att}</td>
@@ -518,7 +518,7 @@ function renderPaintDefense() {
 
     const rows = entries.map(([code, p]) => {
         const name = TEAM_NAMES[code] || code;
-        const color = TEAM_COLORS[code] || '#555';
+        const color = teamInk(code);
         return `<tr>
             <td class="zone-name-cell"><span style="color:${color};font-weight:700">${name}</span></td>
             <td>${p.att}</td>
@@ -541,7 +541,7 @@ function selectPaintPlayer(idx) {
     }
     _paintSelectedPlayer = idx;
     const p = _paintData.players[idx];
-    const color = TEAM_COLORS[p.team] || '#555';
+    const color = teamInk(p.team);
     const league = _paintData.league;
 
     // L vs R efficiency delta
