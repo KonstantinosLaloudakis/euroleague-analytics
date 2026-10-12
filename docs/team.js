@@ -37,7 +37,7 @@ function renderSelector(teams) {
         const name  = TEAM_NAMES[t.team]  || t.team;
         return `<div class="team-chip" id="chip-${t.team}"
                     onclick="selectTeam('${t.team}')"
-                    style="border-top: 3px solid ${color}40">
+                    style="border-top: 3px solid ${teamInk(t.team)}99">
             <span class="team-chip-code" style="color:${teamInk(t.team)}">${name}</span>
             <span class="team-chip-record">${t.wins}–${t.losses}</span>
         </div>`;
@@ -77,7 +77,7 @@ function renderDeepDive(team) {
     const formDots = (team.last5 || []).map(r =>
         `<span class="form-dot ${r === 'W' ? 'form-w' : 'form-l'}">${r}</span>`
     ).join('');
-    document.getElementById('dd-color-bar').style.background = color;
+    document.getElementById('dd-color-bar').style.background = teamInk(team.team);
     document.getElementById('dd-name').textContent    = TEAM_NAMES[team.team] || team.team;
     document.getElementById('dd-name').style.color    = teamInk(team.team);
     document.getElementById('dd-record').innerHTML    = `${team.wins}W – ${team.losses}L &nbsp;${formDots}`;

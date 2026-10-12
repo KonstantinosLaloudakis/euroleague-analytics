@@ -549,7 +549,7 @@ function renderOracleCards(oracle) {
         }
         const timeStr = p.Time ? p.Time.substring(0, 5) : '';
 
-        html += `<div class="oracle-card" style="border-top:2px solid ${isHomeWinner ? homeColor : awayColor}22">
+        html += `<div class="oracle-card" style="border-top:2px solid ${teamInk(isHomeWinner ? p.Local : p.Road)}99">
             ${dateStr ? `<div class="oracle-game-date">${dateStr}${timeStr ? ' · ' + timeStr : ''}</div>` : ''}
             <div class="oracle-matchup">
                 <div class="oracle-team home-team${homeGlow}">

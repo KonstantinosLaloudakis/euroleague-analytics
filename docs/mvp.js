@@ -123,7 +123,7 @@ function renderLadder() {
         html += `<tr onclick="selectPlayer(${i})" class="${_selectedIdx === i ? 'selected' : ''}">
             <td class="mvp-rank-cell ${rankCls}">${m.rank}</td>
             <td class="mvp-player-cell">${formatName(m.player)}</td>
-            <td><span class="mvp-team-badge" style="background:${color}"></span>${m.team}</td>
+            <td><span class="mvp-team-badge" style="background:${teamInk(m.team)}"></span>${m.team}</td>
             <td class="num mvp-score-cell">${m.mvp_score.toFixed(1)}</td>
             <td><div class="mvp-bar-wrap"><div class="mvp-bar-track">${barHtml}</div></div></td>
             <td class="num">${m.avg_pir.toFixed(1)}</td>
