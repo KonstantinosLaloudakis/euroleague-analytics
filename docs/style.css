@@ -689,7 +689,12 @@ footer {
 }
 
 .nav-more-btn {
-    cursor: default;
+    background: none;
+    border: none;
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
     user-select: none;
 }
 
@@ -709,7 +714,7 @@ footer {
 }
 
 .nav-more:hover .nav-more-dropdown,
-.nav-more:focus-within .nav-more-dropdown {
+.nav-more.open .nav-more-dropdown {
     display: flex;
 }
 

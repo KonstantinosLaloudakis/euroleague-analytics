@@ -93,8 +93,8 @@
         <a href="shots.html" class="nav-link">Shot Lab</a>
         <a href="playoffs.html" class="nav-link">Playoffs</a>
         <a href="mvp.html" class="nav-link">MVP Race</a>
-        <div class="nav-more">
-            <span class="nav-link nav-more-btn active">More ▾</span>
+        <div class="nav-more" onkeydown="if(event.key==='Escape'&&this.classList.contains('open')){this.classList.remove('open');const b=this.querySelector('.nav-more-btn');b.setAttribute('aria-expanded','false');b.focus();}" onfocusout="if(!this.contains(event.relatedTarget)){this.classList.remove('open');this.querySelector('.nav-more-btn').setAttribute('aria-expanded','false');}">
+            <button type="button" class="nav-link nav-more-btn active" aria-haspopup="true" aria-expanded="false" onclick="const m=this.parentElement;const o=m.classList.toggle('open');this.setAttribute('aria-expanded',o)">More <span aria-hidden="true">▾</span></button>
             <div class="nav-more-dropdown">
                 <a href="network.html" class="nav-link">Playmaking</a>
                 <a href="replay.html" class="nav-link">Game Replay</a>
