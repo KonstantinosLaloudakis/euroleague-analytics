@@ -23,6 +23,13 @@ mvp_race_images/
 /pbp_2025.csv
 /mvp_all_game_stats_2025.json
 
+# Current-season fetch caches — CI persists these via actions/cache
+# (already-tracked historical copies are unaffected)
+/pbp_[0-9][0-9][0-9][0-9].csv
+/shot_data_*_*.csv
+data/shot_data_*_*.csv
+data_cache/pbp_lineups_*.csv
+
 # Tooling state (Claude Code, Playwright MCP, superpowers)
 .claude/
 .playwright-mcp/
