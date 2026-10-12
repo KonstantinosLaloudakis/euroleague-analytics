@@ -75,6 +75,7 @@ def main():
             'fetch_schedule.py',
             ['--force']
         )))
+        results.append(('Fetch Standings', run_step('Fetching official standings per round', 'fetch_standings.py')))
         results.append(('Fetch Game Stats', run_step(
             'Fetching game stats from Euroleague API',
             'fetch_mvp_data_v2.py'
