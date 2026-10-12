@@ -12,6 +12,7 @@ import json
 import os
 import glob
 import re
+import numpy as np
 import pandas as pd
 
 from season_config import CURRENT_SEASON, COMPLETED_SEASONS, season_label
@@ -1543,6 +1544,58 @@ def game_flow(plays):
     return lead_changes, times_tied
 
 
+def official_standings(game_results, schedule_rows):
+    """Official Euroleague order after every round: wins, then head-to-head
+    among tied teams, then H2H point difference, then overall point difference
+    (the season simulator's tiebreaker). A game counts toward round R when its
+    scheduled gameday <= R and it has been played.
+    Returns (codes in current order, {code: [rank after round 1..R]})."""
+    from simulate_monte_carlo import _rank_with_h2h
+    from team_aliases import team_code
+
+    gc_round, codes = {}, set()
+    for row in schedule_rows or []:
+        if row.get('round') != 'RS':
+            continue
+        gc = int(str(row.get('gamecode', '0')).split('_')[-1])
+        gc_round[gc] = int(row.get('gameday') or 0)
+        for name_key, code_key in (('hometeam', 'homecode'), ('awayteam', 'awaycode')):
+            code = team_code(row.get(name_key), default=row.get(code_key) or 'UNK')
+            if code != 'UNK':
+                codes.add(code)
+
+    played = []
+    for g in game_results or []:
+        gc = int(g.get('GameCode') or 0)
+        hs, as_ = int(g.get('LocalScore') or 0), int(g.get('RoadScore') or 0)
+        if gc in gc_round and hs > 0 and as_ > 0:
+            played.append((gc_round[gc], g['LocalTeam'], g['RoadTeam'], hs, as_))
+            codes.update((g['LocalTeam'], g['RoadTeam']))
+
+    codes = sorted(codes)
+    idx = {t: i for i, t in enumerate(codes)}
+    n = len(codes)
+    history = {t: [] for t in codes}
+    last_round = max((p[0] for p in played), default=0)
+    for R in range(1, last_round + 1):
+        w = np.zeros((1, n)); pdiff = np.zeros((1, n))
+        hw = np.zeros((1, n, n)); hp = np.zeros((1, n, n))
+        for rnd, h, a, hs, as_ in played:
+            if rnd > R:
+                continue
+            i, j, m = idx[h], idx[a], hs - as_
+            win, lose = (i, j) if m > 0 else (j, i)
+            w[0, win] += 1
+            hw[0, win, lose] += 1
+            pdiff[0, i] += m; pdiff[0, j] -= m
+            hp[0, i, j] += m; hp[0, j, i] -= m
+        ranks = _rank_with_h2h(w, pdiff, hw, hp, n, 1)[0]
+        for t in codes:
+            history[t].append(int(ranks[idx[t]]) + 1)
+    order = sorted(codes, key=lambda t: history[t][-1]) if last_round else codes
+    return order, history
+
+
 def compute_championship_finals_history():
     """
     For each completed season (COMPLETED_SEASONS), load the championship final WP replay JSON
@@ -1784,8 +1837,16 @@ def main():
                 'seed_distribution': mc.get('Seed_Distribution', {}),
             })
 
-    # Sort: wins desc, then adj_net desc
-    teams.sort(key=lambda t: (-t['wins'], -t['adj_net']))
+    # Official Euroleague order (wins, H2H, H2H point diff, point diff), also
+    # after every round for the Standings Race chart.
+    standings_order, rank_history = official_standings(
+        load_json('mvp_game_results.json'), load_json(f'schedule_{S}.json'))
+    position = {code: i + 1 for i, code in enumerate(standings_order)}
+    for t in teams:
+        t['position'] = position.get(t['team'])
+        t['rank_history'] = rank_history.get(t['team'], [])
+    teams.sort(key=lambda t: (t['position'] is None, t['position'] or 0,
+                              -t['wins'], -t['adj_net']))
 
     # ── Build MVP list (top 15) with component breakdowns ─────────────────────
     mvp_list = []
@@ -3280,7 +3341,7 @@ def main():
     rs_complete = regular_season_complete(load_json(f'schedule_{S}.json'))
     game_results_raw = load_json('mvp_game_results.json')
     if game_results_raw and len(teams) >= 10:
-        seeded = teams[:10]  # Already sorted by wins desc, adj_net desc
+        seeded = teams[:10]  # Already in official standings order
         playoff_results_data = build_playoff_results(game_results_raw, seeded)
 
         if playoff_results_data:
