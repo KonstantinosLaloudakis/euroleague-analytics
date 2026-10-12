@@ -80,15 +80,17 @@ function renderStandings(teams) {
     }
 
     // First render only: default to the official standings order when the export provides it
+    const hasPositions = teams.every(t => typeof t.position === 'number');
     if (!renderStandings._init) {
         renderStandings._init = true;
-        if (teams.every(t => typeof t.position === 'number')) sortState = { col: 'position', asc: true };
+        if (hasPositions) sortState = { col: 'position', asc: true };
     }
 
     const PLAYOFF_CUTOFFS = { 4: 'cutoff-top4', 6: 'cutoff-top6', 10: 'cutoff-top10' };
 
     const cols = [
-        { key: '#',        label: '#',        sortKey: null,       align: 'center' },
+        // '#' sorts by official position (shows the row number in the current sort)
+        { key: '#',        label: '#',        sortKey: hasPositions ? 'position' : null, align: 'center' },
         { key: 'name',     label: 'Team',     sortKey: 'name',     align: 'left' },
         { key: 'wl',       label: 'W-L',      sortKey: 'wins',     align: 'center' },
         { key: 'last5',    label: 'Last 5',   sortKey: null,       align: 'center' },
@@ -182,7 +184,7 @@ function renderStandings(teams) {
             sortState.asc = !sortState.asc;
         } else {
             sortState.col = col;
-            sortState.asc = false;
+            sortState.asc = col === 'position';   // position 1 first; other columns high first
         }
         container.innerHTML = buildTable(getSorted());
     };
@@ -910,6 +912,11 @@ function renderStandingsTimeline(teams) {
         ranks.push(roundRanks);
     }
 
+    // Hover records: per-round W-L from the export (record_history) when it matches rank_history
+    const useRecords = useHistory && teams.every(t => Array.isArray(t.record_history) && t.record_history.length === histLen);
+    const recordByTeam = {};
+    if (useRecords) teams.forEach(t => { recordByTeam[t.team] = t.record_history; });
+
     // Sort teams by final rank for legend ordering
     const finalRanks = ranks[ranks.length - 1];
     const sortedTeams = [...teamData].sort((a, b) => finalRanks[a.team] - finalRanks[b.team]);
@@ -924,9 +931,13 @@ function renderStandingsTimeline(teams) {
         const color = teamInk(td.team);
         const y = rounds.map((_, i) => ranks[i][td.team]);
         const hoverText = rounds.map((r, i) => {
-            const w = i < td.cumWins.length ? td.cumWins[i] : td.cumWins[td.cumWins.length - 1] || 0;
-            const g = Math.min(r, td.gamesPlayed);
-            const l = g - w;
+            let w, l;
+            if (useRecords) {
+                [w, l] = recordByTeam[td.team][i];
+            } else {
+                w = i < td.cumWins.length ? td.cumWins[i] : td.cumWins[td.cumWins.length - 1] || 0;
+                l = Math.min(r, td.gamesPlayed) - w;
+            }
             return `<b>${td.name}</b><br>Round ${r}: Rank #${ranks[i][td.team]}<br>Record: ${w}-${l}`;
         });
 

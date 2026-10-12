@@ -276,7 +276,7 @@
         <div class="about-section">
             <h3>Dashboard Pages</h3>
             <ul>
-                <li><span class="metric-name">Season Hub</span> — League standings, power ratings scatter plot (Adj Off vs Adj Def), MVP race top 10, remaining schedule difficulty, and standings race timeline. Includes the Oracle Forecast tab with game predictions, player forecasts, and accuracy tracking.</li>
+                <li><span class="metric-name">Season Hub</span> — League standings, power ratings scatter plot (Adj Off vs Adj Def), MVP race top 10, remaining schedule difficulty, and standings race timeline. Standings positions (the table order and the standings race after every round) are the official Euroleague standings, taken from the Euroleague API. Includes the Oracle Forecast tab with game predictions, player forecasts, and accuracy tracking.</li>
                 <li><span class="metric-name">Team Deep-Dive</span> — Select any team to see adjusted ratings, four factors breakdown, Elo history, home/away splits, round-by-round results, roster stats, and Monte Carlo playoff probability distributions.</li>
                 <li><span class="metric-name">Player Stats</span> — Sortable league-wide player statistics with per-game averages, shooting splits, and advanced metrics (RAPM, WPA, TPM, WIR). Filter by team or search by name.</li>
                 <li><span class="metric-name">Player Comparison</span> — Pick any two players from the 20-season dataset and compare career averages side-by-side via a dual-bar Tale of the Tape (PPG, RPG, APG, SPG, BPG, PIR, FG%), plus full per-season stat tables for each. Shareable via URL params.</li>
@@ -440,7 +440,7 @@
                     and early results are shrunk toward the prior — historically only about a third of a team's margin over its
                     first four games carries over to the rest of the season. Each simulation first draws a plausible strength for
                     every team, then plays out all remaining games, so uncertainty about how good a team really is flows into the odds.
-                    Teams are ranked using official Euroleague tiebreaker rules: head-to-head record among tied teams,
+                    Simulated final standings are ranked with the end-of-season tiebreakers: head-to-head record among tied teams,
                     then head-to-head point differential, then overall point differential.
                     Outputs playoff probabilities (Top 4, Top 6, Top 10), projected win totals,
                     and seed distributions for every team. Backtested on the 2016–2024 regular seasons for calibration

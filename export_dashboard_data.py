@@ -1544,13 +1544,18 @@ def game_flow(plays):
     return lead_changes, times_tied
 
 
-def official_standings(game_results, schedule_rows):
-    """Official Euroleague order after every round: wins, then head-to-head
-    among tied teams, then H2H point difference, then overall point difference
-    (the season simulator's tiebreaker). A game counts toward round R when its
-    scheduled gameday <= R and it has been played.
-    Returns (codes in current order, {code: [rank after round 1..R]})."""
-    from simulate_monte_carlo import _rank_with_h2h
+def official_standings(game_results, schedule_rows, api_standings=None):
+    """Euroleague standings order after every regular-season round.
+
+    Positions come from the official Euroleague standings (Euroleague API,
+    cached by fetch_standings.py in standings_{S}.json) when that file covers
+    every team in the schedule; a round missing from it is computed with the
+    fallback. The fallback approximates the in-season rule: wins, then overall
+    point difference, then points scored (then team code). Head-to-head is not
+    applied in-season. A game counts toward round R when its scheduled gameday
+    <= R and it has been played.
+    Returns (codes in current order, {code: [rank after round 1..R]},
+    {code: [[wins, losses] after round 1..R]})."""
     from team_aliases import team_code
 
     gc_round, codes = {}, set()
@@ -1563,6 +1568,7 @@ def official_standings(game_results, schedule_rows):
             code = team_code(row.get(name_key), default=row.get(code_key) or 'UNK')
             if code != 'UNK':
                 codes.add(code)
+    sched_teams = len(codes)
 
     played = []
     for g in game_results or []:
@@ -1573,27 +1579,47 @@ def official_standings(game_results, schedule_rows):
             codes.update((g['LocalTeam'], g['RoadTeam']))
 
     codes = sorted(codes)
-    idx = {t: i for i, t in enumerate(codes)}
-    n = len(codes)
-    history = {t: [] for t in codes}
-    last_round = max((p[0] for p in played), default=0)
-    for R in range(1, last_round + 1):
-        w = np.zeros((1, n)); pdiff = np.zeros((1, n))
-        hw = np.zeros((1, n, n)); hp = np.zeros((1, n, n))
+    if len(codes) != sched_teams:
+        print(f"  [WARN] Standings: {len(codes)} team codes vs {sched_teams} "
+              f"distinct teams in the regular-season schedule")
+
+    def computed_round(R):
+        w = {t: 0 for t in codes}; l = dict(w); pdiff = dict(w); pf = dict(w)
         for rnd, h, a, hs, as_ in played:
             if rnd > R:
                 continue
-            i, j, m = idx[h], idx[a], hs - as_
-            win, lose = (i, j) if m > 0 else (j, i)
-            w[0, win] += 1
-            hw[0, win, lose] += 1
-            pdiff[0, i] += m; pdiff[0, j] -= m
-            hp[0, i, j] += m; hp[0, j, i] -= m
-        ranks = _rank_with_h2h(w, pdiff, hw, hp, n, 1)[0]
+            win, lose = (h, a) if hs > as_ else (a, h)
+            w[win] += 1; l[lose] += 1
+            pdiff[h] += hs - as_; pdiff[a] += as_ - hs
+            pf[h] += hs; pf[a] += as_
+        ranked = sorted(codes, key=lambda t: (-w[t], -pdiff[t], -pf[t], t))
+        return {t: (i + 1, [w[t], l[t]]) for i, t in enumerate(ranked)}
+
+    api_rounds = {}
+    for key, rows in ((api_standings or {}).get('rounds') or {}).items():
+        try:
+            api_rounds[int(key)] = {r['code']: (int(r['position']), [int(r['wins']), int(r['losses'])])
+                                    for r in rows}
+        except (KeyError, TypeError, ValueError):
+            continue
+    use_api = bool(api_rounds) and set(codes) <= set(api_rounds[max(api_rounds)])
+
+    # Rounds 1..R, R = latest played round (or latest API round if later);
+    # a round the API file lacks is computed with the fallback rule.
+    last_round = max((p[0] for p in played), default=0)
+    if use_api:
+        last_round = max(last_round, max(api_rounds))
+    history = {t: [] for t in codes}
+    records = {t: [] for t in codes}
+    for R in range(1, last_round + 1):
+        snap = api_rounds.get(R) if use_api else None
+        if snap is None or not set(codes) <= set(snap):
+            snap = computed_round(R)
         for t in codes:
-            history[t].append(int(ranks[idx[t]]) + 1)
-    order = sorted(codes, key=lambda t: history[t][-1]) if last_round else codes
-    return order, history
+            history[t].append(snap[t][0])
+            records[t].append(snap[t][1])
+    order = sorted(codes, key=lambda t: (history[t][-1], t)) if last_round else codes
+    return order, history, records
 
 
 def compute_championship_finals_history():
@@ -1837,14 +1863,17 @@ def main():
                 'seed_distribution': mc.get('Seed_Distribution', {}),
             })
 
-    # Official Euroleague order (wins, H2H, H2H point diff, point diff), also
-    # after every round for the Standings Race chart.
-    standings_order, rank_history = official_standings(
-        load_json('mvp_game_results.json'), load_json(f'schedule_{S}.json'))
+    # Official Euroleague order from the API (standings_{S}.json, written by
+    # fetch_standings.py), also after every round for the Standings Race chart;
+    # falls back to wins, point difference, points scored.
+    standings_order, rank_history, record_history = official_standings(
+        load_json('mvp_game_results.json'), load_json(f'schedule_{S}.json'),
+        load_json(f'standings_{S}.json'))
     position = {code: i + 1 for i, code in enumerate(standings_order)}
     for t in teams:
         t['position'] = position.get(t['team'])
         t['rank_history'] = rank_history.get(t['team'], [])
+        t['record_history'] = record_history.get(t['team'], [])
     teams.sort(key=lambda t: (t['position'] is None, t['position'] or 0,
                               -t['wins'], -t['adj_net']))
 

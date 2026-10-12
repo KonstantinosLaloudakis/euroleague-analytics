@@ -19,32 +19,45 @@ def _res(rows):
              'LocalScore': hp, 'RoadScore': ap} for gc, h, a, hp, ap in rows]
 
 
-def test_two_way_tie_uses_head_to_head():
-    sched = _sched([(1, 1, 'AAA', 'BBB'), (2, 1, 'CCC', 'DDD'),
-                    (3, 2, 'AAA', 'CCC'), (4, 2, 'BBB', 'DDD')])
+def _api_round(codes, records=None):
+    """codes in position order → API standings rows."""
+    records = records or {}
+    return [{'code': c, 'position': i + 1, 'wins': records.get(c, (0, 0))[0],
+             'losses': records.get(c, (0, 0))[1], 'points_diff': 0, 'points_for': 0}
+            for i, c in enumerate(codes)]
+
+
+SCHED4 = [(1, 1, 'AAA', 'BBB'), (2, 1, 'CCC', 'DDD'), (3, 2, 'AAA', 'CCC'), (4, 2, 'BBB', 'DDD')]
+
+
+def test_fallback_ranks_by_point_diff_not_head_to_head():
+    sched = _sched(SCHED4)
     # AAA beats BBB by 1; BBB thrashes DDD, AAA loses big to CCC → both 1-1,
-    # BBB has the better point difference but AAA won the head-to-head.
+    # AAA won the head-to-head but BBB has the better point difference.
     res = _res([(1, 'AAA', 'BBB', 71, 70), (2, 'CCC', 'DDD', 80, 70),
                 (3, 'AAA', 'CCC', 60, 90), (4, 'BBB', 'DDD', 100, 60)])
-    order, hist = official_standings(res, sched)
-    assert order.index('AAA') < order.index('BBB')
+    order, hist, recs = official_standings(res, sched)
+    assert order.index('BBB') < order.index('AAA')
     assert len(hist['AAA']) == 2
+    assert recs['AAA'] == [[1, 0], [1, 1]] and recs['BBB'] == [[0, 1], [1, 1]]
 
 
-def test_three_way_tie_mini_table():
-    # Round robin among AAA, BBB, CCC where each wins once → mini-table tied 1-1,
-    # resolved by H2H point difference: AAA +10-2=+8, BBB -10+10=0, CCC -10+2=-8.
-    sched = _sched([(1, 1, 'ZZZ', 'MMM'), (2, 2, 'MMM', 'AAA'), (3, 3, 'AAA', 'ZZZ')])
-    res = _res([(1, 'ZZZ', 'MMM', 80, 70), (2, 'MMM', 'AAA', 80, 70), (3, 'AAA', 'ZZZ', 72, 70)])
-    order, _ = official_standings(res, sched)
-    assert order == ['ZZZ', 'MMM', 'AAA']
+def test_fallback_points_for_breaks_point_diff_tie():
+    # Every team 1-1 with the same point difference (0) → points scored decides.
+    sched = _sched(SCHED4)
+    res = _res([(1, 'AAA', 'BBB', 90, 80), (2, 'CCC', 'DDD', 60, 70),
+                (3, 'AAA', 'CCC', 60, 70), (4, 'BBB', 'DDD', 90, 80)])
+    # points for: AAA 150, BBB 170, CCC 130, DDD 150; AAA/DDD level → code asc
+    order, hist, _ = official_standings(res, sched)
+    assert order == ['BBB', 'AAA', 'DDD', 'CCC']
+    assert [hist[t][-1] for t in order] == [1, 2, 3, 4]
 
 
 def test_rank_history_is_a_permutation_each_round():
-    sched = _sched([(1, 1, 'AAA', 'BBB'), (2, 1, 'CCC', 'DDD'), (3, 2, 'AAA', 'CCC'), (4, 2, 'BBB', 'DDD')])
+    sched = _sched(SCHED4)
     res = _res([(1, 'AAA', 'BBB', 80, 70), (2, 'CCC', 'DDD', 80, 70),
                 (3, 'AAA', 'CCC', 80, 70), (4, 'BBB', 'DDD', 80, 70)])
-    order, hist = official_standings(res, sched)
+    order, hist, _ = official_standings(res, sched)
     for r in range(2):
         assert sorted(h[r] for h in hist.values()) == [1, 2, 3, 4]
     assert [hist[t][-1] for t in order] == [1, 2, 3, 4]
@@ -52,10 +65,10 @@ def test_rank_history_is_a_permutation_each_round():
 
 def test_postponed_game_counts_in_its_round():
     # Round-1 game 2 was postponed and played after round 2; snapshots are "as of now".
-    sched = _sched([(1, 1, 'AAA', 'BBB'), (2, 1, 'CCC', 'DDD'), (3, 2, 'AAA', 'CCC'), (4, 2, 'BBB', 'DDD')])
+    sched = _sched(SCHED4)
     res = _res([(1, 'AAA', 'BBB', 80, 70), (3, 'AAA', 'CCC', 80, 70),
                 (4, 'BBB', 'DDD', 80, 70), (2, 'CCC', 'DDD', 90, 70)])
-    _, hist = official_standings(res, sched)
+    _, hist, _ = official_standings(res, sched)
     # after round 1: AAA and CCC both 1-0 (CCC's postponed win counts in round 1)
     assert {hist['AAA'][0], hist['CCC'][0]} == {1, 2}
 
@@ -63,12 +76,54 @@ def test_postponed_game_counts_in_its_round():
 def test_team_without_games_is_ranked():
     sched = _sched([(1, 1, 'AAA', 'BBB'), (2, 2, 'CCC', 'AAA')])   # CCC hasn't played yet
     res = _res([(1, 'AAA', 'BBB', 80, 70)])
-    order, hist = official_standings(res, sched)
+    order, hist, recs = official_standings(res, sched)
     assert set(order) == {'AAA', 'BBB', 'CCC'}
     assert order[0] == 'AAA'
     assert hist['CCC'][0] in (2, 3)
+    assert recs['CCC'] == [[0, 0]]
 
 
 def test_no_games_played():
-    order, hist = official_standings([], _sched([(1, 1, 'AAA', 'BBB')]))
+    order, hist, recs = official_standings([], _sched([(1, 1, 'AAA', 'BBB')]))
     assert sorted(order) == ['AAA', 'BBB'] and hist == {'AAA': [], 'BBB': []}
+    assert recs == {'AAA': [], 'BBB': []}
+
+
+def test_api_standings_are_used():
+    sched = _sched(SCHED4)
+    res = _res([(1, 'AAA', 'BBB', 80, 70), (2, 'CCC', 'DDD', 80, 70),
+                (3, 'AAA', 'CCC', 80, 70), (4, 'BBB', 'DDD', 80, 70)])
+    fallback_order, _, _ = official_standings(res, sched)
+    api = {'season': 2099, 'rounds': {
+        '1': _api_round(['DDD', 'CCC', 'BBB', 'AAA'],
+                        {'DDD': (5, 6), 'CCC': (4, 4), 'BBB': (3, 2), 'AAA': (1, 2)}),
+        '2': _api_round(['DDD', 'BBB', 'AAA', 'CCC'],
+                        {'DDD': (7, 0), 'BBB': (6, 1), 'AAA': (5, 2), 'CCC': (4, 3)}),
+    }}
+    order, hist, recs = official_standings(res, sched, api)
+    assert order == ['DDD', 'BBB', 'AAA', 'CCC'] != fallback_order
+    assert hist == {'DDD': [1, 1], 'CCC': [2, 4], 'BBB': [3, 2], 'AAA': [4, 3]}
+    assert recs['DDD'] == [[5, 6], [7, 0]] and recs['CCC'] == [[4, 4], [4, 3]]
+
+
+def test_api_round_missing_is_computed():
+    sched = _sched(SCHED4)
+    res = _res([(1, 'AAA', 'BBB', 80, 70), (2, 'CCC', 'DDD', 80, 70),
+                (3, 'AAA', 'CCC', 80, 70), (4, 'BBB', 'DDD', 80, 70)])
+    _, fb_hist, fb_recs = official_standings(res, sched)
+    api = {'rounds': {'2': _api_round(['DDD', 'BBB', 'AAA', 'CCC'])}}
+    order, hist, recs = official_standings(res, sched, api)
+    assert order == ['DDD', 'BBB', 'AAA', 'CCC']
+    assert {t: h[0] for t, h in hist.items()} == {t: h[0] for t, h in fb_hist.items()}
+    assert {t: r[0] for t, r in recs.items()} == {t: r[0] for t, r in fb_recs.items()}
+    assert hist['DDD'][1] == 1
+
+
+def test_api_missing_team_falls_back():
+    sched = _sched(SCHED4)
+    res = _res([(1, 'AAA', 'BBB', 80, 70), (2, 'CCC', 'DDD', 80, 70),
+                (3, 'AAA', 'CCC', 80, 70), (4, 'BBB', 'DDD', 80, 70)])
+    expected = official_standings(res, sched)
+    api = {'rounds': {'1': _api_round(['CCC', 'BBB', 'AAA']),
+                      '2': _api_round(['CCC', 'BBB', 'AAA'])}}   # DDD missing
+    assert official_standings(res, sched, api) == expected
