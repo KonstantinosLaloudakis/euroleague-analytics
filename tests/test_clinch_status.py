@@ -122,3 +122,16 @@ def test_season_status_in_season_uses_math():
     w, r = _teams(20, [30, 28, 28, 28] + [20] * 16, [2] * 20)
     pos = {t: i + 1 for i, t in enumerate(w)}
     assert season_status(w, pos, r, True) == clinch_status(w, r)
+
+
+def test_season_status_missing_position_uses_math():
+    w, r = _teams(20, [30, 28, 28, 28] + [20] * 16, [0] * 20)
+    pos = {t: i + 1 for i, t in enumerate(w)}
+    pos['T05'] = None
+    assert season_status(w, pos, r, True) == clinch_status(w, r)
+
+
+def test_season_status_empty_remaining_decides_nothing_or_math():
+    w, _ = _teams(20, [30, 28, 28, 28] + [20] * 16, [0] * 20)
+    s = season_status(w, {t: i + 1 for i, t in enumerate(w)}, {}, True)
+    assert set(s) == set(w) and not any(_flat(s))

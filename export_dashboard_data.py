@@ -1676,10 +1676,10 @@ def season_status(wins, positions, remaining, latest_from_api, cutoffs=(4, 6, 10
     Regular season over (all remaining 0) and the latest standings came from
     the official API → settled from official positions.
     Otherwise → mathematical clinch / elimination (ties never decide)."""
-    if remaining is None:
+    if not remaining:
         return {t: {'clinched': {str(n): False for n in cutoffs},
                     'eliminated': {str(n): False for n in cutoffs}} for t in wins}
-    if (latest_from_api and remaining and all(v == 0 for v in remaining.values())
+    if (latest_from_api and all(v == 0 for v in remaining.values())
             and all(positions.get(t) is not None for t in wins)):
         return final_status_from_positions(positions, cutoffs)
     return clinch_status(wins, remaining, cutoffs)
@@ -1929,7 +1929,7 @@ def main():
     # Official Euroleague order from the API (standings_{S}.json, written by
     # fetch_standings.py), also after every round for the Standings Race chart;
     # falls back to wins, point difference, points scored.
-    standings_order, rank_history, record_history, used_api = official_standings(
+    standings_order, rank_history, record_history, latest_from_api = official_standings(
         load_json('mvp_game_results.json'), load_json(f'schedule_{S}.json'),
         load_json(f'standings_{S}.json'))
     position = {code: i + 1 for i, code in enumerate(standings_order)}
@@ -1945,9 +1945,14 @@ def main():
                                 load_json(f'schedule_{S}.json'))
     if remaining is None:
         print('  [WARN] Clinch status skipped: schedule missing a team or results exceed fixtures')
+    # Official season-end positions are only trusted when the API snapshot's
+    # W-L matches the results we counted (otherwise one source is stale).
+    latest_from_api = latest_from_api and all(
+        record_history.get(t['team']) and record_history[t['team']][-1] == [t['wins'], t['losses']]
+        for t in teams)
     status = season_status({t['team']: t['wins'] for t in teams},
                            {t['team']: t['position'] for t in teams},
-                           remaining, used_api)
+                           remaining, latest_from_api)
     for t in teams:
         t['clinched'] = status[t['team']]['clinched']
         t['eliminated'] = status[t['team']]['eliminated']
