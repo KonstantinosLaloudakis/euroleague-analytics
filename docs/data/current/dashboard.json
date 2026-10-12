@@ -3,7 +3,7 @@
   "season": 2026,
   "season_label": "2026-27",
   "regular_season_complete": false,
-  "updated": "2026-10-12T17:32:53Z",
+  "updated": "2026-10-12T18:19:03Z",
   "teams": [
     {
       "team": "PAN",
@@ -268,6 +268,16 @@
           0
         ]
       ],
+      "clinched": {
+        "4": false,
+        "6": false,
+        "10": false
+      },
+      "eliminated": {
+        "4": false,
+        "6": false,
+        "10": false
+      },
       "gci": 92.9,
       "drama_avg": 1.66,
       "comeback_count": 0
@@ -535,6 +545,16 @@
           0
         ]
       ],
+      "clinched": {
+        "4": false,
+        "6": false,
+        "10": false
+      },
+      "eliminated": {
+        "4": false,
+        "6": false,
+        "10": false
+      },
       "gci": 76.8,
       "drama_avg": 3.41,
       "comeback_count": 2
@@ -802,6 +822,16 @@
           1
         ]
       ],
+      "clinched": {
+        "4": false,
+        "6": false,
+        "10": false
+      },
+      "eliminated": {
+        "4": false,
+        "6": false,
+        "10": false
+      },
       "gci": 48.5,
       "drama_avg": 4.04,
       "comeback_count": 0
@@ -1069,6 +1099,16 @@
           1
         ]
       ],
+      "clinched": {
+        "4": false,
+        "6": false,
+        "10": false
+      },
+      "eliminated": {
+        "4": false,
+        "6": false,
+        "10": false
+      },
       "gci": 79.4,
       "drama_avg": 2.64,
       "comeback_count": 0
@@ -1336,6 +1376,16 @@
           1
         ]
       ],
+      "clinched": {
+        "4": false,
+        "6": false,
+        "10": false
+      },
+      "eliminated": {
+        "4": false,
+        "6": false,
+        "10": false
+      },
       "gci": 55.7,
       "drama_avg": 3.54,
       "comeback_count": 1
@@ -1603,6 +1653,16 @@
           2
         ]
       ],
+      "clinched": {
+        "4": false,
+        "6": false,
+        "10": false
+      },
+      "eliminated": {
+        "4": false,
+        "6": false,
+        "10": false
+      },
       "gci": 56.2,
       "drama_avg": 3.73,
       "comeback_count": 0
@@ -1870,6 +1930,16 @@
           2
         ]
       ],
+      "clinched": {
+        "4": false,
+        "6": false,
+        "10": false
+      },
+      "eliminated": {
+        "4": false,
+        "6": false,
+        "10": false
+      },
       "gci": 44.0,
       "drama_avg": 4.22,
       "comeback_count": 0
@@ -2137,6 +2207,16 @@
           2
         ]
       ],
+      "clinched": {
+        "4": false,
+        "6": false,
+        "10": false
+      },
+      "eliminated": {
+        "4": false,
+        "6": false,
+        "10": false
+      },
       "gci": 33.7,
       "drama_avg": 4.67,
       "comeback_count": 1
@@ -2404,6 +2484,16 @@
           2
         ]
       ],
+      "clinched": {
+        "4": false,
+        "6": false,
+        "10": false
+      },
+      "eliminated": {
+        "4": false,
+        "6": false,
+        "10": false
+      },
       "gci": 44.3,
       "drama_avg": 3.93,
       "comeback_count": 0
@@ -2671,6 +2761,16 @@
           2
         ]
       ],
+      "clinched": {
+        "4": false,
+        "6": false,
+        "10": false
+      },
+      "eliminated": {
+        "4": false,
+        "6": false,
+        "10": false
+      },
       "gci": 41.5,
       "drama_avg": 4.6,
       "comeback_count": 0
@@ -2938,6 +3038,16 @@
           2
         ]
       ],
+      "clinched": {
+        "4": false,
+        "6": false,
+        "10": false
+      },
+      "eliminated": {
+        "4": false,
+        "6": false,
+        "10": false
+      },
       "gci": 52.0,
       "drama_avg": 3.93,
       "comeback_count": 0
@@ -3205,6 +3315,16 @@
           2
         ]
       ],
+      "clinched": {
+        "4": false,
+        "6": false,
+        "10": false
+      },
+      "eliminated": {
+        "4": false,
+        "6": false,
+        "10": false
+      },
       "gci": 57.5,
       "drama_avg": 3.29,
       "comeback_count": 0
@@ -3472,6 +3592,16 @@
           2
         ]
       ],
+      "clinched": {
+        "4": false,
+        "6": false,
+        "10": false
+      },
+      "eliminated": {
+        "4": false,
+        "6": false,
+        "10": false
+      },
       "gci": 53.3,
       "drama_avg": 3.56,
       "comeback_count": 1
@@ -3739,6 +3869,16 @@
           3
         ]
       ],
+      "clinched": {
+        "4": false,
+        "6": false,
+        "10": false
+      },
+      "eliminated": {
+        "4": false,
+        "6": false,
+        "10": false
+      },
       "gci": 33.6,
       "drama_avg": 3.45,
       "comeback_count": 0
@@ -4006,6 +4146,16 @@
           3
         ]
       ],
+      "clinched": {
+        "4": false,
+        "6": false,
+        "10": false
+      },
+      "eliminated": {
+        "4": false,
+        "6": false,
+        "10": false
+      },
       "gci": 34.5,
       "drama_avg": 3.53,
       "comeback_count": 0
@@ -4273,6 +4423,16 @@
           3
         ]
       ],
+      "clinched": {
+        "4": false,
+        "6": false,
+        "10": false
+      },
+      "eliminated": {
+        "4": false,
+        "6": false,
+        "10": false
+      },
       "gci": 48.7,
       "drama_avg": 3.79,
       "comeback_count": 0
@@ -4540,6 +4700,16 @@
           3
         ]
       ],
+      "clinched": {
+        "4": false,
+        "6": false,
+        "10": false
+      },
+      "eliminated": {
+        "4": false,
+        "6": false,
+        "10": false
+      },
       "gci": 31.3,
       "drama_avg": 3.85,
       "comeback_count": 0
@@ -4807,6 +4977,16 @@
           3
         ]
       ],
+      "clinched": {
+        "4": false,
+        "6": false,
+        "10": false
+      },
+      "eliminated": {
+        "4": false,
+        "6": false,
+        "10": false
+      },
       "gci": 36.7,
       "drama_avg": 2.66,
       "comeback_count": 0
@@ -5074,6 +5254,16 @@
           3
         ]
       ],
+      "clinched": {
+        "4": false,
+        "6": false,
+        "10": false
+      },
+      "eliminated": {
+        "4": false,
+        "6": false,
+        "10": false
+      },
       "gci": 45.5,
       "drama_avg": 3.02,
       "comeback_count": 0
@@ -5341,6 +5531,16 @@
           3
         ]
       ],
+      "clinched": {
+        "4": false,
+        "6": false,
+        "10": false
+      },
+      "eliminated": {
+        "4": false,
+        "6": false,
+        "10": false
+      },
       "gci": 34.1,
       "drama_avg": 3.72,
       "comeback_count": 0
