@@ -13,7 +13,7 @@ fetchJSON('data/current/dashboard.json')
         if (data.updated) {
             const el = document.getElementById('last-updated');
             const d  = new Date(data.updated);
-            el.textContent = `Updated ${d.toLocaleDateString('en-GB', {day:'numeric',month:'short',year:'numeric'})} ${d.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'})} UTC`;
+            el.textContent = `Updated ${d.toLocaleDateString('en-GB', {day:'numeric',month:'short',year:'numeric',timeZone:'UTC'})} ${d.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit',timeZone:'UTC'})} UTC`;
             el.style.display = '';
         }
 

@@ -1682,6 +1682,8 @@ function renderChampionshipFinals(data) {
     if (!section || !container || !data || !data.length) return;
 
     section.style.display = '';
+    const desc = document.getElementById('championship-finals-desc');
+    if (desc) desc.textContent = `All ${data.length} Euroleague championship finals since ${Math.min(...data.map(e => e.season))}-${String(Math.min(...data.map(e => e.season)) + 1).slice(-2)}, ranked by lead changes — the most contested games at the top.`;
 
     let html = '';
     data.forEach((entry, i) => {
