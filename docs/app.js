@@ -291,6 +291,9 @@ function _buildMarginChart(full, ta, tb, taName, tbName) {
         },
     ];
 
+    const absMax = Math.max(15, ...margin.map(Math.abs));
+    const yPad = Math.ceil(absMax * 1.2);
+
     const layout = {
         title: {
             text: `${taName} ${finalScore.a} - ${finalScore.b} ${tbName}`,
@@ -305,6 +308,7 @@ function _buildMarginChart(full, ta, tb, taName, tbName) {
         },
         yaxis: {
             title: { text: `Score Margin (${ta} +/-)`, font: { color: '#9ca3af' } },
+            range: [-yPad, yPad],
             color: '#9ca3af', gridcolor: '#2d2e3a',
             zeroline: true, zerolinecolor: '#4b5563', zerolinewidth: 2,
         },
@@ -314,7 +318,7 @@ function _buildMarginChart(full, ta, tb, taName, tbName) {
         margin: { l: 55, r: 20, t: 60, b: 50 },
         shapes: [
             ...[10, 20, 30].map(x => ({
-                type: 'line', x0: x, x1: x, y0: -100, y1: 100,
+                type: 'line', x0: x, x1: x, y0: -yPad, y1: yPad,
                 line: { color: '#374151', width: 1, dash: 'dot' },
             })),
         ],
