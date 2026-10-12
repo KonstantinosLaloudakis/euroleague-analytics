@@ -79,6 +79,12 @@ function renderStandings(teams) {
         return;
     }
 
+    // First render only: default to the official standings order when the export provides it
+    if (!renderStandings._init) {
+        renderStandings._init = true;
+        if (teams.every(t => typeof t.position === 'number')) sortState = { col: 'position', asc: true };
+    }
+
     const PLAYOFF_CUTOFFS = { 4: 'cutoff-top4', 6: 'cutoff-top6', 10: 'cutoff-top10' };
 
     const cols = [
@@ -360,8 +366,11 @@ function renderScheduleDifficulty(teams) {
         return;
     }
 
-    // Sort by current standing (wins desc, then adj_net desc) — same as standings table
-    const sorted = [...withGames].sort((a, b) => b.wins - a.wins || b.adj_net - a.adj_net);
+    // Sort by current standing — official position from the export, else wins desc then adj_net desc
+    const sorted = [...withGames].sort((a, b) =>
+        (a.position != null && b.position != null)
+            ? a.position - b.position
+            : (b.wins - a.wins || b.adj_net - a.adj_net));
 
     const names     = sorted.map(t => t.name);
     const sos       = sorted.map(t => t.remaining_sos || 0);
@@ -856,7 +865,7 @@ function renderStandingsTimeline(teams) {
     if (!container || !teams.length) return;
 
     // Find max round played
-    const maxRound = Math.max(...teams.map(t => (t.round_results || []).length));
+    let maxRound = Math.max(...teams.map(t => (t.round_results || []).length));
     if (maxRound < 1) { container.innerHTML = '<p style="color:var(--text-muted)">No round data available.</p>'; return; }
 
     // Build cumulative wins for each team at each round
@@ -871,9 +880,21 @@ function renderStandingsTimeline(teams) {
         return { team: t.team, name: t.name, cumWins, gamesPlayed: results.length, results };
     });
 
-    // Compute rank at each round (1 = best, ties broken by team name for consistency)
+    // The export provides official ranks per round (rank_history); use them when every team has
+    // an equal-length history. Otherwise fall back to computing rank from cumulative wins
+    // (1 = best, ties broken by losses then team name) for old dashboards.
     const ranks = []; // ranks[round][teamCode] = position
-    for (let r = 0; r < maxRound; r++) {
+    const histLen = (teams[0].rank_history || []).length;
+    const useHistory = histLen > 0 && teams.every(t => Array.isArray(t.rank_history) && t.rank_history.length === histLen);
+    if (useHistory) {
+        maxRound = histLen;
+        for (let r = 0; r < maxRound; r++) {
+            const roundRanks = {};
+            teams.forEach(t => { roundRanks[t.team] = t.rank_history[r]; });
+            ranks.push(roundRanks);
+        }
+    }
+    for (let r = 0; !useHistory && r < maxRound; r++) {
         // For teams that haven't played round r+1 yet, use their last known wins
         const snapshot = teamData.map(td => ({
             team: td.team,
@@ -914,7 +935,7 @@ function renderStandingsTimeline(teams) {
             y: y,
             mode: 'lines+markers',
             name: td.name,
-            line: { color, width: 2.5, shape: 'spline' },
+            line: { color, width: 2.5, shape: 'linear' },
             marker: { color, size: 4 },
             hovertemplate: '%{customdata}<extra></extra>',
             customdata: hoverText,
@@ -932,7 +953,8 @@ function renderStandingsTimeline(teams) {
             tickfont: { color: '#6b7280', size: 11 },
             gridcolor: '#2d2e3a',
             linecolor: '#2d2e3a',
-            dtick: 2,
+            dtick: 1,
+            tick0: 1,
             range: [0.5, maxRound + 0.5],
         },
         yaxis: {

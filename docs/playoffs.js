@@ -173,8 +173,11 @@ async function init() {
         if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
         const data = await resp.json();
 
+        // Official standings order from the export; fall back for old dashboards.
         _teams = (data.teams || []).sort((a, b) =>
-            b.wins - a.wins || b.adj_net - a.adj_net
+            (a.position != null && b.position != null)
+                ? a.position - b.position
+                : (b.wins - a.wins || b.adj_net - a.adj_net)
         );
 
         if (data.updated) {
