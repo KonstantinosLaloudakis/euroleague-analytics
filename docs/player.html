@@ -105,8 +105,9 @@
 </head>
 <body>
 
-  <nav class="site-nav">
+  <nav class="site-nav" id="site-nav">
     <span class="site-nav-brand">🏀 Euroleague Analytics</span>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" onclick="const n=this.parentElement;const o=n.classList.toggle('nav-open');this.setAttribute('aria-expanded',o)">☰ Menu</button>
     <a href="index.html" class="nav-link">Season Hub</a>
     <a href="team.html" class="nav-link">Team Deep-Dive</a>
     <a href="players.html" class="nav-link">Player Stats</a>

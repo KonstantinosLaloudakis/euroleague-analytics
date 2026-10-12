@@ -717,6 +717,52 @@ footer {
     width: 100%;
 }
 
+/* ── Compact nav: menu button below 1366px ─────────────────── */
+.nav-toggle {
+    display: none;
+    margin-left: auto;
+    background: var(--bg-card);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.35rem 0.8rem;
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1.2;
+    cursor: pointer;
+}
+.nav-toggle:focus-visible { outline: 2px solid var(--accent-purple); outline-offset: 2px; }
+
+@media (max-width: 1365px) {
+    .site-nav { flex-wrap: wrap; overflow: visible; }
+    .nav-toggle { display: inline-flex; align-items: center; gap: 0.35rem; }
+    .site-nav-brand { margin-right: 0; }
+    .site-nav > .nav-link,
+    .site-nav > .nav-more { display: none; }
+    .site-nav.nav-open {
+        max-height: 100vh;
+        overflow-y: auto;
+    }
+    .site-nav.nav-open > .nav-link,
+    .site-nav.nav-open > .nav-more {
+        display: block;
+        width: 100%;
+    }
+    .site-nav.nav-open > .nav-link { padding: 0.55rem 0.8rem; }
+    .site-nav.nav-open .nav-more-btn { display: none; }
+    .site-nav.nav-open .nav-more-dropdown {
+        display: flex;
+        position: static;
+        min-width: 0;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+        background: transparent;
+    }
+    .site-nav.nav-open .nav-more-dropdown .nav-link { padding: 0.55rem 0.8rem; }
+}
+
 /* ── Playoff Banner ──────────────────────────────────────── */
 .playoff-banner {
     display: flex;
