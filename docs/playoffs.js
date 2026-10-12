@@ -414,7 +414,7 @@ function renderSide(team, prob, winner, round, idx, side) {
         </div>`;
     }
 
-    const color = TEAM_COLORS[team.team] || '#555';
+    const color = teamInk(team.team);
     const isWinner = winner && winner.team === team.team;
     const isLoser = winner && winner.team !== team.team;
     const isUpset = isWinner && prob < 0.5;
@@ -504,7 +504,7 @@ function renderChampion() {
             <div class="champion-name" style="color:var(--text-muted)">TBD</div>
         </div>`;
     }
-    const color = TEAM_COLORS[_champion.team] || '#555';
+    const color = teamInk(_champion.team);
     const path = computeChampionPath();
     return `<div class="champion-card">
         <div class="champion-trophy">🏆</div>
@@ -755,7 +755,7 @@ function renderMonteCarloChart(counts) {
         team: t.team,
         name: t.name,
         pct: (counts[t.team] / MC_ITERATIONS) * 100,
-        color: TEAM_COLORS[t.team] || '#555',
+        color: teamInk(t.team),
     })).sort((a, b) => b.pct - a.pct);
 
     const maxPct = Math.max(...entries.map(e => e.pct), 1);
@@ -1147,7 +1147,7 @@ function renderChampionshipOdds(history) {
     for (const code of allTeams) {
         const xs = deduped.map(h => h.label || h.date);
         const ys = deduped.map(h => (h.odds || {})[code] || 0);
-        const color = TEAM_COLORS[code] || '#555';
+        const color = teamInk(code);
         const name = (_seeded.find(t => t.team === code) || {}).name || code;
         const isEliminated = ys[ys.length - 1] === 0 && ys.some(v => v > 0);
 
@@ -1224,8 +1224,8 @@ function renderPlayoffRecaps(recaps) {
     let html = '<div class="recap-cards">';
 
     for (const r of recaps) {
-        const homeColor = TEAM_COLORS[r.home] || '#555';
-        const awayColor = TEAM_COLORS[r.away] || '#555';
+        const homeColor = teamInk(r.home);
+        const awayColor = teamInk(r.away);
         const isHomeWinner = r.winner === r.home;
         const upsetClass = r.is_upset ? ' upset' : '';
 
@@ -1317,7 +1317,7 @@ function buildPathRow(entry) {
         const t = _seeded.find(s => s.team === entry.team);
         return t ? t.name : entry.team;
     })();
-    const teamColor = TEAM_COLORS[entry.team] || '#555';
+    const teamColor = teamInk(entry.team);
 
     const rowCls = [
         'ptt-row',
@@ -1431,7 +1431,7 @@ function renderPathDetailTree(entry, container) {
     let height = Math.max(180, maxBranches * rowH + 80);
     if (forkActive) height += 60; // extra headroom for the skip arc
 
-    const teamColor = TEAM_COLORS[entry.team] || '#60a5fa';
+    const teamColor = teamInk(entry.team);
     const centerY = height / 2;
 
     let svg = `<svg class="ptt-tree-svg" viewBox="0 0 ${width} ${height}" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">`;
@@ -1494,7 +1494,7 @@ function renderPathDetailTree(entry, container) {
         //     pi1-win skip arc (not via pi2), so suppress the default pi2→#2-seed edge.
         branches.forEach((b, bi) => {
             const by = startY + bi * rowH;
-            const bColor = TEAM_COLORS[b.opponent] || '#60a5fa';
+            const bColor = teamInk(b.opponent);
 
             let drawDefaultEdge = true;
             if (forkActive && rk === 'play_in_2') {
@@ -1668,7 +1668,7 @@ function togglePathDetail(teamCode) {
     row.classList.add('ptt-row-expanded');
     const entry = (_pathData || []).find(e => e.team === teamCode);
     const td = detail.querySelector('td');
-    td.style.borderLeft = `3px solid ${TEAM_COLORS[teamCode] || '#60a5fa'}`;
+    td.style.borderLeft = `3px solid ${teamInk(teamCode)}`;
     if (entry) {
         renderPathDetailTree(entry, td);
     }
@@ -1698,8 +1698,8 @@ function renderChampionshipFinals(data) {
         const loserCode  = winnerIsHome ? entry.away : entry.home;
         const winScore   = winnerIsHome ? entry.home_score : entry.away_score;
         const loseScore  = winnerIsHome ? entry.away_score : entry.home_score;
-        const winColor   = TEAM_COLORS[winnerCode] || '#555';
-        const loseColor  = TEAM_COLORS[loserCode]  || '#555';
+        const winColor   = teamInk(winnerCode);
+        const loseColor  = teamInk(loserCode);
 
         const comebackPill = entry.max_deficit_overcome > 0
             ? `<span class="cf-pill cf-pill-comeback">Comeback: ${entry.max_deficit_overcome}pts</span>`
@@ -1786,7 +1786,7 @@ function _renderPoffTable() {
     const visible = _poffShowAll ? rows : rows.slice(0, POFF_PAGE);
 
     tbody.innerHTML = visible.map((p, i) => {
-        const color = TEAM_COLORS[p.team] || '#6b7280';
+        const color = teamInk(p.team);
         return `<tr>
             <td style="color:var(--text-muted);font-size:0.78rem">${i + 1}</td>
             <td>

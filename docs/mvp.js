@@ -166,7 +166,7 @@ function selectPlayer(idx) {
     }
 
     const m = _mvpData[_selectedIdx];
-    const color = TEAM_COLORS[m.team] || '#555';
+    const color = teamInk(m.team);
     const pctls = computePercentiles();
     const p = pctls[_selectedIdx];
 
@@ -311,7 +311,7 @@ function renderRaceChart() {
     });
 
     for (const [name, data] of players) {
-        const color = TEAM_COLORS[data.team] || '#888';
+        const color = teamInk(data.team);
         traces.push({
             x: data.rounds.map(r => `R${r}`),
             y: data.scores,

@@ -3,7 +3,7 @@
 const DASHBOARD_URL = 'data/current/dashboard.json';
 
 function teamColor(code) {
-  return (typeof TEAM_COLORS !== 'undefined' && TEAM_COLORS[code]) || '#6b7280';
+  return (typeof TEAM_COLORS !== 'undefined' && TEAM_COLORS[code] && typeof teamInk === 'function' && teamInk(code)) || '#6b7280';
 }
 
 function teamName(code) {

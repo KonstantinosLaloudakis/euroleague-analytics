@@ -83,7 +83,7 @@ function renderSeries(root, entry, dashboard) {
 // ── Hero ────────────────────────────────────────────────────────────────
 
 function teamColor(code) {
-  return (typeof TEAM_COLORS !== 'undefined' && TEAM_COLORS[code]) || '#6b7280';
+  return (typeof TEAM_COLORS !== 'undefined' && TEAM_COLORS[code] && typeof teamInk === 'function' && teamInk(code)) || '#6b7280';
 }
 
 function renderHero(container, entry) {

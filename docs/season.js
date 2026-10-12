@@ -110,7 +110,7 @@ function renderStandings(teams) {
         sorted.forEach((t, i) => {
             const rank = i + 1;
             const badgeColor = TEAM_COLORS[t.team] || '#555';
-            const badge = `<span class="team-badge" style="background:${badgeColor}">${t.team.substring(0,3)}</span>`;
+            const badge = `<span class="team-badge" style="background:${badgeColor};color:${teamOnColor(t.team)}">${t.team.substring(0,3)}</span>`;
             const netColor = t.adj_net >= 0 ? 'var(--accent-green)' : 'var(--accent-red)';
             const netStr = (t.adj_net >= 0 ? '+' : '') + t.adj_net.toFixed(2);
 
@@ -300,7 +300,7 @@ function renderMVPRace(mvp) {
         return parts.length > 1 ? parts[0].trim() : p.player;
     });
     const scores = top10.map(p => p.mvp_score);
-    const barColors = top10.map(p => TEAM_COLORS[p.team] || '#555');
+    const barColors = top10.map(p => teamInk(p.team));
     const hoverText = top10.map(p =>
         `<b>${p.player}</b><br>Team: ${p.team}<br>MVP Score: ${p.mvp_score.toFixed(1)}<br>Avg PIR: ${p.avg_pir.toFixed(1)}<br>GP: ${p.gp}`
     );
@@ -313,7 +313,7 @@ function renderMVPRace(mvp) {
         text: scores.map(s => s.toFixed(1)),
         textposition: 'inside',
         insidetextanchor: 'end',
-        textfont: { color: '#fff', size: 11 },
+        textfont: { color: '#111', size: 11 },
         hovertext: hoverText,
         hoverinfo: 'text',
         marker: {
@@ -528,10 +528,10 @@ function renderOracleCards(oracle) {
 
         // Favorite bar gets brighter color + border; underdog bar stays muted
         const homeBarStyle = isHomeWinner
-            ? `width:${homeWP}%;background:${homeColor}cc;box-shadow:0 0 8px ${homeColor}55;border:1px solid ${homeColor}`
+            ? `width:${homeWP}%;color:${teamOnColor(p.Local)};background:${homeColor}cc;box-shadow:0 0 8px ${homeColor}55;border:1px solid ${homeColor}`
             : `width:${homeWP}%;background:${homeColor}40`;
         const awayBarStyle = !isHomeWinner
-            ? `width:${awayWP}%;background:${awayColor}cc;box-shadow:0 0 8px ${awayColor}55;border:1px solid ${awayColor}`
+            ? `width:${awayWP}%;color:${teamOnColor(p.Road)};background:${awayColor}cc;box-shadow:0 0 8px ${awayColor}55;border:1px solid ${awayColor}`
             : `width:${awayWP}%;background:${awayColor}40`;
 
         const { headline, pills, keyPlayers } = parseInsight(p.Insight);
@@ -553,7 +553,7 @@ function renderOracleCards(oracle) {
             ${dateStr ? `<div class="oracle-game-date">${dateStr}${timeStr ? ' · ' + timeStr : ''}</div>` : ''}
             <div class="oracle-matchup">
                 <div class="oracle-team home-team${homeGlow}">
-                    <span class="team-badge" style="background:${homeColor}">${(p.Local||'').substring(0,3)}</span>
+                    <span class="team-badge" style="background:${homeColor};color:${teamOnColor(p.Local)}">${(p.Local||'').substring(0,3)}</span>
                     <span class="oracle-team-name">${p.LocalName || p.Local}</span>
                     <span class="ha-badge ha-home">HOME</span>
                 </div>
@@ -561,7 +561,7 @@ function renderOracleCards(oracle) {
                 <div class="oracle-team away-team${awayGlow}">
                     <span class="ha-badge ha-away">AWAY</span>
                     <span class="oracle-team-name">${p.RoadName || p.Road}</span>
-                    <span class="team-badge" style="background:${awayColor}">${(p.Road||'').substring(0,3)}</span>
+                    <span class="team-badge" style="background:${awayColor};color:${teamOnColor(p.Road)}">${(p.Road||'').substring(0,3)}</span>
                 </div>
             </div>
             <div class="wp-bar-wrap">
@@ -574,8 +574,8 @@ function renderOracleCards(oracle) {
             </div>
             <div class="oracle-predicted">
                 ${isCoinFlip ? '<span class="coin-flip-badge">🪙 Coin flip</span>' : ''}
-                ${!isHomeWinner && !isCoinFlip ? `<span class="coin-flip-badge" style="background:${awayColor}22;color:${awayColor};border-color:${awayColor}55">📡 Away pick</span>` : ''}
-                Predicted: <strong style="color:${isHomeWinner ? homeColor : awayColor}">${winnerName}</strong>
+                ${!isHomeWinner && !isCoinFlip ? `<span class="coin-flip-badge" style="background:${awayColor}22;color:${teamInk(p.Road)};border-color:${awayColor}55">📡 Away pick</span>` : ''}
+                Predicted: <strong style="color:${teamInk(isHomeWinner ? p.Local : p.Road)}">${winnerName}</strong>
                 <span class="oracle-conf ${confBadgeClass}">${conf}% conf · ±${margin} pts</span>
             </div>
             ${headline ? `<div class="oracle-headline">${headline}</div>` : ''}
@@ -689,8 +689,8 @@ function _renderForecastTable() {
         html += `<tr style="${rowBg}">
             <td style="color:var(--text-muted);text-align:center">${globalRank}</td>
             <td style="text-align:left;font-weight:600">${lastName}</td>
-            <td><span class="team-badge sm" style="background:${teamColor}" title="${teamName}">${p.Team}</span></td>
-            <td>${p.Opponent ? `<span class="team-badge sm" style="background:${TEAM_COLORS[p.Opponent]||'#555'}" title="${_forecastTeamNames[p.Opponent]||p.Opponent}">${p.Opponent}</span>` : ''}</td>
+            <td><span class="team-badge sm" style="background:${teamColor};color:${teamOnColor(p.Team)}" title="${teamName}">${p.Team}</span></td>
+            <td>${p.Opponent ? `<span class="team-badge sm" style="background:${TEAM_COLORS[p.Opponent]||'#555'};color:${teamOnColor(p.Opponent)}" title="${_forecastTeamNames[p.Opponent]||p.Opponent}">${p.Opponent}</span>` : ''}</td>
             <td style="color:${haColor};font-weight:700;text-align:center">${ha}</td>
             <td style="text-align:right">${(p.AvgPIR || 0).toFixed(1)}</td>
             <td style="text-align:right;color:${formColor}">${formStr}</td>
@@ -899,7 +899,7 @@ function renderStandingsTimeline(teams) {
     const rounds = Array.from({ length: maxRound }, (_, i) => i + 1);
 
     const traces = sortedTeams.map(td => {
-        const color = TEAM_COLORS[td.team] || '#555';
+        const color = teamInk(td.team);
         const y = rounds.map((_, i) => ranks[i][td.team]);
         const hoverText = rounds.map((r, i) => {
             const w = i < td.cumWins.length ? td.cumWins[i] : td.cumWins[td.cumWins.length - 1] || 0;

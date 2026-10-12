@@ -38,7 +38,7 @@ function renderSelector(teams) {
         return `<div class="team-chip" id="chip-${t.team}"
                     onclick="selectTeam('${t.team}')"
                     style="border-top: 3px solid ${color}40">
-            <span class="team-chip-code" style="color:${color}">${name}</span>
+            <span class="team-chip-code" style="color:${teamInk(t.team)}">${name}</span>
             <span class="team-chip-record">${t.wins}–${t.losses}</span>
         </div>`;
     }).join('');
@@ -79,7 +79,7 @@ function renderDeepDive(team) {
     ).join('');
     document.getElementById('dd-color-bar').style.background = color;
     document.getElementById('dd-name').textContent    = TEAM_NAMES[team.team] || team.team;
-    document.getElementById('dd-name').style.color    = color;
+    document.getElementById('dd-name').style.color    = teamInk(team.team);
     document.getElementById('dd-record').innerHTML    = `${team.wins}W – ${team.losses}L &nbsp;${formDots}`;
     document.getElementById('dd-rank').textContent    = `#${rank} in standings`;
     const netSign = team.adj_net >= 0 ? '+' : '';
@@ -293,7 +293,7 @@ function renderFixtures(team, allTeams) {
         return `<div class="fixture-row">
             <div>
                 <div class="fixture-opp">
-                    <span style="color:${oppColor};font-weight:700">${oppCode}</span>${locBadge}
+                    <span style="color:${teamInk(oppCode)};font-weight:700">${oppCode}</span>${locBadge}
                     <span style="font-size:0.72rem;color:${color};margin-left:0.4rem;font-weight:600">${diffLabel}</span>
                 </div>
                 <div class="fixture-opp-full">${TEAM_NAMES[oppCode] || oppCode}</div>
