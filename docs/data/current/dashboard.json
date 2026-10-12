@@ -3,7 +3,7 @@
   "season": 2026,
   "season_label": "2026-27",
   "regular_season_complete": false,
-  "updated": "2026-10-12T10:29:23Z",
+  "updated": "2026-10-12T11:06:37Z",
   "teams": [
     {
       "team": "PAN",
@@ -13993,7 +13993,7 @@
       "home_score": 86,
       "away_score": 98,
       "winner": "TEL",
-      "lead_changes": 22,
+      "lead_changes": 21,
       "times_tied": 7,
       "max_deficit_overcome": 11,
       "has_replay": true
@@ -14008,7 +14008,7 @@
       "home_score": 96,
       "away_score": 101,
       "winner": "CSK",
-      "lead_changes": 16,
+      "lead_changes": 15,
       "times_tied": 6,
       "max_deficit_overcome": 4,
       "has_replay": true
@@ -14023,7 +14023,7 @@
       "home_score": 78,
       "away_score": 79,
       "winner": "MAD",
-      "lead_changes": 15,
+      "lead_changes": 14,
       "times_tied": 7,
       "max_deficit_overcome": 12,
       "has_replay": true
@@ -14038,7 +14038,7 @@
       "home_score": 77,
       "away_score": 91,
       "winner": "CSK",
-      "lead_changes": 10,
+      "lead_changes": 9,
       "times_tied": 8,
       "max_deficit_overcome": 2,
       "has_replay": true
@@ -14053,7 +14053,7 @@
       "home_score": 57,
       "away_score": 58,
       "winner": "IST",
-      "lead_changes": 10,
+      "lead_changes": 9,
       "times_tied": 6,
       "max_deficit_overcome": 9,
       "has_replay": true
@@ -14068,7 +14068,7 @@
       "home_score": 92,
       "away_score": 85,
       "winner": "OLY",
-      "lead_changes": 10,
+      "lead_changes": 9,
       "times_tied": 5,
       "max_deficit_overcome": 12,
       "has_replay": true
@@ -14083,7 +14083,7 @@
       "home_score": 70,
       "away_score": 81,
       "winner": "ULK",
-      "lead_changes": 8,
+      "lead_changes": 7,
       "times_tied": 2,
       "max_deficit_overcome": 9,
       "has_replay": true
@@ -14098,24 +14098,9 @@
       "home_score": 78,
       "away_score": 59,
       "winner": "MAD",
-      "lead_changes": 7,
+      "lead_changes": 6,
       "times_tied": 5,
       "max_deficit_overcome": 6,
-      "has_replay": true
-    },
-    {
-      "season": 2019,
-      "gamecode": 252,
-      "home": "BAS",
-      "away": "BER",
-      "home_name": "Baskonia",
-      "away_name": "ALBA Berlin",
-      "home_score": 73,
-      "away_score": 72,
-      "winner": "BAS",
-      "lead_changes": 7,
-      "times_tied": 6,
-      "max_deficit_overcome": 17,
       "has_replay": true
     },
     {
@@ -14128,7 +14113,7 @@
       "home_score": 100,
       "away_score": 88,
       "winner": "OLY",
-      "lead_changes": 6,
+      "lead_changes": 5,
       "times_tied": 5,
       "max_deficit_overcome": 17,
       "has_replay": true
@@ -14143,7 +14128,7 @@
       "home_score": 85,
       "away_score": 80,
       "winner": "MAD",
-      "lead_changes": 6,
+      "lead_changes": 5,
       "times_tied": 3,
       "max_deficit_overcome": 5,
       "has_replay": true
@@ -14158,7 +14143,7 @@
       "home_score": 81,
       "away_score": 86,
       "winner": "IST",
-      "lead_changes": 6,
+      "lead_changes": 5,
       "times_tied": 7,
       "max_deficit_overcome": 10,
       "has_replay": true
@@ -14173,7 +14158,7 @@
       "home_score": 70,
       "away_score": 78,
       "winner": "PAN",
-      "lead_changes": 5,
+      "lead_changes": 4,
       "times_tied": 4,
       "max_deficit_overcome": 2,
       "has_replay": true
@@ -14188,7 +14173,7 @@
       "home_score": 61,
       "away_score": 62,
       "winner": "OLY",
-      "lead_changes": 5,
+      "lead_changes": 4,
       "times_tied": 2,
       "max_deficit_overcome": 19,
       "has_replay": true
@@ -14203,7 +14188,7 @@
       "home_score": 86,
       "away_score": 68,
       "winner": "BAR",
-      "lead_changes": 4,
+      "lead_changes": 3,
       "times_tied": 1,
       "max_deficit_overcome": 1,
       "has_replay": true
@@ -14218,7 +14203,7 @@
       "home_score": 83,
       "away_score": 91,
       "winner": "CSK",
-      "lead_changes": 4,
+      "lead_changes": 3,
       "times_tied": 3,
       "max_deficit_overcome": 4,
       "has_replay": true
@@ -14233,7 +14218,7 @@
       "home_score": 80,
       "away_score": 64,
       "winner": "ULK",
-      "lead_changes": 3,
+      "lead_changes": 2,
       "times_tied": 1,
       "max_deficit_overcome": 1,
       "has_replay": true
@@ -14248,7 +14233,7 @@
       "home_score": 73,
       "away_score": 71,
       "winner": "PAN",
-      "lead_changes": 2,
+      "lead_changes": 1,
       "times_tied": 0,
       "max_deficit_overcome": 6,
       "has_replay": true
@@ -14263,7 +14248,7 @@
       "home_score": 80,
       "away_score": 95,
       "winner": "PAN",
-      "lead_changes": 2,
+      "lead_changes": 1,
       "times_tied": 0,
       "max_deficit_overcome": 14,
       "has_replay": true
