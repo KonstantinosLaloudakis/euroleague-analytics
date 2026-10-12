@@ -657,6 +657,7 @@ footer {
     font-size: 1rem;
     color: var(--text-primary);
     margin-right: auto;
+    white-space: nowrap;
 }
 
 .nav-link {
@@ -734,7 +735,7 @@ footer {
 }
 .nav-toggle:focus-visible { outline: 2px solid var(--accent-purple); outline-offset: 2px; }
 
-@media (max-width: 1365px) {
+@media (max-width: 1439px) {
     .site-nav { flex-wrap: wrap; overflow: visible; }
     .nav-toggle { display: inline-flex; align-items: center; gap: 0.35rem; }
     .site-nav-brand { margin-right: 0; }
