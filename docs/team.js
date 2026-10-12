@@ -309,13 +309,15 @@ function renderFixtures(team, allTeams) {
 function renderPlayoffOdds(team, color) {
     const el = document.getElementById('dd-playoff-odds');
     const items = [
-        { label: 'Top 4',  pct: team.top4_pct,  desc: 'Double-bye' },
-        { label: 'Top 6',  pct: team.top6_pct,  desc: 'Home court' },
-        { label: 'Top 10', pct: team.top10_pct, desc: 'Qualify' },
+        { label: 'Top 4',  key: '4',  pct: team.top4_pct,  desc: 'Home-court advantage in the playoffs' },
+        { label: 'Top 6',  key: '6',  pct: team.top6_pct,  desc: 'Direct playoff spot' },
+        { label: 'Top 10', key: '10', pct: team.top10_pct, desc: 'Play-in spot (7–10) or better' },
     ];
 
     el.innerHTML = items.map(item => {
         const pct = Math.round(item.pct || 0);
+        const clinched = (team.clinched || {})[item.key];
+        const eliminated = (team.eliminated || {})[item.key];
         const barColor = pct >= 70 ? 'var(--accent-green)'
                        : pct >= 40 ? 'var(--accent-gold)'
                        : 'var(--accent-red)';
@@ -324,7 +326,7 @@ function renderPlayoffOdds(team, color) {
             <div class="odds-bar-wrap">
                 <div class="odds-bar" style="width:${pct}%;background:${barColor}"></div>
             </div>
-            <span class="odds-pct">${pct}%</span>
+            <span class="odds-pct">${fmtOdds(item.pct, clinched, eliminated, 0)}</span>
         </div>`;
     }).join('');
 

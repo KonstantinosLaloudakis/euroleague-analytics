@@ -216,3 +216,16 @@ function mvpPendingHTML(round) {
 function defaultMinGP(round) {
     return Math.min(5, Math.max(1, round || 0));
 }
+
+// Probability text that never claims certainty the maths doesn't support:
+// "100%"/"0%" only when clinched/eliminated, otherwise capped at >99.9% / <0.1%.
+function fmtOdds(pct, clinched, eliminated, decimals) {
+    const d = decimals == null ? 1 : decimals;
+    if (clinched) return '100%';
+    if (eliminated) return '0%';
+    const step = Math.pow(10, -d);
+    const v = Number(pct) || 0;
+    if (v >= 100 - step / 2) return '>' + (100 - step).toFixed(d) + '%';
+    if (v <= step / 2) return '<' + step.toFixed(d) + '%';
+    return v.toFixed(d) + '%';
+}

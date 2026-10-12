@@ -151,9 +151,9 @@ function renderStandings(teams) {
                 <td style="text-align:right">${t.adj_off.toFixed(1)}</td>
                 <td style="text-align:right">${t.adj_def.toFixed(1)}</td>
                 <td style="text-align:right">${t.avg_wins.toFixed(1)}</td>
-                <td style="text-align:right">${pctCell(t.top4_pct, '#a855f7')}</td>
-                <td style="text-align:right">${pctCell(t.top6_pct, '#22c55e')}</td>
-                <td style="text-align:right">${pctCell(t.top10_pct, '#3b82f6')}</td>
+                <td style="text-align:right">${pctCell(t.top4_pct, '#a855f7', (t.clinched || {})['4'], (t.eliminated || {})['4'])}</td>
+                <td style="text-align:right">${pctCell(t.top6_pct, '#22c55e', (t.clinched || {})['6'], (t.eliminated || {})['6'])}</td>
+                <td style="text-align:right">${pctCell(t.top10_pct, '#3b82f6', (t.clinched || {})['10'], (t.eliminated || {})['10'])}</td>
             </tr>`;
         });
 
@@ -161,11 +161,12 @@ function renderStandings(teams) {
         return html;
     }
 
-    function pctCell(val, color) {
+    function pctCell(val, color, clinched, eliminated) {
         const opacity = Math.min(val / 100, 1) * 0.6;
         const bg = hexToRgba(color, opacity);
         const textColor = opacity > 0.3 ? '#fff' : 'var(--text-primary)';
-        return `<span class="pct-cell" style="background:${bg};color:${textColor}">${val.toFixed(1)}%</span>`;
+        const title = clinched ? ' title="Clinched"' : eliminated ? ' title="Eliminated"' : '';
+        return `<span class="pct-cell"${title} style="background:${bg};color:${textColor}">${fmtOdds(val, clinched, eliminated, 1)}</span>`;
     }
 
     function getSorted() {
