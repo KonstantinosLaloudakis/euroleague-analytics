@@ -1683,14 +1683,17 @@ function renderChampionshipFinals(data) {
 
     section.style.display = '';
     const desc = document.getElementById('championship-finals-desc');
-    if (desc) desc.textContent = `All ${data.length} Euroleague championship finals since ${Math.min(...data.map(e => e.season))}-${String(Math.min(...data.map(e => e.season)) + 1).slice(-2)}, ranked by lead changes — the most contested games at the top.`;
+    const first = Math.min(...data.map(e => e.season));
+    if (desc) desc.textContent = `All ${data.length} Euroleague championship finals since ${seasonLabel(first)}, ranked by lead changes — the most contested games at the top.`;
 
     let html = '';
     data.forEach((entry, i) => {
         const rank = i + 1;
         const winnerIsHome = entry.winner === entry.home;
-        const winnerName = winnerIsHome ? entry.home_name : entry.away_name;
-        const loserName  = winnerIsHome ? entry.away_name : entry.home_name;
+        const homeName = TEAM_NAMES[entry.home] || entry.home_name;
+        const awayName = TEAM_NAMES[entry.away] || entry.away_name;
+        const winnerName = winnerIsHome ? homeName : awayName;
+        const loserName  = winnerIsHome ? awayName : homeName;
         const winnerCode = entry.winner;
         const loserCode  = winnerIsHome ? entry.away : entry.home;
         const winScore   = winnerIsHome ? entry.home_score : entry.away_score;
@@ -1708,7 +1711,7 @@ function renderChampionshipFinals(data) {
 
         html += `<div class="cf-card">
             <div class="cf-rank">#${rank}</div>
-            <div class="cf-season">${entry.season}</div>
+            <div class="cf-season">${seasonLabel(entry.season)}</div>
             <div class="cf-matchup">
                 <div class="cf-teams">
                     <span class="cf-winner" style="color:${winColor}">${winnerName}</span>
@@ -1717,7 +1720,7 @@ function renderChampionshipFinals(data) {
                     <span style="color:var(--text-muted);font-weight:400;margin-left:0.4rem">${winScore}–${loseScore}</span>
                 </div>
                 <div class="cf-stats">
-                    <span class="cf-pill cf-pill-lead">${entry.lead_changes} lead changes</span>
+                    <span class="cf-pill cf-pill-lead">${entry.lead_changes} lead change${entry.lead_changes === 1 ? '' : 's'}</span>
                     <span class="cf-pill cf-pill-tied">${entry.times_tied} tied</span>
                     ${comebackPill}
                 </div>

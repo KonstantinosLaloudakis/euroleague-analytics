@@ -1557,6 +1557,9 @@ def compute_championship_finals_history():
         if not os.path.isdir(season_dir):
             continue
 
+        if not os.path.exists(os.path.join('data_cache', f'pbp_{season}.csv')):
+            print(f'  [WARN] championship finals {season}: pbp file missing, skipping')
+            continue
         final_gc = championship_final_gamecode(season)
         if final_gc is None:
             print(f'  [INFO] championship finals {season}: no Final Four in pbp, skipping')
