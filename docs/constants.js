@@ -158,3 +158,17 @@ function seasonBannerHTML(r) {
     if (!r.archived) return '';
     return `<div class="season-banner">Showing the ${seasonLabel(r.archivedSeason)} playoffs (final). The ${seasonLabel(r.currentSeason)} playoffs start in April.</div>`;
 }
+
+// MVP scores need MVP_MIN_GP games (calculate_mvp_scores.py); before that
+// the MVP list is empty and pages show this message instead.
+const MVP_MIN_GP = 5;
+function mvpPendingHTML(round) {
+    const now = round ? ` We're at Round ${round}.` : '';
+    return `<p class="empty-state" style="color:var(--text-muted);text-align:center;padding:2rem 1rem">` +
+        `The MVP race opens once players have ${MVP_MIN_GP} games — after Round ${MVP_MIN_GP}.${now}</p>`;
+}
+// The export lists players with at least min(5, round) games; the
+// leaderboard's default filter uses the same threshold.
+function defaultMinGP(round) {
+    return Math.min(5, Math.max(1, round || 0));
+}

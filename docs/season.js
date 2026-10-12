@@ -6,6 +6,8 @@
 
 'use strict';
 
+let _seasonRound = 0;
+
 // ── Sort state ────────────────────────────────────────────────────────────
 let sortState = { col: 'wins', asc: false };
 
@@ -18,6 +20,7 @@ async function init() {
 
         renderStandings(data.teams || []);
         renderPowerScatter(data.teams || []);
+        _seasonRound = data.round || 0;
         renderMVPRace(data.mvp || []);
         renderScheduleDifficulty(data.teams || []);
         renderStandingsTimeline(data.teams || []);
@@ -284,7 +287,11 @@ function toggleScatterLabels() {
 
 // ── MVP Race bar chart ────────────────────────────────────────────────────
 function renderMVPRace(mvp) {
-    if (!mvp.length) return;
+    if (!mvp.length) {
+        const el = document.getElementById('mvp-chart');
+        if (el) { el.style.height = 'auto'; el.innerHTML = mvpPendingHTML(_seasonRound); }
+        return;
+    }
 
     const top10 = mvp.slice(0, 10);
     // Last name only

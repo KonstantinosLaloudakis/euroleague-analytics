@@ -14,6 +14,7 @@ const COMPONENTS = [
 
 let _mvpData = [];
 let _raceData = [];
+let _round = 0;
 let _selectedIdx = null;
 let _mvpSort = { key: 'mvp_score', dir: 'desc' };
 
@@ -25,6 +26,7 @@ async function init() {
 
         _mvpData = data.mvp || [];
         _raceData = data.mvp_race || [];
+        _round = data.round || 0;
 
         if (data.updated) {
             const el = document.getElementById('last-updated');
@@ -73,6 +75,12 @@ const MVP_COLS = [
 ];
 
 function renderLadder() {
+    if (!_mvpData.length) {
+        document.querySelector('#mvp-table thead').innerHTML = '';
+        document.getElementById('mvp-tbody').innerHTML =
+            `<tr><td colspan="${MVP_COLS.length}">${mvpPendingHTML(_round)}</td></tr>`;
+        return;
+    }
     const pctls = computePercentiles();
     const pctlMap = {
         pir: 'avg_pir', wpa: 'wpa', team_win: 'team_win_pct',
@@ -137,6 +145,7 @@ function sortMvp(key) {
 
 function renderLegend() {
     const el = document.getElementById('mvp-legend');
+    if (!_mvpData.length) { el.style.display = 'none'; return; }
     el.innerHTML = COMPONENTS.map(c =>
         `<div class="mvp-legend-item">
             <div class="mvp-legend-swatch" style="background:${c.color}"></div>
@@ -276,7 +285,9 @@ function buildRadar(pctls, pctlMap, color) {
 function renderRaceChart() {
     const container = document.getElementById('race-chart');
     if (!_raceData.length) {
-        container.innerHTML = '<p style="color:var(--text-muted);text-align:center;padding:2rem">No historical snapshots available.</p>';
+        container.innerHTML = _mvpData.length
+            ? '<p style="color:var(--text-muted);text-align:center;padding:2rem">No historical snapshots available.</p>'
+            : mvpPendingHTML(_round);
         return;
     }
 

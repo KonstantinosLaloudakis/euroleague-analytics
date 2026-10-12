@@ -12,6 +12,7 @@ let _lbShowAll = false;
 let _rapmShowAll = false;
 let _cmpPlayerA = null;
 let _cmpPlayerB = null;
+let _round = 0;
 
 // ── Tab config ────────────────────────────────────────────────────────────
 const PLAYER_TABS = ['tab-leaderboards', 'tab-mvp', 'tab-rapm', 'tab-compare'];
@@ -22,6 +23,19 @@ fetchJSON('data/current/dashboard.json')
         _players = data.player_stats || [];
         _mvpList  = data.mvp || [];
         _rapmData = data.rapm || [];
+        _round = data.round || 0;
+
+        // Early season the export only has players with < 5 games: default
+        // the GP filter to the export's threshold so the table isn't empty.
+        const minSel = document.getElementById('lb-mingp');
+        const minGP0 = defaultMinGP(_round);
+        if (minSel && minGP0 < 5) {
+            const o = document.createElement('option');
+            o.value = String(minGP0);
+            o.textContent = `Min ${minGP0} GP`;
+            minSel.insertBefore(o, minSel.firstChild);
+            minSel.value = String(minGP0);
+        }
 
         // Last-updated stamp
         if (data.updated) {
@@ -97,7 +111,7 @@ function _setPosFilter(btn, pos) {
 function _renderLeaderboard() {
     const search  = (document.getElementById('lb-search')?.value || '').toLowerCase();
     const team    = document.getElementById('lb-team')?.value || '';
-    const minGP   = parseInt(document.getElementById('lb-mingp')?.value || '5', 10);
+    const minGP   = parseInt(document.getElementById('lb-mingp')?.value || String(defaultMinGP(_round)), 10);
 
     let rows = _players.filter(p =>
         p.gp >= minGP &&
@@ -193,6 +207,11 @@ function _lbToggleShowAll() {
 
 // ── MVP Race ──────────────────────────────────────────────────────────────
 function renderMvpRace(mvpList, playerStats) {
+    if (!mvpList.length) {
+        document.getElementById('mvp-podium').innerHTML = mvpPendingHTML(_round);
+        document.getElementById('mvp-race-table').innerHTML = '';
+        return;
+    }
     // Enrich mvp entries with full stats from player_stats
     const statsLookup = {};
     playerStats.forEach(p => { statsLookup[p.name] = p; });
