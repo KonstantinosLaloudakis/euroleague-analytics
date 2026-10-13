@@ -21,6 +21,7 @@ REPLAY_DIR = os.path.join('docs', 'data')
 TOP_N = 25
 MIN_SCORING_ROWS = 30   # fewer scoring plays than this = truncated game
 MIN_FINAL = 45          # a final under this is a data error, not a score
+LAST_REGULATION_PERIOD = 4   # a log ending earlier is an incomplete game
 GLITCH_TOL = 3          # one play moves the margin by at most 3 points
 POSTSEASON = {'PO', 'PI', 'FF'}
 NO_DEFICIT = {'deficit': 0, 'trailing': None, 'quarter': None, 'clock': None}
@@ -52,9 +53,11 @@ def analyze_game(g):
     key = ('TRUE_NUMBEROFPLAY'
            if 'TRUE_NUMBEROFPLAY' in g and g['TRUE_NUMBEROFPLAY'].notna().all()
            else 'NUMBEROFPLAY')
-    g = g.drop_duplicates([key, 'PLAYTYPE', 'CODETEAM']).sort_values(key, kind='stable')
+    g = g.drop_duplicates([key, 'PLAYTYPE', 'CODETEAM']).sort_values(['PERIOD', key], kind='stable')
     sc = g[g['POINTS_A'].notna() | g['POINTS_B'].notna()].reset_index(drop=True)
     if len(sc) < MIN_SCORING_ROWS:
+        return None
+    if sc['PERIOD'].max() < LAST_REGULATION_PERIOD:
         return None
     a = sc['POINTS_A'].ffill().fillna(0).astype(int).tolist()
     b = sc['POINTS_B'].ffill().fillna(0).astype(int).tolist()
@@ -159,8 +162,24 @@ def load_records(seasons=ALL_SEASONS, cache_dir=CACHE_DIR):
     return records
 
 
+CONTENT_KEYS = ('overall', 'fourth_quarter', 'postseason', 'games_scanned', 'current_season')
+
+
+def keep_generated_date(old, new):
+    """Reuse the old `generated` date when nothing but the date would change."""
+    if old and all(old.get(k) == new.get(k) for k in CONTENT_KEYS):
+        new['generated'] = old['generated']
+    return new
+
+
 def main():
     out = build_output(load_records(), CURRENT_SEASON)
+    if os.path.exists(OUT_PATH):
+        try:
+            with open(OUT_PATH, encoding='utf-8') as f:
+                keep_generated_date(json.load(f), out)
+        except (OSError, ValueError, KeyError):
+            pass
     os.makedirs(os.path.dirname(OUT_PATH), exist_ok=True)
     with open(OUT_PATH, 'w', encoding='utf-8') as f:
         json.dump(out, f, ensure_ascii=False, indent=1)

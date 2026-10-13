@@ -124,8 +124,8 @@ function renderPage() {
 
     document.querySelectorAll('.cat-tab').forEach(btn => {
         btn.addEventListener('click', async () => {
+            if (btn.dataset.tab === 'comebacks' && !_comebacks) await loadComebacks();
             _activeTab = btn.dataset.tab;
-            if (_activeTab === 'comebacks' && !_comebacks) await loadComebacks();
             renderPage();
         });
     });
@@ -247,7 +247,7 @@ function renderComebackCard(rows, title, sub, titleCls) {
         <span class="rch-title ${titleCls}">${title}</span>
         <span class="rch-sub">${sub}</span>
       </div>
-      <table class="lb-table">
+      <table class="lb-table cb-table">
         <thead><tr><th>#</th><th>Game</th><th>Deficit</th><th>Final</th></tr></thead>
         <tbody>${trows}</tbody>
       </table>

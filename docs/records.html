@@ -79,7 +79,12 @@
     .rch-title.q4       { color: var(--accent-red); }
     .rch-title.post     { color: var(--accent-green); }
     .val-deficit { color: var(--accent-gold); font-weight: 800; font-size: 15px; }
-    .val-deficit .p-meta { font-weight: 400; white-space: nowrap; }
+    .val-deficit .p-meta { font-weight: 400; }
+    @media (min-width: 581px) { .val-deficit .p-meta { white-space: nowrap; } }
+    .cb-table thead th:nth-child(1) { width: 36px; }
+    .cb-table td:nth-child(1) { white-space: nowrap; }
+    .cb-table .p-name { white-space: nowrap; }
+    .cb-table td:nth-child(4) { white-space: nowrap; }
     .cb-new {
       display: inline-block; margin-left: 6px; padding: 0 4px; border: 1px solid currentColor;
       border-radius: 4px; font-size: 9px; font-weight: 700; color: var(--accent-green); vertical-align: 1px;

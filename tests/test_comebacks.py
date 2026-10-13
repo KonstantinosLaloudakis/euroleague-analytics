@@ -58,7 +58,7 @@ def test_basic_comeback():
 
 
 def test_wire_to_wire_winner_has_zero_deficit():
-    r = cb.analyze_game(game([('A', 30, 2, 1, '05:00'), ('B', 25, 2, 2, '05:00')]))
+    r = cb.analyze_game(game([('A', 30, 2, 1, '05:00'), ('B', 25, 2, 4, '05:00')]))
     assert r['deficit'] == 0
     assert r['trailing'] is None
     assert r['winner'] == 'HOM' and r['home'] is True
@@ -95,15 +95,33 @@ def test_overtime_flag():
 
 
 def test_final_under_45_is_skipped():
-    assert cb.analyze_game(game([('A', 20, 1, 1, '05:00'), ('B', 15, 2, 2, '05:00')])) is None
+    assert cb.analyze_game(game([('A', 20, 1, 1, '05:00'), ('B', 15, 2, 4, '05:00')])) is None
 
 
 def test_too_few_scoring_rows_is_skipped():
-    assert cb.analyze_game(game([('A', 15, 4, 1, '05:00'), ('B', 10, 5, 2, '05:00')])) is None
+    assert cb.analyze_game(game([('A', 15, 4, 1, '05:00'), ('B', 10, 5, 4, '05:00')])) is None
 
 
 def test_tied_final_is_skipped():
-    assert cb.analyze_game(game([('A', 25, 2, 1, '05:00'), ('B', 25, 2, 2, '05:00')])) is None
+    assert cb.analyze_game(game([('A', 25, 2, 1, '05:00'), ('B', 25, 2, 4, '05:00')])) is None
+
+
+def test_stray_early_period_row_with_highest_play_number_is_ignored():
+    df = game(BASIC)
+    n = len(df)
+    stray = df.iloc[5].copy()          # a mid-Q1 score logged last
+    stray['NUMBEROFPLAY'] = stray['TRUE_NUMBEROFPLAY'] = n
+    df = pd.concat([df, stray.to_frame().T], ignore_index=True)
+    r = cb.analyze_game(df)
+    assert r is not None
+    assert r['final'] == '52-50'
+    assert r['winner'] == 'AWY'
+    assert r['deficit'] == 20
+
+
+def test_game_ending_before_fourth_quarter_is_skipped():
+    legs = [('A', 15, 2, 1, '05:00'), ('B', 25, 2, 2, '05:00'), ('A', 12, 2, 3, '05:00')]
+    assert cb.analyze_game(game(legs)) is None
 
 
 def test_falls_back_to_numberofplay():
@@ -171,3 +189,11 @@ def test_build_output(tmp_path):
     assert [r['gamecode'] for r in q4] == [4, 113]
     assert (q4[0]['deficit'], q4[0]['trailing'], q4[0]['quarter']) == (12, '1-13', 4)
     assert [r['gamecode'] for r in out['postseason']] == [9, 4]
+
+
+def test_keep_generated_date_only_when_content_unchanged():
+    old = cb.build_output([_rec(20, 2015, 1)], 2017, generated='2000-01-01')
+    same = cb.build_output([_rec(20, 2015, 1)], 2017, generated='2001-01-01')
+    assert cb.keep_generated_date(old, same)['generated'] == '2000-01-01'
+    diff = cb.build_output([_rec(21, 2015, 1)], 2017, generated='2001-01-01')
+    assert cb.keep_generated_date(old, diff)['generated'] == '2001-01-01'
