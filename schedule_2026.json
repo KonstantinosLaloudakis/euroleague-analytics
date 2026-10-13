@@ -612,7 +612,7 @@
     "arenaname": "BELGRADE ARENA",
     "confirmeddate": "true",
     "confirmedtime": "true",
-    "played": "false"
+    "played": "true"
   },
   {
     "gameday": "5",
@@ -627,7 +627,7 @@
     "arenaname": "ULKER SPORTS AND EVENT HALL",
     "confirmeddate": "true",
     "confirmedtime": "true",
-    "played": "false"
+    "played": "true"
   },
   {
     "gameday": "5",
@@ -657,7 +657,7 @@
     "arenaname": "ROIG ARENA",
     "confirmeddate": "true",
     "confirmedtime": "true",
-    "played": "false"
+    "played": "true"
   },
   {
     "gameday": "5",
@@ -672,7 +672,7 @@
     "arenaname": "UNIPOL FORUM",
     "confirmeddate": "true",
     "confirmedtime": "true",
-    "played": "false"
+    "played": "true"
   },
   {
     "gameday": "5",
@@ -717,7 +717,7 @@
     "arenaname": "ASTROBALLE",
     "confirmeddate": "true",
     "confirmedtime": "true",
-    "played": "false"
+    "played": "true"
   },
   {
     "gameday": "5",
@@ -732,7 +732,7 @@
     "arenaname": "BUESA ARENA",
     "confirmeddate": "true",
     "confirmedtime": "true",
-    "played": "false"
+    "played": "true"
   },
   {
     "gameday": "5",
@@ -747,7 +747,7 @@
     "arenaname": "PALAU BLAUGRANA",
     "confirmeddate": "true",
     "confirmedtime": "true",
-    "played": "false"
+    "played": "true"
   },
   {
     "gameday": "6",
