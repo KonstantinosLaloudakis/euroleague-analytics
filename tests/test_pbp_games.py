@@ -44,6 +44,28 @@ def test_scores_and_periods_given_as_strings_are_coerced():
     assert (cg.final_a, cg.final_b) == (50, 52)
 
 
+def _with_stale_row_after_eg(with_eg):
+    events = filler(25, 26, period=4) + (ev('A', 'EG', 4, '00:00') if with_eg else [])
+    df = build(events)
+    stale = df[df['POINTS_A'].notna()].iloc[-3].copy()      # an earlier score, logged last
+    stale['NUMBEROFPLAY'] = stale['TRUE_NUMBEROFPLAY'] = len(df)
+    return pd.concat([df, stale.to_frame().T], ignore_index=True), len(df)
+
+
+def test_stale_correction_row_after_end_game_does_not_set_final():
+    df, stale_key = _with_stale_row_after_eg(True)
+    cg = pg.clean_game(df)
+    assert (cg.final_a, cg.final_b, cg.a_won) == (25 * 2, 26 * 2, False)
+    assert len(cg.sc) == 51
+    assert stale_key in cg.rows['TRUE_NUMBEROFPLAY'].tolist()   # late row stays in rows
+
+
+def test_stale_row_without_end_game_still_sets_final():
+    df, _ = _with_stale_row_after_eg(False)
+    cg = pg.clean_game(df)
+    assert (cg.final_a, cg.final_b) != (50, 52)
+
+
 def _r(value, season, gamecode):
     return {'value': value, 'season': season, 'gamecode': gamecode}
 

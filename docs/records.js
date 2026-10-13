@@ -221,7 +221,7 @@ function replayLink(r, label, title) {
 
 function playerLink(r) {
     const name = esc(r.player_name || r.player || '—');
-    return r.player ? `<a href="player.html?code=${encodeURIComponent(r.player)}">${name}</a>` : name;
+    return r.player && _data && _data.players && _data.players[r.player] ? `<a href="player.html?code=${encodeURIComponent(r.player)}">${name}</a>` : name;
 }
 
 function showMoreBtn(n, all) {
@@ -248,7 +248,7 @@ function cardShell(title, sub, titleCls, tableCls, thead, trows, showMore) {
 function renderComebacks(d) {
     if (d.error) return errorMsg('comeback');
     return legend(`Largest deficit the eventual winner faced &nbsp;·&nbsp; ${d.games_scanned.toLocaleString()} games since ${sinceLabel(d)} &nbsp;·&nbsp; click a game for its replay`) + `
-    <div class="records-grid">
+    <div class="records-grid game-grid">
       ${renderComebackCard(d.overall,        'Biggest Comebacks',     'Any point in the game',         'comeback', d.current_season)}
       ${renderComebackCard(d.fourth_quarter, '4th-Quarter Comebacks', 'Deficit faced in Q4 or OT',     'q4',       d.current_season)}
       ${renderComebackCard(d.postseason,     'Playoffs & Final Four', 'Playoffs, Play-In, Final Four', 'post',     d.current_season)}
@@ -288,7 +288,7 @@ const HIGH_CARDS = [
 function renderHighs(d) {
     if (d.error) return errorMsg('game-high');
     return legend(`Single-game bests rebuilt from play-by-play &nbsp;·&nbsp; ${d.games_scanned.toLocaleString()} games since ${sinceLabel(d)} &nbsp;·&nbsp; click a game for its replay`) +
-        `<div class="records-grid">${HIGH_CARDS.map(c => renderHighCard(d[c.key] || [], c, d.current_season)).join('')}</div>`;
+        `<div class="records-grid game-grid">${HIGH_CARDS.map(c => renderHighCard(d[c.key] || [], c, d.current_season)).join('')}</div>`;
 }
 
 function lineSummary(line, key) {
@@ -326,10 +326,10 @@ function renderHighCard(rows, c, current) {
 function renderWinners(d) {
     if (d.error) return errorMsg('game-winner');
     return legend(`Made field goals in the last ${d.window_seconds} seconds of the 4th quarter or OT that gave the winner the lead for good &nbsp;·&nbsp; ${d.all.length} since ${sinceLabel(d)}`) + `
-    <div class="records-grid">
+    <div class="records-grid game-grid">
       ${renderShotCard(d.all,            'All Game-Winners', 'Newest first',  'comeback', d.current_season)}
       ${renderShotCard(d.buzzer_beaters, 'Buzzer-Beaters',   '0:01 or less',  'q4',       d.current_season)}
-      ${renderLeadersCard(d.leaders)}
+      ${renderLeadersCard(d.leaders, `Since ${sinceLabel(d)}`)}
     </div>`;
 }
 
@@ -354,7 +354,7 @@ function renderShotCard(rows, title, sub, titleCls, current) {
         '<tr><th>Shooter</th><th>Shot</th></tr>', trows, showMoreBtn(rows.length, true));
 }
 
-function renderLeadersCard(rows) {
+function renderLeadersCard(rows, sub) {
     const trows = rows.length ? rows.map((r, i) => `<tr class="${rowCls(r, i)}">
           ${rankCell(r)}
           <td>
@@ -364,7 +364,7 @@ function renderLeadersCard(rows) {
           <td class="val-deficit">${r.count}</td>
           <td>${r.buzzer_count}</td>
         </tr>`).join('') : emptyRow(4);
-    return cardShell('Most Game-Winners', 'Career', 'post', 'gr-table',
+    return cardShell('Most Game-Winners', sub, 'post', 'gr-table',
         '<tr><th>#</th><th>Player</th><th>GW</th><th>Buzzer</th></tr>', trows, showMoreBtn(rows.length, false));
 }
 

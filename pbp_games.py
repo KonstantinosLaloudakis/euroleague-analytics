@@ -76,7 +76,12 @@ def clean_game(g):
     g['PT'] = g['PLAYTYPE'].astype(str).str.strip()
     g['PID'] = g['PLAYER_ID'].map(_pid) if 'PLAYER_ID' in g else None
     g = g.sort_values(['PERIOD', key], kind='stable')
-    sc = g[g['POINTS_A'].notna() | g['POINTS_B'].notna()].reset_index(drop=True)
+    scoring = g['POINTS_A'].notna() | g['POINTS_B'].notna()
+    eg_keys = pd.to_numeric(g.loc[g['PT'] == 'EG', key], errors='coerce').dropna()
+    if not eg_keys.empty:
+        # some feeds log a stale score correction after End Game; it is not the final
+        scoring &= pd.to_numeric(g[key], errors='coerce') <= eg_keys.max()
+    sc = g[scoring].reset_index(drop=True)
     if len(sc) < MIN_SCORING_ROWS:
         return None
     if sc['PERIOD'].max() < LAST_REGULATION_PERIOD:

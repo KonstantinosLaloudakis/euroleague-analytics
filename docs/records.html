@@ -35,6 +35,10 @@
     .records-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
     @media (max-width: 900px) { .records-grid { grid-template-columns: 1fr 1fr; } }
     @media (max-width: 580px) { .records-grid { grid-template-columns: 1fr; } }
+    /* game-record tabs: wider tables, so 3 columns only on wide screens */
+    .records-grid.game-grid { grid-template-columns: 1fr 1fr; }
+    @media (min-width: 1250px) { .records-grid.game-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 580px) { .records-grid.game-grid { grid-template-columns: 1fr; } }
 
     .record-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; min-width: 0; }
     .record-card-header {
@@ -70,6 +74,8 @@
     .p-name { color: var(--text-primary); font-weight: 600; font-size: 12px; }
     .p-name a { color: var(--text-primary); text-decoration: none; }
     .p-name a:hover { color: var(--accent-blue); }
+    .p-meta a { color: inherit; text-decoration: none; }
+    .p-meta a:hover { color: var(--accent-blue); }
     .p-meta { font-size: 10px; color: var(--text-muted); display: block; margin-top: 1px; }
 
     .val-career { color: var(--accent-gold); font-weight: 700; }
@@ -80,10 +86,9 @@
     .rch-title.post     { color: var(--accent-green); }
     .val-deficit { color: var(--accent-gold); font-weight: 800; font-size: 15px; }
     .val-deficit .p-meta { font-weight: 400; }
-    @media (min-width: 581px) { .val-deficit .p-meta { white-space: nowrap; } }
+    @media (min-width: 901px) { .val-deficit .p-meta { white-space: nowrap; } }
     .cb-table thead th:nth-child(1) { width: 36px; }
     .cb-table td:nth-child(1) { white-space: nowrap; }
-    .cb-table .p-name { white-space: nowrap; }
     .cb-table td:nth-child(4) { white-space: nowrap; }
     .cb-new {
       display: inline-block; margin-left: 6px; padding: 0 4px; border: 1px solid currentColor;
@@ -91,11 +96,9 @@
     }
     .gr-table thead th:nth-child(1) { width: 36px; }
     .gr-table td:nth-child(1) { white-space: nowrap; }
-    .gr-table .p-name { white-space: nowrap; }
     .gr-table .val-deficit .p-meta { white-space: normal; }
     .gw-table thead th:nth-child(1), .gw-table td:nth-child(1) { text-align: left; width: auto; font-weight: 400; font-size: 12px; }
     .gw-table thead th:nth-child(2), .gw-table td:nth-child(2) { text-align: right; }
-    .gw-table .p-name { white-space: nowrap; }
     .gw-buzzer {
       display: inline-block; margin-left: 6px; padding: 0 4px; border: 1px solid currentColor;
       border-radius: 4px; font-size: 9px; font-weight: 700; color: var(--accent-red); vertical-align: 1px;
