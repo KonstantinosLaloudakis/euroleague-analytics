@@ -66,7 +66,9 @@ Each entry:
 - In `fourth_quarter`, `deficit` / `trailing` / `quarter` / `clock` hold the Q4 values.
 - `has_replay` is true when `docs/data/{season}/{gamecode}.json` exists.
 
-**Pipeline:** add a step to `refresh_all.py` Phase 2 ("Biggest Comebacks", `calculate_comebacks.py`). It runs after Phase 1 so the current season's PBP is fresh. The CI commit step already stages `docs/data/`.
+**Pipeline:** `data_cache/pbp_{CURRENT_SEASON}.csv` and the replay files are refreshed daily by `.github/workflows/wp_replay_update.yml` (`fetch_all_seasons.py` → `preprocess_wp_data.py`), not by `refresh_all.py`. So:
+- `wp_replay_update.yml` gets a "Compute Biggest Comebacks" step after "Preprocess WP JSON Data". Its existing commit step already stages `docs/data/`.
+- `refresh_all.py` Phase 2 also gets a "Biggest Comebacks" step, so local runs and `--no-fetch` recomputes keep the file current.
 
 **Season rule:** no hardcoded years. Seasons come from `ALL_SEASONS` and labels from `season_label()`, as enforced by `tests/test_no_hardcoded_season.py`.
 
