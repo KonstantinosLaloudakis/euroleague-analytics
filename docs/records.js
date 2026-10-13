@@ -3,11 +3,14 @@ const DATA_URL      = 'data/current/player_career_stats.json';
 const MIN_GP_SEASON = 15;
 const TOP_INITIAL   = 10;
 const TOP_EXTENDED  = 25;
+const COMEBACKS_URL = 'data/current/comebacks.json';
+const PHASE_LABEL   = { RS: 'RS', TS: 'Top 16', PO: 'Playoffs', PI: 'Play-In', FF: 'Final Four' };
 
 let _data        = null; // cached raw JSON — reused on filter changes, no re-fetch
 let _rankings    = null; // cached computed rankings
 let _activeTab   = 'scoring';
 let _minGpCareer = 100;
+let _comebacks   = null; // comebacks.json, loaded on first Comebacks tab click
 
 const TABS = [
     { key: 'scoring',    label: 'Scoring',    careerLabel: 'Career Points',   careerSub: 'Accumulated total',   avgLabel: 'Career Avg PPG', avgSub: 'GP-weighted average', avgStat: 'ppg',     avgFmt: v => v.toFixed(1), seasonLabel: 'Best Season PPG', seasonSub: 'Per-game average',   fmtC: v => Math.round(v).toLocaleString(), fmtS: v => v.toFixed(1) },
@@ -15,6 +18,7 @@ const TABS = [
     { key: 'rebounding', label: 'Rebounding', careerLabel: 'Career Rebounds', careerSub: 'Accumulated total',   avgLabel: 'Career Avg RPG', avgSub: 'GP-weighted average', avgStat: 'rpg',     avgFmt: v => v.toFixed(1), seasonLabel: 'Best Season RPG', seasonSub: 'Per-game average',   fmtC: v => Math.round(v).toLocaleString(), fmtS: v => v.toFixed(1) },
     { key: 'defense',    label: 'Defense',    careerLabel: 'Career Steals',   careerSub: 'Accumulated total',   avgLabel: 'Career Avg SPG', avgSub: 'GP-weighted average', avgStat: 'spg',     avgFmt: v => v.toFixed(1), seasonLabel: 'Best Season SPG', seasonSub: 'Per-game average',   fmtC: v => Math.round(v).toLocaleString(), fmtS: v => v.toFixed(1) },
     { key: 'efficiency', label: 'Efficiency', careerLabel: 'Career Avg PIR',  careerSub: 'GP-weighted average', avgLabel: 'Career Avg 2P%', avgSub: 'GP-weighted average', avgStat: 'fg2_pct', avgFmt: v => v.toFixed(1) + '%', seasonLabel: 'Best Season PIR', seasonSub: 'Per-game average',   fmtC: v => v.toFixed(1),                   fmtS: v => v.toFixed(1) },
+    { key: 'comebacks',  label: 'Comebacks' },
 ];
 
 // ── Entry point ────────────────────────────────────────────────────────────────
@@ -82,8 +86,12 @@ function renderPage() {
     const tabButtons = TABS.map(t =>
         `<button class="cat-tab${t.key === _activeTab ? ' active' : ''}" data-tab="${t.key}">${t.label}</button>`
     ).join('');
+    const content = document.getElementById('records-content');
 
-    const filterHtml = `
+    if (_activeTab === 'comebacks') {
+        content.innerHTML = `<div class="cat-tabs">${tabButtons}</div>${renderComebacks()}`;
+    } else {
+        const filterHtml = `
     <div class="filter-row">
       <span>Career minimum:</span>
       <select id="min-gp-select">
@@ -95,10 +103,10 @@ function renderPage() {
       <span class="filter-legend">· Career totals = Σ(stat × GP) &nbsp;·&nbsp; Career averages = GP-weighted &nbsp;·&nbsp; Season min: ${MIN_GP_SEASON} GP</span>
     </div>`;
 
-    const tab  = TABS.find(t => t.key === _activeTab);
-    const data = _rankings[_activeTab];
+        const tab  = TABS.find(t => t.key === _activeTab);
+        const data = _rankings[_activeTab];
 
-    document.getElementById('records-content').innerHTML = `
+        content.innerHTML = `
     <div class="cat-tabs">${tabButtons}</div>
     ${filterHtml}
     <div class="records-grid">
@@ -107,14 +115,19 @@ function renderPage() {
       ${renderCard(data.season, tab.seasonLabel, tab.seasonSub, 'season', tab.fmtS)}
     </div>`;
 
-    document.querySelectorAll('.cat-tab').forEach(btn => {
-        btn.addEventListener('click', () => { _activeTab = btn.dataset.tab; renderPage(); });
-    });
+        document.getElementById('min-gp-select').addEventListener('change', e => {
+            _minGpCareer = Number(e.target.value);
+            _rankings = computeRankings(_data, _minGpCareer); // reuse cached _data, no re-fetch
+            renderPage();
+        });
+    }
 
-    document.getElementById('min-gp-select').addEventListener('change', e => {
-        _minGpCareer = Number(e.target.value);
-        _rankings = computeRankings(_data, _minGpCareer); // reuse cached _data, no re-fetch
-        renderPage();
+    document.querySelectorAll('.cat-tab').forEach(btn => {
+        btn.addEventListener('click', async () => {
+            _activeTab = btn.dataset.tab;
+            if (_activeTab === 'comebacks' && !_comebacks) await loadComebacks();
+            renderPage();
+        });
     });
 
     document.querySelectorAll('.show-more-btn').forEach(btn => {
@@ -169,4 +182,84 @@ function renderCard(rows, title, sub, type, fmt) {
       </table>
       ${showMore}
     </div>`;
+}
+
+// ── Comebacks tab ──────────────────────────────────────────────────────────────
+async function loadComebacks() {
+    try {
+        const r = await fetch(COMEBACKS_URL);
+        if (!r.ok) throw new Error(r.status);
+        _comebacks = await r.json();
+    } catch {
+        _comebacks = { error: true };
+    }
+}
+
+function renderComebacks() {
+    if (_comebacks.error) {
+        return '<p class="error-msg">Could not load comeback data. Run the data pipeline first.</p>';
+    }
+    const since = _comebacks.seasons.length ? seasonLbl(_comebacks.seasons[0]) : '';
+    return `
+    <div class="filter-row">
+      <span class="filter-legend">Largest deficit the eventual winner faced &nbsp;·&nbsp; ${_comebacks.games_scanned.toLocaleString()} games since ${since} &nbsp;·&nbsp; click a game for its replay</span>
+    </div>
+    <div class="records-grid">
+      ${renderComebackCard(_comebacks.overall,        'Biggest Comebacks',     'Any point in the game',         'comeback')}
+      ${renderComebackCard(_comebacks.fourth_quarter, '4th-Quarter Comebacks', 'Deficit faced in Q4 or OT',     'q4')}
+      ${renderComebackCard(_comebacks.postseason,     'Playoffs & Final Four', 'Playoffs, Play-In, Final Four', 'post')}
+    </div>`;
+}
+
+function renderComebackCard(rows, title, sub, titleCls) {
+    const rankCls = r => r.rank === 1 ? 'rank-1' : r.rank === 2 ? 'rank-2' : r.rank === 3 ? 'rank-3' : '';
+
+    const trows = rows.length ? rows.map((r, i) => {
+        const cls   = [rankCls(r), i >= TOP_INITIAL ? 'hidden' : ''].filter(Boolean).join(' ');
+        const sep   = r.home ? 'vs' : '@';
+        const full  = esc(`${r.winner_name} ${sep} ${r.loser_name}`);
+        const label = `${r.winner} ${sep} ${r.loser}`;
+        const game  = r.has_replay
+            ? `<a href="replay.html?season=${r.season}&game=${r.gamecode}" title="${full} · open replay">${label}</a>`
+            : `<span title="${full}">${label}</span>`;
+        const isNew = r.season === _comebacks.current_season ? '<span class="cb-new">NEW</span>' : '';
+        const meta  = [r.season_label, stageLabel(r)].filter(Boolean).join(' · ');
+        return `<tr class="${cls}">
+          <td class="${rankCls(r)}">${r.tied ? 'T-' : ''}${r.rank}</td>
+          <td>
+            <span class="p-name">${game}${isNew}</span>
+            <span class="p-meta">${meta}</span>
+          </td>
+          <td class="val-deficit">${r.deficit}
+            <span class="p-meta">trailed ${r.trailing} · ${periodLabel(r.quarter)} ${clockLabel(r.clock)}</span>
+          </td>
+          <td>${r.final}${r.ot ? ' OT' : ''}</td>
+        </tr>`;
+    }).join('') : '<tr><td colspan="4" class="p-meta">No qualifying games yet</td></tr>';
+
+    const showMore = rows.length > TOP_INITIAL
+        ? `<button class="show-more-btn">Show top ${Math.min(rows.length, TOP_EXTENDED)} ↓</button>`
+        : '';
+
+    return `
+    <div class="record-card">
+      <div class="record-card-header">
+        <span class="rch-title ${titleCls}">${title}</span>
+        <span class="rch-sub">${sub}</span>
+      </div>
+      <table class="lb-table">
+        <thead><tr><th>#</th><th>Game</th><th>Deficit</th><th>Final</th></tr></thead>
+        <tbody>${trows}</tbody>
+      </table>
+      ${showMore}
+    </div>`;
+}
+
+function seasonLbl(s)   { return `${s}-${String(s + 1).slice(-2)}`; }
+function periodLabel(q) { return q == null ? '' : q <= 4 ? `Q${q}` : `OT${q - 4}`; }
+function clockLabel(c)  { return c ? String(c).replace(/^0(?=\d:)/, '') : ''; }
+function esc(s)         { return String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;'); }
+function stageLabel(r) {
+    const name = PHASE_LABEL[r.phase] || r.phase || '';
+    return (r.phase === 'RS' || r.phase === 'TS') && r.round != null ? `${name} R${r.round}` : name;
 }
