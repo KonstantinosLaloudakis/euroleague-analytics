@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#0f1117">
   <title>All-Time Records — Euroleague Analytics</title>
-  <meta name="description" content="Euroleague all-time career leaders, single-season records and biggest comebacks across 20 seasons.">
+  <meta name="description" content="Euroleague all-time career leaders, single-season records, biggest comebacks, single-game highs and game-winners across 20 seasons.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -88,6 +88,17 @@
     .cb-new {
       display: inline-block; margin-left: 6px; padding: 0 4px; border: 1px solid currentColor;
       border-radius: 4px; font-size: 9px; font-weight: 700; color: var(--accent-green); vertical-align: 1px;
+    }
+    .gr-table thead th:nth-child(1) { width: 36px; }
+    .gr-table td:nth-child(1) { white-space: nowrap; }
+    .gr-table .p-name { white-space: nowrap; }
+    .gr-table .val-deficit .p-meta { white-space: normal; }
+    .gw-table thead th:nth-child(1), .gw-table td:nth-child(1) { text-align: left; width: auto; font-weight: 400; font-size: 12px; }
+    .gw-table thead th:nth-child(2), .gw-table td:nth-child(2) { text-align: right; }
+    .gw-table .p-name { white-space: nowrap; }
+    .gw-buzzer {
+      display: inline-block; margin-left: 6px; padding: 0 4px; border: 1px solid currentColor;
+      border-radius: 4px; font-size: 9px; font-weight: 700; color: var(--accent-red); vertical-align: 1px;
     }
 
     .show-more-btn {
