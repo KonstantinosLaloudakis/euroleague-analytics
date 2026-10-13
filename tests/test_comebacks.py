@@ -8,39 +8,8 @@ import pandas as pd
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 import calculate_comebacks as cb
-
-
-def game(legs, season=2015, gamecode=7, phase='RS', rnd=3, true_numbers=True):
-    """Build a PBP DataFrame. legs: (side, baskets, points_each, period, clock).
-
-    Side 'A' is the home team (code HOM), 'B' the away team (code AWY).
-    A non-scoring 'Begin Period' row comes first, as in the real feed.
-    """
-    rows = [{'Season': season, 'Phase': phase, 'Round': rnd, 'Gamecode': gamecode,
-             'NUMBEROFPLAY': 0, 'TRUE_NUMBEROFPLAY': 0, 'CODETEAM': np.nan,
-             'TEAM': np.nan, 'PLAYTYPE': 'BP', 'POINTS_A': np.nan, 'POINTS_B': np.nan,
-             'PERIOD': 1, 'MARKERTIME': np.nan}]
-    a = b = 0
-    for side, n, pts, period, clock in legs:
-        for _ in range(n):
-            if side == 'A':
-                a += pts
-            else:
-                b += pts
-            code = 'HOM' if side == 'A' else 'AWY'
-            rows.append({'Season': season, 'Phase': phase, 'Round': rnd, 'Gamecode': gamecode,
-                         'NUMBEROFPLAY': len(rows), 'TRUE_NUMBEROFPLAY': len(rows),
-                         'CODETEAM': code, 'TEAM': f'{code} Club', 'PLAYTYPE': '2FGM',
-                         'POINTS_A': a, 'POINTS_B': b, 'PERIOD': period, 'MARKERTIME': clock})
-    df = pd.DataFrame(rows)
-    if not true_numbers:
-        df = df.drop(columns='TRUE_NUMBEROFPLAY')
-    return df
-
-
-# Away team trails 0-20 in Q1, wins 52-50.
-BASIC = [('A', 10, 2, 1, '05:00'), ('B', 25, 2, 2, '05:00'),
-         ('A', 15, 2, 3, '05:00'), ('B', 1, 2, 4, '00:10')]
+import pbp_games as pg
+from tests.pbp_fixtures import BASIC, game
 
 
 def test_basic_comeback():
@@ -194,6 +163,6 @@ def test_build_output(tmp_path):
 def test_keep_generated_date_only_when_content_unchanged():
     old = cb.build_output([_rec(20, 2015, 1)], 2017, generated='2000-01-01')
     same = cb.build_output([_rec(20, 2015, 1)], 2017, generated='2001-01-01')
-    assert cb.keep_generated_date(old, same)['generated'] == '2000-01-01'
+    assert pg.keep_generated_date(old, same, cb.CONTENT_KEYS)['generated'] == '2000-01-01'
     diff = cb.build_output([_rec(21, 2015, 1)], 2017, generated='2001-01-01')
-    assert cb.keep_generated_date(old, diff)['generated'] == '2001-01-01'
+    assert pg.keep_generated_date(old, diff, cb.CONTENT_KEYS)['generated'] == '2001-01-01'
