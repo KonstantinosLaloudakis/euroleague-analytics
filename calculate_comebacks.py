@@ -53,7 +53,10 @@ def analyze_game(g):
     key = ('TRUE_NUMBEROFPLAY'
            if 'TRUE_NUMBEROFPLAY' in g and g['TRUE_NUMBEROFPLAY'].notna().all()
            else 'NUMBEROFPLAY')
-    g = g.drop_duplicates([key, 'PLAYTYPE', 'CODETEAM']).sort_values(['PERIOD', key], kind='stable')
+    g = g.drop_duplicates([key, 'PLAYTYPE', 'CODETEAM']).copy()
+    for col in ('POINTS_A', 'POINTS_B', 'PERIOD'):
+        g[col] = pd.to_numeric(g[col], errors='coerce')
+    g = g.sort_values(['PERIOD', key], kind='stable')
     sc = g[g['POINTS_A'].notna() | g['POINTS_B'].notna()].reset_index(drop=True)
     if len(sc) < MIN_SCORING_ROWS:
         return None
