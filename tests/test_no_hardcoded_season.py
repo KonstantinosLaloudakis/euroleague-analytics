@@ -11,7 +11,8 @@ def _pipeline_scripts():
     names = set(re.findall(r"['\"]([a-z_0-9]+\.py)['\"]", src))
     names |= {'refresh_all.py', 'fetch_all_seasons.py', 'incremental_fetch.py',
               'preprocess_wp_data.py', 'calculate_gci_historical.py',
-              'fetch_lineups.py', 'generate_clutch_data.py'}
+              'fetch_lineups.py', 'generate_clutch_data.py',
+              'pbp_games.py', 'calculate_comebacks.py', 'game_highs.py', 'game_winners.py'}
     return sorted(n for n in names if os.path.exists(os.path.join(ROOT, n)))
 
 
@@ -30,5 +31,7 @@ def test_no_literal_current_years():
 def test_guarded_scripts_are_scanned():
     scanned = set(_pipeline_scripts())
     for name in ('preprocess_wp_data.py', 'calculate_gci_historical.py',
-                 'fetch_lineups.py', 'generate_clutch_data.py', 'fetch_all_seasons.py'):
+                 'fetch_lineups.py', 'generate_clutch_data.py', 'fetch_all_seasons.py',
+                 'pbp_games.py', 'calculate_comebacks.py', 'game_highs.py',
+                 'game_winners.py', 'calculate_game_records.py'):
         assert name in scanned, name

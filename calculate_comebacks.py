@@ -12,8 +12,7 @@ from datetime import date
 import pandas as pd
 
 from pbp_games import (GLITCH_TOL, LAST_REGULATION_PERIOD, REPLAY_DIR, TOP_N, clean_game,
-                       finish_rows, iter_games, rank_by, season_span, write_json_if_changed)
-from season_config import CURRENT_SEASON
+                       finish_rows, rank_by, season_span)
 
 OUT_PATH = os.path.join('docs', 'data', 'current', 'comebacks.json')
 POSTSEASON = {'PO', 'PI', 'FF'}
@@ -92,17 +91,3 @@ def build_output(records, current_season, replay_dir=REPLAY_DIR, generated=None)
         'postseason': finish_rows(rank_entries(
             [_without_q4(r) for r in records if r['phase'] in POSTSEASON]), replay_dir),
     }
-
-
-def main():
-    out = build_output([analyze_clean(cg) for cg in iter_games()], CURRENT_SEASON)
-    write_json_if_changed(OUT_PATH, out, CONTENT_KEYS)
-    print(f"Comebacks: {out['games_scanned']} games scanned -> {OUT_PATH}")
-    if out['overall']:
-        top = out['overall'][0]
-        print(f"  Biggest: {top['winner']} over {top['loser']} "
-              f"({top['season_label']}) from {top['deficit']} down")
-
-
-if __name__ == '__main__':
-    main()

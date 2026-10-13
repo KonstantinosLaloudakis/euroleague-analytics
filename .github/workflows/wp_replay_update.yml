@@ -37,10 +37,10 @@ jobs:
         SEASON=$(python -c "import season_config as s; print(s.CURRENT_SEASON)")
         python preprocess_wp_data.py --seasons "$SEASON"
 
-    - name: Compute Biggest Comebacks
+    - name: Compute Game Records
       continue-on-error: true
       run: |
-        python calculate_comebacks.py
+        python calculate_game_records.py
 
     - name: Commit and Push Changes
       run: |
