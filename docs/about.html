@@ -583,10 +583,21 @@
             </p>
             <h4 style="margin-top:1.2rem;color:var(--text-primary);">Biggest Comebacks</h4>
             <p>
-                The Comebacks tab ranks wins by the largest deficit the eventual winner faced at any point, rebuilt from every play-by-play log since 2007–08 (<code style="color:var(--accent-blue)">calculate_comebacks.py</code> → <code style="color:var(--accent-blue)">comebacks.json</code>, refreshed daily). The 4th-Quarter card counts only deficits faced in the 4th quarter or overtime; the Playoffs &amp; Final Four card covers Playoffs, Play-In and Final Four games. Click any game to open its win-probability replay.
+                The Comebacks tab ranks wins by the largest deficit the eventual winner faced at any point, rebuilt from every play-by-play log since 2007–08 (<code style="color:var(--accent-blue)">calculate_game_records.py</code> → <code style="color:var(--accent-blue)">comebacks.json</code>, refreshed daily). The 4th-Quarter card counts only deficits faced in the 4th quarter or overtime; the Playoffs &amp; Final Four card covers Playoffs, Play-In and Final Four games. Click any game to open its win-probability replay.
             </p>
             <p>
                 Play-by-play logs occasionally contain a mistyped score. Since no single play moves the margin by more than 3 points, a deficit only counts if a neighbouring play agrees with it to within 3, so one bad row cannot create a phantom lead. Games with fewer than 30 scoring plays, a final score under 45, or a play-by-play log that ends before the 4th quarter are skipped as incomplete. Equal deficits share a rank (T-1) and are listed newest first.
+            </p>
+            <h4 style="margin-top:1.2rem;color:var(--text-primary);">Game Highs</h4>
+            <p>
+                The Game Highs tab ranks the best single-game lines for points, rebounds, assists, threes and PIR. Box scores are rebuilt per player from the play-by-play log of every game since 2007–08 (<code style="color:var(--accent-blue)">calculate_game_records.py</code> → <code style="color:var(--accent-blue)">game_highs.json</code>, refreshed daily), including older logs that record made dunks and layups and blocked or missed layup attempts as separate play types. PIR = points + rebounds + assists + steals + blocks + fouls drawn − missed shots − turnovers − shots blocked − fouls committed. For 2024–25 and 2025–26 the rebuilt lines match the official box scores for more than 99.9% of player-games. Equal values share a rank (T-1) and are listed newest first.
+            </p>
+            <h4 style="margin-top:1.2rem;color:var(--text-primary);">Game-Winners</h4>
+            <p>
+                A game-winner is a made field goal in the last 10 seconds of the 4th quarter or overtime that gave the eventual winner the lead for good (<code style="color:var(--accent-blue)">game_winners.json</code>). Free throws are not counted. Shots with 0:01 or less on the clock are marked as buzzer-beaters; game-winners are tracked from 2011–12 on, because earlier play-by-play logs only record the minute of each play. The career leaderboard counts each player's game-winners and buzzer-beaters.
+            </p>
+            <p>
+                Coverage: the Comebacks, Game Highs and Game-Winners boards only include games with a play-by-play log. A few 2012–13 and 2018–19 games are missing from the source, and a game whose log ends before the 4th quarter is skipped.
             </p>
         </div>
 

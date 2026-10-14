@@ -3,14 +3,18 @@ const DATA_URL      = 'data/current/player_career_stats.json';
 const MIN_GP_SEASON = 15;
 const TOP_INITIAL   = 10;
 const TOP_EXTENDED  = 25;
-const COMEBACKS_URL = 'data/current/comebacks.json';
+const LAZY_URLS     = {
+    comebacks: 'data/current/comebacks.json',
+    highs:     'data/current/game_highs.json',
+    winners:   'data/current/game_winners.json',
+};
 const PHASE_LABEL   = { RS: 'RS', TS: 'Top 16', PO: 'Playoffs', PI: 'Play-In', FF: 'Final Four' };
 
 let _data        = null; // cached raw JSON — reused on filter changes, no re-fetch
 let _rankings    = null; // cached computed rankings
 let _activeTab   = 'scoring';
 let _minGpCareer = 100;
-let _comebacks   = null; // comebacks.json, loaded on first Comebacks tab click
+let _lazy        = {};   // tab key -> JSON (or {error:true}), loaded on first tab click
 
 const TABS = [
     { key: 'scoring',    label: 'Scoring',    careerLabel: 'Career Points',   careerSub: 'Accumulated total',   avgLabel: 'Career Avg PPG', avgSub: 'GP-weighted average', avgStat: 'ppg',     avgFmt: v => v.toFixed(1), seasonLabel: 'Best Season PPG', seasonSub: 'Per-game average',   fmtC: v => Math.round(v).toLocaleString(), fmtS: v => v.toFixed(1) },
@@ -19,6 +23,8 @@ const TABS = [
     { key: 'defense',    label: 'Defense',    careerLabel: 'Career Steals',   careerSub: 'Accumulated total',   avgLabel: 'Career Avg SPG', avgSub: 'GP-weighted average', avgStat: 'spg',     avgFmt: v => v.toFixed(1), seasonLabel: 'Best Season SPG', seasonSub: 'Per-game average',   fmtC: v => Math.round(v).toLocaleString(), fmtS: v => v.toFixed(1) },
     { key: 'efficiency', label: 'Efficiency', careerLabel: 'Career Avg PIR',  careerSub: 'GP-weighted average', avgLabel: 'Career Avg 2P%', avgSub: 'GP-weighted average', avgStat: 'fg2_pct', avgFmt: v => v.toFixed(1) + '%', seasonLabel: 'Best Season PIR', seasonSub: 'Per-game average',   fmtC: v => v.toFixed(1),                   fmtS: v => v.toFixed(1) },
     { key: 'comebacks',  label: 'Comebacks' },
+    { key: 'highs',      label: 'Game Highs' },
+    { key: 'winners',    label: 'Game-Winners' },
 ];
 
 // ── Entry point ────────────────────────────────────────────────────────────────
@@ -88,8 +94,9 @@ function renderPage() {
     ).join('');
     const content = document.getElementById('records-content');
 
-    if (_activeTab === 'comebacks') {
-        content.innerHTML = `<div class="cat-tabs">${tabButtons}</div>${renderComebacks()}`;
+    const lazyRender = { comebacks: renderComebacks, highs: renderHighs, winners: renderWinners }[_activeTab];
+    if (lazyRender) {
+        content.innerHTML = `<div class="cat-tabs">${tabButtons}</div>${lazyRender(_lazy[_activeTab])}`;
     } else {
         const filterHtml = `
     <div class="filter-row">
@@ -124,8 +131,9 @@ function renderPage() {
 
     document.querySelectorAll('.cat-tab').forEach(btn => {
         btn.addEventListener('click', async () => {
-            if (btn.dataset.tab === 'comebacks' && !_comebacks) await loadComebacks();
-            _activeTab = btn.dataset.tab;
+            const key = btn.dataset.tab;
+            if (LAZY_URLS[key] && !_lazy[key]) _lazy[key] = await loadJson(LAZY_URLS[key]);
+            _activeTab = key;
             renderPage();
         });
     });
@@ -184,50 +192,78 @@ function renderCard(rows, title, sub, type, fmt) {
     </div>`;
 }
 
-// ── Comebacks tab ──────────────────────────────────────────────────────────────
-async function loadComebacks() {
+
+// ── Lazy-loaded game-record tabs ───────────────────────────────────────────────
+async function loadJson(url) {
     try {
-        const r = await fetch(COMEBACKS_URL);
+        const r = await fetch(url);
         if (!r.ok) throw new Error(r.status);
-        _comebacks = await r.json();
+        return await r.json();
     } catch {
-        _comebacks = { error: true };
+        return { error: true };
     }
 }
 
-function renderComebacks() {
-    if (_comebacks.error) {
-        return '<p class="error-msg">Could not load comeback data. Run the data pipeline first.</p>';
-    }
-    const since = _comebacks.seasons.length ? seasonLbl(_comebacks.seasons[0]) : '';
+function errorMsg(what)     { return `<p class="error-msg">Could not load ${what} data. Run the data pipeline first.</p>`; }
+function legend(html)       { return `<div class="filter-row"><span class="filter-legend">${html}</span></div>`; }
+function sinceLabel(d)      { return d.seasons && d.seasons.length ? seasonLbl(d.seasons[0]) : ''; }
+function rankCls(r)         { return r.rank === 1 ? 'rank-1' : r.rank === 2 ? 'rank-2' : r.rank === 3 ? 'rank-3' : ''; }
+function rowCls(r, i)       { return [r.rank ? rankCls(r) : '', i >= TOP_INITIAL ? 'hidden' : ''].filter(Boolean).join(' '); }
+function rankCell(r)        { return `<td class="${rankCls(r)}">${r.tied ? 'T-' : ''}${r.rank}</td>`; }
+function newTag(season, cur){ return season === cur ? '<span class="cb-new">NEW</span>' : ''; }
+function emptyRow(cols)     { return `<tr><td colspan="${cols}" class="p-meta">No qualifying games yet</td></tr>`; }
+
+function replayLink(r, label, title) {
+    return r.has_replay
+        ? `<a href="replay.html?season=${r.season}&game=${r.gamecode}" title="${title} · open replay">${label}</a>`
+        : `<span title="${title}">${label}</span>`;
+}
+
+function playerLink(r) {
+    const name = esc(r.player_name || r.player || '—');
+    return r.player && _data && _data.players && _data.players[r.player] ? `<a href="player.html?code=${encodeURIComponent(r.player)}">${name}</a>` : name;
+}
+
+function showMoreBtn(n, all) {
+    if (n <= TOP_INITIAL) return '';
+    return `<button class="show-more-btn">${all ? `Show all ${n}` : `Show top ${Math.min(n, TOP_EXTENDED)}`} ↓</button>`;
+}
+
+function cardShell(title, sub, titleCls, tableCls, thead, trows, showMore) {
     return `
-    <div class="filter-row">
-      <span class="filter-legend">Largest deficit the eventual winner faced &nbsp;·&nbsp; ${_comebacks.games_scanned.toLocaleString()} games since ${since} &nbsp;·&nbsp; click a game for its replay</span>
-    </div>
-    <div class="records-grid">
-      ${renderComebackCard(_comebacks.overall,        'Biggest Comebacks',     'Any point in the game',         'comeback')}
-      ${renderComebackCard(_comebacks.fourth_quarter, '4th-Quarter Comebacks', 'Deficit faced in Q4 or OT',     'q4')}
-      ${renderComebackCard(_comebacks.postseason,     'Playoffs & Final Four', 'Playoffs, Play-In, Final Four', 'post')}
+    <div class="record-card">
+      <div class="record-card-header">
+        <span class="rch-title ${titleCls}">${title}</span>
+        <span class="rch-sub">${sub}</span>
+      </div>
+      <table class="lb-table ${tableCls}">
+        <thead>${thead}</thead>
+        <tbody>${trows}</tbody>
+      </table>
+      ${showMore}
     </div>`;
 }
 
-function renderComebackCard(rows, title, sub, titleCls) {
-    const rankCls = r => r.rank === 1 ? 'rank-1' : r.rank === 2 ? 'rank-2' : r.rank === 3 ? 'rank-3' : '';
+// ── Comebacks tab ──────────────────────────────────────────────────────────────
+function renderComebacks(d) {
+    if (d.error) return errorMsg('comeback');
+    return legend(`Largest deficit the eventual winner faced &nbsp;·&nbsp; ${d.games_scanned.toLocaleString()} games since ${sinceLabel(d)} &nbsp;·&nbsp; click a game for its replay`) + `
+    <div class="records-grid game-grid">
+      ${renderComebackCard(d.overall,        'Biggest Comebacks',     'Any point in the game',         'comeback', d.current_season)}
+      ${renderComebackCard(d.fourth_quarter, '4th-Quarter Comebacks', 'Deficit faced in Q4 or OT',     'q4',       d.current_season)}
+      ${renderComebackCard(d.postseason,     'Playoffs & Final Four', 'Playoffs, Play-In, Final Four', 'post',     d.current_season)}
+    </div>`;
+}
 
+function renderComebackCard(rows, title, sub, titleCls, current) {
     const trows = rows.length ? rows.map((r, i) => {
-        const cls   = [rankCls(r), i >= TOP_INITIAL ? 'hidden' : ''].filter(Boolean).join(' ');
-        const sep   = r.home ? 'vs' : '@';
-        const full  = esc(`${r.winner_name} ${sep} ${r.loser_name}`);
-        const label = `${r.winner} ${sep} ${r.loser}`;
-        const game  = r.has_replay
-            ? `<a href="replay.html?season=${r.season}&game=${r.gamecode}" title="${full} · open replay">${label}</a>`
-            : `<span title="${full}">${label}</span>`;
-        const isNew = r.season === _comebacks.current_season ? '<span class="cb-new">NEW</span>' : '';
-        const meta  = [r.season_label, stageLabel(r)].filter(Boolean).join(' · ');
-        return `<tr class="${cls}">
-          <td class="${rankCls(r)}">${r.tied ? 'T-' : ''}${r.rank}</td>
+        const sep  = r.home ? 'vs' : '@';
+        const game = replayLink(r, `${r.winner} ${sep} ${r.loser}`, esc(`${r.winner_name} ${sep} ${r.loser_name}`));
+        const meta = [r.season_label, stageLabel(r)].filter(Boolean).join(' · ');
+        return `<tr class="${rowCls(r, i)}">
+          ${rankCell(r)}
           <td>
-            <span class="p-name">${game}${isNew}</span>
+            <span class="p-name">${game}${newTag(r.season, current)}</span>
             <span class="p-meta">${meta}</span>
           </td>
           <td class="val-deficit">${r.deficit}
@@ -235,24 +271,101 @@ function renderComebackCard(rows, title, sub, titleCls) {
           </td>
           <td>${r.final}${r.ot ? ' OT' : ''}</td>
         </tr>`;
-    }).join('') : '<tr><td colspan="4" class="p-meta">No qualifying games yet</td></tr>';
+    }).join('') : emptyRow(4);
+    return cardShell(title, sub, titleCls, 'cb-table',
+        '<tr><th>#</th><th>Game</th><th>Deficit</th><th>Final</th></tr>', trows, showMoreBtn(rows.length, false));
+}
 
-    const showMore = rows.length > TOP_INITIAL
-        ? `<button class="show-more-btn">Show top ${Math.min(rows.length, TOP_EXTENDED)} ↓</button>`
-        : '';
+// ── Game Highs tab ─────────────────────────────────────────────────────────────
+const HIGH_CARDS = [
+    { key: 'points',   title: 'Points',   unit: 'PTS', cls: 'career' },
+    { key: 'rebounds', title: 'Rebounds', unit: 'REB', cls: 'avg' },
+    { key: 'assists',  title: 'Assists',  unit: 'AST', cls: 'season' },
+    { key: 'threes',   title: 'Threes',   unit: '3PM', cls: 'q4' },
+    { key: 'pir',      title: 'PIR',      unit: 'PIR', cls: 'post' },
+];
 
-    return `
-    <div class="record-card">
-      <div class="record-card-header">
-        <span class="rch-title ${titleCls}">${title}</span>
-        <span class="rch-sub">${sub}</span>
-      </div>
-      <table class="lb-table cb-table">
-        <thead><tr><th>#</th><th>Game</th><th>Deficit</th><th>Final</th></tr></thead>
-        <tbody>${trows}</tbody>
-      </table>
-      ${showMore}
+function renderHighs(d) {
+    if (d.error) return errorMsg('game-high');
+    return legend(`Single-game bests rebuilt from play-by-play &nbsp;·&nbsp; ${d.games_scanned.toLocaleString()} games since ${sinceLabel(d)} &nbsp;·&nbsp; click a game for its replay`) +
+        `<div class="records-grid game-grid">${HIGH_CARDS.map(c => renderHighCard(d[c.key] || [], c, d.current_season)).join('')}</div>`;
+}
+
+function lineSummary(line, key) {
+    const parts = [`${line.points} PTS`, `${line.rebounds} REB`, `${line.assists} AST`];
+    if (key === 'threes') parts.push(`${line.threes} 3PM`);
+    parts.push(`${line.pir} PIR`);
+    return parts.join(' · ');
+}
+
+function renderHighCard(rows, c, current) {
+    const trows = rows.length ? rows.map((r, i) => {
+        const sep  = r.home ? 'vs' : '@';
+        const game = replayLink(r, `${sep} ${r.opp}`, esc(`${r.team} ${sep} ${r.opp}`));
+        const meta = [r.team, r.season_label, stageLabel(r)].filter(Boolean).join(' · ');
+        return `<tr class="${rowCls(r, i)}">
+          ${rankCell(r)}
+          <td>
+            <span class="p-name">${playerLink(r)}${newTag(r.season, current)}</span>
+            <span class="p-meta">${meta}</span>
+          </td>
+          <td>
+            <span class="p-name">${game}</span>
+            <span class="p-meta">${r.won ? 'W' : 'L'} ${r.final}${r.ot ? ' OT' : ''}</span>
+          </td>
+          <td class="val-deficit">${r.value}
+            <span class="p-meta">${lineSummary(r.line, c.key)}</span>
+          </td>
+        </tr>`;
+    }).join('') : emptyRow(4);
+    return cardShell(c.title, 'Single game', c.cls, 'gr-table',
+        `<tr><th>#</th><th>Player</th><th>Game</th><th>${c.unit}</th></tr>`, trows, showMoreBtn(rows.length, false));
+}
+
+// ── Game-Winners tab ───────────────────────────────────────────────────────────
+function renderWinners(d) {
+    if (d.error) return errorMsg('game-winner');
+    return legend(`Made field goals in the last ${d.window_seconds} seconds of the 4th quarter or OT that gave the winner the lead for good &nbsp;·&nbsp; ${d.all.length} since ${sinceLabel(d)}`) + `
+    <div class="records-grid game-grid">
+      ${renderShotCard(d.all,            'All Game-Winners', 'Newest first',  'comeback', d.current_season)}
+      ${renderShotCard(d.buzzer_beaters, 'Buzzer-Beaters',   '0:01 or less',  'q4',       d.current_season)}
+      ${renderLeadersCard(d.leaders, `Since ${sinceLabel(d)}`)}
     </div>`;
+}
+
+function renderShotCard(rows, title, sub, titleCls, current) {
+    const trows = rows.length ? rows.map((r, i) => {
+        const sep    = r.home ? 'vs' : '@';
+        const game   = replayLink(r, `${r.team} ${sep} ${r.opp}`, esc(`${r.team} ${sep} ${r.opp}`));
+        const meta   = [game, r.season_label, stageLabel(r)].filter(Boolean).join(' · ');
+        const buzzer = r.buzzer ? '<span class="gw-buzzer">BUZZER</span>' : '';
+        return `<tr class="${rowCls(r, i)}">
+          <td>
+            <span class="p-name">${playerLink(r)}${newTag(r.season, current)}</span>
+            <span class="p-meta">${meta}</span>
+          </td>
+          <td>
+            <span class="p-name">${r.shot} · ${periodLabel(r.quarter)} ${clockLabel(r.clock)}${buzzer}</span>
+            <span class="p-meta">go-ahead ${r.after} · final ${r.final}${r.ot ? ' OT' : ''}</span>
+          </td>
+        </tr>`;
+    }).join('') : emptyRow(2);
+    return cardShell(title, sub, titleCls, 'gw-table',
+        '<tr><th>Shooter</th><th>Shot</th></tr>', trows, showMoreBtn(rows.length, true));
+}
+
+function renderLeadersCard(rows, sub) {
+    const trows = rows.length ? rows.map((r, i) => `<tr class="${rowCls(r, i)}">
+          ${rankCell(r)}
+          <td>
+            <span class="p-name">${playerLink(r)}</span>
+            <span class="p-meta">last ${r.last_season_label}</span>
+          </td>
+          <td class="val-deficit">${r.count}</td>
+          <td>${r.buzzer_count}</td>
+        </tr>`).join('') : emptyRow(4);
+    return cardShell('Most Game-Winners', sub, 'post', 'gr-table',
+        '<tr><th>#</th><th>Player</th><th>GW</th><th>Buzzer</th></tr>', trows, showMoreBtn(rows.length, false));
 }
 
 function seasonLbl(s)   { return `${s}-${String(s + 1).slice(-2)}`; }

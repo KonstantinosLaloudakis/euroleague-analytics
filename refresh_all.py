@@ -175,9 +175,9 @@ def main():
             'Computing Game Control Index (GCI)',
             'calculate_gci.py'
         )))
-        results.append(('Biggest Comebacks', run_step(
-            'Computing all-time biggest comebacks from play-by-play',
-            'calculate_comebacks.py'
+        results.append(('Game Records', run_step(
+            'Computing all-time game records (comebacks, game highs, game-winners)',
+            'calculate_game_records.py'
         )))
     else:
         print(f"\n{YELLOW}⏭️  Skipping compute engines{RESET}")
