@@ -35,6 +35,10 @@ const TEAM_NAMES = {
     DAR:'Darussafaka', DYR:'Zenit St Petersburg', GAL:'Galatasaray', KHI:'Khimki',
     LIE:'Lietuvos Rytas', LJU:'Olimpija Ljubljana', MAL:'Unicaja Malaga', ROM:'Virtus Roma',
     SIE:'Montepaschi Siena', SOP:'Asseco Prokom', UNK:'UNICS Kazan',
+    BIL:'Bilbao Basket', BUD:'Buducnost', CAN:'Gran Canaria', GSS:'Zielona Gora',
+    KLA:'Neptunas Klaipeda', LEM:'Le Mans', LMG:'Limoges', NAN:'SLUC Nancy',
+    NIK:'Budivelnik Kyiv', NOV:'Nizhny Novgorod', NTR:'Nanterre', ROA:'Roanne',
+    STR:'Strasbourg', TIV:'Lokomotiv Kuban',
 };
 
 // ── Team home-arena timezones (IANA) ────────────────────────────────────

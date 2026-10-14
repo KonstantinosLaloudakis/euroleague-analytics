@@ -258,7 +258,7 @@ function renderComebacks(d) {
 function renderComebackCard(rows, title, sub, titleCls, current) {
     const trows = rows.length ? rows.map((r, i) => {
         const sep  = r.home ? 'vs' : '@';
-        const game = replayLink(r, `${r.winner} ${sep} ${r.loser}`, esc(`${r.winner_name} ${sep} ${r.loser_name}`));
+        const game = replayLink(r, `${esc(teamName(r.winner, r.winner_name))} ${sep} ${esc(teamName(r.loser, r.loser_name))}`, esc(`${r.winner_name} ${sep} ${r.loser_name}`));
         const meta = [r.season_label, stageLabel(r)].filter(Boolean).join(' · ');
         return `<tr class="${rowCls(r, i)}">
           ${rankCell(r)}
@@ -301,8 +301,8 @@ function lineSummary(line, key) {
 function renderHighCard(rows, c, current) {
     const trows = rows.length ? rows.map((r, i) => {
         const sep  = r.home ? 'vs' : '@';
-        const game = replayLink(r, `${sep} ${r.opp}`, esc(`${r.team} ${sep} ${r.opp}`));
-        const meta = [r.team, r.season_label, stageLabel(r)].filter(Boolean).join(' · ');
+        const game = replayLink(r, `${sep} ${esc(teamName(r.opp))}`, esc(`${teamName(r.team)} ${sep} ${teamName(r.opp)}`));
+        const meta = [esc(teamName(r.team)), r.season_label, stageLabel(r)].filter(Boolean).join(' · ');
         return `<tr class="${rowCls(r, i)}">
           ${rankCell(r)}
           <td>
@@ -336,7 +336,7 @@ function renderWinners(d) {
 function renderShotCard(rows, title, sub, titleCls, current) {
     const trows = rows.length ? rows.map((r, i) => {
         const sep    = r.home ? 'vs' : '@';
-        const game   = replayLink(r, `${r.team} ${sep} ${r.opp}`, esc(`${r.team} ${sep} ${r.opp}`));
+        const game   = replayLink(r, esc(`${teamName(r.team)} ${sep} ${teamName(r.opp)}`), esc(`${teamName(r.team)} ${sep} ${teamName(r.opp)}`));
         const meta   = [game, r.season_label, stageLabel(r)].filter(Boolean).join(' · ');
         const buzzer = r.buzzer ? '<span class="gw-buzzer">BUZZER</span>' : '';
         return `<tr class="${rowCls(r, i)}">
@@ -371,6 +371,9 @@ function renderLeadersCard(rows, sub) {
 function seasonLbl(s)   { return `${s}-${String(s + 1).slice(-2)}`; }
 function periodLabel(q) { return q == null ? '' : q <= 4 ? `Q${q}` : `OT${q - 4}`; }
 function clockLabel(c)  { return c ? String(c).replace(/^0(?=\d:)/, '') : ''; }
+function teamName(code, fallback) {
+    return (typeof TEAM_NAMES !== 'undefined' && TEAM_NAMES[code]) || fallback || code || '—';
+}
 function esc(s)         { return String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;'); }
 function stageLabel(r) {
     const name = PHASE_LABEL[r.phase] || r.phase || '';
