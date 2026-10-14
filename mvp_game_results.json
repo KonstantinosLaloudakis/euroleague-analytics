@@ -318,5 +318,61 @@
         "LocalScore":89.0,
         "RoadScore":66.0,
         "Winner":"OLY"
+    },
+    {
+        "GameCode":41,
+        "LocalTeam":"ASV",
+        "RoadTeam":"RED",
+        "LocalScore":82.0,
+        "RoadScore":84.0,
+        "Winner":"RED"
+    },
+    {
+        "GameCode":42,
+        "LocalTeam":"BAS",
+        "RoadTeam":"DUB",
+        "LocalScore":79.0,
+        "RoadScore":93.0,
+        "Winner":"DUB"
+    },
+    {
+        "GameCode":43,
+        "LocalTeam":"MIL",
+        "RoadTeam":"MAD",
+        "LocalScore":89.0,
+        "RoadScore":98.0,
+        "Winner":"MAD"
+    },
+    {
+        "GameCode":44,
+        "LocalTeam":"BAR",
+        "RoadTeam":"TEL",
+        "LocalScore":90.0,
+        "RoadScore":87.0,
+        "Winner":"BAR"
+    },
+    {
+        "GameCode":45,
+        "LocalTeam":"PAM",
+        "RoadTeam":"OLY",
+        "LocalScore":97.0,
+        "RoadScore":102.0,
+        "Winner":"OLY"
+    },
+    {
+        "GameCode":46,
+        "LocalTeam":"ULK",
+        "RoadTeam":"ZAL",
+        "LocalScore":99.0,
+        "RoadScore":80.0,
+        "Winner":"ULK"
+    },
+    {
+        "GameCode":47,
+        "LocalTeam":"PAR",
+        "RoadTeam":"PAN",
+        "LocalScore":55.0,
+        "RoadScore":72.0,
+        "Winner":"PAN"
     }
 ]
