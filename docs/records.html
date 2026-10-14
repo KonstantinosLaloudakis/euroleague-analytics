@@ -67,6 +67,12 @@
     .lb-table td:nth-child(1) { text-align: center; font-weight: 700; font-size: 11px; }
     .lb-table td:nth-child(2) { text-align: left; }
 
+    @media (max-width: 1250px) {   /* 3-column grid from 901px makes ~300px cards */
+      .pl-table td, .pl-table thead th { padding-left: 6px; padding-right: 6px; }
+      .pl-table td:nth-child(2) { overflow-wrap: anywhere; }
+      .pl-table td:nth-child(3) { overflow-wrap: anywhere; font-size: 11px; }
+    }
+
     .rank-1 { color: var(--accent-gold); }
     .rank-2 { color: #94a3b8; }
     .rank-3 { color: #cd7c2f; }

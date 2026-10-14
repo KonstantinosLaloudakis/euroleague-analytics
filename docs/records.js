@@ -184,7 +184,7 @@ function renderCard(rows, title, sub, type, fmt) {
         <span class="rch-title ${titleCls}">${title}</span>
         <span class="rch-sub">${sub}</span>
       </div>
-      <table class="lb-table">
+      <table class="lb-table pl-table">
         <thead>${thead}</thead>
         <tbody>${trows}</tbody>
       </table>

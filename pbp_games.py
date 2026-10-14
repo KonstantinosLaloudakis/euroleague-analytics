@@ -65,6 +65,32 @@ def _pid(v):
     return s[1:] if s.startswith('P') else s
 
 
+def clock_seconds(clock):
+    """'mm:ss' -> seconds left, or None if the clock is missing/unparseable."""
+    try:
+        mm, ss = str(clock).split(':')
+        return int(mm) * 60 + int(ss)
+    except ValueError:
+        return None
+
+
+def _stale_mask(sc, a, b):
+    """True for scoring rows logged out of order: same period as the last kept row,
+    strictly more time left on the clock, and a score lower than the kept row's."""
+    secs = [clock_seconds(c) for c in sc['MARKERTIME']]
+    periods = sc['PERIOD'].tolist()
+    keep, last = [True], 0
+    for i in range(1, len(sc)):
+        stale = (periods[i] == periods[last]
+                 and secs[i] is not None and secs[last] is not None
+                 and secs[i] > secs[last]
+                 and (a[i] < a[last] or b[i] < b[last]))
+        keep.append(not stale)
+        if not stale:
+            last = i
+    return [not k for k in keep]
+
+
 def clean_game(g):
     """One game's raw PBP rows -> CleanGame, or None if the game is unusable."""
     key = ('TRUE_NUMBEROFPLAY'
@@ -82,12 +108,21 @@ def clean_game(g):
         # some feeds log a stale score correction after End Game; it is not the final
         scoring &= pd.to_numeric(g[key], errors='coerce') <= eg_keys.max()
     sc = g[scoring].reset_index(drop=True)
+    # forward-fill first, so a dropped row's score never leaks into the next one
+    a_all = sc['POINTS_A'].ffill().fillna(0).astype(int).tolist()
+    b_all = sc['POINTS_B'].ffill().fillna(0).astype(int).tolist()
+    stale = _stale_mask(sc, a_all, b_all)
+    if any(stale):
+        keep = [not x for x in stale]
+        sc = sc[keep].reset_index(drop=True)
+        a = [v for v, k in zip(a_all, keep) if k]
+        b = [v for v, k in zip(b_all, keep) if k]
+    else:
+        a, b = a_all, b_all
     if len(sc) < MIN_SCORING_ROWS:
         return None
     if sc['PERIOD'].max() < LAST_REGULATION_PERIOD:
         return None
-    a = sc['POINTS_A'].ffill().fillna(0).astype(int).tolist()
-    b = sc['POINTS_B'].ffill().fillna(0).astype(int).tolist()
     fa, fb = a[-1], b[-1]
     if fa == fb or min(fa, fb) < MIN_FINAL:
         return None

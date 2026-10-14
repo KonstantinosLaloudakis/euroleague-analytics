@@ -15,7 +15,7 @@ from datetime import date
 
 import pandas as pd
 
-from pbp_games import (LAST_REGULATION_PERIOD, REPLAY_DIR, TOP_N, finish_rows,
+from pbp_games import (LAST_REGULATION_PERIOD, REPLAY_DIR, TOP_N, clock_seconds, finish_rows,
                        season_span)
 from season_config import season_label
 
@@ -26,13 +26,7 @@ BUZZER_SECONDS = 1
 SHOT_LABEL = {'3FGM': '3PT', '2FGM': '2PT', 'DUNK': 'Dunk', 'LAYUPMD': 'Layup'}
 
 
-def _seconds(clock):
-    """'mm:ss' -> seconds left, or None if the clock is missing/unparseable."""
-    try:
-        mm, ss = str(clock).split(':')
-        return int(mm) * 60 + int(ss)
-    except ValueError:
-        return None
+_seconds = clock_seconds
 
 
 def analyze_clean(cg):

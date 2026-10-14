@@ -66,6 +66,42 @@ def test_stale_row_without_end_game_still_sets_final():
     assert (cg.final_a, cg.final_b) != (50, 52)
 
 
+def _with_late_logged_row(clock, pa, pb, last_clock='00:05'):
+    """filler 50-52, a 3-pointer at last_clock (53-52), then a row logged after it
+    (higher play number) with the given clock/score, then an End Game row."""
+    df = build(filler(25, 26, period=4) + ev('A', '3FGM', 4, last_clock))
+    late = df.iloc[-1].copy()
+    late['NUMBEROFPLAY'] = late['TRUE_NUMBEROFPLAY'] = len(df)
+    late['MARKERTIME'], late['POINTS_A'], late['POINTS_B'] = clock, pa, pb
+    end = df.iloc[0].copy()
+    end['NUMBEROFPLAY'] = end['TRUE_NUMBEROFPLAY'] = len(df) + 1
+    end['PLAYTYPE'], end['PERIOD'] = 'EG', 4
+    return pd.concat([df, late.to_frame().T, end.to_frame().T], ignore_index=True), len(df)
+
+
+def test_stale_row_before_eg_is_dropped():
+    df, stale_key = _with_late_logged_row('00:33', 50, 52)
+    cg = pg.clean_game(df)
+    assert (cg.final_a, cg.final_b, cg.a_won) == (53, 52, True)
+    assert len(cg.sc) == 52 and cg.clocks[-1] == '00:05'
+    assert len(cg.a) == len(cg.b) == len(cg.periods) == len(cg.clocks) == 52
+    assert stale_key in cg.rows['TRUE_NUMBEROFPLAY'].tolist()   # still counted in rows
+
+
+def test_out_of_order_row_with_consistent_score_is_kept():
+    df, _ = _with_late_logged_row('00:33', 53, 52)       # more time left, no regression
+    cg = pg.clean_game(df)
+    assert (cg.final_a, cg.final_b) == (53, 52)
+    assert len(cg.sc) == 53
+
+
+def test_minute_resolution_clocks_are_not_dropped():
+    df, _ = _with_late_logged_row('01:00', 50, 52, last_clock='01:00')
+    cg = pg.clean_game(df)
+    assert (cg.final_a, cg.final_b) == (50, 52)           # equal clocks: not provably stale
+    assert len(cg.sc) == 53
+
+
 def _r(value, season, gamecode):
     return {'value': value, 'season': season, 'gamecode': gamecode}
 
