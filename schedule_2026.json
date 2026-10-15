@@ -642,7 +642,7 @@
     "arenaname": "TURKCELL BASKETBALL DEVELOPMENT CENTER",
     "confirmeddate": "true",
     "confirmedtime": "true",
-    "played": "false"
+    "played": "true"
   },
   {
     "gameday": "5",
@@ -687,7 +687,7 @@
     "arenaname": "ARENA 8888 SOFIA",
     "confirmeddate": "true",
     "confirmedtime": "true",
-    "played": "false"
+    "played": "true"
   },
   {
     "gameday": "5",
@@ -702,7 +702,7 @@
     "arenaname": "ADIDAS ARENA",
     "confirmeddate": "true",
     "confirmedtime": "true",
-    "played": "false"
+    "played": "true"
   },
   {
     "gameday": "5",

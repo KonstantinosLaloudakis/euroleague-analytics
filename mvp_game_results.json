@@ -374,5 +374,29 @@
         "LocalScore":55.0,
         "RoadScore":72.0,
         "Winner":"PAN"
+    },
+    {
+        "GameCode":48,
+        "LocalTeam":"HTA",
+        "RoadTeam":"BES",
+        "LocalScore":100.0,
+        "RoadScore":82.0,
+        "Winner":"HTA"
+    },
+    {
+        "GameCode":49,
+        "LocalTeam":"IST",
+        "RoadTeam":"MUN",
+        "LocalScore":93.0,
+        "RoadScore":101.0,
+        "Winner":"MUN"
+    },
+    {
+        "GameCode":50,
+        "LocalTeam":"PRS",
+        "RoadTeam":"VIR",
+        "LocalScore":94.0,
+        "RoadScore":96.0,
+        "Winner":"VIR"
     }
 ]
