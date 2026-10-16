@@ -1,11 +1,11 @@
 {
- "generated": "2026-10-15",
+ "generated": "2026-10-16",
  "seasons": [
   2007,
   2026
  ],
  "current_season": 2026,
- "games_scanned": 5077,
+ "games_scanned": 5081,
  "points": [
   {
    "rank": 1,
@@ -2280,6 +2280,32 @@
    "tied": true,
    "season": 2026,
    "phase": "RS",
+   "round": 6,
+   "gamecode": 53,
+   "player": "011247",
+   "player_name": "FELIZ, ANDRES",
+   "team": "MAD",
+   "opp": "ASV",
+   "home": true,
+   "won": true,
+   "final": "111-92",
+   "ot": false,
+   "line": {
+    "points": 26,
+    "rebounds": 4,
+    "assists": 5,
+    "threes": 8,
+    "pir": 30
+   },
+   "value": 8,
+   "season_label": "2026-27",
+   "has_replay": true
+  },
+  {
+   "rank": 13,
+   "tied": true,
+   "season": 2026,
+   "phase": "RS",
    "round": 4,
    "gamecode": 34,
    "player": "013402",
@@ -2585,32 +2611,6 @@
    },
    "value": 8,
    "season_label": "2023-24",
-   "has_replay": true
-  },
-  {
-   "rank": 13,
-   "tied": true,
-   "season": 2022,
-   "phase": "PO",
-   "round": 39,
-   "gamecode": 323,
-   "player": "004004",
-   "player_name": "GUDURIC, MARKO",
-   "team": "ULK",
-   "opp": "OLY",
-   "home": false,
-   "won": false,
-   "final": "72-84",
-   "ot": false,
-   "line": {
-    "points": 26,
-    "rebounds": 3,
-    "assists": 2,
-    "threes": 8,
-    "pir": 17
-   },
-   "value": 8,
-   "season_label": "2022-23",
    "has_replay": true
   }
  ],
