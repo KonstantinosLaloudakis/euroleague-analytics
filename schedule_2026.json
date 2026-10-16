@@ -807,7 +807,7 @@
     "arenaname": "MOVISTAR ARENA",
     "confirmeddate": "true",
     "confirmedtime": "true",
-    "played": "false"
+    "played": "true"
   },
   {
     "gameday": "6",
@@ -822,7 +822,7 @@
     "arenaname": "UNIPOL FORUM",
     "confirmeddate": "true",
     "confirmedtime": "true",
-    "played": "false"
+    "played": "true"
   },
   {
     "gameday": "6",
@@ -852,7 +852,7 @@
     "arenaname": "ROIG ARENA",
     "confirmeddate": "true",
     "confirmedtime": "true",
-    "played": "false"
+    "played": "true"
   },
   {
     "gameday": "6",
@@ -867,7 +867,7 @@
     "arenaname": "ULKER SPORTS AND EVENT HALL",
     "confirmeddate": "true",
     "confirmedtime": "true",
-    "played": "false"
+    "played": "true"
   },
   {
     "gameday": "6",

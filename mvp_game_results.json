@@ -398,5 +398,37 @@
         "LocalScore":94.0,
         "RoadScore":96.0,
         "Winner":"VIR"
+    },
+    {
+        "GameCode":51,
+        "LocalTeam":"MIL",
+        "RoadTeam":"DUB",
+        "LocalScore":97.0,
+        "RoadScore":101.0,
+        "Winner":"DUB"
+    },
+    {
+        "GameCode":52,
+        "LocalTeam":"PAM",
+        "RoadTeam":"TEL",
+        "LocalScore":88.0,
+        "RoadScore":91.0,
+        "Winner":"TEL"
+    },
+    {
+        "GameCode":53,
+        "LocalTeam":"MAD",
+        "RoadTeam":"ASV",
+        "LocalScore":111.0,
+        "RoadScore":92.0,
+        "Winner":"MAD"
+    },
+    {
+        "GameCode":54,
+        "LocalTeam":"ULK",
+        "RoadTeam":"PAR",
+        "LocalScore":74.0,
+        "RoadScore":65.0,
+        "Winner":"ULK"
     }
 ]

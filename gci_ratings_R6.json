@@ -1,0 +1,3065 @@
+{
+  "season": "2026",
+  "round": 6,
+  "teams": {
+    "ASV": {
+      "gci": 48.5,
+      "dominance_avg": 0.0026,
+      "control_pct": 0.4303,
+      "crunch_swing_avg": -0.0385,
+      "killer_instinct": -0.1219,
+      "drama_avg": 3.8047,
+      "comeback_rating": 0.6585,
+      "comeback_count": 1,
+      "home_gci": 56.6,
+      "away_gci": 36.4,
+      "win_quality_hist": [
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      "loss_quality_hist": [
+        0,
+        2,
+        0,
+        0,
+        1
+      ],
+      "game_log": [
+        {
+          "gamecode": 6,
+          "opponent": "TEL",
+          "is_home": true,
+          "is_win": true,
+          "dominance": 0.277,
+          "drama": 2.882,
+          "home_score": 84,
+          "away_score": 74
+        },
+        {
+          "gamecode": 20,
+          "opponent": "PAN",
+          "is_home": false,
+          "is_win": false,
+          "dominance": -0.401,
+          "drama": 1.491,
+          "home_score": 102,
+          "away_score": 79
+        },
+        {
+          "gamecode": 26,
+          "opponent": "PAM",
+          "is_home": true,
+          "is_win": false,
+          "dominance": 0.142,
+          "drama": 4.311,
+          "home_score": 92,
+          "away_score": 105
+        },
+        {
+          "gamecode": 31,
+          "opponent": "PRS",
+          "is_home": false,
+          "is_win": true,
+          "dominance": -0.134,
+          "drama": 5.539,
+          "home_score": 96,
+          "away_score": 98
+        },
+        {
+          "gamecode": 41,
+          "opponent": "RED",
+          "is_home": true,
+          "is_win": false,
+          "dominance": 0.129,
+          "drama": 4.799,
+          "home_score": 82,
+          "away_score": 84
+        }
+      ]
+    },
+    "BAR": {
+      "gci": 53.0,
+      "dominance_avg": 0.0347,
+      "control_pct": 0.4145,
+      "crunch_swing_avg": -0.0204,
+      "killer_instinct": -0.0369,
+      "drama_avg": 4.0755,
+      "comeback_rating": 0.5927,
+      "comeback_count": 0,
+      "home_gci": 60.3,
+      "away_gci": 42.2,
+      "win_quality_hist": [
+        1,
+        2,
+        0,
+        0,
+        0
+      ],
+      "loss_quality_hist": [
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "game_log": [
+        {
+          "gamecode": 4,
+          "opponent": "IST",
+          "is_home": true,
+          "is_win": true,
+          "dominance": 0.071,
+          "drama": 4.517,
+          "home_score": 89,
+          "away_score": 82
+        },
+        {
+          "gamecode": 13,
+          "opponent": "DUB",
+          "is_home": false,
+          "is_win": false,
+          "dominance": -0.347,
+          "drama": 2.598,
+          "home_score": 94,
+          "away_score": 87
+        },
+        {
+          "gamecode": 25,
+          "opponent": "BES",
+          "is_home": false,
+          "is_win": true,
+          "dominance": 0.176,
+          "drama": 3.682,
+          "home_score": 82,
+          "away_score": 95
+        },
+        {
+          "gamecode": 39,
+          "opponent": "ZAL",
+          "is_home": true,
+          "is_win": false,
+          "dominance": 0.11,
+          "drama": 4.933,
+          "home_score": 81,
+          "away_score": 88
+        },
+        {
+          "gamecode": 44,
+          "opponent": "TEL",
+          "is_home": true,
+          "is_win": true,
+          "dominance": 0.163,
+          "drama": 4.648,
+          "home_score": 90,
+          "away_score": 87
+        }
+      ]
+    },
+    "BAS": {
+      "gci": 45.6,
+      "dominance_avg": -0.0889,
+      "control_pct": 0.3164,
+      "crunch_swing_avg": 0.0308,
+      "killer_instinct": 0.0224,
+      "drama_avg": 3.1125,
+      "comeback_rating": 0.4691,
+      "comeback_count": 0,
+      "home_gci": 54.4,
+      "away_gci": 10.2,
+      "win_quality_hist": [
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "loss_quality_hist": [
+        2,
+        1,
+        0,
+        0,
+        1
+      ],
+      "game_log": [
+        {
+          "gamecode": 5,
+          "opponent": "OLY",
+          "is_home": true,
+          "is_win": false,
+          "dominance": -0.18,
+          "drama": 2.881,
+          "home_score": 89,
+          "away_score": 106
+        },
+        {
+          "gamecode": 15,
+          "opponent": "PAM",
+          "is_home": false,
+          "is_win": false,
+          "dominance": -0.453,
+          "drama": 1.035,
+          "home_score": 111,
+          "away_score": 88
+        },
+        {
+          "gamecode": 27,
+          "opponent": "MIL",
+          "is_home": true,
+          "is_win": true,
+          "dominance": 0.301,
+          "drama": 3.744,
+          "home_score": 86,
+          "away_score": 76
+        },
+        {
+          "gamecode": 38,
+          "opponent": "BES",
+          "is_home": true,
+          "is_win": false,
+          "dominance": -0.032,
+          "drama": 4.42,
+          "home_score": 84,
+          "away_score": 92
+        },
+        {
+          "gamecode": 42,
+          "opponent": "DUB",
+          "is_home": true,
+          "is_win": false,
+          "dominance": -0.082,
+          "drama": 3.483,
+          "home_score": 79,
+          "away_score": 93
+        }
+      ]
+    },
+    "BES": {
+      "gci": 39.6,
+      "dominance_avg": -0.0375,
+      "control_pct": 0.2414,
+      "crunch_swing_avg": -0.1526,
+      "killer_instinct": 0.0251,
+      "drama_avg": 3.8861,
+      "comeback_rating": 0.6369,
+      "comeback_count": 0,
+      "home_gci": 24.6,
+      "away_gci": 49.6,
+      "win_quality_hist": [
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "loss_quality_hist": [
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      "game_log": [
+        {
+          "gamecode": 8,
+          "opponent": "PAM",
+          "is_home": true,
+          "is_win": false,
+          "dominance": 0.044,
+          "drama": 5.373,
+          "home_score": 94,
+          "away_score": 96
+        },
+        {
+          "gamecode": 19,
+          "opponent": "TEL",
+          "is_home": false,
+          "is_win": true,
+          "dominance": 0.225,
+          "drama": 3.396,
+          "home_score": 93,
+          "away_score": 109
+        },
+        {
+          "gamecode": 25,
+          "opponent": "BAR",
+          "is_home": true,
+          "is_win": false,
+          "dominance": -0.176,
+          "drama": 3.682,
+          "home_score": 82,
+          "away_score": 95
+        },
+        {
+          "gamecode": 38,
+          "opponent": "BAS",
+          "is_home": false,
+          "is_win": true,
+          "dominance": 0.032,
+          "drama": 4.42,
+          "home_score": 84,
+          "away_score": 92
+        },
+        {
+          "gamecode": 48,
+          "opponent": "HTA",
+          "is_home": false,
+          "is_win": false,
+          "dominance": -0.312,
+          "drama": 2.56,
+          "home_score": 100,
+          "away_score": 82
+        }
+      ]
+    },
+    "DUB": {
+      "gci": 61.3,
+      "dominance_avg": 0.0268,
+      "control_pct": 0.4319,
+      "crunch_swing_avg": 0.0846,
+      "killer_instinct": 0.103,
+      "drama_avg": 3.3314,
+      "comeback_rating": 0.6881,
+      "comeback_count": 1,
+      "home_gci": 75.9,
+      "away_gci": 39.3,
+      "win_quality_hist": [
+        2,
+        0,
+        0,
+        1,
+        0
+      ],
+      "loss_quality_hist": [
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      "game_log": [
+        {
+          "gamecode": 2,
+          "opponent": "MAD",
+          "is_home": true,
+          "is_win": true,
+          "dominance": 0.078,
+          "drama": 4.128,
+          "home_score": 78,
+          "away_score": 77
+        },
+        {
+          "gamecode": 13,
+          "opponent": "BAR",
+          "is_home": true,
+          "is_win": true,
+          "dominance": 0.347,
+          "drama": 2.598,
+          "home_score": 94,
+          "away_score": 87
+        },
+        {
+          "gamecode": 29,
+          "opponent": "ULK",
+          "is_home": false,
+          "is_win": false,
+          "dominance": -0.255,
+          "drama": 3.345,
+          "home_score": 76,
+          "away_score": 66
+        },
+        {
+          "gamecode": 37,
+          "opponent": "RED",
+          "is_home": true,
+          "is_win": false,
+          "dominance": -0.116,
+          "drama": 3.104,
+          "home_score": 58,
+          "away_score": 77
+        },
+        {
+          "gamecode": 42,
+          "opponent": "BAS",
+          "is_home": false,
+          "is_win": true,
+          "dominance": 0.082,
+          "drama": 3.483,
+          "home_score": 79,
+          "away_score": 93
+        }
+      ]
+    },
+    "HTA": {
+      "gci": 60.9,
+      "dominance_avg": 0.0753,
+      "control_pct": 0.5197,
+      "crunch_swing_avg": -0.0576,
+      "killer_instinct": 0.0403,
+      "drama_avg": 3.6559,
+      "comeback_rating": 0.4798,
+      "comeback_count": 0,
+      "home_gci": 74.0,
+      "away_gci": 41.3,
+      "win_quality_hist": [
+        0,
+        1,
+        0,
+        2,
+        0
+      ],
+      "loss_quality_hist": [
+        1,
+        0,
+        0,
+        1,
+        0
+      ],
+      "game_log": [
+        {
+          "gamecode": 3,
+          "opponent": "MUN",
+          "is_home": true,
+          "is_win": false,
+          "dominance": -0.031,
+          "drama": 5.136,
+          "home_score": 84,
+          "away_score": 86
+        },
+        {
+          "gamecode": 12,
+          "opponent": "RED",
+          "is_home": false,
+          "is_win": true,
+          "dominance": 0.109,
+          "drama": 3.997,
+          "home_score": 80,
+          "away_score": 81
+        },
+        {
+          "gamecode": 22,
+          "opponent": "MAD",
+          "is_home": true,
+          "is_win": true,
+          "dominance": 0.351,
+          "drama": 3.665,
+          "home_score": 102,
+          "away_score": 98
+        },
+        {
+          "gamecode": 34,
+          "opponent": "PAM",
+          "is_home": false,
+          "is_win": false,
+          "dominance": -0.365,
+          "drama": 2.921,
+          "home_score": 93,
+          "away_score": 82
+        },
+        {
+          "gamecode": 48,
+          "opponent": "BES",
+          "is_home": true,
+          "is_win": true,
+          "dominance": 0.312,
+          "drama": 2.56,
+          "home_score": 100,
+          "away_score": 82
+        }
+      ]
+    },
+    "IST": {
+      "gci": 34.1,
+      "dominance_avg": -0.0931,
+      "control_pct": 0.1905,
+      "crunch_swing_avg": -0.1484,
+      "killer_instinct": 0.0128,
+      "drama_avg": 3.7946,
+      "comeback_rating": 0.4691,
+      "comeback_count": 0,
+      "home_gci": 60.8,
+      "away_gci": 16.3,
+      "win_quality_hist": [
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "loss_quality_hist": [
+        1,
+        2,
+        0,
+        1,
+        0
+      ],
+      "game_log": [
+        {
+          "gamecode": 4,
+          "opponent": "BAR",
+          "is_home": false,
+          "is_win": false,
+          "dominance": -0.071,
+          "drama": 4.517,
+          "home_score": 89,
+          "away_score": 82
+        },
+        {
+          "gamecode": 11,
+          "opponent": "MAD",
+          "is_home": true,
+          "is_win": true,
+          "dominance": 0.277,
+          "drama": 3.744,
+          "home_score": 94,
+          "away_score": 84
+        },
+        {
+          "gamecode": 21,
+          "opponent": "RED",
+          "is_home": false,
+          "is_win": false,
+          "dominance": -0.192,
+          "drama": 3.872,
+          "home_score": 77,
+          "away_score": 72
+        },
+        {
+          "gamecode": 40,
+          "opponent": "OLY",
+          "is_home": false,
+          "is_win": false,
+          "dominance": -0.351,
+          "drama": 2.002,
+          "home_score": 89,
+          "away_score": 66
+        },
+        {
+          "gamecode": 49,
+          "opponent": "MUN",
+          "is_home": true,
+          "is_win": false,
+          "dominance": -0.128,
+          "drama": 4.838,
+          "home_score": 93,
+          "away_score": 101
+        }
+      ]
+    },
+    "MAD": {
+      "gci": 41.8,
+      "dominance_avg": -0.0264,
+      "control_pct": 0.3357,
+      "crunch_swing_avg": -0.161,
+      "killer_instinct": -0.0374,
+      "drama_avg": 3.3009,
+      "comeback_rating": 0.5469,
+      "comeback_count": 0,
+      "home_gci": 97.0,
+      "away_gci": 27.9,
+      "win_quality_hist": [
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "loss_quality_hist": [
+        1,
+        0,
+        1,
+        1,
+        0
+      ],
+      "game_log": [
+        {
+          "gamecode": 2,
+          "opponent": "DUB",
+          "is_home": false,
+          "is_win": false,
+          "dominance": -0.078,
+          "drama": 4.128,
+          "home_score": 78,
+          "away_score": 77
+        },
+        {
+          "gamecode": 11,
+          "opponent": "IST",
+          "is_home": false,
+          "is_win": false,
+          "dominance": -0.277,
+          "drama": 3.744,
+          "home_score": 94,
+          "away_score": 84
+        },
+        {
+          "gamecode": 22,
+          "opponent": "HTA",
+          "is_home": false,
+          "is_win": false,
+          "dominance": -0.351,
+          "drama": 3.665,
+          "home_score": 102,
+          "away_score": 98
+        },
+        {
+          "gamecode": 35,
+          "opponent": "PAR",
+          "is_home": true,
+          "is_win": true,
+          "dominance": 0.359,
+          "drama": 2.257,
+          "home_score": 86,
+          "away_score": 76
+        },
+        {
+          "gamecode": 43,
+          "opponent": "MIL",
+          "is_home": false,
+          "is_win": true,
+          "dominance": 0.215,
+          "drama": 2.711,
+          "home_score": 89,
+          "away_score": 98
+        }
+      ]
+    },
+    "MIL": {
+      "gci": 34.0,
+      "dominance_avg": -0.1821,
+      "control_pct": 0.2118,
+      "crunch_swing_avg": -0.0026,
+      "killer_instinct": -0.0059,
+      "drama_avg": 3.5198,
+      "comeback_rating": 0.6373,
+      "comeback_count": 0,
+      "home_gci": 63.2,
+      "away_gci": 14.6,
+      "win_quality_hist": [
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "loss_quality_hist": [
+        0,
+        0,
+        2,
+        2,
+        0
+      ],
+      "game_log": [
+        {
+          "gamecode": 10,
+          "opponent": "PAR",
+          "is_home": false,
+          "is_win": false,
+          "dominance": -0.292,
+          "drama": 3.254,
+          "home_score": 92,
+          "away_score": 76
+        },
+        {
+          "gamecode": 16,
+          "opponent": "VIR",
+          "is_home": true,
+          "is_win": true,
+          "dominance": 0.207,
+          "drama": 4.651,
+          "home_score": 87,
+          "away_score": 85
+        },
+        {
+          "gamecode": 27,
+          "opponent": "BAS",
+          "is_home": false,
+          "is_win": false,
+          "dominance": -0.301,
+          "drama": 3.744,
+          "home_score": 86,
+          "away_score": 76
+        },
+        {
+          "gamecode": 32,
+          "opponent": "TEL",
+          "is_home": false,
+          "is_win": false,
+          "dominance": -0.31,
+          "drama": 3.24,
+          "home_score": 97,
+          "away_score": 79
+        },
+        {
+          "gamecode": 43,
+          "opponent": "MAD",
+          "is_home": true,
+          "is_win": false,
+          "dominance": -0.215,
+          "drama": 2.711,
+          "home_score": 89,
+          "away_score": 98
+        }
+      ]
+    },
+    "MUN": {
+      "gci": 39.1,
+      "dominance_avg": -0.0451,
+      "control_pct": 0.3132,
+      "crunch_swing_avg": -0.1253,
+      "killer_instinct": -0.0948,
+      "drama_avg": 4.0442,
+      "comeback_rating": 0.7075,
+      "comeback_count": 0,
+      "home_gci": 28.3,
+      "away_gci": 46.2,
+      "win_quality_hist": [
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "loss_quality_hist": [
+        0,
+        2,
+        0,
+        0,
+        1
+      ],
+      "game_log": [
+        {
+          "gamecode": 3,
+          "opponent": "HTA",
+          "is_home": false,
+          "is_win": true,
+          "dominance": 0.031,
+          "drama": 5.136,
+          "home_score": 84,
+          "away_score": 86
+        },
+        {
+          "gamecode": 17,
+          "opponent": "ULK",
+          "is_home": false,
+          "is_win": false,
+          "dominance": -0.437,
+          "drama": 1.086,
+          "home_score": 100,
+          "away_score": 76
+        },
+        {
+          "gamecode": 28,
+          "opponent": "PAR",
+          "is_home": true,
+          "is_win": false,
+          "dominance": 0.166,
+          "drama": 4.827,
+          "home_score": 84,
+          "away_score": 86
+        },
+        {
+          "gamecode": 33,
+          "opponent": "VIR",
+          "is_home": true,
+          "is_win": false,
+          "dominance": -0.113,
+          "drama": 4.334,
+          "home_score": 87,
+          "away_score": 94
+        },
+        {
+          "gamecode": 49,
+          "opponent": "IST",
+          "is_home": false,
+          "is_win": true,
+          "dominance": 0.128,
+          "drama": 4.838,
+          "home_score": 93,
+          "away_score": 101
+        }
+      ]
+    },
+    "OLY": {
+      "gci": 47.5,
+      "dominance_avg": 0.0089,
+      "control_pct": 0.3434,
+      "crunch_swing_avg": 0.1788,
+      "killer_instinct": -0.2717,
+      "drama_avg": 4.361,
+      "comeback_rating": 0.7317,
+      "comeback_count": 1,
+      "home_gci": 97.9,
+      "away_gci": 34.9,
+      "win_quality_hist": [
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      "loss_quality_hist": [
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "game_log": [
+        {
+          "gamecode": 5,
+          "opponent": "BAS",
+          "is_home": false,
+          "is_win": true,
+          "dominance": 0.18,
+          "drama": 2.881,
+          "home_score": 89,
+          "away_score": 106
+        },
+        {
+          "gamecode": 14,
+          "opponent": "ZAL",
+          "is_home": false,
+          "is_win": true,
+          "dominance": -0.077,
+          "drama": 5.322,
+          "home_score": 91,
+          "away_score": 93
+        },
+        {
+          "gamecode": 23,
+          "opponent": "VIR",
+          "is_home": false,
+          "is_win": false,
+          "dominance": -0.114,
+          "drama": 5.935,
+          "home_score": 96,
+          "away_score": 94
+        },
+        {
+          "gamecode": 40,
+          "opponent": "IST",
+          "is_home": true,
+          "is_win": true,
+          "dominance": 0.351,
+          "drama": 2.002,
+          "home_score": 89,
+          "away_score": 66
+        },
+        {
+          "gamecode": 45,
+          "opponent": "PAM",
+          "is_home": false,
+          "is_win": true,
+          "dominance": -0.296,
+          "drama": 5.665,
+          "home_score": 97,
+          "away_score": 102
+        }
+      ]
+    },
+    "PAM": {
+      "gci": 66.5,
+      "dominance_avg": 0.1855,
+      "control_pct": 0.6208,
+      "crunch_swing_avg": 0.0629,
+      "killer_instinct": -0.2297,
+      "drama_avg": 3.8611,
+      "comeback_rating": 0.6312,
+      "comeback_count": 2,
+      "home_gci": 70.9,
+      "away_gci": 59.9,
+      "win_quality_hist": [
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "loss_quality_hist": [
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "game_log": [
+        {
+          "gamecode": 8,
+          "opponent": "BES",
+          "is_home": false,
+          "is_win": true,
+          "dominance": -0.044,
+          "drama": 5.373,
+          "home_score": 94,
+          "away_score": 96
+        },
+        {
+          "gamecode": 15,
+          "opponent": "BAS",
+          "is_home": true,
+          "is_win": true,
+          "dominance": 0.453,
+          "drama": 1.035,
+          "home_score": 111,
+          "away_score": 88
+        },
+        {
+          "gamecode": 26,
+          "opponent": "ASV",
+          "is_home": false,
+          "is_win": true,
+          "dominance": -0.142,
+          "drama": 4.311,
+          "home_score": 92,
+          "away_score": 105
+        },
+        {
+          "gamecode": 34,
+          "opponent": "HTA",
+          "is_home": true,
+          "is_win": true,
+          "dominance": 0.365,
+          "drama": 2.921,
+          "home_score": 93,
+          "away_score": 82
+        },
+        {
+          "gamecode": 45,
+          "opponent": "OLY",
+          "is_home": true,
+          "is_win": false,
+          "dominance": 0.296,
+          "drama": 5.665,
+          "home_score": 97,
+          "away_score": 102
+        }
+      ]
+    },
+    "PAN": {
+      "gci": 91.5,
+      "dominance_avg": 0.3425,
+      "control_pct": 0.8732,
+      "crunch_swing_avg": 0.0028,
+      "killer_instinct": 0.0083,
+      "drama_avg": 1.6768,
+      "comeback_rating": 0.4687,
+      "comeback_count": 0,
+      "home_gci": 97.5,
+      "away_gci": 67.5,
+      "win_quality_hist": [
+        0,
+        1,
+        1,
+        0,
+        3
+      ],
+      "loss_quality_hist": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "game_log": [
+        {
+          "gamecode": 7,
+          "opponent": "PRS",
+          "is_home": true,
+          "is_win": true,
+          "dominance": 0.419,
+          "drama": 1.353,
+          "home_score": 91,
+          "away_score": 72
+        },
+        {
+          "gamecode": 20,
+          "opponent": "ASV",
+          "is_home": true,
+          "is_win": true,
+          "dominance": 0.401,
+          "drama": 1.491,
+          "home_score": 102,
+          "away_score": 79
+        },
+        {
+          "gamecode": 30,
+          "opponent": "TEL",
+          "is_home": true,
+          "is_win": true,
+          "dominance": 0.418,
+          "drama": 1.118,
+          "home_score": 90,
+          "away_score": 67
+        },
+        {
+          "gamecode": 36,
+          "opponent": "ULK",
+          "is_home": true,
+          "is_win": true,
+          "dominance": 0.295,
+          "drama": 2.675,
+          "home_score": 92,
+          "away_score": 74
+        },
+        {
+          "gamecode": 47,
+          "opponent": "PAR",
+          "is_home": false,
+          "is_win": true,
+          "dominance": 0.179,
+          "drama": 1.747,
+          "home_score": 55,
+          "away_score": 72
+        }
+      ]
+    },
+    "PAR": {
+      "gci": 52.9,
+      "dominance_avg": -0.0803,
+      "control_pct": 0.2985,
+      "crunch_swing_avg": 0.1528,
+      "killer_instinct": 0.1333,
+      "drama_avg": 3.179,
+      "comeback_rating": 0.723,
+      "comeback_count": 1,
+      "home_gci": 67.1,
+      "away_gci": 43.5,
+      "win_quality_hist": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "loss_quality_hist": [
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "game_log": [
+        {
+          "gamecode": 10,
+          "opponent": "MIL",
+          "is_home": true,
+          "is_win": true,
+          "dominance": 0.292,
+          "drama": 3.254,
+          "home_score": 92,
+          "away_score": 76
+        },
+        {
+          "gamecode": 18,
+          "opponent": "PRS",
+          "is_home": false,
+          "is_win": true,
+          "dominance": 0.01,
+          "drama": 3.81,
+          "home_score": 79,
+          "away_score": 92
+        },
+        {
+          "gamecode": 28,
+          "opponent": "MUN",
+          "is_home": false,
+          "is_win": true,
+          "dominance": -0.166,
+          "drama": 4.827,
+          "home_score": 84,
+          "away_score": 86
+        },
+        {
+          "gamecode": 35,
+          "opponent": "MAD",
+          "is_home": false,
+          "is_win": false,
+          "dominance": -0.359,
+          "drama": 2.257,
+          "home_score": 86,
+          "away_score": 76
+        },
+        {
+          "gamecode": 47,
+          "opponent": "PAN",
+          "is_home": true,
+          "is_win": false,
+          "dominance": -0.179,
+          "drama": 1.747,
+          "home_score": 55,
+          "away_score": 72
+        }
+      ]
+    },
+    "PRS": {
+      "gci": 37.9,
+      "dominance_avg": -0.0189,
+      "control_pct": 0.4012,
+      "crunch_swing_avg": -0.1539,
+      "killer_instinct": -0.2582,
+      "drama_avg": 4.1834,
+      "comeback_rating": 0.6649,
+      "comeback_count": 0,
+      "home_gci": 44.3,
+      "away_gci": 12.2,
+      "win_quality_hist": [
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "loss_quality_hist": [
+        2,
+        1,
+        0,
+        0,
+        1
+      ],
+      "game_log": [
+        {
+          "gamecode": 7,
+          "opponent": "PAN",
+          "is_home": false,
+          "is_win": false,
+          "dominance": -0.419,
+          "drama": 1.353,
+          "home_score": 91,
+          "away_score": 72
+        },
+        {
+          "gamecode": 18,
+          "opponent": "PAR",
+          "is_home": true,
+          "is_win": false,
+          "dominance": -0.01,
+          "drama": 3.81,
+          "home_score": 79,
+          "away_score": 92
+        },
+        {
+          "gamecode": 24,
+          "opponent": "ZAL",
+          "is_home": true,
+          "is_win": true,
+          "dominance": 0.174,
+          "drama": 4.46,
+          "home_score": 82,
+          "away_score": 78
+        },
+        {
+          "gamecode": 31,
+          "opponent": "ASV",
+          "is_home": true,
+          "is_win": false,
+          "dominance": 0.134,
+          "drama": 5.539,
+          "home_score": 96,
+          "away_score": 98
+        },
+        {
+          "gamecode": 50,
+          "opponent": "VIR",
+          "is_home": true,
+          "is_win": false,
+          "dominance": 0.026,
+          "drama": 5.755,
+          "home_score": 94,
+          "away_score": 96
+        }
+      ]
+    },
+    "RED": {
+      "gci": 53.6,
+      "dominance_avg": 0.015,
+      "control_pct": 0.3035,
+      "crunch_swing_avg": 0.106,
+      "killer_instinct": 0.0273,
+      "drama_avg": 3.9437,
+      "comeback_rating": 0.6639,
+      "comeback_count": 1,
+      "home_gci": 51.3,
+      "away_gci": 57.0,
+      "win_quality_hist": [
+        0,
+        3,
+        0,
+        0,
+        0
+      ],
+      "loss_quality_hist": [
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "game_log": [
+        {
+          "gamecode": 1,
+          "opponent": "ZAL",
+          "is_home": true,
+          "is_win": false,
+          "dominance": 0.005,
+          "drama": 3.946,
+          "home_score": 77,
+          "away_score": 83
+        },
+        {
+          "gamecode": 12,
+          "opponent": "HTA",
+          "is_home": true,
+          "is_win": false,
+          "dominance": -0.109,
+          "drama": 3.997,
+          "home_score": 80,
+          "away_score": 81
+        },
+        {
+          "gamecode": 21,
+          "opponent": "IST",
+          "is_home": true,
+          "is_win": true,
+          "dominance": 0.192,
+          "drama": 3.872,
+          "home_score": 77,
+          "away_score": 72
+        },
+        {
+          "gamecode": 37,
+          "opponent": "DUB",
+          "is_home": false,
+          "is_win": true,
+          "dominance": 0.116,
+          "drama": 3.104,
+          "home_score": 58,
+          "away_score": 77
+        },
+        {
+          "gamecode": 41,
+          "opponent": "ASV",
+          "is_home": false,
+          "is_win": true,
+          "dominance": -0.129,
+          "drama": 4.799,
+          "home_score": 82,
+          "away_score": 84
+        }
+      ]
+    },
+    "TEL": {
+      "gci": 34.5,
+      "dominance_avg": -0.1546,
+      "control_pct": 0.1998,
+      "crunch_swing_avg": -0.0407,
+      "killer_instinct": 0.015,
+      "drama_avg": 3.0569,
+      "comeback_rating": 0.4032,
+      "comeback_count": 0,
+      "home_gci": 59.9,
+      "away_gci": 17.6,
+      "win_quality_hist": [
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "loss_quality_hist": [
+        0,
+        1,
+        2,
+        0,
+        1
+      ],
+      "game_log": [
+        {
+          "gamecode": 6,
+          "opponent": "ASV",
+          "is_home": false,
+          "is_win": false,
+          "dominance": -0.277,
+          "drama": 2.882,
+          "home_score": 84,
+          "away_score": 74
+        },
+        {
+          "gamecode": 19,
+          "opponent": "BES",
+          "is_home": true,
+          "is_win": false,
+          "dominance": -0.225,
+          "drama": 3.396,
+          "home_score": 93,
+          "away_score": 109
+        },
+        {
+          "gamecode": 30,
+          "opponent": "PAN",
+          "is_home": false,
+          "is_win": false,
+          "dominance": -0.418,
+          "drama": 1.118,
+          "home_score": 90,
+          "away_score": 67
+        },
+        {
+          "gamecode": 32,
+          "opponent": "MIL",
+          "is_home": true,
+          "is_win": true,
+          "dominance": 0.31,
+          "drama": 3.24,
+          "home_score": 97,
+          "away_score": 79
+        },
+        {
+          "gamecode": 44,
+          "opponent": "BAR",
+          "is_home": false,
+          "is_win": false,
+          "dominance": -0.163,
+          "drama": 4.648,
+          "home_score": 90,
+          "away_score": 87
+        }
+      ]
+    },
+    "ULK": {
+      "gci": 86.3,
+      "dominance_avg": 0.1915,
+      "control_pct": 0.7473,
+      "crunch_swing_avg": 0.1336,
+      "killer_instinct": 0.1391,
+      "drama_avg": 2.5521,
+      "comeback_rating": 0.4367,
+      "comeback_count": 0,
+      "home_gci": 100.0,
+      "away_gci": 19.2,
+      "win_quality_hist": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "loss_quality_hist": [
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "game_log": [
+        {
+          "gamecode": 9,
+          "opponent": "VIR",
+          "is_home": true,
+          "is_win": true,
+          "dominance": 0.163,
+          "drama": 3.465,
+          "home_score": 78,
+          "away_score": 68
+        },
+        {
+          "gamecode": 17,
+          "opponent": "MUN",
+          "is_home": true,
+          "is_win": true,
+          "dominance": 0.437,
+          "drama": 1.086,
+          "home_score": 100,
+          "away_score": 76
+        },
+        {
+          "gamecode": 29,
+          "opponent": "DUB",
+          "is_home": true,
+          "is_win": true,
+          "dominance": 0.255,
+          "drama": 3.345,
+          "home_score": 76,
+          "away_score": 66
+        },
+        {
+          "gamecode": 36,
+          "opponent": "PAN",
+          "is_home": false,
+          "is_win": false,
+          "dominance": -0.295,
+          "drama": 2.675,
+          "home_score": 92,
+          "away_score": 74
+        },
+        {
+          "gamecode": 46,
+          "opponent": "ZAL",
+          "is_home": true,
+          "is_win": true,
+          "dominance": 0.398,
+          "drama": 2.191,
+          "home_score": 99,
+          "away_score": 80
+        }
+      ]
+    },
+    "VIR": {
+      "gci": 41.8,
+      "dominance_avg": -0.0338,
+      "control_pct": 0.2299,
+      "crunch_swing_avg": 0.1291,
+      "killer_instinct": -0.1796,
+      "drama_avg": 4.8278,
+      "comeback_rating": 0.6732,
+      "comeback_count": 0,
+      "home_gci": 63.2,
+      "away_gci": 36.5,
+      "win_quality_hist": [
+        1,
+        2,
+        0,
+        0,
+        0
+      ],
+      "loss_quality_hist": [
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      "game_log": [
+        {
+          "gamecode": 9,
+          "opponent": "ULK",
+          "is_home": false,
+          "is_win": false,
+          "dominance": -0.163,
+          "drama": 3.465,
+          "home_score": 78,
+          "away_score": 68
+        },
+        {
+          "gamecode": 16,
+          "opponent": "MIL",
+          "is_home": false,
+          "is_win": false,
+          "dominance": -0.207,
+          "drama": 4.651,
+          "home_score": 87,
+          "away_score": 85
+        },
+        {
+          "gamecode": 23,
+          "opponent": "OLY",
+          "is_home": true,
+          "is_win": true,
+          "dominance": 0.114,
+          "drama": 5.935,
+          "home_score": 96,
+          "away_score": 94
+        },
+        {
+          "gamecode": 33,
+          "opponent": "MUN",
+          "is_home": false,
+          "is_win": true,
+          "dominance": 0.113,
+          "drama": 4.334,
+          "home_score": 87,
+          "away_score": 94
+        },
+        {
+          "gamecode": 50,
+          "opponent": "PRS",
+          "is_home": false,
+          "is_win": true,
+          "dominance": -0.026,
+          "drama": 5.755,
+          "home_score": 94,
+          "away_score": 96
+        }
+      ]
+    },
+    "ZAL": {
+      "gci": 29.7,
+      "dominance_avg": -0.1221,
+      "control_pct": 0.1516,
+      "crunch_swing_avg": 0.0194,
+      "killer_instinct": -0.1907,
+      "drama_avg": 4.1703,
+      "comeback_rating": 0.8122,
+      "comeback_count": 1,
+      "home_gci": 19.9,
+      "away_gci": 32.1,
+      "win_quality_hist": [
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "loss_quality_hist": [
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      "game_log": [
+        {
+          "gamecode": 1,
+          "opponent": "RED",
+          "is_home": false,
+          "is_win": true,
+          "dominance": -0.005,
+          "drama": 3.946,
+          "home_score": 77,
+          "away_score": 83
+        },
+        {
+          "gamecode": 14,
+          "opponent": "OLY",
+          "is_home": true,
+          "is_win": false,
+          "dominance": 0.077,
+          "drama": 5.322,
+          "home_score": 91,
+          "away_score": 93
+        },
+        {
+          "gamecode": 24,
+          "opponent": "PRS",
+          "is_home": false,
+          "is_win": false,
+          "dominance": -0.174,
+          "drama": 4.46,
+          "home_score": 82,
+          "away_score": 78
+        },
+        {
+          "gamecode": 39,
+          "opponent": "BAR",
+          "is_home": false,
+          "is_win": true,
+          "dominance": -0.11,
+          "drama": 4.933,
+          "home_score": 81,
+          "away_score": 88
+        },
+        {
+          "gamecode": 46,
+          "opponent": "ULK",
+          "is_home": false,
+          "is_win": false,
+          "dominance": -0.398,
+          "drama": 2.191,
+          "home_score": 99,
+          "away_score": 80
+        }
+      ]
+    }
+  },
+  "games": [
+    {
+      "gamecode": 1,
+      "home": "RED",
+      "away": "ZAL",
+      "home_score": 77,
+      "away_score": 83,
+      "winner": "ZAL",
+      "dominance": 0.005,
+      "drama": 3.9465,
+      "comeback": 0.6906,
+      "control_home": 0.2069,
+      "control_away": 0.1264,
+      "crunch_home": -0.4571,
+      "crunch_away": 0.4571
+    },
+    {
+      "gamecode": 2,
+      "home": "DUB",
+      "away": "MAD",
+      "home_score": 78,
+      "away_score": 77,
+      "winner": "DUB",
+      "dominance": 0.0777,
+      "drama": 4.1275,
+      "comeback": 0.7562,
+      "control_home": 0.5625,
+      "control_away": 0.125,
+      "crunch_home": 0.717,
+      "crunch_away": -0.717
+    },
+    {
+      "gamecode": 3,
+      "home": "HTA",
+      "away": "MUN",
+      "home_score": 84,
+      "away_score": 86,
+      "winner": "MUN",
+      "dominance": -0.0311,
+      "drama": 5.1361,
+      "comeback": 0.751,
+      "control_home": 0.337,
+      "control_away": 0.2826,
+      "crunch_home": -0.407,
+      "crunch_away": 0.407
+    },
+    {
+      "gamecode": 4,
+      "home": "BAR",
+      "away": "IST",
+      "home_score": 89,
+      "away_score": 82,
+      "winner": "BAR",
+      "dominance": 0.0708,
+      "drama": 4.5167,
+      "comeback": 0.6417,
+      "control_home": 0.2796,
+      "control_away": 0.0323,
+      "crunch_home": 0.4301,
+      "crunch_away": -0.4301
+    },
+    {
+      "gamecode": 5,
+      "home": "BAS",
+      "away": "OLY",
+      "home_score": 89,
+      "away_score": 106,
+      "winner": "OLY",
+      "dominance": -0.1798,
+      "drama": 2.8811,
+      "comeback": 0.7865,
+      "control_home": 0.2286,
+      "control_away": 0.5333,
+      "crunch_home": -0.0077,
+      "crunch_away": 0.0077
+    },
+    {
+      "gamecode": 6,
+      "home": "ASV",
+      "away": "TEL",
+      "home_score": 84,
+      "away_score": 74,
+      "winner": "ASV",
+      "dominance": 0.2773,
+      "drama": 2.8825,
+      "comeback": 0.4954,
+      "control_home": 0.8125,
+      "control_away": 0.0,
+      "crunch_home": 0.1297,
+      "crunch_away": -0.1297
+    },
+    {
+      "gamecode": 7,
+      "home": "PAN",
+      "away": "PRS",
+      "home_score": 91,
+      "away_score": 72,
+      "winner": "PAN",
+      "dominance": 0.4186,
+      "drama": 1.3529,
+      "comeback": 0.3903,
+      "control_home": 1.0,
+      "control_away": 0.0,
+      "crunch_home": 0.001,
+      "crunch_away": -0.001
+    },
+    {
+      "gamecode": 8,
+      "home": "BES",
+      "away": "PAM",
+      "home_score": 94,
+      "away_score": 96,
+      "winner": "PAM",
+      "dominance": 0.0439,
+      "drama": 5.3731,
+      "comeback": 0.8105,
+      "control_home": 0.3861,
+      "control_away": 0.1584,
+      "crunch_home": -0.7916,
+      "crunch_away": 0.7916
+    },
+    {
+      "gamecode": 9,
+      "home": "ULK",
+      "away": "VIR",
+      "home_score": 78,
+      "away_score": 68,
+      "winner": "ULK",
+      "dominance": 0.1625,
+      "drama": 3.4647,
+      "comeback": 0.5513,
+      "control_home": 0.7753,
+      "control_away": 0.0,
+      "crunch_home": 0.3094,
+      "crunch_away": -0.3094
+    },
+    {
+      "gamecode": 10,
+      "home": "PAR",
+      "away": "MIL",
+      "home_score": 92,
+      "away_score": 76,
+      "winner": "PAR",
+      "dominance": 0.2918,
+      "drama": 3.2539,
+      "comeback": 0.4032,
+      "control_home": 0.9759,
+      "control_away": 0.0,
+      "crunch_home": 0.0413,
+      "crunch_away": -0.0413
+    },
+    {
+      "gamecode": 11,
+      "home": "IST",
+      "away": "MAD",
+      "home_score": 94,
+      "away_score": 84,
+      "winner": "IST",
+      "dominance": 0.277,
+      "drama": 3.7443,
+      "comeback": 0.4691,
+      "control_home": 0.8265,
+      "control_away": 0.0,
+      "crunch_home": 0.0639,
+      "crunch_away": -0.0639
+    },
+    {
+      "gamecode": 12,
+      "home": "RED",
+      "away": "HTA",
+      "home_score": 80,
+      "away_score": 81,
+      "winner": "HTA",
+      "dominance": -0.1093,
+      "drama": 3.9966,
+      "comeback": 0.6097,
+      "control_home": 0.0222,
+      "control_away": 0.3889,
+      "crunch_home": -0.0776,
+      "crunch_away": 0.0776
+    },
+    {
+      "gamecode": 13,
+      "home": "DUB",
+      "away": "BAR",
+      "home_score": 94,
+      "away_score": 87,
+      "winner": "DUB",
+      "dominance": 0.3466,
+      "drama": 2.5979,
+      "comeback": 0.4691,
+      "control_home": 0.9263,
+      "control_away": 0.0,
+      "crunch_home": 0.0639,
+      "crunch_away": -0.0639
+    },
+    {
+      "gamecode": 14,
+      "home": "ZAL",
+      "away": "OLY",
+      "home_score": 91,
+      "away_score": 93,
+      "winner": "OLY",
+      "dominance": 0.0766,
+      "drama": 5.3219,
+      "comeback": 0.751,
+      "control_home": 0.5155,
+      "control_away": 0.0722,
+      "crunch_home": -0.4743,
+      "crunch_away": 0.4743
+    },
+    {
+      "gamecode": 15,
+      "home": "PAM",
+      "away": "BAS",
+      "home_score": 111,
+      "away_score": 88,
+      "winner": "PAM",
+      "dominance": 0.4526,
+      "drama": 1.035,
+      "comeback": 0.3903,
+      "control_home": 1.0,
+      "control_away": 0.0,
+      "crunch_home": 0.001,
+      "crunch_away": -0.001
+    },
+    {
+      "gamecode": 16,
+      "home": "MIL",
+      "away": "VIR",
+      "home_score": 87,
+      "away_score": 85,
+      "winner": "MIL",
+      "dominance": 0.2074,
+      "drama": 4.6505,
+      "comeback": 0.6373,
+      "control_home": 0.809,
+      "control_away": 0.0112,
+      "crunch_home": 0.4032,
+      "crunch_away": -0.4032
+    },
+    {
+      "gamecode": 17,
+      "home": "ULK",
+      "away": "MUN",
+      "home_score": 100,
+      "away_score": 76,
+      "winner": "ULK",
+      "dominance": 0.4371,
+      "drama": 1.0857,
+      "comeback": 0.3903,
+      "control_home": 1.0,
+      "control_away": 0.0,
+      "crunch_home": 0.001,
+      "crunch_away": -0.001
+    },
+    {
+      "gamecode": 18,
+      "home": "PRS",
+      "away": "PAR",
+      "home_score": 79,
+      "away_score": 92,
+      "winner": "PAR",
+      "dominance": -0.0102,
+      "drama": 3.8103,
+      "comeback": 0.7994,
+      "control_home": 0.3953,
+      "control_away": 0.2674,
+      "crunch_home": -0.043,
+      "crunch_away": 0.043
+    },
+    {
+      "gamecode": 19,
+      "home": "TEL",
+      "away": "BES",
+      "home_score": 93,
+      "away_score": 109,
+      "winner": "BES",
+      "dominance": -0.2245,
+      "drama": 3.3959,
+      "comeback": 0.6097,
+      "control_home": 0.009,
+      "control_away": 0.5766,
+      "crunch_home": -0.0099,
+      "crunch_away": 0.0099
+    },
+    {
+      "gamecode": 20,
+      "home": "PAN",
+      "away": "ASV",
+      "home_score": 102,
+      "away_score": 79,
+      "winner": "PAN",
+      "dominance": 0.4014,
+      "drama": 1.4913,
+      "comeback": 0.4032,
+      "control_home": 0.9894,
+      "control_away": 0.0,
+      "crunch_home": 0.001,
+      "crunch_away": -0.001
+    },
+    {
+      "gamecode": 21,
+      "home": "RED",
+      "away": "IST",
+      "home_score": 77,
+      "away_score": 72,
+      "winner": "RED",
+      "dominance": 0.1923,
+      "drama": 3.8721,
+      "comeback": 0.4301,
+      "control_home": 0.7317,
+      "control_away": 0.0,
+      "crunch_home": 0.3577,
+      "crunch_away": -0.3577
+    },
+    {
+      "gamecode": 22,
+      "home": "HTA",
+      "away": "MAD",
+      "home_score": 102,
+      "away_score": 98,
+      "winner": "HTA",
+      "dominance": 0.3515,
+      "drama": 3.6652,
+      "comeback": 0.4149,
+      "control_home": 0.9717,
+      "control_away": 0.0,
+      "crunch_home": 0.0413,
+      "crunch_away": -0.0413
+    },
+    {
+      "gamecode": 23,
+      "home": "VIR",
+      "away": "OLY",
+      "home_score": 96,
+      "away_score": 94,
+      "winner": "VIR",
+      "dominance": 0.1143,
+      "drama": 5.9351,
+      "comeback": 0.6649,
+      "control_home": 0.602,
+      "control_away": 0.0204,
+      "crunch_home": 0.5257,
+      "crunch_away": -0.5257
+    },
+    {
+      "gamecode": 24,
+      "home": "PRS",
+      "away": "ZAL",
+      "home_score": 82,
+      "away_score": 78,
+      "winner": "PRS",
+      "dominance": 0.174,
+      "drama": 4.4598,
+      "comeback": 0.6649,
+      "control_home": 0.8,
+      "control_away": 0.0222,
+      "crunch_home": 0.4944,
+      "crunch_away": -0.4944
+    },
+    {
+      "gamecode": 25,
+      "home": "BES",
+      "away": "BAR",
+      "home_score": 82,
+      "away_score": 95,
+      "winner": "BAR",
+      "dominance": -0.176,
+      "drama": 3.6819,
+      "comeback": 0.6906,
+      "control_home": 0.0808,
+      "control_away": 0.5152,
+      "crunch_home": -0.0776,
+      "crunch_away": 0.0776
+    },
+    {
+      "gamecode": 26,
+      "home": "ASV",
+      "away": "PAM",
+      "home_score": 92,
+      "away_score": 105,
+      "winner": "PAM",
+      "dominance": 0.142,
+      "drama": 4.3111,
+      "comeback": 0.9663,
+      "control_home": 0.6311,
+      "control_away": 0.1456,
+      "crunch_home": -0.4571,
+      "crunch_away": 0.4571
+    },
+    {
+      "gamecode": 27,
+      "home": "BAS",
+      "away": "MIL",
+      "home_score": 86,
+      "away_score": 76,
+      "winner": "BAS",
+      "dominance": 0.3012,
+      "drama": 3.7436,
+      "comeback": 0.4691,
+      "control_home": 0.9647,
+      "control_away": 0.0,
+      "crunch_home": 0.3577,
+      "crunch_away": -0.3577
+    },
+    {
+      "gamecode": 28,
+      "home": "MUN",
+      "away": "PAR",
+      "home_score": 84,
+      "away_score": 86,
+      "winner": "PAR",
+      "dominance": 0.1655,
+      "drama": 4.8275,
+      "comeback": 0.9663,
+      "control_home": 0.6848,
+      "control_away": 0.0217,
+      "crunch_home": -0.6906,
+      "crunch_away": 0.6906
+    },
+    {
+      "gamecode": 29,
+      "home": "ULK",
+      "away": "DUB",
+      "home_score": 76,
+      "away_score": 66,
+      "winner": "ULK",
+      "dominance": 0.2552,
+      "drama": 3.3447,
+      "comeback": 0.4149,
+      "control_home": 0.961,
+      "control_away": 0.0,
+      "crunch_home": 0.3577,
+      "crunch_away": -0.3577
+    },
+    {
+      "gamecode": 30,
+      "home": "PAN",
+      "away": "TEL",
+      "home_score": 90,
+      "away_score": 67,
+      "winner": "PAN",
+      "dominance": 0.418,
+      "drama": 1.1181,
+      "comeback": 0.3903,
+      "control_home": 1.0,
+      "control_away": 0.0,
+      "crunch_home": 0.001,
+      "crunch_away": -0.001
+    },
+    {
+      "gamecode": 31,
+      "home": "PRS",
+      "away": "ASV",
+      "home_score": 96,
+      "away_score": 98,
+      "winner": "ASV",
+      "dominance": 0.1339,
+      "drama": 5.5393,
+      "comeback": 0.8217,
+      "control_home": 0.6383,
+      "control_away": 0.0213,
+      "crunch_home": -0.7457,
+      "crunch_away": 0.7457
+    },
+    {
+      "gamecode": 32,
+      "home": "TEL",
+      "away": "MIL",
+      "home_score": 97,
+      "away_score": 79,
+      "winner": "TEL",
+      "dominance": 0.3097,
+      "drama": 3.2401,
+      "comeback": 0.4032,
+      "control_home": 0.99,
+      "control_away": 0.0,
+      "crunch_home": 0.001,
+      "crunch_away": -0.001
+    },
+    {
+      "gamecode": 33,
+      "home": "MUN",
+      "away": "VIR",
+      "home_score": 87,
+      "away_score": 94,
+      "winner": "VIR",
+      "dominance": -0.113,
+      "drama": 4.3339,
+      "comeback": 0.6906,
+      "control_home": 0.1031,
+      "control_away": 0.433,
+      "crunch_home": -0.3583,
+      "crunch_away": 0.3583
+    },
+    {
+      "gamecode": 34,
+      "home": "PAM",
+      "away": "HTA",
+      "home_score": 93,
+      "away_score": 82,
+      "winner": "PAM",
+      "dominance": 0.3652,
+      "drama": 2.9215,
+      "comeback": 0.3577,
+      "control_home": 1.0,
+      "control_away": 0.0,
+      "crunch_home": 0.001,
+      "crunch_away": -0.001
+    },
+    {
+      "gamecode": 35,
+      "home": "MAD",
+      "away": "PAR",
+      "home_score": 86,
+      "away_score": 76,
+      "winner": "MAD",
+      "dominance": 0.3589,
+      "drama": 2.2567,
+      "comeback": 0.4032,
+      "control_home": 0.967,
+      "control_away": 0.0,
+      "crunch_home": 0.001,
+      "crunch_away": -0.001
+    },
+    {
+      "gamecode": 36,
+      "home": "PAN",
+      "away": "ULK",
+      "home_score": 92,
+      "away_score": 74,
+      "winner": "PAN",
+      "dominance": 0.2955,
+      "drama": 2.6748,
+      "comeback": 0.4691,
+      "control_home": 0.8764,
+      "control_away": 0.0,
+      "crunch_home": 0.001,
+      "crunch_away": -0.001
+    },
+    {
+      "gamecode": 37,
+      "home": "DUB",
+      "away": "RED",
+      "home_score": 58,
+      "away_score": 77,
+      "winner": "RED",
+      "dominance": -0.1164,
+      "drama": 3.1041,
+      "comeback": 0.751,
+      "control_home": 0.2877,
+      "control_away": 0.5205,
+      "crunch_home": -0.0975,
+      "crunch_away": 0.0975
+    },
+    {
+      "gamecode": 38,
+      "home": "BAS",
+      "away": "BES",
+      "home_score": 84,
+      "away_score": 92,
+      "winner": "BES",
+      "dominance": -0.032,
+      "drama": 4.4197,
+      "comeback": 0.664,
+      "control_home": 0.0481,
+      "control_away": 0.1635,
+      "crunch_home": -0.0975,
+      "crunch_away": 0.0975
+    },
+    {
+      "gamecode": 39,
+      "home": "BAR",
+      "away": "ZAL",
+      "home_score": 81,
+      "away_score": 88,
+      "winner": "ZAL",
+      "dominance": 0.1101,
+      "drama": 4.9329,
+      "comeback": 0.9338,
+      "control_home": 0.5647,
+      "control_away": 0.0941,
+      "crunch_home": -0.6097,
+      "crunch_away": 0.6097
+    },
+    {
+      "gamecode": 40,
+      "home": "OLY",
+      "away": "IST",
+      "home_score": 89,
+      "away_score": 66,
+      "winner": "OLY",
+      "dominance": 0.3512,
+      "drama": 2.0024,
+      "comeback": 0.3903,
+      "control_home": 1.0,
+      "control_away": 0.0,
+      "crunch_home": 0.0016,
+      "crunch_away": -0.0016
+    },
+    {
+      "gamecode": 41,
+      "home": "ASV",
+      "away": "RED",
+      "home_score": 82,
+      "away_score": 84,
+      "winner": "RED",
+      "dominance": 0.1292,
+      "drama": 4.7992,
+      "comeback": 0.8105,
+      "control_home": 0.6867,
+      "control_away": 0.0361,
+      "crunch_home": -0.6097,
+      "crunch_away": 0.6097
+    },
+    {
+      "gamecode": 42,
+      "home": "BAS",
+      "away": "DUB",
+      "home_score": 79,
+      "away_score": 93,
+      "winner": "DUB",
+      "dominance": -0.0815,
+      "drama": 3.4829,
+      "comeback": 0.8389,
+      "control_home": 0.3404,
+      "control_away": 0.383,
+      "crunch_home": -0.0975,
+      "crunch_away": 0.0975
+    },
+    {
+      "gamecode": 43,
+      "home": "MIL",
+      "away": "MAD",
+      "home_score": 89,
+      "away_score": 98,
+      "winner": "MAD",
+      "dominance": -0.2154,
+      "drama": 2.7109,
+      "comeback": 0.6906,
+      "control_home": 0.25,
+      "control_away": 0.5865,
+      "crunch_home": -0.0164,
+      "crunch_away": 0.0164
+    },
+    {
+      "gamecode": 44,
+      "home": "BAR",
+      "away": "TEL",
+      "home_score": 90,
+      "away_score": 87,
+      "winner": "BAR",
+      "dominance": 0.1631,
+      "drama": 4.6479,
+      "comeback": 0.4457,
+      "control_home": 0.7128,
+      "control_away": 0.0,
+      "crunch_home": 0.0639,
+      "crunch_away": -0.0639
+    },
+    {
+      "gamecode": 45,
+      "home": "PAM",
+      "away": "OLY",
+      "home_score": 97,
+      "away_score": 102,
+      "winner": "OLY",
+      "dominance": 0.2956,
+      "drama": 5.6647,
+      "comeback": 0.999,
+      "control_home": 0.8,
+      "control_away": 0.0909,
+      "crunch_home": -0.9361,
+      "crunch_away": 0.9361
+    },
+    {
+      "gamecode": 46,
+      "home": "ULK",
+      "away": "ZAL",
+      "home_score": 99,
+      "away_score": 80,
+      "winner": "ULK",
+      "dominance": 0.398,
+      "drama": 2.1905,
+      "comeback": 0.3903,
+      "control_home": 1.0,
+      "control_away": 0.0,
+      "crunch_home": 0.001,
+      "crunch_away": -0.001
+    },
+    {
+      "gamecode": 47,
+      "home": "PAR",
+      "away": "PAN",
+      "home_score": 55,
+      "away_score": 72,
+      "winner": "PAN",
+      "dominance": -0.1792,
+      "drama": 1.7467,
+      "comeback": 0.6906,
+      "control_home": 0.2273,
+      "control_away": 0.5,
+      "crunch_home": -0.0099,
+      "crunch_away": 0.0099
+    },
+    {
+      "gamecode": 48,
+      "home": "HTA",
+      "away": "BES",
+      "home_score": 100,
+      "away_score": 82,
+      "winner": "HTA",
+      "dominance": 0.312,
+      "drama": 2.5601,
+      "comeback": 0.4149,
+      "control_home": 0.901,
+      "control_away": 0.0,
+      "crunch_home": 0.001,
+      "crunch_away": -0.001
+    },
+    {
+      "gamecode": 49,
+      "home": "IST",
+      "away": "MUN",
+      "home_score": 93,
+      "away_score": 101,
+      "winner": "MUN",
+      "dominance": -0.1281,
+      "drama": 4.8377,
+      "comeback": 0.664,
+      "control_home": 0.0935,
+      "control_away": 0.4953,
+      "crunch_home": -0.0164,
+      "crunch_away": 0.0164
+    },
+    {
+      "gamecode": 50,
+      "home": "PRS",
+      "away": "VIR",
+      "home_score": 94,
+      "away_score": 96,
+      "winner": "VIR",
+      "dominance": 0.0264,
+      "drama": 5.7547,
+      "comeback": 0.664,
+      "control_home": 0.1724,
+      "control_away": 0.1034,
+      "crunch_home": -0.4743,
+      "crunch_away": 0.4743
+    }
+  ],
+  "storylines": [
+    {
+      "label": "Dominant Force",
+      "team": "PAN",
+      "color": "#4ecdc4",
+      "text": "Controlled 87% of game time on average. 5 dominant wins this season.",
+      "stat_label": "GCI 91.5",
+      "stat_sub": "#1 Overall"
+    },
+    {
+      "label": "Drama Magnets",
+      "team": "VIR",
+      "color": "#ff6b6b",
+      "text": "Highest drama index in the league. 5 high-drama games this season.",
+      "stat_label": "Drama 4.83",
+      "stat_sub": "#1 Volatility"
+    },
+    {
+      "label": "Comeback Kings",
+      "team": "PAM",
+      "color": "#ffd700",
+      "text": "2 wins from below 20% WP. Largest comeback from 3% WP.",
+      "stat_label": "2 Comebacks",
+      "stat_sub": "Min WP: 3%"
+    },
+    {
+      "label": "The Closers",
+      "team": "ULK",
+      "color": "#a8e6cf",
+      "text": "Best at closing out games. Average net WP gain of +0.14 per game when leading in Q4.",
+      "stat_label": "Killer +0.14",
+      "stat_sub": "#1 Closer"
+    },
+    {
+      "label": "Fortress",
+      "team": "PRS",
+      "color": "#a855f7",
+      "text": "Strongest home court advantage. Dominance gap of 0.50 between home and away.",
+      "stat_label": "Gap 0.50",
+      "stat_sub": "#1 Home Court"
+    }
+  ],
+  "game_of_round": {
+    "gamecode": 50,
+    "round": 6,
+    "home": "PRS",
+    "away": "VIR",
+    "home_score": 94,
+    "away_score": 96,
+    "winner": "VIR",
+    "drama": 5.7547,
+    "comeback": 0.664,
+    "crunch_home": -0.4743,
+    "dominance": 0.0264,
+    "wp_curve": [
+      [
+        0.0,
+        0.5309
+      ],
+      [
+        0.007,
+        0.5309
+      ],
+      [
+        0.0365,
+        0.5968
+      ],
+      [
+        0.0487,
+        0.5968
+      ],
+      [
+        0.0565,
+        0.5851
+      ],
+      [
+        0.0683,
+        0.6423
+      ],
+      [
+        0.0953,
+        0.5968
+      ],
+      [
+        0.1057,
+        0.5309
+      ],
+      [
+        0.1322,
+        0.5851
+      ],
+      [
+        0.1692,
+        0.5699
+      ],
+      [
+        0.1953,
+        0.6001
+      ],
+      [
+        0.2453,
+        0.5851
+      ],
+      [
+        0.3032,
+        0.6097
+      ],
+      [
+        0.3223,
+        0.664
+      ],
+      [
+        0.3293,
+        0.6001
+      ],
+      [
+        0.3828,
+        0.6097
+      ],
+      [
+        0.4224,
+        0.5851
+      ],
+      [
+        0.4284,
+        0.5309
+      ],
+      [
+        0.4889,
+        0.4743
+      ],
+      [
+        0.5241,
+        0.5851
+      ],
+      [
+        0.5368,
+        0.5968
+      ],
+      [
+        0.5581,
+        0.5046
+      ],
+      [
+        0.5785,
+        0.5851
+      ],
+      [
+        0.6037,
+        0.5046
+      ],
+      [
+        0.6385,
+        0.3762
+      ],
+      [
+        0.6633,
+        0.5309
+      ],
+      [
+        0.6812,
+        0.4743
+      ],
+      [
+        0.6977,
+        0.6097
+      ],
+      [
+        0.7547,
+        0.6097
+      ],
+      [
+        0.7682,
+        0.5851
+      ],
+      [
+        0.7843,
+        0.5851
+      ],
+      [
+        0.8017,
+        0.5851
+      ],
+      [
+        0.8225,
+        0.3498
+      ],
+      [
+        0.8465,
+        0.3351
+      ],
+      [
+        0.8752,
+        0.407
+      ],
+      [
+        0.8987,
+        0.5968
+      ],
+      [
+        0.9208,
+        0.5968
+      ],
+      [
+        0.9439,
+        0.5968
+      ],
+      [
+        0.97,
+        0.5968
+      ],
+      [
+        0.9891,
+        0.4571
+      ],
+      [
+        1.0,
+        0.0
+      ]
+    ]
+  },
+  "superlatives": {
+    "most_dominant": {
+      "gamecode": 15,
+      "home": "PAM",
+      "away": "BAS",
+      "home_score": 111,
+      "away_score": 88,
+      "dominance": 0.4526,
+      "value": 0.4526,
+      "wp_curve": [
+        [
+          0.0,
+          0.664
+        ],
+        [
+          0.0248,
+          0.664
+        ],
+        [
+          0.0846,
+          0.6423
+        ],
+        [
+          0.1328,
+          0.7225
+        ],
+        [
+          0.1773,
+          0.7994
+        ],
+        [
+          0.1956,
+          0.8389
+        ],
+        [
+          0.2448,
+          0.9338
+        ],
+        [
+          0.2849,
+          0.9663
+        ],
+        [
+          0.2986,
+          0.9361
+        ],
+        [
+          0.314,
+          0.9663
+        ],
+        [
+          0.3375,
+          0.9979
+        ],
+        [
+          0.3759,
+          0.9773
+        ],
+        [
+          0.4079,
+          0.9773
+        ],
+        [
+          0.434,
+          0.9979
+        ],
+        [
+          0.4579,
+          0.9773
+        ],
+        [
+          0.4669,
+          0.9979
+        ],
+        [
+          0.4857,
+          0.9663
+        ],
+        [
+          0.4955,
+          0.9663
+        ],
+        [
+          0.5122,
+          0.9979
+        ],
+        [
+          0.5182,
+          0.9984
+        ],
+        [
+          0.5374,
+          0.9979
+        ],
+        [
+          0.5592,
+          0.9773
+        ],
+        [
+          0.578,
+          0.9984
+        ],
+        [
+          0.6258,
+          0.9979
+        ],
+        [
+          0.648,
+          0.9984
+        ],
+        [
+          0.6762,
+          0.9984
+        ],
+        [
+          0.6839,
+          0.9979
+        ],
+        [
+          0.7151,
+          0.999
+        ],
+        [
+          0.7275,
+          0.999
+        ],
+        [
+          0.7518,
+          0.999
+        ],
+        [
+          0.7749,
+          0.999
+        ],
+        [
+          0.7962,
+          0.999
+        ],
+        [
+          0.8116,
+          0.999
+        ],
+        [
+          0.8274,
+          0.999
+        ],
+        [
+          0.8441,
+          0.999
+        ],
+        [
+          0.8783,
+          0.999
+        ],
+        [
+          0.8902,
+          0.999
+        ],
+        [
+          0.944,
+          0.999
+        ],
+        [
+          0.9624,
+          0.999
+        ],
+        [
+          0.9765,
+          0.999
+        ],
+        [
+          1.0,
+          1.0
+        ]
+      ]
+    },
+    "most_dramatic": {
+      "gamecode": 23,
+      "home": "VIR",
+      "away": "OLY",
+      "home_score": 96,
+      "away_score": 94,
+      "drama": 5.9351,
+      "wp_curve": [
+        [
+          0.0,
+          0.6097
+        ],
+        [
+          0.0255,
+          0.6097
+        ],
+        [
+          0.0433,
+          0.6097
+        ],
+        [
+          0.0599,
+          0.6423
+        ],
+        [
+          0.076,
+          0.664
+        ],
+        [
+          0.0909,
+          0.6097
+        ],
+        [
+          0.1057,
+          0.6097
+        ],
+        [
+          0.1329,
+          0.6097
+        ],
+        [
+          0.1622,
+          0.5968
+        ],
+        [
+          0.1796,
+          0.6906
+        ],
+        [
+          0.2059,
+          0.5851
+        ],
+        [
+          0.2208,
+          0.6423
+        ],
+        [
+          0.2858,
+          0.5851
+        ],
+        [
+          0.3002,
+          0.5851
+        ],
+        [
+          0.3448,
+          0.4743
+        ],
+        [
+          0.3631,
+          0.5309
+        ],
+        [
+          0.3992,
+          0.6001
+        ],
+        [
+          0.4234,
+          0.6097
+        ],
+        [
+          0.4701,
+          0.6097
+        ],
+        [
+          0.5104,
+          0.6097
+        ],
+        [
+          0.5495,
+          0.6423
+        ],
+        [
+          0.5622,
+          0.6097
+        ],
+        [
+          0.5788,
+          0.6906
+        ],
+        [
+          0.5915,
+          0.5968
+        ],
+        [
+          0.6195,
+          0.7254
+        ],
+        [
+          0.6391,
+          0.7916
+        ],
+        [
+          0.6756,
+          0.7994
+        ],
+        [
+          0.7236,
+          0.6423
+        ],
+        [
+          0.741,
+          0.664
+        ],
+        [
+          0.7567,
+          0.664
+        ],
+        [
+          0.7715,
+          0.6097
+        ],
+        [
+          0.7932,
+          0.5543
+        ],
+        [
+          0.814,
+          0.5336
+        ],
+        [
+          0.8544,
+          0.5309
+        ],
+        [
+          0.8866,
+          0.4743
+        ],
+        [
+          0.9113,
+          0.4571
+        ],
+        [
+          0.9291,
+          0.407
+        ],
+        [
+          0.9732,
+          0.6423
+        ],
+        [
+          0.9754,
+          0.5046
+        ],
+        [
+          0.9958,
+          0.3351
+        ],
+        [
+          1.0,
+          1.0
+        ]
+      ]
+    },
+    "biggest_comeback": {
+      "gamecode": 45,
+      "home": "PAM",
+      "away": "OLY",
+      "home_score": 97,
+      "away_score": 102,
+      "comeback": 0.999,
+      "winner": "OLY",
+      "wp_curve": [
+        [
+          0.0,
+          0.7865
+        ],
+        [
+          0.0117,
+          0.7225
+        ],
+        [
+          0.0342,
+          0.7994
+        ],
+        [
+          0.0638,
+          0.8389
+        ],
+        [
+          0.083,
+          0.8389
+        ],
+        [
+          0.0928,
+          0.8625
+        ],
+        [
+          0.1078,
+          0.8625
+        ],
+        [
+          0.1233,
+          0.8625
+        ],
+        [
+          0.1678,
+          0.8389
+        ],
+        [
+          0.2011,
+          0.9194
+        ],
+        [
+          0.2255,
+          0.8625
+        ],
+        [
+          0.2635,
+          0.9361
+        ],
+        [
+          0.2804,
+          0.9587
+        ],
+        [
+          0.3047,
+          0.9663
+        ],
+        [
+          0.3333,
+          0.9663
+        ],
+        [
+          0.3741,
+          0.9696
+        ],
+        [
+          0.4116,
+          0.9773
+        ],
+        [
+          0.4369,
+          0.9984
+        ],
+        [
+          0.488,
+          0.999
+        ],
+        [
+          0.5335,
+          0.9984
+        ],
+        [
+          0.5513,
+          0.9984
+        ],
+        [
+          0.579,
+          0.9979
+        ],
+        [
+          0.6282,
+          0.9663
+        ],
+        [
+          0.6535,
+          0.9361
+        ],
+        [
+          0.7182,
+          0.9663
+        ],
+        [
+          0.7576,
+          0.9663
+        ],
+        [
+          0.7834,
+          0.9773
+        ],
+        [
+          0.8162,
+          0.9587
+        ],
+        [
+          0.842,
+          0.9979
+        ],
+        [
+          0.8481,
+          0.9361
+        ],
+        [
+          0.8837,
+          0.8105
+        ],
+        [
+          0.8969,
+          0.5543
+        ],
+        [
+          0.902,
+          0.5968
+        ],
+        [
+          0.91,
+          0.5968
+        ],
+        [
+          0.9287,
+          0.5336
+        ],
+        [
+          0.947,
+          0.5323
+        ],
+        [
+          0.9747,
+          0.0975
+        ],
+        [
+          0.9789,
+          0.08
+        ],
+        [
+          0.9878,
+          0.4571
+        ],
+        [
+          0.9977,
+          0.0099
+        ],
+        [
+          1.0,
+          0.0
+        ]
+      ]
+    }
+  }
+}
