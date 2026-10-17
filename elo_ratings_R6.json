@@ -6,8 +6,8 @@
     },
     {
         "Team": "OLY",
-        "Elo": 1580.0,
-        "Delta": 80.0
+        "Elo": 1585.0,
+        "Delta": 85.0
     },
     {
         "Team": "MAD",
@@ -16,13 +16,8 @@
     },
     {
         "Team": "PAN",
-        "Elo": 1545.2,
-        "Delta": 45.2
-    },
-    {
-        "Team": "BAR",
-        "Elo": 1533.2,
-        "Delta": 33.2
+        "Elo": 1539.1,
+        "Delta": 39.1
     },
     {
         "Team": "PAM",
@@ -30,9 +25,14 @@
         "Delta": 28.6
     },
     {
+        "Team": "BAR",
+        "Elo": 1528.2,
+        "Delta": 28.2
+    },
+    {
         "Team": "HTA",
-        "Elo": 1519.3,
-        "Delta": 19.3
+        "Elo": 1525.4,
+        "Delta": 25.4
     },
     {
         "Team": "DUB",
@@ -41,18 +41,18 @@
     },
     {
         "Team": "RED",
-        "Elo": 1508.9,
-        "Delta": 8.9
-    },
-    {
-        "Team": "ZAL",
-        "Elo": 1500.3,
-        "Delta": 0.3
+        "Elo": 1512.7,
+        "Delta": 12.7
     },
     {
         "Team": "BES",
-        "Elo": 1495.7,
-        "Delta": -4.3
+        "Elo": 1499.8,
+        "Delta": -0.2
+    },
+    {
+        "Team": "ZAL",
+        "Elo": 1494.1,
+        "Delta": -5.9
     },
     {
         "Team": "TEL",
@@ -61,8 +61,13 @@
     },
     {
         "Team": "MUN",
-        "Elo": 1486.3,
-        "Delta": -13.7
+        "Elo": 1482.1,
+        "Delta": -17.9
+    },
+    {
+        "Team": "VIR",
+        "Elo": 1480.8,
+        "Delta": -19.2
     },
     {
         "Team": "MIL",
@@ -75,24 +80,19 @@
         "Delta": -22.7
     },
     {
-        "Team": "VIR",
-        "Elo": 1476.9,
-        "Delta": -23.1
+        "Team": "IST",
+        "Elo": 1472.3,
+        "Delta": -27.7
     },
     {
         "Team": "PRS",
-        "Elo": 1470.5,
-        "Delta": -29.5
-    },
-    {
-        "Team": "IST",
-        "Elo": 1466.1,
-        "Delta": -33.9
+        "Elo": 1466.8,
+        "Delta": -33.2
     },
     {
         "Team": "BAS",
-        "Elo": 1444.9,
-        "Delta": -55.1
+        "Elo": 1441.1,
+        "Delta": -58.9
     },
     {
         "Team": "ASV",

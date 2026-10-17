@@ -762,7 +762,7 @@
     "arenaname": "TURKCELL BASKETBALL DEVELOPMENT CENTER",
     "confirmeddate": "true",
     "confirmedtime": "true",
-    "played": "false"
+    "played": "true"
   },
   {
     "gameday": "6",
@@ -777,7 +777,7 @@
     "arenaname": "ZALGIRIO ARENA",
     "confirmeddate": "true",
     "confirmedtime": "true",
-    "played": "false"
+    "played": "true"
   },
   {
     "gameday": "6",
@@ -792,7 +792,7 @@
     "arenaname": "TELEKOM CENTER ATHENS",
     "confirmeddate": "true",
     "confirmedtime": "true",
-    "played": "false"
+    "played": "true"
   },
   {
     "gameday": "6",
@@ -837,7 +837,7 @@
     "arenaname": "BELGRADE ARENA",
     "confirmeddate": "true",
     "confirmedtime": "true",
-    "played": "false"
+    "played": "true"
   },
   {
     "gameday": "6",
@@ -882,7 +882,7 @@
     "arenaname": "PALADOZZA",
     "confirmeddate": "true",
     "confirmedtime": "true",
-    "played": "false"
+    "played": "true"
   },
   {
     "gameday": "6",
@@ -897,7 +897,7 @@
     "arenaname": "PALAU BLAUGRANA",
     "confirmeddate": "true",
     "confirmedtime": "true",
-    "played": "false"
+    "played": "true"
   },
   {
     "gameday": "7",

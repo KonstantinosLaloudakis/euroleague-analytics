@@ -3,16 +3,16 @@
   "round": 6,
   "teams": {
     "ASV": {
-      "gci": 48.5,
-      "dominance_avg": 0.0026,
-      "control_pct": 0.4303,
-      "crunch_swing_avg": -0.0385,
-      "killer_instinct": -0.1219,
-      "drama_avg": 3.8047,
+      "gci": 43.5,
+      "dominance_avg": -0.0476,
+      "control_pct": 0.3586,
+      "crunch_swing_avg": -0.0324,
+      "killer_instinct": -0.1016,
+      "drama_avg": 3.895,
       "comeback_rating": 0.6585,
       "comeback_count": 1,
-      "home_gci": 56.6,
-      "away_gci": 36.4,
+      "home_gci": 57.1,
+      "away_gci": 29.9,
       "win_quality_hist": [
         0,
         1,
@@ -23,7 +23,7 @@
       "loss_quality_hist": [
         0,
         2,
-        0,
+        1,
         0,
         1
       ],
@@ -77,11 +77,21 @@
           "drama": 4.799,
           "home_score": 82,
           "away_score": 84
+        },
+        {
+          "gamecode": 53,
+          "opponent": "MAD",
+          "is_home": false,
+          "is_win": false,
+          "dominance": -0.299,
+          "drama": 4.346,
+          "home_score": 111,
+          "away_score": 92
         }
       ]
     },
     "BAR": {
-      "gci": 53.0,
+      "gci": 53.4,
       "dominance_avg": 0.0347,
       "control_pct": 0.4145,
       "crunch_swing_avg": -0.0204,
@@ -89,8 +99,8 @@
       "drama_avg": 4.0755,
       "comeback_rating": 0.5927,
       "comeback_count": 0,
-      "home_gci": 60.3,
-      "away_gci": 42.2,
+      "home_gci": 60.9,
+      "away_gci": 42.0,
       "win_quality_hist": [
         1,
         2,
@@ -167,8 +177,8 @@
       "drama_avg": 3.1125,
       "comeback_rating": 0.4691,
       "comeback_count": 0,
-      "home_gci": 54.4,
-      "away_gci": 10.2,
+      "home_gci": 54.8,
+      "away_gci": 8.8,
       "win_quality_hist": [
         0,
         0,
@@ -237,7 +247,7 @@
       ]
     },
     "BES": {
-      "gci": 39.6,
+      "gci": 39.3,
       "dominance_avg": -0.0375,
       "control_pct": 0.2414,
       "crunch_swing_avg": -0.1526,
@@ -245,8 +255,8 @@
       "drama_avg": 3.8861,
       "comeback_rating": 0.6369,
       "comeback_count": 0,
-      "home_gci": 24.6,
-      "away_gci": 49.6,
+      "home_gci": 23.7,
+      "away_gci": 49.8,
       "win_quality_hist": [
         1,
         0,
@@ -315,19 +325,19 @@
       ]
     },
     "DUB": {
-      "gci": 61.3,
-      "dominance_avg": 0.0268,
-      "control_pct": 0.4319,
-      "crunch_swing_avg": 0.0846,
-      "killer_instinct": 0.103,
-      "drama_avg": 3.3314,
-      "comeback_rating": 0.6881,
-      "comeback_count": 1,
-      "home_gci": 75.9,
-      "away_gci": 39.3,
+      "gci": 63.2,
+      "dominance_avg": 0.048,
+      "control_pct": 0.4379,
+      "crunch_swing_avg": 0.0732,
+      "killer_instinct": 0.1069,
+      "drama_avg": 3.4658,
+      "comeback_rating": 0.7215,
+      "comeback_count": 2,
+      "home_gci": 77.2,
+      "away_gci": 49.2,
       "win_quality_hist": [
         2,
-        0,
+        1,
         0,
         1,
         0
@@ -389,11 +399,21 @@
           "drama": 3.483,
           "home_score": 79,
           "away_score": 93
+        },
+        {
+          "gamecode": 51,
+          "opponent": "MIL",
+          "is_home": false,
+          "is_win": true,
+          "dominance": 0.154,
+          "drama": 4.138,
+          "home_score": 97,
+          "away_score": 101
         }
       ]
     },
     "HTA": {
-      "gci": 60.9,
+      "gci": 61.6,
       "dominance_avg": 0.0753,
       "control_pct": 0.5197,
       "crunch_swing_avg": -0.0576,
@@ -401,8 +421,8 @@
       "drama_avg": 3.6559,
       "comeback_rating": 0.4798,
       "comeback_count": 0,
-      "home_gci": 74.0,
-      "away_gci": 41.3,
+      "home_gci": 75.2,
+      "away_gci": 41.2,
       "win_quality_hist": [
         0,
         1,
@@ -471,7 +491,7 @@
       ]
     },
     "IST": {
-      "gci": 34.1,
+      "gci": 33.6,
       "dominance_avg": -0.0931,
       "control_pct": 0.1905,
       "crunch_swing_avg": -0.1484,
@@ -479,8 +499,8 @@
       "drama_avg": 3.7946,
       "comeback_rating": 0.4691,
       "comeback_count": 0,
-      "home_gci": 60.8,
-      "away_gci": 16.3,
+      "home_gci": 61.5,
+      "away_gci": 15.0,
       "win_quality_hist": [
         0,
         0,
@@ -549,20 +569,20 @@
       ]
     },
     "MAD": {
-      "gci": 41.8,
-      "dominance_avg": -0.0264,
-      "control_pct": 0.3357,
-      "crunch_swing_avg": -0.161,
-      "killer_instinct": -0.0374,
-      "drama_avg": 3.3009,
-      "comeback_rating": 0.5469,
+      "gci": 51.1,
+      "dominance_avg": 0.0278,
+      "control_pct": 0.443,
+      "crunch_swing_avg": -0.1338,
+      "killer_instinct": -0.0128,
+      "drama_avg": 3.4752,
+      "comeback_rating": 0.5029,
       "comeback_count": 0,
-      "home_gci": 97.0,
-      "away_gci": 27.9,
+      "home_gci": 98.9,
+      "away_gci": 27.2,
       "win_quality_hist": [
         0,
         0,
-        1,
+        2,
         1,
         0
       ],
@@ -623,20 +643,30 @@
           "drama": 2.711,
           "home_score": 89,
           "away_score": 98
+        },
+        {
+          "gamecode": 53,
+          "opponent": "ASV",
+          "is_home": true,
+          "is_win": true,
+          "dominance": 0.299,
+          "drama": 4.346,
+          "home_score": 111,
+          "away_score": 92
         }
       ]
     },
     "MIL": {
-      "gci": 34.0,
-      "dominance_avg": -0.1821,
-      "control_pct": 0.2118,
-      "crunch_swing_avg": -0.0026,
-      "killer_instinct": -0.0059,
-      "drama_avg": 3.5198,
+      "gci": 33.6,
+      "dominance_avg": -0.1774,
+      "control_pct": 0.2086,
+      "crunch_swing_avg": -0.0049,
+      "killer_instinct": -0.0049,
+      "drama_avg": 3.6227,
       "comeback_rating": 0.6373,
       "comeback_count": 0,
-      "home_gci": 63.2,
-      "away_gci": 14.6,
+      "home_gci": 54.0,
+      "away_gci": 13.3,
       "win_quality_hist": [
         0,
         0,
@@ -646,7 +676,7 @@
       ],
       "loss_quality_hist": [
         0,
-        0,
+        1,
         2,
         2,
         0
@@ -701,11 +731,21 @@
           "drama": 2.711,
           "home_score": 89,
           "away_score": 98
+        },
+        {
+          "gamecode": 51,
+          "opponent": "DUB",
+          "is_home": true,
+          "is_win": false,
+          "dominance": -0.154,
+          "drama": 4.138,
+          "home_score": 97,
+          "away_score": 101
         }
       ]
     },
     "MUN": {
-      "gci": 39.1,
+      "gci": 38.8,
       "dominance_avg": -0.0451,
       "control_pct": 0.3132,
       "crunch_swing_avg": -0.1253,
@@ -713,8 +753,8 @@
       "drama_avg": 4.0442,
       "comeback_rating": 0.7075,
       "comeback_count": 0,
-      "home_gci": 28.3,
-      "away_gci": 46.2,
+      "home_gci": 27.6,
+      "away_gci": 46.3,
       "win_quality_hist": [
         1,
         1,
@@ -783,7 +823,7 @@
       ]
     },
     "OLY": {
-      "gci": 47.5,
+      "gci": 47.6,
       "dominance_avg": 0.0089,
       "control_pct": 0.3434,
       "crunch_swing_avg": 0.1788,
@@ -791,8 +831,8 @@
       "drama_avg": 4.361,
       "comeback_rating": 0.7317,
       "comeback_count": 1,
-      "home_gci": 97.9,
-      "away_gci": 34.9,
+      "home_gci": 100.0,
+      "away_gci": 34.5,
       "win_quality_hist": [
         1,
         1,
@@ -861,16 +901,16 @@
       ]
     },
     "PAM": {
-      "gci": 66.5,
-      "dominance_avg": 0.1855,
-      "control_pct": 0.6208,
-      "crunch_swing_avg": 0.0629,
-      "killer_instinct": -0.2297,
-      "drama_avg": 3.8611,
+      "gci": 60.4,
+      "dominance_avg": 0.161,
+      "control_pct": 0.561,
+      "crunch_swing_avg": -0.047,
+      "killer_instinct": -0.2054,
+      "drama_avg": 3.9617,
       "comeback_rating": 0.6312,
       "comeback_count": 2,
-      "home_gci": 70.9,
-      "away_gci": 59.9,
+      "home_gci": 60.4,
+      "away_gci": 60.5,
       "win_quality_hist": [
         1,
         1,
@@ -879,7 +919,7 @@
         1
       ],
       "loss_quality_hist": [
-        0,
+        1,
         0,
         1,
         0,
@@ -935,11 +975,21 @@
           "drama": 5.665,
           "home_score": 97,
           "away_score": 102
+        },
+        {
+          "gamecode": 52,
+          "opponent": "TEL",
+          "is_home": true,
+          "is_win": false,
+          "dominance": 0.038,
+          "drama": 4.465,
+          "home_score": 88,
+          "away_score": 91
         }
       ]
     },
     "PAN": {
-      "gci": 91.5,
+      "gci": 93.4,
       "dominance_avg": 0.3425,
       "control_pct": 0.8732,
       "crunch_swing_avg": 0.0028,
@@ -947,8 +997,8 @@
       "drama_avg": 1.6768,
       "comeback_rating": 0.4687,
       "comeback_count": 0,
-      "home_gci": 97.5,
-      "away_gci": 67.5,
+      "home_gci": 99.6,
+      "away_gci": 68.4,
       "win_quality_hist": [
         0,
         1,
@@ -1017,16 +1067,16 @@
       ]
     },
     "PAR": {
-      "gci": 52.9,
-      "dominance_avg": -0.0803,
-      "control_pct": 0.2985,
-      "crunch_swing_avg": 0.1528,
-      "killer_instinct": 0.1333,
-      "drama_avg": 3.179,
+      "gci": 47.6,
+      "dominance_avg": -0.1097,
+      "control_pct": 0.2487,
+      "crunch_swing_avg": 0.1223,
+      "killer_instinct": 0.1111,
+      "drama_avg": 2.9678,
       "comeback_rating": 0.723,
       "comeback_count": 1,
-      "home_gci": 67.1,
-      "away_gci": 43.5,
+      "home_gci": 68.0,
+      "away_gci": 37.4,
       "win_quality_hist": [
         1,
         1,
@@ -1037,7 +1087,7 @@
       "loss_quality_hist": [
         0,
         1,
-        0,
+        1,
         1,
         0
       ],
@@ -1091,11 +1141,21 @@
           "drama": 1.747,
           "home_score": 55,
           "away_score": 72
+        },
+        {
+          "gamecode": 54,
+          "opponent": "ULK",
+          "is_home": false,
+          "is_win": false,
+          "dominance": -0.257,
+          "drama": 1.912,
+          "home_score": 74,
+          "away_score": 65
         }
       ]
     },
     "PRS": {
-      "gci": 37.9,
+      "gci": 37.6,
       "dominance_avg": -0.0189,
       "control_pct": 0.4012,
       "crunch_swing_avg": -0.1539,
@@ -1104,7 +1164,7 @@
       "comeback_rating": 0.6649,
       "comeback_count": 0,
       "home_gci": 44.3,
-      "away_gci": 12.2,
+      "away_gci": 10.8,
       "win_quality_hist": [
         0,
         1,
@@ -1173,7 +1233,7 @@
       ]
     },
     "RED": {
-      "gci": 53.6,
+      "gci": 53.9,
       "dominance_avg": 0.015,
       "control_pct": 0.3035,
       "crunch_swing_avg": 0.106,
@@ -1181,8 +1241,8 @@
       "drama_avg": 3.9437,
       "comeback_rating": 0.6639,
       "comeback_count": 1,
-      "home_gci": 51.3,
-      "away_gci": 57.0,
+      "home_gci": 51.6,
+      "away_gci": 57.5,
       "win_quality_hist": [
         0,
         3,
@@ -1251,18 +1311,18 @@
       ]
     },
     "TEL": {
-      "gci": 34.5,
-      "dominance_avg": -0.1546,
-      "control_pct": 0.1998,
-      "crunch_swing_avg": -0.0407,
-      "killer_instinct": 0.015,
-      "drama_avg": 3.0569,
-      "comeback_rating": 0.4032,
+      "gci": 38.7,
+      "dominance_avg": -0.1353,
+      "control_pct": 0.1744,
+      "crunch_swing_avg": 0.0655,
+      "killer_instinct": 0.0432,
+      "drama_avg": 3.2915,
+      "comeback_rating": 0.5469,
       "comeback_count": 0,
-      "home_gci": 59.9,
-      "away_gci": 17.6,
+      "home_gci": 60.5,
+      "away_gci": 27.8,
       "win_quality_hist": [
-        0,
+        1,
         0,
         0,
         1,
@@ -1325,24 +1385,34 @@
           "drama": 4.648,
           "home_score": 90,
           "away_score": 87
+        },
+        {
+          "gamecode": 52,
+          "opponent": "PAM",
+          "is_home": false,
+          "is_win": true,
+          "dominance": -0.038,
+          "drama": 4.465,
+          "home_score": 88,
+          "away_score": 91
         }
       ]
     },
     "ULK": {
-      "gci": 86.3,
-      "dominance_avg": 0.1915,
-      "control_pct": 0.7473,
-      "crunch_swing_avg": 0.1336,
-      "killer_instinct": 0.1391,
-      "drama_avg": 2.5521,
-      "comeback_rating": 0.4367,
+      "gci": 86.2,
+      "dominance_avg": 0.2023,
+      "control_pct": 0.7219,
+      "crunch_swing_avg": 0.1164,
+      "killer_instinct": 0.1184,
+      "drama_avg": 2.4454,
+      "comeback_rating": 0.4579,
       "comeback_count": 0,
-      "home_gci": 100.0,
-      "away_gci": 19.2,
+      "home_gci": 99.9,
+      "away_gci": 18.1,
       "win_quality_hist": [
         0,
         1,
-        1,
+        2,
         1,
         1
       ],
@@ -1403,11 +1473,21 @@
           "drama": 2.191,
           "home_score": 99,
           "away_score": 80
+        },
+        {
+          "gamecode": 54,
+          "opponent": "PAR",
+          "is_home": true,
+          "is_win": true,
+          "dominance": 0.257,
+          "drama": 1.912,
+          "home_score": 74,
+          "away_score": 65
         }
       ]
     },
     "VIR": {
-      "gci": 41.8,
+      "gci": 41.7,
       "dominance_avg": -0.0338,
       "control_pct": 0.2299,
       "crunch_swing_avg": 0.1291,
@@ -1415,8 +1495,8 @@
       "drama_avg": 4.8278,
       "comeback_rating": 0.6732,
       "comeback_count": 0,
-      "home_gci": 63.2,
-      "away_gci": 36.5,
+      "home_gci": 63.9,
+      "away_gci": 36.1,
       "win_quality_hist": [
         1,
         2,
@@ -1485,7 +1565,7 @@
       ]
     },
     "ZAL": {
-      "gci": 29.7,
+      "gci": 29.0,
       "dominance_avg": -0.1221,
       "control_pct": 0.1516,
       "crunch_swing_avg": 0.0194,
@@ -1493,8 +1573,8 @@
       "drama_avg": 4.1703,
       "comeback_rating": 0.8122,
       "comeback_count": 1,
-      "home_gci": 19.9,
-      "away_gci": 32.1,
+      "home_gci": 18.9,
+      "away_gci": 31.6,
       "win_quality_hist": [
         1,
         1,
@@ -2313,6 +2393,66 @@
       "control_away": 0.1034,
       "crunch_home": -0.4743,
       "crunch_away": 0.4743
+    },
+    {
+      "gamecode": 51,
+      "home": "MIL",
+      "away": "DUB",
+      "home_score": 97,
+      "away_score": 101,
+      "winner": "DUB",
+      "dominance": -0.154,
+      "drama": 4.1375,
+      "comeback": 0.8217,
+      "control_home": 0.1927,
+      "control_away": 0.4679,
+      "crunch_home": -0.0161,
+      "crunch_away": 0.0161
+    },
+    {
+      "gamecode": 52,
+      "home": "PAM",
+      "away": "TEL",
+      "home_score": 88,
+      "away_score": 91,
+      "winner": "TEL",
+      "dominance": 0.0385,
+      "drama": 4.4645,
+      "comeback": 0.6906,
+      "control_home": 0.2619,
+      "control_away": 0.0476,
+      "crunch_home": -0.5968,
+      "crunch_away": 0.5968
+    },
+    {
+      "gamecode": 53,
+      "home": "MAD",
+      "away": "ASV",
+      "home_score": 111,
+      "away_score": 92,
+      "winner": "MAD",
+      "dominance": 0.299,
+      "drama": 4.3465,
+      "comeback": 0.4149,
+      "control_home": 0.9794,
+      "control_away": 0.0,
+      "crunch_home": 0.0021,
+      "crunch_away": -0.0021
+    },
+    {
+      "gamecode": 54,
+      "home": "ULK",
+      "away": "PAR",
+      "home_score": 74,
+      "away_score": 65,
+      "winner": "ULK",
+      "dominance": 0.2566,
+      "drama": 1.9119,
+      "comeback": 0.5429,
+      "control_home": 0.5949,
+      "control_away": 0.0,
+      "crunch_home": 0.0304,
+      "crunch_away": -0.0304
     }
   ],
   "storylines": [
@@ -2321,7 +2461,7 @@
       "team": "PAN",
       "color": "#4ecdc4",
       "text": "Controlled 87% of game time on average. 5 dominant wins this season.",
-      "stat_label": "GCI 91.5",
+      "stat_label": "GCI 93.4",
       "stat_sub": "#1 Overall"
     },
     {
@@ -2334,18 +2474,18 @@
     },
     {
       "label": "Comeback Kings",
-      "team": "PAM",
+      "team": "DUB",
       "color": "#ffd700",
-      "text": "2 wins from below 20% WP. Largest comeback from 3% WP.",
+      "text": "2 wins from below 20% WP. Largest comeback from 16% WP.",
       "stat_label": "2 Comebacks",
-      "stat_sub": "Min WP: 3%"
+      "stat_sub": "Min WP: 16%"
     },
     {
       "label": "The Closers",
       "team": "ULK",
       "color": "#a8e6cf",
-      "text": "Best at closing out games. Average net WP gain of +0.14 per game when leading in Q4.",
-      "stat_label": "Killer +0.14",
+      "text": "Best at closing out games. Average net WP gain of +0.12 per game when leading in Q4.",
+      "stat_label": "Killer +0.12",
       "stat_sub": "#1 Closer"
     },
     {
