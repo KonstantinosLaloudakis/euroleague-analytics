@@ -3,7 +3,7 @@
   "season": 2026,
   "season_label": "2026-27",
   "regular_season_complete": false,
-  "updated": "2026-10-17T05:26:33Z",
+  "updated": "2026-10-21T05:50:48Z",
   "teams": [
     {
       "team": "PAN",
@@ -293,8 +293,8 @@
         "6": false,
         "10": false
       },
-      "gci": 93.4,
-      "drama_avg": 1.68,
+      "gci": 83.0,
+      "drama_avg": 2.04,
       "comeback_count": 0
     },
     {
@@ -585,7 +585,7 @@
         "6": false,
         "10": false
       },
-      "gci": 86.2,
+      "gci": 88.9,
       "drama_avg": 2.45,
       "comeback_count": 0
     },
@@ -877,8 +877,8 @@
         "6": false,
         "10": false
       },
-      "gci": 47.6,
-      "drama_avg": 4.36,
+      "gci": 42.6,
+      "drama_avg": 5.17,
       "comeback_count": 1
     },
     {
@@ -1169,7 +1169,7 @@
         "6": false,
         "10": false
       },
-      "gci": 60.4,
+      "gci": 61.3,
       "drama_avg": 3.96,
       "comeback_count": 2
     },
@@ -1461,8 +1461,8 @@
         "6": false,
         "10": false
       },
-      "gci": 53.9,
-      "drama_avg": 3.94,
+      "gci": 63.0,
+      "drama_avg": 3.76,
       "comeback_count": 1
     },
     {
@@ -1753,8 +1753,8 @@
         "6": false,
         "10": false
       },
-      "gci": 61.6,
-      "drama_avg": 3.66,
+      "gci": 63.6,
+      "drama_avg": 3.69,
       "comeback_count": 0
     },
     {
@@ -2045,8 +2045,8 @@
         "6": false,
         "10": false
       },
-      "gci": 41.7,
-      "drama_avg": 4.83,
+      "gci": 53.1,
+      "drama_avg": 4.49,
       "comeback_count": 0
     },
     {
@@ -2337,7 +2337,7 @@
         "6": false,
         "10": false
       },
-      "gci": 63.2,
+      "gci": 64.2,
       "drama_avg": 3.47,
       "comeback_count": 2
     },
@@ -2629,7 +2629,7 @@
         "6": false,
         "10": false
       },
-      "gci": 51.1,
+      "gci": 51.3,
       "drama_avg": 3.48,
       "comeback_count": 0
     },
@@ -2921,8 +2921,8 @@
         "6": false,
         "10": false
       },
-      "gci": 53.4,
-      "drama_avg": 4.08,
+      "gci": 46.2,
+      "drama_avg": 4.93,
       "comeback_count": 0
     },
     {
@@ -3213,8 +3213,8 @@
         "6": false,
         "10": false
       },
-      "gci": 39.3,
-      "drama_avg": 3.89,
+      "gci": 51.7,
+      "drama_avg": 3.75,
       "comeback_count": 0
     },
     {
@@ -3797,8 +3797,8 @@
         "6": false,
         "10": false
       },
-      "gci": 33.6,
-      "drama_avg": 3.79,
+      "gci": 40.3,
+      "drama_avg": 3.65,
       "comeback_count": 0
     },
     {
@@ -4089,8 +4089,8 @@
         "6": false,
         "10": false
       },
-      "gci": 29.0,
-      "drama_avg": 4.17,
+      "gci": 26.8,
+      "drama_avg": 3.96,
       "comeback_count": 1
     },
     {
@@ -4381,8 +4381,8 @@
         "6": false,
         "10": false
       },
-      "gci": 38.8,
-      "drama_avg": 4.04,
+      "gci": 31.8,
+      "drama_avg": 3.89,
       "comeback_count": 0
     },
     {
@@ -4673,7 +4673,7 @@
         "6": false,
         "10": false
       },
-      "gci": 38.7,
+      "gci": 38.1,
       "drama_avg": 3.29,
       "comeback_count": 0
     },
@@ -4965,7 +4965,7 @@
         "6": false,
         "10": false
       },
-      "gci": 43.5,
+      "gci": 43.2,
       "drama_avg": 3.9,
       "comeback_count": 1
     },
@@ -5257,8 +5257,8 @@
         "6": false,
         "10": false
       },
-      "gci": 37.6,
-      "drama_avg": 4.18,
+      "gci": 32.2,
+      "drama_avg": 3.96,
       "comeback_count": 0
     },
     {
@@ -5549,7 +5549,7 @@
         "6": false,
         "10": false
       },
-      "gci": 33.6,
+      "gci": 32.7,
       "drama_avg": 3.62,
       "comeback_count": 0
     },
@@ -5841,8 +5841,8 @@
         "6": false,
         "10": false
       },
-      "gci": 45.6,
-      "drama_avg": 3.11,
+      "gci": 38.5,
+      "drama_avg": 3.06,
       "comeback_count": 0
     }
   ],
@@ -5851,10 +5851,10 @@
       "rank": 1,
       "player": "VEZENKOV, SASHA",
       "team": "OLY",
-      "mvp_score": 87.92,
+      "mvp_score": 90.85,
       "avg_pir": 23.33,
       "avg_gmsc": 15.8,
-      "wpa": 190.3,
+      "wpa": 257.1,
       "team_win_pct": 83.3,
       "clutch_eff": 1.1574,
       "clutch_pts": 10.0,
@@ -5865,10 +5865,10 @@
       "rank": 2,
       "player": "MONTERO, JEAN",
       "team": "OLY",
-      "mvp_score": 86.14,
+      "mvp_score": 89.19,
       "avg_pir": 20.33,
       "avg_gmsc": 12.93,
-      "wpa": 217.5,
+      "wpa": 290.4,
       "team_win_pct": 83.3,
       "clutch_eff": 1.2922,
       "clutch_pts": 14.0,
@@ -5877,9 +5877,37 @@
     },
     {
       "rank": 3,
+      "player": "BRYANT, ELIJAH",
+      "team": "HTA",
+      "mvp_score": 84.27,
+      "avg_pir": 24.0,
+      "avg_gmsc": 13.38,
+      "wpa": 177.5,
+      "team_win_pct": 66.7,
+      "clutch_eff": 1.2346,
+      "clutch_pts": 8.0,
+      "consistency": 0.7034,
+      "gp": 6
+    },
+    {
+      "rank": 4,
+      "player": "NDIAYE, MBAYE",
+      "team": "OLY",
+      "mvp_score": 81.1,
+      "avg_pir": 15.67,
+      "avg_gmsc": 12.12,
+      "wpa": 260.7,
+      "team_win_pct": 83.3,
+      "clutch_eff": 3.1667,
+      "clutch_pts": 19.0,
+      "consistency": 0.594,
+      "gp": 6
+    },
+    {
+      "rank": 5,
       "player": "BACON, DWAYNE",
       "team": "DUB",
-      "mvp_score": 82.01,
+      "mvp_score": 80.55,
       "avg_pir": 19.5,
       "avg_gmsc": 13.3,
       "wpa": 266.1,
@@ -5890,24 +5918,24 @@
       "gp": 6
     },
     {
-      "rank": 4,
-      "player": "BRYANT, ELIJAH",
-      "team": "HTA",
-      "mvp_score": 81.52,
-      "avg_pir": 24.0,
-      "avg_gmsc": 13.38,
-      "wpa": 121.0,
+      "rank": 6,
+      "player": "DIARRA, ALIOU",
+      "team": "VIR",
+      "mvp_score": 78.17,
+      "avg_pir": 18.83,
+      "avg_gmsc": 11.85,
+      "wpa": 204.4,
       "team_win_pct": 66.7,
-      "clutch_eff": 1.2346,
+      "clutch_eff": 0.8439,
       "clutch_pts": 8.0,
-      "consistency": 0.7034,
+      "consistency": 0.7357,
       "gp": 6
     },
     {
-      "rank": 5,
+      "rank": 7,
       "player": "SHORTS, TJ",
       "team": "PAM",
-      "mvp_score": 79.56,
+      "mvp_score": 78.01,
       "avg_pir": 18.33,
       "avg_gmsc": 12.7,
       "wpa": 226.0,
@@ -5918,38 +5946,24 @@
       "gp": 6
     },
     {
-      "rank": 6,
-      "player": "DIARRA, ALIOU",
-      "team": "VIR",
-      "mvp_score": 78.62,
-      "avg_pir": 18.83,
-      "avg_gmsc": 11.85,
-      "wpa": 190.9,
-      "team_win_pct": 66.7,
-      "clutch_eff": 0.8439,
-      "clutch_pts": 8.0,
-      "consistency": 0.7357,
-      "gp": 6
-    },
-    {
-      "rank": 7,
-      "player": "NDIAYE, MBAYE",
-      "team": "OLY",
-      "mvp_score": 78.07,
-      "avg_pir": 15.67,
-      "avg_gmsc": 12.12,
-      "wpa": 192.2,
-      "team_win_pct": 83.3,
-      "clutch_eff": 3.1667,
-      "clutch_pts": 19.0,
-      "consistency": 0.594,
-      "gp": 6
-    },
-    {
       "rank": 8,
+      "player": "MOORE, WENDELL",
+      "team": "VIR",
+      "mvp_score": 74.76,
+      "avg_pir": 14.0,
+      "avg_gmsc": 10.05,
+      "wpa": 257.6,
+      "team_win_pct": 66.7,
+      "clutch_eff": 1.0819,
+      "clutch_pts": 11.0,
+      "consistency": 0.6618,
+      "gp": 6
+    },
+    {
+      "rank": 9,
       "player": "MIROTIC, NIKOLA",
       "team": "PAM",
-      "mvp_score": 76.01,
+      "mvp_score": 74.7,
       "avg_pir": 16.33,
       "avg_gmsc": 12.48,
       "wpa": 189.7,
@@ -5960,10 +5974,24 @@
       "gp": 6
     },
     {
-      "rank": 9,
+      "rank": 10,
+      "player": "WILBEKIN, SCOTTIE",
+      "team": "BES",
+      "mvp_score": 74.51,
+      "avg_pir": 14.17,
+      "avg_gmsc": 11.48,
+      "wpa": 241.9,
+      "team_win_pct": 50.0,
+      "clutch_eff": 1.8333,
+      "clutch_pts": 11.0,
+      "consistency": 0.7289,
+      "gp": 6
+    },
+    {
+      "rank": 11,
       "player": "MALEDON, THEO",
       "team": "MAD",
-      "mvp_score": 75.18,
+      "mvp_score": 74.07,
       "avg_pir": 21.5,
       "avg_gmsc": 13.78,
       "wpa": 161.6,
@@ -5974,10 +6002,10 @@
       "gp": 6
     },
     {
-      "rank": 10,
+      "rank": 12,
       "player": "JONES, CARLIK",
       "team": "PAR",
-      "mvp_score": 74.97,
+      "mvp_score": 73.42,
       "avg_pir": 17.33,
       "avg_gmsc": 12.98,
       "wpa": 225.8,
@@ -5988,27 +6016,13 @@
       "gp": 6
     },
     {
-      "rank": 11,
-      "player": "MOORE, WENDELL",
-      "team": "VIR",
-      "mvp_score": 74.06,
-      "avg_pir": 14.0,
-      "avg_gmsc": 10.05,
-      "wpa": 222.4,
-      "team_win_pct": 66.7,
-      "clutch_eff": 1.0819,
-      "clutch_pts": 11.0,
-      "consistency": 0.6618,
-      "gp": 6
-    },
-    {
-      "rank": 12,
+      "rank": 13,
       "player": "CARR, MARCUS",
       "team": "VIR",
-      "mvp_score": 72.99,
+      "mvp_score": 73.2,
       "avg_pir": 15.17,
       "avg_gmsc": 12.13,
-      "wpa": 216.4,
+      "wpa": 243.1,
       "team_win_pct": 66.7,
       "clutch_eff": 0.4711,
       "clutch_pts": 8.0,
@@ -6016,24 +6030,24 @@
       "gp": 6
     },
     {
-      "rank": 13,
-      "player": "WILBEKIN, SCOTTIE",
-      "team": "BES",
-      "mvp_score": 71.95,
-      "avg_pir": 14.17,
-      "avg_gmsc": 11.48,
-      "wpa": 181.8,
+      "rank": 14,
+      "player": "ROBINSON, JUSTIN",
+      "team": "BAR",
+      "mvp_score": 72.59,
+      "avg_pir": 12.67,
+      "avg_gmsc": 8.38,
+      "wpa": 254.7,
       "team_win_pct": 50.0,
-      "clutch_eff": 1.8333,
-      "clutch_pts": 11.0,
-      "consistency": 0.7289,
+      "clutch_eff": 2.1894,
+      "clutch_pts": 17.0,
+      "consistency": 0.6384,
       "gp": 6
     },
     {
-      "rank": 14,
+      "rank": 15,
       "player": "KABENGELE, MFIONDU",
       "team": "DUB",
-      "mvp_score": 71.93,
+      "mvp_score": 70.75,
       "avg_pir": 16.5,
       "avg_gmsc": 10.58,
       "wpa": 171.4,
@@ -6041,20 +6055,6 @@
       "clutch_eff": 0.3617,
       "clutch_pts": 5.0,
       "consistency": 0.7283,
-      "gp": 6
-    },
-    {
-      "rank": 15,
-      "player": "WRIGHT, MOSES",
-      "team": "MIL",
-      "mvp_score": 71.57,
-      "avg_pir": 18.17,
-      "avg_gmsc": 12.33,
-      "wpa": 200.8,
-      "team_win_pct": 16.7,
-      "clutch_eff": 0.6275,
-      "clutch_pts": 5.0,
-      "consistency": 0.7015,
       "gp": 6
     }
   ],
@@ -6076,9 +6076,9 @@
       "fg_pct": 45.0,
       "fg3_pct": 26.3,
       "ft_pct": 86.8,
-      "mvp_score": 81.5,
-      "mvp_rank": 4,
-      "wpa": 121.0,
+      "mvp_score": 84.3,
+      "mvp_rank": 3,
+      "wpa": 177.5,
       "consistency": 0.703,
       "clutch_eff": 1.235
     },
@@ -6098,9 +6098,9 @@
       "fg_pct": 60.7,
       "fg3_pct": 31.2,
       "ft_pct": 93.5,
-      "mvp_score": 87.9,
+      "mvp_score": 90.9,
       "mvp_rank": 1,
-      "wpa": 190.3,
+      "wpa": 257.1,
       "consistency": 0.683,
       "clutch_eff": 1.157
     },
@@ -6120,8 +6120,8 @@
       "fg_pct": 50.9,
       "fg3_pct": 15.4,
       "ft_pct": 92.1,
-      "mvp_score": 75.2,
-      "mvp_rank": 9,
+      "mvp_score": 74.1,
+      "mvp_rank": 11,
       "wpa": 161.6,
       "consistency": 0.667,
       "clutch_eff": 0.0
@@ -6142,9 +6142,9 @@
       "fg_pct": 42.6,
       "fg3_pct": 28.6,
       "ft_pct": 93.1,
-      "mvp_score": 86.1,
+      "mvp_score": 89.2,
       "mvp_rank": 2,
-      "wpa": 217.5,
+      "wpa": 290.4,
       "consistency": 0.701,
       "clutch_eff": 1.292
     },
@@ -6164,8 +6164,8 @@
       "fg_pct": 49.3,
       "fg3_pct": 45.5,
       "ft_pct": 87.9,
-      "mvp_score": 82.0,
-      "mvp_rank": 3,
+      "mvp_score": 80.6,
+      "mvp_rank": 5,
       "wpa": 266.1,
       "consistency": 0.705,
       "clutch_eff": 0.199
@@ -6186,9 +6186,9 @@
       "fg_pct": 54.1,
       "fg3_pct": 0.0,
       "ft_pct": 71.8,
-      "mvp_score": 68.9,
-      "mvp_rank": 18,
-      "wpa": 40.8,
+      "mvp_score": 70.4,
+      "mvp_rank": 16,
+      "wpa": 69.2,
       "consistency": 0.699,
       "clutch_eff": 0.333
     },
@@ -6208,9 +6208,9 @@
       "fg_pct": 68.3,
       "fg3_pct": 0.0,
       "ft_pct": 71.4,
-      "mvp_score": 78.6,
+      "mvp_score": 78.2,
       "mvp_rank": 6,
-      "wpa": 190.9,
+      "wpa": 204.4,
       "consistency": 0.736,
       "clutch_eff": 0.844
     },
@@ -6230,9 +6230,9 @@
       "fg_pct": 60.0,
       "fg3_pct": 33.3,
       "ft_pct": 78.3,
-      "mvp_score": 68.4,
-      "mvp_rank": 21,
-      "wpa": 117.3,
+      "mvp_score": 69.0,
+      "mvp_rank": 20,
+      "wpa": 139.4,
       "consistency": 0.823,
       "clutch_eff": 0.606
     },
@@ -6252,8 +6252,8 @@
       "fg_pct": 52.9,
       "fg3_pct": 57.1,
       "ft_pct": 67.9,
-      "mvp_score": 79.6,
-      "mvp_rank": 5,
+      "mvp_score": 78.0,
+      "mvp_rank": 7,
       "wpa": 226.0,
       "consistency": 0.854,
       "clutch_eff": 0.466
@@ -6274,8 +6274,8 @@
       "fg_pct": 65.9,
       "fg3_pct": 0.0,
       "ft_pct": 81.2,
-      "mvp_score": 71.6,
-      "mvp_rank": 15,
+      "mvp_score": 70.2,
+      "mvp_rank": 18,
       "wpa": 200.8,
       "consistency": 0.701,
       "clutch_eff": 0.628
@@ -6296,9 +6296,9 @@
       "fg_pct": 43.7,
       "fg3_pct": 31.6,
       "ft_pct": 80.8,
-      "mvp_score": 68.2,
-      "mvp_rank": 22,
-      "wpa": 84.9,
+      "mvp_score": 70.2,
+      "mvp_rank": 17,
+      "wpa": 126.1,
       "consistency": 0.674,
       "clutch_eff": 0.137
     },
@@ -6318,8 +6318,8 @@
       "fg_pct": 44.8,
       "fg3_pct": 31.2,
       "ft_pct": 85.7,
-      "mvp_score": 75.0,
-      "mvp_rank": 10,
+      "mvp_score": 73.4,
+      "mvp_rank": 12,
       "wpa": 225.8,
       "consistency": 0.566,
       "clutch_eff": 0.564
@@ -6340,9 +6340,9 @@
       "fg_pct": 81.5,
       "fg3_pct": 0.0,
       "ft_pct": 71.4,
-      "mvp_score": 62.2,
-      "mvp_rank": 43,
-      "wpa": 76.1,
+      "mvp_score": 62.1,
+      "mvp_rank": 42,
+      "wpa": 83.1,
       "consistency": 0.719,
       "clutch_eff": 0.0
     },
@@ -6362,8 +6362,8 @@
       "fg_pct": 53.8,
       "fg3_pct": 38.9,
       "ft_pct": 77.8,
-      "mvp_score": 71.9,
-      "mvp_rank": 14,
+      "mvp_score": 70.7,
+      "mvp_rank": 15,
       "wpa": 171.4,
       "consistency": 0.728,
       "clutch_eff": 0.362
@@ -6384,9 +6384,9 @@
       "fg_pct": 46.0,
       "fg3_pct": 17.6,
       "ft_pct": 84.4,
-      "mvp_score": 66.1,
-      "mvp_rank": 27,
-      "wpa": 161.1,
+      "mvp_score": 66.2,
+      "mvp_rank": 26,
+      "wpa": 179.6,
       "consistency": 0.598,
       "clutch_eff": 0.211
     },
@@ -6406,8 +6406,8 @@
       "fg_pct": 51.1,
       "fg3_pct": 40.7,
       "ft_pct": 96.9,
-      "mvp_score": 76.0,
-      "mvp_rank": 8,
+      "mvp_score": 74.7,
+      "mvp_rank": 9,
       "wpa": 189.7,
       "consistency": 0.756,
       "clutch_eff": 1.149
@@ -6428,9 +6428,9 @@
       "fg_pct": 82.9,
       "fg3_pct": 66.7,
       "ft_pct": 78.6,
-      "mvp_score": 78.1,
-      "mvp_rank": 7,
-      "wpa": 192.2,
+      "mvp_score": 81.1,
+      "mvp_rank": 4,
+      "wpa": 260.7,
       "consistency": 0.594,
       "clutch_eff": 3.167
     },
@@ -6450,8 +6450,8 @@
       "fg_pct": 50.0,
       "fg3_pct": 42.9,
       "ft_pct": 85.7,
-      "mvp_score": 66.8,
-      "mvp_rank": 25,
+      "mvp_score": 65.6,
+      "mvp_rank": 29,
       "wpa": 182.5,
       "consistency": 0.598,
       "clutch_eff": 0.333
@@ -6472,9 +6472,9 @@
       "fg_pct": 50.0,
       "fg3_pct": 34.6,
       "ft_pct": 86.7,
-      "mvp_score": 68.6,
-      "mvp_rank": 19,
-      "wpa": 185.3,
+      "mvp_score": 67.6,
+      "mvp_rank": 23,
+      "wpa": 189.2,
       "consistency": 0.563,
       "clutch_eff": 0.498
     },
@@ -6494,9 +6494,9 @@
       "fg_pct": 45.0,
       "fg3_pct": 45.8,
       "ft_pct": 79.3,
-      "mvp_score": 73.0,
-      "mvp_rank": 12,
-      "wpa": 216.4,
+      "mvp_score": 73.2,
+      "mvp_rank": 13,
+      "wpa": 243.1,
       "consistency": 0.635,
       "clutch_eff": 0.471
     },
@@ -6516,9 +6516,9 @@
       "fg_pct": 54.9,
       "fg3_pct": 47.6,
       "ft_pct": 80.0,
-      "mvp_score": 66.5,
-      "mvp_rank": 26,
-      "wpa": 143.6,
+      "mvp_score": 67.9,
+      "mvp_rank": 22,
+      "wpa": 181.1,
       "consistency": 0.615,
       "clutch_eff": 0.193
     },
@@ -6538,8 +6538,8 @@
       "fg_pct": 53.1,
       "fg3_pct": 46.2,
       "ft_pct": 87.5,
-      "mvp_score": 63.3,
-      "mvp_rank": 37,
+      "mvp_score": 62.3,
+      "mvp_rank": 39,
       "wpa": 132.7,
       "consistency": 0.68,
       "clutch_eff": 0.556
@@ -6560,8 +6560,8 @@
       "fg_pct": 72.7,
       "fg3_pct": 0.0,
       "ft_pct": 69.2,
-      "mvp_score": 60.8,
-      "mvp_rank": 45,
+      "mvp_score": 60.1,
+      "mvp_rank": 47,
       "wpa": 102.3,
       "consistency": 0.675,
       "clutch_eff": 0.0
@@ -6582,9 +6582,9 @@
       "fg_pct": 53.8,
       "fg3_pct": 20.0,
       "ft_pct": 57.9,
-      "mvp_score": 64.3,
-      "mvp_rank": 33,
-      "wpa": 135.2,
+      "mvp_score": 64.2,
+      "mvp_rank": 34,
+      "wpa": 147.4,
       "consistency": 0.589,
       "clutch_eff": 1.046
     },
@@ -6604,9 +6604,9 @@
       "fg_pct": 51.1,
       "fg3_pct": 50.0,
       "ft_pct": 95.0,
-      "mvp_score": 64.6,
-      "mvp_rank": 32,
-      "wpa": 116.7,
+      "mvp_score": 67.0,
+      "mvp_rank": 25,
+      "wpa": 166.4,
       "consistency": 0.667,
       "clutch_eff": 0.333
     },
@@ -6626,8 +6626,8 @@
       "fg_pct": 52.2,
       "fg3_pct": 25.0,
       "ft_pct": 75.0,
-      "mvp_score": 63.3,
-      "mvp_rank": 36,
+      "mvp_score": 62.7,
+      "mvp_rank": 38,
       "wpa": 81.3,
       "consistency": 0.749,
       "clutch_eff": 0.0
@@ -6648,9 +6648,9 @@
       "fg_pct": 42.1,
       "fg3_pct": 18.2,
       "ft_pct": 87.1,
-      "mvp_score": 62.7,
-      "mvp_rank": 42,
-      "wpa": 124.4,
+      "mvp_score": 63.7,
+      "mvp_rank": 36,
+      "wpa": 153.0,
       "consistency": 0.666,
       "clutch_eff": 0.773
     },
@@ -6670,9 +6670,9 @@
       "fg_pct": 45.9,
       "fg3_pct": 41.3,
       "ft_pct": 88.2,
-      "mvp_score": 72.0,
-      "mvp_rank": 13,
-      "wpa": 181.8,
+      "mvp_score": 74.5,
+      "mvp_rank": 10,
+      "wpa": 241.9,
       "consistency": 0.729,
       "clutch_eff": 1.833
     },
@@ -6692,8 +6692,8 @@
       "fg_pct": 52.9,
       "fg3_pct": 54.5,
       "ft_pct": 83.3,
-      "mvp_score": 64.2,
-      "mvp_rank": 34,
+      "mvp_score": 63.2,
+      "mvp_rank": 37,
       "wpa": 146.6,
       "consistency": 0.537,
       "clutch_eff": 0.551
@@ -6714,9 +6714,9 @@
       "fg_pct": 48.4,
       "fg3_pct": 37.5,
       "ft_pct": 83.3,
-      "mvp_score": 74.1,
-      "mvp_rank": 11,
-      "wpa": 222.4,
+      "mvp_score": 74.8,
+      "mvp_rank": 8,
+      "wpa": 257.6,
       "consistency": 0.662,
       "clutch_eff": 1.082
     },
@@ -6736,8 +6736,8 @@
       "fg_pct": 41.5,
       "fg3_pct": 17.4,
       "ft_pct": 91.7,
-      "mvp_score": 66.9,
-      "mvp_rank": 24,
+      "mvp_score": 66.2,
+      "mvp_rank": 27,
       "wpa": 109.4,
       "consistency": 0.669,
       "clutch_eff": 0.833
@@ -6758,8 +6758,8 @@
       "fg_pct": 65.8,
       "fg3_pct": 0.0,
       "ft_pct": 73.3,
-      "mvp_score": 59.7,
-      "mvp_rank": 48,
+      "mvp_score": 59.0,
+      "mvp_rank": 54,
       "wpa": 110.7,
       "consistency": 0.651,
       "clutch_eff": 0.0
@@ -6780,9 +6780,9 @@
       "fg_pct": 54.5,
       "fg3_pct": 56.2,
       "ft_pct": 77.8,
-      "mvp_score": 61.2,
-      "mvp_rank": 44,
-      "wpa": 138.2,
+      "mvp_score": 60.3,
+      "mvp_rank": 46,
+      "wpa": 139.5,
       "consistency": 0.639,
       "clutch_eff": 0.095
     },
@@ -6802,9 +6802,9 @@
       "fg_pct": 54.4,
       "fg3_pct": 50.0,
       "ft_pct": 72.7,
-      "mvp_score": 56.0,
-      "mvp_rank": 60,
-      "wpa": 99.5,
+      "mvp_score": 55.9,
+      "mvp_rank": 58,
+      "wpa": 108.5,
       "consistency": 0.636,
       "clutch_eff": 0.026
     },
@@ -6824,9 +6824,9 @@
       "fg_pct": 44.8,
       "fg3_pct": 40.5,
       "ft_pct": 77.8,
-      "mvp_score": 69.6,
-      "mvp_rank": 16,
-      "wpa": 202.0,
+      "mvp_score": 69.4,
+      "mvp_rank": 19,
+      "wpa": 220.8,
       "consistency": 0.604,
       "clutch_eff": 0.828
     },
@@ -6846,8 +6846,8 @@
       "fg_pct": 42.3,
       "fg3_pct": 38.5,
       "ft_pct": 90.9,
-      "mvp_score": 65.6,
-      "mvp_rank": 28,
+      "mvp_score": 64.2,
+      "mvp_rank": 33,
       "wpa": 198.6,
       "consistency": 0.726,
       "clutch_eff": 1.19
@@ -6868,9 +6868,9 @@
       "fg_pct": 45.0,
       "fg3_pct": 14.3,
       "ft_pct": 83.3,
-      "mvp_score": 65.4,
-      "mvp_rank": 29,
-      "wpa": 150.4,
+      "mvp_score": 64.7,
+      "mvp_rank": 31,
+      "wpa": 155.5,
       "consistency": 0.587,
       "clutch_eff": 0.75
     },
@@ -6890,9 +6890,9 @@
       "fg_pct": 47.4,
       "fg3_pct": 25.0,
       "ft_pct": 69.0,
-      "mvp_score": 64.7,
-      "mvp_rank": 31,
-      "wpa": 96.1,
+      "mvp_score": 66.0,
+      "mvp_rank": 28,
+      "wpa": 126.4,
       "consistency": 0.756,
       "clutch_eff": 1.371
     },
@@ -6912,9 +6912,9 @@
       "fg_pct": 39.8,
       "fg3_pct": 39.5,
       "ft_pct": 100.0,
-      "mvp_score": 69.4,
-      "mvp_rank": 17,
-      "wpa": 242.6,
+      "mvp_score": 68.9,
+      "mvp_rank": 21,
+      "wpa": 262.2,
       "consistency": 0.629,
       "clutch_eff": 1.058
     },
@@ -6934,9 +6934,9 @@
       "fg_pct": 50.0,
       "fg3_pct": 50.0,
       "ft_pct": 92.3,
-      "mvp_score": 68.5,
-      "mvp_rank": 20,
-      "wpa": 171.7,
+      "mvp_score": 72.6,
+      "mvp_rank": 14,
+      "wpa": 254.7,
       "consistency": 0.638,
       "clutch_eff": 2.189
     },
@@ -6956,9 +6956,9 @@
       "fg_pct": 45.5,
       "fg3_pct": 35.0,
       "ft_pct": 70.8,
-      "mvp_score": 67.7,
-      "mvp_rank": 23,
-      "wpa": 193.4,
+      "mvp_score": 67.3,
+      "mvp_rank": 24,
+      "wpa": 207.2,
       "consistency": 0.737,
       "clutch_eff": 0.424
     },
@@ -6978,9 +6978,9 @@
       "fg_pct": 69.4,
       "fg3_pct": 50.0,
       "ft_pct": 100.0,
-      "mvp_score": 51.3,
-      "mvp_rank": 84,
-      "wpa": 71.8,
+      "mvp_score": 52.2,
+      "mvp_rank": 77,
+      "wpa": 93.1,
       "consistency": 0.639,
       "clutch_eff": 0.0
     },
@@ -7000,8 +7000,8 @@
       "fg_pct": 53.1,
       "fg3_pct": 39.1,
       "ft_pct": 81.2,
-      "mvp_score": 60.6,
-      "mvp_rank": 47,
+      "mvp_score": 59.6,
+      "mvp_rank": 52,
       "wpa": 149.6,
       "consistency": 0.638,
       "clutch_eff": 0.521
@@ -7022,9 +7022,9 @@
       "fg_pct": 45.3,
       "fg3_pct": 40.4,
       "ft_pct": 77.8,
-      "mvp_score": 63.8,
-      "mvp_rank": 35,
-      "wpa": 214.7,
+      "mvp_score": 65.5,
+      "mvp_rank": 30,
+      "wpa": 263.9,
       "consistency": 0.511,
       "clutch_eff": 0.844
     },
@@ -7044,8 +7044,8 @@
       "fg_pct": 50.9,
       "fg3_pct": 36.4,
       "ft_pct": 69.2,
-      "mvp_score": 63.2,
-      "mvp_rank": 38,
+      "mvp_score": 62.2,
+      "mvp_rank": 41,
       "wpa": 135.4,
       "consistency": 0.66,
       "clutch_eff": 0.4
@@ -7066,9 +7066,9 @@
       "fg_pct": 61.4,
       "fg3_pct": 0.0,
       "ft_pct": 33.3,
-      "mvp_score": 58.8,
-      "mvp_rank": 53,
-      "wpa": 80.3,
+      "mvp_score": 59.9,
+      "mvp_rank": 48,
+      "wpa": 106.3,
       "consistency": 0.552,
       "clutch_eff": 0.5
     },
@@ -7088,8 +7088,8 @@
       "fg_pct": 50.0,
       "fg3_pct": 27.8,
       "ft_pct": 81.0,
-      "mvp_score": 65.3,
-      "mvp_rank": 30,
+      "mvp_score": 64.3,
+      "mvp_rank": 32,
       "wpa": 145.1,
       "consistency": 0.591,
       "clutch_eff": 0.444
@@ -7110,8 +7110,8 @@
       "fg_pct": 45.9,
       "fg3_pct": 46.7,
       "ft_pct": 90.0,
-      "mvp_score": 53.9,
-      "mvp_rank": 68,
+      "mvp_score": 53.1,
+      "mvp_rank": 74,
       "wpa": 120.5,
       "consistency": 0.577,
       "clutch_eff": 0.0
@@ -7132,8 +7132,8 @@
       "fg_pct": 40.0,
       "fg3_pct": 38.1,
       "ft_pct": 80.8,
-      "mvp_score": 62.8,
-      "mvp_rank": 41,
+      "mvp_score": 61.8,
+      "mvp_rank": 43,
       "wpa": 142.4,
       "consistency": 0.757,
       "clutch_eff": 0.231
@@ -7154,9 +7154,9 @@
       "fg_pct": 56.1,
       "fg3_pct": 45.8,
       "ft_pct": 87.5,
-      "mvp_score": 59.2,
-      "mvp_rank": 51,
-      "wpa": 135.8,
+      "mvp_score": 60.7,
+      "mvp_rank": 44,
+      "wpa": 174.8,
       "consistency": 0.69,
       "clutch_eff": 0.0
     },
@@ -7176,8 +7176,8 @@
       "fg_pct": 48.8,
       "fg3_pct": 40.7,
       "ft_pct": 76.9,
-      "mvp_score": 60.7,
-      "mvp_rank": 46,
+      "mvp_score": 59.9,
+      "mvp_rank": 50,
       "wpa": 115.9,
       "consistency": 0.501,
       "clutch_eff": 0.0
@@ -7198,8 +7198,8 @@
       "fg_pct": 51.7,
       "fg3_pct": 35.3,
       "ft_pct": 75.0,
-      "mvp_score": 56.5,
-      "mvp_rank": 58,
+      "mvp_score": 55.7,
+      "mvp_rank": 59,
       "wpa": 123.3,
       "consistency": 0.717,
       "clutch_eff": 0.0
@@ -7220,8 +7220,8 @@
       "fg_pct": 33.3,
       "fg3_pct": 46.2,
       "ft_pct": 65.0,
-      "mvp_score": 55.0,
-      "mvp_rank": 66,
+      "mvp_score": 54.2,
+      "mvp_rank": 67,
       "wpa": 114.2,
       "consistency": 0.594,
       "clutch_eff": 0.0
@@ -7242,9 +7242,9 @@
       "fg_pct": 51.2,
       "fg3_pct": 45.0,
       "ft_pct": 66.7,
-      "mvp_score": 58.8,
-      "mvp_rank": 54,
-      "wpa": 72.4,
+      "mvp_score": 59.2,
+      "mvp_rank": 53,
+      "wpa": 86.9,
       "consistency": 0.769,
       "clutch_eff": 0.0
     },
@@ -7264,9 +7264,9 @@
       "fg_pct": 34.0,
       "fg3_pct": 29.6,
       "ft_pct": 100.0,
-      "mvp_score": 54.7,
-      "mvp_rank": 67,
-      "wpa": 148.8,
+      "mvp_score": 53.9,
+      "mvp_rank": 69,
+      "wpa": 152.6,
       "consistency": 0.487,
       "clutch_eff": 0.0
     },
@@ -7286,9 +7286,9 @@
       "fg_pct": 36.8,
       "fg3_pct": 31.0,
       "ft_pct": 90.6,
-      "mvp_score": 57.7,
-      "mvp_rank": 56,
-      "wpa": 109.6,
+      "mvp_score": 59.8,
+      "mvp_rank": 51,
+      "wpa": 154.5,
       "consistency": 0.629,
       "clutch_eff": 0.907
     },
@@ -7308,8 +7308,8 @@
       "fg_pct": 62.8,
       "fg3_pct": 46.2,
       "ft_pct": 50.0,
-      "mvp_score": 59.1,
-      "mvp_rank": 52,
+      "mvp_score": 58.2,
+      "mvp_rank": 55,
       "wpa": 128.2,
       "consistency": 0.702,
       "clutch_eff": 0.833
@@ -7330,8 +7330,8 @@
       "fg_pct": 54.3,
       "fg3_pct": 25.0,
       "ft_pct": 54.5,
-      "mvp_score": 63.1,
-      "mvp_rank": 39,
+      "mvp_score": 62.3,
+      "mvp_rank": 40,
       "wpa": 114.2,
       "consistency": 0.58,
       "clutch_eff": 0.773
@@ -7352,8 +7352,8 @@
       "fg_pct": 58.3,
       "fg3_pct": 36.8,
       "ft_pct": 100.0,
-      "mvp_score": 52.6,
-      "mvp_rank": 75,
+      "mvp_score": 51.9,
+      "mvp_rank": 80,
       "wpa": 113.1,
       "consistency": 0.651,
       "clutch_eff": 0.0
@@ -7374,8 +7374,8 @@
       "fg_pct": 63.0,
       "fg3_pct": 57.1,
       "ft_pct": 44.4,
-      "mvp_score": 55.3,
-      "mvp_rank": 63,
+      "mvp_score": 55.0,
+      "mvp_rank": 62,
       "wpa": 39.5,
       "consistency": 0.537,
       "clutch_eff": 0.2
@@ -7396,9 +7396,9 @@
       "fg_pct": 45.6,
       "fg3_pct": 42.1,
       "ft_pct": 72.7,
-      "mvp_score": 50.1,
-      "mvp_rank": 96,
-      "wpa": 73.5,
+      "mvp_score": 50.8,
+      "mvp_rank": 87,
+      "wpa": 92.1,
       "consistency": 0.716,
       "clutch_eff": 0.0
     },
@@ -7418,9 +7418,9 @@
       "fg_pct": 57.1,
       "fg3_pct": 25.0,
       "ft_pct": 53.8,
-      "mvp_score": 47.9,
-      "mvp_rank": 115,
-      "wpa": 47.1,
+      "mvp_score": 48.8,
+      "mvp_rank": 104,
+      "wpa": 66.0,
       "consistency": 0.591,
       "clutch_eff": 0.231
     },
@@ -7440,8 +7440,8 @@
       "fg_pct": 57.9,
       "fg3_pct": 36.8,
       "ft_pct": 100.0,
-      "mvp_score": 51.2,
-      "mvp_rank": 86,
+      "mvp_score": 50.7,
+      "mvp_rank": 89,
       "wpa": 72.3,
       "consistency": 0.583,
       "clutch_eff": 0.188
@@ -7462,8 +7462,8 @@
       "fg_pct": 57.1,
       "fg3_pct": 42.9,
       "ft_pct": 85.7,
-      "mvp_score": 51.9,
-      "mvp_rank": 81,
+      "mvp_score": 51.3,
+      "mvp_rank": 84,
       "wpa": 74.5,
       "consistency": 0.785,
       "clutch_eff": 0.053
@@ -7484,9 +7484,9 @@
       "fg_pct": 58.6,
       "fg3_pct": 14.3,
       "ft_pct": 73.3,
-      "mvp_score": 49.1,
-      "mvp_rank": 103,
-      "wpa": 52.9,
+      "mvp_score": 50.9,
+      "mvp_rank": 85,
+      "wpa": 86.8,
       "consistency": 0.602,
       "clutch_eff": 0.044
     },
@@ -7506,8 +7506,8 @@
       "fg_pct": 36.2,
       "fg3_pct": 34.6,
       "ft_pct": 100.0,
-      "mvp_score": 53.9,
-      "mvp_rank": 69,
+      "mvp_score": 53.2,
+      "mvp_rank": 73,
       "wpa": 96.7,
       "consistency": 0.648,
       "clutch_eff": 0.034
@@ -7528,8 +7528,8 @@
       "fg_pct": 57.1,
       "fg3_pct": 14.3,
       "ft_pct": 45.5,
-      "mvp_score": 55.8,
-      "mvp_rank": 61,
+      "mvp_score": 54.7,
+      "mvp_rank": 64,
       "wpa": 162.6,
       "consistency": 0.533,
       "clutch_eff": 0.0
@@ -7550,9 +7550,9 @@
       "fg_pct": 59.0,
       "fg3_pct": 57.1,
       "ft_pct": 87.5,
-      "mvp_score": 59.4,
-      "mvp_rank": 50,
-      "wpa": 125.6,
+      "mvp_score": 60.5,
+      "mvp_rank": 45,
+      "wpa": 156.0,
       "consistency": 0.605,
       "clutch_eff": 2.0
     },
@@ -7572,8 +7572,8 @@
       "fg_pct": 39.1,
       "fg3_pct": 34.5,
       "ft_pct": 75.0,
-      "mvp_score": 51.1,
-      "mvp_rank": 87,
+      "mvp_score": 50.5,
+      "mvp_rank": 90,
       "wpa": 98.0,
       "consistency": 0.501,
       "clutch_eff": 0.057
@@ -7594,8 +7594,8 @@
       "fg_pct": 51.9,
       "fg3_pct": 44.4,
       "ft_pct": 100.0,
-      "mvp_score": 58.2,
-      "mvp_rank": 55,
+      "mvp_score": 57.1,
+      "mvp_rank": 56,
       "wpa": 159.3,
       "consistency": 0.58,
       "clutch_eff": 0.694
@@ -7616,9 +7616,9 @@
       "fg_pct": 57.9,
       "fg3_pct": 0.0,
       "ft_pct": 50.0,
-      "mvp_score": 48.4,
-      "mvp_rank": 109,
-      "wpa": 49.5,
+      "mvp_score": 48.6,
+      "mvp_rank": 107,
+      "wpa": 58.0,
       "consistency": 0.626,
       "clutch_eff": 0.667
     },
@@ -7638,8 +7638,8 @@
       "fg_pct": 51.7,
       "fg3_pct": 47.4,
       "ft_pct": 66.7,
-      "mvp_score": 50.7,
-      "mvp_rank": 90,
+      "mvp_score": 50.2,
+      "mvp_rank": 95,
       "wpa": 69.4,
       "consistency": 0.582,
       "clutch_eff": 0.0
@@ -7660,7 +7660,7 @@
       "fg_pct": 45.3,
       "fg3_pct": 39.5,
       "ft_pct": 66.7,
-      "mvp_score": 55.1,
+      "mvp_score": 54.4,
       "mvp_rank": 65,
       "wpa": 92.7,
       "consistency": 0.678,
@@ -7682,8 +7682,8 @@
       "fg_pct": 38.2,
       "fg3_pct": 34.6,
       "ft_pct": 81.0,
-      "mvp_score": 47.6,
-      "mvp_rank": 117,
+      "mvp_score": 47.0,
+      "mvp_rank": 121,
       "wpa": 98.0,
       "consistency": 0.471,
       "clutch_eff": 0.0
@@ -7704,9 +7704,9 @@
       "fg_pct": 40.9,
       "fg3_pct": 34.6,
       "ft_pct": 100.0,
-      "mvp_score": 51.2,
-      "mvp_rank": 85,
-      "wpa": 84.8,
+      "mvp_score": 49.4,
+      "mvp_rank": 101,
+      "wpa": 64.9,
       "consistency": 0.445,
       "clutch_eff": 0.773
     },
@@ -7726,9 +7726,9 @@
       "fg_pct": 53.3,
       "fg3_pct": 53.8,
       "ft_pct": 100.0,
-      "mvp_score": 52.3,
-      "mvp_rank": 78,
-      "wpa": 41.6,
+      "mvp_score": 53.3,
+      "mvp_rank": 72,
+      "wpa": 61.7,
       "consistency": 0.675,
       "clutch_eff": 0.0
     },
@@ -7748,9 +7748,9 @@
       "fg_pct": 55.6,
       "fg3_pct": 53.8,
       "ft_pct": 83.3,
-      "mvp_score": 53.1,
-      "mvp_rank": 73,
-      "wpa": 118.8,
+      "mvp_score": 52.9,
+      "mvp_rank": 75,
+      "wpa": 127.5,
       "consistency": 0.524,
       "clutch_eff": 0.0
     },
@@ -7794,7 +7794,7 @@
       "ft_pct": 89.5,
       "mvp_score": 57.0,
       "mvp_rank": 57,
-      "wpa": 122.0,
+      "wpa": 135.7,
       "consistency": 0.676,
       "clutch_eff": 0.833
     },
@@ -7814,8 +7814,8 @@
       "fg_pct": 52.2,
       "fg3_pct": 57.1,
       "ft_pct": 100.0,
-      "mvp_score": 50.5,
-      "mvp_rank": 93,
+      "mvp_score": 50.1,
+      "mvp_rank": 97,
       "wpa": 68.3,
       "consistency": 0.516,
       "clutch_eff": 0.5
@@ -7836,9 +7836,9 @@
       "fg_pct": 40.0,
       "fg3_pct": 31.6,
       "ft_pct": 93.8,
-      "mvp_score": 48.0,
-      "mvp_rank": 114,
-      "wpa": 50.4,
+      "mvp_score": 50.3,
+      "mvp_rank": 93,
+      "wpa": 93.3,
       "consistency": 0.495,
       "clutch_eff": 0.083
     },
@@ -7858,9 +7858,9 @@
       "fg_pct": 35.3,
       "fg3_pct": 27.9,
       "ft_pct": 80.0,
-      "mvp_score": 59.6,
+      "mvp_score": 59.9,
       "mvp_rank": 49,
-      "wpa": 154.3,
+      "wpa": 174.8,
       "consistency": 0.54,
       "clutch_eff": 0.75
     },
@@ -7880,9 +7880,9 @@
       "fg_pct": 46.8,
       "fg3_pct": 42.4,
       "ft_pct": 91.7,
-      "mvp_score": 52.1,
-      "mvp_rank": 79,
-      "wpa": 117.2,
+      "mvp_score": 51.5,
+      "mvp_rank": 82,
+      "wpa": 120.7,
       "consistency": 0.501,
       "clutch_eff": 0.5
     },
@@ -7902,9 +7902,9 @@
       "fg_pct": 51.9,
       "fg3_pct": 26.7,
       "ft_pct": 100.0,
-      "mvp_score": 53.7,
-      "mvp_rank": 70,
-      "wpa": 55.7,
+      "mvp_score": 55.7,
+      "mvp_rank": 60,
+      "wpa": 92.7,
       "consistency": 0.552,
       "clutch_eff": 0.546
     },
@@ -7924,8 +7924,8 @@
       "fg_pct": 45.9,
       "fg3_pct": 25.0,
       "ft_pct": 66.7,
-      "mvp_score": 52.8,
-      "mvp_rank": 74,
+      "mvp_score": 52.0,
+      "mvp_rank": 78,
       "wpa": 112.6,
       "consistency": 0.499,
       "clutch_eff": 0.333
@@ -7946,8 +7946,8 @@
       "fg_pct": 52.9,
       "fg3_pct": 56.2,
       "ft_pct": 100.0,
-      "mvp_score": 50.2,
-      "mvp_rank": 95,
+      "mvp_score": 49.4,
+      "mvp_rank": 100,
       "wpa": 110.5,
       "consistency": 0.443,
       "clutch_eff": 0.333
@@ -7968,9 +7968,9 @@
       "fg_pct": 54.2,
       "fg3_pct": 0.0,
       "ft_pct": 72.2,
-      "mvp_score": 51.9,
-      "mvp_rank": 80,
-      "wpa": 59.2,
+      "mvp_score": 52.0,
+      "mvp_rank": 79,
+      "wpa": 67.3,
       "consistency": 0.595,
       "clutch_eff": 0.0
     },
@@ -7990,9 +7990,9 @@
       "fg_pct": 52.8,
       "fg3_pct": 41.7,
       "ft_pct": 80.0,
-      "mvp_score": 50.5,
-      "mvp_rank": 94,
-      "wpa": 67.2,
+      "mvp_score": 51.7,
+      "mvp_rank": 81,
+      "wpa": 94.2,
       "consistency": 0.598,
       "clutch_eff": 0.5
     },
@@ -8012,9 +8012,9 @@
       "fg_pct": 76.0,
       "fg3_pct": 16.7,
       "ft_pct": 50.0,
-      "mvp_score": 46.6,
-      "mvp_rank": 122,
-      "wpa": 76.0,
+      "mvp_score": 47.5,
+      "mvp_rank": 116,
+      "wpa": 97.4,
       "consistency": 0.495,
       "clutch_eff": 0.0
     },
@@ -8034,8 +8034,8 @@
       "fg_pct": 56.5,
       "fg3_pct": 50.0,
       "ft_pct": 92.3,
-      "mvp_score": 49.9,
-      "mvp_rank": 98,
+      "mvp_score": 49.5,
+      "mvp_rank": 99,
       "wpa": 55.2,
       "consistency": 0.677,
       "clutch_eff": 0.0
@@ -8057,8 +8057,8 @@
       "fg3_pct": 0.0,
       "ft_pct": 60.0,
       "mvp_score": 46.3,
-      "mvp_rank": 125,
-      "wpa": 45.5,
+      "mvp_rank": 124,
+      "wpa": 50.1,
       "consistency": 0.587,
       "clutch_eff": 0.399
     },
@@ -8079,8 +8079,8 @@
       "fg3_pct": 0.0,
       "ft_pct": 0.0,
       "mvp_score": 48.5,
-      "mvp_rank": 107,
-      "wpa": 84.9,
+      "mvp_rank": 109,
+      "wpa": 93.9,
       "consistency": 0.51,
       "clutch_eff": 0.333
     },
@@ -8100,9 +8100,9 @@
       "fg_pct": 51.5,
       "fg3_pct": 23.1,
       "ft_pct": 70.0,
-      "mvp_score": 51.8,
-      "mvp_rank": 82,
-      "wpa": 108.8,
+      "mvp_score": 51.3,
+      "mvp_rank": 83,
+      "wpa": 113.6,
       "consistency": 0.735,
       "clutch_eff": 0.98
     },
@@ -8122,8 +8122,8 @@
       "fg_pct": 34.0,
       "fg3_pct": 30.8,
       "ft_pct": 100.0,
-      "mvp_score": 50.1,
-      "mvp_rank": 97,
+      "mvp_score": 49.9,
+      "mvp_rank": 98,
       "wpa": 30.9,
       "consistency": 0.679,
       "clutch_eff": 0.0
@@ -8144,7 +8144,7 @@
       "fg_pct": 56.0,
       "fg3_pct": 58.3,
       "ft_pct": 75.0,
-      "mvp_score": 50.6,
+      "mvp_score": 50.3,
       "mvp_rank": 92,
       "wpa": 37.6,
       "consistency": 0.685,
@@ -8166,8 +8166,8 @@
       "fg_pct": 60.7,
       "fg3_pct": 100.0,
       "ft_pct": 61.1,
-      "mvp_score": 50.9,
-      "mvp_rank": 88,
+      "mvp_score": 50.3,
+      "mvp_rank": 94,
       "wpa": 87.5,
       "consistency": 0.57,
       "clutch_eff": 0.333
@@ -8188,8 +8188,8 @@
       "fg_pct": 46.2,
       "fg3_pct": 41.7,
       "ft_pct": 83.3,
-      "mvp_score": 55.3,
-      "mvp_rank": 64,
+      "mvp_score": 54.4,
+      "mvp_rank": 66,
       "wpa": 127.9,
       "consistency": 0.522,
       "clutch_eff": 0.375
@@ -8210,8 +8210,8 @@
       "fg_pct": 37.9,
       "fg3_pct": 33.3,
       "ft_pct": 85.0,
-      "mvp_score": 46.5,
-      "mvp_rank": 124,
+      "mvp_score": 45.9,
+      "mvp_rank": 128,
       "wpa": 82.5,
       "consistency": 0.808,
       "clutch_eff": 0.0
@@ -8234,7 +8234,7 @@
       "ft_pct": 100.0,
       "mvp_score": 53.7,
       "mvp_rank": 71,
-      "wpa": 151.4,
+      "wpa": 167.8,
       "consistency": 0.587,
       "clutch_eff": 0.5
     },
@@ -8254,9 +8254,9 @@
       "fg_pct": 76.5,
       "fg3_pct": 0.0,
       "ft_pct": 50.0,
-      "mvp_score": 43.9,
-      "mvp_rank": 138,
-      "wpa": 51.2,
+      "mvp_score": 44.3,
+      "mvp_rank": 134,
+      "wpa": 63.2,
       "consistency": 0.483,
       "clutch_eff": 0.444
     },
@@ -8276,8 +8276,8 @@
       "fg_pct": 55.6,
       "fg3_pct": 36.4,
       "ft_pct": 75.0,
-      "mvp_score": 55.8,
-      "mvp_rank": 62,
+      "mvp_score": 54.8,
+      "mvp_rank": 63,
       "wpa": 132.3,
       "consistency": 0.628,
       "clutch_eff": 0.333
@@ -8298,9 +8298,9 @@
       "fg_pct": 39.0,
       "fg3_pct": 29.4,
       "ft_pct": 83.3,
-      "mvp_score": 48.3,
-      "mvp_rank": 110,
-      "wpa": 112.6,
+      "mvp_score": 47.6,
+      "mvp_rank": 113,
+      "wpa": 114.3,
       "consistency": 0.488,
       "clutch_eff": 0.0
     },
@@ -8320,8 +8320,8 @@
       "fg_pct": 39.3,
       "fg3_pct": 45.5,
       "ft_pct": 86.7,
-      "mvp_score": 49.1,
-      "mvp_rank": 104,
+      "mvp_score": 48.5,
+      "mvp_rank": 108,
       "wpa": 81.7,
       "consistency": 0.663,
       "clutch_eff": 0.556
@@ -8342,9 +8342,9 @@
       "fg_pct": 62.5,
       "fg3_pct": 25.0,
       "ft_pct": 92.9,
-      "mvp_score": 41.7,
-      "mvp_rank": 154,
-      "wpa": 25.0,
+      "mvp_score": 44.2,
+      "mvp_rank": 136,
+      "wpa": 67.2,
       "consistency": 0.398,
       "clutch_eff": 0.0
     },
@@ -8364,9 +8364,9 @@
       "fg_pct": 88.9,
       "fg3_pct": 0.0,
       "ft_pct": 100.0,
-      "mvp_score": 42.7,
-      "mvp_rank": 149,
-      "wpa": 21.5,
+      "mvp_score": 43.9,
+      "mvp_rank": 139,
+      "wpa": 42.5,
       "consistency": 0.638,
       "clutch_eff": 0.0
     },
@@ -8386,8 +8386,8 @@
       "fg_pct": 50.0,
       "fg3_pct": 33.3,
       "ft_pct": 76.9,
-      "mvp_score": 49.4,
-      "mvp_rank": 100,
+      "mvp_score": 48.7,
+      "mvp_rank": 105,
       "wpa": 90.6,
       "consistency": 0.664,
       "clutch_eff": 0.0
@@ -8408,9 +8408,9 @@
       "fg_pct": 41.7,
       "fg3_pct": 20.0,
       "ft_pct": 81.2,
-      "mvp_score": 43.1,
-      "mvp_rank": 144,
-      "wpa": 68.2,
+      "mvp_score": 43.7,
+      "mvp_rank": 142,
+      "wpa": 85.3,
       "consistency": 0.505,
       "clutch_eff": 0.0
     },
@@ -8430,9 +8430,9 @@
       "fg_pct": 40.0,
       "fg3_pct": 36.4,
       "ft_pct": 84.6,
-      "mvp_score": 53.3,
-      "mvp_rank": 72,
-      "wpa": 79.3,
+      "mvp_score": 53.9,
+      "mvp_rank": 70,
+      "wpa": 97.2,
       "consistency": 0.596,
       "clutch_eff": 0.333
     },
@@ -8452,8 +8452,8 @@
       "fg_pct": 73.7,
       "fg3_pct": 0.0,
       "ft_pct": 50.0,
-      "mvp_score": 51.6,
-      "mvp_rank": 83,
+      "mvp_score": 50.8,
+      "mvp_rank": 86,
       "wpa": 115.8,
       "consistency": 0.617,
       "clutch_eff": 0.723
@@ -8474,9 +8474,9 @@
       "fg_pct": 33.3,
       "fg3_pct": 21.4,
       "ft_pct": 75.0,
-      "mvp_score": 50.6,
+      "mvp_score": 50.4,
       "mvp_rank": 91,
-      "wpa": 75.2,
+      "wpa": 79.9,
       "consistency": 0.664,
       "clutch_eff": 0.116
     },
@@ -8496,9 +8496,9 @@
       "fg_pct": 34.4,
       "fg3_pct": 25.0,
       "ft_pct": 78.9,
-      "mvp_score": 62.9,
-      "mvp_rank": 40,
-      "wpa": 181.8,
+      "mvp_score": 63.9,
+      "mvp_rank": 35,
+      "wpa": 218.5,
       "consistency": 0.531,
       "clutch_eff": 1.135
     },
@@ -8518,8 +8518,8 @@
       "fg_pct": 71.4,
       "fg3_pct": 0.0,
       "ft_pct": 50.0,
-      "mvp_score": 49.2,
-      "mvp_rank": 102,
+      "mvp_score": 48.7,
+      "mvp_rank": 106,
       "wpa": 64.6,
       "consistency": 0.589,
       "clutch_eff": 0.095
@@ -8540,8 +8540,8 @@
       "fg_pct": 32.4,
       "fg3_pct": 34.8,
       "ft_pct": 100.0,
-      "mvp_score": 50.8,
-      "mvp_rank": 89,
+      "mvp_score": 50.1,
+      "mvp_rank": 96,
       "wpa": 112.9,
       "consistency": 0.524,
       "clutch_eff": 0.833
@@ -8562,8 +8562,8 @@
       "fg_pct": 66.7,
       "fg3_pct": 0.0,
       "ft_pct": 52.9,
-      "mvp_score": 47.3,
-      "mvp_rank": 118,
+      "mvp_score": 47.0,
+      "mvp_rank": 119,
       "wpa": 48.0,
       "consistency": 0.573,
       "clutch_eff": 0.0
@@ -8584,8 +8584,8 @@
       "fg_pct": 50.0,
       "fg3_pct": 0.0,
       "ft_pct": 60.0,
-      "mvp_score": 47.7,
-      "mvp_rank": 116,
+      "mvp_score": 47.2,
+      "mvp_rank": 118,
       "wpa": 70.9,
       "consistency": 0.704,
       "clutch_eff": 0.0
@@ -8606,8 +8606,8 @@
       "fg_pct": 43.9,
       "fg3_pct": 21.4,
       "ft_pct": 100.0,
-      "mvp_score": 47.0,
-      "mvp_rank": 119,
+      "mvp_score": 46.1,
+      "mvp_rank": 126,
       "wpa": 133.0,
       "consistency": 0.472,
       "clutch_eff": 0.0
@@ -8628,8 +8628,8 @@
       "fg_pct": 51.9,
       "fg3_pct": 27.3,
       "ft_pct": 100.0,
-      "mvp_score": 46.0,
-      "mvp_rank": 127,
+      "mvp_score": 45.6,
+      "mvp_rank": 129,
       "wpa": 60.6,
       "consistency": 0.571,
       "clutch_eff": 0.0
@@ -8650,9 +8650,9 @@
       "fg_pct": 45.5,
       "fg3_pct": 55.6,
       "ft_pct": 75.0,
-      "mvp_score": 48.2,
-      "mvp_rank": 111,
-      "wpa": 54.3,
+      "mvp_score": 48.4,
+      "mvp_rank": 110,
+      "wpa": 63.5,
       "consistency": 0.632,
       "clutch_eff": 0.095
     },
@@ -8672,9 +8672,9 @@
       "fg_pct": 40.4,
       "fg3_pct": 20.0,
       "ft_pct": 77.8,
-      "mvp_score": 43.2,
-      "mvp_rank": 143,
-      "wpa": 76.7,
+      "mvp_score": 43.8,
+      "mvp_rank": 141,
+      "wpa": 94.8,
       "consistency": 0.538,
       "clutch_eff": 0.0
     },
@@ -8694,8 +8694,8 @@
       "fg_pct": 60.0,
       "fg3_pct": 66.7,
       "ft_pct": 83.3,
-      "mvp_score": 49.4,
-      "mvp_rank": 101,
+      "mvp_score": 48.8,
+      "mvp_rank": 103,
       "wpa": 77.2,
       "consistency": 0.62,
       "clutch_eff": 0.0
@@ -8716,8 +8716,8 @@
       "fg_pct": 46.2,
       "fg3_pct": 33.3,
       "ft_pct": 75.0,
-      "mvp_score": 48.0,
-      "mvp_rank": 112,
+      "mvp_score": 47.5,
+      "mvp_rank": 115,
       "wpa": 70.3,
       "consistency": 0.537,
       "clutch_eff": 1.0
@@ -8738,8 +8738,8 @@
       "fg_pct": 32.4,
       "fg3_pct": 36.0,
       "ft_pct": 87.5,
-      "mvp_score": 48.7,
-      "mvp_rank": 105,
+      "mvp_score": 48.2,
+      "mvp_rank": 112,
       "wpa": 72.6,
       "consistency": 0.505,
       "clutch_eff": 0.15
@@ -8760,8 +8760,8 @@
       "fg_pct": 28.1,
       "fg3_pct": 20.0,
       "ft_pct": 57.1,
-      "mvp_score": 43.6,
-      "mvp_rank": 140,
+      "mvp_score": 43.4,
+      "mvp_rank": 145,
       "wpa": 35.0,
       "consistency": 0.506,
       "clutch_eff": 0.0
@@ -8782,9 +8782,9 @@
       "fg_pct": 45.5,
       "fg3_pct": 33.3,
       "ft_pct": 0.0,
-      "mvp_score": 48.5,
-      "mvp_rank": 106,
-      "wpa": 56.4,
+      "mvp_score": 50.7,
+      "mvp_rank": 88,
+      "wpa": 97.7,
       "consistency": 0.489,
       "clutch_eff": 1.0
     },
@@ -8805,8 +8805,8 @@
       "fg3_pct": 38.5,
       "ft_pct": 66.7,
       "mvp_score": 41.0,
-      "mvp_rank": 161,
-      "wpa": 36.2,
+      "mvp_rank": 160,
+      "wpa": 40.4,
       "consistency": 0.77,
       "clutch_eff": 0.0
     },
@@ -8826,9 +8826,9 @@
       "fg_pct": 56.0,
       "fg3_pct": 0.0,
       "ft_pct": 90.0,
-      "mvp_score": 46.3,
-      "mvp_rank": 126,
-      "wpa": 25.2,
+      "mvp_score": 47.2,
+      "mvp_rank": 117,
+      "wpa": 42.7,
       "consistency": 0.457,
       "clutch_eff": 0.0
     },
@@ -8848,9 +8848,9 @@
       "fg_pct": 38.9,
       "fg3_pct": 37.9,
       "ft_pct": 80.0,
-      "mvp_score": 52.5,
-      "mvp_rank": 77,
-      "wpa": 92.7,
+      "mvp_score": 53.9,
+      "mvp_rank": 68,
+      "wpa": 126.0,
       "consistency": 0.429,
       "clutch_eff": 1.021
     },
@@ -8870,9 +8870,9 @@
       "fg_pct": 40.9,
       "fg3_pct": 33.3,
       "ft_pct": 75.0,
-      "mvp_score": 48.0,
-      "mvp_rank": 113,
-      "wpa": 100.7,
+      "mvp_score": 47.6,
+      "mvp_rank": 114,
+      "wpa": 104.4,
       "consistency": 0.558,
       "clutch_eff": 0.0
     },
@@ -8892,9 +8892,9 @@
       "fg_pct": 57.1,
       "fg3_pct": 33.3,
       "ft_pct": 0.0,
-      "mvp_score": 49.6,
-      "mvp_rank": 99,
-      "wpa": 76.3,
+      "mvp_score": 49.2,
+      "mvp_rank": 102,
+      "wpa": 79.8,
       "consistency": 0.635,
       "clutch_eff": 0.25
     },
@@ -8914,8 +8914,8 @@
       "fg_pct": 55.6,
       "fg3_pct": 45.5,
       "ft_pct": 100.0,
-      "mvp_score": 41.2,
-      "mvp_rank": 159,
+      "mvp_score": 41.0,
+      "mvp_rank": 161,
       "wpa": 32.1,
       "consistency": 0.591,
       "clutch_eff": 0.0
@@ -8936,9 +8936,9 @@
       "fg_pct": 57.1,
       "fg3_pct": 52.9,
       "ft_pct": 66.7,
-      "mvp_score": 48.4,
-      "mvp_rank": 108,
-      "wpa": 62.8,
+      "mvp_score": 48.3,
+      "mvp_rank": 111,
+      "wpa": 68.2,
       "consistency": 0.456,
       "clutch_eff": 0.0
     },
@@ -8960,7 +8960,7 @@
       "ft_pct": 100.0,
       "mvp_score": 37.6,
       "mvp_rank": 177,
-      "wpa": 7.2,
+      "wpa": 9.1,
       "consistency": 0.629,
       "clutch_eff": 0.0
     },
@@ -8980,9 +8980,9 @@
       "fg_pct": 36.1,
       "fg3_pct": 30.0,
       "ft_pct": 75.0,
-      "mvp_score": 52.6,
+      "mvp_score": 52.3,
       "mvp_rank": 76,
-      "wpa": 109.2,
+      "wpa": 115.5,
       "consistency": 0.565,
       "clutch_eff": 0.687
     },
@@ -9002,9 +9002,9 @@
       "fg_pct": 50.0,
       "fg3_pct": 40.0,
       "ft_pct": 68.4,
-      "mvp_score": 46.6,
+      "mvp_score": 46.4,
       "mvp_rank": 123,
-      "wpa": 81.7,
+      "wpa": 86.9,
       "consistency": 0.644,
       "clutch_eff": 0.521
     },
@@ -9024,8 +9024,8 @@
       "fg_pct": 60.9,
       "fg3_pct": 66.7,
       "ft_pct": 83.3,
-      "mvp_score": 46.7,
-      "mvp_rank": 121,
+      "mvp_score": 46.3,
+      "mvp_rank": 125,
       "wpa": 61.5,
       "consistency": 0.562,
       "clutch_eff": 0.0
@@ -9046,8 +9046,8 @@
       "fg_pct": 40.0,
       "fg3_pct": 37.5,
       "ft_pct": 37.5,
-      "mvp_score": 44.4,
-      "mvp_rank": 135,
+      "mvp_score": 43.6,
+      "mvp_rank": 144,
       "wpa": 116.6,
       "consistency": 0.536,
       "clutch_eff": 0.0
@@ -9068,8 +9068,8 @@
       "fg_pct": 61.5,
       "fg3_pct": 25.0,
       "ft_pct": 0.0,
-      "mvp_score": 46.0,
-      "mvp_rank": 128,
+      "mvp_score": 45.5,
+      "mvp_rank": 130,
       "wpa": 60.0,
       "consistency": 0.537,
       "clutch_eff": 0.0
@@ -9090,8 +9090,8 @@
       "fg_pct": 75.0,
       "fg3_pct": 66.7,
       "ft_pct": 0.0,
-      "mvp_score": 44.6,
-      "mvp_rank": 134,
+      "mvp_score": 44.1,
+      "mvp_rank": 137,
       "wpa": 68.2,
       "consistency": 0.537,
       "clutch_eff": 0.0
@@ -9113,7 +9113,7 @@
       "fg3_pct": 33.3,
       "ft_pct": 100.0,
       "mvp_score": 41.4,
-      "mvp_rank": 157,
+      "mvp_rank": 155,
       "wpa": -9.1,
       "consistency": 0.507,
       "clutch_eff": 0.0
@@ -9134,9 +9134,9 @@
       "fg_pct": 50.0,
       "fg3_pct": 0.0,
       "ft_pct": 40.0,
-      "mvp_score": 42.8,
-      "mvp_rank": 148,
-      "wpa": -4.0,
+      "mvp_score": 43.7,
+      "mvp_rank": 143,
+      "wpa": 10.4,
       "consistency": 0.476,
       "clutch_eff": 0.0
     },
@@ -9156,9 +9156,9 @@
       "fg_pct": 83.3,
       "fg3_pct": 66.7,
       "ft_pct": 60.0,
-      "mvp_score": 41.1,
-      "mvp_rank": 160,
-      "wpa": 37.4,
+      "mvp_score": 41.2,
+      "mvp_rank": 159,
+      "wpa": 43.1,
       "consistency": 0.701,
       "clutch_eff": 0.5
     },
@@ -9178,8 +9178,8 @@
       "fg_pct": 37.1,
       "fg3_pct": 20.0,
       "ft_pct": 75.0,
-      "mvp_score": 45.1,
-      "mvp_rank": 130,
+      "mvp_score": 44.8,
+      "mvp_rank": 132,
       "wpa": 48.6,
       "consistency": 0.573,
       "clutch_eff": 0.0
@@ -9200,9 +9200,9 @@
       "fg_pct": 38.6,
       "fg3_pct": 36.4,
       "ft_pct": 100.0,
-      "mvp_score": 45.4,
-      "mvp_rank": 129,
-      "wpa": 78.0,
+      "mvp_score": 46.0,
+      "mvp_rank": 127,
+      "wpa": 96.0,
       "consistency": 0.643,
       "clutch_eff": 0.0
     },
@@ -9222,9 +9222,9 @@
       "fg_pct": 39.1,
       "fg3_pct": 40.5,
       "ft_pct": 0.0,
-      "mvp_score": 44.3,
-      "mvp_rank": 136,
-      "wpa": 109.1,
+      "mvp_score": 44.7,
+      "mvp_rank": 133,
+      "wpa": 126.3,
       "consistency": 0.658,
       "clutch_eff": 0.15
     },
@@ -9244,9 +9244,9 @@
       "fg_pct": 26.1,
       "fg3_pct": 22.6,
       "ft_pct": 100.0,
-      "mvp_score": 56.5,
-      "mvp_rank": 59,
-      "wpa": 148.0,
+      "mvp_score": 55.5,
+      "mvp_rank": 61,
+      "wpa": 148.8,
       "consistency": 0.525,
       "clutch_eff": 1.333
     },
@@ -9268,7 +9268,7 @@
       "ft_pct": 100.0,
       "mvp_score": 41.3,
       "mvp_rank": 158,
-      "wpa": 66.6,
+      "wpa": 74.5,
       "consistency": 0.438,
       "clutch_eff": 0.0
     },
@@ -9288,9 +9288,9 @@
       "fg_pct": 71.4,
       "fg3_pct": 25.0,
       "ft_pct": 80.0,
-      "mvp_score": 40.2,
-      "mvp_rank": 164,
-      "wpa": 27.9,
+      "mvp_score": 40.7,
+      "mvp_rank": 162,
+      "wpa": 38.7,
       "consistency": 0.778,
       "clutch_eff": 0.095
     },
@@ -9310,9 +9310,9 @@
       "fg_pct": 38.7,
       "fg3_pct": 22.2,
       "ft_pct": 100.0,
-      "mvp_score": 39.2,
-      "mvp_rank": 167,
-      "wpa": 29.1,
+      "mvp_score": 40.0,
+      "mvp_rank": 166,
+      "wpa": 45.1,
       "consistency": 0.628,
       "clutch_eff": 0.0
     },
@@ -9332,9 +9332,9 @@
       "fg_pct": 39.3,
       "fg3_pct": 21.4,
       "ft_pct": 100.0,
-      "mvp_score": 44.9,
-      "mvp_rank": 132,
-      "wpa": 28.0,
+      "mvp_score": 46.5,
+      "mvp_rank": 122,
+      "wpa": 57.1,
       "consistency": 0.508,
       "clutch_eff": 0.177
     },
@@ -9354,9 +9354,9 @@
       "fg_pct": 61.3,
       "fg3_pct": 0.0,
       "ft_pct": 66.7,
-      "mvp_score": 44.0,
-      "mvp_rank": 137,
-      "wpa": 76.3,
+      "mvp_score": 43.8,
+      "mvp_rank": 140,
+      "wpa": 82.6,
       "consistency": 0.543,
       "clutch_eff": 0.0
     },
@@ -9376,8 +9376,8 @@
       "fg_pct": 39.5,
       "fg3_pct": 30.4,
       "ft_pct": 100.0,
-      "mvp_score": 42.5,
-      "mvp_rank": 150,
+      "mvp_score": 41.7,
+      "mvp_rank": 154,
       "wpa": 115.3,
       "consistency": 0.378,
       "clutch_eff": 0.133
@@ -9398,8 +9398,8 @@
       "fg_pct": 35.7,
       "fg3_pct": 42.9,
       "ft_pct": 0.0,
-      "mvp_score": 37.4,
-      "mvp_rank": 178,
+      "mvp_score": 37.2,
+      "mvp_rank": 179,
       "wpa": 41.4,
       "consistency": 0.55,
       "clutch_eff": 0.0
@@ -9420,8 +9420,8 @@
       "fg_pct": 44.8,
       "fg3_pct": 45.5,
       "ft_pct": 90.0,
-      "mvp_score": 44.9,
-      "mvp_rank": 133,
+      "mvp_score": 44.3,
+      "mvp_rank": 135,
       "wpa": 80.3,
       "consistency": 0.568,
       "clutch_eff": 0.2
@@ -9442,9 +9442,9 @@
       "fg_pct": 35.7,
       "fg3_pct": 38.9,
       "ft_pct": 40.0,
-      "mvp_score": 36.1,
-      "mvp_rank": 183,
-      "wpa": -8.2,
+      "mvp_score": 36.0,
+      "mvp_rank": 184,
+      "wpa": -9.9,
       "consistency": 0.4,
       "clutch_eff": 0.333
     },
@@ -9464,8 +9464,8 @@
       "fg_pct": 38.9,
       "fg3_pct": 33.3,
       "ft_pct": 63.6,
-      "mvp_score": 43.9,
-      "mvp_rank": 139,
+      "mvp_score": 43.3,
+      "mvp_rank": 146,
       "wpa": 78.8,
       "consistency": 0.589,
       "clutch_eff": 0.0
@@ -9486,8 +9486,8 @@
       "fg_pct": 41.2,
       "fg3_pct": 47.1,
       "ft_pct": 50.0,
-      "mvp_score": 41.8,
-      "mvp_rank": 153,
+      "mvp_score": 41.4,
+      "mvp_rank": 157,
       "wpa": 67.3,
       "consistency": 0.354,
       "clutch_eff": 0.0
@@ -9508,9 +9508,9 @@
       "fg_pct": 42.9,
       "fg3_pct": 37.5,
       "ft_pct": 77.8,
-      "mvp_score": 40.2,
-      "mvp_rank": 165,
-      "wpa": 29.9,
+      "mvp_score": 40.6,
+      "mvp_rank": 164,
+      "wpa": 39.7,
       "consistency": 0.552,
       "clutch_eff": 0.0
     },
@@ -9530,9 +9530,9 @@
       "fg_pct": 43.3,
       "fg3_pct": 43.8,
       "ft_pct": 40.0,
-      "mvp_score": 41.4,
-      "mvp_rank": 156,
-      "wpa": 53.6,
+      "mvp_score": 42.1,
+      "mvp_rank": 153,
+      "wpa": 71.1,
       "consistency": 0.499,
       "clutch_eff": 0.0
     },
@@ -9552,9 +9552,9 @@
       "fg_pct": 44.4,
       "fg3_pct": 20.0,
       "ft_pct": 66.7,
-      "mvp_score": 38.2,
-      "mvp_rank": 172,
-      "wpa": 43.0,
+      "mvp_score": 37.9,
+      "mvp_rank": 173,
+      "wpa": 41.8,
       "consistency": 0.426,
       "clutch_eff": 0.0
     },
@@ -9574,8 +9574,8 @@
       "fg_pct": 54.5,
       "fg3_pct": 25.0,
       "ft_pct": 50.0,
-      "mvp_score": 40.6,
-      "mvp_rank": 163,
+      "mvp_score": 40.3,
+      "mvp_rank": 165,
       "wpa": 46.9,
       "consistency": 0.49,
       "clutch_eff": 0.0
@@ -9596,8 +9596,8 @@
       "fg_pct": 39.1,
       "fg3_pct": 30.8,
       "ft_pct": 50.0,
-      "mvp_score": 42.5,
-      "mvp_rank": 151,
+      "mvp_score": 42.1,
+      "mvp_rank": 152,
       "wpa": 57.3,
       "consistency": 0.376,
       "clutch_eff": 0.029
@@ -9618,9 +9618,9 @@
       "fg_pct": 50.0,
       "fg3_pct": 44.4,
       "ft_pct": 0.0,
-      "mvp_score": 44.9,
+      "mvp_score": 45.0,
       "mvp_rank": 131,
-      "wpa": 42.3,
+      "wpa": 48.6,
       "consistency": 0.454,
       "clutch_eff": 0.333
     },
@@ -9640,9 +9640,9 @@
       "fg_pct": 60.0,
       "fg3_pct": 0.0,
       "ft_pct": 57.1,
-      "mvp_score": 42.0,
-      "mvp_rank": 152,
-      "wpa": 43.5,
+      "mvp_score": 42.5,
+      "mvp_rank": 150,
+      "wpa": 56.2,
       "consistency": 0.519,
       "clutch_eff": 0.0
     },
@@ -9663,8 +9663,8 @@
       "fg3_pct": 40.0,
       "ft_pct": 100.0,
       "mvp_score": 41.4,
-      "mvp_rank": 155,
-      "wpa": 31.1,
+      "mvp_rank": 156,
+      "wpa": 33.5,
       "consistency": 0.587,
       "clutch_eff": 0.0
     },
@@ -9684,9 +9684,9 @@
       "fg_pct": 43.2,
       "fg3_pct": 32.0,
       "ft_pct": 60.0,
-      "mvp_score": 43.1,
-      "mvp_rank": 145,
-      "wpa": 91.6,
+      "mvp_score": 43.9,
+      "mvp_rank": 138,
+      "wpa": 114.8,
       "consistency": 0.335,
       "clutch_eff": 0.167
     },
@@ -9706,8 +9706,8 @@
       "fg_pct": 43.5,
       "fg3_pct": 50.0,
       "ft_pct": 47.1,
-      "mvp_score": 38.3,
-      "mvp_rank": 171,
+      "mvp_score": 37.9,
+      "mvp_rank": 172,
       "wpa": 56.6,
       "consistency": 0.364,
       "clutch_eff": 0.0
@@ -9728,8 +9728,8 @@
       "fg_pct": 40.6,
       "fg3_pct": 31.6,
       "ft_pct": 44.4,
-      "mvp_score": 42.9,
-      "mvp_rank": 147,
+      "mvp_score": 42.2,
+      "mvp_rank": 151,
       "wpa": 104.9,
       "consistency": 0.453,
       "clutch_eff": 0.231
@@ -9750,8 +9750,8 @@
       "fg_pct": 31.8,
       "fg3_pct": 20.0,
       "ft_pct": 60.0,
-      "mvp_score": 43.5,
-      "mvp_rank": 141,
+      "mvp_score": 43.2,
+      "mvp_rank": 149,
       "wpa": 33.9,
       "consistency": 0.566,
       "clutch_eff": 0.0
@@ -9772,8 +9772,8 @@
       "fg_pct": 40.7,
       "fg3_pct": 16.7,
       "ft_pct": 100.0,
-      "mvp_score": 35.7,
-      "mvp_rank": 185,
+      "mvp_score": 35.4,
+      "mvp_rank": 188,
       "wpa": 49.0,
       "consistency": 0.401,
       "clutch_eff": 0.0
@@ -9794,8 +9794,8 @@
       "fg_pct": 33.3,
       "fg3_pct": 46.7,
       "ft_pct": 100.0,
-      "mvp_score": 38.2,
-      "mvp_rank": 173,
+      "mvp_score": 38.1,
+      "mvp_rank": 171,
       "wpa": 23.0,
       "consistency": 0.546,
       "clutch_eff": 0.0
@@ -9816,8 +9816,8 @@
       "fg_pct": 37.1,
       "fg3_pct": 16.7,
       "ft_pct": 66.7,
-      "mvp_score": 37.6,
-      "mvp_rank": 176,
+      "mvp_score": 37.3,
+      "mvp_rank": 178,
       "wpa": 53.0,
       "consistency": 0.399,
       "clutch_eff": 0.0
@@ -9838,9 +9838,9 @@
       "fg_pct": 40.5,
       "fg3_pct": 23.5,
       "ft_pct": 83.3,
-      "mvp_score": 43.0,
-      "mvp_rank": 146,
-      "wpa": 72.6,
+      "mvp_score": 43.3,
+      "mvp_rank": 147,
+      "wpa": 85.4,
       "consistency": 0.407,
       "clutch_eff": 0.167
     },
@@ -9860,8 +9860,8 @@
       "fg_pct": 29.6,
       "fg3_pct": 33.3,
       "ft_pct": 78.6,
-      "mvp_score": 39.9,
-      "mvp_rank": 166,
+      "mvp_score": 39.6,
+      "mvp_rank": 167,
       "wpa": 48.0,
       "consistency": 0.304,
       "clutch_eff": 0.0
@@ -9882,7 +9882,7 @@
       "fg_pct": 57.1,
       "fg3_pct": 44.4,
       "ft_pct": 66.7,
-      "mvp_score": 37.0,
+      "mvp_score": 36.6,
       "mvp_rank": 180,
       "wpa": 56.7,
       "consistency": 0.366,
@@ -9904,9 +9904,9 @@
       "fg_pct": 20.8,
       "fg3_pct": 23.5,
       "ft_pct": 71.4,
-      "mvp_score": 35.6,
-      "mvp_rank": 186,
-      "wpa": 31.3,
+      "mvp_score": 36.1,
+      "mvp_rank": 183,
+      "wpa": 42.0,
       "consistency": 0.465,
       "clutch_eff": 0.5
     },
@@ -9926,8 +9926,8 @@
       "fg_pct": 45.0,
       "fg3_pct": 40.0,
       "ft_pct": 75.0,
-      "mvp_score": 40.9,
-      "mvp_rank": 162,
+      "mvp_score": 40.7,
+      "mvp_rank": 163,
       "wpa": 26.6,
       "consistency": 0.414,
       "clutch_eff": 0.0
@@ -9948,7 +9948,7 @@
       "fg_pct": 25.9,
       "fg3_pct": 21.4,
       "ft_pct": 100.0,
-      "mvp_score": 35.1,
+      "mvp_score": 34.8,
       "mvp_rank": 191,
       "wpa": 34.7,
       "consistency": 0.487,
@@ -9970,9 +9970,9 @@
       "fg_pct": 26.1,
       "fg3_pct": 13.6,
       "ft_pct": 100.0,
-      "mvp_score": 35.1,
-      "mvp_rank": 190,
-      "wpa": 60.9,
+      "mvp_score": 34.6,
+      "mvp_rank": 192,
+      "wpa": 60.8,
       "consistency": 0.361,
       "clutch_eff": 0.0
     },
@@ -9992,8 +9992,8 @@
       "fg_pct": 41.7,
       "fg3_pct": 40.0,
       "ft_pct": 75.0,
-      "mvp_score": 37.8,
-      "mvp_rank": 174,
+      "mvp_score": 37.6,
+      "mvp_rank": 176,
       "wpa": 23.3,
       "consistency": 0.333,
       "clutch_eff": 0.0
@@ -10015,7 +10015,7 @@
       "fg3_pct": 0.0,
       "ft_pct": 50.0,
       "mvp_score": 33.5,
-      "mvp_rank": 194,
+      "mvp_rank": 195,
       "wpa": -1.1,
       "consistency": 0.456,
       "clutch_eff": 0.167
@@ -10036,9 +10036,9 @@
       "fg_pct": 16.7,
       "fg3_pct": 8.3,
       "ft_pct": 0.0,
-      "mvp_score": 37.4,
-      "mvp_rank": 179,
-      "wpa": 15.0,
+      "mvp_score": 37.8,
+      "mvp_rank": 174,
+      "wpa": 22.5,
       "consistency": 0.423,
       "clutch_eff": 0.0
     },
@@ -10058,9 +10058,9 @@
       "fg_pct": 54.5,
       "fg3_pct": 40.0,
       "ft_pct": 0.0,
-      "mvp_score": 33.4,
-      "mvp_rank": 196,
-      "wpa": 0.0,
+      "mvp_score": 35.1,
+      "mvp_rank": 189,
+      "wpa": 27.6,
       "consistency": 0.358,
       "clutch_eff": 0.0
     },
@@ -10102,8 +10102,8 @@
       "fg_pct": 24.1,
       "fg3_pct": 22.2,
       "ft_pct": 75.0,
-      "mvp_score": 36.0,
-      "mvp_rank": 184,
+      "mvp_score": 35.8,
+      "mvp_rank": 186,
       "wpa": 23.8,
       "consistency": 0.484,
       "clutch_eff": 0.0
@@ -10124,9 +10124,9 @@
       "fg_pct": 35.3,
       "fg3_pct": 27.3,
       "ft_pct": 85.7,
-      "mvp_score": 30.8,
-      "mvp_rank": 204,
-      "wpa": 17.1,
+      "mvp_score": 31.0,
+      "mvp_rank": 203,
+      "wpa": 22.3,
       "consistency": 0.369,
       "clutch_eff": 0.0
     },
@@ -10146,8 +10146,8 @@
       "fg_pct": 36.8,
       "fg3_pct": 33.3,
       "ft_pct": 100.0,
-      "mvp_score": 38.9,
-      "mvp_rank": 168,
+      "mvp_score": 38.5,
+      "mvp_rank": 169,
       "wpa": 53.5,
       "consistency": 0.24,
       "clutch_eff": 0.333
@@ -10168,7 +10168,7 @@
       "fg_pct": 38.5,
       "fg3_pct": 0.0,
       "ft_pct": 75.0,
-      "mvp_score": 32.0,
+      "mvp_score": 31.9,
       "mvp_rank": 200,
       "wpa": 16.7,
       "consistency": 0.477,
@@ -10190,8 +10190,8 @@
       "fg_pct": 26.3,
       "fg3_pct": 23.1,
       "ft_pct": 0.0,
-      "mvp_score": 36.6,
-      "mvp_rank": 181,
+      "mvp_score": 36.3,
+      "mvp_rank": 182,
       "wpa": 40.0,
       "consistency": 0.265,
       "clutch_eff": 0.0
@@ -10212,8 +10212,8 @@
       "fg_pct": 34.8,
       "fg3_pct": 20.0,
       "ft_pct": 66.7,
-      "mvp_score": 36.4,
-      "mvp_rank": 182,
+      "mvp_score": 35.8,
+      "mvp_rank": 185,
       "wpa": 87.3,
       "consistency": 0.326,
       "clutch_eff": 0.0
@@ -10234,9 +10234,9 @@
       "fg_pct": 40.0,
       "fg3_pct": 33.3,
       "ft_pct": 100.0,
-      "mvp_score": 35.4,
-      "mvp_rank": 189,
-      "wpa": 6.5,
+      "mvp_score": 36.5,
+      "mvp_rank": 181,
+      "wpa": 24.7,
       "consistency": 0.211,
       "clutch_eff": 0.4
     },
@@ -10278,8 +10278,8 @@
       "fg_pct": 26.3,
       "fg3_pct": 25.0,
       "ft_pct": 100.0,
-      "mvp_score": 34.8,
-      "mvp_rank": 192,
+      "mvp_score": 34.6,
+      "mvp_rank": 193,
       "wpa": 28.8,
       "consistency": 0.201,
       "clutch_eff": 0.0
@@ -10300,8 +10300,8 @@
       "fg_pct": 43.8,
       "fg3_pct": 33.3,
       "ft_pct": 0.0,
-      "mvp_score": 30.7,
-      "mvp_rank": 206,
+      "mvp_score": 30.6,
+      "mvp_rank": 207,
       "wpa": 23.3,
       "consistency": 0.232,
       "clutch_eff": 0.0
@@ -10366,9 +10366,9 @@
       "fg_pct": 19.0,
       "fg3_pct": 19.0,
       "ft_pct": 0.0,
-      "mvp_score": 27.9,
+      "mvp_score": 27.7,
       "mvp_rank": 213,
-      "wpa": 23.1,
+      "wpa": 22.5,
       "consistency": 0.177,
       "clutch_eff": 0.0
     },
@@ -10388,7 +10388,7 @@
       "fg_pct": 14.3,
       "fg3_pct": 9.1,
       "ft_pct": 100.0,
-      "mvp_score": 29.9,
+      "mvp_score": 29.7,
       "mvp_rank": 209,
       "wpa": 30.1,
       "consistency": 0.149,
@@ -10410,7 +10410,7 @@
       "fg_pct": 42.9,
       "fg3_pct": 40.0,
       "ft_pct": 75.0,
-      "mvp_score": 29.5,
+      "mvp_score": 29.4,
       "mvp_rank": 210,
       "wpa": 24.2,
       "consistency": 0.194,
@@ -10432,8 +10432,8 @@
       "fg_pct": 30.2,
       "fg3_pct": 29.0,
       "ft_pct": 80.0,
-      "mvp_score": 35.6,
-      "mvp_rank": 187,
+      "mvp_score": 35.0,
+      "mvp_rank": 190,
       "wpa": 93.4,
       "consistency": 0.056,
       "clutch_eff": 0.0
@@ -17268,7 +17268,7 @@
   "game_control": {
     "teams": {
       "ASV": {
-        "gci": 43.5,
+        "gci": 43.2,
         "dominance_avg": -0.0476,
         "control_pct": 0.3586,
         "crunch_swing_avg": -0.0324,
@@ -17276,8 +17276,8 @@
         "drama_avg": 3.895,
         "comeback_rating": 0.6585,
         "comeback_count": 1,
-        "home_gci": 57.1,
-        "away_gci": 29.9,
+        "home_gci": 57.7,
+        "away_gci": 28.7,
         "win_quality_hist": [
           0,
           1,
@@ -17356,16 +17356,16 @@
         ]
       },
       "BAR": {
-        "gci": 53.4,
-        "dominance_avg": 0.0347,
-        "control_pct": 0.4145,
-        "crunch_swing_avg": -0.0204,
-        "killer_instinct": -0.0369,
-        "drama_avg": 4.0755,
+        "gci": 46.2,
+        "dominance_avg": 0.0154,
+        "control_pct": 0.379,
+        "crunch_swing_avg": -0.0642,
+        "killer_instinct": -0.1216,
+        "drama_avg": 4.9274,
         "comeback_rating": 0.5927,
         "comeback_count": 0,
-        "home_gci": 60.9,
-        "away_gci": 42.0,
+        "home_gci": 48.5,
+        "away_gci": 41.6,
         "win_quality_hist": [
           1,
           2,
@@ -17374,7 +17374,7 @@
           0
         ],
         "loss_quality_hist": [
-          0,
+          1,
           1,
           0,
           1,
@@ -17430,20 +17430,30 @@
             "drama": 4.648,
             "home_score": 90,
             "away_score": 87
+          },
+          {
+            "gamecode": 58,
+            "opponent": "OLY",
+            "is_home": true,
+            "is_win": false,
+            "dominance": -0.081,
+            "drama": 9.187,
+            "home_score": 100,
+            "away_score": 105
           }
         ]
       },
       "BAS": {
-        "gci": 45.6,
-        "dominance_avg": -0.0889,
-        "control_pct": 0.3164,
-        "crunch_swing_avg": 0.0308,
-        "killer_instinct": 0.0224,
-        "drama_avg": 3.1125,
+        "gci": 38.5,
+        "dominance_avg": -0.1359,
+        "control_pct": 0.2636,
+        "crunch_swing_avg": -0.0094,
+        "killer_instinct": 0.0186,
+        "drama_avg": 3.0595,
         "comeback_rating": 0.4691,
         "comeback_count": 0,
-        "home_gci": 54.8,
-        "away_gci": 8.8,
+        "home_gci": 55.3,
+        "away_gci": 4.9,
         "win_quality_hist": [
           0,
           0,
@@ -17455,7 +17465,7 @@
           2,
           1,
           0,
-          0,
+          1,
           1
         ],
         "game_log": [
@@ -17508,25 +17518,35 @@
             "drama": 3.483,
             "home_score": 79,
             "away_score": 93
+          },
+          {
+            "gamecode": 59,
+            "opponent": "VIR",
+            "is_home": false,
+            "is_win": false,
+            "dominance": -0.371,
+            "drama": 2.795,
+            "home_score": 86,
+            "away_score": 78
           }
         ]
       },
       "BES": {
-        "gci": 39.3,
-        "dominance_avg": -0.0375,
-        "control_pct": 0.2414,
-        "crunch_swing_avg": -0.1526,
-        "killer_instinct": 0.0251,
-        "drama_avg": 3.8861,
-        "comeback_rating": 0.6369,
+        "gci": 51.7,
+        "dominance_avg": 0.0262,
+        "control_pct": 0.3581,
+        "crunch_swing_avg": -0.0675,
+        "killer_instinct": 0.0393,
+        "drama_avg": 3.7545,
+        "comeback_rating": 0.5629,
         "comeback_count": 0,
-        "home_gci": 23.7,
-        "away_gci": 49.8,
+        "home_gci": 53.4,
+        "away_gci": 49.9,
         "win_quality_hist": [
           1,
           0,
           1,
-          0,
+          1,
           0
         ],
         "loss_quality_hist": [
@@ -17586,11 +17606,21 @@
             "drama": 2.56,
             "home_score": 100,
             "away_score": 82
+          },
+          {
+            "gamecode": 55,
+            "opponent": "MUN",
+            "is_home": true,
+            "is_win": true,
+            "dominance": 0.345,
+            "drama": 3.096,
+            "home_score": 95,
+            "away_score": 87
           }
         ]
       },
       "DUB": {
-        "gci": 63.2,
+        "gci": 64.2,
         "dominance_avg": 0.048,
         "control_pct": 0.4379,
         "crunch_swing_avg": 0.0732,
@@ -17598,8 +17628,8 @@
         "drama_avg": 3.4658,
         "comeback_rating": 0.7215,
         "comeback_count": 2,
-        "home_gci": 77.2,
-        "away_gci": 49.2,
+        "home_gci": 79.2,
+        "away_gci": 49.3,
         "win_quality_hist": [
           2,
           1,
@@ -17678,18 +17708,18 @@
         ]
       },
       "HTA": {
-        "gci": 61.6,
-        "dominance_avg": 0.0753,
-        "control_pct": 0.5197,
-        "crunch_swing_avg": -0.0576,
-        "killer_instinct": 0.0403,
-        "drama_avg": 3.6559,
-        "comeback_rating": 0.4798,
+        "gci": 63.6,
+        "dominance_avg": 0.062,
+        "control_pct": 0.4623,
+        "crunch_swing_avg": 0.0536,
+        "killer_instinct": 0.0539,
+        "drama_avg": 3.6885,
+        "comeback_rating": 0.5325,
         "comeback_count": 0,
-        "home_gci": 75.2,
-        "away_gci": 41.2,
+        "home_gci": 77.1,
+        "away_gci": 50.1,
         "win_quality_hist": [
-          0,
+          1,
           1,
           0,
           2,
@@ -17752,24 +17782,34 @@
             "drama": 2.56,
             "home_score": 100,
             "away_score": 82
+          },
+          {
+            "gamecode": 60,
+            "opponent": "PAN",
+            "is_home": false,
+            "is_win": true,
+            "dominance": -0.004,
+            "drama": 3.851,
+            "home_score": 81,
+            "away_score": 91
           }
         ]
       },
       "IST": {
-        "gci": 33.6,
-        "dominance_avg": -0.0931,
-        "control_pct": 0.1905,
-        "crunch_swing_avg": -0.1484,
-        "killer_instinct": 0.0128,
-        "drama_avg": 3.7946,
-        "comeback_rating": 0.4691,
+        "gci": 40.3,
+        "dominance_avg": -0.0442,
+        "control_pct": 0.2656,
+        "crunch_swing_avg": -0.122,
+        "killer_instinct": 0.0178,
+        "drama_avg": 3.6483,
+        "comeback_rating": 0.5271,
         "comeback_count": 0,
-        "home_gci": 61.5,
-        "away_gci": 15.0,
+        "home_gci": 62.4,
+        "away_gci": 29.2,
         "win_quality_hist": [
           0,
           0,
-          1,
+          2,
           0,
           0
         ],
@@ -17830,11 +17870,21 @@
             "drama": 4.838,
             "home_score": 93,
             "away_score": 101
+          },
+          {
+            "gamecode": 57,
+            "opponent": "ZAL",
+            "is_home": false,
+            "is_win": true,
+            "dominance": 0.2,
+            "drama": 2.917,
+            "home_score": 70,
+            "away_score": 85
           }
         ]
       },
       "MAD": {
-        "gci": 51.1,
+        "gci": 51.3,
         "dominance_avg": 0.0278,
         "control_pct": 0.443,
         "crunch_swing_avg": -0.1338,
@@ -17842,8 +17892,8 @@
         "drama_avg": 3.4752,
         "comeback_rating": 0.5029,
         "comeback_count": 0,
-        "home_gci": 98.9,
-        "away_gci": 27.2,
+        "home_gci": 100.0,
+        "away_gci": 25.8,
         "win_quality_hist": [
           0,
           0,
@@ -17922,7 +17972,7 @@
         ]
       },
       "MIL": {
-        "gci": 33.6,
+        "gci": 32.7,
         "dominance_avg": -0.1774,
         "control_pct": 0.2086,
         "crunch_swing_avg": -0.0049,
@@ -17930,8 +17980,8 @@
         "drama_avg": 3.6227,
         "comeback_rating": 0.6373,
         "comeback_count": 0,
-        "home_gci": 54.0,
-        "away_gci": 13.3,
+        "home_gci": 54.4,
+        "away_gci": 10.9,
         "win_quality_hist": [
           0,
           0,
@@ -18010,16 +18060,16 @@
         ]
       },
       "MUN": {
-        "gci": 38.8,
-        "dominance_avg": -0.0451,
-        "control_pct": 0.3132,
-        "crunch_swing_avg": -0.1253,
-        "killer_instinct": -0.0948,
-        "drama_avg": 4.0442,
+        "gci": 31.8,
+        "dominance_avg": -0.095,
+        "control_pct": 0.261,
+        "crunch_swing_avg": -0.164,
+        "killer_instinct": -0.079,
+        "drama_avg": 3.8862,
         "comeback_rating": 0.7075,
         "comeback_count": 0,
-        "home_gci": 27.6,
-        "away_gci": 46.3,
+        "home_gci": 26.2,
+        "away_gci": 34.6,
         "win_quality_hist": [
           1,
           1,
@@ -18031,7 +18081,7 @@
           0,
           2,
           0,
-          0,
+          1,
           1
         ],
         "game_log": [
@@ -18084,22 +18134,32 @@
             "drama": 4.838,
             "home_score": 93,
             "away_score": 101
+          },
+          {
+            "gamecode": 55,
+            "opponent": "BES",
+            "is_home": false,
+            "is_win": false,
+            "dominance": -0.345,
+            "drama": 3.096,
+            "home_score": 95,
+            "away_score": 87
           }
         ]
       },
       "OLY": {
-        "gci": 47.6,
-        "dominance_avg": 0.0089,
-        "control_pct": 0.3434,
-        "crunch_swing_avg": 0.1788,
-        "killer_instinct": -0.2717,
-        "drama_avg": 4.361,
-        "comeback_rating": 0.7317,
+        "gci": 42.6,
+        "dominance_avg": 0.0209,
+        "control_pct": 0.3535,
+        "crunch_swing_avg": 0.1962,
+        "killer_instinct": -0.4611,
+        "drama_avg": 5.1654,
+        "comeback_rating": 0.7432,
         "comeback_count": 1,
         "home_gci": 100.0,
-        "away_gci": 34.5,
+        "away_gci": 30.3,
         "win_quality_hist": [
-          1,
+          2,
           1,
           1,
           1,
@@ -18162,11 +18222,21 @@
             "drama": 5.665,
             "home_score": 97,
             "away_score": 102
+          },
+          {
+            "gamecode": 58,
+            "opponent": "BAR",
+            "is_home": false,
+            "is_win": true,
+            "dominance": 0.081,
+            "drama": 9.187,
+            "home_score": 100,
+            "away_score": 105
           }
         ]
       },
       "PAM": {
-        "gci": 60.4,
+        "gci": 61.3,
         "dominance_avg": 0.161,
         "control_pct": 0.561,
         "crunch_swing_avg": -0.047,
@@ -18174,8 +18244,8 @@
         "drama_avg": 3.9617,
         "comeback_rating": 0.6312,
         "comeback_count": 2,
-        "home_gci": 60.4,
-        "away_gci": 60.5,
+        "home_gci": 61.3,
+        "away_gci": 61.3,
         "win_quality_hist": [
           1,
           1,
@@ -18254,16 +18324,16 @@
         ]
       },
       "PAN": {
-        "gci": 93.4,
-        "dominance_avg": 0.3425,
-        "control_pct": 0.8732,
-        "crunch_swing_avg": 0.0028,
-        "killer_instinct": 0.0083,
-        "drama_avg": 1.6768,
+        "gci": 83.0,
+        "dominance_avg": 0.2862,
+        "control_pct": 0.7654,
+        "crunch_swing_avg": -0.0993,
+        "killer_instinct": -0.0276,
+        "drama_avg": 2.0392,
         "comeback_rating": 0.4687,
         "comeback_count": 0,
-        "home_gci": 99.6,
-        "away_gci": 68.4,
+        "home_gci": 85.7,
+        "away_gci": 69.8,
         "win_quality_hist": [
           0,
           1,
@@ -18272,7 +18342,7 @@
           3
         ],
         "loss_quality_hist": [
-          0,
+          1,
           0,
           0,
           0,
@@ -18328,6 +18398,16 @@
             "drama": 1.747,
             "home_score": 55,
             "away_score": 72
+          },
+          {
+            "gamecode": 60,
+            "opponent": "HTA",
+            "is_home": true,
+            "is_win": false,
+            "dominance": 0.004,
+            "drama": 3.851,
+            "home_score": 81,
+            "away_score": 91
           }
         ]
       },
@@ -18340,8 +18420,8 @@
         "drama_avg": 2.9678,
         "comeback_rating": 0.723,
         "comeback_count": 1,
-        "home_gci": 68.0,
-        "away_gci": 37.4,
+        "home_gci": 69.4,
+        "away_gci": 36.7,
         "win_quality_hist": [
           1,
           1,
@@ -18420,16 +18500,16 @@
         ]
       },
       "PRS": {
-        "gci": 37.6,
-        "dominance_avg": -0.0189,
-        "control_pct": 0.4012,
-        "crunch_swing_avg": -0.1539,
-        "killer_instinct": -0.2582,
-        "drama_avg": 4.1834,
+        "gci": 32.2,
+        "dominance_avg": -0.0815,
+        "control_pct": 0.3343,
+        "crunch_swing_avg": -0.1333,
+        "killer_instinct": -0.2152,
+        "drama_avg": 3.9574,
         "comeback_rating": 0.6649,
         "comeback_count": 0,
-        "home_gci": 44.3,
-        "away_gci": 10.8,
+        "home_gci": 44.0,
+        "away_gci": 8.5,
         "win_quality_hist": [
           0,
           1,
@@ -18441,7 +18521,7 @@
           2,
           1,
           0,
-          0,
+          1,
           1
         ],
         "game_log": [
@@ -18494,25 +18574,35 @@
             "drama": 5.755,
             "home_score": 94,
             "away_score": 96
+          },
+          {
+            "gamecode": 56,
+            "opponent": "RED",
+            "is_home": false,
+            "is_win": false,
+            "dominance": -0.394,
+            "drama": 2.827,
+            "home_score": 90,
+            "away_score": 81
           }
         ]
       },
       "RED": {
-        "gci": 53.9,
-        "dominance_avg": 0.015,
-        "control_pct": 0.3035,
-        "crunch_swing_avg": 0.106,
-        "killer_instinct": 0.0273,
-        "drama_avg": 3.9437,
-        "comeback_rating": 0.6639,
+        "gci": 63.0,
+        "dominance_avg": 0.0782,
+        "control_pct": 0.4196,
+        "crunch_swing_avg": 0.0934,
+        "killer_instinct": 0.0229,
+        "drama_avg": 3.7576,
+        "comeback_rating": 0.5673,
         "comeback_count": 1,
-        "home_gci": 51.6,
-        "away_gci": 57.5,
+        "home_gci": 65.4,
+        "away_gci": 58.2,
         "win_quality_hist": [
           0,
           3,
           0,
-          0,
+          1,
           0
         ],
         "loss_quality_hist": [
@@ -18572,11 +18662,21 @@
             "drama": 4.799,
             "home_score": 82,
             "away_score": 84
+          },
+          {
+            "gamecode": 56,
+            "opponent": "PRS",
+            "is_home": true,
+            "is_win": true,
+            "dominance": 0.394,
+            "drama": 2.827,
+            "home_score": 90,
+            "away_score": 81
           }
         ]
       },
       "TEL": {
-        "gci": 38.7,
+        "gci": 38.1,
         "dominance_avg": -0.1353,
         "control_pct": 0.1744,
         "crunch_swing_avg": 0.0655,
@@ -18584,8 +18684,8 @@
         "drama_avg": 3.2915,
         "comeback_rating": 0.5469,
         "comeback_count": 0,
-        "home_gci": 60.5,
-        "away_gci": 27.8,
+        "home_gci": 61.3,
+        "away_gci": 26.5,
         "win_quality_hist": [
           1,
           0,
@@ -18664,7 +18764,7 @@
         ]
       },
       "ULK": {
-        "gci": 86.2,
+        "gci": 88.9,
         "dominance_avg": 0.2023,
         "control_pct": 0.7219,
         "crunch_swing_avg": 0.1164,
@@ -18672,8 +18772,8 @@
         "drama_avg": 2.4454,
         "comeback_rating": 0.4579,
         "comeback_count": 0,
-        "home_gci": 99.9,
-        "away_gci": 18.1,
+        "home_gci": 100.0,
+        "away_gci": 16.1,
         "win_quality_hist": [
           0,
           1,
@@ -18752,21 +18852,21 @@
         ]
       },
       "VIR": {
-        "gci": 41.7,
-        "dominance_avg": -0.0338,
-        "control_pct": 0.2299,
-        "crunch_swing_avg": 0.1291,
-        "killer_instinct": -0.1796,
-        "drama_avg": 4.8278,
-        "comeback_rating": 0.6732,
+        "gci": 53.1,
+        "dominance_avg": 0.0337,
+        "control_pct": 0.3563,
+        "crunch_swing_avg": 0.1427,
+        "killer_instinct": -0.1441,
+        "drama_avg": 4.489,
+        "comeback_rating": 0.6057,
         "comeback_count": 0,
-        "home_gci": 63.9,
-        "away_gci": 36.1,
+        "home_gci": 88.5,
+        "away_gci": 35.3,
         "win_quality_hist": [
           1,
           2,
           0,
-          0,
+          1,
           0
         ],
         "loss_quality_hist": [
@@ -18826,20 +18926,30 @@
             "drama": 5.755,
             "home_score": 94,
             "away_score": 96
+          },
+          {
+            "gamecode": 59,
+            "opponent": "BAS",
+            "is_home": true,
+            "is_win": true,
+            "dominance": 0.371,
+            "drama": 2.795,
+            "home_score": 86,
+            "away_score": 78
           }
         ]
       },
       "ZAL": {
-        "gci": 29.0,
-        "dominance_avg": -0.1221,
-        "control_pct": 0.1516,
-        "crunch_swing_avg": 0.0194,
-        "killer_instinct": -0.1907,
-        "drama_avg": 4.1703,
+        "gci": 26.8,
+        "dominance_avg": -0.1351,
+        "control_pct": 0.1264,
+        "crunch_swing_avg": 0.0145,
+        "killer_instinct": -0.1589,
+        "drama_avg": 3.9614,
         "comeback_rating": 0.8122,
         "comeback_count": 1,
-        "home_gci": 18.9,
-        "away_gci": 31.6,
+        "home_gci": 19.3,
+        "away_gci": 30.5,
         "win_quality_hist": [
           1,
           1,
@@ -18850,7 +18960,7 @@
         "loss_quality_hist": [
           1,
           1,
-          0,
+          1,
           1,
           0
         ],
@@ -18904,6 +19014,16 @@
             "drama": 2.191,
             "home_score": 99,
             "away_score": 80
+          },
+          {
+            "gamecode": 57,
+            "opponent": "IST",
+            "is_home": true,
+            "is_win": false,
+            "dominance": -0.2,
+            "drama": 2.917,
+            "home_score": 70,
+            "away_score": 85
           }
         ]
       }
@@ -19718,23 +19838,113 @@
         "control_away": 0.0,
         "crunch_home": 0.0304,
         "crunch_away": -0.0304
+      },
+      {
+        "gamecode": 55,
+        "home": "BES",
+        "away": "MUN",
+        "home_score": 95,
+        "away_score": 87,
+        "winner": "BES",
+        "dominance": 0.3446,
+        "drama": 3.0963,
+        "comeback": 0.4149,
+        "control_home": 0.9417,
+        "control_away": 0.0,
+        "crunch_home": 0.3577,
+        "crunch_away": -0.3577
+      },
+      {
+        "gamecode": 56,
+        "home": "RED",
+        "away": "PRS",
+        "home_score": 90,
+        "away_score": 81,
+        "winner": "RED",
+        "dominance": 0.3942,
+        "drama": 2.8273,
+        "comeback": 0.2775,
+        "control_home": 1.0,
+        "control_away": 0.0,
+        "crunch_home": 0.0304,
+        "crunch_away": -0.0304
+      },
+      {
+        "gamecode": 57,
+        "home": "ZAL",
+        "away": "IST",
+        "home_score": 70,
+        "away_score": 85,
+        "winner": "IST",
+        "dominance": -0.2002,
+        "drama": 2.9167,
+        "comeback": 0.5851,
+        "control_home": 0.0,
+        "control_away": 0.641,
+        "crunch_home": -0.0099,
+        "crunch_away": 0.0099
+      },
+      {
+        "gamecode": 58,
+        "home": "BAR",
+        "away": "OLY",
+        "home_score": 100,
+        "away_score": 105,
+        "winner": "OLY",
+        "dominance": -0.0811,
+        "drama": 9.1872,
+        "comeback": 0.7893,
+        "control_home": 0.202,
+        "control_away": 0.404,
+        "crunch_home": -0.283,
+        "crunch_away": 0.283
+      },
+      {
+        "gamecode": 59,
+        "home": "VIR",
+        "away": "BAS",
+        "home_score": 86,
+        "away_score": 78,
+        "winner": "VIR",
+        "dominance": 0.371,
+        "drama": 2.7949,
+        "comeback": 0.4032,
+        "control_home": 0.9884,
+        "control_away": 0.0,
+        "crunch_home": 0.2107,
+        "crunch_away": -0.2107
+      },
+      {
+        "gamecode": 60,
+        "home": "PAN",
+        "away": "HTA",
+        "home_score": 81,
+        "away_score": 91,
+        "winner": "HTA",
+        "dominance": 0.0042,
+        "drama": 3.8513,
+        "comeback": 0.6906,
+        "control_home": 0.2268,
+        "control_away": 0.1753,
+        "crunch_home": -0.6097,
+        "crunch_away": 0.6097
       }
     ],
     "storylines": [
       {
         "label": "Dominant Force",
-        "team": "PAN",
+        "team": "ULK",
         "color": "#4ecdc4",
-        "text": "Controlled 87% of game time on average. 5 dominant wins this season.",
-        "stat_label": "GCI 93.4",
+        "text": "Controlled 72% of game time on average. 5 dominant wins this season.",
+        "stat_label": "GCI 88.9",
         "stat_sub": "#1 Overall"
       },
       {
         "label": "Drama Magnets",
-        "team": "VIR",
+        "team": "OLY",
         "color": "#ff6b6b",
-        "text": "Highest drama index in the league. 5 high-drama games this season.",
-        "stat_label": "Drama 4.83",
+        "text": "Highest drama index in the league. 4 high-drama games this season.",
+        "stat_label": "Drama 5.17",
         "stat_sub": "#1 Volatility"
       },
       {
@@ -19747,193 +19957,193 @@
       },
       {
         "label": "The Closers",
-        "team": "ULK",
+        "team": "PAR",
         "color": "#a8e6cf",
-        "text": "Best at closing out games. Average net WP gain of +0.12 per game when leading in Q4.",
-        "stat_label": "Killer +0.12",
+        "text": "Best at closing out games. Average net WP gain of +0.11 per game when leading in Q4.",
+        "stat_label": "Killer +0.11",
         "stat_sub": "#1 Closer"
       },
       {
         "label": "Fortress",
         "team": "PRS",
         "color": "#a855f7",
-        "text": "Strongest home court advantage. Dominance gap of 0.50 between home and away.",
-        "stat_label": "Gap 0.50",
+        "text": "Strongest home court advantage. Dominance gap of 0.49 between home and away.",
+        "stat_label": "Gap 0.49",
         "stat_sub": "#1 Home Court"
       }
     ],
     "game_of_round": {
-      "gamecode": 50,
+      "gamecode": 58,
       "round": 6,
-      "home": "PRS",
-      "away": "VIR",
-      "home_score": 94,
-      "away_score": 96,
-      "winner": "VIR",
-      "drama": 5.7547,
-      "comeback": 0.664,
-      "crunch_home": -0.4743,
-      "dominance": 0.0264,
+      "home": "BAR",
+      "away": "OLY",
+      "home_score": 100,
+      "away_score": 105,
+      "winner": "OLY",
+      "drama": 9.1872,
+      "comeback": 0.7893,
+      "crunch_home": -0.283,
+      "dominance": -0.0811,
       "wp_curve": [
         [
           0.0,
-          0.5309
-        ],
-        [
-          0.007,
-          0.5309
-        ],
-        [
-          0.0365,
           0.5968
         ],
         [
-          0.0487,
-          0.5968
-        ],
-        [
-          0.0565,
+          0.0174,
           0.5851
         ],
         [
-          0.0683,
+          0.0386,
+          0.5851
+        ],
+        [
+          0.0699,
+          0.6097
+        ],
+        [
+          0.0925,
+          0.6097
+        ],
+        [
+          0.1172,
+          0.6097
+        ],
+        [
+          0.1307,
+          0.6655
+        ],
+        [
+          0.1537,
+          0.6906
+        ],
+        [
+          0.1845,
+          0.7225
+        ],
+        [
+          0.198,
+          0.7225
+        ],
+        [
+          0.2388,
           0.6423
         ],
         [
-          0.0953,
-          0.5968
+          0.2914,
+          0.5851
         ],
         [
-          0.1057,
+          0.3057,
+          0.5851
+        ],
+        [
+          0.3478,
+          0.5236
+        ],
+        [
+          0.3734,
           0.5309
         ],
         [
-          0.1322,
+          0.4008,
           0.5851
         ],
         [
-          0.1692,
-          0.5699
+          0.4234,
+          0.5056
         ],
         [
-          0.1953,
-          0.6001
+          0.4629,
+          0.4571
         ],
         [
-          0.2453,
-          0.5851
+          0.4828,
+          0.4571
         ],
         [
-          0.3032,
-          0.6097
+          0.5818,
+          0.3923
         ],
         [
-          0.3223,
-          0.664
+          0.597,
+          0.3923
         ],
         [
-          0.3293,
-          0.6001
-        ],
-        [
-          0.3828,
-          0.6097
-        ],
-        [
-          0.4224,
-          0.5851
-        ],
-        [
-          0.4284,
-          0.5309
-        ],
-        [
-          0.4889,
+          0.6027,
           0.4743
         ],
         [
-          0.5241,
-          0.5851
+          0.6496,
+          0.4571
         ],
         [
-          0.5368,
+          0.6604,
+          0.3627
+        ],
+        [
+          0.6804,
+          0.2639
+        ],
+        [
+          0.7052,
+          0.2438
+        ],
+        [
+          0.7386,
+          0.2163
+        ],
+        [
+          0.7677,
+          0.2096
+        ],
+        [
+          0.7825,
+          0.1843
+        ],
+        [
+          0.8189,
+          0.0776
+        ],
+        [
+          0.9014,
+          0.6906
+        ],
+        [
+          0.9106,
           0.5968
         ],
         [
-          0.5581,
-          0.5046
-        ],
-        [
-          0.5785,
-          0.5851
-        ],
-        [
-          0.6037,
-          0.5046
-        ],
-        [
-          0.6385,
-          0.3762
-        ],
-        [
-          0.6633,
-          0.5309
-        ],
-        [
-          0.6812,
-          0.4743
-        ],
-        [
-          0.6977,
-          0.6097
-        ],
-        [
-          0.7547,
-          0.6097
-        ],
-        [
-          0.7682,
-          0.5851
-        ],
-        [
-          0.7843,
-          0.5851
-        ],
-        [
-          0.8017,
-          0.5851
-        ],
-        [
-          0.8225,
-          0.3498
-        ],
-        [
-          0.8465,
+          0.9388,
           0.3351
         ],
         [
-          0.8752,
-          0.407
+          0.9388,
+          0.1731
         ],
         [
-          0.8987,
-          0.5968
+          0.9557,
+          0.0161
         ],
         [
-          0.9208,
-          0.5968
+          0.9683,
+          0.016
         ],
         [
-          0.9439,
-          0.5968
-        ],
-        [
-          0.97,
-          0.5968
+          0.9844,
+          0.0099
         ],
         [
           0.9891,
           0.4571
+        ],
+        [
+          0.9965,
+          0.1848
+        ],
+        [
+          0.9996,
+          0.0099
         ],
         [
           1.0,
@@ -20118,176 +20328,176 @@
         ]
       },
       "most_dramatic": {
-        "gamecode": 23,
-        "home": "VIR",
+        "gamecode": 58,
+        "home": "BAR",
         "away": "OLY",
-        "home_score": 96,
-        "away_score": 94,
-        "drama": 5.9351,
+        "home_score": 100,
+        "away_score": 105,
+        "drama": 9.1872,
         "wp_curve": [
           [
             0.0,
-            0.6097
-          ],
-          [
-            0.0255,
-            0.6097
-          ],
-          [
-            0.0433,
-            0.6097
-          ],
-          [
-            0.0599,
-            0.6423
-          ],
-          [
-            0.076,
-            0.664
-          ],
-          [
-            0.0909,
-            0.6097
-          ],
-          [
-            0.1057,
-            0.6097
-          ],
-          [
-            0.1329,
-            0.6097
-          ],
-          [
-            0.1622,
             0.5968
           ],
           [
-            0.1796,
+            0.0174,
+            0.5851
+          ],
+          [
+            0.0386,
+            0.5851
+          ],
+          [
+            0.0699,
+            0.6097
+          ],
+          [
+            0.0925,
+            0.6097
+          ],
+          [
+            0.1172,
+            0.6097
+          ],
+          [
+            0.1307,
+            0.6655
+          ],
+          [
+            0.1537,
             0.6906
           ],
           [
-            0.2059,
-            0.5851
+            0.1845,
+            0.7225
           ],
           [
-            0.2208,
+            0.198,
+            0.7225
+          ],
+          [
+            0.2388,
             0.6423
           ],
           [
-            0.2858,
+            0.2914,
             0.5851
           ],
           [
-            0.3002,
+            0.3057,
             0.5851
           ],
           [
-            0.3448,
-            0.4743
+            0.3478,
+            0.5236
           ],
           [
-            0.3631,
+            0.3734,
             0.5309
           ],
           [
-            0.3992,
-            0.6001
+            0.4008,
+            0.5851
           ],
           [
             0.4234,
-            0.6097
+            0.5056
           ],
           [
-            0.4701,
-            0.6097
-          ],
-          [
-            0.5104,
-            0.6097
-          ],
-          [
-            0.5495,
-            0.6423
-          ],
-          [
-            0.5622,
-            0.6097
-          ],
-          [
-            0.5788,
-            0.6906
-          ],
-          [
-            0.5915,
-            0.5968
-          ],
-          [
-            0.6195,
-            0.7254
-          ],
-          [
-            0.6391,
-            0.7916
-          ],
-          [
-            0.6756,
-            0.7994
-          ],
-          [
-            0.7236,
-            0.6423
-          ],
-          [
-            0.741,
-            0.664
-          ],
-          [
-            0.7567,
-            0.664
-          ],
-          [
-            0.7715,
-            0.6097
-          ],
-          [
-            0.7932,
-            0.5543
-          ],
-          [
-            0.814,
-            0.5336
-          ],
-          [
-            0.8544,
-            0.5309
-          ],
-          [
-            0.8866,
-            0.4743
-          ],
-          [
-            0.9113,
+            0.4629,
             0.4571
           ],
           [
-            0.9291,
-            0.407
+            0.4828,
+            0.4571
           ],
           [
-            0.9732,
-            0.6423
+            0.5818,
+            0.3923
           ],
           [
-            0.9754,
-            0.5046
+            0.597,
+            0.3923
           ],
           [
-            0.9958,
+            0.6027,
+            0.4743
+          ],
+          [
+            0.6496,
+            0.4571
+          ],
+          [
+            0.6604,
+            0.3627
+          ],
+          [
+            0.6804,
+            0.2639
+          ],
+          [
+            0.7052,
+            0.2438
+          ],
+          [
+            0.7386,
+            0.2163
+          ],
+          [
+            0.7677,
+            0.2096
+          ],
+          [
+            0.7825,
+            0.1843
+          ],
+          [
+            0.8189,
+            0.0776
+          ],
+          [
+            0.9014,
+            0.6906
+          ],
+          [
+            0.9106,
+            0.5968
+          ],
+          [
+            0.9388,
             0.3351
           ],
           [
+            0.9388,
+            0.1731
+          ],
+          [
+            0.9557,
+            0.0161
+          ],
+          [
+            0.9683,
+            0.016
+          ],
+          [
+            0.9844,
+            0.0099
+          ],
+          [
+            0.9891,
+            0.4571
+          ],
+          [
+            0.9965,
+            0.1848
+          ],
+          [
+            0.9996,
+            0.0099
+          ],
+          [
             1.0,
-            1.0
+            0.0
           ]
         ]
       },
