@@ -1,6 +1,6 @@
 {
   "season": "2026",
-  "round": 6,
+  "round": 7,
   "teams": {
     "ASV": {
       "gci": 43.2,
@@ -2709,7 +2709,7 @@
   ],
   "game_of_round": {
     "gamecode": 58,
-    "round": 6,
+    "round": 7,
     "home": "BAR",
     "away": "OLY",
     "home_score": 100,
