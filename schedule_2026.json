@@ -912,7 +912,7 @@
     "arenaname": "TELEKOM CENTER ATHENS",
     "confirmeddate": "true",
     "confirmedtime": "true",
-    "played": "false"
+    "played": "true"
   },
   {
     "gameday": "7",
@@ -927,7 +927,7 @@
     "arenaname": "SAP GARDEN",
     "confirmeddate": "true",
     "confirmedtime": "true",
-    "played": "false"
+    "played": "true"
   },
   {
     "gameday": "7",
@@ -957,7 +957,7 @@
     "arenaname": "BELGRADE ARENA",
     "confirmeddate": "true",
     "confirmedtime": "true",
-    "played": "false"
+    "played": "true"
   },
   {
     "gameday": "7",
@@ -1002,7 +1002,7 @@
     "arenaname": "UNIPOL FORUM",
     "confirmeddate": "true",
     "confirmedtime": "true",
-    "played": "false"
+    "played": "true"
   },
   {
     "gameday": "7",
@@ -1017,7 +1017,7 @@
     "arenaname": "TURKCELL BASKETBALL DEVELOPMENT CENTER",
     "confirmeddate": "true",
     "confirmedtime": "true",
-    "played": "false"
+    "played": "true"
   },
   {
     "gameday": "7",
@@ -1047,7 +1047,7 @@
     "arenaname": "ALEKSANDAR NIKOLIC HALL",
     "confirmeddate": "true",
     "confirmedtime": "true",
-    "played": "false"
+    "played": "true"
   },
   {
     "gameday": "8",
