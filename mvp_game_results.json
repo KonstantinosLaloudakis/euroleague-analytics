@@ -534,5 +534,29 @@
         "LocalScore":85.0,
         "RoadScore":79.0,
         "Winner":"PAN"
+    },
+    {
+        "GameCode":68,
+        "LocalTeam":"ZAL",
+        "RoadTeam":"ASV",
+        "LocalScore":105.0,
+        "RoadScore":85.0,
+        "Winner":"ZAL"
+    },
+    {
+        "GameCode":69,
+        "LocalTeam":"PRS",
+        "RoadTeam":"PAM",
+        "LocalScore":93.0,
+        "RoadScore":104.0,
+        "Winner":"PAM"
+    },
+    {
+        "GameCode":70,
+        "LocalTeam":"OLY",
+        "RoadTeam":"ULK",
+        "LocalScore":61.0,
+        "RoadScore":64.0,
+        "Winner":"ULK"
     }
 ]
