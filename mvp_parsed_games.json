@@ -15100,5 +15100,1292 @@
         "GmSc":0.0,
         "PIR":0.0,
         "PTS":0.0
+    },
+    {
+        "PlayerCode":"014163",
+        "PlayerName":"BUTLER, JARED",
+        "TeamCode":"RED",
+        "GameCode":71,
+        "GmSc":14.5,
+        "PIR":18.0,
+        "PTS":21.0
+    },
+    {
+        "PlayerCode":"011305",
+        "PlayerName":"CARTER, TYSON",
+        "TeamCode":"RED",
+        "GameCode":71,
+        "GmSc":21.6,
+        "PIR":26.0,
+        "PTS":24.0
+    },
+    {
+        "PlayerCode":"007960",
+        "PlayerName":"DAVIDOVAC, DEJAN",
+        "TeamCode":"RED",
+        "GameCode":71,
+        "GmSc":3.0,
+        "PIR":4.0,
+        "PTS":2.0
+    },
+    {
+        "PlayerCode":"004007",
+        "PlayerName":"DOBRIC, OGNJEN",
+        "TeamCode":"RED",
+        "GameCode":71,
+        "GmSc":4.3,
+        "PIR":6.0,
+        "PTS":6.0
+    },
+    {
+        "PlayerCode":"014029",
+        "PlayerName":"IZUNDU, EBUKA",
+        "TeamCode":"RED",
+        "GameCode":71,
+        "GmSc":4.4,
+        "PIR":6.0,
+        "PTS":4.0
+    },
+    {
+        "PlayerCode":"010568",
+        "PlayerName":"JONES, CHRIS",
+        "TeamCode":"RED",
+        "GameCode":71,
+        "GmSc":11.8,
+        "PIR":16.0,
+        "PTS":8.0
+    },
+    {
+        "PlayerCode":"015396",
+        "PlayerName":"KOLOKO, CHRISTIAN",
+        "TeamCode":"RED",
+        "GameCode":71,
+        "GmSc":4.2,
+        "PIR":8.0,
+        "PTS":6.0
+    },
+    {
+        "PlayerCode":"006482",
+        "PlayerName":"KRAMER, DAVID",
+        "TeamCode":"RED",
+        "GameCode":71,
+        "GmSc":0.4,
+        "PIR":-1.0,
+        "PTS":4.0
+    },
+    {
+        "PlayerCode":"012201",
+        "PlayerName":"MONEKE, CHIMA",
+        "TeamCode":"RED",
+        "GameCode":71,
+        "GmSc":3.5,
+        "PIR":9.0,
+        "PTS":2.0
+    },
+    {
+        "PlayerCode":"013363",
+        "PlayerName":"NWORA, JORDAN",
+        "TeamCode":"RED",
+        "GameCode":71,
+        "GmSc":14.0,
+        "PIR":17.0,
+        "PTS":18.0
+    },
+    {
+        "PlayerCode":"011982",
+        "PlayerName":"OJELEYE, SEMI",
+        "TeamCode":"RED",
+        "GameCode":71,
+        "GmSc":0.6,
+        "PIR":1.0,
+        "PTS":0.0
+    },
+    {
+        "PlayerCode":"010391",
+        "PlayerName":"WEILER-BABB, NICK",
+        "TeamCode":"RED",
+        "GameCode":71,
+        "GmSc":4.3,
+        "PIR":7.0,
+        "PTS":5.0
+    },
+    {
+        "PlayerCode":"014015",
+        "PlayerName":"BACOT JR., ARMANDO",
+        "TeamCode":"TEL",
+        "GameCode":71,
+        "GmSc":8.2,
+        "PIR":12.0,
+        "PTS":7.0
+    },
+    {
+        "PlayerCode":"014127",
+        "PlayerName":"BRISSETT, O'SHAE J",
+        "TeamCode":"TEL",
+        "GameCode":71,
+        "GmSc":4.7,
+        "PIR":12.0,
+        "PTS":6.0
+    },
+    {
+        "PlayerCode":"013699",
+        "PlayerName":"CLARK III, JIMMY",
+        "TeamCode":"TEL",
+        "GameCode":71,
+        "GmSc":8.4,
+        "PIR":9.0,
+        "PTS":19.0
+    },
+    {
+        "PlayerCode":"009783",
+        "PlayerName":"COLSON, BONZIE",
+        "TeamCode":"TEL",
+        "GameCode":71,
+        "GmSc":8.9,
+        "PIR":11.0,
+        "PTS":6.0
+    },
+    {
+        "PlayerCode":"007990",
+        "PlayerName":"DIBARTOLOMEO, JOHN",
+        "TeamCode":"TEL",
+        "GameCode":71,
+        "GmSc":0.2,
+        "PIR":1.0,
+        "PTS":1.0
+    },
+    {
+        "PlayerCode":"006835",
+        "PlayerName":"HOARD, JAYLEN",
+        "TeamCode":"TEL",
+        "GameCode":71,
+        "GmSc":3.0,
+        "PIR":4.0,
+        "PTS":4.0
+    },
+    {
+        "PlayerCode":"014012",
+        "PlayerName":"LEAF, TJ",
+        "TeamCode":"TEL",
+        "GameCode":71,
+        "GmSc":2.9,
+        "PIR":3.0,
+        "PTS":6.0
+    },
+    {
+        "PlayerCode":"011052",
+        "PlayerName":"MADAR, YAM",
+        "TeamCode":"TEL",
+        "GameCode":71,
+        "GmSc":2.7,
+        "PIR":2.0,
+        "PTS":7.0
+    },
+    {
+        "PlayerCode":"013381",
+        "PlayerName":"RAYMAN, WILLIAM",
+        "TeamCode":"TEL",
+        "GameCode":71,
+        "GmSc":3.0,
+        "PIR":7.0,
+        "PTS":2.0
+    },
+    {
+        "PlayerCode":"011219",
+        "PlayerName":"SORKIN, ROMAN",
+        "TeamCode":"TEL",
+        "GameCode":71,
+        "GmSc":8.4,
+        "PIR":12.0,
+        "PTS":13.0
+    },
+    {
+        "PlayerCode":"004132",
+        "PlayerName":"THEIS, DANIEL",
+        "TeamCode":"TEL",
+        "GameCode":71,
+        "GmSc":1.6,
+        "PIR":3.0,
+        "PTS":4.0
+    },
+    {
+        "PlayerCode":"015085",
+        "PlayerName":"WALLACE, KEATON",
+        "TeamCode":"TEL",
+        "GameCode":71,
+        "GmSc":-1.5,
+        "PIR":-3.0,
+        "PTS":3.0
+    },
+    {
+        "PlayerCode":"011286",
+        "PlayerName":"BACON, DWAYNE",
+        "TeamCode":"DUB",
+        "GameCode":72,
+        "GmSc":18.6,
+        "PIR":27.0,
+        "PTS":24.0
+    },
+    {
+        "PlayerCode":"003458",
+        "PlayerName":"BERTANS, DAVIS",
+        "TeamCode":"DUB",
+        "GameCode":72,
+        "GmSc":-0.4,
+        "PIR":-1.0,
+        "PTS":0.0
+    },
+    {
+        "PlayerCode":"011231",
+        "PlayerName":"BLOSSOMGAME, JARON",
+        "TeamCode":"DUB",
+        "GameCode":72,
+        "GmSc":-0.2,
+        "PIR":0.0,
+        "PTS":1.0
+    },
+    {
+        "PlayerCode":"014027",
+        "PlayerName":"DIAKITE, MAMADI",
+        "TeamCode":"DUB",
+        "GameCode":72,
+        "GmSc":0.1,
+        "PIR":1.0,
+        "PTS":2.0
+    },
+    {
+        "PlayerCode":"012796",
+        "PlayerName":"KABENGELE, MFIONDU",
+        "TeamCode":"DUB",
+        "GameCode":72,
+        "GmSc":17.3,
+        "PIR":25.0,
+        "PTS":22.0
+    },
+    {
+        "PlayerCode":"014031",
+        "PlayerName":"KONDIC, KOSTA",
+        "TeamCode":"DUB",
+        "GameCode":72,
+        "GmSc":-0.4,
+        "PIR":-1.0,
+        "PTS":0.0
+    },
+    {
+        "PlayerCode":"014731",
+        "PlayerName":"MINTZ, DAVION",
+        "TeamCode":"DUB",
+        "GameCode":72,
+        "GmSc":4.0,
+        "PIR":4.0,
+        "PTS":3.0
+    },
+    {
+        "PlayerCode":"006540",
+        "PlayerName":"MUSA, DZANAN",
+        "TeamCode":"DUB",
+        "GameCode":72,
+        "GmSc":4.3,
+        "PIR":4.0,
+        "PTS":8.0
+    },
+    {
+        "PlayerCode":"011212",
+        "PlayerName":"OKOBO, ELIE",
+        "TeamCode":"DUB",
+        "GameCode":72,
+        "GmSc":1.7,
+        "PIR":3.0,
+        "PTS":5.0
+    },
+    {
+        "PlayerCode":"011194",
+        "PlayerName":"PETRUSEV, FILIP",
+        "TeamCode":"DUB",
+        "GameCode":72,
+        "GmSc":4.9,
+        "PIR":8.0,
+        "PTS":8.0
+    },
+    {
+        "PlayerCode":"001133",
+        "PlayerName":"SHENGELIA, TORNIKE",
+        "TeamCode":"DUB",
+        "GameCode":72,
+        "GmSc":6.2,
+        "PIR":8.0,
+        "PTS":8.0
+    },
+    {
+        "PlayerCode":"012606",
+        "PlayerName":"WRIGHT IV, MCKINLEY",
+        "TeamCode":"DUB",
+        "GameCode":72,
+        "GmSc":14.4,
+        "PIR":17.0,
+        "PTS":12.0
+    },
+    {
+        "PlayerCode":"006904",
+        "PlayerName":"AYAYI, JOEL",
+        "TeamCode":"PRS",
+        "GameCode":72,
+        "GmSc":6.9,
+        "PIR":7.0,
+        "PTS":7.0
+    },
+    {
+        "PlayerCode":"013373",
+        "PlayerName":"CAVALIERE, LEOPOLD",
+        "TeamCode":"PRS",
+        "GameCode":72,
+        "GmSc":2.1,
+        "PIR":3.0,
+        "PTS":5.0
+    },
+    {
+        "PlayerCode":"014010",
+        "PlayerName":"DOKOSSI, ALLAN",
+        "TeamCode":"PRS",
+        "GameCode":72,
+        "GmSc":8.5,
+        "PIR":10.0,
+        "PTS":9.0
+    },
+    {
+        "PlayerCode":"012403",
+        "PlayerName":"FAYE, MOUHAMED",
+        "TeamCode":"PRS",
+        "GameCode":72,
+        "GmSc":13.8,
+        "PIR":18.0,
+        "PTS":10.0
+    },
+    {
+        "PlayerCode":"012611",
+        "PlayerName":"HERRERA, SEBASTIAN",
+        "TeamCode":"PRS",
+        "GameCode":72,
+        "GmSc":12.0,
+        "PIR":14.0,
+        "PTS":12.0
+    },
+    {
+        "PlayerCode":"012640",
+        "PlayerName":"HIFI, NADIR",
+        "TeamCode":"PRS",
+        "GameCode":72,
+        "GmSc":12.4,
+        "PIR":17.0,
+        "PTS":20.0
+    },
+    {
+        "PlayerCode":"011949",
+        "PlayerName":"HOMMES, DAULTON",
+        "TeamCode":"PRS",
+        "GameCode":72,
+        "GmSc":-1.4,
+        "PIR":0.0,
+        "PTS":0.0
+    },
+    {
+        "PlayerCode":"015160",
+        "PlayerName":"JOHNSON, ALIZE",
+        "TeamCode":"PRS",
+        "GameCode":72,
+        "GmSc":2.1,
+        "PIR":5.0,
+        "PTS":4.0
+    },
+    {
+        "PlayerCode":"010431",
+        "PlayerName":"MORGAN, JEREMY",
+        "TeamCode":"PRS",
+        "GameCode":72,
+        "GmSc":-0.4,
+        "PIR":-1.0,
+        "PTS":0.0
+    },
+    {
+        "PlayerCode":"014801",
+        "PlayerName":"PEREIRA, MAOZINHA",
+        "TeamCode":"PRS",
+        "GameCode":72,
+        "GmSc":1.5,
+        "PIR":0.0,
+        "PTS":3.0
+    },
+    {
+        "PlayerCode":"014178",
+        "PlayerName":"RHODEN, JARED",
+        "TeamCode":"PRS",
+        "GameCode":72,
+        "GmSc":14.3,
+        "PIR":22.0,
+        "PTS":20.0
+    },
+    {
+        "PlayerCode":"012515",
+        "PlayerName":"TARPEY, TERRY",
+        "TeamCode":"PRS",
+        "GameCode":72,
+        "GmSc":8.3,
+        "PIR":11.0,
+        "PTS":9.0
+    },
+    {
+        "PlayerCode":"014506",
+        "PlayerName":"ALVES DE SOUZA, THIERRY HENRY",
+        "TeamCode":"BAS",
+        "GameCode":73,
+        "GmSc":0.0,
+        "PIR":0.0,
+        "PTS":0.0
+    },
+    {
+        "PlayerCode":"014736",
+        "PlayerName":"BAUGH, DAMION",
+        "TeamCode":"BAS",
+        "GameCode":73,
+        "GmSc":8.1,
+        "PIR":12.0,
+        "PTS":10.0
+    },
+    {
+        "PlayerCode":"011284",
+        "PlayerName":"FARIED, KENNETH",
+        "TeamCode":"BAS",
+        "GameCode":73,
+        "GmSc":6.8,
+        "PIR":12.0,
+        "PTS":7.0
+    },
+    {
+        "PlayerCode":"014026",
+        "PlayerName":"FRISCH, CLEMENT",
+        "TeamCode":"BAS",
+        "GameCode":73,
+        "GmSc":1.3,
+        "PIR":2.0,
+        "PTS":2.0
+    },
+    {
+        "PlayerCode":"014107",
+        "PlayerName":"JOKSIMOVIC, STEFAN",
+        "TeamCode":"BAS",
+        "GameCode":73,
+        "GmSc":8.6,
+        "PIR":10.0,
+        "PTS":12.0
+    },
+    {
+        "PlayerCode":"014734",
+        "PlayerName":"LAWSON, A.J.",
+        "TeamCode":"BAS",
+        "GameCode":73,
+        "GmSc":11.4,
+        "PIR":20.0,
+        "PTS":17.0
+    },
+    {
+        "PlayerCode":"013289",
+        "PlayerName":"SANTOS, MARCIO",
+        "TeamCode":"BAS",
+        "GameCode":73,
+        "GmSc":5.4,
+        "PIR":5.0,
+        "PTS":8.0
+    },
+    {
+        "PlayerCode":"014152",
+        "PlayerName":"SIMMONS, KOBI",
+        "TeamCode":"BAS",
+        "GameCode":73,
+        "GmSc":6.8,
+        "PIR":8.0,
+        "PTS":17.0
+    },
+    {
+        "PlayerCode":"014103",
+        "PlayerName":"SOUZA, PEDRO",
+        "TeamCode":"BAS",
+        "GameCode":73,
+        "GmSc":0.0,
+        "PIR":0.0,
+        "PTS":0.0
+    },
+    {
+        "PlayerCode":"008173",
+        "PlayerName":"SPAGNOLO, MATTEO",
+        "TeamCode":"BAS",
+        "GameCode":73,
+        "GmSc":-3.1,
+        "PIR":-5.0,
+        "PTS":0.0
+    },
+    {
+        "PlayerCode":"012700",
+        "PlayerName":"STEWART, DJ",
+        "TeamCode":"BAS",
+        "GameCode":73,
+        "GmSc":11.9,
+        "PIR":17.0,
+        "PTS":13.0
+    },
+    {
+        "PlayerCode":"003733",
+        "PlayerName":"ABALDE, ALBERTO",
+        "TeamCode":"MAD",
+        "GameCode":73,
+        "GmSc":11.8,
+        "PIR":14.0,
+        "PTS":8.0
+    },
+    {
+        "PlayerCode":"005928",
+        "PlayerName":"CAMPAZZO, FACUNDO",
+        "TeamCode":"MAD",
+        "GameCode":73,
+        "GmSc":0.9,
+        "PIR":5.0,
+        "PTS":3.0
+    },
+    {
+        "PlayerCode":"011247",
+        "PlayerName":"FELIZ, ANDRES",
+        "TeamCode":"MAD",
+        "GameCode":73,
+        "GmSc":8.1,
+        "PIR":9.0,
+        "PTS":12.0
+    },
+    {
+        "PlayerCode":"012613",
+        "PlayerName":"JANTUNEN, MIKAEL",
+        "TeamCode":"MAD",
+        "GameCode":73,
+        "GmSc":9.4,
+        "PIR":14.0,
+        "PTS":13.0
+    },
+    {
+        "PlayerCode":"015103",
+        "PlayerName":"JONES, DAMIAN",
+        "TeamCode":"MAD",
+        "GameCode":73,
+        "GmSc":10.4,
+        "PIR":15.0,
+        "PTS":13.0
+    },
+    {
+        "PlayerCode":"012080",
+        "PlayerName":"LUWAWU-CABARROT, TIMOTHE",
+        "TeamCode":"MAD",
+        "GameCode":73,
+        "GmSc":7.7,
+        "PIR":11.0,
+        "PTS":14.0
+    },
+    {
+        "PlayerCode":"007027",
+        "PlayerName":"MALEDON, THEO",
+        "TeamCode":"MAD",
+        "GameCode":73,
+        "GmSc":14.8,
+        "PIR":16.0,
+        "PTS":19.0
+    },
+    {
+        "PlayerCode":"014006",
+        "PlayerName":"OKEKE, CHUMA",
+        "TeamCode":"MAD",
+        "GameCode":73,
+        "GmSc":5.8,
+        "PIR":7.0,
+        "PTS":5.0
+    },
+    {
+        "PlayerCode":"010393",
+        "PlayerName":"PRADILLA, JAIME",
+        "TeamCode":"MAD",
+        "GameCode":73,
+        "GmSc":2.1,
+        "PIR":5.0,
+        "PTS":2.0
+    },
+    {
+        "PlayerCode":"008384",
+        "PlayerName":"PROCIDA, GABRIELE",
+        "TeamCode":"MAD",
+        "GameCode":73,
+        "GmSc":4.2,
+        "PIR":5.0,
+        "PTS":5.0
+    },
+    {
+        "PlayerCode":"015102",
+        "PlayerName":"SHULGA, MAKSYM",
+        "TeamCode":"MAD",
+        "GameCode":73,
+        "GmSc":-1.8,
+        "PIR":-3.0,
+        "PTS":0.0
+    },
+    {
+        "PlayerCode":"005791",
+        "PlayerName":"TAVARES, WALTER",
+        "TeamCode":"MAD",
+        "GameCode":73,
+        "GmSc":12.5,
+        "PIR":22.0,
+        "PTS":10.0
+    },
+    {
+        "PlayerCode":"014732",
+        "PlayerName":"BEAUCHAMP, MARJON",
+        "TeamCode":"MUN",
+        "GameCode":74,
+        "GmSc":0.1,
+        "PIR":0.0,
+        "PTS":4.0
+    },
+    {
+        "PlayerCode":"011244",
+        "PlayerName":"DA SILVA, OSCAR",
+        "TeamCode":"MUN",
+        "GameCode":74,
+        "GmSc":3.3,
+        "PIR":5.0,
+        "PTS":2.0
+    },
+    {
+        "PlayerCode":"009513",
+        "PlayerName":"HOLLATZ, JUSTUS",
+        "TeamCode":"MUN",
+        "GameCode":74,
+        "GmSc":7.1,
+        "PIR":9.0,
+        "PTS":3.0
+    },
+    {
+        "PlayerCode":"013290",
+        "PlayerName":"JESSUP, JUSTINIAN",
+        "TeamCode":"MUN",
+        "GameCode":74,
+        "GmSc":3.1,
+        "PIR":2.0,
+        "PTS":6.0
+    },
+    {
+        "PlayerCode":"007519",
+        "PlayerName":"JOKUBAITIS, ROKAS",
+        "TeamCode":"MUN",
+        "GameCode":74,
+        "GmSc":18.2,
+        "PIR":20.0,
+        "PTS":17.0
+    },
+    {
+        "PlayerCode":"001288",
+        "PlayerName":"LUCIC, VLADIMIR",
+        "TeamCode":"MUN",
+        "GameCode":74,
+        "GmSc":-1.8,
+        "PIR":0.0,
+        "PTS":0.0
+    },
+    {
+        "PlayerCode":"014134",
+        "PlayerName":"NORRIS, MILES",
+        "TeamCode":"MUN",
+        "GameCode":74,
+        "GmSc":15.3,
+        "PIR":17.0,
+        "PTS":17.0
+    },
+    {
+        "PlayerCode":"004508",
+        "PlayerName":"OBST, ANDREAS",
+        "TeamCode":"MUN",
+        "GameCode":74,
+        "GmSc":6.4,
+        "PIR":7.0,
+        "PTS":14.0
+    },
+    {
+        "PlayerCode":"003958",
+        "PlayerName":"THIEMANN, JOHANNES",
+        "TeamCode":"MUN",
+        "GameCode":74,
+        "GmSc":5.3,
+        "PIR":7.0,
+        "PTS":6.0
+    },
+    {
+        "PlayerCode":"007201",
+        "PlayerName":"VOIGTMANN, JOHANNES",
+        "TeamCode":"MUN",
+        "GameCode":74,
+        "GmSc":-0.4,
+        "PIR":0.0,
+        "PTS":0.0
+    },
+    {
+        "PlayerCode":"013370",
+        "PlayerName":"WASHINGTON, DUANE",
+        "TeamCode":"MUN",
+        "GameCode":74,
+        "GmSc":-1.7,
+        "PIR":-2.0,
+        "PTS":5.0
+    },
+    {
+        "PlayerCode":"013278",
+        "PlayerName":"WILEY, AUSTIN",
+        "TeamCode":"MUN",
+        "GameCode":74,
+        "GmSc":6.7,
+        "PIR":12.0,
+        "PTS":10.0
+    },
+    {
+        "PlayerCode":"007553",
+        "PlayerName":"BALCEROWSKI, OLEK",
+        "TeamCode":"BAR",
+        "GameCode":74,
+        "GmSc":8.0,
+        "PIR":11.0,
+        "PTS":9.0
+    },
+    {
+        "PlayerCode":"009992",
+        "PlayerName":"BRIZUELA, DARIO",
+        "TeamCode":"BAR",
+        "GameCode":74,
+        "GmSc":-1.6,
+        "PIR":-4.0,
+        "PTS":1.0
+    },
+    {
+        "PlayerCode":"015141",
+        "PlayerName":"EVBUOMWAN, TOSAN",
+        "TeamCode":"BAR",
+        "GameCode":74,
+        "GmSc":3.8,
+        "PIR":5.0,
+        "PTS":5.0
+    },
+    {
+        "PlayerCode":"013855",
+        "PlayerName":"GIBSON, UMOJA",
+        "TeamCode":"BAR",
+        "GameCode":74,
+        "GmSc":6.7,
+        "PIR":11.0,
+        "PTS":7.0
+    },
+    {
+        "PlayerCode":"015138",
+        "PlayerName":"MARTIN, TYRESE",
+        "TeamCode":"BAR",
+        "GameCode":74,
+        "GmSc":8.9,
+        "PIR":13.0,
+        "PTS":12.0
+    },
+    {
+        "PlayerCode":"015142",
+        "PlayerName":"MINAYA, JUSTIN",
+        "TeamCode":"BAR",
+        "GameCode":74,
+        "GmSc":1.6,
+        "PIR":1.0,
+        "PTS":2.0
+    },
+    {
+        "PlayerCode":"011199",
+        "PlayerName":"NEBO, JOSH",
+        "TeamCode":"BAR",
+        "GameCode":74,
+        "GmSc":12.5,
+        "PIR":21.0,
+        "PTS":12.0
+    },
+    {
+        "PlayerCode":"015140",
+        "PlayerName":"NKAMHOUA, OLIVIER",
+        "TeamCode":"BAR",
+        "GameCode":74,
+        "GmSc":1.0,
+        "PIR":5.0,
+        "PTS":2.0
+    },
+    {
+        "PlayerCode":"010106",
+        "PlayerName":"NUNEZ, JUAN",
+        "TeamCode":"BAR",
+        "GameCode":74,
+        "GmSc":1.8,
+        "PIR":5.0,
+        "PTS":2.0
+    },
+    {
+        "PlayerCode":"009862",
+        "PlayerName":"PUNTER, KEVIN",
+        "TeamCode":"BAR",
+        "GameCode":74,
+        "GmSc":15.0,
+        "PIR":23.0,
+        "PTS":23.0
+    },
+    {
+        "PlayerCode":"014008",
+        "PlayerName":"ROBINSON, JUSTIN",
+        "TeamCode":"BAR",
+        "GameCode":74,
+        "GmSc":8.0,
+        "PIR":8.0,
+        "PTS":11.0
+    },
+    {
+        "PlayerCode":"015139",
+        "PlayerName":"UMUDE, STANLEY",
+        "TeamCode":"BAR",
+        "GameCode":74,
+        "GmSc":1.2,
+        "PIR":1.0,
+        "PTS":2.0
+    },
+    {
+        "PlayerCode":"013384",
+        "PlayerName":"BROOKS, ARMONI",
+        "TeamCode":"PAM",
+        "GameCode":75,
+        "GmSc":9.2,
+        "PIR":14.0,
+        "PTS":16.0
+    },
+    {
+        "PlayerCode":"014741",
+        "PlayerName":"CARDENAS, ALVARO",
+        "TeamCode":"PAM",
+        "GameCode":75,
+        "GmSc":-1.5,
+        "PIR":-1.0,
+        "PTS":0.0
+    },
+    {
+        "PlayerCode":"014740",
+        "PlayerName":"CORBALAN, GONZALO",
+        "TeamCode":"PAM",
+        "GameCode":75,
+        "GmSc":-1.9,
+        "PIR":-3.0,
+        "PTS":2.0
+    },
+    {
+        "PlayerCode":"014739",
+        "PlayerName":"GUEYE, MOUHAMADOU",
+        "TeamCode":"PAM",
+        "GameCode":75,
+        "GmSc":-0.4,
+        "PIR":0.0,
+        "PTS":0.0
+    },
+    {
+        "PlayerCode":"000796",
+        "PlayerName":"MIROTIC, NIKOLA",
+        "TeamCode":"PAM",
+        "GameCode":75,
+        "GmSc":12.5,
+        "PIR":16.0,
+        "PTS":12.0
+    },
+    {
+        "PlayerCode":"014115",
+        "PlayerName":"MOORE, OMARI",
+        "TeamCode":"PAM",
+        "GameCode":75,
+        "GmSc":-3.7,
+        "PIR":-3.0,
+        "PTS":0.0
+    },
+    {
+        "PlayerCode":"010581",
+        "PlayerName":"OSETKOWSKI, DYLAN",
+        "TeamCode":"PAM",
+        "GameCode":75,
+        "GmSc":2.6,
+        "PIR":2.0,
+        "PTS":4.0
+    },
+    {
+        "PlayerCode":"006643",
+        "PlayerName":"PUERTO, JOSEP",
+        "TeamCode":"PAM",
+        "GameCode":75,
+        "GmSc":-1.0,
+        "PIR":-3.0,
+        "PTS":0.0
+    },
+    {
+        "PlayerCode":"011214",
+        "PlayerName":"RIVERO, JASIEL",
+        "TeamCode":"PAM",
+        "GameCode":75,
+        "GmSc":4.5,
+        "PIR":8.0,
+        "PTS":4.0
+    },
+    {
+        "PlayerCode":"010545",
+        "PlayerName":"SAKO, NEAL",
+        "TeamCode":"PAM",
+        "GameCode":75,
+        "GmSc":10.9,
+        "PIR":16.0,
+        "PTS":9.0
+    },
+    {
+        "PlayerCode":"012608",
+        "PlayerName":"SHORTS, TJ",
+        "TeamCode":"PAM",
+        "GameCode":75,
+        "GmSc":15.8,
+        "PIR":25.0,
+        "PTS":23.0
+    },
+    {
+        "PlayerCode":"011217",
+        "PlayerName":"TAYLOR, KAMERON",
+        "TeamCode":"PAM",
+        "GameCode":75,
+        "GmSc":10.5,
+        "PIR":17.0,
+        "PTS":16.0
+    },
+    {
+        "PlayerCode":"009863",
+        "PlayerName":"BALDWIN IV, WADE",
+        "TeamCode":"ULK",
+        "GameCode":75,
+        "GmSc":17.1,
+        "PIR":23.0,
+        "PTS":19.0
+    },
+    {
+        "PlayerCode":"013506",
+        "PlayerName":"BINGHAM, MARCUS",
+        "TeamCode":"ULK",
+        "GameCode":75,
+        "GmSc":0.9,
+        "PIR":2.0,
+        "PTS":0.0
+    },
+    {
+        "PlayerCode":"004888",
+        "PlayerName":"CLYBURN, WILL",
+        "TeamCode":"ULK",
+        "GameCode":75,
+        "GmSc":13.9,
+        "PIR":18.0,
+        "PTS":15.0
+    },
+    {
+        "PlayerCode":"013367",
+        "PlayerName":"FORREST, TRENT",
+        "TeamCode":"ULK",
+        "GameCode":75,
+        "GmSc":3.8,
+        "PIR":2.0,
+        "PTS":6.0
+    },
+    {
+        "PlayerCode":"014124",
+        "PlayerName":"HORTON TUCKER, TALEN",
+        "TeamCode":"ULK",
+        "GameCode":75,
+        "GmSc":2.6,
+        "PIR":4.0,
+        "PTS":5.0
+    },
+    {
+        "PlayerCode":"014168",
+        "PlayerName":"KEY, BRAXTON",
+        "TeamCode":"ULK",
+        "GameCode":75,
+        "GmSc":-2.1,
+        "PIR":-4.0,
+        "PTS":2.0
+    },
+    {
+        "PlayerCode":"007200",
+        "PlayerName":"LARKIN, SHANE",
+        "TeamCode":"ULK",
+        "GameCode":75,
+        "GmSc":2.2,
+        "PIR":4.0,
+        "PTS":4.0
+    },
+    {
+        "PlayerCode":"002849",
+        "PlayerName":"MELLI, NICOLO",
+        "TeamCode":"ULK",
+        "GameCode":75,
+        "GmSc":4.9,
+        "PIR":11.0,
+        "PTS":5.0
+    },
+    {
+        "PlayerCode":"002968",
+        "PlayerName":"SANLI, SERTAC",
+        "TeamCode":"ULK",
+        "GameCode":75,
+        "GmSc":3.6,
+        "PIR":3.0,
+        "PTS":4.0
+    },
+    {
+        "PlayerCode":"006896",
+        "PlayerName":"SARGIUNAS, IGNAS",
+        "TeamCode":"ULK",
+        "GameCode":75,
+        "GmSc":-2.4,
+        "PIR":-2.0,
+        "PTS":0.0
+    },
+    {
+        "PlayerCode":"007831",
+        "PlayerName":"SHIELDS, SHAVON",
+        "TeamCode":"ULK",
+        "GameCode":75,
+        "GmSc":14.7,
+        "PIR":21.0,
+        "PTS":18.0
+    },
+    {
+        "PlayerCode":"014220",
+        "PlayerName":"SILVA, CHRIS",
+        "TeamCode":"ULK",
+        "GameCode":75,
+        "GmSc":-0.1,
+        "PIR":-2.0,
+        "PTS":0.0
+    },
+    {
+        "PlayerCode":"007527",
+        "PlayerName":"BADIO, BRANCOU",
+        "TeamCode":"PAN",
+        "GameCode":76,
+        "GmSc":0.5,
+        "PIR":2.0,
+        "PTS":1.0
+    },
+    {
+        "PlayerCode":"006760",
+        "PlayerName":"BONGA, ISAAC",
+        "TeamCode":"PAN",
+        "GameCode":76,
+        "GmSc":3.5,
+        "PIR":5.0,
+        "PTS":4.0
+    },
+    {
+        "PlayerCode":"008811",
+        "PlayerName":"FALL, MOUSTAPHA",
+        "TeamCode":"PAN",
+        "GameCode":76,
+        "GmSc":3.7,
+        "PIR":5.0,
+        "PTS":4.0
+    },
+    {
+        "PlayerCode":"007975",
+        "PlayerName":"FRANCISCO, SYLVAIN",
+        "TeamCode":"PAN",
+        "GameCode":76,
+        "GmSc":-1.4,
+        "PIR":-1.0,
+        "PTS":6.0
+    },
+    {
+        "PlayerCode":"011204",
+        "PlayerName":"GRANT, JERIAN",
+        "TeamCode":"PAN",
+        "GameCode":76,
+        "GmSc":1.0,
+        "PIR":1.0,
+        "PTS":2.0
+    },
+    {
+        "PlayerCode":"008962",
+        "PlayerName":"HAYES-DAVIS, NIGEL",
+        "TeamCode":"PAN",
+        "GameCode":76,
+        "GmSc":1.4,
+        "PIR":4.0,
+        "PTS":7.0
+    },
+    {
+        "PlayerCode":"012712",
+        "PlayerName":"HERNANGOMEZ, JUANCHO",
+        "TeamCode":"PAN",
+        "GameCode":76,
+        "GmSc":12.0,
+        "PIR":14.0,
+        "PTS":11.0
+    },
+    {
+        "PlayerCode":"011209",
+        "PlayerName":"KALAITZAKIS, PANAGIOTIS",
+        "TeamCode":"PAN",
+        "GameCode":76,
+        "GmSc":0.0,
+        "PIR":0.0,
+        "PTS":0.0
+    },
+    {
+        "PlayerCode":"003842",
+        "PlayerName":"LESSORT, MATHIAS",
+        "TeamCode":"PAN",
+        "GameCode":76,
+        "GmSc":13.8,
+        "PIR":22.0,
+        "PTS":13.0
+    },
+    {
+        "PlayerCode":"012774",
+        "PlayerName":"NUNN, KENDRICK",
+        "TeamCode":"PAN",
+        "GameCode":76,
+        "GmSc":18.3,
+        "PIR":26.0,
+        "PTS":20.0
+    },
+    {
+        "PlayerCode":"001926",
+        "PlayerName":"SLOUKAS, KOSTAS",
+        "TeamCode":"PAN",
+        "GameCode":76,
+        "GmSc":4.9,
+        "PIR":6.0,
+        "PTS":3.0
+    },
+    {
+        "PlayerCode":"010357",
+        "PlayerName":"YABUSELE, GUERSCHON",
+        "TeamCode":"PAN",
+        "GameCode":76,
+        "GmSc":5.2,
+        "PIR":9.0,
+        "PTS":9.0
+    },
+    {
+        "PlayerCode":"008985",
+        "PlayerName":"BOLMARO, LEANDRO",
+        "TeamCode":"MIL",
+        "GameCode":76,
+        "GmSc":7.8,
+        "PIR":7.0,
+        "PTS":10.0
+    },
+    {
+        "PlayerCode":"007056",
+        "PlayerName":"BOOKER, DEVIN",
+        "TeamCode":"MIL",
+        "GameCode":76,
+        "GmSc":5.7,
+        "PIR":7.0,
+        "PTS":10.0
+    },
+    {
+        "PlayerCode":"014782",
+        "PlayerName":"BURNELL, JASON",
+        "TeamCode":"MIL",
+        "GameCode":76,
+        "GmSc":4.8,
+        "PIR":5.0,
+        "PTS":2.0
+    },
+    {
+        "PlayerCode":"013929",
+        "PlayerName":"COLE, RJ",
+        "TeamCode":"MIL",
+        "GameCode":76,
+        "GmSc":8.3,
+        "PIR":11.0,
+        "PTS":10.0
+    },
+    {
+        "PlayerCode":"013385",
+        "PlayerName":"DIOP, OUSMANE",
+        "TeamCode":"MIL",
+        "GameCode":76,
+        "GmSc":5.8,
+        "PIR":10.0,
+        "PTS":4.0
+    },
+    {
+        "PlayerCode":"004004",
+        "PlayerName":"GUDURIC, MARKO",
+        "TeamCode":"MIL",
+        "GameCode":76,
+        "GmSc":1.3,
+        "PIR":3.0,
+        "PTS":3.0
+    },
+    {
+        "PlayerCode":"011205",
+        "PlayerName":"HALL, DEVON",
+        "TeamCode":"MIL",
+        "GameCode":76,
+        "GmSc":8.6,
+        "PIR":13.0,
+        "PTS":15.0
+    },
+    {
+        "PlayerCode":"014783",
+        "PlayerName":"MATHEWS, GARRISON",
+        "TeamCode":"MIL",
+        "GameCode":76,
+        "GmSc":-0.9,
+        "PIR":-2.0,
+        "PTS":2.0
+    },
+    {
+        "PlayerCode":"001518",
+        "PlayerName":"RICCI, GIAMPAOLO",
+        "TeamCode":"MIL",
+        "GameCode":76,
+        "GmSc":-2.5,
+        "PIR":-3.0,
+        "PTS":0.0
+    },
+    {
+        "PlayerCode":"011078",
+        "PlayerName":"THOMPSON, DARIUS",
+        "TeamCode":"MIL",
+        "GameCode":76,
+        "GmSc":6.7,
+        "PIR":7.0,
+        "PTS":10.0
+    },
+    {
+        "PlayerCode":"006509",
+        "PlayerName":"TONUT, STEFANO",
+        "TeamCode":"MIL",
+        "GameCode":76,
+        "GmSc":0.0,
+        "PIR":0.0,
+        "PTS":0.0
+    },
+    {
+        "PlayerCode":"012878",
+        "PlayerName":"WRIGHT, MOSES",
+        "TeamCode":"MIL",
+        "GameCode":76,
+        "GmSc":3.6,
+        "PIR":7.0,
+        "PTS":9.0
     }
 ]

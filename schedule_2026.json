@@ -1062,7 +1062,7 @@
     "arenaname": "SAP GARDEN",
     "confirmeddate": "true",
     "confirmedtime": "true",
-    "played": "false"
+    "played": "true"
   },
   {
     "gameday": "8",
@@ -1107,7 +1107,7 @@
     "arenaname": "BELGRADE ARENA",
     "confirmeddate": "true",
     "confirmedtime": "true",
-    "played": "false"
+    "played": "true"
   },
   {
     "gameday": "8",
@@ -1137,7 +1137,7 @@
     "arenaname": "ROIG ARENA",
     "confirmeddate": "true",
     "confirmedtime": "true",
-    "played": "false"
+    "played": "true"
   },
   {
     "gameday": "8",
@@ -1152,7 +1152,7 @@
     "arenaname": "COCA-COLA ARENA",
     "confirmeddate": "true",
     "confirmedtime": "true",
-    "played": "false"
+    "played": "true"
   },
   {
     "gameday": "8",
@@ -1167,7 +1167,7 @@
     "arenaname": "TELEKOM CENTER ATHENS",
     "confirmeddate": "true",
     "confirmedtime": "true",
-    "played": "false"
+    "played": "true"
   },
   {
     "gameday": "8",
@@ -1197,7 +1197,7 @@
     "arenaname": "BUESA ARENA",
     "confirmeddate": "true",
     "confirmedtime": "true",
-    "played": "false"
+    "played": "true"
   },
   {
     "gameday": "9",
