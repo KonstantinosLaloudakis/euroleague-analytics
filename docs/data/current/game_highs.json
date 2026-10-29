@@ -1,11 +1,11 @@
 {
- "generated": "2026-10-28",
+ "generated": "2026-10-29",
  "seasons": [
   2007,
   2026
  ],
  "current_season": 2026,
- "games_scanned": 5103,
+ "games_scanned": 5107,
  "points": [
   {
    "rank": 1,
@@ -2280,6 +2280,32 @@
    "tied": true,
    "season": 2026,
    "phase": "RS",
+   "round": 8,
+   "gamecode": 77,
+   "player": "013402",
+   "player_name": "BLAKENEY, ANTONIO",
+   "team": "HTA",
+   "opp": "IST",
+   "home": true,
+   "won": true,
+   "final": "118-88",
+   "ot": false,
+   "line": {
+    "points": 35,
+    "rebounds": 3,
+    "assists": 1,
+    "threes": 8,
+    "pir": 36
+   },
+   "value": 8,
+   "season_label": "2026-27",
+   "has_replay": true
+  },
+  {
+   "rank": 13,
+   "tied": true,
+   "season": 2026,
+   "phase": "RS",
    "round": 6,
    "gamecode": 53,
    "player": "011247",
@@ -2582,32 +2608,6 @@
     "assists": 9,
     "threes": 8,
     "pir": 31
-   },
-   "value": 8,
-   "season_label": "2023-24",
-   "has_replay": true
-  },
-  {
-   "rank": 13,
-   "tied": true,
-   "season": 2023,
-   "phase": "RS",
-   "round": 9,
-   "gamecode": 78,
-   "player": "011948",
-   "player_name": "HOWARD, MARKUS",
-   "team": "BAS",
-   "opp": "ASV",
-   "home": false,
-   "won": true,
-   "final": "88-81",
-   "ot": false,
-   "line": {
-    "points": 35,
-    "rebounds": 2,
-    "assists": 1,
-    "threes": 8,
-    "pir": 25
    },
    "value": 8,
    "season_label": "2023-24",
