@@ -1153,8 +1153,16 @@
         "points_for": 773
       },
       {
-        "code": "ULK",
+        "code": "HTA",
         "position": 3,
+        "wins": 6,
+        "losses": 2,
+        "points_diff": 59,
+        "points_for": 748
+      },
+      {
+        "code": "ULK",
+        "position": 4,
         "wins": 6,
         "losses": 2,
         "points_diff": 49,
@@ -1162,19 +1170,11 @@
       },
       {
         "code": "OLY",
-        "position": 4,
-        "wins": 5,
-        "losses": 2,
-        "points_diff": 37,
-        "points_for": 625
-      },
-      {
-        "code": "HTA",
         "position": 5,
-        "wins": 5,
+        "wins": 6,
         "losses": 2,
-        "points_diff": 29,
-        "points_for": 630
+        "points_diff": 45,
+        "points_for": 706
       },
       {
         "code": "MAD",
@@ -1209,52 +1209,52 @@
         "points_for": 690
       },
       {
-        "code": "VIR",
+        "code": "ZAL",
         "position": 10,
         "wins": 4,
-        "losses": 3,
-        "points_diff": -2,
-        "points_for": 606
+        "losses": 4,
+        "points_diff": 10,
+        "points_for": 686
       },
       {
         "code": "PAR",
         "position": 11,
         "wins": 4,
-        "losses": 3,
-        "points_diff": -5,
-        "points_for": 541
+        "losses": 4,
+        "points_diff": -12,
+        "points_for": 616
       },
       {
-        "code": "ZAL",
+        "code": "VIR",
         "position": 12,
-        "wins": 3,
+        "wins": 4,
         "losses": 4,
-        "points_diff": -7,
-        "points_for": 595
-      },
-      {
-        "code": "IST",
-        "position": 13,
-        "wins": 3,
-        "losses": 4,
-        "points_diff": -9,
-        "points_for": 581
+        "points_diff": -19,
+        "points_for": 680
       },
       {
         "code": "BES",
+        "position": 13,
+        "wins": 3,
+        "losses": 5,
+        "points_diff": -18,
+        "points_for": 707
+      },
+      {
+        "code": "IST",
         "position": 14,
         "wins": 3,
-        "losses": 4,
-        "points_diff": -10,
-        "points_for": 634
+        "losses": 5,
+        "points_diff": -39,
+        "points_for": 669
       },
       {
         "code": "ASV",
         "position": 15,
-        "wins": 2,
+        "wins": 3,
         "losses": 5,
-        "points_diff": -65,
-        "points_for": 612
+        "points_diff": -58,
+        "points_for": 694
       },
       {
         "code": "PRS",
