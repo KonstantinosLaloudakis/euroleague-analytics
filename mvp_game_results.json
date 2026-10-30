@@ -638,5 +638,29 @@
         "LocalScore":74.0,
         "RoadScore":91.0,
         "Winner":"ZAL"
+    },
+    {
+        "GameCode":81,
+        "LocalTeam":"RED",
+        "RoadTeam":"MUN",
+        "LocalScore":103.0,
+        "RoadScore":73.0,
+        "Winner":"RED"
+    },
+    {
+        "GameCode":82,
+        "LocalTeam":"TEL",
+        "RoadTeam":"PRS",
+        "LocalScore":94.0,
+        "RoadScore":99.0,
+        "Winner":"PRS"
+    },
+    {
+        "GameCode":83,
+        "LocalTeam":"MAD",
+        "RoadTeam":"ULK",
+        "LocalScore":95.0,
+        "RoadScore":76.0,
+        "Winner":"MAD"
     }
 ]

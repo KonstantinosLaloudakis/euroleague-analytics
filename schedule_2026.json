@@ -1302,7 +1302,7 @@
     "arenaname": "ALEKSANDAR NIKOLIC HALL",
     "confirmeddate": "true",
     "confirmedtime": "true",
-    "played": "false"
+    "played": "true"
   },
   {
     "gameday": "9",
@@ -1317,7 +1317,7 @@
     "arenaname": "MOVISTAR ARENA",
     "confirmeddate": "true",
     "confirmedtime": "true",
-    "played": "false"
+    "played": "true"
   },
   {
     "gameday": "9",
@@ -1347,7 +1347,7 @@
     "arenaname": "BELGRADE ARENA",
     "confirmeddate": "true",
     "confirmedtime": "true",
-    "played": "false"
+    "played": "true"
   },
   {
     "gameday": "10",
@@ -1428,7 +1428,7 @@
     "gameday": "10",
     "round": "RS",
     "date": "Nov 05, 2026",
-    "startime": "19:00",
+    "startime": "19:45",
     "gamecode": "E2026_93",
     "hometeam": "HAPOEL IBI TEL AVIV",
     "homecode": "HTA",
@@ -2118,7 +2118,7 @@
     "gameday": "15",
     "round": "RS",
     "date": "Dec 03, 2026",
-    "startime": "19:00",
+    "startime": "19:45",
     "gamecode": "E2026_141",
     "hometeam": "HAPOEL IBI TEL AVIV",
     "homecode": "HTA",
@@ -2207,8 +2207,8 @@
   {
     "gameday": "15",
     "round": "RS",
-    "date": "Dec 04, 2026",
-    "startime": "20:30",
+    "date": "Dec 03, 2026",
+    "startime": "21:00",
     "gamecode": "E2026_149",
     "hometeam": "VIRTUS BOLOGNA",
     "homecode": "VIR",
@@ -2808,7 +2808,7 @@
     "gameday": "19",
     "round": "RS",
     "date": "Dec 22, 2026",
-    "startime": "19:00",
+    "startime": "19:45",
     "gamecode": "E2026_182",
     "hometeam": "HAPOEL IBI TEL AVIV",
     "homecode": "HTA",
@@ -3333,7 +3333,7 @@
     "gameday": "23",
     "round": "RS",
     "date": "Jan 14, 2027",
-    "startime": "19:00",
+    "startime": "19:45",
     "gamecode": "E2026_221",
     "hometeam": "HAPOEL IBI TEL AVIV",
     "homecode": "HTA",
@@ -4128,7 +4128,7 @@
     "gameday": "28",
     "round": "RS",
     "date": "Feb 10, 2027",
-    "startime": "19:00",
+    "startime": "19:45",
     "gamecode": "E2026_271",
     "hometeam": "HAPOEL IBI TEL AVIV",
     "homecode": "HTA",

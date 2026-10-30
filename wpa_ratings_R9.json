@@ -1,0 +1,1703 @@
+[
+    {
+        "Player":"VEZENKOV, SASHA",
+        "Team":"OLY",
+        "Action_WPA":370.9612907974,
+        "Plays":266,
+        "WPA_Rank":1
+    },
+    {
+        "Player":"HIFI, NADIR",
+        "Team":"PRS",
+        "Action_WPA":347.821236428,
+        "Plays":328,
+        "WPA_Rank":2
+    },
+    {
+        "Player":"JONES, CARLIK",
+        "Team":"PAR",
+        "Action_WPA":338.7498960891,
+        "Plays":319,
+        "WPA_Rank":3
+    },
+    {
+        "Player":"ETIENNE, TYSON",
+        "Team":"PRS",
+        "Action_WPA":336.4852613562,
+        "Plays":287,
+        "WPA_Rank":4
+    },
+    {
+        "Player":"SHORTS, TJ",
+        "Team":"PAM",
+        "Action_WPA":317.9790206054,
+        "Plays":367,
+        "WPA_Rank":5
+    },
+    {
+        "Player":"CARR, MARCUS",
+        "Team":"VIR",
+        "Action_WPA":315.3390502581,
+        "Plays":322,
+        "WPA_Rank":6
+    },
+    {
+        "Player":"BACON, DWAYNE",
+        "Team":"DUB",
+        "Action_WPA":313.3175734497,
+        "Plays":275,
+        "WPA_Rank":7
+    },
+    {
+        "Player":"PUNTER, KEVIN",
+        "Team":"BAR",
+        "Action_WPA":305.0435463003,
+        "Plays":288,
+        "WPA_Rank":8
+    },
+    {
+        "Player":"EDWARDS, CARSEN",
+        "Team":"ZAL",
+        "Action_WPA":293.3302357532,
+        "Plays":267,
+        "WPA_Rank":9
+    },
+    {
+        "Player":"MONTERO, JEAN",
+        "Team":"OLY",
+        "Action_WPA":290.381981263,
+        "Plays":223,
+        "WPA_Rank":10
+    },
+    {
+        "Player":"NWORA, JORDAN",
+        "Team":"RED",
+        "Action_WPA":287.0302571694,
+        "Plays":302,
+        "WPA_Rank":11
+    },
+    {
+        "Player":"NDIAYE, MBAYE",
+        "Team":"OLY",
+        "Action_WPA":281.8332054962,
+        "Plays":187,
+        "WPA_Rank":12
+    },
+    {
+        "Player":"MOORE, WENDELL",
+        "Team":"VIR",
+        "Action_WPA":272.9107306836,
+        "Plays":253,
+        "WPA_Rank":13
+    },
+    {
+        "Player":"DIARRA, ALIOU",
+        "Team":"VIR",
+        "Action_WPA":270.0118828644,
+        "Plays":285,
+        "WPA_Rank":14
+    },
+    {
+        "Player":"WILBEKIN, SCOTTIE",
+        "Team":"BES",
+        "Action_WPA":267.9418292557,
+        "Plays":271,
+        "WPA_Rank":15
+    },
+    {
+        "Player":"ALSTON JR., DERRICK",
+        "Team":"VIR",
+        "Action_WPA":266.8111965959,
+        "Plays":252,
+        "WPA_Rank":16
+    },
+    {
+        "Player":"MALEDON, THEO",
+        "Team":"MAD",
+        "Action_WPA":265.1490103575,
+        "Plays":414,
+        "WPA_Rank":17
+    },
+    {
+        "Player":"BLAKENEY, ANTONIO",
+        "Team":"HTA",
+        "Action_WPA":257.2191326187,
+        "Plays":219,
+        "WPA_Rank":18
+    },
+    {
+        "Player":"SHIELDS, SHAVON",
+        "Team":"ULK",
+        "Action_WPA":254.075073838,
+        "Plays":266,
+        "WPA_Rank":19
+    },
+    {
+        "Player":"CLARK III, JIMMY",
+        "Team":"TEL",
+        "Action_WPA":252.055962999,
+        "Plays":325,
+        "WPA_Rank":20
+    },
+    {
+        "Player":"FELIZ, ANDRES",
+        "Team":"MAD",
+        "Action_WPA":245.4878498004,
+        "Plays":293,
+        "WPA_Rank":21
+    },
+    {
+        "Player":"MADAR, YAM",
+        "Team":"TEL",
+        "Action_WPA":244.7761828232,
+        "Plays":311,
+        "WPA_Rank":22
+    },
+    {
+        "Player":"ROBINSON, JUSTIN",
+        "Team":"BAR",
+        "Action_WPA":243.7677628114,
+        "Plays":281,
+        "WPA_Rank":23
+    },
+    {
+        "Player":"KABENGELE, MFIONDU",
+        "Team":"DUB",
+        "Action_WPA":243.5942848471,
+        "Plays":302,
+        "WPA_Rank":24
+    },
+    {
+        "Player":"HALL, DEVON",
+        "Team":"MIL",
+        "Action_WPA":239.0225141385,
+        "Plays":235,
+        "WPA_Rank":25
+    },
+    {
+        "Player":"CROWDER, JAE",
+        "Team":"ASV",
+        "Action_WPA":229.1702229201,
+        "Plays":254,
+        "WPA_Rank":26
+    },
+    {
+        "Player":"WRIGHT, MOSES",
+        "Team":"MIL",
+        "Action_WPA":222.0549615028,
+        "Plays":250,
+        "WPA_Rank":27
+    },
+    {
+        "Player":"JONES, CHRIS",
+        "Team":"RED",
+        "Action_WPA":219.5109237499,
+        "Plays":249,
+        "WPA_Rank":28
+    },
+    {
+        "Player":"MIROTIC, NIKOLA",
+        "Team":"PAM",
+        "Action_WPA":218.6215626869,
+        "Plays":251,
+        "WPA_Rank":29
+    },
+    {
+        "Player":"FOURNIER, EVAN",
+        "Team":"OLY",
+        "Action_WPA":218.4757458873,
+        "Plays":187,
+        "WPA_Rank":30
+    },
+    {
+        "Player":"BROWN, STERLING",
+        "Team":"ZAL",
+        "Action_WPA":218.463122412,
+        "Plays":188,
+        "WPA_Rank":31
+    },
+    {
+        "Player":"GIBSON, UMOJA",
+        "Team":"BAR",
+        "Action_WPA":216.1988795544,
+        "Plays":207,
+        "WPA_Rank":32
+    },
+    {
+        "Player":"BRYANT, ELIJAH",
+        "Team":"HTA",
+        "Action_WPA":213.3196540617,
+        "Plays":338,
+        "WPA_Rank":33
+    },
+    {
+        "Player":"SARIC, DARIO",
+        "Team":"IST",
+        "Action_WPA":212.5084851208,
+        "Plays":275,
+        "WPA_Rank":34
+    },
+    {
+        "Player":"MICIC, VASILIJE",
+        "Team":"HTA",
+        "Action_WPA":210.6753542528,
+        "Plays":279,
+        "WPA_Rank":35
+    },
+    {
+        "Player":"MONEKE, CHIMA",
+        "Team":"RED",
+        "Action_WPA":205.7524144803,
+        "Plays":262,
+        "WPA_Rank":36
+    },
+    {
+        "Player":"HERRERA, SEBASTIAN",
+        "Team":"PRS",
+        "Action_WPA":205.4194344156,
+        "Plays":256,
+        "WPA_Rank":37
+    },
+    {
+        "Player":"VALANCIUNAS, JONAS",
+        "Team":"ZAL",
+        "Action_WPA":203.8722538443,
+        "Plays":320,
+        "WPA_Rank":38
+    },
+    {
+        "Player":"GRIGONIS, MARIUS",
+        "Team":"ZAL",
+        "Action_WPA":201.7198250536,
+        "Plays":181,
+        "WPA_Rank":39
+    },
+    {
+        "Player":"BESSON, HUGO",
+        "Team":"ASV",
+        "Action_WPA":200.1363992933,
+        "Plays":240,
+        "WPA_Rank":40
+    },
+    {
+        "Player":"COLSON, BONZIE",
+        "Team":"TEL",
+        "Action_WPA":199.6520515053,
+        "Plays":202,
+        "WPA_Rank":41
+    },
+    {
+        "Player":"WRIGHT IV, MCKINLEY",
+        "Team":"DUB",
+        "Action_WPA":197.5781068226,
+        "Plays":220,
+        "WPA_Rank":42
+    },
+    {
+        "Player":"MILLS, PATTY",
+        "Team":"ASV",
+        "Action_WPA":195.0069505412,
+        "Plays":201,
+        "WPA_Rank":43
+    },
+    {
+        "Player":"BALDWIN IV, WADE",
+        "Team":"ULK",
+        "Action_WPA":191.5714280981,
+        "Plays":324,
+        "WPA_Rank":44
+    },
+    {
+        "Player":"MORGAN, CONOR",
+        "Team":"BES",
+        "Action_WPA":191.2136145897,
+        "Plays":183,
+        "WPA_Rank":45
+    },
+    {
+        "Player":"FRAZIER, TRENT",
+        "Team":"VIR",
+        "Action_WPA":189.8398393469,
+        "Plays":233,
+        "WPA_Rank":46
+    },
+    {
+        "Player":"BROOKS, ARMONI",
+        "Team":"PAM",
+        "Action_WPA":189.6960876775,
+        "Plays":270,
+        "WPA_Rank":47
+    },
+    {
+        "Player":"TAYLOR, KAMERON",
+        "Team":"PAM",
+        "Action_WPA":187.7618474796,
+        "Plays":256,
+        "WPA_Rank":48
+    },
+    {
+        "Player":"TUBELIS, AZUOLAS",
+        "Team":"ZAL",
+        "Action_WPA":187.2434276237,
+        "Plays":264,
+        "WPA_Rank":49
+    },
+    {
+        "Player":"THIEMANN, JOHANNES",
+        "Team":"MUN",
+        "Action_WPA":186.3775904779,
+        "Plays":258,
+        "WPA_Rank":50
+    },
+    {
+        "Player":"LEDAY, ZACH",
+        "Team":"HTA",
+        "Action_WPA":183.4575406399,
+        "Plays":234,
+        "WPA_Rank":51
+    },
+    {
+        "Player":"STRAZEL, MATTHEW",
+        "Team":"IST",
+        "Action_WPA":180.7151656079,
+        "Plays":261,
+        "WPA_Rank":52
+    },
+    {
+        "Player":"HOARD, JAYLEN",
+        "Team":"TEL",
+        "Action_WPA":178.8439708652,
+        "Plays":242,
+        "WPA_Rank":53
+    },
+    {
+        "Player":"TAVARES, WALTER",
+        "Team":"MAD",
+        "Action_WPA":178.183477462,
+        "Plays":296,
+        "WPA_Rank":54
+    },
+    {
+        "Player":"COLE, RJ",
+        "Team":"MIL",
+        "Action_WPA":177.9826972673,
+        "Plays":203,
+        "WPA_Rank":55
+    },
+    {
+        "Player":"SORKIN, ROMAN",
+        "Team":"TEL",
+        "Action_WPA":175.7308330706,
+        "Plays":241,
+        "WPA_Rank":56
+    },
+    {
+        "Player":"FRANCISCO, SYLVAIN",
+        "Team":"PAN",
+        "Action_WPA":175.3711199146,
+        "Plays":311,
+        "WPA_Rank":57
+    },
+    {
+        "Player":"OJELEYE, SEMI",
+        "Team":"RED",
+        "Action_WPA":172.8771056168,
+        "Plays":284,
+        "WPA_Rank":58
+    },
+    {
+        "Player":"OKOBO, ELIE",
+        "Team":"DUB",
+        "Action_WPA":172.522229591,
+        "Plays":249,
+        "WPA_Rank":59
+    },
+    {
+        "Player":"CAMPAZZO, FACUNDO",
+        "Team":"MAD",
+        "Action_WPA":171.8296381508,
+        "Plays":298,
+        "WPA_Rank":60
+    },
+    {
+        "Player":"BAUGH, DAMION",
+        "Team":"BAS",
+        "Action_WPA":169.2321768772,
+        "Plays":243,
+        "WPA_Rank":61
+    },
+    {
+        "Player":"RHODEN, JARED",
+        "Team":"PRS",
+        "Action_WPA":168.7618742685,
+        "Plays":277,
+        "WPA_Rank":62
+    },
+    {
+        "Player":"VILDOZA, LUCA",
+        "Team":"PAR",
+        "Action_WPA":166.9810258899,
+        "Plays":199,
+        "WPA_Rank":63
+    },
+    {
+        "Player":"LESSORT, MATHIAS",
+        "Team":"PAN",
+        "Action_WPA":164.9550396994,
+        "Plays":317,
+        "WPA_Rank":64
+    },
+    {
+        "Player":"HORTON TUCKER, TALEN",
+        "Team":"ULK",
+        "Action_WPA":163.7924709349,
+        "Plays":289,
+        "WPA_Rank":65
+    },
+    {
+        "Player":"LAWSON, A.J.",
+        "Team":"BAS",
+        "Action_WPA":162.570463142,
+        "Plays":264,
+        "WPA_Rank":66
+    },
+    {
+        "Player":"BROWN, ANTHONY",
+        "Team":"BES",
+        "Action_WPA":160.2881729718,
+        "Plays":187,
+        "WPA_Rank":67
+    },
+    {
+        "Player":"BALCEROWSKI, OLEK",
+        "Team":"BAR",
+        "Action_WPA":159.7165609098,
+        "Plays":207,
+        "WPA_Rank":68
+    },
+    {
+        "Player":"WARD, TYSON",
+        "Team":"OLY",
+        "Action_WPA":158.90126422,
+        "Plays":199,
+        "WPA_Rank":69
+    },
+    {
+        "Player":"BOLMARO, LEANDRO",
+        "Team":"MIL",
+        "Action_WPA":158.6059421976,
+        "Plays":240,
+        "WPA_Rank":70
+    },
+    {
+        "Player":"BRISSETT, O'SHAE J",
+        "Team":"TEL",
+        "Action_WPA":158.6052113322,
+        "Plays":245,
+        "WPA_Rank":71
+    },
+    {
+        "Player":"HAYES, KEVARRIUS",
+        "Team":"PAR",
+        "Action_WPA":155.8596982256,
+        "Plays":239,
+        "WPA_Rank":72
+    },
+    {
+        "Player":"CARTER, TYSON",
+        "Team":"RED",
+        "Action_WPA":154.7569150816,
+        "Plays":195,
+        "WPA_Rank":73
+    },
+    {
+        "Player":"DUARTE, CHRIS",
+        "Team":"BAS",
+        "Action_WPA":152.6461709295,
+        "Plays":206,
+        "WPA_Rank":74
+    },
+    {
+        "Player":"CLYBURN, WILL",
+        "Team":"ULK",
+        "Action_WPA":152.6276881305,
+        "Plays":245,
+        "WPA_Rank":75
+    },
+    {
+        "Player":"OBST, ANDREAS",
+        "Team":"MUN",
+        "Action_WPA":152.3348212854,
+        "Plays":215,
+        "WPA_Rank":76
+    },
+    {
+        "Player":"NOWELL, JAYLEN",
+        "Team":"BES",
+        "Action_WPA":151.0750911893,
+        "Plays":270,
+        "WPA_Rank":77
+    },
+    {
+        "Player":"WATERS, TREMONT",
+        "Team":"ASV",
+        "Action_WPA":150.0611778642,
+        "Plays":223,
+        "WPA_Rank":78
+    },
+    {
+        "Player":"BUTLER, JARED",
+        "Team":"RED",
+        "Action_WPA":148.8483276455,
+        "Plays":233,
+        "WPA_Rank":79
+    },
+    {
+        "Player":"OTURU, DAN",
+        "Team":"HTA",
+        "Action_WPA":147.8704794519,
+        "Plays":256,
+        "WPA_Rank":80
+    },
+    {
+        "Player":"LUWAWU-CABARROT, TIMOTHE",
+        "Team":"MAD",
+        "Action_WPA":147.678074149,
+        "Plays":234,
+        "WPA_Rank":81
+    },
+    {
+        "Player":"DOTSON, DEVON",
+        "Team":"BES",
+        "Action_WPA":147.3726209397,
+        "Plays":213,
+        "WPA_Rank":82
+    },
+    {
+        "Player":"KEY, BRAXTON",
+        "Team":"ULK",
+        "Action_WPA":147.02746657,
+        "Plays":257,
+        "WPA_Rank":83
+    },
+    {
+        "Player":"YABUSELE, GUERSCHON",
+        "Team":"PAN",
+        "Action_WPA":143.1281203141,
+        "Plays":203,
+        "WPA_Rank":84
+    },
+    {
+        "Player":"REUVERS, NATHAN",
+        "Team":"PAM",
+        "Action_WPA":143.1040286581,
+        "Plays":193,
+        "WPA_Rank":85
+    },
+    {
+        "Player":"MALCOLM, COLLIN",
+        "Team":"IST",
+        "Action_WPA":141.677093401,
+        "Plays":192,
+        "WPA_Rank":86
+    },
+    {
+        "Player":"BOLOMBOY, JOEL",
+        "Team":"ASV",
+        "Action_WPA":139.077527145,
+        "Plays":183,
+        "WPA_Rank":87
+    },
+    {
+        "Player":"WASHINGTON, DUANE",
+        "Team":"MUN",
+        "Action_WPA":134.937396124,
+        "Plays":265,
+        "WPA_Rank":88
+    },
+    {
+        "Player":"JOKUBAITIS, ROKAS",
+        "Team":"MUN",
+        "Action_WPA":134.7925800569,
+        "Plays":205,
+        "WPA_Rank":89
+    },
+    {
+        "Player":"NEBO, JOSH",
+        "Team":"BAR",
+        "Action_WPA":134.7366165279,
+        "Plays":153,
+        "WPA_Rank":90
+    },
+    {
+        "Player":"PETERS, ALEC",
+        "Team":"MIL",
+        "Action_WPA":130.3977457534,
+        "Plays":180,
+        "WPA_Rank":91
+    },
+    {
+        "Player":"BEAUCHAMP, MARJON",
+        "Team":"MUN",
+        "Action_WPA":130.3628884456,
+        "Plays":168,
+        "WPA_Rank":92
+    },
+    {
+        "Player":"GACH, BOTH",
+        "Team":"ASV",
+        "Action_WPA":129.3020505753,
+        "Plays":163,
+        "WPA_Rank":93
+    },
+    {
+        "Player":"STEVENS, LAMAR",
+        "Team":"PAR",
+        "Action_WPA":127.0424815217,
+        "Plays":165,
+        "WPA_Rank":94
+    },
+    {
+        "Player":"JANTUNEN, MIKAEL",
+        "Team":"MAD",
+        "Action_WPA":126.6228238287,
+        "Plays":207,
+        "WPA_Rank":95
+    },
+    {
+        "Player":"OMORUYI, EUGENE",
+        "Team":"BES",
+        "Action_WPA":125.9908240891,
+        "Plays":255,
+        "WPA_Rank":96
+    },
+    {
+        "Player":"DA SILVA, OSCAR",
+        "Team":"MUN",
+        "Action_WPA":124.9810065041,
+        "Plays":145,
+        "WPA_Rank":97
+    },
+    {
+        "Player":"SESTINA, NATHAN",
+        "Team":"ASV",
+        "Action_WPA":124.6528882172,
+        "Plays":156,
+        "WPA_Rank":98
+    },
+    {
+        "Player":"FAYE, MOUHAMED",
+        "Team":"PRS",
+        "Action_WPA":124.6304587194,
+        "Plays":219,
+        "WPA_Rank":99
+    },
+    {
+        "Player":"GUDURIC, MARKO",
+        "Team":"MIL",
+        "Action_WPA":121.4155061955,
+        "Plays":165,
+        "WPA_Rank":100
+    },
+    {
+        "Player":"HAYES-DAVIS, NIGEL",
+        "Team":"PAN",
+        "Action_WPA":117.0196289103,
+        "Plays":180,
+        "WPA_Rank":101
+    },
+    {
+        "Player":"MILLER-MCINTYRE, CODI",
+        "Team":"OLY",
+        "Action_WPA":116.1497652836,
+        "Plays":198,
+        "WPA_Rank":102
+    },
+    {
+        "Player":"DORSEY, TYLER",
+        "Team":"OLY",
+        "Action_WPA":115.8993448252,
+        "Plays":118,
+        "WPA_Rank":103
+    },
+    {
+        "Player":"BRIZUELA, DARIO",
+        "Team":"BAR",
+        "Action_WPA":114.8127191117,
+        "Plays":161,
+        "WPA_Rank":104
+    },
+    {
+        "Player":"SEDEKERSKIS, TADAS",
+        "Team":"BAS",
+        "Action_WPA":114.290601044,
+        "Plays":153,
+        "WPA_Rank":105
+    },
+    {
+        "Player":"SAKO, NEAL",
+        "Team":"PAM",
+        "Action_WPA":114.215813041,
+        "Plays":213,
+        "WPA_Rank":106
+    },
+    {
+        "Player":"MARTIN, TYRESE",
+        "Team":"BAR",
+        "Action_WPA":113.7082051282,
+        "Plays":219,
+        "WPA_Rank":107
+    },
+    {
+        "Player":"JONES, DAMIAN",
+        "Team":"MAD",
+        "Action_WPA":113.6566279279,
+        "Plays":157,
+        "WPA_Rank":108
+    },
+    {
+        "Player":"OSMANI, ERCAN",
+        "Team":"IST",
+        "Action_WPA":113.2356926705,
+        "Plays":127,
+        "WPA_Rank":109
+    },
+    {
+        "Player":"WARREN, TJ",
+        "Team":"PRS",
+        "Action_WPA":113.0737732513,
+        "Plays":147,
+        "WPA_Rank":110
+    },
+    {
+        "Player":"LUNDBERG, IFFE",
+        "Team":"TEL",
+        "Action_WPA":112.8787664114,
+        "Plays":172,
+        "WPA_Rank":111
+    },
+    {
+        "Player":"JONES, TYRIQUE",
+        "Team":"OLY",
+        "Action_WPA":111.8651383458,
+        "Plays":164,
+        "WPA_Rank":112
+    },
+    {
+        "Player":"JEKIRI, TONYE",
+        "Team":"PAR",
+        "Action_WPA":110.7237006674,
+        "Plays":156,
+        "WPA_Rank":113
+    },
+    {
+        "Player":"JAMES, MIKE",
+        "Team":"IST",
+        "Action_WPA":110.0148406251,
+        "Plays":115,
+        "WPA_Rank":114
+    },
+    {
+        "Player":"PARRA, JOEL",
+        "Team":"BAR",
+        "Action_WPA":109.3693218691,
+        "Plays":201,
+        "WPA_Rank":115
+    },
+    {
+        "Player":"STEWART, DJ",
+        "Team":"BAS",
+        "Action_WPA":108.4678885408,
+        "Plays":208,
+        "WPA_Rank":116
+    },
+    {
+        "Player":"OKEKE, CHUMA",
+        "Team":"MAD",
+        "Action_WPA":107.9262897935,
+        "Plays":151,
+        "WPA_Rank":117
+    },
+    {
+        "Player":"PAYNE, CAMERON",
+        "Team":"IST",
+        "Action_WPA":106.8025682872,
+        "Plays":161,
+        "WPA_Rank":118
+    },
+    {
+        "Player":"BOOKER, DEVIN",
+        "Team":"MIL",
+        "Action_WPA":106.7629297481,
+        "Plays":203,
+        "WPA_Rank":119
+    },
+    {
+        "Player":"EDWARDS, KESSLER",
+        "Team":"VIR",
+        "Action_WPA":103.1905259199,
+        "Plays":193,
+        "WPA_Rank":120
+    },
+    {
+        "Player":"ZIZIC, ANTE",
+        "Team":"BES",
+        "Action_WPA":102.7202672331,
+        "Plays":204,
+        "WPA_Rank":121
+    },
+    {
+        "Player":"THOMPSON, ETHAN",
+        "Team":"PAR",
+        "Action_WPA":102.6288736049,
+        "Plays":172,
+        "WPA_Rank":122
+    },
+    {
+        "Player":"FERNANDO, BRUNO",
+        "Team":"IST",
+        "Action_WPA":101.2793412773,
+        "Plays":194,
+        "WPA_Rank":123
+    },
+    {
+        "Player":"SANTOS, MARCIO",
+        "Team":"BAS",
+        "Action_WPA":100.8005680008,
+        "Plays":167,
+        "WPA_Rank":124
+    },
+    {
+        "Player":"BLOSSOMGAME, JARON",
+        "Team":"DUB",
+        "Action_WPA":99.4695279494,
+        "Plays":135,
+        "WPA_Rank":125
+    },
+    {
+        "Player":"FARIED, KENNETH",
+        "Team":"BAS",
+        "Action_WPA":97.7828243424,
+        "Plays":252,
+        "WPA_Rank":126
+    },
+    {
+        "Player":"MATHEWS, GARRISON",
+        "Team":"MIL",
+        "Action_WPA":97.7810163088,
+        "Plays":161,
+        "WPA_Rank":127
+    },
+    {
+        "Player":"KLINTMAN, BO",
+        "Team":"VIR",
+        "Action_WPA":97.7065153541,
+        "Plays":186,
+        "WPA_Rank":128
+    },
+    {
+        "Player":"ULANOVAS, EDGARAS",
+        "Team":"ZAL",
+        "Action_WPA":96.6895104609,
+        "Plays":152,
+        "WPA_Rank":129
+    },
+    {
+        "Player":"TANASKOVIC, NIKOLA",
+        "Team":"PAR",
+        "Action_WPA":96.2769505085,
+        "Plays":174,
+        "WPA_Rank":130
+    },
+    {
+        "Player":"PETRUSEV, FILIP",
+        "Team":"DUB",
+        "Action_WPA":95.4118379942,
+        "Plays":126,
+        "WPA_Rank":131
+    },
+    {
+        "Player":"UMUDE, STANLEY",
+        "Team":"BAR",
+        "Action_WPA":94.0136173353,
+        "Plays":159,
+        "WPA_Rank":132
+    },
+    {
+        "Player":"THEIS, DANIEL",
+        "Team":"TEL",
+        "Action_WPA":93.4763146642,
+        "Plays":172,
+        "WPA_Rank":133
+    },
+    {
+        "Player":"NUNN, KENDRICK",
+        "Team":"PAN",
+        "Action_WPA":93.2827233439,
+        "Plays":75,
+        "WPA_Rank":134
+    },
+    {
+        "Player":"ODIASE, TAI",
+        "Team":"HTA",
+        "Action_WPA":92.7502095646,
+        "Plays":139,
+        "WPA_Rank":135
+    },
+    {
+        "Player":"SMITH JR, NICK",
+        "Team":"MAD",
+        "Action_WPA":92.6586158557,
+        "Plays":135,
+        "WPA_Rank":136
+    },
+    {
+        "Player":"GABRIEL, WENYEN",
+        "Team":"BES",
+        "Action_WPA":92.1575482547,
+        "Plays":168,
+        "WPA_Rank":137
+    },
+    {
+        "Player":"KRAMER, DAVID",
+        "Team":"RED",
+        "Action_WPA":90.8703464127,
+        "Plays":137,
+        "WPA_Rank":138
+    },
+    {
+        "Player":"THOMPSON, DARIUS",
+        "Team":"MIL",
+        "Action_WPA":90.2896541792,
+        "Plays":155,
+        "WPA_Rank":139
+    },
+    {
+        "Player":"LUCIC, VLADIMIR",
+        "Team":"MUN",
+        "Action_WPA":89.6449490513,
+        "Plays":150,
+        "WPA_Rank":140
+    },
+    {
+        "Player":"BURNELL, JASON",
+        "Team":"MIL",
+        "Action_WPA":88.3944079779,
+        "Plays":151,
+        "WPA_Rank":141
+    },
+    {
+        "Player":"BONGA, ISAAC",
+        "Team":"PAN",
+        "Action_WPA":87.9555966835,
+        "Plays":102,
+        "WPA_Rank":142
+    },
+    {
+        "Player":"BELLO, RASHEED",
+        "Team":"VIR",
+        "Action_WPA":87.4290668477,
+        "Plays":179,
+        "WPA_Rank":143
+    },
+    {
+        "Player":"MITOGLOU, KONSTANTINOS",
+        "Team":"PAN",
+        "Action_WPA":85.0931176618,
+        "Plays":140,
+        "WPA_Rank":144
+    },
+    {
+        "Player":"IZUNDU, EBUKA",
+        "Team":"RED",
+        "Action_WPA":84.2943370193,
+        "Plays":163,
+        "WPA_Rank":145
+    },
+    {
+        "Player":"PAJOLA, ALESSANDRO",
+        "Team":"PAR",
+        "Action_WPA":83.6514267682,
+        "Plays":221,
+        "WPA_Rank":146
+    },
+    {
+        "Player":"ALLMAN, KYLE",
+        "Team":"PAR",
+        "Action_WPA":82.8597394697,
+        "Plays":157,
+        "WPA_Rank":147
+    },
+    {
+        "Player":"PUERTO, JOSEP",
+        "Team":"PAM",
+        "Action_WPA":81.9096907866,
+        "Plays":152,
+        "WPA_Rank":148
+    },
+    {
+        "Player":"WILEY, AUSTIN",
+        "Team":"MUN",
+        "Action_WPA":81.8625089359,
+        "Plays":232,
+        "WPA_Rank":149
+    },
+    {
+        "Player":"OSETKOWSKI, DYLAN",
+        "Team":"PAM",
+        "Action_WPA":81.717204267,
+        "Plays":195,
+        "WPA_Rank":150
+    },
+    {
+        "Player":"VOIGTMANN, JOHANNES",
+        "Team":"MUN",
+        "Action_WPA":81.282714202,
+        "Plays":133,
+        "WPA_Rank":151
+    },
+    {
+        "Player":"ABALDE, ALBERTO",
+        "Team":"MAD",
+        "Action_WPA":80.4079354101,
+        "Plays":163,
+        "WPA_Rank":152
+    },
+    {
+        "Player":"WALLACE, KEATON",
+        "Team":"TEL",
+        "Action_WPA":79.6121275783,
+        "Plays":181,
+        "WPA_Rank":153
+    },
+    {
+        "Player":"SIMMONS, KOBI",
+        "Team":"BAS",
+        "Action_WPA":78.9242178696,
+        "Plays":212,
+        "WPA_Rank":154
+    },
+    {
+        "Player":"JESSUP, JUSTINIAN",
+        "Team":"MUN",
+        "Action_WPA":78.9192589311,
+        "Plays":150,
+        "WPA_Rank":155
+    },
+    {
+        "Player":"NORRIS, MILES",
+        "Team":"MUN",
+        "Action_WPA":78.2669069646,
+        "Plays":150,
+        "WPA_Rank":156
+    },
+    {
+        "Player":"GRANT, JERIAN",
+        "Team":"PAN",
+        "Action_WPA":75.3408280784,
+        "Plays":117,
+        "WPA_Rank":157
+    },
+    {
+        "Player":"JOKSIMOVIC, STEFAN",
+        "Team":"BAS",
+        "Action_WPA":75.1061980531,
+        "Plays":123,
+        "WPA_Rank":158
+    },
+    {
+        "Player":"DOZIER, PJ",
+        "Team":"IST",
+        "Action_WPA":74.4862754204,
+        "Plays":119,
+        "WPA_Rank":159
+    },
+    {
+        "Player":"LOYD, JORDAN",
+        "Team":"IST",
+        "Action_WPA":74.304388924,
+        "Plays":209,
+        "WPA_Rank":160
+    },
+    {
+        "Player":"SATORANSKY, TOMAS",
+        "Team":"HTA",
+        "Action_WPA":73.8518569318,
+        "Plays":195,
+        "WPA_Rank":161
+    },
+    {
+        "Player":"JOHNSON, ALIZE",
+        "Team":"PRS",
+        "Action_WPA":73.2649245117,
+        "Plays":187,
+        "WPA_Rank":162
+    },
+    {
+        "Player":"BADIO, BRANCOU",
+        "Team":"PAN",
+        "Action_WPA":72.0244221264,
+        "Plays":172,
+        "WPA_Rank":163
+    },
+    {
+        "Player":"AYAYI, JOEL",
+        "Team":"PRS",
+        "Action_WPA":71.2695637511,
+        "Plays":168,
+        "WPA_Rank":164
+    },
+    {
+        "Player":"RIVERO, JASIEL",
+        "Team":"PAM",
+        "Action_WPA":69.8570546707,
+        "Plays":191,
+        "WPA_Rank":165
+    },
+    {
+        "Player":"LARKIN, SHANE",
+        "Team":"ULK",
+        "Action_WPA":69.3260963557,
+        "Plays":99,
+        "WPA_Rank":166
+    },
+    {
+        "Player":"DIAKITE, MAMADI",
+        "Team":"DUB",
+        "Action_WPA":68.8446405562,
+        "Plays":152,
+        "WPA_Rank":167
+    },
+    {
+        "Player":"MANTZOUKAS, ELEFTHERIOS",
+        "Team":"PAN",
+        "Action_WPA":68.2494060731,
+        "Plays":96,
+        "WPA_Rank":168
+    },
+    {
+        "Player":"PRADILLA, JAIME",
+        "Team":"MAD",
+        "Action_WPA":68.0878708441,
+        "Plays":166,
+        "WPA_Rank":169
+    },
+    {
+        "Player":"CAVALIERE, LEOPOLD",
+        "Team":"PRS",
+        "Action_WPA":65.4737096854,
+        "Plays":167,
+        "WPA_Rank":170
+    },
+    {
+        "Player":"JONES, KAI",
+        "Team":"IST",
+        "Action_WPA":63.2488648773,
+        "Plays":120,
+        "WPA_Rank":171
+    },
+    {
+        "Player":"FODZO DADA, MARC-OWEN",
+        "Team":"ASV",
+        "Action_WPA":62.7439313279,
+        "Plays":179,
+        "WPA_Rank":172
+    },
+    {
+        "Player":"NKAMHOUA, OLIVIER",
+        "Team":"BAR",
+        "Action_WPA":60.0019706772,
+        "Plays":145,
+        "WPA_Rank":173
+    },
+    {
+        "Player":"SHENGELIA, TORNIKE",
+        "Team":"DUB",
+        "Action_WPA":59.9830898164,
+        "Plays":136,
+        "WPA_Rank":174
+    },
+    {
+        "Player":"FRISCH, CLEMENT",
+        "Team":"BAS",
+        "Action_WPA":59.711558078,
+        "Plays":76,
+        "WPA_Rank":175
+    },
+    {
+        "Player":"SPAGNOLO, MATTEO",
+        "Team":"BAS",
+        "Action_WPA":58.4410010391,
+        "Plays":151,
+        "WPA_Rank":176
+    },
+    {
+        "Player":"BALDASSO, TOMMASO",
+        "Team":"VIR",
+        "Action_WPA":57.7991443623,
+        "Plays":76,
+        "WPA_Rank":177
+    },
+    {
+        "Player":"DOBRIC, OGNJEN",
+        "Team":"RED",
+        "Action_WPA":57.2833112571,
+        "Plays":113,
+        "WPA_Rank":178
+    },
+    {
+        "Player":"HERNANGOMEZ, JUANCHO",
+        "Team":"PAN",
+        "Action_WPA":56.6709478113,
+        "Plays":89,
+        "WPA_Rank":179
+    },
+    {
+        "Player":"PONS, YVES",
+        "Team":"ASV",
+        "Action_WPA":55.9664274144,
+        "Plays":102,
+        "WPA_Rank":180
+    },
+    {
+        "Player":"CABOCLO, BRUNO",
+        "Team":"HTA",
+        "Action_WPA":54.0002663601,
+        "Plays":72,
+        "WPA_Rank":181
+    },
+    {
+        "Player":"YUSTA, SANTI",
+        "Team":"IST",
+        "Action_WPA":53.9356655804,
+        "Plays":100,
+        "WPA_Rank":182
+    },
+    {
+        "Player":"BUTKEVICIUS, ARNAS",
+        "Team":"ZAL",
+        "Action_WPA":53.3043533397,
+        "Plays":160,
+        "WPA_Rank":183
+    },
+    {
+        "Player":"WASHINGTON JR, TYTY",
+        "Team":"ASV",
+        "Action_WPA":51.320413781,
+        "Plays":98,
+        "WPA_Rank":184
+    },
+    {
+        "Player":"BIRSEN, METECAN",
+        "Team":"BES",
+        "Action_WPA":50.7906524065,
+        "Plays":95,
+        "WPA_Rank":185
+    },
+    {
+        "Player":"FORREST, TRENT",
+        "Team":"ULK",
+        "Action_WPA":49.8551117429,
+        "Plays":183,
+        "WPA_Rank":186
+    },
+    {
+        "Player":"SANLI, SERTAC",
+        "Team":"ULK",
+        "Action_WPA":49.7768620497,
+        "Plays":143,
+        "WPA_Rank":187
+    },
+    {
+        "Player":"PAPANIKOLAOU, KOSTAS",
+        "Team":"OLY",
+        "Action_WPA":49.4266731441,
+        "Plays":113,
+        "WPA_Rank":188
+    },
+    {
+        "Player":"BALDWIN, PATRICK",
+        "Team":"RED",
+        "Action_WPA":48.7845463888,
+        "Plays":64,
+        "WPA_Rank":189
+    },
+    {
+        "Player":"JOSEPH, CORY",
+        "Team":"OLY",
+        "Action_WPA":48.5288039527,
+        "Plays":94,
+        "WPA_Rank":190
+    },
+    {
+        "Player":"MOORE, OMARI",
+        "Team":"PAM",
+        "Action_WPA":48.3325833374,
+        "Plays":164,
+        "WPA_Rank":191
+    },
+    {
+        "Player":"SLEVA, DUSTIN",
+        "Team":"ZAL",
+        "Action_WPA":48.2848202749,
+        "Plays":179,
+        "WPA_Rank":192
+    },
+    {
+        "Player":"GERMAN, EUGENE",
+        "Team":"HTA",
+        "Action_WPA":48.0226110148,
+        "Plays":65,
+        "WPA_Rank":193
+    },
+    {
+        "Player":"LEE, SABEN",
+        "Team":"ZAL",
+        "Action_WPA":47.6049872782,
+        "Plays":151,
+        "WPA_Rank":194
+    },
+    {
+        "Player":"HOMMES, DAULTON",
+        "Team":"PRS",
+        "Action_WPA":47.2902674022,
+        "Plays":162,
+        "WPA_Rank":195
+    },
+    {
+        "Player":"MELLI, NICOLO",
+        "Team":"ULK",
+        "Action_WPA":46.9734893217,
+        "Plays":217,
+        "WPA_Rank":196
+    },
+    {
+        "Player":"EVBUOMWAN, TOSAN",
+        "Team":"BAR",
+        "Action_WPA":46.7216602124,
+        "Plays":122,
+        "WPA_Rank":197
+    },
+    {
+        "Player":"BINGHAM, MARCUS",
+        "Team":"ULK",
+        "Action_WPA":46.4305899979,
+        "Plays":194,
+        "WPA_Rank":198
+    },
+    {
+        "Player":"LO, MAODO",
+        "Team":"ZAL",
+        "Action_WPA":44.6618025301,
+        "Plays":134,
+        "WPA_Rank":199
+    },
+    {
+        "Player":"WILLIAMS-GOSS, NIGEL",
+        "Team":"ZAL",
+        "Action_WPA":43.2702019055,
+        "Plays":64,
+        "WPA_Rank":200
+    },
+    {
+        "Player":"CORBALAN, GONZALO",
+        "Team":"PAM",
+        "Action_WPA":42.3671498425,
+        "Plays":118,
+        "WPA_Rank":201
+    },
+    {
+        "Player":"CALE, MYLES",
+        "Team":"ASV",
+        "Action_WPA":42.2874429666,
+        "Plays":99,
+        "WPA_Rank":202
+    },
+    {
+        "Player":"HALL, DONTA",
+        "Team":"OLY",
+        "Action_WPA":42.0861353279,
+        "Plays":116,
+        "WPA_Rank":203
+    },
+    {
+        "Player":"TOPPIN, JACOB",
+        "Team":"HTA",
+        "Action_WPA":41.7136954758,
+        "Plays":51,
+        "WPA_Rank":204
+    },
+    {
+        "Player":"WAINRIGHT, ISH",
+        "Team":"HTA",
+        "Action_WPA":41.4416620789,
+        "Plays":118,
+        "WPA_Rank":205
+    },
+    {
+        "Player":"DOKOSSI, ALLAN",
+        "Team":"PRS",
+        "Action_WPA":41.2552389241,
+        "Plays":268,
+        "WPA_Rank":206
+    },
+    {
+        "Player":"DEJULIUS, DAVID",
+        "Team":"BES",
+        "Action_WPA":40.9179327383,
+        "Plays":93,
+        "WPA_Rank":207
+    },
+    {
+        "Player":"BACOT JR., ARMANDO",
+        "Team":"TEL",
+        "Action_WPA":40.6312395655,
+        "Plays":119,
+        "WPA_Rank":208
+    },
+    {
+        "Player":"KURUCS, RODIONS",
+        "Team":"BAS",
+        "Action_WPA":40.4142299348,
+        "Plays":207,
+        "WPA_Rank":209
+    },
+    {
+        "Player":"BERTANS, DAVIS",
+        "Team":"DUB",
+        "Action_WPA":40.2915343877,
+        "Plays":79,
+        "WPA_Rank":210
+    },
+    {
+        "Player":"MORGAN, JEREMY",
+        "Team":"PRS",
+        "Action_WPA":40.2191302516,
+        "Plays":142,
+        "WPA_Rank":211
+    },
+    {
+        "Player":"WALKUP, THOMAS",
+        "Team":"DUB",
+        "Action_WPA":39.9813808892,
+        "Plays":99,
+        "WPA_Rank":212
+    },
+    {
+        "Player":"KORKMAZ, FURKAN",
+        "Team":"BES",
+        "Action_WPA":39.7399479,
+        "Plays":76,
+        "WPA_Rank":213
+    },
+    {
+        "Player":"LIGHTY, DAVID",
+        "Team":"ASV",
+        "Action_WPA":36.9643803105,
+        "Plays":99,
+        "WPA_Rank":214
+    },
+    {
+        "Player":"DIOUF, MOUHAMET",
+        "Team":"VIR",
+        "Action_WPA":35.7014435386,
+        "Plays":160,
+        "WPA_Rank":215
+    },
+    {
+        "Player":"SAINT-SUPERY, MARIO",
+        "Team":"PAM",
+        "Action_WPA":35.3706081932,
+        "Plays":106,
+        "WPA_Rank":216
+    },
+    {
+        "Player":"MILUTINOV, NIKOLA",
+        "Team":"OLY",
+        "Action_WPA":35.0616924748,
+        "Plays":88,
+        "WPA_Rank":217
+    },
+    {
+        "Player":"RUSSELL, DARON",
+        "Team":"IST",
+        "Action_WPA":34.6778332702,
+        "Plays":95,
+        "WPA_Rank":218
+    },
+    {
+        "Player":"MINTZ, DAVION",
+        "Team":"DUB",
+        "Action_WPA":33.3609147336,
+        "Plays":86,
+        "WPA_Rank":219
+    },
+    {
+        "Player":"BALDWIN, KAMAR",
+        "Team":"MUN",
+        "Action_WPA":32.6413776153,
+        "Plays":82,
+        "WPA_Rank":220
+    },
+    {
+        "Player":"WEILER-BABB, NICK",
+        "Team":"RED",
+        "Action_WPA":30.7791771574,
+        "Plays":198,
+        "WPA_Rank":221
+    },
+    {
+        "Player":"TARPEY, TERRY",
+        "Team":"PRS",
+        "Action_WPA":29.9611500339,
+        "Plays":174,
+        "WPA_Rank":222
+    },
+    {
+        "Player":"LAKIC, ARIJAN",
+        "Team":"PAR",
+        "Action_WPA":29.0457192302,
+        "Plays":131,
+        "WPA_Rank":223
+    },
+    {
+        "Player":"HACKETT, DANIEL",
+        "Team":"VIR",
+        "Action_WPA":28.7280042501,
+        "Plays":108,
+        "WPA_Rank":224
+    },
+    {
+        "Player":"MINAYA, JUSTIN",
+        "Team":"BAR",
+        "Action_WPA":28.4245218135,
+        "Plays":66,
+        "WPA_Rank":225
+    },
+    {
+        "Player":"PROCIDA, GABRIELE",
+        "Team":"MAD",
+        "Action_WPA":27.5410163667,
+        "Plays":56,
+        "WPA_Rank":226
+    },
+    {
+        "Player":"LEAF, TJ",
+        "Team":"TEL",
+        "Action_WPA":26.2145543794,
+        "Plays":88,
+        "WPA_Rank":227
+    },
+    {
+        "Player":"UGURLU, BERK",
+        "Team":"BES",
+        "Action_WPA":25.2624247215,
+        "Plays":88,
+        "WPA_Rank":228
+    },
+    {
+        "Player":"CARDENAS, ALVARO",
+        "Team":"PAM",
+        "Action_WPA":24.2709850899,
+        "Plays":109,
+        "WPA_Rank":229
+    },
+    {
+        "Player":"JENSEN, TOBIAS",
+        "Team":"MUN",
+        "Action_WPA":22.194933012,
+        "Plays":65,
+        "WPA_Rank":230
+    },
+    {
+        "Player":"FALL, MOUSTAPHA",
+        "Team":"PAN",
+        "Action_WPA":19.6165679086,
+        "Plays":61,
+        "WPA_Rank":231
+    },
+    {
+        "Player":"LAUVERGNE, JOFFREY",
+        "Team":"PAR",
+        "Action_WPA":17.1143041865,
+        "Plays":69,
+        "WPA_Rank":232
+    },
+    {
+        "Player":"HOLLATZ, JUSTUS",
+        "Team":"MUN",
+        "Action_WPA":16.8254545026,
+        "Plays":73,
+        "WPA_Rank":233
+    },
+    {
+        "Player":"BLAZEVIC, MAREK",
+        "Team":"ZAL",
+        "Action_WPA":16.6990920668,
+        "Plays":92,
+        "WPA_Rank":234
+    },
+    {
+        "Player":"MASSA, BODIAN",
+        "Team":"ASV",
+        "Action_WPA":14.5954837788,
+        "Plays":135,
+        "WPA_Rank":235
+    },
+    {
+        "Player":"COFFEY, AMIR",
+        "Team":"HTA",
+        "Action_WPA":13.0345828914,
+        "Plays":102,
+        "WPA_Rank":236
+    },
+    {
+        "Player":"KOKILA, KEVIN",
+        "Team":"VIR",
+        "Action_WPA":10.4631554907,
+        "Plays":77,
+        "WPA_Rank":237
+    },
+    {
+        "Player":"DAVIDOVAC, DEJAN",
+        "Team":"RED",
+        "Action_WPA":8.3801285608,
+        "Plays":92,
+        "WPA_Rank":238
+    },
+    {
+        "Player":"MOTLEY, JOHNATHAN",
+        "Team":"RED",
+        "Action_WPA":4.1956221319,
+        "Plays":81,
+        "WPA_Rank":239
+    },
+    {
+        "Player":"SILVA, CHRIS",
+        "Team":"ULK",
+        "Action_WPA":4.1767152111,
+        "Plays":52,
+        "WPA_Rank":240
+    },
+    {
+        "Player":"KALAITZAKIS, PANAGIOTIS",
+        "Team":"PAN",
+        "Action_WPA":1.6444545004,
+        "Plays":104,
+        "WPA_Rank":241
+    },
+    {
+        "Player":"RAYMAN, WILLIAM",
+        "Team":"TEL",
+        "Action_WPA":0.7721095387,
+        "Plays":85,
+        "WPA_Rank":242
+    },
+    {
+        "Player":"SARGIUNAS, IGNAS",
+        "Team":"ULK",
+        "Action_WPA":-9.0741643521,
+        "Plays":89,
+        "WPA_Rank":243
+    }
+]

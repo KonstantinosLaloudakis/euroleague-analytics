@@ -1,0 +1,102 @@
+[
+    {
+        "Team": "ULK",
+        "Elo": 1584.7,
+        "Delta": 84.7
+    },
+    {
+        "Team": "OLY",
+        "Elo": 1583.9,
+        "Delta": 83.9
+    },
+    {
+        "Team": "MAD",
+        "Elo": 1565.5,
+        "Delta": 65.5
+    },
+    {
+        "Team": "PAN",
+        "Elo": 1545.5,
+        "Delta": 45.5
+    },
+    {
+        "Team": "PAM",
+        "Elo": 1538.6,
+        "Delta": 38.6
+    },
+    {
+        "Team": "BAR",
+        "Elo": 1538.1,
+        "Delta": 38.1
+    },
+    {
+        "Team": "HTA",
+        "Elo": 1532.6,
+        "Delta": 32.6
+    },
+    {
+        "Team": "DUB",
+        "Elo": 1517.3,
+        "Delta": 17.3
+    },
+    {
+        "Team": "RED",
+        "Elo": 1515.5,
+        "Delta": 15.5
+    },
+    {
+        "Team": "ZAL",
+        "Elo": 1502.9,
+        "Delta": 2.9
+    },
+    {
+        "Team": "BES",
+        "Elo": 1490.6,
+        "Delta": -9.4
+    },
+    {
+        "Team": "PAR",
+        "Elo": 1477.0,
+        "Delta": -23.0
+    },
+    {
+        "Team": "PRS",
+        "Elo": 1474.4,
+        "Delta": -25.6
+    },
+    {
+        "Team": "TEL",
+        "Elo": 1473.5,
+        "Delta": -26.5
+    },
+    {
+        "Team": "IST",
+        "Elo": 1473.4,
+        "Delta": -26.6
+    },
+    {
+        "Team": "MIL",
+        "Elo": 1471.9,
+        "Delta": -28.1
+    },
+    {
+        "Team": "VIR",
+        "Elo": 1471.7,
+        "Delta": -28.3
+    },
+    {
+        "Team": "MUN",
+        "Elo": 1468.3,
+        "Delta": -31.7
+    },
+    {
+        "Team": "BAS",
+        "Elo": 1434.1,
+        "Delta": -65.9
+    },
+    {
+        "Team": "ASV",
+        "Elo": 1429.7,
+        "Delta": -70.3
+    }
+]

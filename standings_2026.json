@@ -1296,6 +1296,168 @@
         "points_diff": -84,
         "points_for": 669
       }
+    ],
+    "9": [
+      {
+        "code": "PAN",
+        "position": 1,
+        "wins": 7,
+        "losses": 1,
+        "points_diff": 101,
+        "points_for": 693
+      },
+      {
+        "code": "PAM",
+        "position": 2,
+        "wins": 6,
+        "losses": 2,
+        "points_diff": 65,
+        "points_for": 773
+      },
+      {
+        "code": "HTA",
+        "position": 3,
+        "wins": 6,
+        "losses": 2,
+        "points_diff": 59,
+        "points_for": 748
+      },
+      {
+        "code": "OLY",
+        "position": 4,
+        "wins": 6,
+        "losses": 2,
+        "points_diff": 45,
+        "points_for": 706
+      },
+      {
+        "code": "RED",
+        "position": 5,
+        "wins": 6,
+        "losses": 3,
+        "points_diff": 80,
+        "points_for": 763
+      },
+      {
+        "code": "MAD",
+        "position": 6,
+        "wins": 6,
+        "losses": 3,
+        "points_diff": 74,
+        "points_for": 866
+      },
+      {
+        "code": "ULK",
+        "position": 7,
+        "wins": 6,
+        "losses": 3,
+        "points_diff": 30,
+        "points_for": 719
+      },
+      {
+        "code": "BAR",
+        "position": 8,
+        "wins": 5,
+        "losses": 3,
+        "points_diff": 21,
+        "points_for": 711
+      },
+      {
+        "code": "DUB",
+        "position": 9,
+        "wins": 5,
+        "losses": 3,
+        "points_diff": 7,
+        "points_for": 690
+      },
+      {
+        "code": "ZAL",
+        "position": 10,
+        "wins": 4,
+        "losses": 4,
+        "points_diff": 10,
+        "points_for": 686
+      },
+      {
+        "code": "PAR",
+        "position": 11,
+        "wins": 4,
+        "losses": 4,
+        "points_diff": -12,
+        "points_for": 616
+      },
+      {
+        "code": "VIR",
+        "position": 12,
+        "wins": 4,
+        "losses": 4,
+        "points_diff": -19,
+        "points_for": 680
+      },
+      {
+        "code": "BES",
+        "position": 13,
+        "wins": 3,
+        "losses": 5,
+        "points_diff": -18,
+        "points_for": 707
+      },
+      {
+        "code": "IST",
+        "position": 14,
+        "wins": 3,
+        "losses": 5,
+        "points_diff": -39,
+        "points_for": 669
+      },
+      {
+        "code": "ASV",
+        "position": 15,
+        "wins": 3,
+        "losses": 5,
+        "points_diff": -58,
+        "points_for": 694
+      },
+      {
+        "code": "PRS",
+        "position": 16,
+        "wins": 3,
+        "losses": 6,
+        "points_diff": -41,
+        "points_for": 795
+      },
+      {
+        "code": "TEL",
+        "position": 17,
+        "wins": 2,
+        "losses": 7,
+        "points_diff": -72,
+        "points_for": 780
+      },
+      {
+        "code": "MUN",
+        "position": 18,
+        "wins": 2,
+        "losses": 7,
+        "points_diff": -81,
+        "points_for": 769
+      },
+      {
+        "code": "MIL",
+        "position": 19,
+        "wins": 1,
+        "losses": 7,
+        "points_diff": -68,
+        "points_for": 660
+      },
+      {
+        "code": "BAS",
+        "position": 20,
+        "wins": 1,
+        "losses": 7,
+        "points_diff": -84,
+        "points_for": 669
+      }
     ]
   }
 }

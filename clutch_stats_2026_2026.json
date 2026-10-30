@@ -46,6 +46,21 @@
             "FT%": "87.5%"
         },
         {
+            "Player": "HIFI, NADIR",
+            "Team": "PRS",
+            "Season": 2026,
+            "ClutchPoints": 15,
+            "ClutchFGM": 3,
+            "ClutchFGA": 11,
+            "ClutchFTM": 7,
+            "ClutchFTA": 9,
+            "Clutch3PM": 2,
+            "ClutchFoulsDrawn": 7,
+            "ClutchTurnovers": 2,
+            "FG%": "27.3%",
+            "FT%": "77.8%"
+        },
+        {
             "Player": "MONTERO, JEAN",
             "Team": "OLY",
             "Season": 2026,
@@ -59,21 +74,6 @@
             "ClutchTurnovers": 2,
             "FG%": "40.0%",
             "FT%": "83.3%"
-        },
-        {
-            "Player": "HIFI, NADIR",
-            "Team": "PRS",
-            "Season": 2026,
-            "ClutchPoints": 13,
-            "ClutchFGM": 3,
-            "ClutchFGA": 11,
-            "ClutchFTM": 5,
-            "ClutchFTA": 7,
-            "Clutch3PM": 2,
-            "ClutchFoulsDrawn": 7,
-            "ClutchTurnovers": 2,
-            "FG%": "27.3%",
-            "FT%": "71.4%"
         },
         {
             "Player": "JONES, CARLIK",
@@ -241,6 +241,21 @@
             "FT%": "50.0%"
         },
         {
+            "Player": "ETIENNE, TYSON",
+            "Team": "PRS",
+            "Season": 2026,
+            "ClutchPoints": 11,
+            "ClutchFGM": 4,
+            "ClutchFGA": 8,
+            "ClutchFTM": 2,
+            "ClutchFTA": 2,
+            "Clutch3PM": 1,
+            "ClutchFoulsDrawn": 5,
+            "ClutchTurnovers": 1,
+            "FG%": "50.0%",
+            "FT%": "100.0%"
+        },
+        {
             "Player": "JONES, CHRIS",
             "Team": "RED",
             "Season": 2026,
@@ -299,21 +314,6 @@
             "ClutchTurnovers": 0,
             "FG%": "22.2%",
             "FT%": "100.0%"
-        },
-        {
-            "Player": "ETIENNE, TYSON",
-            "Team": "PRS",
-            "Season": 2026,
-            "ClutchPoints": 9,
-            "ClutchFGM": 4,
-            "ClutchFGA": 8,
-            "ClutchFTM": 0,
-            "ClutchFTA": 0,
-            "Clutch3PM": 1,
-            "ClutchFoulsDrawn": 4,
-            "ClutchTurnovers": 1,
-            "FG%": "50.0%",
-            "FT%": "N/A"
         },
         {
             "Player": "BOLOMBOY, JOEL",
@@ -826,6 +826,21 @@
             "FT%": "100.0%"
         },
         {
+            "Player": "HERRERA, SEBASTIAN",
+            "Team": "PRS",
+            "Season": 2026,
+            "ClutchPoints": 5,
+            "ClutchFGM": 1,
+            "ClutchFGA": 5,
+            "ClutchFTM": 2,
+            "ClutchFTA": 2,
+            "Clutch3PM": 1,
+            "ClutchFoulsDrawn": 3,
+            "ClutchTurnovers": 0,
+            "FG%": "20.0%",
+            "FT%": "100.0%"
+        },
+        {
             "Player": "CLARK III, JIMMY",
             "Team": "TEL",
             "Season": 2026,
@@ -1266,28 +1281,13 @@
             "Season": 2026,
             "ClutchPoints": 3,
             "ClutchFGM": 1,
-            "ClutchFGA": 1,
+            "ClutchFGA": 2,
             "ClutchFTM": 0,
             "ClutchFTA": 0,
             "Clutch3PM": 1,
             "ClutchFoulsDrawn": 0,
             "ClutchTurnovers": 0,
-            "FG%": "100.0%",
-            "FT%": "N/A"
-        },
-        {
-            "Player": "HERRERA, SEBASTIAN",
-            "Team": "PRS",
-            "Season": 2026,
-            "ClutchPoints": 3,
-            "ClutchFGM": 1,
-            "ClutchFGA": 5,
-            "ClutchFTM": 0,
-            "ClutchFTA": 0,
-            "Clutch3PM": 1,
-            "ClutchFoulsDrawn": 2,
-            "ClutchTurnovers": 0,
-            "FG%": "20.0%",
+            "FG%": "50.0%",
             "FT%": "N/A"
         },
         {
@@ -1548,6 +1548,21 @@
         {
             "Player": "DUNSTON, BRYANT",
             "Team": "OLY",
+            "Season": 2026,
+            "ClutchPoints": 2,
+            "ClutchFGM": 1,
+            "ClutchFGA": 1,
+            "ClutchFTM": 0,
+            "ClutchFTA": 0,
+            "Clutch3PM": 0,
+            "ClutchFoulsDrawn": 0,
+            "ClutchTurnovers": 0,
+            "FG%": "100.0%",
+            "FT%": "N/A"
+        },
+        {
+            "Player": "JOHNSON, ALIZE",
+            "Team": "PRS",
             "Season": 2026,
             "ClutchPoints": 2,
             "ClutchFGM": 1,
