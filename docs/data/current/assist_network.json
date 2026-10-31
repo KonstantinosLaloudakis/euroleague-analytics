@@ -4166,92 +4166,92 @@
         {
           "id": "P007027",
           "name": "MALEDON, THEO",
-          "ast_given": 42,
+          "ast_given": 43,
           "ast_received": 7,
-          "gp": 8,
-          "ast_per_game": 5.2,
+          "gp": 9,
+          "ast_per_game": 4.8,
           "unique_targets": 11
         },
         {
           "id": "P005928",
           "name": "CAMPAZZO, FACUNDO",
-          "ast_given": 32,
-          "ast_received": 9,
-          "gp": 8,
-          "ast_per_game": 4.0,
-          "unique_targets": 10
+          "ast_given": 40,
+          "ast_received": 10,
+          "gp": 9,
+          "ast_per_game": 4.4,
+          "unique_targets": 11
         },
         {
           "id": "P011247",
           "name": "FELIZ, ANDRES",
-          "ast_given": 25,
-          "ast_received": 14,
-          "gp": 8,
-          "ast_per_game": 3.1,
+          "ast_given": 26,
+          "ast_received": 15,
+          "gp": 9,
+          "ast_per_game": 2.9,
           "unique_targets": 10
-        },
-        {
-          "id": "P015103",
-          "name": "JONES, DAMIAN",
-          "ast_given": 3,
-          "ast_received": 20,
-          "gp": 8,
-          "ast_per_game": 0.4,
-          "unique_targets": 2
         },
         {
           "id": "P005791",
           "name": "TAVARES, WALTER",
           "ast_given": 1,
-          "ast_received": 22,
-          "gp": 8,
+          "ast_received": 25,
+          "gp": 9,
           "ast_per_game": 0.1,
           "unique_targets": 1
         },
         {
           "id": "P003733",
           "name": "ABALDE, ALBERTO",
-          "ast_given": 11,
-          "ast_received": 11,
-          "gp": 8,
-          "ast_per_game": 1.4,
+          "ast_given": 12,
+          "ast_received": 13,
+          "gp": 9,
+          "ast_per_game": 1.3,
           "unique_targets": 8
+        },
+        {
+          "id": "P015103",
+          "name": "JONES, DAMIAN",
+          "ast_given": 3,
+          "ast_received": 21,
+          "gp": 9,
+          "ast_per_game": 0.3,
+          "unique_targets": 2
+        },
+        {
+          "id": "P014006",
+          "name": "OKEKE, CHUMA",
+          "ast_given": 7,
+          "ast_received": 17,
+          "gp": 8,
+          "ast_per_game": 0.9,
+          "unique_targets": 6
+        },
+        {
+          "id": "P012080",
+          "name": "LUWAWU-CABARROT, TIMOTHE",
+          "ast_given": 7,
+          "ast_received": 17,
+          "gp": 9,
+          "ast_per_game": 0.8,
+          "unique_targets": 5
         },
         {
           "id": "P012613",
           "name": "JANTUNEN, MIKAEL",
           "ast_given": 9,
           "ast_received": 13,
-          "gp": 8,
-          "ast_per_game": 1.1,
+          "gp": 9,
+          "ast_per_game": 1.0,
           "unique_targets": 7
-        },
-        {
-          "id": "P012080",
-          "name": "LUWAWU-CABARROT, TIMOTHE",
-          "ast_given": 7,
-          "ast_received": 15,
-          "gp": 8,
-          "ast_per_game": 0.9,
-          "unique_targets": 5
-        },
-        {
-          "id": "P014006",
-          "name": "OKEKE, CHUMA",
-          "ast_given": 5,
-          "ast_received": 15,
-          "gp": 7,
-          "ast_per_game": 0.7,
-          "unique_targets": 5
         },
         {
           "id": "P010393",
           "name": "PRADILLA, JAIME",
-          "ast_given": 8,
-          "ast_received": 10,
-          "gp": 8,
+          "ast_given": 9,
+          "ast_received": 11,
+          "gp": 9,
           "ast_per_game": 1.0,
-          "unique_targets": 6
+          "unique_targets": 7
         },
         {
           "id": "P015244",
@@ -4265,11 +4265,11 @@
         {
           "id": "P008384",
           "name": "PROCIDA, GABRIELE",
-          "ast_given": 0,
-          "ast_received": 3,
-          "gp": 4,
-          "ast_per_game": 0.0,
-          "unique_targets": 0
+          "ast_given": 1,
+          "ast_received": 5,
+          "gp": 5,
+          "ast_per_game": 0.2,
+          "unique_targets": 1
         },
         {
           "id": "P009005",
@@ -4301,9 +4301,9 @@
         {
           "from": "P003733",
           "to": "P014006",
-          "count": 2,
+          "count": 3,
           "fg2": 1,
-          "fg3": 1
+          "fg3": 2
         },
         {
           "from": "P007027",
@@ -4343,8 +4343,8 @@
         {
           "from": "P005928",
           "to": "P005791",
-          "count": 3,
-          "fg2": 3,
+          "count": 4,
+          "fg2": 4,
           "fg3": 0
         },
         {
@@ -4371,8 +4371,8 @@
         {
           "from": "P011247",
           "to": "P005791",
-          "count": 5,
-          "fg2": 5,
+          "count": 6,
+          "fg2": 6,
           "fg3": 0
         },
         {
@@ -4385,9 +4385,9 @@
         {
           "from": "P014006",
           "to": "P003733",
-          "count": 1,
+          "count": 2,
           "fg2": 0,
-          "fg3": 1
+          "fg3": 2
         },
         {
           "from": "P003733",
@@ -4406,9 +4406,9 @@
         {
           "from": "P005928",
           "to": "P014006",
-          "count": 6,
+          "count": 7,
           "fg2": 2,
-          "fg3": 4
+          "fg3": 5
         },
         {
           "from": "P011247",
@@ -4441,8 +4441,8 @@
         {
           "from": "P007027",
           "to": "P005791",
-          "count": 8,
-          "fg2": 8,
+          "count": 9,
+          "fg2": 9,
           "fg3": 0
         },
         {
@@ -4595,8 +4595,8 @@
         {
           "from": "P005928",
           "to": "P010393",
-          "count": 2,
-          "fg2": 1,
+          "count": 3,
+          "fg2": 2,
           "fg3": 1
         },
         {
@@ -4637,9 +4637,9 @@
         {
           "from": "P005928",
           "to": "P011247",
-          "count": 4,
+          "count": 5,
           "fg2": 1,
-          "fg3": 3
+          "fg3": 4
         },
         {
           "from": "P014006",
@@ -4693,8 +4693,8 @@
         {
           "from": "P005928",
           "to": "P012080",
-          "count": 1,
-          "fg2": 1,
+          "count": 2,
+          "fg2": 2,
           "fg3": 0
         },
         {
@@ -4728,9 +4728,9 @@
         {
           "from": "P005928",
           "to": "P003733",
-          "count": 1,
+          "count": 2,
           "fg2": 0,
-          "fg3": 1
+          "fg3": 2
         },
         {
           "from": "P012613",
@@ -4780,6 +4780,34 @@
           "count": 1,
           "fg2": 0,
           "fg3": 1
+        },
+        {
+          "from": "P008384",
+          "to": "P005928",
+          "count": 1,
+          "fg2": 0,
+          "fg3": 1
+        },
+        {
+          "from": "P005928",
+          "to": "P008384",
+          "count": 2,
+          "fg2": 1,
+          "fg3": 1
+        },
+        {
+          "from": "P014006",
+          "to": "P012080",
+          "count": 1,
+          "fg2": 1,
+          "fg3": 0
+        },
+        {
+          "from": "P010393",
+          "to": "P015103",
+          "count": 1,
+          "fg2": 1,
+          "fg3": 0
         }
       ]
     },
@@ -5308,65 +5336,65 @@
         {
           "id": "P013370",
           "name": "WASHINGTON, DUANE",
-          "ast_given": 18,
-          "ast_received": 15,
-          "gp": 7,
-          "ast_per_game": 2.6,
+          "ast_given": 19,
+          "ast_received": 17,
+          "gp": 8,
+          "ast_per_game": 2.4,
           "unique_targets": 8
         },
         {
           "id": "P007519",
           "name": "JOKUBAITIS, ROKAS",
-          "ast_given": 22,
+          "ast_given": 25,
           "ast_received": 10,
-          "gp": 7,
+          "gp": 8,
           "ast_per_game": 3.1,
-          "unique_targets": 10
+          "unique_targets": 11
         },
         {
           "id": "P004508",
           "name": "OBST, ANDREAS",
-          "ast_given": 17,
-          "ast_received": 13,
-          "gp": 8,
+          "ast_given": 19,
+          "ast_received": 14,
+          "gp": 9,
           "ast_per_game": 2.1,
           "unique_targets": 8
         },
         {
           "id": "P003958",
           "name": "THIEMANN, JOHANNES",
-          "ast_given": 10,
-          "ast_received": 15,
-          "gp": 8,
-          "ast_per_game": 1.2,
-          "unique_targets": 8
+          "ast_given": 12,
+          "ast_received": 16,
+          "gp": 9,
+          "ast_per_game": 1.3,
+          "unique_targets": 9
         },
         {
           "id": "P011244",
           "name": "DA SILVA, OSCAR",
+          "ast_given": 6,
+          "ast_received": 19,
+          "gp": 8,
+          "ast_per_game": 0.8,
+          "unique_targets": 5
+        },
+        {
+          "id": "P013278",
+          "name": "WILEY, AUSTIN",
           "ast_given": 5,
           "ast_received": 18,
-          "gp": 7,
-          "ast_per_game": 0.7,
+          "gp": 9,
+          "ast_per_game": 0.6,
           "unique_targets": 4
         },
         {
           "id": "P007201",
           "name": "VOIGTMANN, JOHANNES",
-          "ast_given": 14,
+          "ast_given": 15,
           "ast_received": 8,
-          "gp": 7,
-          "ast_per_game": 2.0,
-          "unique_targets": 9
-        },
-        {
-          "id": "P013278",
-          "name": "WILEY, AUSTIN",
-          "ast_given": 4,
-          "ast_received": 17,
           "gp": 8,
-          "ast_per_game": 0.5,
-          "unique_targets": 3
+          "ast_per_game": 1.9,
+          "unique_targets": 9
         },
         {
           "id": "P014732",
@@ -5378,6 +5406,15 @@
           "unique_targets": 9
         },
         {
+          "id": "P014134",
+          "name": "NORRIS, MILES",
+          "ast_given": 7,
+          "ast_received": 13,
+          "gp": 7,
+          "ast_per_game": 1.0,
+          "unique_targets": 6
+        },
+        {
           "id": "P013290",
           "name": "JESSUP, JUSTINIAN",
           "ast_given": 9,
@@ -5387,21 +5424,12 @@
           "unique_targets": 6
         },
         {
-          "id": "P014134",
-          "name": "NORRIS, MILES",
-          "ast_given": 5,
-          "ast_received": 11,
-          "gp": 6,
-          "ast_per_game": 0.8,
-          "unique_targets": 5
-        },
-        {
           "id": "P001288",
           "name": "LUCIC, VLADIMIR",
           "ast_given": 6,
-          "ast_received": 8,
-          "gp": 8,
-          "ast_per_game": 0.8,
+          "ast_received": 11,
+          "gp": 9,
+          "ast_per_game": 0.7,
           "unique_targets": 5
         },
         {
@@ -5417,27 +5445,27 @@
           "id": "P009513",
           "name": "HOLLATZ, JUSTUS",
           "ast_given": 7,
-          "ast_received": 2,
-          "gp": 5,
-          "ast_per_game": 1.4,
+          "ast_received": 3,
+          "gp": 6,
+          "ast_per_game": 1.2,
           "unique_targets": 3
         },
         {
           "id": "P010726",
           "name": "JENSEN, TOBIAS",
-          "ast_given": 4,
-          "ast_received": 0,
-          "gp": 2,
-          "ast_per_game": 2.0,
-          "unique_targets": 4
+          "ast_given": 7,
+          "ast_received": 2,
+          "gp": 3,
+          "ast_per_game": 2.3,
+          "unique_targets": 7
         },
         {
           "id": "P001557",
           "name": "GIFFEY, NIELS",
           "ast_given": 1,
-          "ast_received": 0,
-          "gp": 3,
-          "ast_per_game": 0.3,
+          "ast_received": 2,
+          "gp": 4,
+          "ast_per_game": 0.2,
           "unique_targets": 1
         }
       ],
@@ -5466,8 +5494,8 @@
         {
           "from": "P013370",
           "to": "P003958",
-          "count": 3,
-          "fg2": 2,
+          "count": 4,
+          "fg2": 3,
           "fg3": 1
         },
         {
@@ -5550,9 +5578,9 @@
         {
           "from": "P004508",
           "to": "P001288",
-          "count": 2,
+          "count": 3,
           "fg2": 2,
-          "fg3": 0
+          "fg3": 1
         },
         {
           "from": "P004508",
@@ -5620,8 +5648,8 @@
         {
           "from": "P014134",
           "to": "P013370",
-          "count": 1,
-          "fg2": 0,
+          "count": 2,
+          "fg2": 1,
           "fg3": 1
         },
         {
@@ -5760,9 +5788,9 @@
         {
           "from": "P003958",
           "to": "P013370",
-          "count": 2,
+          "count": 3,
           "fg2": 0,
-          "fg3": 2
+          "fg3": 3
         },
         {
           "from": "P013370",
@@ -5844,16 +5872,16 @@
         {
           "from": "P007201",
           "to": "P014134",
-          "count": 2,
-          "fg2": 1,
+          "count": 3,
+          "fg2": 2,
           "fg3": 1
         },
         {
           "from": "P004508",
           "to": "P014134",
-          "count": 2,
+          "count": 3,
           "fg2": 1,
-          "fg3": 1
+          "fg3": 2
         },
         {
           "from": "P001288",
@@ -5865,9 +5893,9 @@
         {
           "from": "P007519",
           "to": "P001288",
-          "count": 1,
+          "count": 2,
           "fg2": 1,
-          "fg3": 0
+          "fg3": 1
         },
         {
           "from": "P004508",
@@ -6043,6 +6071,62 @@
           "count": 1,
           "fg2": 0,
           "fg3": 1
+        },
+        {
+          "from": "P011244",
+          "to": "P009513",
+          "count": 1,
+          "fg2": 1,
+          "fg3": 0
+        },
+        {
+          "from": "P010726",
+          "to": "P013278",
+          "count": 1,
+          "fg2": 1,
+          "fg3": 0
+        },
+        {
+          "from": "P010726",
+          "to": "P001288",
+          "count": 1,
+          "fg2": 1,
+          "fg3": 0
+        },
+        {
+          "from": "P013278",
+          "to": "P010726",
+          "count": 1,
+          "fg2": 0,
+          "fg3": 1
+        },
+        {
+          "from": "P003958",
+          "to": "P010726",
+          "count": 1,
+          "fg2": 1,
+          "fg3": 0
+        },
+        {
+          "from": "P007519",
+          "to": "P001557",
+          "count": 2,
+          "fg2": 1,
+          "fg3": 1
+        },
+        {
+          "from": "P014134",
+          "to": "P004508",
+          "count": 1,
+          "fg2": 0,
+          "fg3": 1
+        },
+        {
+          "from": "P010726",
+          "to": "P011244",
+          "count": 1,
+          "fg2": 1,
+          "fg3": 0
         }
       ]
     },
@@ -8519,29 +8603,38 @@
         {
           "id": "P015143",
           "name": "ETIENNE, TYSON",
-          "ast_given": 20,
-          "ast_received": 22,
-          "gp": 7,
-          "ast_per_game": 2.9,
+          "ast_given": 21,
+          "ast_received": 25,
+          "gp": 8,
+          "ast_per_game": 2.6,
           "unique_targets": 7
         },
         {
           "id": "P012611",
           "name": "HERRERA, SEBASTIAN",
-          "ast_given": 15,
-          "ast_received": 25,
-          "gp": 8,
-          "ast_per_game": 1.9,
-          "unique_targets": 8
+          "ast_given": 18,
+          "ast_received": 27,
+          "gp": 9,
+          "ast_per_game": 2.0,
+          "unique_targets": 9
         },
         {
           "id": "P014010",
           "name": "DOKOSSI, ALLAN",
-          "ast_given": 17,
-          "ast_received": 15,
-          "gp": 8,
-          "ast_per_game": 2.1,
-          "unique_targets": 8
+          "ast_given": 18,
+          "ast_received": 19,
+          "gp": 9,
+          "ast_per_game": 2.0,
+          "unique_targets": 9
+        },
+        {
+          "id": "P012403",
+          "name": "FAYE, MOUHAMED",
+          "ast_given": 12,
+          "ast_received": 16,
+          "gp": 9,
+          "ast_per_game": 1.3,
+          "unique_targets": 5
         },
         {
           "id": "P014178",
@@ -8553,13 +8646,13 @@
           "unique_targets": 8
         },
         {
-          "id": "P012403",
-          "name": "FAYE, MOUHAMED",
-          "ast_given": 11,
-          "ast_received": 13,
-          "gp": 8,
-          "ast_per_game": 1.4,
-          "unique_targets": 4
+          "id": "P012640",
+          "name": "HIFI, NADIR",
+          "ast_given": 16,
+          "ast_received": 8,
+          "gp": 6,
+          "ast_per_game": 2.7,
+          "unique_targets": 9
         },
         {
           "id": "P015168",
@@ -8571,39 +8664,30 @@
           "unique_targets": 4
         },
         {
-          "id": "P012640",
-          "name": "HIFI, NADIR",
-          "ast_given": 12,
-          "ast_received": 7,
-          "gp": 5,
-          "ast_per_game": 2.4,
-          "unique_targets": 7
-        },
-        {
           "id": "P006904",
           "name": "AYAYI, JOEL",
-          "ast_given": 16,
-          "ast_received": 3,
-          "gp": 6,
-          "ast_per_game": 2.7,
+          "ast_given": 17,
+          "ast_received": 5,
+          "gp": 7,
+          "ast_per_game": 2.4,
           "unique_targets": 7
         },
         {
           "id": "P012515",
           "name": "TARPEY, TERRY",
-          "ast_given": 13,
-          "ast_received": 3,
-          "gp": 7,
-          "ast_per_game": 1.9,
-          "unique_targets": 7
+          "ast_given": 16,
+          "ast_received": 4,
+          "gp": 8,
+          "ast_per_game": 2.0,
+          "unique_targets": 8
         },
         {
           "id": "P013373",
           "name": "CAVALIERE, LEOPOLD",
-          "ast_given": 5,
+          "ast_given": 6,
           "ast_received": 10,
-          "gp": 8,
-          "ast_per_game": 0.6,
+          "gp": 9,
+          "ast_per_game": 0.7,
           "unique_targets": 5
         },
         {
@@ -8616,40 +8700,40 @@
           "unique_targets": 5
         },
         {
+          "id": "P015160",
+          "name": "JOHNSON, ALIZE",
+          "ast_given": 5,
+          "ast_received": 8,
+          "gp": 7,
+          "ast_per_game": 0.7,
+          "unique_targets": 3
+        },
+        {
           "id": "P010431",
           "name": "MORGAN, JEREMY",
           "ast_given": 6,
           "ast_received": 6,
-          "gp": 8,
-          "ast_per_game": 0.8,
+          "gp": 9,
+          "ast_per_game": 0.7,
           "unique_targets": 5
-        },
-        {
-          "id": "P015160",
-          "name": "JOHNSON, ALIZE",
-          "ast_given": 1,
-          "ast_received": 5,
-          "gp": 6,
-          "ast_per_game": 0.2,
-          "unique_targets": 1
         },
         {
           "id": "P014801",
           "name": "PEREIRA, MAOZINHA",
           "ast_given": 1,
-          "ast_received": 2,
-          "gp": 2,
-          "ast_per_game": 0.5,
+          "ast_received": 3,
+          "gp": 3,
+          "ast_per_game": 0.3,
           "unique_targets": 1
         },
         {
           "id": "P006591",
           "name": "NTILIKINA, FRANK",
-          "ast_given": 0,
+          "ast_given": 1,
           "ast_received": 1,
-          "gp": 1,
-          "ast_per_game": 0.0,
-          "unique_targets": 0
+          "gp": 2,
+          "ast_per_game": 0.5,
+          "unique_targets": 1
         }
       ],
       "edges": [
@@ -8684,9 +8768,9 @@
         {
           "from": "P012640",
           "to": "P015143",
-          "count": 2,
+          "count": 3,
           "fg2": 0,
-          "fg3": 2
+          "fg3": 3
         },
         {
           "from": "P012640",
@@ -8719,9 +8803,9 @@
         {
           "from": "P012515",
           "to": "P012640",
-          "count": 2,
+          "count": 3,
           "fg2": 1,
-          "fg3": 1
+          "fg3": 2
         },
         {
           "from": "P014010",
@@ -8831,9 +8915,9 @@
         {
           "from": "P012611",
           "to": "P015160",
-          "count": 2,
+          "count": 3,
           "fg2": 2,
-          "fg3": 0
+          "fg3": 1
         },
         {
           "from": "P012611",
@@ -8845,8 +8929,8 @@
         {
           "from": "P006904",
           "to": "P014010",
-          "count": 6,
-          "fg2": 6,
+          "count": 7,
+          "fg2": 7,
           "fg3": 0
         },
         {
@@ -8964,9 +9048,9 @@
         {
           "from": "P012515",
           "to": "P015143",
-          "count": 3,
+          "count": 4,
           "fg2": 0,
-          "fg3": 3
+          "fg3": 4
         },
         {
           "from": "P010431",
@@ -9048,9 +9132,9 @@
         {
           "from": "P013373",
           "to": "P015143",
-          "count": 1,
+          "count": 2,
           "fg2": 0,
-          "fg3": 1
+          "fg3": 2
         },
         {
           "from": "P010431",
@@ -9111,8 +9195,8 @@
         {
           "from": "P015143",
           "to": "P014010",
-          "count": 1,
-          "fg2": 1,
+          "count": 2,
+          "fg2": 2,
           "fg3": 0
         },
         {
@@ -9146,16 +9230,16 @@
         {
           "from": "P012611",
           "to": "P012403",
-          "count": 1,
-          "fg2": 1,
+          "count": 2,
+          "fg2": 2,
           "fg3": 0
         },
         {
           "from": "P015160",
           "to": "P012611",
-          "count": 1,
+          "count": 3,
           "fg2": 0,
-          "fg3": 1
+          "fg3": 3
         },
         {
           "from": "P014178",
@@ -9181,13 +9265,76 @@
         {
           "from": "P012640",
           "to": "P012403",
+          "count": 2,
+          "fg2": 2,
+          "fg3": 0
+        },
+        {
+          "from": "P012515",
+          "to": "P013373",
+          "count": 1,
+          "fg2": 1,
+          "fg3": 0
+        },
+        {
+          "from": "P012640",
+          "to": "P015160",
+          "count": 1,
+          "fg2": 0,
+          "fg3": 1
+        },
+        {
+          "from": "P012640",
+          "to": "P014010",
+          "count": 1,
+          "fg2": 1,
+          "fg3": 0
+        },
+        {
+          "from": "P006591",
+          "to": "P006904",
+          "count": 1,
+          "fg2": 0,
+          "fg3": 1
+        },
+        {
+          "from": "P012611",
+          "to": "P012515",
+          "count": 1,
+          "fg2": 1,
+          "fg3": 0
+        },
+        {
+          "from": "P015160",
+          "to": "P014010",
+          "count": 1,
+          "fg2": 1,
+          "fg3": 0
+        },
+        {
+          "from": "P014010",
+          "to": "P006904",
           "count": 1,
           "fg2": 1,
           "fg3": 0
         },
         {
           "from": "P012515",
-          "to": "P013373",
+          "to": "P014801",
+          "count": 1,
+          "fg2": 0,
+          "fg3": 1
+        },
+        {
+          "from": "P012403",
+          "to": "P015160",
+          "count": 1,
+          "fg2": 1,
+          "fg3": 0
+        },
+        {
+          "from": "P015160",
+          "to": "P012403",
           "count": 1,
           "fg2": 1,
           "fg3": 0
@@ -9199,74 +9346,83 @@
         {
           "id": "P010568",
           "name": "JONES, CHRIS",
-          "ast_given": 45,
-          "ast_received": 5,
-          "gp": 8,
-          "ast_per_game": 5.6,
+          "ast_given": 49,
+          "ast_received": 6,
+          "gp": 9,
+          "ast_per_game": 5.4,
           "unique_targets": 12
         },
         {
           "id": "P013363",
           "name": "NWORA, JORDAN",
-          "ast_given": 6,
-          "ast_received": 29,
-          "gp": 8,
-          "ast_per_game": 0.8,
+          "ast_given": 8,
+          "ast_received": 33,
+          "gp": 9,
+          "ast_per_game": 0.9,
           "unique_targets": 5
         },
         {
           "id": "P011982",
           "name": "OJELEYE, SEMI",
-          "ast_given": 10,
-          "ast_received": 19,
-          "gp": 8,
+          "ast_given": 11,
+          "ast_received": 23,
+          "gp": 9,
           "ast_per_game": 1.2,
           "unique_targets": 7
         },
         {
           "id": "P012201",
           "name": "MONEKE, CHIMA",
-          "ast_given": 8,
-          "ast_received": 20,
-          "gp": 8,
-          "ast_per_game": 1.0,
-          "unique_targets": 6
-        },
-        {
-          "id": "P011305",
-          "name": "CARTER, TYSON",
-          "ast_given": 14,
-          "ast_received": 12,
-          "gp": 8,
-          "ast_per_game": 1.8,
-          "unique_targets": 7
-        },
-        {
-          "id": "P014163",
-          "name": "BUTLER, JARED",
-          "ast_given": 16,
-          "ast_received": 9,
-          "gp": 8,
-          "ast_per_game": 2.0,
+          "ast_given": 13,
+          "ast_received": 21,
+          "gp": 9,
+          "ast_per_game": 1.4,
           "unique_targets": 7
         },
         {
           "id": "P010391",
           "name": "WEILER-BABB, NICK",
-          "ast_given": 23,
+          "ast_given": 31,
           "ast_received": 2,
-          "gp": 8,
-          "ast_per_game": 2.9,
-          "unique_targets": 9
+          "gp": 9,
+          "ast_per_game": 3.4,
+          "unique_targets": 11
+        },
+        {
+          "id": "P011305",
+          "name": "CARTER, TYSON",
+          "ast_given": 15,
+          "ast_received": 16,
+          "gp": 9,
+          "ast_per_game": 1.7,
+          "unique_targets": 7
+        },
+        {
+          "id": "P014163",
+          "name": "BUTLER, JARED",
+          "ast_given": 18,
+          "ast_received": 10,
+          "gp": 9,
+          "ast_per_game": 2.0,
+          "unique_targets": 8
         },
         {
           "id": "P004007",
           "name": "DOBRIC, OGNJEN",
           "ast_given": 5,
-          "ast_received": 10,
-          "gp": 7,
-          "ast_per_game": 0.7,
+          "ast_received": 11,
+          "gp": 8,
+          "ast_per_game": 0.6,
           "unique_targets": 4
+        },
+        {
+          "id": "P006482",
+          "name": "KRAMER, DAVID",
+          "ast_given": 2,
+          "ast_received": 13,
+          "gp": 9,
+          "ast_per_game": 0.2,
+          "unique_targets": 1
         },
         {
           "id": "P014029",
@@ -9278,13 +9434,31 @@
           "unique_targets": 2
         },
         {
-          "id": "P006482",
-          "name": "KRAMER, DAVID",
-          "ast_given": 2,
-          "ast_received": 9,
-          "gp": 8,
-          "ast_per_game": 0.2,
+          "id": "P007960",
+          "name": "DAVIDOVAC, DEJAN",
+          "ast_given": 6,
+          "ast_received": 5,
+          "gp": 6,
+          "ast_per_game": 1.0,
+          "unique_targets": 5
+        },
+        {
+          "id": "P015396",
+          "name": "KOLOKO, CHRISTIAN",
+          "ast_given": 1,
+          "ast_received": 7,
+          "gp": 2,
+          "ast_per_game": 0.5,
           "unique_targets": 1
+        },
+        {
+          "id": "P011157",
+          "name": "MOTLEY, JOHNATHAN",
+          "ast_given": 3,
+          "ast_received": 3,
+          "gp": 4,
+          "ast_per_game": 0.8,
+          "unique_targets": 2
         },
         {
           "id": "P014728",
@@ -9294,24 +9468,6 @@
           "gp": 4,
           "ast_per_game": 0.2,
           "unique_targets": 1
-        },
-        {
-          "id": "P011157",
-          "name": "MOTLEY, JOHNATHAN",
-          "ast_given": 3,
-          "ast_received": 2,
-          "gp": 3,
-          "ast_per_game": 1.0,
-          "unique_targets": 2
-        },
-        {
-          "id": "P007960",
-          "name": "DAVIDOVAC, DEJAN",
-          "ast_given": 2,
-          "ast_received": 3,
-          "gp": 5,
-          "ast_per_game": 0.4,
-          "unique_targets": 2
         },
         {
           "id": "P010262",
@@ -9330,15 +9486,6 @@
           "gp": 3,
           "ast_per_game": 0.3,
           "unique_targets": 1
-        },
-        {
-          "id": "P015396",
-          "name": "KOLOKO, CHRISTIAN",
-          "ast_given": 0,
-          "ast_received": 2,
-          "gp": 1,
-          "ast_per_game": 0.0,
-          "unique_targets": 0
         }
       ],
       "edges": [
@@ -9359,29 +9506,29 @@
         {
           "from": "P013363",
           "to": "P011157",
-          "count": 1,
-          "fg2": 1,
+          "count": 2,
+          "fg2": 2,
           "fg3": 0
         },
         {
           "from": "P010568",
           "to": "P011982",
-          "count": 4,
+          "count": 5,
           "fg2": 3,
-          "fg3": 1
+          "fg3": 2
         },
         {
           "from": "P010568",
           "to": "P013363",
-          "count": 15,
+          "count": 16,
           "fg2": 10,
-          "fg3": 5
+          "fg3": 6
         },
         {
           "from": "P014163",
           "to": "P011982",
-          "count": 6,
-          "fg2": 3,
+          "count": 7,
+          "fg2": 4,
           "fg3": 3
         },
         {
@@ -9415,8 +9562,8 @@
         {
           "from": "P010391",
           "to": "P006482",
-          "count": 2,
-          "fg2": 0,
+          "count": 3,
+          "fg2": 1,
           "fg3": 2
         },
         {
@@ -9436,15 +9583,15 @@
         {
           "from": "P010568",
           "to": "P012201",
-          "count": 7,
+          "count": 8,
           "fg2": 4,
-          "fg3": 3
+          "fg3": 4
         },
         {
           "from": "P012201",
           "to": "P011982",
-          "count": 1,
-          "fg2": 1,
+          "count": 2,
+          "fg2": 2,
           "fg3": 0
         },
         {
@@ -9471,9 +9618,9 @@
         {
           "from": "P013363",
           "to": "P011305",
-          "count": 2,
+          "count": 3,
           "fg2": 1,
-          "fg3": 1
+          "fg3": 2
         },
         {
           "from": "P014163",
@@ -9492,9 +9639,9 @@
         {
           "from": "P011982",
           "to": "P011305",
-          "count": 1,
+          "count": 2,
           "fg2": 1,
-          "fg3": 0
+          "fg3": 1
         },
         {
           "from": "P011305",
@@ -9569,9 +9716,9 @@
         {
           "from": "P012201",
           "to": "P006482",
-          "count": 1,
+          "count": 2,
           "fg2": 0,
-          "fg3": 1
+          "fg3": 2
         },
         {
           "from": "P014029",
@@ -9611,8 +9758,8 @@
         {
           "from": "P010391",
           "to": "P013363",
-          "count": 5,
-          "fg2": 2,
+          "count": 6,
+          "fg2": 3,
           "fg3": 3
         },
         {
@@ -9730,9 +9877,9 @@
         {
           "from": "P010568",
           "to": "P015396",
-          "count": 2,
+          "count": 3,
           "fg2": 2,
-          "fg3": 0
+          "fg3": 1
         },
         {
           "from": "P013363",
@@ -9744,16 +9891,16 @@
         {
           "from": "P012201",
           "to": "P011305",
-          "count": 2,
+          "count": 3,
           "fg2": 0,
-          "fg3": 2
+          "fg3": 3
         },
         {
           "from": "P011305",
           "to": "P013363",
-          "count": 1,
+          "count": 2,
           "fg2": 1,
-          "fg3": 0
+          "fg3": 1
         },
         {
           "from": "P010568",
@@ -9786,15 +9933,15 @@
         {
           "from": "P012201",
           "to": "P010568",
-          "count": 1,
-          "fg2": 0,
+          "count": 2,
+          "fg2": 1,
           "fg3": 1
         },
         {
           "from": "P010391",
           "to": "P007960",
-          "count": 1,
-          "fg2": 1,
+          "count": 3,
+          "fg2": 3,
           "fg3": 0
         },
         {
@@ -9810,6 +9957,62 @@
           "count": 1,
           "fg2": 1,
           "fg3": 0
+        },
+        {
+          "from": "P012201",
+          "to": "P015396",
+          "count": 1,
+          "fg2": 1,
+          "fg3": 0
+        },
+        {
+          "from": "P010391",
+          "to": "P015396",
+          "count": 3,
+          "fg2": 3,
+          "fg3": 0
+        },
+        {
+          "from": "P010391",
+          "to": "P011982",
+          "count": 1,
+          "fg2": 1,
+          "fg3": 0
+        },
+        {
+          "from": "P015396",
+          "to": "P013363",
+          "count": 1,
+          "fg2": 1,
+          "fg3": 0
+        },
+        {
+          "from": "P007960",
+          "to": "P006482",
+          "count": 2,
+          "fg2": 1,
+          "fg3": 1
+        },
+        {
+          "from": "P007960",
+          "to": "P014163",
+          "count": 1,
+          "fg2": 0,
+          "fg3": 1
+        },
+        {
+          "from": "P014163",
+          "to": "P011305",
+          "count": 1,
+          "fg2": 0,
+          "fg3": 1
+        },
+        {
+          "from": "P007960",
+          "to": "P004007",
+          "count": 1,
+          "fg2": 1,
+          "fg3": 0
         }
       ]
     },
@@ -9818,28 +10021,28 @@
         {
           "id": "P011052",
           "name": "MADAR, YAM",
-          "ast_given": 30,
-          "ast_received": 10,
-          "gp": 8,
-          "ast_per_game": 3.8,
-          "unique_targets": 7
+          "ast_given": 38,
+          "ast_received": 12,
+          "gp": 9,
+          "ast_per_game": 4.2,
+          "unique_targets": 9
         },
         {
           "id": "P011219",
           "name": "SORKIN, ROMAN",
-          "ast_given": 7,
-          "ast_received": 26,
-          "gp": 8,
-          "ast_per_game": 0.9,
+          "ast_given": 9,
+          "ast_received": 31,
+          "gp": 9,
+          "ast_per_game": 1.0,
           "unique_targets": 7
         },
         {
           "id": "P013699",
           "name": "CLARK III, JIMMY",
-          "ast_given": 23,
-          "ast_received": 9,
-          "gp": 8,
-          "ast_per_game": 2.9,
+          "ast_given": 25,
+          "ast_received": 11,
+          "gp": 9,
+          "ast_per_game": 2.8,
           "unique_targets": 7
         },
         {
@@ -9854,9 +10057,18 @@
         {
           "id": "P006835",
           "name": "HOARD, JAYLEN",
-          "ast_given": 8,
-          "ast_received": 19,
-          "gp": 8,
+          "ast_given": 9,
+          "ast_received": 20,
+          "gp": 9,
+          "ast_per_game": 1.0,
+          "unique_targets": 5
+        },
+        {
+          "id": "P014127",
+          "name": "BRISSETT, O'SHAE J",
+          "ast_given": 9,
+          "ast_received": 16,
+          "gp": 9,
           "ast_per_game": 1.0,
           "unique_targets": 5
         },
@@ -9870,30 +10082,21 @@
           "unique_targets": 7
         },
         {
-          "id": "P014127",
-          "name": "BRISSETT, O'SHAE J",
-          "ast_given": 9,
-          "ast_received": 15,
-          "gp": 8,
-          "ast_per_game": 1.1,
-          "unique_targets": 5
-        },
-        {
           "id": "P009783",
           "name": "COLSON, BONZIE",
           "ast_given": 5,
-          "ast_received": 16,
-          "gp": 8,
+          "ast_received": 18,
+          "gp": 9,
           "ast_per_game": 0.6,
           "unique_targets": 5
         },
         {
           "id": "P015085",
           "name": "WALLACE, KEATON",
-          "ast_given": 12,
-          "ast_received": 1,
-          "gp": 8,
-          "ast_per_game": 1.5,
+          "ast_given": 13,
+          "ast_received": 2,
+          "gp": 9,
+          "ast_per_game": 1.4,
           "unique_targets": 8
         },
         {
@@ -9910,7 +10113,7 @@
           "name": "BACOT JR., ARMANDO",
           "ast_given": 0,
           "ast_received": 3,
-          "gp": 6,
+          "gp": 7,
           "ast_per_game": 0.0,
           "unique_targets": 0
         },
@@ -9919,8 +10122,8 @@
           "name": "RAYMAN, WILLIAM",
           "ast_given": 2,
           "ast_received": 1,
-          "gp": 7,
-          "ast_per_game": 0.3,
+          "gp": 8,
+          "ast_per_game": 0.2,
           "unique_targets": 1
         },
         {
@@ -9937,15 +10140,15 @@
         {
           "from": "P011052",
           "to": "P011219",
-          "count": 8,
-          "fg2": 6,
+          "count": 12,
+          "fg2": 10,
           "fg3": 2
         },
         {
           "from": "P006835",
           "to": "P011219",
-          "count": 3,
-          "fg2": 3,
+          "count": 4,
+          "fg2": 4,
           "fg3": 0
         },
         {
@@ -10112,8 +10315,8 @@
         {
           "from": "P011052",
           "to": "P006835",
-          "count": 6,
-          "fg2": 5,
+          "count": 7,
+          "fg2": 6,
           "fg3": 1
         },
         {
@@ -10133,9 +10336,9 @@
         {
           "from": "P013699",
           "to": "P009783",
-          "count": 3,
-          "fg2": 1,
-          "fg3": 2
+          "count": 5,
+          "fg2": 2,
+          "fg3": 3
         },
         {
           "from": "P015085",
@@ -10175,9 +10378,9 @@
         {
           "from": "P015085",
           "to": "P014127",
-          "count": 3,
+          "count": 4,
           "fg2": 0,
-          "fg3": 3
+          "fg3": 4
         },
         {
           "from": "P010781",
@@ -10294,9 +10497,9 @@
         {
           "from": "P011219",
           "to": "P011052",
-          "count": 1,
-          "fg2": 1,
-          "fg3": 0
+          "count": 3,
+          "fg2": 2,
+          "fg3": 1
         },
         {
           "from": "P004132",
@@ -10381,6 +10584,20 @@
           "count": 1,
           "fg2": 1,
           "fg3": 0
+        },
+        {
+          "from": "P011052",
+          "to": "P015085",
+          "count": 1,
+          "fg2": 0,
+          "fg3": 1
+        },
+        {
+          "from": "P011052",
+          "to": "P013699",
+          "count": 2,
+          "fg2": 0,
+          "fg3": 2
         }
       ]
     },
@@ -10389,82 +10606,82 @@
         {
           "id": "P009863",
           "name": "BALDWIN IV, WADE",
-          "ast_given": 35,
+          "ast_given": 37,
           "ast_received": 9,
-          "gp": 8,
-          "ast_per_game": 4.4,
+          "gp": 9,
+          "ast_per_game": 4.1,
           "unique_targets": 10
         },
         {
           "id": "P004888",
           "name": "CLYBURN, WILL",
-          "ast_given": 12,
-          "ast_received": 16,
-          "gp": 8,
-          "ast_per_game": 1.5,
-          "unique_targets": 7
+          "ast_given": 13,
+          "ast_received": 23,
+          "gp": 9,
+          "ast_per_game": 1.4,
+          "unique_targets": 8
         },
         {
           "id": "P014168",
           "name": "KEY, BRAXTON",
-          "ast_given": 8,
+          "ast_given": 11,
           "ast_received": 19,
-          "gp": 8,
-          "ast_per_game": 1.0,
-          "unique_targets": 6
+          "gp": 9,
+          "ast_per_game": 1.2,
+          "unique_targets": 8
         },
         {
           "id": "P007831",
           "name": "SHIELDS, SHAVON",
-          "ast_given": 9,
-          "ast_received": 16,
-          "gp": 8,
-          "ast_per_game": 1.1,
+          "ast_given": 11,
+          "ast_received": 18,
+          "gp": 9,
+          "ast_per_game": 1.2,
           "unique_targets": 6
         },
         {
           "id": "P014124",
           "name": "HORTON TUCKER, TALEN",
           "ast_given": 14,
-          "ast_received": 7,
-          "gp": 8,
-          "ast_per_game": 1.8,
+          "ast_received": 8,
+          "gp": 9,
+          "ast_per_game": 1.6,
           "unique_targets": 6
         },
         {
           "id": "P002849",
           "name": "MELLI, NICOLO",
-          "ast_given": 7,
+          "ast_given": 8,
           "ast_received": 12,
-          "gp": 8,
+          "gp": 9,
           "ast_per_game": 0.9,
-          "unique_targets": 6
+          "unique_targets": 7
+        },
+        {
+          "id": "P013506",
+          "name": "BINGHAM, MARCUS",
+          "ast_given": 5,
+          "ast_received": 14,
+          "gp": 8,
+          "ast_per_game": 0.6,
+          "unique_targets": 3
         },
         {
           "id": "P007200",
           "name": "LARKIN, SHANE",
           "ast_given": 12,
-          "ast_received": 6,
-          "gp": 4,
-          "ast_per_game": 3.0,
+          "ast_received": 7,
+          "gp": 5,
+          "ast_per_game": 2.4,
           "unique_targets": 6
-        },
-        {
-          "id": "P013506",
-          "name": "BINGHAM, MARCUS",
-          "ast_given": 3,
-          "ast_received": 14,
-          "gp": 7,
-          "ast_per_game": 0.4,
-          "unique_targets": 3
         },
         {
           "id": "P013367",
           "name": "FORREST, TRENT",
           "ast_given": 13,
           "ast_received": 1,
-          "gp": 8,
-          "ast_per_game": 1.6,
+          "gp": 9,
+          "ast_per_game": 1.4,
           "unique_targets": 7
         },
         {
@@ -10481,7 +10698,7 @@
           "name": "SANLI, SERTAC",
           "ast_given": 2,
           "ast_received": 10,
-          "gp": 8,
+          "gp": 9,
           "ast_per_game": 0.2,
           "unique_targets": 2
         },
@@ -10564,9 +10781,9 @@
         {
           "from": "P009863",
           "to": "P004888",
-          "count": 7,
+          "count": 8,
           "fg2": 3,
-          "fg3": 4
+          "fg3": 5
         },
         {
           "from": "P006896",
@@ -10690,8 +10907,8 @@
         {
           "from": "P014168",
           "to": "P007831",
-          "count": 3,
-          "fg2": 2,
+          "count": 4,
+          "fg2": 3,
           "fg3": 1
         },
         {
@@ -10767,9 +10984,9 @@
         {
           "from": "P009863",
           "to": "P007831",
-          "count": 3,
+          "count": 4,
           "fg2": 1,
-          "fg3": 2
+          "fg3": 3
         },
         {
           "from": "P009863",
@@ -10844,9 +11061,9 @@
         {
           "from": "P007831",
           "to": "P004888",
-          "count": 2,
-          "fg2": 0,
-          "fg3": 2
+          "count": 4,
+          "fg2": 1,
+          "fg3": 3
         },
         {
           "from": "P004888",
@@ -10921,9 +11138,9 @@
         {
           "from": "P013506",
           "to": "P004888",
-          "count": 1,
+          "count": 3,
           "fg2": 0,
-          "fg3": 1
+          "fg3": 3
         },
         {
           "from": "P004888",
@@ -10931,6 +11148,34 @@
           "count": 1,
           "fg2": 0,
           "fg3": 1
+        },
+        {
+          "from": "P014168",
+          "to": "P007200",
+          "count": 1,
+          "fg2": 1,
+          "fg3": 0
+        },
+        {
+          "from": "P004888",
+          "to": "P014124",
+          "count": 1,
+          "fg2": 0,
+          "fg3": 1
+        },
+        {
+          "from": "P002849",
+          "to": "P004888",
+          "count": 1,
+          "fg2": 0,
+          "fg3": 1
+        },
+        {
+          "from": "P014168",
+          "to": "P004888",
+          "count": 1,
+          "fg2": 1,
+          "fg3": 0
         },
         {
           "from": "P014168",
@@ -12174,10 +12419,10 @@
       "scorer": "NWORA, JORDAN",
       "scorer_id": "P013363",
       "team": "RED",
-      "count": 15,
+      "count": 16,
       "fg2": 10,
-      "fg3": 5,
-      "per_game": 1.88
+      "fg3": 6,
+      "per_game": 1.78
     },
     {
       "passer": "MILLER-MCINTYRE, CODI",
@@ -12202,6 +12447,17 @@
       "per_game": 1.5
     },
     {
+      "passer": "MADAR, YAM",
+      "passer_id": "P011052",
+      "scorer": "SORKIN, ROMAN",
+      "scorer_id": "P011219",
+      "team": "TEL",
+      "count": 12,
+      "fg2": 10,
+      "fg3": 2,
+      "per_game": 1.33
+    },
+    {
       "passer": "WRIGHT IV, MCKINLEY",
       "passer_id": "P012606",
       "scorer": "KABENGELE, MFIONDU",
@@ -12221,7 +12477,7 @@
       "count": 10,
       "fg2": 8,
       "fg3": 2,
-      "per_game": 1.25
+      "per_game": 1.11
     },
     {
       "passer": "BRYANT, ELIJAH",
@@ -12246,6 +12502,17 @@
       "per_game": 1.67
     },
     {
+      "passer": "MALEDON, THEO",
+      "passer_id": "P007027",
+      "scorer": "TAVARES, WALTER",
+      "scorer_id": "P005791",
+      "team": "MAD",
+      "count": 9,
+      "fg2": 9,
+      "fg3": 0,
+      "per_game": 1.0
+    },
+    {
       "passer": "FRANCISCO, SYLVAIN",
       "passer_id": "P007975",
       "scorer": "LESSORT, MATHIAS",
@@ -12255,6 +12522,17 @@
       "fg2": 9,
       "fg3": 0,
       "per_game": 1.12
+    },
+    {
+      "passer": "JONES, CHRIS",
+      "passer_id": "P010568",
+      "scorer": "MONEKE, CHIMA",
+      "scorer_id": "P012201",
+      "team": "RED",
+      "count": 8,
+      "fg2": 4,
+      "fg3": 4,
+      "per_game": 0.89
     },
     {
       "passer": "JONES, CARLIK",
@@ -12268,26 +12546,15 @@
       "per_game": 1.0
     },
     {
-      "passer": "MADAR, YAM",
-      "passer_id": "P011052",
-      "scorer": "SORKIN, ROMAN",
-      "scorer_id": "P011219",
-      "team": "TEL",
+      "passer": "BALDWIN IV, WADE",
+      "passer_id": "P009863",
+      "scorer": "CLYBURN, WILL",
+      "scorer_id": "P004888",
+      "team": "ULK",
       "count": 8,
-      "fg2": 6,
-      "fg3": 2,
-      "per_game": 1.0
-    },
-    {
-      "passer": "MALEDON, THEO",
-      "passer_id": "P007027",
-      "scorer": "TAVARES, WALTER",
-      "scorer_id": "P005791",
-      "team": "MAD",
-      "count": 8,
-      "fg2": 8,
-      "fg3": 0,
-      "per_game": 1.0
+      "fg2": 3,
+      "fg3": 5,
+      "per_game": 0.89
     },
     {
       "passer": "BALDWIN IV, WADE",
@@ -12298,18 +12565,29 @@
       "count": 8,
       "fg2": 8,
       "fg3": 0,
-      "per_game": 1.0
+      "per_game": 0.89
     },
     {
-      "passer": "JONES, CHRIS",
-      "passer_id": "P010568",
-      "scorer": "MONEKE, CHIMA",
-      "scorer_id": "P012201",
+      "passer": "BUTLER, JARED",
+      "passer_id": "P014163",
+      "scorer": "OJELEYE, SEMI",
+      "scorer_id": "P011982",
       "team": "RED",
       "count": 7,
       "fg2": 4,
       "fg3": 3,
-      "per_game": 0.88
+      "per_game": 0.78
+    },
+    {
+      "passer": "CAMPAZZO, FACUNDO",
+      "passer_id": "P005928",
+      "scorer": "OKEKE, CHUMA",
+      "scorer_id": "P014006",
+      "team": "MAD",
+      "count": 7,
+      "fg2": 2,
+      "fg3": 5,
+      "per_game": 0.78
     },
     {
       "passer": "MICIC, VASILIJE",
@@ -12345,17 +12623,6 @@
       "per_game": 0.88
     },
     {
-      "passer": "BALDWIN IV, WADE",
-      "passer_id": "P009863",
-      "scorer": "CLYBURN, WILL",
-      "scorer_id": "P004888",
-      "team": "ULK",
-      "count": 7,
-      "fg2": 3,
-      "fg3": 4,
-      "per_game": 0.88
-    },
-    {
       "passer": "ETIENNE, TYSON",
       "passer_id": "P015143",
       "scorer": "HERRERA, SEBASTIAN",
@@ -12364,28 +12631,6 @@
       "count": 7,
       "fg2": 0,
       "fg3": 7,
-      "per_game": 1.0
-    },
-    {
-      "passer": "MALEDON, THEO",
-      "passer_id": "P007027",
-      "scorer": "LUWAWU-CABARROT, TIMOTHE",
-      "scorer_id": "P012080",
-      "team": "MAD",
-      "count": 7,
-      "fg2": 1,
-      "fg3": 6,
-      "per_game": 0.88
-    },
-    {
-      "passer": "BAUGH, DAMION",
-      "passer_id": "P014736",
-      "scorer": "LAWSON, A.J.",
-      "scorer_id": "P014734",
-      "team": "BAS",
-      "count": 7,
-      "fg2": 3,
-      "fg3": 4,
       "per_game": 0.88
     }
   ],
@@ -12394,21 +12639,31 @@
       "player": "JONES, CHRIS",
       "player_id": "P010568",
       "team": "RED",
-      "ast": 45,
-      "per_game": 5.6,
+      "ast": 49,
+      "per_game": 5.4,
       "unique_targets": 12,
       "top_target": "NWORA, JORDAN",
-      "top_target_count": 15
+      "top_target_count": 16
     },
     {
       "player": "MALEDON, THEO",
       "player_id": "P007027",
       "team": "MAD",
-      "ast": 42,
-      "per_game": 5.2,
+      "ast": 43,
+      "per_game": 4.8,
       "unique_targets": 11,
       "top_target": "TAVARES, WALTER",
-      "top_target_count": 8
+      "top_target_count": 9
+    },
+    {
+      "player": "CAMPAZZO, FACUNDO",
+      "player_id": "P005928",
+      "team": "MAD",
+      "ast": 40,
+      "per_game": 4.4,
+      "unique_targets": 11,
+      "top_target": "JONES, DAMIAN",
+      "top_target_count": 10
     },
     {
       "player": "CARR, MARCUS",
@@ -12419,6 +12674,26 @@
       "unique_targets": 8,
       "top_target": "DIARRA, ALIOU",
       "top_target_count": 12
+    },
+    {
+      "player": "MADAR, YAM",
+      "player_id": "P011052",
+      "team": "TEL",
+      "ast": 38,
+      "per_game": 4.2,
+      "unique_targets": 9,
+      "top_target": "SORKIN, ROMAN",
+      "top_target_count": 12
+    },
+    {
+      "player": "BALDWIN IV, WADE",
+      "player_id": "P009863",
+      "team": "ULK",
+      "ast": 37,
+      "per_game": 4.1,
+      "unique_targets": 10,
+      "top_target": "CLYBURN, WILL",
+      "top_target_count": 8
     },
     {
       "player": "JONES, CARLIK",
@@ -12441,16 +12716,6 @@
       "top_target_count": 5
     },
     {
-      "player": "BALDWIN IV, WADE",
-      "player_id": "P009863",
-      "team": "ULK",
-      "ast": 35,
-      "per_game": 4.4,
-      "unique_targets": 10,
-      "top_target": "KEY, BRAXTON",
-      "top_target_count": 8
-    },
-    {
       "player": "BRYANT, ELIJAH",
       "player_id": "P009846",
       "team": "HTA",
@@ -12471,16 +12736,6 @@
       "top_target_count": 9
     },
     {
-      "player": "CAMPAZZO, FACUNDO",
-      "player_id": "P005928",
-      "team": "MAD",
-      "ast": 32,
-      "per_game": 4.0,
-      "unique_targets": 10,
-      "top_target": "JONES, DAMIAN",
-      "top_target_count": 10
-    },
-    {
       "player": "MILLER-MCINTYRE, CODI",
       "player_id": "P009048",
       "team": "OLY",
@@ -12491,6 +12746,16 @@
       "top_target_count": 13
     },
     {
+      "player": "WEILER-BABB, NICK",
+      "player_id": "P010391",
+      "team": "RED",
+      "ast": 31,
+      "per_game": 3.4,
+      "unique_targets": 11,
+      "top_target": "NWORA, JORDAN",
+      "top_target_count": 6
+    },
+    {
       "player": "BAUGH, DAMION",
       "player_id": "P014736",
       "team": "BAS",
@@ -12499,16 +12764,6 @@
       "unique_targets": 10,
       "top_target": "LAWSON, A.J.",
       "top_target_count": 7
-    },
-    {
-      "player": "MADAR, YAM",
-      "player_id": "P011052",
-      "team": "TEL",
-      "ast": 30,
-      "per_game": 3.8,
-      "unique_targets": 7,
-      "top_target": "SORKIN, ROMAN",
-      "top_target_count": 8
     },
     {
       "player": "PAJOLA, ALESSANDRO",
@@ -12551,6 +12806,16 @@
       "top_target_count": 6
     },
     {
+      "player": "FELIZ, ANDRES",
+      "player_id": "P011247",
+      "team": "MAD",
+      "ast": 26,
+      "per_game": 2.9,
+      "unique_targets": 10,
+      "top_target": "TAVARES, WALTER",
+      "top_target_count": 6
+    },
+    {
       "player": "WRIGHT IV, MCKINLEY",
       "player_id": "P012606",
       "team": "DUB",
@@ -12569,26 +12834,6 @@
       "unique_targets": 11,
       "top_target": "WRIGHT, MOSES",
       "top_target_count": 6
-    },
-    {
-      "player": "FELIZ, ANDRES",
-      "player_id": "P011247",
-      "team": "MAD",
-      "ast": 25,
-      "per_game": 3.1,
-      "unique_targets": 10,
-      "top_target": "TAVARES, WALTER",
-      "top_target_count": 5
-    },
-    {
-      "player": "SATORANSKY, TOMAS",
-      "player_id": "P002939",
-      "team": "HTA",
-      "ast": 24,
-      "per_game": 3.0,
-      "unique_targets": 9,
-      "top_target": "BLAKENEY, ANTONIO",
-      "top_target_count": 5
     }
   ]
 }
