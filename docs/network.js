@@ -5,13 +5,17 @@ let _selected = null;   // current team code
 let _pinned = null;     // pinned player id
 
 // ── Boot ─────────────────────────────────────────────────────────────────────
-Promise.all([fetchJSON('data/current/assist_network.json'), PlayerLinks.ready])
-    .then(([data]) => {
+Promise.all([
+    fetchJSON('data/current/assist_network.json'),
+    fetchJSON('data/current/highlights.json').catch(() => null),
+    PlayerLinks.ready,
+])
+    .then(([data, highlights]) => {
         _data = data;
         renderTeamGrid();
         renderCombosTable(data.top_combos);
         renderPlaymakersTable(data.top_playmakers);
-        restoreFromURL();
+        restoreFromURL(highlights);
     })
     .catch(err => {
         console.error('Failed to load assist network:', err);
@@ -19,15 +23,26 @@ Promise.all([fetchJSON('data/current/assist_network.json'), PlayerLinks.ready])
     });
 
 // ── URL state ────────────────────────────────────────────────────────────────
-function restoreFromURL() {
+function restoreFromURL(highlights) {
     const params = new URLSearchParams(location.search);
     const team = params.get('team');
     if (team && _data.teams[team]) {
         selectTeam(team);
     } else {
-        // Default: first team alphabetically
-        const first = Object.keys(_data.teams).sort()[0];
-        if (first) selectTeam(first);
+        // Default: standings leader (topical), else first team alphabetically.
+        // The default never writes ?team=.
+        const leader = highlights && highlights.standings_leader;
+        if (leader && _data.teams[leader]) {
+            selectTeam(leader, { explicit: false });
+            const label = document.createElement('p');
+            label.className = 'topical-label';
+            label.id = 'topical-label';
+            label.textContent = 'Standings leader · pick any team';
+            document.getElementById('chord-title').insertAdjacentElement('afterend', label);
+        } else {
+            const first = Object.keys(_data.teams).sort()[0];
+            if (first) selectTeam(first);
+        }
     }
 }
 
@@ -56,8 +71,9 @@ function renderTeamGrid() {
     }).join('');
 }
 
-function selectTeam(code) {
+function selectTeam(code, { explicit = true } = {}) {
     if (!_data || !_data.teams[code]) return;
+    if (explicit) document.getElementById('topical-label')?.remove();
     _selected = code;
     _pinned = null;
 
@@ -74,7 +90,7 @@ function selectTeam(code) {
     // Hide player detail
     document.getElementById('player-detail').classList.remove('visible');
 
-    updateURL(code);
+    if (explicit) updateURL(code);
     renderChord(_data.teams[code], code);
 }
 
