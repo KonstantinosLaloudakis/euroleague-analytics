@@ -107,6 +107,9 @@ function renderDeepDive(team) {
     // Rolling form chart
     renderFormChart(team);
 
+    // Pace card
+    renderPaceCard(team.team);
+
     // Top contributors
     renderContributors(team.team);
 
@@ -214,6 +217,70 @@ function renderFormChart(team) {
 
     document.getElementById('form-chart').innerHTML = '';
     Plotly.newPlot('form-chart', traces, layout, { displayModeBar: false, responsive: true });
+}
+
+// ── Pace card ─────────────────────────────────────────────────────────────
+let _pacePromise = null;
+function loadPace() {
+    if (!_pacePromise) {
+        _pacePromise = fetchJSON('data/current/pace.json').catch(err => {
+            console.warn('pace.json unavailable:', err);
+            return null;
+        });
+    }
+    return _pacePromise;
+}
+
+function ordinal(n) {
+    const v = n % 100;
+    const s = (v >= 11 && v <= 13) ? 'th' : ({ 1: 'st', 2: 'nd', 3: 'rd' }[n % 10] || 'th');
+    return `${n}${s}`;
+}
+
+function renderPaceCard(teamCode) {
+    const card = document.getElementById('pace-card');
+    card.hidden = true;
+    card.dataset.team = teamCode;   // guards against a stale async render after switching teams
+    loadPace().then(pace => {
+        if (!pace || !Array.isArray(pace.teams)) return;
+        const history = PaceCore.teamHistory(pace.teams, pace.league, teamCode);
+        if (!history.length) return;
+        if (document.getElementById('pace-card').dataset.team !== teamCode) return;
+        card.hidden = false;
+
+        const latest = PaceCore.latestSeason(pace.teams);
+        const row = pace.teams.find(r => r.team === teamCode && r.season === latest);
+        const kpi = document.getElementById('pace-kpi');
+        if (row) {
+            const adj = row.adj_rel;
+            const adjTxt = `${adj < 0 ? '−' : '+'}${Math.abs(adj).toFixed(1)}`;
+            kpi.innerHTML = `${row.pace.toFixed(1)} possessions per 40 · ${ordinal(row.rank)} of ${row.teams}`
+                + ` · opponent-adjusted ${adjTxt} (${ordinal(row.adj_rank)}) · ${seasonLabel(latest)}`
+                + ` · <a href="pace.html" style="color:var(--accent-blue)">Pace page →</a>`;
+        } else {
+            kpi.innerHTML = `No games in ${seasonLabel(latest)}. `
+                + `<a href="pace.html" style="color:var(--accent-blue)">Pace page →</a>`;
+        }
+
+        const x = history.map(h => seasonLabel(h.season));
+        const ink = teamInk(teamCode);
+        const traces = [
+            { type: 'scatter', mode: 'lines+markers', name: TEAM_NAMES[teamCode] || teamCode, x, y: history.map(h => h.pace),
+              line: { color: ink, width: 2.5 }, marker: { size: 6, color: ink },
+              hovertemplate: '%{x}: %{y:.1f}<extra>' + (TEAM_NAMES[teamCode] || teamCode) + '</extra>' },
+            { type: 'scatter', mode: 'lines+markers', name: 'League', x, y: history.map(h => h.league),
+              line: { color: '#6b7280', width: 1.5, dash: 'dot' }, marker: { size: 4, color: '#6b7280' },
+              connectgaps: false, hovertemplate: '%{x}: %{y:.1f}<extra>League</extra>' },
+        ];
+        const layout = Object.assign({}, PLOTLY_THEME, {
+            height: 220,
+            margin: { t: 10, r: 20, b: 40, l: 40 },
+            yaxis: Object.assign({}, PLOTLY_THEME.yaxis, { title: { text: 'Possessions / 40', font: { size: 11 } } }),
+            legend: { orientation: 'h', x: 0, y: 1.15, font: { color: '#9ca3af', size: 11 }, bgcolor: 'transparent' },
+        });
+        document.getElementById('pace-chart').innerHTML = '';
+        Plotly.newPlot('pace-chart', traces, layout, PLOTLY_CONFIG);
+    }).catch(err => console.warn('pace card failed:', err));
 }
 
 // ── Top contributors ──────────────────────────────────────────────────────
