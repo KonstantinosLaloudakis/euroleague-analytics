@@ -4,10 +4,11 @@ import sys
 import unicodedata
 import pandas as pd
 from euroleague_api.player_stats import PlayerStats
-from season_config import ALL_SEASONS
+from season_config import ALL_SEASONS, CURRENT_SEASON
 
 OUT_FULL  = os.path.join('docs', 'data', 'current', 'player_career_stats.json')
 OUT_INDEX = os.path.join('docs', 'data', 'current', 'player_index.json')
+OUT_SEARCH = os.path.join('docs', 'data', 'current', 'search_index.json')
 
 SEASONS = ALL_SEASONS
 
@@ -45,6 +46,45 @@ def attempt_weighted_pct(seasons, made_key, att_key):
     total_made = sum((s.get(made_key) or 0) * (s['gp'] or 0) for s in seasons if s.get('gp'))
     total_att  = sum((s.get(att_key)  or 0) * (s['gp'] or 0) for s in seasons if s.get('gp'))
     return round(total_made / total_att * 100, 1) if total_att > 0 else None
+
+
+def build_search_index(players, schedule_rows, season):
+    """Compact player/team list for the nav search box (docs/data/current/search_index.json)."""
+    entries = []
+    for code, p in players.items():
+        seasons = p.get('seasons') or []
+        if not seasons:
+            continue
+        years = [int(s['season_code'][1:]) for s in seasons]
+        entries.append({
+            'c': code,
+            'n': p['name'],
+            't': seasons[0]['team_code'].replace(';', '/'),
+            'f': min(years),
+            'l': max(years),
+            's': len(seasons),
+        })
+    teams = {r['homecode']: r['hometeam'] for r in schedule_rows}
+    return {
+        'season': season,
+        'players': entries,
+        'teams': [{'c': c, 'n': n} for c, n in sorted(teams.items())],
+    }
+
+
+def write_search_index(players):
+    schedule_path = f'schedule_{CURRENT_SEASON}.json'
+    if os.path.exists(schedule_path):
+        with open(schedule_path, encoding='utf-8') as f:
+            schedule_rows = json.load(f)
+    else:
+        print(f"  Warning: {schedule_path} missing — search index will have no teams")
+        schedule_rows = []
+    idx = build_search_index(players, schedule_rows, CURRENT_SEASON)
+    with open(OUT_SEARCH, 'w', encoding='utf-8') as f:
+        json.dump(idx, f, ensure_ascii=False, separators=(',', ':'))
+    print(f"Wrote {OUT_SEARCH} ({len(idx['players'])} players, {len(idx['teams'])} teams)")
+    return idx
 
 
 def fetch_career_stats():
@@ -209,6 +249,8 @@ def fetch_career_stats():
     with open(OUT_INDEX, 'w', encoding='utf-8') as f:
         json.dump(name_to_code, f, ensure_ascii=False, separators=(',', ':'))
     print(f"Wrote {OUT_INDEX} ({len(name_to_code)} entries)")
+
+    write_search_index(players_dict)
 
 
 if __name__ == '__main__':
