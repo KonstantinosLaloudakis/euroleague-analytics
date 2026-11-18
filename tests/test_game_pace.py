@@ -87,6 +87,11 @@ def test_league_pace_uses_regular_season_only():
     assert r['ortg'] == pytest.approx(100 * 425 / 432, abs=0.01)
 
 
+def test_league_last_round_is_none_when_no_rounds():
+    rows = gp.league_by_season([_g(2020, 'RS', 1, 'AAA', 'BBB', 80, 70, 74, rnd=None)])
+    assert rows[0]['last_round'] is None
+
+
 def test_team_seasons_rank_relative_and_adjusted():
     t = {r['team']: r for r in gp.team_seasons(TRIO)}
     assert [t[c]['pace'] for c in ('AAA', 'BBB', 'CCC')] == pytest.approx([73, 72, 71])
