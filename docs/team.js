@@ -253,7 +253,8 @@ function renderPaceCard(teamCode) {
         const kpi = document.getElementById('pace-kpi');
         if (row) {
             const adj = row.adj_rel;
-            const adjTxt = `${adj < 0 ? '−' : '+'}${Math.abs(adj).toFixed(1)}`;
+            const adjAbs = Math.abs(adj).toFixed(1);
+            const adjTxt = adjAbs === '0.0' ? '0.0' : `${adj < 0 ? '−' : '+'}${adjAbs}`;
             kpi.innerHTML = `${row.pace.toFixed(1)} possessions per 40 · ${ordinal(row.rank)} of ${row.teams}`
                 + ` · opponent-adjusted ${adjTxt} (${ordinal(row.adj_rank)}) · ${seasonLabel(latest)}`
                 + ` · <a href="pace.html" style="color:var(--accent-blue)">Pace page →</a>`;
