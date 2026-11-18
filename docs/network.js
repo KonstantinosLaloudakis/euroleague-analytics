@@ -362,8 +362,8 @@ function pinPlayer(playerId) {
 
 function showTooltip(edge, fromArc, toArc, evt) {
     const tip = document.getElementById('chord-tooltip');
-    const passer = PlayerNames.short(fromArc.name);
-    const scorer = PlayerNames.short(toArc.name);
+    const passer = PlayerNames.full(fromArc.name);
+    const scorer = PlayerNames.full(toArc.name);
 
     // Compute percentages
     const passerPct = fromArc.ast_given > 0 ? (edge.count / fromArc.ast_given * 100).toFixed(1) : '0.0';
