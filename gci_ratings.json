@@ -1,6 +1,6 @@
 {
   "season": "2026",
-  "round": 9,
+  "round": 12,
   "teams": {
     "ASV": {
       "gci": 52.7,
@@ -3759,7 +3759,7 @@
   ],
   "game_of_round": {
     "gamecode": 89,
-    "round": 9,
+    "round": 12,
     "home": "VIR",
     "away": "BES",
     "home_score": 101,
