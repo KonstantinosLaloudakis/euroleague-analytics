@@ -201,7 +201,7 @@ function renderHeroCard(player) {
           ${current ? `<span class="tag tag-team">${current.team_name || current.team_code}</span>` : ''}
           <span class="tag tag-span">${player.seasons.length} season${player.seasons.length !== 1 ? 's' : ''}${span ? ' · ' + span : ''}</span>
         </div>
-        ${careerUrl ? `<div class="compare-hero-meta" style="margin:6px 0 0"><a class="player-link" href="${careerUrl}">View career</a></div>` : ''}
+        ${careerUrl ? `<div class="compare-hero-meta compare-hero-cta">${PlayerLinks.link(player.name, 'View career', { code: player._code }, 'player-link--cta')}</div>` : ''}
       </div>
     </div>`;
 }

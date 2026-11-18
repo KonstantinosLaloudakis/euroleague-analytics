@@ -203,7 +203,7 @@ function selectPlayer(idx, ev) {
     // Build SVG radar chart
     const radarSvg = buildRadar(p, pctlMap, color);
     const careerHtml = PlayerLinks.url(m.player)
-        ? `<div class="mvp-detail-sub">${PlayerLinks.link(m.player, 'View career')}</div>` : '';
+        ? `<div class="mvp-detail-sub">${PlayerLinks.link(m.player, 'View career', null, 'player-link--cta')}</div>` : '';
 
     detail.innerHTML = `
         <div class="mvp-detail-header">
@@ -324,7 +324,7 @@ function renderRaceChart() {
             marker: { size: 6, color },
             customdata: data.rounds.map(() => name),
             hovertemplate: `<b>${formatName(name)}</b><br>Round %{x}<br>Score: %{y:.1f}` +
-                (PlayerLinks.url(name) ? '<br><i>Click for career</i>' : '') + '<extra></extra>',
+                (PlayerLinks.url(name) ? `<br><i>${PlayerLinks.chartHint()}</i>` : '') + '<extra></extra>',
         });
     }
 

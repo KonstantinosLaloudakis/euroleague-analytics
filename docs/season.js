@@ -311,7 +311,7 @@ function renderMVPRace(mvp) {
     const scores = top10.map(p => p.mvp_score);
     const barColors = top10.map(p => teamInk(p.team));
     const hoverText = top10.map(p =>
-        `<b>${p.player}</b><br>Team: ${p.team}<br>MVP Score: ${p.mvp_score.toFixed(1)}<br>Avg PIR: ${p.avg_pir.toFixed(1)}<br>GP: ${p.gp}` + (PlayerLinks.url(p.player) ? '<br><i>Click for career</i>' : '')
+        `<b>${p.player}</b><br>Team: ${p.team}<br>MVP Score: ${p.mvp_score.toFixed(1)}<br>Avg PIR: ${p.avg_pir.toFixed(1)}<br>GP: ${p.gp}` + (PlayerLinks.url(p.player) ? `<br><i>${PlayerLinks.chartHint()}</i>` : '')
     );
 
     const trace = {

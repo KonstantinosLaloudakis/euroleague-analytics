@@ -472,8 +472,8 @@ function renderPaintPlayers() {
 
     const rows = _paintData.players.map((p, i) => {
         const color = teamInk(p.team);
-        return `<tr class="paint-row" onclick="selectPaintPlayer(${i})">
-            <td class="zone-name-cell"><span onclick="event.stopPropagation()">${PlayerLinks.link(p.player)}</span></td>
+        return `<tr class="paint-row" onclick="selectPaintPlayer(${i}, event)">
+            <td class="zone-name-cell">${PlayerLinks.link(p.player)}</td>
             <td><span style="color:${color};font-weight:600">${p.team}</span></td>
             <td>${p.att}</td>
             <td>${fgpCell(p.fg_pct)}</td>
@@ -535,7 +535,8 @@ function renderPaintDefense() {
 }
 
 // ── Player paint detail card with SVG court ──────────────────────────────
-function selectPaintPlayer(idx) {
+function selectPaintPlayer(idx, ev) {
+    if (ev && ev.target.closest('a.player-link')) return;  // let the link navigate
     const detail = document.getElementById('paint-detail');
     if (_paintSelectedPlayer === idx) {
         _paintSelectedPlayer = null;

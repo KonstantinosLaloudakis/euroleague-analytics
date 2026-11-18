@@ -36,3 +36,42 @@ test('null index degrades to plain text', () => {
   assert.strictEqual(n.url('VEZENKOV, SASHA'), null);
   assert.strictEqual(n.link('A, B'), 'A, B');
 });
+
+const { createTapGate, raceWithTimeout } = require('../../docs/player-links.js');
+
+test('tap gate: first tap no navigate, second tap same point navigates', () => {
+  const g = createTapGate(3000);
+  assert.strictEqual(g('0:1', 1000), false);
+  assert.strictEqual(g('0:1', 1500), true);
+  assert.strictEqual(g('0:1', 1600), false, 'resets after navigating');
+});
+
+test('tap gate: different point resets', () => {
+  const g = createTapGate(3000);
+  assert.strictEqual(g('0:1', 0), false);
+  assert.strictEqual(g('0:2', 100), false);
+  assert.strictEqual(g('0:1', 200), false);
+  assert.strictEqual(g('0:1', 300), true);
+});
+
+test('tap gate: second tap outside window counts as a first tap', () => {
+  const g = createTapGate(3000);
+  assert.strictEqual(g('a', 0), false);
+  assert.strictEqual(g('a', 5000), false);
+  assert.strictEqual(g('a', 5100), true);
+});
+
+test('raceWithTimeout resolves when timer fires first and never rejects', async () => {
+  let fire;
+  const timer = cb => { fire = cb; };
+  const never = new Promise(() => {});
+  const p = raceWithTimeout(never, timer, 3000);
+  fire();
+  await p;
+  await raceWithTimeout(Promise.reject(new Error('x')), timer, 3000);
+});
+
+test('link accepts an extra modifier class', () => {
+  assert.strictEqual(PL.link('VEZENKOV, SASHA', 'View career', null, 'player-link--cta'),
+    '<a class="player-link player-link--cta" href="player.html?code=003469">View career</a>');
+});
