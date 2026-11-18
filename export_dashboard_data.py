@@ -74,6 +74,37 @@ def safe_build_highlights(out_dir, teams, oracle, game_control, mvp, player_stat
                 'top_performers': None}
 
 
+def export_recaps_and_highlights(out_dir, build_recaps, teams, oracle, game_control,
+                                 mvp, player_stats, season, round_num):
+    """Build recaps, always write highlights.json, then re-raise a recaps failure.
+
+    highlights.json is written on every run, but a recaps exception still aborts
+    the export (non-zero exit) so CI never commits stale recaps silently.
+    """
+    print("\n--- Building game recaps ---")
+    recaps_err = None
+    try:
+        game_recaps = build_recaps()
+    except Exception as e:  # noqa: BLE001
+        print(f"  Game recaps failed: {e!r}")
+        recaps_err, game_recaps = e, None
+    if game_recaps:
+        recap_path = os.path.join(out_dir, 'game_recaps.json')
+        with open(recap_path, 'w', encoding='utf-8') as f:
+            json.dump(game_recaps, f, ensure_ascii=False)
+        print(f"  Game recaps -> {recap_path}")
+
+    highlights = safe_build_highlights(
+        out_dir, teams, oracle, game_control, mvp, player_stats,
+        game_recaps or {}, season, round_num)
+    highlights_path = os.path.join(out_dir, 'highlights.json')
+    with open(highlights_path, 'w', encoding='utf-8') as f:
+        json.dump(highlights, f, ensure_ascii=False, separators=(',', ':'))
+    print(f"  Highlights -> {highlights_path}")
+    if recaps_err is not None:
+        raise recaps_err
+
+
 def build_highlights(teams, oracle, game_control, mvp, player_stats, recaps,
                      career_codes, season, round_num):
     """Topical defaults for pages that open without a selection (highlights.json).
@@ -3753,29 +3784,10 @@ def main():
         print(f"  Accuracy: {accuracy_data.get('accuracy', '?')}% over {accuracy_data.get('n_games', '?')} games")
     print(f"\nDone! dashboard.json written to {out_path}")
 
-    # ── Game recaps export ─────────────────────────────────────────────────
-    # Built first (right after dashboard.json) so highlights.json is written on
-    # every run and no later builder's failure can leave it stale.
-    print("\n--- Building game recaps ---")
-    try:
-        game_recaps = build_game_recaps()
-    except Exception as e:  # noqa: BLE001 - recaps must not block other outputs
-        print(f"  Game recaps failed: {e!r}")
-        game_recaps = None
-    if game_recaps:
-        recap_path = os.path.join(out_dir, 'game_recaps.json')
-        with open(recap_path, 'w', encoding='utf-8') as f:
-            json.dump(game_recaps, f, ensure_ascii=False)
-        print(f"  Game recaps -> {recap_path}")
-
-    # ── Highlights export (topical defaults for pages with no selection) ───
-    highlights = safe_build_highlights(
-        out_dir, teams, oracle_data, gci_data, mvp_list, player_stats,
-        game_recaps or {}, CURRENT_SEASON, round_num)
-    highlights_path = os.path.join(out_dir, 'highlights.json')
-    with open(highlights_path, 'w', encoding='utf-8') as f:
-        json.dump(highlights, f, ensure_ascii=False, separators=(',', ':'))
-    print(f"  Highlights -> {highlights_path}")
+    # ── Game recaps + highlights export ────────────────────────────────────
+    export_recaps_and_highlights(
+        out_dir, build_game_recaps, teams, oracle_data, gci_data, mvp_list,
+        player_stats, CURRENT_SEASON, round_num)
 
     # ── Shot stats export ────────────────────────────────────────────────────
     shot_stats = build_shot_stats()

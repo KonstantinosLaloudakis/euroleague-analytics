@@ -1,6 +1,6 @@
 import json
 
-from export_dashboard_data import build_highlights, safe_build_highlights
+from export_dashboard_data import build_highlights, safe_build_highlights, export_recaps_and_highlights
 
 
 def _teams():
@@ -130,3 +130,16 @@ def test_safe_build_highlights_tolerates_bad_player_index(tmp_path):
     (tmp_path / 'player_index.json').write_text('[1, 2]', encoding='utf-8')
     out = safe_build_highlights(str(tmp_path), [], None, None, [], {}, {}, 2026, 3)
     assert out['season'] == 2026 and out['round'] == 3
+
+
+def test_recaps_failure_still_writes_highlights_then_raises(tmp_path):
+    import pytest
+
+    def boom():
+        raise RuntimeError("recaps broke")
+
+    with pytest.raises(RuntimeError, match="recaps broke"):
+        export_recaps_and_highlights(str(tmp_path), boom, [], None, None, [], {}, 2026, 12)
+    written = json.loads((tmp_path / 'highlights.json').read_text(encoding='utf-8'))
+    assert written['season'] == 2026 and written['round'] == 12
+    assert not (tmp_path / 'game_recaps.json').exists()
