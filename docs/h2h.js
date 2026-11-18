@@ -8,6 +8,7 @@ let _backtest    = [];
 Promise.all([
     fetchJSON('data/current/dashboard.json'),
     fetchJSON('data/current/oracle_backtest_predictions.json'),
+    PlayerLinks.ready,
 ]).then(([data, backtest]) => {
     _data        = data;
     _playerStats = data.player_stats || [];
@@ -267,7 +268,7 @@ function renderPlayerComparison(codeA, codeB) {
             ${players.map(p => `
                 <div class="pc-player">
                     <div>
-                        <div class="pc-name">${p.name}</div>
+                        <div class="pc-name">${PlayerLinks.link(p.name, p.name, {code: p.code})}</div>
                         <div class="pc-meta">${p.position || ''} · ${p.gp} GP</div>
                     </div>
                     <div class="pc-stats">

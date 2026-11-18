@@ -189,6 +189,8 @@ function renderHeroCard(player) {
            onerror="this.outerHTML='<div class=\\'compare-avatar\\' style=\\'--team-color:${color};color:${onColor}\\'>${initials}</div>'">`
     : `<div class="compare-avatar" style="--team-color:${color};color:${onColor}">${initials}</div>`;
 
+  const careerUrl = PlayerLinks.url(player.name, { code: player._code });
+
   return `
     <div class="compare-hero-card" style="--team-color:${ink}">
       ${avatarHtml}
@@ -199,6 +201,7 @@ function renderHeroCard(player) {
           ${current ? `<span class="tag tag-team">${current.team_name || current.team_code}</span>` : ''}
           <span class="tag tag-span">${player.seasons.length} season${player.seasons.length !== 1 ? 's' : ''}${span ? ' · ' + span : ''}</span>
         </div>
+        ${careerUrl ? `<div class="compare-hero-meta compare-hero-cta">${PlayerLinks.link(player.name, 'View career', { code: player._code }, 'player-link--cta')}</div>` : ''}
       </div>
     </div>`;
 }
@@ -340,7 +343,7 @@ function renderSeasonTables() {
 document.addEventListener('DOMContentLoaded', async () => {
   let data;
   try {
-    data = await fetchJSON(COMPARE_DATA_URL);
+    [data] = await Promise.all([fetchJSON(COMPARE_DATA_URL), PlayerLinks.ready]);
   } catch {
     document.getElementById('compare-heroes').innerHTML =
       '<p class="compare-empty">Could not load player data.</p>';

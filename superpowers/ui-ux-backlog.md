@@ -77,5 +77,10 @@ Ordered by impact within each section. Start with the top section.
 
 ## Data gaps seen on the site (not UI, but visible)
 
+- **Players with few games have no career page.** `fetch_player_career_stats.py` uses the API's per-game season
+  stats, which omit low-game players (this season's rows start at 7 GP). On 2026-11-18, 13 of 255 current players
+  (5–6 GP, e.g. Antonio Reeves, Nikola Djurisic) and ~4% of Lineups names had no page, so their names can't link.
+  Fix in the pipeline (fetch without the minimum, or build those players' rows from box scores).
+
 - MVP Race timeline has no rounds 10–11: no rankings were saved while the refresh workflow was failing
   (fixed 2026-11-18). They can't be rebuilt exactly; leave the gap or reconstruct approximately.
