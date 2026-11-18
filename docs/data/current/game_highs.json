@@ -1,11 +1,11 @@
 {
- "generated": "2026-10-31",
+ "generated": "2026-11-18",
  "seasons": [
   2007,
   2026
  ],
  "current_season": 2026,
- "games_scanned": 5117,
+ "games_scanned": 5146,
  "points": [
   {
    "rank": 1,
@@ -374,6 +374,32 @@
   {
    "rank": 15,
    "tied": true,
+   "season": 2026,
+   "phase": "RS",
+   "round": 12,
+   "gamecode": 113,
+   "player": "003469",
+   "player_name": "VEZENKOV, SASHA",
+   "team": "OLY",
+   "opp": "TEL",
+   "home": false,
+   "won": true,
+   "final": "97-95",
+   "ot": true,
+   "line": {
+    "points": 37,
+    "rebounds": 9,
+    "assists": 1,
+    "threes": 6,
+    "pir": 41
+   },
+   "value": 37,
+   "season_label": "2026-27",
+   "has_replay": true
+  },
+  {
+   "rank": 15,
+   "tied": true,
    "season": 2025,
    "phase": "RS",
    "round": 36,
@@ -580,7 +606,7 @@
    "has_replay": true
   },
   {
-   "rank": 23,
+   "rank": 24,
    "tied": true,
    "season": 2025,
    "phase": "RS",
@@ -606,7 +632,7 @@
    "has_replay": true
   },
   {
-   "rank": 23,
+   "rank": 24,
    "tied": true,
    "season": 2025,
    "phase": "RS",
@@ -626,32 +652,6 @@
     "assists": 2,
     "threes": 1,
     "pir": 34
-   },
-   "value": 36,
-   "season_label": "2025-26",
-   "has_replay": true
-  },
-  {
-   "rank": 23,
-   "tied": true,
-   "season": 2025,
-   "phase": "RS",
-   "round": 5,
-   "gamecode": 49,
-   "player": "011987",
-   "player_name": "EDWARDS, CARSEN",
-   "team": "VIR",
-   "opp": "ASV",
-   "home": false,
-   "won": true,
-   "final": "90-83",
-   "ot": false,
-   "line": {
-    "points": 36,
-    "rebounds": 1,
-    "assists": 1,
-    "threes": 5,
-    "pir": 28
    },
    "value": 36,
    "season_label": "2025-26",
@@ -683,6 +683,32 @@
    },
    "value": 21,
    "season_label": "2011-12",
+   "has_replay": true
+  },
+  {
+   "rank": 2,
+   "tied": true,
+   "season": 2026,
+   "phase": "RS",
+   "round": 11,
+   "gamecode": 104,
+   "player": "000898",
+   "player_name": "VALANCIUNAS, JONAS",
+   "team": "ZAL",
+   "opp": "MIL",
+   "home": false,
+   "won": true,
+   "final": "86-83",
+   "ot": false,
+   "line": {
+    "points": 17,
+    "rebounds": 20,
+    "assists": 2,
+    "threes": 0,
+    "pir": 36
+   },
+   "value": 20,
+   "season_label": "2026-27",
    "has_replay": true
   },
   {
@@ -764,7 +790,7 @@
    "has_replay": true
   },
   {
-   "rank": 5,
+   "rank": 6,
    "tied": true,
    "season": 2024,
    "phase": "RS",
@@ -790,7 +816,7 @@
    "has_replay": true
   },
   {
-   "rank": 5,
+   "rank": 6,
    "tied": true,
    "season": 2023,
    "phase": "RS",
@@ -816,7 +842,7 @@
    "has_replay": true
   },
   {
-   "rank": 5,
+   "rank": 6,
    "tied": true,
    "season": 2020,
    "phase": "RS",
@@ -842,7 +868,7 @@
    "has_replay": true
   },
   {
-   "rank": 5,
+   "rank": 6,
    "tied": true,
    "season": 2019,
    "phase": "RS",
@@ -868,7 +894,7 @@
    "has_replay": true
   },
   {
-   "rank": 5,
+   "rank": 6,
    "tied": true,
    "season": 2015,
    "phase": "RS",
@@ -894,7 +920,7 @@
    "has_replay": true
   },
   {
-   "rank": 5,
+   "rank": 6,
    "tied": true,
    "season": 2007,
    "phase": "RS",
@@ -920,7 +946,33 @@
    "has_replay": true
   },
   {
-   "rank": 11,
+   "rank": 12,
+   "tied": true,
+   "season": 2026,
+   "phase": "RS",
+   "round": 12,
+   "gamecode": 111,
+   "player": "012796",
+   "player_name": "KABENGELE, MFIONDU",
+   "team": "DUB",
+   "opp": "IST",
+   "home": true,
+   "won": true,
+   "final": "80-75",
+   "ot": false,
+   "line": {
+    "points": 18,
+    "rebounds": 18,
+    "assists": 1,
+    "threes": 2,
+    "pir": 25
+   },
+   "value": 18,
+   "season_label": "2026-27",
+   "has_replay": true
+  },
+  {
+   "rank": 12,
    "tied": true,
    "season": 2025,
    "phase": "RS",
@@ -946,7 +998,7 @@
    "has_replay": true
   },
   {
-   "rank": 11,
+   "rank": 12,
    "tied": true,
    "season": 2025,
    "phase": "RS",
@@ -972,7 +1024,7 @@
    "has_replay": true
   },
   {
-   "rank": 11,
+   "rank": 12,
    "tied": true,
    "season": 2024,
    "phase": "RS",
@@ -998,7 +1050,7 @@
    "has_replay": true
   },
   {
-   "rank": 11,
+   "rank": 12,
    "tied": true,
    "season": 2022,
    "phase": "RS",
@@ -1024,7 +1076,7 @@
    "has_replay": true
   },
   {
-   "rank": 11,
+   "rank": 12,
    "tied": true,
    "season": 2022,
    "phase": "RS",
@@ -1050,7 +1102,7 @@
    "has_replay": true
   },
   {
-   "rank": 11,
+   "rank": 12,
    "tied": true,
    "season": 2022,
    "phase": "RS",
@@ -1076,7 +1128,7 @@
    "has_replay": true
   },
   {
-   "rank": 11,
+   "rank": 12,
    "tied": true,
    "season": 2018,
    "phase": "RS",
@@ -1102,7 +1154,7 @@
    "has_replay": true
   },
   {
-   "rank": 11,
+   "rank": 12,
    "tied": true,
    "season": 2016,
    "phase": "RS",
@@ -1128,7 +1180,7 @@
    "has_replay": true
   },
   {
-   "rank": 11,
+   "rank": 12,
    "tied": true,
    "season": 2007,
    "phase": "RS",
@@ -1154,7 +1206,7 @@
    "has_replay": true
   },
   {
-   "rank": 20,
+   "rank": 22,
    "tied": true,
    "season": 2025,
    "phase": "PO",
@@ -1180,7 +1232,7 @@
    "has_replay": true
   },
   {
-   "rank": 20,
+   "rank": 22,
    "tied": true,
    "season": 2025,
    "phase": "RS",
@@ -1206,7 +1258,7 @@
    "has_replay": true
   },
   {
-   "rank": 20,
+   "rank": 22,
    "tied": true,
    "season": 2022,
    "phase": "RS",
@@ -1232,7 +1284,7 @@
    "has_replay": true
   },
   {
-   "rank": 20,
+   "rank": 22,
    "tied": true,
    "season": 2021,
    "phase": "RS",
@@ -1255,58 +1307,6 @@
    },
    "value": 17,
    "season_label": "2021-22",
-   "has_replay": true
-  },
-  {
-   "rank": 20,
-   "tied": true,
-   "season": 2021,
-   "phase": "RS",
-   "round": 5,
-   "gamecode": 41,
-   "player": "004887",
-   "player_name": "POIRIER, VINCENT",
-   "team": "MAD",
-   "opp": "ULK",
-   "home": true,
-   "won": true,
-   "final": "70-69",
-   "ot": false,
-   "line": {
-    "points": 5,
-    "rebounds": 17,
-    "assists": 1,
-    "threes": 0,
-    "pir": 15
-   },
-   "value": 17,
-   "season_label": "2021-22",
-   "has_replay": true
-  },
-  {
-   "rank": 20,
-   "tied": true,
-   "season": 2018,
-   "phase": "RS",
-   "round": 11,
-   "gamecode": 85,
-   "player": "003120",
-   "player_name": "GUDAITIS, ARTURAS",
-   "team": "MIL",
-   "opp": "CAN",
-   "home": true,
-   "won": false,
-   "final": "86-94",
-   "ot": false,
-   "line": {
-    "points": 16,
-    "rebounds": 17,
-    "assists": 1,
-    "threes": 0,
-    "pir": 32
-   },
-   "value": 17,
-   "season_label": "2018-19",
    "has_replay": true
   }
  ],
