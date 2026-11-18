@@ -86,3 +86,11 @@ test('search limit', () => {
   const players = Array.from({ length: 12 }, (_, i) => P('9' + i, 'SMITH, P' + i, 'OLY', 2020, 2026, i));
   assert.equal(nav.search({ season: 2026, players, teams: [] }, 'smith').length, 8);
 });
+
+test('defines no browser globals', () => {
+  const vm = require('node:vm');
+  const fs = require('node:fs');
+  const sandbox = {};
+  vm.runInNewContext(fs.readFileSync(require.resolve('../../docs/nav.js'), 'utf8'), sandbox);
+  assert.deepEqual(Object.keys(sandbox), []);
+});
