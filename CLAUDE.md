@@ -68,6 +68,8 @@ Static site deployed via GitHub Pages from the `docs/` folder.
 - Each page is a standalone HTML file with inline `<style>` and a dedicated JS file
 - Charts use Plotly.js (loaded via CDN on pages that need it) or inline SVG
 - Shared styles in `docs/style.css`, no build step or bundler
+- Nav and search live only in `docs/nav.js`; each page has just `<nav class="site-nav" id="site-nav" aria-label="Main"></nav>` + `<script src="nav.js"></script>`. Add new pages to `NAV_GROUPS` there (`tests/test_nav_pages.py` enforces the placeholder and that targets exist)
+- JS unit tests: `node --test tests/js/*.test.js`
 
 **Pages:** index.html (Season Hub), team.html, players.html, h2h.html, recap.html, shots.html, network.html (Playmaking), replay.html, playoffs.html, mvp.html, about.html
 
@@ -77,6 +79,7 @@ Static site deployed via GitHub Pages from the `docs/` folder.
 - `mvp_all_game_stats_{season}.json` — Per-player per-game box scores
 - `data_cache/games_{season}.csv` — Game results with scores
 - `data_cache/pbp_lineups_{season}.csv` — Play-by-play with 5-man lineup arrays
+- `docs/data/current/search_index.json` — Nav search index (players since 2007-08 + current teams), written by `fetch_player_career_stats.py`
 - `docs/data/current/dashboard.json` — Aggregated export consumed by the frontend
 
 ### Team Code Conventions
