@@ -122,33 +122,8 @@
 </head>
 <body>
 
-  <nav class="site-nav" id="site-nav">
-    <span class="site-nav-brand">🏀 Euroleague Analytics</span>
-    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" onclick="const n=this.parentElement;const o=n.classList.toggle('nav-open');this.setAttribute('aria-expanded',o)"><span aria-hidden="true">☰</span> Menu</button>
-    <a href="index.html" class="nav-link">Season Hub</a>
-    <a href="team.html" class="nav-link">Team Deep-Dive</a>
-    <a href="players.html" class="nav-link">Player Stats</a>
-    <a href="player.html" class="nav-link">Careers</a>
-    <a href="compare.html" class="nav-link">Compare</a>
-    <a href="h2h.html" class="nav-link">Head-to-Head</a>
-    <a href="recap.html" class="nav-link">Game Recap</a>
-    <a href="shots.html" class="nav-link">Shot Lab</a>
-    <a href="playoffs.html" class="nav-link">Playoffs</a>
-    <a href="mvp.html" class="nav-link">MVP Race</a>
-    <div class="nav-more" onkeydown="if(event.key==='Escape'&&this.classList.contains('open')){this.classList.remove('open');const b=this.querySelector('.nav-more-btn');b.setAttribute('aria-expanded','false');b.focus();}" onfocusout="if(!this.contains(event.relatedTarget)){this.classList.remove('open');this.querySelector('.nav-more-btn').setAttribute('aria-expanded','false');}">
-      <button type="button" class="nav-link nav-more-btn active" aria-expanded="false" onclick="const m=this.parentElement;const o=m.classList.toggle('open');this.setAttribute('aria-expanded',o)">More <span aria-hidden="true">▾</span></button>
-      <div class="nav-more-dropdown">
-        <a href="network.html" class="nav-link">Playmaking</a>
-        <a href="replay.html" class="nav-link">Game Replay</a>
-        <a href="records.html" class="nav-link">All-Time Records</a>
-        <a href="game-control.html" class="nav-link">Game Control</a>
-        <a href="gci-history.html" class="nav-link">GCI History</a>
-        <a href="title-race.html" class="nav-link active">Title Race</a>
-        <a href="lineups.html" class="nav-link">Lineups</a>
-      </div>
-    </div>
-    <a href="about.html" class="nav-link">About</a>
-  </nav>
+  <nav class="site-nav" id="site-nav" aria-label="Main"></nav>
+  <script src="nav.js"></script>
 
   <main class="chase-page">
     <div id="chase-banner"></div>
