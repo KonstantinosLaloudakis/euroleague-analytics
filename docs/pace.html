@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f1117">
+    <title>Pace — Euroleague Analytics</title>
+    <meta name="description"
+        content="Euroleague pace since 2007: possessions per 40 minutes by season and team, regular season vs playoffs, pace vs winning, and the slowest and fastest games.">
+    <meta property="og:title" content="Pace — Euroleague Analytics">
+    <meta property="og:description"
+        content="Euroleague is playing faster than ever. Possessions per 40 minutes for every team and season since 2007.">
+    <meta property="og:image" content="og-image.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@700;800&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .section-label { font-size:0.68rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:0.3rem; }
+        .section-title { font-family:'Outfit',sans-serif;font-size:1.15rem;font-weight:700;color:var(--text-primary);margin-bottom:0.5rem; }
+        .section-note { font-size:0.82rem;color:var(--text-secondary);margin-bottom:0.9rem;line-height:1.5; }
+        .section-note strong { color:var(--text-primary); }
+        .early-note { font-size:0.78rem;color:var(--accent-gold);background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.25);border-radius:8px;padding:0.5rem 0.8rem;margin-bottom:0.9rem; }
+
+        .hero-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem; }
+        @media(max-width:640px){ .hero-grid { grid-template-columns:1fr; } }
+        .hero-card { background:linear-gradient(135deg,var(--bg-card),var(--bg-secondary));border-radius:var(--radius);padding:1.2rem 1rem;border:1px solid var(--border);text-align:center; }
+        .hero-card-label { font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.4rem; }
+        .hero-card-value { font-family:'Outfit',sans-serif;font-size:2rem;font-weight:800;line-height:1.1; }
+        .hero-card-sub { font-size:0.74rem;color:var(--text-muted);margin-top:0.4rem; }
+
+        .pace-toggle { display:flex;gap:0.4rem;margin-bottom:0.8rem;flex-wrap:wrap; }
+        .pace-toggle button { background:var(--bg-secondary);border:1px solid var(--border);color:var(--text-muted);padding:0.35rem 0.85rem;border-radius:6px;cursor:pointer;font-size:0.78rem;font-weight:600;font-family:inherit;transition:all 0.2s ease; }
+        .pace-toggle button.active { background:var(--accent-purple);border-color:var(--accent-purple);color:#fff; }
+        .pace-toggle button:hover:not(.active) { border-color:var(--text-muted);color:var(--text-primary); }
+
+        .chart-box { width:100%; }
+        #trend-chart { height:340px; }
+        #teams-chart { height:620px; }
+        #playoffs-chart { height:360px; }
+        #winning-chart { height:380px; }
+        @media(max-width:640px){ #trend-chart { height:300px; } #playoffs-chart { height:320px; } #winning-chart { height:340px; } }
+
+        .tables-grid { display:grid;grid-template-columns:1fr 1fr;gap:1rem; }
+        @media(max-width:900px){ .tables-grid { grid-template-columns:1fr; } }
+        .table-wrap { background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius);overflow-x:auto;min-width:0; }
+        .table-wrap h4 { font-family:'Outfit',sans-serif;font-size:0.95rem;padding:0.8rem 1rem 0.4rem;color:var(--text-primary); }
+        .pace-table { width:100%;border-collapse:collapse;font-size:0.76rem; }
+        .pace-table th { text-align:left;font-size:0.62rem;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-muted);padding:0.4rem 0.6rem;border-bottom:1px solid var(--border);white-space:nowrap; }
+        .pace-table td { padding:0.45rem 0.6rem;border-bottom:1px solid var(--border);color:var(--text-secondary);vertical-align:top; }
+        .pace-table tr:last-child td { border-bottom:none; }
+        .pace-table td.num, .pace-table th.num { text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap; }
+        .pace-table .game { color:var(--text-primary);font-weight:600; }
+        .pace-table .game a { color:inherit;text-decoration:none;border-bottom:1px dotted var(--border-hover); }
+        .pace-table .game a:hover { color:var(--accent-blue); }
+        .pace-table .stage { display:block;font-size:0.66rem;color:var(--text-muted);font-weight:400; }
+    </style>
+</head>
+
+<body>
+
+    <nav class="site-nav" id="site-nav" aria-label="Main"></nav>
+    <script src="nav.js"></script>
+
+    <header>
+        <h1>Euroleague is playing faster than ever</h1>
+        <p class="subtitle" id="pace-sub">Possessions per 40 minutes, every team, every season since 2007</p>
+    </header>
+
+    <main>
+
+        <div id="loading" class="stat-card" style="text-align:center;padding:3rem 1rem;">
+            <span class="loading-spinner"></span> Loading pace data...
+        </div>
+
+        <div id="load-error" class="hidden" style="text-align:center;padding:3rem 1rem;">
+            <div style="font-size:3rem;margin-bottom:1rem;">&#9888;&#65039;</div>
+            <p style="color:var(--text-muted);font-size:1rem;">
+                Could not load pace data. Make sure <code>data/current/pace.json</code> is present.
+            </p>
+        </div>
+
+        <div id="content" class="hidden">
+
+            <div class="stat-card" id="pace-cards">
+                <p class="section-label">Headline numbers</p>
+                <p class="section-note" id="pace-lede"></p>
+                <div class="hero-grid" id="hero-grid"></div>
+            </div>
+
+            <div class="stat-card" id="pace-trend">
+                <p class="section-label">League pace by season</p>
+                <h3 class="section-title" id="trend-title"></h3>
+                <p class="section-note" id="trend-note"></p>
+                <div id="trend-chart" class="chart-box"></div>
+            </div>
+
+            <div class="stat-card" id="pace-teams">
+                <p class="section-label">Every team this season</p>
+                <h3 class="section-title" id="teams-title"></h3>
+                <p class="section-note" id="teams-note"></p>
+                <div id="teams-early" class="early-note hidden"></div>
+                <div class="pace-toggle" role="group" aria-label="Pace measure">
+                    <button id="pace-mode-raw" class="active" type="button" aria-pressed="true">Raw pace</button>
+                    <button id="pace-mode-adj" type="button" aria-pressed="false">Opponent-adjusted</button>
+                </div>
+                <div id="teams-chart" class="chart-box"></div>
+            </div>
+
+            <div class="stat-card" id="pace-playoffs">
+                <p class="section-label">Regular season vs playoffs</p>
+                <h3 class="section-title">The playoffs slow down</h3>
+                <p class="section-note" id="playoffs-note"></p>
+                <div id="playoffs-chart" class="chart-box"></div>
+            </div>
+
+            <div class="stat-card" id="pace-winning">
+                <p class="section-label">Pace vs winning</p>
+                <h3 class="section-title">Playing fast doesn't win titles</h3>
+                <p class="section-note" id="winning-note"></p>
+                <div id="winning-chart" class="chart-box"></div>
+            </div>
+
+            <div class="stat-card" id="pace-extremes">
+                <p class="section-label">Slowest and fastest games since 2007</p>
+                <h3 class="section-title">The extremes</h3>
+                <p class="section-note">Possessions are averaged over both teams and scaled to 40 minutes, so overtime games compare fairly.</p>
+                <div class="tables-grid" id="extremes-grid"></div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="constants.js"></script>
+    <script src="pace-core.js"></script>
+    <script src="pace.js"></script>
+</body>
+
+</html>
