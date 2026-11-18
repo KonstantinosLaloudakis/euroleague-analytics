@@ -121,7 +121,7 @@ function renderLadder() {
 
         html += `<tr onclick="selectPlayer(${i}, event)" class="${_selectedIdx === i ? 'selected' : ''}">
             <td class="mvp-rank-cell ${rankCls}">${m.rank}</td>
-            <td class="mvp-player-cell">${PlayerLinks.link(m.player, formatName(m.player))}</td>
+            <td class="mvp-player-cell">${PlayerLinks.link(m.player)}</td>
             <td><span class="mvp-team-badge" style="background:${teamInk(m.team)}"></span>${m.team}</td>
             <td class="num mvp-score-cell">${m.mvp_score.toFixed(1)}</td>
             <td><div class="mvp-bar-wrap"><div class="mvp-bar-track">${barHtml}</div></div></td>
@@ -208,7 +208,7 @@ function selectPlayer(idx, ev) {
     detail.innerHTML = `
         <div class="mvp-detail-header">
             <div>
-                <div class="mvp-detail-name" style="color:${color}">#${m.rank} ${formatName(m.player)}</div>
+                <div class="mvp-detail-name" style="color:${color}">#${m.rank} ${PlayerNames.responsiveHtml(m.player)}</div>
                 <div class="mvp-detail-sub">${TEAM_NAMES[m.team] || m.team} · ${m.gp} GP · MVP Score: ${m.mvp_score.toFixed(1)}</div>
                 ${careerHtml}
             </div>

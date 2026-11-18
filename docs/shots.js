@@ -49,7 +49,7 @@ function rebuildPlayerDropdown() {
     players.forEach(([name, p]) => {
         const opt = document.createElement('option');
         opt.value = name;
-        opt.textContent = `${name} (${p.total_fga} FGA)`;
+        opt.textContent = `${PlayerNames.full(name)} (${p.total_fga} FGA)`;
         playerSel.appendChild(opt);
     });
 }

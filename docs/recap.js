@@ -130,7 +130,7 @@ function renderRound() {
                 </div>
                 <span class="margin-badge">+${margin}</span>
             </div>
-            ${tp ? `<div class="game-card-top-performer">MVP: <strong>${formatName(tp.name)}</strong> — ${tp.pts}p ${tp.reb}r ${tp.ast}a (PIR ${tp.pir})</div>` : ''}
+            ${tp ? `<div class="game-card-top-performer">MVP: <strong>${PlayerNames.responsiveHtml(tp.name)}</strong> — ${tp.pts}p ${tp.reb}r ${tp.ast}a (PIR ${tp.pir})</div>` : ''}
             <div class="expand-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
 
             <div class="box-score-panel" id="bs-panel-${i}">
@@ -226,8 +226,7 @@ async function renderBoxScore(idx, roster, totals, color) {
         const pm = p.pm > 0 ? `+${p.pm}` : p.pm;
         const pmColor = p.pm > 0 ? 'var(--accent-green)' : p.pm < 0 ? 'var(--accent-red)' : '';
         const pirColor = p.pir >= 20 ? 'var(--accent-green)' : p.pir >= 10 ? 'var(--accent-blue)' : '';
-        const displayName = formatName(p.name);
-        const nameHtml = PlayerLinks.link(p.name, displayName);
+        const nameHtml = PlayerLinks.link(p.name);
         return `<tr>
             <td>
                 <span class="player-name">${nameHtml}</span>
@@ -294,13 +293,3 @@ async function renderBoxScore(idx, roster, totals, color) {
     });
 }
 
-// ── Helpers ──────────────────────────────────────────────────────────────
-function formatName(raw) {
-    // "LASTNAME, FIRSTNAME" → "F. Lastname"
-    if (!raw) return '';
-    const parts = raw.split(', ');
-    if (parts.length < 2) return raw;
-    const last = parts[0].charAt(0) + parts[0].slice(1).toLowerCase();
-    const first = parts[1].charAt(0) + '.';
-    return `${first} ${last}`;
-}

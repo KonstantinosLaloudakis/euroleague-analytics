@@ -1796,7 +1796,7 @@ function _renderPoffTable() {
                 <div class="poff-td-player">
                     <span class="poff-player-dot" style="background:${color}"></span>
                     <div>
-                        <div class="poff-name">${p.name}</div>
+                        <div class="poff-name">${PlayerNames.responsiveHtml(p.name)}</div>
                         <div class="poff-team">${p.team}</div>
                     </div>
                 </div>

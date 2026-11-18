@@ -117,7 +117,7 @@ function _renderLeaderboard() {
         p.gp >= minGP &&
         (!team || p.team === team) &&
         (!_posFilter || (p.position || '').startsWith(_posFilter)) &&
-        (!search || p.name.toLowerCase().includes(search))
+        (!search || PlayerNames.matches(p.name, search))
     );
 
     // Sort
@@ -154,7 +154,7 @@ function _renderLeaderboard() {
         return `<tr>
             <td class="lb-rank">${i + 1}</td>
             <td class="lb-player-cell">
-                ${p.code ? `<a class="lb-player-name player-link" href="player.html?code=${p.code}">${p.name}</a>` : `<span class="lb-player-name">${p.name}</span>`}
+                ${p.code ? `<a class="lb-player-name player-link" href="player.html?code=${p.code}">${PlayerNames.responsiveHtml(p.name)}</a>` : `<span class="lb-player-name">${PlayerNames.responsiveHtml(p.name)}</span>`}
                 <span class="lb-player-meta">${badge}${p.position || ''}</span>
             </td>
             ${statCells}
@@ -235,7 +235,7 @@ function renderMvpRace(mvpList, playerStats) {
         const avgAst  = m.avg_ast ?? '—';
         return `<div class="mvp-card rank-${i+1}">
             <div class="mvp-medal">${medals[i]}</div>
-            <div class="mvp-card-name">${m.player}</div>
+            <div class="mvp-card-name">${PlayerNames.responsiveHtml(m.player)}</div>
             <div class="mvp-card-team">
                 <span class="lb-team-badge" title="${TEAM_NAMES[m.team] || m.team}" style="color:${teamInk(m.team)};border-color:${teamInk(m.team)}30;background:${teamInk(m.team)}15">${m.team}</span>
                 ${m.gp} GP
@@ -262,7 +262,7 @@ function renderMvpRace(mvpList, playerStats) {
         return `<tr>
             <td style="color:var(--text-muted);font-weight:700">${i+1}</td>
             <td>
-                <span style="font-weight:600;color:var(--text-primary)">${m.player}</span><br>
+                <span style="font-weight:600;color:var(--text-primary)">${PlayerNames.responsiveHtml(m.player)}</span><br>
                 <span style="font-size:0.75rem">${badge}${m.position || ''}</span>
             </td>
             <td><span class="mvp-score-pill">${m.mvp_score}</span></td>
@@ -308,20 +308,6 @@ function _rapmBar(val, maxAbs) {
     const pct = Math.min(Math.abs(val) / maxAbs * 100, 100);
     const cls = val >= 0 ? 'positive' : 'negative';
     return `<span class="rapm-bar ${cls}" style="width:${pct}%"></span>`;
-}
-
-function _cleanName(raw) {
-    const parts = (raw || '').split(',');
-    if (parts.length !== 2) return raw;
-    const first = parts[1].trim(), last = parts[0].trim();
-    // Title-case each word, preserve apostrophes and hyphens
-    const tc = s => s.replace(/\w\S*/g, w => {
-        // Keep suffixes like III, IV, II uppercase
-        if (/^(II|III|IV|V|VI|JR|SR)$/i.test(w)) return w.toUpperCase();
-        return w.charAt(0).toUpperCase() + w.slice(1).toLowerCase();
-    // Fix post-apostrophe: O'shae → O'Shae
-    }).replace(/([''-])(\w)/g, (_, sep, ch) => sep + ch.toUpperCase());
-    return tc(first) + ' ' + tc(last);
 }
 
 const RAPM_COLS = {
@@ -399,8 +385,8 @@ function _renderRapmTeamSummary(team, rows) {
         <div><span class="rapm-ts-label">Offense</span><br>${fmtV(teamOrapm)}</div>
         <div><span class="rapm-ts-label">Defense</span><br>${fmtV(teamDrapm)}</div>
         <div><span class="rapm-ts-label">Team Rank</span><br><span class="rapm-ts-value" style="color:var(--text-primary)">${rank} of ${total}</span></div>
-        <div><span class="rapm-ts-label">Best Player</span><br><span style="color:var(--text-primary);font-weight:600">${_cleanName(best.player)}</span> ${fmtV(best.RAPM)}</div>
-        <div><span class="rapm-ts-label">Weakest</span><br><span style="color:var(--text-primary);font-weight:600">${_cleanName(worst.player)}</span> ${fmtV(worst.RAPM)}</div>
+        <div><span class="rapm-ts-label">Best Player</span><br><span style="color:var(--text-primary);font-weight:600">${PlayerNames.responsiveHtml(best.player)}</span> ${fmtV(best.RAPM)}</div>
+        <div><span class="rapm-ts-label">Weakest</span><br><span style="color:var(--text-primary);font-weight:600">${PlayerNames.responsiveHtml(worst.player)}</span> ${fmtV(worst.RAPM)}</div>
     </div>`;
 }
 
@@ -426,7 +412,7 @@ function _renderRapm() {
     let rows = _rapmData.filter(p =>
         (!team || p.team === team) &&
         (!_rapmPosFilter || (p.position || '').startsWith(_rapmPosFilter)) &&
-        (!search || p.player.toLowerCase().includes(search))
+        (!search || PlayerNames.matches(p.player, search))
     );
 
     // Team summary
@@ -481,7 +467,7 @@ function _renderRapm() {
         return `<tr>
             <td class="lb-rank">${i + 1}</td>
             <td class="lb-player-cell">
-                <span class="lb-player-name">${_cleanName(p.player)}${boostHtml}</span>
+                <span class="lb-player-name">${PlayerNames.responsiveHtml(p.player)}${boostHtml}</span>
                 <span class="lb-player-meta">${badge} ${Math.round(p.est_minutes || 0)} min</span>
             </td>
             ${cells}
@@ -575,16 +561,16 @@ function _initCompare() {
 function _setupCmpInput(input, dropdownId, side) {
     const dd = document.getElementById(dropdownId);
     input.addEventListener('input', () => {
-        const q = input.value.trim().toLowerCase();
+        const q = input.value.trim();
         if (q.length < 2) { dd.classList.remove('open'); return; }
         const matches = _players.filter(p =>
-            p.name.toLowerCase().includes(q)
+            PlayerNames.matches(p.name, q)
         ).slice(0, 12);
         if (!matches.length) { dd.innerHTML = '<div class="cmp-dropdown-item" style="color:var(--text-muted)">No matches</div>'; dd.classList.add('open'); return; }
         dd.innerHTML = matches.map((p, i) => {
             const color = getTeamColor(p.team);
             return `<div class="cmp-dropdown-item" data-idx="${i}" onclick="_selectCmpPlayer('${side}', '${p.code}')">
-                <span>${p.name}</span>
+                <span>${PlayerNames.responsiveHtml(p.name)}</span>
                 <span class="cmp-dd-team" style="color:${teamInk(p.team)}">${TEAM_NAMES[p.team] || p.team}</span>
             </div>`;
         }).join('');
@@ -596,8 +582,8 @@ function _setupCmpInput(input, dropdownId, side) {
 function _selectCmpPlayer(side, code) {
     const p = _players.find(x => x.code === code);
     if (!p) return;
-    if (side === 'a') { _cmpPlayerA = p; document.getElementById('cmp-search-a').value = p.name; }
-    else { _cmpPlayerB = p; document.getElementById('cmp-search-b').value = p.name; }
+    if (side === 'a') { _cmpPlayerA = p; document.getElementById('cmp-search-a').value = PlayerNames.full(p.name); }
+    else { _cmpPlayerB = p; document.getElementById('cmp-search-b').value = PlayerNames.full(p.name); }
     document.querySelectorAll('.cmp-dropdown').forEach(d => d.classList.remove('open'));
     if (_cmpPlayerA && _cmpPlayerB) _renderComparison();
 }
@@ -623,7 +609,7 @@ function _renderComparison() {
                </div>`
             : '';
         return `<div class="cmp-player-card" style="border-top-color:${col}">
-            <div class="cmp-player-name">${p.name}</div>
+            <div class="cmp-player-name">${PlayerNames.responsiveHtml(p.name)}</div>
             <div class="cmp-player-meta">${TEAM_NAMES[p.team] || p.team} · ${p.position || '—'} · ${p.gp} GP</div>
             <div class="cmp-player-kpis">
                 <div><div class="cmp-kpi-val">${p.avg_pts}</div><div class="cmp-kpi-label">PTS</div></div>
@@ -663,8 +649,8 @@ function _renderComparison() {
     container.innerHTML = `
         <div class="cmp-grid">${card(a, colA)}${card(b, colB)}</div>
         <div class="cmp-radar-legend">
-            <span><span class="cmp-legend-dot" style="background:${colA}"></span>${a.name}</span>
-            <span><span class="cmp-legend-dot" style="background:${colB}"></span>${b.name}</span>
+            <span><span class="cmp-legend-dot" style="background:${colA}"></span>${PlayerNames.responsiveHtml(a.name)}</span>
+            <span><span class="cmp-legend-dot" style="background:${colB}"></span>${PlayerNames.responsiveHtml(b.name)}</span>
         </div>
         <div class="cmp-radar-wrap">${radarSvg}</div>
         <div class="cmp-bars">${bars}</div>

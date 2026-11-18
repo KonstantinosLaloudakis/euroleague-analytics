@@ -288,7 +288,7 @@ function renderPlayerComparison(codeA, codeB) {
             ${players.map(p => `
                 <div class="pc-player">
                     <div>
-                        <div class="pc-name">${PlayerLinks.link(p.name, p.name, {code: p.code})}</div>
+                        <div class="pc-name">${PlayerLinks.link(p.name, undefined, {code: p.code})}</div>
                         <div class="pc-meta">${p.position || ''} · ${p.gp} GP</div>
                     </div>
                     <div class="pc-stats">
