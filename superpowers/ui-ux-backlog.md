@@ -1,32 +1,14 @@
 # UI/UX backlog
 
 From the full-site review on 2026-11-18: all 19 pages at desktop (1440px) and phone (390px) widths, including
-the states after picking a team, player or game. Already done and removed from this list: the bug batch
-(MVP scoring order, MVP timeline, game counts, About copy, Game Control auto-scroll, mobile chart fixes) and
-grouped navigation + search (in design: `superpowers/specs/2026-11-18-nav-and-search-design.md`).
-
-Ordered by impact within each section. Start with the top section.
+the states after picking a team, player or game. Ordered by impact within each section. Finished items move to
+"Done" at the bottom with their merge commit.
 
 ## Make the site work like a reference site
 
-1. **Link every player name to its career page.** Only Team Deep-Dive, Player Stats, Game Recap and Records do
-   it today. Missing on: Season Hub (MVP top 10), MVP Race (ladder and timeline), Head-to-Head (key players),
-   Shot Lab (paint profiles), Playmaking (combo and playmaker tables), Lineups, Compare, Series. The player
-   pages are good but hard to reach. Code format is `player.html?code=003469` (no `P` prefix).
-2. **Give pages that open empty a useful default.** Today they open to a blank picker:
-   - Careers (`player.html`): just a search box on an empty page. Show all-time leaders, this round's top
-     performers, or recently viewed players under the search.
-   - Compare: two empty search boxes, no header. Prefill a topical pair (e.g. this season's top 2 MVP
-     candidates) with a "pick your own" prompt.
-   - Head-to-Head: pre-select next round's biggest matchup.
-   - Team Deep-Dive: a grid of 20 name cards. Open on the standings leader, or show logos plus each team's form.
-   - Game Replay: open the latest round's most dramatic game.
-   - Playmaking: defaults to ASVEL because it's first alphabetically. Default to the team with the best
-     assist network, or remember the visitor's last pick.
-3. **One name format everywhere.** The same player appears as "VEZENKOV, SASHA" (Player Stats, Careers,
-   Records, Lineups, Shot Lab), "S. Vezenkov" (MVP) and "Vezenkov" (Playmaking). Use "Sasha Vezenkov" in
-   tables and "S. Vezenkov" only where space is tight. Lineups is the worst case: five all-caps
-   "LAST, FIRST" names joined with commas form an unreadable block.
+3. **One name format everywhere** — *in progress on branch `feat/name-format`* (spec:
+   `superpowers/specs/2026-11-18-name-format-design.md`). "Sasha Vezenkov" where there's room, "S. Vezenkov" when
+   narrow or on phones, surname inside charts; one shared formatter (`docs/names.js`).
 
 ## Consistency and first impression
 
@@ -77,6 +59,11 @@ Ordered by impact within each section. Start with the top section.
     a message if the game isn't available yet.
 18. **Bare error states:** e.g. Careers shows only "Player not found: P003469" on an empty page. Say what
     happened and link to search.
+19. **Pace page polish** (checked 2026-11-18): the "Pace vs league average" chart's x-axis label is clipped at
+    390px; team names in the team chart and the extremes tables aren't links to Team Deep-Dive; historical clubs
+    show only codes (CSK, LJU, GAL) — add names or a tooltip; the page sits under the Teams menu though it's
+    league-wide (Season or History would fit — owner's call).
+20. **No favicon:** every page logs a 404 for `/favicon.ico`. Add a small icon and a `<link rel="icon">`.
 
 ## Data gaps seen on the site (not UI, but visible)
 
@@ -87,3 +74,17 @@ Ordered by impact within each section. Start with the top section.
 
 - MVP Race timeline has no rounds 10–11: no rankings were saved while the refresh workflow was failing
   (fixed 2026-11-18). They can't be rebuilt exactly; leave the gap or reconstruct approximately.
+
+## Done
+
+- **Bug batch** (2026-11-18, `30cccf5a`): MVP scoring order (WPA before MVP), MVP race timeline, game counts,
+  About copy, Game Control auto-scroll, mobile chart fixes.
+- **Grouped navigation + player/team search** (2026-11-18, merge `0ef745ef`): four menus, search box with `/`
+  shortcut, nav in one file (`docs/nav.js`). Spec: `superpowers/specs/2026-11-18-nav-and-search-design.md`.
+- **1. Player names link to career pages** (2026-11-18, merge `6625c1d7`): tables on H2H, Shot Lab, Playmaking,
+  Lineups, Compare, MVP, Recap; Season Hub MVP bars and MVP timeline clicks (two taps on phones); shared
+  `.player-link` style. Players without a career page stay plain text (see Data gaps).
+  Spec: `superpowers/specs/2026-11-18-player-links-design.md`.
+- **2. Topical defaults for pages that open empty** (2026-11-18, merge `8be674e7`): H2H headline matchup, Replay
+  game of the round, Careers top performers, Compare MVP #1 vs #2, Team/Playmaking standings leader — from
+  `highlights.json`. Spec: `superpowers/specs/2026-11-18-topical-defaults-design.md`.
