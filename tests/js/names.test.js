@@ -22,6 +22,20 @@ test('hyphens, apostrophes, suffixes, particles', () => {
   assert.equal(N.full('SMITH, C.J.'), 'C.J. Smith');
 });
 
+test('nickname initialisms stay uppercase; real short names do not', () => {
+  const cases = [['RIVERS, KC', 'KC Rivers', 'KC Rivers'], ['SLAUGHTER, AJ', 'AJ Slaughter', 'AJ Slaughter'],
+    ['DOZIER, PJ', 'PJ Dozier', 'PJ Dozier'], ['SHORTS, TJ', 'TJ Shorts', 'TJ Shorts'],
+    ['COLE, RJ', 'RJ Cole', 'RJ Cole'], ['HOLDEN, JR', 'JR Holden', 'JR Holden'],
+    ['STEWART, DJ', 'DJ Stewart', 'DJ Stewart'], ['WALLACE, C.J.', 'C.J. Wallace', 'C.J. Wallace'],
+    ['MCCALEBB, BO', 'Bo McCalebb', 'B. McCalebb'], ['BLAYZER, OZ', 'Oz Blayzer', 'O. Blayzer'],
+    ['VOUGIOUKAS, IAN', 'Ian Vougioukas', 'I. Vougioukas'], ['BOST, DEE', 'Dee Bost', 'D. Bost']];
+  for (const [raw, f, s] of cases) {
+    assert.equal(N.full(raw), f, raw);
+    assert.equal(N.short(raw), s, raw);
+  }
+  assert.equal(N.full('BACOT JR., ARMANDO'), 'Armando Bacot Jr.');
+});
+
 test('no comma, empty, non-string', () => {
   assert.equal(N.full('NEDOVIC'), 'Nedovic');
   assert.equal(N.short('NEDOVIC'), 'Nedovic');
@@ -33,10 +47,13 @@ test('no comma, empty, non-string', () => {
 });
 
 test('overrides win', () => {
-  assert.ok(Object.keys(N.OVERRIDES).length > 0);
-  const [k, v] = Object.entries(N.OVERRIDES)[0];
-  assert.equal(N.full(k), v);
-  assert.equal(N.full(k.toLowerCase()), v);
+  const entries = Object.entries(N.OVERRIDES);
+  assert.ok(entries.length > 0);
+  for (const [k, v] of entries) {
+    assert.equal(N.full(k), v);
+    assert.equal(N.full(k.toLowerCase()), v);
+    assert.equal(N.full(k).endsWith(N.surname(k)), true, k);
+  }
 });
 
 test('responsiveHtml escapes and has both spans', () => {

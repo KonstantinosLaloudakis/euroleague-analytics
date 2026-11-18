@@ -15,9 +15,6 @@
     'DOS SANTOS, YAGO': 'Yago dos Santos',
     'VAN DEN SPIEGEL, TOMAS': 'Tomas van den Spiegel',
     'DIBARTOLOMEO, JOHN': 'John DiBartolomeo',
-    'STRAWBERRY, DJ': 'DJ Strawberry',
-    'STEWART, DJ': 'DJ Stewart',
-    'LEAF, TJ': 'TJ Leaf',
   };
 
   const FOLD = { 'đ': 'dj', 'Đ': 'dj', 'ł': 'l', 'Ł': 'l', 'ø': 'o', 'Ø': 'o', 'ß': 'ss', 'ı': 'i', 'İ': 'i' };
@@ -37,8 +34,15 @@
     return s.charAt(0).toUpperCase() + s.slice(1).toLowerCase();
   }
 
-  // One word of a name ("MILLER-MCINTYRE", "O'SHAE", "JR.", "C.J.").
-  function caseWord(word) {
+  // Nickname initialisms in first-name position (KC, AJ, PJ, TJ, RJ, DJ, JR): two letters
+  // ending in C, J or R. Real short names (BO, OZ, AL, ED, JO, IAN) don't match.
+  function isInitialism(word) {
+    return /^[A-Za-z][CJRcjr]$/.test(word);
+  }
+
+  // One word of a name ("MILLER-MCINTYRE", "O'SHAE", "JR.", "C.J."); firstName: not a suffix position.
+  function caseWord(word, firstName) {
+    if (firstName && isInitialism(word)) return word.toUpperCase();
     const bare = word.replace(/\.$/, '').toUpperCase();
     if (bare === 'JR') return 'Jr.';
     if (bare === 'SR') return 'Sr.';
@@ -51,8 +55,8 @@
     }).join('');
   }
 
-  function caseWords(s) {
-    return s.split(/\s+/).filter(Boolean).map(caseWord);
+  function caseWords(s, firstName) {
+    return s.split(/\s+/).filter(Boolean).map(w => caseWord(w, firstName));
   }
 
   // -> { first: ['Sasha'], last: ['Vezenkov'], override: 'Full Name' | null }, or null for empty input
@@ -61,7 +65,7 @@
     const i = raw.indexOf(',');
     const lastRaw = i < 0 ? raw : raw.slice(0, i);
     const firstRaw = i < 0 ? '' : raw.slice(i + 1);
-    const first = caseWords(firstRaw);
+    const first = caseWords(firstRaw, true);
     let last = caseWords(lastRaw);
     const key = normalizeKey(raw);
     const override = Object.prototype.hasOwnProperty.call(OVERRIDES, key) ? OVERRIDES[key] : null;
@@ -91,7 +95,7 @@
     if (!p) return '';
     const f = p.first[0];
     if (!f) return p.last.join(' ');
-    const initial = f.includes('.') ? f : f.charAt(0).toUpperCase() + '.';
+    const initial = (f.includes('.') || isInitialism(f)) ? f : f.charAt(0).toUpperCase() + '.';
     return initial + ' ' + p.last.join(' ');
   }
 
