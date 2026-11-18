@@ -263,13 +263,16 @@ function renderPaceCard(teamCode) {
                 + `<a href="pace.html" style="color:var(--accent-blue)">Pace page →</a>`;
         }
 
-        const x = history.map(h => seasonLabel(h.season));
+        const bySeason = new Map(history.map(h => [h.season, h]));
+        const lo = history[0].season, hi = history[history.length - 1].season;
+        const span = pace.league.map(r => r.season).filter(s => s >= lo && s <= hi).sort((a, b) => a - b);
+        const x = span.map(seasonLabel);
         const ink = teamInk(teamCode);
         const traces = [
-            { type: 'scatter', mode: 'lines+markers', name: TEAM_NAMES[teamCode] || teamCode, x, y: history.map(h => h.pace),
-              line: { color: ink, width: 2.5 }, marker: { size: 6, color: ink },
+            { type: 'scatter', mode: 'lines+markers', name: TEAM_NAMES[teamCode] || teamCode, x, y: span.map(s => bySeason.has(s) ? bySeason.get(s).pace : null),
+              connectgaps: false, line: { color: ink, width: 2.5 }, marker: { size: 6, color: ink },
               hovertemplate: '%{x}: %{y:.1f}<extra>' + (TEAM_NAMES[teamCode] || teamCode) + '</extra>' },
-            { type: 'scatter', mode: 'lines+markers', name: 'League', x, y: history.map(h => h.league),
+            { type: 'scatter', mode: 'lines+markers', name: 'League', x, y: span.map(s => { const lr = pace.league.find(r => r.season === s); return lr ? lr.pace : null; }),
               line: { color: '#6b7280', width: 1.5, dash: 'dot' }, marker: { size: 4, color: '#6b7280' },
               connectgaps: false, hovertemplate: '%{x}: %{y:.1f}<extra>League</extra>' },
         ];

@@ -68,7 +68,7 @@
     <script src="nav.js"></script>
 
     <header>
-        <h1>Euroleague is playing faster than ever</h1>
+        <h1 id="pace-title">Euroleague pace, season by season</h1>
         <p class="subtitle" id="pace-sub">Possessions per 40 minutes, every team, every season since 2007</p>
     </header>
 
@@ -121,7 +121,7 @@
 
             <div class="stat-card" id="pace-winning">
                 <p class="section-label">Pace vs winning</p>
-                <h3 class="section-title">Playing fast doesn't win titles</h3>
+                <h3 class="section-title">Pace doesn't decide titles</h3>
                 <p class="section-note" id="winning-note"></p>
                 <div id="winning-chart" class="chart-box"></div>
             </div>
@@ -136,9 +136,23 @@
         </div>
     </main>
 
+    <footer class="site-footer">
+        <div class="footer-links">
+            <a href="about.html">About &amp; Methodology</a>
+            <span class="footer-sep">·</span>
+            <a href="https://github.com/giasemidis/euroleague_api" target="_blank" rel="noopener">Data: Euroleague API</a>
+            <span class="footer-sep">·</span>
+            <a href="https://github.com/KonstantinosLaloudakis" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div>20 seasons · 5,000+ games · Every Play Analyzed</div>
+    </footer>
+
     <script src="constants.js"></script>
     <script src="pace-core.js"></script>
     <script src="pace.js"></script>
+<!-- Cloudflare Web Analytics -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5f641b8c23db459fa52246a9414adfb3"}'></script>
+<!-- End Cloudflare Web Analytics -->
 </body>
 
 </html>

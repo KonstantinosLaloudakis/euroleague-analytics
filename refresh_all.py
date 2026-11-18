@@ -177,7 +177,7 @@ def main():
             'calculate_gci.py'
         )))
         results.append(('Game Records', run_step(
-            'Computing all-time game records (comebacks, game highs, game-winners)',
+            'Computing all-time game records (comebacks, game highs, game-winners, pace)',
             'calculate_game_records.py'
         )))
     else:

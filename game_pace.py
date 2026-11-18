@@ -100,13 +100,14 @@ def league_by_season(games):
         gs = by_season[season]
         points = sum(g['home_pts'] + g['away_pts'] for g in gs)
         poss = sum(g['poss'] for g in gs)
+        rounds = [g['round'] for g in gs if g['round'] is not None]
         rows.append({
             'season': int(season), 'season_label': season_label(season),
             'pace': round(_mean(g['pace40'] for g in gs), 2),
             'pts_per_game': round(points / (2 * len(gs)), 2),
             'ortg': round(100 * points / (2 * poss), 2),
             'games': len(gs),
-            'last_round': int(max(g['round'] for g in gs if g['round'] is not None)),
+            'last_round': int(max(rounds)) if rounds else None,
         })
     return rows
 
@@ -131,7 +132,7 @@ def team_seasons(games):
     for season in sorted(by_season):
         gs = by_season[season]
         league = _mean(g['pace40'] for g in gs)
-        mine = defaultdict(list)       # team -> [(game, scored, allowed, own game-possessions)]
+        mine = defaultdict(list)       # team -> [(game, scored, allowed, opponent code)]
         for g in gs:
             mine[g['home']].append((g, g['home_pts'], g['away_pts'], g['away']))
             mine[g['away']].append((g, g['away_pts'], g['home_pts'], g['home']))

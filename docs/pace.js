@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (_latest === null || !data.league.length) throw new Error('pace.json has no data');
             document.getElementById('loading').classList.add('hidden');
             document.getElementById('content').classList.remove('hidden');
+            setTitle();
             renderCards();
             renderTrend();
             initTeams();
@@ -61,8 +62,8 @@ function layoutBase(extra) {
 
 /* Pace of the seasons before the current climb began. */
 function priorBand() {
-    const { base } = PaceCore.paceStreak(_pace.league);
-    if (!base) return null;
+    const { base, streak } = PaceCore.paceStreak(_pace.league);
+    if (!base || streak < 3) return null;
     const rows = _pace.league.filter(r => r.season <= base.season);
     if (!rows.length) return null;
     const paces = rows.map(r => r.pace);
@@ -70,6 +71,13 @@ function priorBand() {
 }
 
 /* ── 1. Header and cards ───────────────────────────────────────────────── */
+function setTitle() {
+    const lg = _pace.league;
+    const cur = leagueRow(_latest);
+    const faster = cur && lg.every(r => r.pace <= cur.pace);
+    setHTML('pace-title', faster ? 'Euroleague is playing faster than ever' : 'Euroleague pace, season by season');
+}
+
 function renderCards() {
     const lbl = seasonLabel(_latest);
     const cur = leagueRow(_latest);
@@ -79,7 +87,7 @@ function renderCards() {
 
     let lede = '';
     if (cur) lede = `Teams average <strong>${f1(cur.pace)}</strong> possessions per 40 minutes in ${esc(lbl)}.`;
-    if (band && st.streak > 0) {
+    if (band) {
         lede += ` For ${band.rows.length} seasons the league sat between <strong>${f1(band.min)}</strong> and <strong>${f1(band.max)}</strong>.`;
     }
     setHTML('pace-lede', lede);
@@ -103,7 +111,7 @@ function renderCards() {
     if (rows.length) {
         const slow = rows[rows.length - 1];
         cards.push({
-            label: 'Slowest team this season',
+            label: `Slowest team, ${esc(lbl)}`,
             value: esc(teamName(slow.team)),
             sub: `${f1(slow.pace)} possessions per 40 · ${slow.gp} ${plural(slow.gp, 'game', 'games')}`,
         });
@@ -125,15 +133,15 @@ function renderTrend() {
 
     const first = lg[0];
     const lastRow = lg[last];
-    setHTML('trend-title', band && st.streak > 0
+    setHTML('trend-title', band
         ? `${band.rows.length} flat seasons, then a ${st.streak}-${plural(st.streak, 'season', 'season')} climb`
         : 'League pace by season');
-    setHTML('trend-note', band && st.streak > 0
+    setHTML('trend-note', band
         ? `The shaded band is the range of the pre-climb seasons (${esc(first.season_label)} to ${esc(band.base.season_label)}), ${f1(band.min)} to ${f1(band.max)}. Pace is possessions per team per 40 minutes, regular season only.`
         : 'Possessions per team per 40 minutes, regular season only.');
 
     const shapes = [];
-    if (band && st.streak > 0) {
+    if (band) {
         const baseIdx = lg.findIndex(r => r.season === band.base.season);
         shapes.push({
             type: 'rect', xref: 'x', yref: 'y',
@@ -287,7 +295,8 @@ function renderPlayoffs() {
 
 /* ── 5. Pace vs winning ────────────────────────────────────────────────── */
 function renderWinning() {
-    const done = _pace.teams.filter(r => r.season < _latest);
+    const champSeasons = new Set(_pace.teams.filter(r => r.champion).map(r => r.season));
+    const done = _pace.teams.filter(r => r.season < _latest || champSeasons.has(r.season));
     if (!done.length) { setHTML('winning-note', 'Needs at least one completed season.'); return; }
     const champs = done.filter(r => r.champion);
     const others = done.filter(r => !r.champion);
