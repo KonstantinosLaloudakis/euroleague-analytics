@@ -69,6 +69,7 @@ Static site deployed via GitHub Pages from the `docs/` folder.
 - Charts use Plotly.js (loaded via CDN on pages that need it) or inline SVG
 - Shared styles in `docs/style.css`, no build step or bundler
 - Nav and search live only in `docs/nav.js`; each page has just `<nav class="site-nav" id="site-nav" aria-label="Main"></nav>` + `<script src="nav.js"></script>`. Add new pages to `NAV_GROUPS` there (`tests/test_nav_pages.py` enforces the placeholder and that targets exist)
+- Player links go through `docs/player-links.js` (`PlayerLinks.link/url`; `bindChartClicks` for Plotly charts); links only when a career page exists
 - JS unit tests: `node --test tests/js/*.test.js`
 
 **Pages:** index.html (Season Hub), team.html, players.html, h2h.html, recap.html, shots.html, network.html (Playmaking), replay.html, playoffs.html, mvp.html, about.html

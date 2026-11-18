@@ -165,7 +165,7 @@ function renderCard(rows, title, sub, type, fmt) {
         return `<tr class="${cls}">
           <td class="${rankCls(i)}">${i + 1}</td>
           <td>
-            <span class="p-name"><a href="player.html?code=${r.code}">${r.name}</a></span>
+            <span class="p-name"><a class="player-link" href="player.html?code=${r.code}">${r.name}</a></span>
             <span class="p-meta">${meta}</span>
           </td>
           <td>${col3}</td>
@@ -221,7 +221,7 @@ function replayLink(r, label, title) {
 
 function playerLink(r) {
     const name = esc(r.player_name || r.player || '—');
-    return r.player && _data && _data.players && _data.players[r.player] ? `<a href="player.html?code=${encodeURIComponent(r.player)}">${name}</a>` : name;
+    return r.player && _data && _data.players && _data.players[r.player] ? `<a class="player-link" href="player.html?code=${encodeURIComponent(r.player)}">${name}</a>` : name;
 }
 
 function showMoreBtn(n, all) {

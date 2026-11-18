@@ -5,18 +5,9 @@ let _rounds = [];      // sorted list of available round numbers
 let _currentRound = 0;
 let _isInitialLoad = true;  // only auto-expand game on first load
 
-let _playerCodeMap = null;
-async function _getPlayerCodeMap() {
-    if (_playerCodeMap) return _playerCodeMap;
-    try {
-        _playerCodeMap = await fetch('data/current/player_index.json').then(r => r.json());
-    } catch { _playerCodeMap = {}; }
-    return _playerCodeMap;
-}
-
 // ── Boot ──────────────────────────────────────────────────────────────────
-fetchJSON('data/current/game_recaps.json')
-    .then(data => {
+Promise.all([fetchJSON('data/current/game_recaps.json'), PlayerLinks.ready])
+    .then(([data]) => {
         _recaps = data;
         _rounds = Object.keys(data.rounds).map(Number).sort((a, b) => a - b);
 
@@ -231,18 +222,12 @@ async function renderBoxScore(idx, roster, totals, color) {
         ${cols.map(c => `<th class="num">${c}</th>`).join('')}
     </tr>`;
 
-    const codeMap = await _getPlayerCodeMap();
-
-    function playerRow(p, codeMap) {
+    function playerRow(p) {
         const pm = p.pm > 0 ? `+${p.pm}` : p.pm;
         const pmColor = p.pm > 0 ? 'var(--accent-green)' : p.pm < 0 ? 'var(--accent-red)' : '';
         const pirColor = p.pir >= 20 ? 'var(--accent-green)' : p.pir >= 10 ? 'var(--accent-blue)' : '';
         const displayName = formatName(p.name);
-        const normName = n => n.toUpperCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
-        const code = codeMap ? codeMap[normName(p.name)] : null;
-        const nameHtml = code
-            ? `<a href="player.html?code=${code}" style="text-decoration:none;color:inherit">${displayName}</a>`
-            : displayName;
+        const nameHtml = PlayerLinks.link(p.name, displayName);
         return `<tr>
             <td>
                 <span class="player-name">${nameHtml}</span>
@@ -263,9 +248,9 @@ async function renderBoxScore(idx, roster, totals, color) {
         </tr>`;
     }
 
-    const starterRows = starters.map(p => playerRow(p, codeMap)).join('');
+    const starterRows = starters.map(p => playerRow(p)).join('');
     const benchRows = bench.length > 0
-        ? `<tr class="bench-sep"><td colspan="${cols.length + 1}">Bench</td></tr>` + bench.map(p => playerRow(p, codeMap)).join('')
+        ? `<tr class="bench-sep"><td colspan="${cols.length + 1}">Bench</td></tr>` + bench.map(p => playerRow(p)).join('')
         : '';
 
     const totalsRow = `<tr class="totals-row">
