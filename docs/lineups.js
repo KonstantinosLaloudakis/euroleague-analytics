@@ -13,7 +13,7 @@ let sortAsc     = false;
 
 document.addEventListener('DOMContentLoaded', async () => {
   try {
-    lineupData = await fetchJSON(LINEUPS_URL);
+    [lineupData] = await Promise.all([fetchJSON(LINEUPS_URL), PlayerLinks.ready]);
   } catch (e) {
     document.getElementById('lineups-table-container').innerHTML =
       '<p style="color:var(--text-muted);padding:40px;text-align:center">Could not load lineup data.</p>';
@@ -118,7 +118,8 @@ function renderTable() {
     const net      = r.netrtg;
     const netColor = net > 0 ? 'var(--accent-green)' : net < 0 ? 'var(--accent-red)' : 'var(--text-muted)';
     const netStr   = (net > 0 ? '+' : '') + net.toFixed(1);
-    const players  = Array.isArray(r.players) ? r.players.join(', ') : r.players;
+    const names    = Array.isArray(r.players) ? r.players : [r.players];
+    const players  = names.map(n => PlayerLinks.link(n)).join(', ');
     return `<tr>
       <td class="text-left players-cell">${players}</td>
       <td class="text-left">${r.team}</td>

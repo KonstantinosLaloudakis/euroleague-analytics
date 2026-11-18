@@ -10,6 +10,7 @@ const ZONES = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
 Promise.all([
     fetchJSON('data/current/shot_stats.json'),
     fetchJSON('data/current/paint_profiles.json').catch(() => null),
+    PlayerLinks.ready,
 ]).then(([shotData, paintData]) => {
     _data = shotData;
     _paintData = paintData;
@@ -472,7 +473,7 @@ function renderPaintPlayers() {
     const rows = _paintData.players.map((p, i) => {
         const color = teamInk(p.team);
         return `<tr class="paint-row" onclick="selectPaintPlayer(${i})">
-            <td class="zone-name-cell">${p.player}</td>
+            <td class="zone-name-cell"><span onclick="event.stopPropagation()">${PlayerLinks.link(p.player)}</span></td>
             <td><span style="color:${color};font-weight:600">${p.team}</span></td>
             <td>${p.att}</td>
             <td>${fgpCell(p.fg_pct)}</td>
@@ -557,7 +558,7 @@ function selectPaintPlayer(idx) {
 
     detail.innerHTML = `
         <div class="paint-detail-info">
-            <div class="paint-detail-name" style="color:${color}">${p.player}</div>
+            <div class="paint-detail-name" style="color:${color}">${PlayerLinks.link(p.player)}</div>
             <div class="paint-detail-stats">
                 ${TEAM_NAMES[p.team] || p.team} · ${p.att} paint attempts · ${p.fg_pct}% overall<br>
                 Left: ${p.left_att} att, ${p.left_fgp ?? '–'}% FG (${p.left_pct}% of shots)<br>

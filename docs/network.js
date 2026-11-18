@@ -5,8 +5,8 @@ let _selected = null;   // current team code
 let _pinned = null;     // pinned player id
 
 // ── Boot ─────────────────────────────────────────────────────────────────────
-fetchJSON('data/current/assist_network.json')
-    .then(data => {
+Promise.all([fetchJSON('data/current/assist_network.json'), PlayerLinks.ready])
+    .then(([data]) => {
         _data = data;
         renderTeamGrid();
         renderCombosTable(data.top_combos);
@@ -466,8 +466,8 @@ function showPlayerDetail(playerId) {
 
 const COMBO_COLS = [
     { key: '#',        label: '#',       fmt: (_, i) => i + 1 },
-    { key: 'passer',   label: 'Passer',  fmt: v => formatPlayerName(v) },
-    { key: 'scorer',   label: 'Scorer',  fmt: v => formatPlayerName(v) },
+    { key: 'passer',   label: 'Passer',  fmt: (v, i, row) => PlayerLinks.link(v, formatPlayerName(v), {apiId: row.passer_id}) },
+    { key: 'scorer',   label: 'Scorer',  fmt: (v, i, row) => PlayerLinks.link(v, formatPlayerName(v), {apiId: row.scorer_id}) },
     { key: 'team',     label: 'Team',    fmt: v => `<span class="tbl-team-badge" style="background:${teamInk(v)}22;color:${teamInk(v)}">${v}</span>` },
     { key: 'count',    label: 'AST',     fmt: v => v },
     { key: 'fg2',      label: '2PT',     fmt: v => v },
@@ -477,12 +477,12 @@ const COMBO_COLS = [
 
 const PLAYMAKER_COLS = [
     { key: '#',              label: '#',          fmt: (_, i) => i + 1 },
-    { key: 'player',         label: 'Player',     fmt: v => formatPlayerName(v) },
+    { key: 'player',         label: 'Player',     fmt: (v, i, row) => PlayerLinks.link(v, formatPlayerName(v), {apiId: row.player_id}) },
     { key: 'team',           label: 'Team',       fmt: v => `<span class="tbl-team-badge" style="background:${teamInk(v)}22;color:${teamInk(v)}">${v}</span>` },
     { key: 'ast',            label: 'AST',        fmt: v => v },
     { key: 'per_game',       label: '/Game',      fmt: v => v.toFixed(1) },
     { key: 'unique_targets', label: 'Targets',    fmt: v => v },
-    { key: 'top_target',     label: 'Top Target', fmt: v => formatPlayerName(v) },
+    { key: 'top_target',     label: 'Top Target', fmt: v => PlayerLinks.link(v, formatPlayerName(v)) },
 ];
 
 let _comboSort  = { key: 'count', asc: false };
@@ -545,14 +545,17 @@ function renderSortableTable(tableId, data, cols, sortState, onSort, onRowClick)
 
     // Render tbody
     tbody.innerHTML = sorted.map((row, i) => {
-        const cells = cols.map(c => `<td>${c.fmt(row[c.key], i)}</td>`).join('');
+        const cells = cols.map(c => `<td>${c.fmt(row[c.key], i, row)}</td>`).join('');
         return `<tr>${cells}</tr>`;
     }).join('');
 
     // Attach row click
     if (onRowClick) {
         tbody.querySelectorAll('tr').forEach((tr, i) => {
-            tr.addEventListener('click', () => onRowClick(sorted[i]));
+            tr.addEventListener('click', e => {
+                if (e.target.closest('a.player-link')) return;  // link navigates; don't pin
+                onRowClick(sorted[i]);
+            });
         });
     }
 }
