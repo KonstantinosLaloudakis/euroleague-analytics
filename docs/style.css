@@ -633,7 +633,7 @@ footer {
    SEASON HUB STYLES
    ═══════════════════════════════════════════════════════════ */
 
-/* ── Site Navigation ─────────────────────────────────────── */
+/* ── Site Navigation (rendered by nav.js) ───────────────── */
 .site-nav {
     display: flex;
     align-items: center;
@@ -644,6 +644,8 @@ footer {
     position: sticky;
     top: 0;
     z-index: 100;
+    /* Same height as the rendered bar, so the empty placeholder never jumps. */
+    min-height: 3.32rem;
     overflow-x: clip;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
@@ -656,8 +658,15 @@ footer {
     font-weight: 700;
     font-size: 1rem;
     color: var(--text-primary);
+    text-decoration: none;
     margin-right: auto;
     white-space: nowrap;
+}
+
+.site-nav-brand:focus-visible {
+    outline: 2px solid var(--accent-blue);
+    outline-offset: 2px;
+    border-radius: 4px;
 }
 
 .nav-link {
@@ -681,7 +690,7 @@ footer {
     background: rgba(168, 85, 247, 0.12);
 }
 
-/* ── More ▾ dropdown ─────────────────────────────────────── */
+/* ── Group menus (Season ▾ …): open on click ─────────────── */
 .nav-more {
     position: relative;
     display: flex;
@@ -703,7 +712,7 @@ footer {
     flex-direction: column;
     position: absolute;
     top: calc(100% + 4px);
-    right: 0;
+    left: 0;
     background: var(--bg-secondary);
     border: 1px solid var(--border);
     border-radius: 8px;
@@ -713,9 +722,13 @@ footer {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
-.nav-more:hover .nav-more-dropdown,
 .nav-more.open .nav-more-dropdown {
     display: flex;
+}
+
+.nav-more.open .nav-more-btn:not(.active) {
+    color: var(--text-primary);
+    background: var(--bg-card);
 }
 
 .nav-more-dropdown .nav-link {
@@ -723,10 +736,96 @@ footer {
     width: 100%;
 }
 
-/* ── Compact nav: menu button below 1440px (89.9375em) ─────────────────── */
+/* Group heading, shown only in the open compact menu */
+.nav-group-label { display: none; }
+
+/* ── Search box + results ────────────────────────────────── */
+.nav-search {
+    position: relative;
+    margin-left: 0.25rem;
+}
+
+.nav-search-input {
+    width: 12rem;
+    background: var(--bg-input);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.35rem 0.7rem;
+    font: inherit;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    transition: border-color var(--transition);
+}
+
+.nav-search-input::placeholder { color: var(--text-muted); }
+.nav-search-input:hover { border-color: var(--border-hover); }
+.nav-search-input:focus {
+    outline: none;
+    border-color: var(--accent-purple);
+}
+
+.nav-search-panel {
+    position: absolute;
+    top: calc(100% + 4px);
+    right: 0;
+    width: 22rem;
+    max-width: calc(100vw - 2rem);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 4px;
+    z-index: 200;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.nav-search-panel[hidden] { display: none; }
+
+.nav-search-list { list-style: none; }
+
+.nav-search-option {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.45rem 0.7rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.nav-search-option:hover,
+.nav-search-option[aria-selected="true"] { background: var(--bg-card); }
+.nav-search-option[aria-selected="true"] .nav-search-label { color: var(--accent-purple); }
+
+.nav-search-label {
+    color: var(--text-primary);
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.nav-search-detail {
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+}
+
+.nav-search-status {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    padding: 0.45rem 0.7rem;
+}
+
+.nav-search-status:empty { display: none; }
+
+/* ── Compact bar: search button + ☰ Menu below 920px (57.5em) ─────────────
+   The full bar needs 894px with Inter (901px with a fallback font); 920px
+   leaves headroom. */
 .nav-toggle {
     display: none;
-    margin-left: auto;
     background: var(--bg-card);
     color: var(--text-primary);
     border: 1px solid var(--border);
@@ -739,13 +838,27 @@ footer {
     cursor: pointer;
 }
 .nav-toggle:focus-visible { outline: 2px solid var(--accent-purple); outline-offset: 2px; }
+.nav-toggle[aria-expanded="true"] { border-color: var(--accent-purple); }
 
-@media (max-width: 89.9375em) {
-    .site-nav { flex-wrap: wrap; overflow: visible; }
-    .nav-toggle { display: inline-flex; align-items: center; gap: 0.35rem; }
-    .site-nav-brand { margin-right: 0; }
+@media (max-width: 57.4375em) {
+    .site-nav { flex-wrap: wrap; overflow: visible; min-height: 3.1rem; }
+    .nav-toggle { display: inline-flex; align-items: center; justify-content: center; gap: 0.35rem; }
+    .nav-search-btn { padding-left: 0.6rem; padding-right: 0.6rem; }
     .site-nav > .nav-link,
-    .site-nav > .nav-more { display: none; }
+    .site-nav > .nav-more,
+    .site-nav > .nav-search { display: none; }
+
+    /* Search row under the bar */
+    .site-nav.search-open > .nav-search {
+        display: block;
+        width: 100%;
+        margin: 0.25rem 0 0;
+    }
+    .site-nav.search-open .nav-search-input { width: 100%; padding: 0.55rem 0.8rem; font-size: 1rem; }
+    .site-nav.search-open .nav-search-panel { left: 0; right: 0; width: auto; max-width: none; }
+    .nav-search-option { padding: 0.65rem 0.8rem; }
+
+    /* Menu: every group as a labeled list, all links visible */
     .site-nav.nav-open {
         max-height: 100vh;
         max-height: 100dvh;
@@ -759,6 +872,15 @@ footer {
     }
     .site-nav.nav-open > .nav-link { padding: 0.55rem 0.8rem; }
     .site-nav.nav-open .nav-more-btn { display: none; }
+    .site-nav.nav-open .nav-group-label {
+        display: block;
+        padding: 0.6rem 0.8rem 0.15rem;
+        color: var(--text-secondary);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+    }
     .site-nav.nav-open .nav-more-dropdown {
         display: flex;
         position: static;
@@ -769,6 +891,10 @@ footer {
         background: transparent;
     }
     .site-nav.nav-open .nav-more-dropdown .nav-link { padding: 0.55rem 0.8rem; }
+}
+
+@media (max-width: 480px) {
+    .site-nav { min-height: 3.5625rem; }
 }
 
 /* ── Playoff Banner ──────────────────────────────────────── */

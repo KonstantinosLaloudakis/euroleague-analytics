@@ -1,6 +1,10 @@
-/* Navigation menu data and pure search helpers (no DOM access).
+/* Site navigation: menu data, pure search helpers, and (in a browser) the
+   rendering of <nav id="site-nav"> plus the player/team search box.
+   Every page includes it right after its empty <nav> placeholder, so the bar is
+   built synchronously before the rest of the page renders.
    Wrapped in an IIFE so it defines no browser globals (other pages declare
-   names like formatPlayerName); loads as a classic script or a CommonJS module. */
+   names like formatPlayerName); loads as a classic script or a CommonJS module,
+   where the DOM part is skipped. */
 
 (function () {
   'use strict';
@@ -106,7 +110,253 @@
     return teams.concat(players).slice(0, limit);
   }
 
-  // Task 3: DOM rendering goes here, inside this IIFE.
+  /* ── DOM: rendering ─────────────────────────────────────────────── */
+
+  const SEARCH_INDEX_URL = 'data/current/search_index.json';
+  const SEARCH_ICON = '<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" ' +
+    'stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/>' +
+    '<path d="m20 20-4-4"/></svg>';
+
+  function h(tag, attrs, ...children) {
+    const el = document.createElement(tag);
+    for (const [k, v] of Object.entries(attrs || {})) el.setAttribute(k, v);
+    el.append(...children);
+    return el;
+  }
+
+  function navLink(link, page) {
+    const a = h('a', { href: link.href, class: 'nav-link' }, link.text);
+    if (link.href === page) {
+      a.classList.add('active');
+      a.setAttribute('aria-current', 'page');
+    }
+    return a;
+  }
+
+  function renderGroup(group, i, page) {
+    const menuId = 'nav-menu-' + i;
+    const isActive = group.links.some(l => l.href === page);
+    const btn = h('button', {
+      type: 'button', class: 'nav-link nav-more-btn' + (isActive ? ' active' : ''),
+      'aria-expanded': 'false', 'aria-controls': menuId,
+    }, group.label + ' ', h('span', { 'aria-hidden': 'true' }, '▾'));
+    const heading = h('span', { class: 'nav-group-label' }, group.label);
+    const menu = h('div', { class: 'nav-more-dropdown', id: menuId },
+      ...group.links.map(l => navLink(l, page)));
+    return h('div', { class: 'nav-more' }, btn, heading, menu);
+  }
+
+  function renderSearchBox() {
+    const input = h('input', {
+      type: 'search', id: 'nav-search-input', class: 'nav-search-input',
+      placeholder: 'Search players, teams', 'aria-label': 'Search players and teams',
+      role: 'combobox', 'aria-autocomplete': 'list', 'aria-expanded': 'false',
+      'aria-controls': 'nav-search-listbox', autocomplete: 'off', spellcheck: 'false',
+    });
+    const list = h('ul', { class: 'nav-search-list', id: 'nav-search-listbox', role: 'listbox',
+      'aria-label': 'Search results' });
+    const status = h('p', { class: 'nav-search-status', role: 'status' });
+    const panel = h('div', { class: 'nav-search-panel', hidden: '' }, list, status);
+    const box = h('div', { class: 'nav-search', id: 'nav-search' }, input, panel);
+    return { box, input, list, status, panel };
+  }
+
+  function renderNav(nav, page) {
+    const searchBtn = h('button', {
+      type: 'button', class: 'nav-toggle nav-search-btn', 'aria-label': 'Search',
+      'aria-expanded': 'false', 'aria-controls': 'nav-search',
+    });
+    searchBtn.innerHTML = SEARCH_ICON;
+    const toggle = h('button', {
+      type: 'button', class: 'nav-toggle nav-menu-btn', 'aria-expanded': 'false', 'aria-controls': 'site-nav',
+    }, h('span', { 'aria-hidden': 'true' }, '☰'), ' Menu');
+    const search = renderSearchBox();
+    nav.replaceChildren(
+      h('a', { href: 'index.html', class: 'site-nav-brand' }, '🏀 Euroleague Analytics'),
+      searchBtn,
+      toggle,
+      ...NAV_GROUPS.map((g, i) => renderGroup(g, i, page)),
+      navLink(NAV_ABOUT, page),
+      search.box,
+    );
+    return Object.assign({ nav, searchBtn, toggle }, search);
+  }
+
+  /* ── DOM: menu behavior ─────────────────────────────────────────── */
+
+  function setupMenus(ui) {
+    const groups = Array.from(ui.nav.querySelectorAll('.nav-more'));
+    function setOpen(group, open) {
+      group.classList.toggle('open', open);
+      group.querySelector('.nav-more-btn').setAttribute('aria-expanded', String(open));
+    }
+    for (const group of groups) {
+      const btn = group.querySelector('.nav-more-btn');
+      btn.addEventListener('click', () => {
+        const open = !group.classList.contains('open');
+        for (const g of groups) setOpen(g, g === group && open);
+      });
+      group.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && group.classList.contains('open')) {
+          setOpen(group, false);
+          btn.focus();
+        }
+      });
+      group.addEventListener('focusout', e => {
+        if (!group.contains(e.relatedTarget)) setOpen(group, false);
+      });
+    }
+    document.addEventListener('click', e => {
+      for (const g of groups) if (!g.contains(e.target)) setOpen(g, false);
+    });
+  }
+
+  // Compact bar (narrow screens): "☰ Menu" and the search button each reveal
+  // one panel under the bar; opening one closes the other.
+  function setupCompactBar(ui) {
+    function show(panel) {
+      ui.nav.classList.toggle('nav-open', panel === 'menu');
+      ui.nav.classList.toggle('search-open', panel === 'search');
+      ui.toggle.setAttribute('aria-expanded', String(panel === 'menu'));
+      ui.searchBtn.setAttribute('aria-expanded', String(panel === 'search'));
+    }
+    ui.toggle.addEventListener('click', () => {
+      show(ui.nav.classList.contains('nav-open') ? null : 'menu');
+    });
+    ui.searchBtn.addEventListener('click', () => {
+      const opening = !ui.nav.classList.contains('search-open');
+      show(opening ? 'search' : null);
+      if (opening) ui.input.focus();
+    });
+    return {
+      revealSearch() {
+        const compact = ui.searchBtn.offsetParent !== null;
+        if (compact && !ui.nav.classList.contains('search-open')) show('search');
+      },
+    };
+  }
+
+  /* ── DOM: search UI ─────────────────────────────────────────────── */
+
+  function isTextField(el) {
+    return !!el && (el.isContentEditable || ['INPUT', 'TEXTAREA', 'SELECT'].includes(el.tagName));
+  }
+
+  function setupSearch(ui, bar) {
+    const { input, list, status, panel } = ui;
+    let index = null;
+    let failed = false;
+    let pending = null;
+    let results = [];
+    let active = -1;
+
+    // Fetched on first use only; if the user typed meanwhile, their current
+    // query runs when the index lands.
+    function loadIndex() {
+      if (index || pending) return;
+      pending = fetch(SEARCH_INDEX_URL)
+        .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+        .then(data => { index = data; failed = false; }, () => { failed = true; })
+        .then(() => { pending = null; if (document.activeElement === input) update(); });
+    }
+
+    function close() {
+      panel.hidden = true;
+      list.replaceChildren();
+      status.textContent = '';
+      results = [];
+      active = -1;
+      input.setAttribute('aria-expanded', 'false');
+      input.removeAttribute('aria-activedescendant');
+    }
+
+    function showMessage(text) {
+      close();
+      status.textContent = text;
+      panel.hidden = false;
+    }
+
+    function setActive(i) {
+      const options = list.children;
+      if (options[active]) options[active].setAttribute('aria-selected', 'false');
+      active = i;
+      options[i].setAttribute('aria-selected', 'true');
+      options[i].scrollIntoView({ block: 'nearest' });
+      input.setAttribute('aria-activedescendant', options[i].id);
+    }
+
+    function showResults(items) {
+      close();
+      results = items;
+      list.append(...items.map((r, i) => h('li', {
+        role: 'option', id: 'nav-search-opt-' + i, class: 'nav-search-option',
+        'aria-selected': 'false', 'data-i': String(i),
+      }, h('span', { class: 'nav-search-label' }, r.label),
+         h('span', { class: 'nav-search-detail' }, r.detail))));
+      panel.hidden = false;
+      input.setAttribute('aria-expanded', 'true');
+      setActive(0);
+    }
+
+    function update() {
+      const q = input.value.trim();
+      if (!q) return close();
+      if (failed) return showMessage('Search is unavailable right now.');
+      if (!index) { loadIndex(); return close(); }
+      const items = search(index, q);
+      if (!items.length) return showMessage('No players or teams match "' + q + '"');
+      showResults(items);
+    }
+
+    function open(result) {
+      if (result) window.location.href = result.href;
+    }
+
+    input.addEventListener('focus', () => { loadIndex(); update(); });
+    input.addEventListener('input', update);
+    input.addEventListener('keydown', e => {
+      const n = results.length;
+      if (e.key === 'ArrowDown' && n) {
+        e.preventDefault();
+        setActive((active + 1) % n);
+      } else if (e.key === 'ArrowUp' && n) {
+        e.preventDefault();
+        setActive((active - 1 + n) % n);
+      } else if (e.key === 'Enter' && n) {
+        e.preventDefault();
+        open(results[active]);
+      } else if (e.key === 'Escape') {
+        e.preventDefault();
+        input.value = '';
+        close();
+      }
+    });
+    input.addEventListener('blur', close);
+    // Keep focus in the input while clicking a result, so blur doesn't close it first.
+    panel.addEventListener('mousedown', e => e.preventDefault());
+    list.addEventListener('click', e => {
+      const option = e.target.closest('[role="option"]');
+      if (option) open(results[Number(option.dataset.i)]);
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key !== '/' || e.ctrlKey || e.metaKey || e.altKey || e.defaultPrevented) return;
+      if (isTextField(e.target)) return;
+      e.preventDefault();
+      bar.revealSearch();
+      input.focus();
+    });
+  }
+
+  function initNav() {
+    const nav = document.getElementById('site-nav');
+    if (!nav) return;
+    const ui = renderNav(nav, currentPage(window.location.pathname));
+    setupMenus(ui);
+    setupSearch(ui, setupCompactBar(ui));
+  }
+
+  if (typeof document !== 'undefined') initNav();
 
   if (typeof module === 'object' && module.exports) {
     module.exports = {
