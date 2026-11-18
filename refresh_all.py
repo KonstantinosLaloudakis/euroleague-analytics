@@ -139,6 +139,11 @@ def main():
             'Computing KenPom Adjusted Ratings + SOS',
             'calculate_adjusted_ratings.py'
         )))
+        # WPA before MVP: the MVP score reads this round's wpa_ratings file.
+        results.append(('WPA Ratings', run_step(
+            'Computing Win Probability Added (WPA)',
+            'calculate_wpa.py'
+        )))
         results.append(('MVP Scores', run_step(
             'Computing MVP Ladder Scores',
             'calculate_mvp_scores.py'
@@ -150,10 +155,6 @@ def main():
         results.append(('WIR Ratings', run_step(
             'Computing Weighted Impact Ratings (WIR)',
             'calculate_wir.py'
-        )))
-        results.append(('WPA Ratings', run_step(
-            'Computing Win Probability Added (WPA)',
-            'calculate_wpa.py'
         )))
         results.append(('Elo Ratings', run_step(
             'Computing Elo Ratings',

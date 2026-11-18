@@ -116,13 +116,17 @@ function renderChart(checkpoints) {
     };
   });
 
+  // Phones: a side legend squeezes the plot until the round labels overlap,
+  // so put the legend underneath and tilt the labels further.
+  const narrow = window.matchMedia('(max-width: 767px)').matches;  // same breakpoint as title-race.html
+
   const layout = {
     paper_bgcolor: 'transparent',
     plot_bgcolor:  'transparent',
     font:  { color: '#9ca3af', family: 'Inter, sans-serif', size: 11 },
     xaxis: {
       gridcolor:  '#2d2e3a',
-      tickangle:  -20,
+      tickangle:  narrow ? -45 : -20,
       automargin: true,
     },
     yaxis: {
@@ -137,6 +141,7 @@ function renderChart(checkpoints) {
       bordercolor: '#2d2e3a',
       borderwidth: 1,
       font:        { size: 11 },
+      ...(narrow ? { orientation: 'h', x: 0, xanchor: 'left', y: -0.3, yanchor: 'top' } : {}),
     },
     margin: { t: 16, r: 16, b: 80, l: 60 },
     shapes: [],

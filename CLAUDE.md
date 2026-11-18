@@ -49,7 +49,7 @@ Phase 5: Git       → auto-commit round-suffixed files (optional)
 
 **Annual season rollover:**
 1. Bump `CURRENT_SEASON` in `season_config.py`.
-2. Move root `*_R[0-9]*.*` and `oracle_forecast_round_*` files to `archive/{prev}/`, plus last season's unsuffixed outputs (`adjusted_ratings.json`, `elo_ratings.json`, `monte_carlo_results.json`, `wpa_ratings.json`, `tpm_ratings.json`, `wir_ratings.json`, `rapm_ratings.json`, `oracle_accuracy_ml.json`, `team_advanced_stats.json`), `player_forecast_*`, `manual_round_*` and `mvp_race_timeline.json`.
+2. Move root `*_R[0-9]*.*` and `oracle_forecast_round_*` files to `archive/{prev}/`, plus last season's unsuffixed outputs (`adjusted_ratings.json`, `elo_ratings.json`, `monte_carlo_results.json`, `wpa_ratings.json`, `tpm_ratings.json`, `wir_ratings.json`, `rapm_ratings.json`, `oracle_accuracy_ml.json`, `team_advanced_stats.json`), `player_forecast_*` and `manual_round_*`. (The MVP race timeline is rebuilt from the round-suffixed `mvp_rankings_{S}_R{N}.json` files, so archiving those resets it.)
 3. Copy `docs/data/current/dashboard.json` to `docs/data/archive/{prev}/dashboard.json`.
 4. Check new teams in `team_aliases.py`, `docs/constants.js`, and the Python color dicts.
 5. Switch the `refresh_data.yml` cron back to Wed–Sat (`'0 1 * * 3,4,5,6'`).

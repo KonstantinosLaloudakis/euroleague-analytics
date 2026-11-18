@@ -56,6 +56,33 @@ def load_json(path):
         return None
 
 
+def build_mvp_race(season, round_num, top_n=10, root='.'):
+    """MVP race timeline: the top `top_n` of each round's mvp_rankings_{S}_R{N}.json.
+
+    Each round's rankings are committed as that round's snapshot, so the timeline
+    shows the ladder as it stood after every round. Rounds without a snapshot
+    (e.g. a failed refresh) are simply absent.
+    """
+    race = []
+    pattern = re.compile(rf'^mvp_rankings_{season}_R(\d+)\.json$')
+    snapshots = []
+    for name in os.listdir(root):
+        m = pattern.match(name)
+        if m and int(m.group(1)) <= round_num:
+            snapshots.append((int(m.group(1)), name))
+    for rnd, name in sorted(snapshots):
+        rows = load_json(os.path.join(root, name)) or []
+        for row in sorted(rows, key=lambda r: r.get('MVP_Rank', 0))[:top_n]:
+            race.append({
+                'round': rnd,
+                'player': row.get('PlayerName', ''),
+                'team': row.get('TeamCode', ''),
+                'score': round(row.get('MVP_Score', 0.0), 2),
+                'rank': row.get('MVP_Rank', 0),
+            })
+    return race
+
+
 def regular_season_complete(schedule_rows):
     """True once every regular-season game in the schedule has been played.
     Playoff forecasts (championship odds, path to title, series) are only
@@ -1977,12 +2004,7 @@ def main():
             })
 
     # ── Build MVP race timeline ─────────────────────────────────────────────
-    # mvp_race_timeline.json has no season marker or producer script; a file with
-    # rounds beyond the current round is a previous season's and must not be shown.
-    mvp_race = load_json('mvp_race_timeline.json') or []
-    if mvp_race and max(r.get('round', 0) for r in mvp_race) > round_num:
-        print("  [SKIP] mvp_race_timeline.json is ahead of the current round (stale) - emitting []")
-        mvp_race = []
+    mvp_race = build_mvp_race(S, round_num)
     if mvp_race:
         rounds_in_race = len(set(r['round'] for r in mvp_race))
         print(f"  MVP race timeline: {len(mvp_race)} data points across {rounds_in_race} rounds")

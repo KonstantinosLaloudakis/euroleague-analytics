@@ -63,7 +63,8 @@ function restoreFromURL() {
         // default to top GCI team
         const sorted = Object.entries(_gc.teams)
             .sort((a, b) => b[1].gci - a[1].gci);
-        if (sorted.length) selectTeam(sorted[0][0]);
+        // Default view: no scroll and no ?team= in the URL (that is for explicit picks)
+        if (sorted.length) selectTeam(sorted[0][0], { explicit: false });
     }
 }
 
@@ -270,14 +271,16 @@ function renderTeamGrid() {
 }
 
 /* ── 6. Select Team ────────────────────────────────────────────────────── */
-function selectTeam(code) {
+function selectTeam(code, { explicit = true } = {}) {
     if (!_gc.teams[code]) return;
     _selectedTeam = code;
 
     // Update URL
-    const url = new URL(window.location);
-    url.searchParams.set('team', code);
-    history.replaceState(null, '', url);
+    if (explicit) {
+        const url = new URL(window.location);
+        url.searchParams.set('team', code);
+        history.replaceState(null, '', url);
+    }
 
     // Highlight chips
     document.querySelectorAll('.team-chip').forEach(el => {
@@ -292,7 +295,7 @@ function selectTeam(code) {
 
     // Scroll to deep-dive section
     const section = document.getElementById('team-section');
-    if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (explicit && section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 /* ── 7. Team Detail ────────────────────────────────────────────────────── */
@@ -470,7 +473,9 @@ function buildRadarSVG(data, color) {
             fill="#9ca3af" font-size="8" font-family="Inter, sans-serif">${d.label}</text>`;
     });
 
-    return `<svg viewBox="0 0 200 200" style="width:100%;max-width:220px;height:auto;display:block;margin:0 auto;">
+    // viewBox is padded beyond the 0-200 drawing so side labels ("Comeback",
+    // "Control") anchored outward at r+16 are not clipped.
+    return `<svg viewBox="-45 -10 290 220" style="width:100%;max-width:320px;height:auto;display:block;margin:0 auto;">
         ${rings}
         ${axes}
         <polygon points="${dataPts}" fill="${color}33" stroke="${color}" stroke-width="1.5"/>

@@ -3,6 +3,7 @@ import json
 import numpy as np
 import os
 from season_config import CURRENT_SEASON
+from chart_utils import ratings_path
 
 
 def z_normalize(series, clip=3.0):
@@ -69,20 +70,19 @@ def calculate_mvp_scores():
     player_stats['TeamWinPct'] = player_stats['TeamCode'].map(standings_map).fillna(0)
 
     # 5. WPA — Win Probability Added (season cumulative, from wpa_ratings.json)
+    # This round's file only: the unsuffixed one is last season's (see ratings_path).
     round_suffix = os.environ.get('EUROLEAGUE_ROUND_SUFFIX', '')
-    wpa_file = f'wpa_ratings{round_suffix}.json'
-    if not os.path.exists(wpa_file):
-        wpa_file = 'wpa_ratings.json'
+    wpa_file = ratings_path('wpa_ratings')
 
     wpa_lookup = {}
-    if os.path.exists(wpa_file):
+    if wpa_file:
         with open(wpa_file) as f:
             wpa_data = json.load(f)
         for entry in wpa_data:
             wpa_lookup[entry['Player'].upper().strip()] = entry.get('Action_WPA', 0.0)
         print(f"Loaded WPA for {len(wpa_lookup)} players.")
     else:
-        print("Warning: wpa_ratings.json not found — WPA factor set to 0.")
+        print(f"Warning: wpa_ratings{round_suffix}.json not found — WPA factor set to 0.")
 
     player_stats['PlayerUpper'] = player_stats['PlayerName'].str.upper().str.strip()
     player_stats['WPA'] = player_stats['PlayerUpper'].map(wpa_lookup).fillna(0)

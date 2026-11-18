@@ -392,7 +392,9 @@ function renderDistChart(zones, label) {
         paper_bgcolor: 'transparent',
         plot_bgcolor: 'transparent',
         height: 260,
-        margin: { t: 10, r: 20, b: 40, l: 90 },
+        // Legend sits above the bars (only shown for team vs league average); below,
+        // it collided with the x-axis title.
+        margin: { t: traces.length > 1 ? 30 : 10, r: 20, b: 40, l: 90 },
         barmode: 'group',
         xaxis: {
             title: { text: '% of Total Shots', font: { color: '#6b7280', size: 11 } },
@@ -408,7 +410,7 @@ function renderDistChart(zones, label) {
             font: { color: '#9ca3af', size: 11 },
             bgcolor: 'transparent',
             orientation: 'h',
-            x: 0.5, xanchor: 'center', y: -0.15,
+            x: 1, xanchor: 'right', y: 1.02, yanchor: 'bottom',
         },
         font: { family: 'Inter, sans-serif' },
     };

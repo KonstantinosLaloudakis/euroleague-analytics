@@ -61,8 +61,10 @@ function onSelectionChange() {
     const teamB = (_data.teams || []).find(t => t.team === b);
     if (!teamA || !teamB) return;
 
-    renderH2H(teamA, teamB);
+    // Show the panel before rendering: Plotly sizes charts from their container,
+    // and a hidden one has no width (it falls back to 700px and overflows on mobile).
     document.getElementById('h2h-panel').style.display = 'block';
+    renderH2H(teamA, teamB);
     document.getElementById('h2h-panel').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
