@@ -255,6 +255,7 @@
                 <li><span class="metric-name">Menus &amp; Search</span> — The top menu groups every page under Season, Teams, Players, and History. The search box finds any player since 2007-08 and any of the current season's teams. It ignores capitals and accents, and you can type words in any order or only part of a name ("sasha vez"). Team codes like "oly" work too. Players open their career page and teams open the Team Deep-Dive. Player names across the site open that player's career page. Press <kbd>/</kbd> on any page to jump to the search box; on phones, use the search button next to Menu.</li>
                 <li><span class="metric-name">Season Hub</span> — League standings, power ratings scatter plot (Adj Off vs Adj Def), MVP race top 10, remaining schedule difficulty, and standings race timeline. Standings positions (the table order and the standings race after every round) are the official Euroleague standings, taken from the Euroleague API. Includes the Oracle Forecast tab with game predictions, player forecasts, and accuracy tracking.</li>
                 <li><span class="metric-name">Team Deep-Dive</span> — Select any team to see adjusted ratings, four factors breakdown, Elo history, home/away splits, round-by-round results, roster stats, and Monte Carlo playoff probability distributions.</li>
+                <li><span class="metric-name">Pace</span> — How fast Euroleague basketball is played, in possessions per 40 minutes. Headline cards show this season's league pace and its change from last season, how many seasons in a row pace has risen, and the slowest team. Charts cover league pace by season since 2007-08 (with the range of the seasons before the climb shaded), every team this season against last season with a Raw / Opponent-adjusted toggle, regular season against playoff series for each season, pace against net rating for every completed team-season (champions highlighted), and the slowest and fastest games since 2007 with replay links. The Team Deep-Dive also has a Pace card with the team's pace by season against the league average.</li>
                 <li><span class="metric-name">Player Stats</span> — Sortable league-wide player statistics with per-game averages, shooting splits, and advanced metrics (RAPM, WPA, TPM, WIR). Filter by team or search by name.</li>
                 <li><span class="metric-name">Player Comparison</span> — Pick any two players from the 20-season dataset and compare career averages side-by-side via a dual-bar Tale of the Tape (PPG, RPG, APG, SPG, BPG, PIR, FG%), plus full per-season stat tables for each. Shareable via URL params.</li>
                 <li><span class="metric-name">Championship Chase</span> — Tracks how every team's title probability evolved through the most recent playoffs, round by round. Line chart, hero stat strip, and a scrollable odds table.</li>
@@ -574,6 +575,30 @@
             </p>
             <p>
                 Coverage: the Comebacks, Game Highs and Game-Winners boards only include games with a play-by-play log. A few 2012–13 and 2018–19 games are missing from the source, and a game whose log ends before the 4th quarter is skipped.
+            </p>
+        </div>
+
+        <!-- ── Pace & Possessions ────────────────────────────────── -->
+        <div class="about-section">
+            <h3>Pace &amp; Possessions</h3>
+            <p>
+                Commentators often call a team slow at "70&ndash;71 possessions". For fifteen seasons from 2007&ndash;08 that was the league average, and the Pace page tracks how it has changed since. Data comes from <code style="color:var(--accent-blue)">pace.json</code>, written by <code style="color:var(--accent-blue)">calculate_game_records.py</code> in the same pass over every play-by-play log as the All-Time Records boards (refreshed daily).
+            </p>
+            <h4 style="margin-top:1.2rem;color:var(--text-primary);">Possessions and Pace</h4>
+            <p>
+                A team's possessions = field-goal attempts + 0.44 &times; free-throw attempts &minus; offensive rebounds + turnovers. A game's possessions are the average of the two teams' counts. Pace is possessions per 40 minutes, so overtime games are scaled to the minutes actually played. The play-by-play feed labels every overtime period 5, so the number of overtimes is read from the game clock's minute counter. Older logs (2008&ndash;09 to 2014&ndash;15) record made dunks and layups and layup attempts as separate play types; these are counted as field-goal attempts.
+            </p>
+            <h4 style="margin-top:1.2rem;color:var(--text-primary);">Regular Season vs Playoffs</h4>
+            <p>
+                Regular season covers the regular season and the Top 16 round. Playoffs covers the playoff series only; Final Four and play-in games are not included in either split.
+            </p>
+            <h4 style="margin-top:1.2rem;color:var(--text-primary);">Opponent-Adjusted Pace</h4>
+            <p>
+                A team's raw pace depends on who it has played, which matters early in a season. Opponent-adjusted pace measures how much faster or slower a team's games run than its opponents' usual pace: for each game, take the game's pace minus the league pace, subtract how far the opponent's pace is from the league's, then average over the season. Positive means the team's games run faster than its opponents' normally do.
+            </p>
+            <h4 style="margin-top:1.2rem;color:var(--text-primary);">Pace vs Winning</h4>
+            <p>
+                Each completed team-season is plotted as its pace relative to that season's league pace against its net rating. The champion is the winner of the season's Final Four final.
             </p>
         </div>
 
