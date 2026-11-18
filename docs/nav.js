@@ -40,13 +40,19 @@
   const NAV_ABOUT = { href: 'about.html', text: 'About' };
 
   function currentPage(pathname) {
-    const last = String(pathname).split('/').pop();
+    let last = String(pathname).split('/').pop();
     if (last === '') return 'index.html';
+    if (!last.includes('.')) last += '.html'; // GitHub Pages serves /team for team.html
     return last === 'series.html' ? 'playoffs.html' : last;
   }
 
+  const FOLD = { 'đ': 'dj', 'Đ': 'dj', 'ł': 'l', 'Ł': 'l', 'ø': 'o', 'Ø': 'o',
+    'ß': 'ss', 'ı': 'i', 'İ': 'i' };
+
   function normalizeText(s) {
-    return String(s).normalize('NFD').replace(/[̀-ͯ]/g, '')
+    // NFD can't decompose these, so fold them by hand (data is transliterated: Đorđević -> DJORDJEVIC).
+    const folded = String(s).replace(/[đĐłŁøØßıİ]/g, c => FOLD[c]);
+    return folded.normalize('NFD').replace(/[̀-ͯ]/g, '')
       .toLowerCase().replace(/['’]/g, '');
   }
 
@@ -72,9 +78,12 @@
     return (first + ' ' + last).split(/\s+/).filter(Boolean).map(capitalizeName).join(' ');
   }
 
+  const TEAM_ACRONYMS = new Set(['LDLC', 'ASVEL', 'IBI']);
+
   function formatTeamName(raw) {
     return raw.split(/\s+/).filter(Boolean).map(w =>
-      (w.length <= 2 || /\d/.test(w)) ? w.toUpperCase() : capitalizePart(w)).join(' ');
+      (w.length <= 2 || /\d/.test(w) || TEAM_ACRONYMS.has(w.toUpperCase()))
+        ? w.toUpperCase() : w.split('-').map(capitalizePart).join('-')).join(' ');
   }
 
   function matchesAll(queryTokens, nameTokens) {
@@ -86,7 +95,7 @@
     if (!q.length) return [];
     const teams = (index.teams || [])
       .filter(t => matchesAll(q, tokens(t.n).concat(tokens(t.c))))
-      .map(t => ({ type: 'team', href: 'team.html?team=' + t.c, label: formatTeamName(t.n), detail: 'Team' }));
+      .map(t => ({ type: 'team', href: 'team.html?team=' + encodeURIComponent(t.c), label: formatTeamName(t.n), detail: 'Team' }));
 
     const scored = [];
     for (const p of index.players || []) {
@@ -103,7 +112,7 @@
       (b.p.s - a.p.s) || a.p.n.localeCompare(b.p.n));
     const players = scored.map(({ p }) => ({
       type: 'player',
-      href: 'player.html?code=' + p.c,
+      href: 'player.html?code=' + encodeURIComponent(p.c),
       label: formatPlayerName(p.n),
       detail: p.t + ' · ' + (p.f === p.l ? p.f : p.f + '–' + p.l),
     }));
@@ -155,10 +164,13 @@
     });
     const list = h('ul', { class: 'nav-search-list', id: 'nav-search-listbox', role: 'listbox',
       'aria-label': 'Search results' });
-    const status = h('p', { class: 'nav-search-status', role: 'status' });
-    const panel = h('div', { class: 'nav-search-panel', hidden: '' }, list, status);
-    const box = h('div', { class: 'nav-search', id: 'nav-search' }, input, panel);
-    return { box, input, list, status, panel };
+    // The live region lives outside the panel (never hidden) so its text changes are
+    // announced; the panel keeps a visible copy of the message for sighted users.
+    const status = h('p', { class: 'nav-search-sr', role: 'status' });
+    const message = h('p', { class: 'nav-search-status', 'aria-hidden': 'true' });
+    const panel = h('div', { class: 'nav-search-panel', hidden: '' }, list, message);
+    const box = h('div', { class: 'nav-search', id: 'nav-search' }, input, panel, status);
+    return { box, input, list, status, message, panel };
   }
 
   function renderNav(nav, page) {
@@ -243,7 +255,7 @@
   }
 
   function setupSearch(ui, bar) {
-    const { input, list, status, panel } = ui;
+    const { input, list, status, message, panel } = ui;
     let index = null;
     let failed = false;
     let pending = null;
@@ -257,13 +269,14 @@
       pending = fetch(SEARCH_INDEX_URL)
         .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
         .then(data => { index = data; failed = false; }, () => { failed = true; })
-        .then(() => { pending = null; if (document.activeElement === input) update(); });
+        .then(() => { pending = null; if (document.activeElement === input || !panel.hidden) update(); });
     }
 
     function close() {
       panel.hidden = true;
       list.replaceChildren();
       status.textContent = '';
+      message.textContent = '';
       results = [];
       active = -1;
       input.setAttribute('aria-expanded', 'false');
@@ -273,6 +286,7 @@
     function showMessage(text) {
       close();
       status.textContent = text;
+      message.textContent = text;
       panel.hidden = false;
     }
 
@@ -296,21 +310,28 @@
       panel.hidden = false;
       input.setAttribute('aria-expanded', 'true');
       setActive(0);
+      status.textContent = items.length + (items.length === 1 ? ' result' : ' results');
     }
 
     function update() {
       const q = input.value.trim();
       if (!q) return close();
       if (failed) return showMessage('Search is unavailable right now.');
-      if (!index) { loadIndex(); return close(); }
+      if (!index) { loadIndex(); return showMessage('Loading…'); }
       const items = search(index, q);
       if (!items.length) return showMessage('No players or teams match "' + q + '"');
       showResults(items);
     }
 
-    function open(result) {
-      if (result) window.location.href = result.href;
+    function open(result, newTab) {
+      if (!result) return;
+      if (newTab) window.open(result.href, '_blank', 'noopener');
+      else window.location.href = result.href;
     }
+
+    // Phone: the results must survive the on-screen keyboard being dismissed (a blur),
+    // so in the open mobile search row they close on outside tap / Escape / the buttons.
+    const isCompact = () => ui.searchBtn.offsetParent !== null && ui.nav.classList.contains('search-open');
 
     input.addEventListener('focus', () => { loadIndex(); update(); });
     input.addEventListener('input', update);
@@ -324,19 +345,31 @@
         setActive((active - 1 + n) % n);
       } else if (e.key === 'Enter' && n) {
         e.preventDefault();
-        open(results[active]);
+        open(results[active], e.ctrlKey || e.metaKey);
       } else if (e.key === 'Escape') {
         e.preventDefault();
         input.value = '';
         close();
       }
     });
-    input.addEventListener('blur', close);
+    input.addEventListener('blur', () => { if (!isCompact()) close(); });
+    document.addEventListener('pointerdown', e => {
+      if (isCompact() && !ui.box.contains(e.target) && !ui.searchBtn.contains(e.target)) close();
+    });
+    ui.searchBtn.addEventListener('click', close);
+    ui.toggle.addEventListener('click', close);
     // Keep focus in the input while clicking a result, so blur doesn't close it first.
     panel.addEventListener('mousedown', e => e.preventDefault());
     list.addEventListener('click', e => {
       const option = e.target.closest('[role="option"]');
-      if (option) open(results[Number(option.dataset.i)]);
+      if (option) open(results[Number(option.dataset.i)], e.ctrlKey || e.metaKey);
+    });
+    list.addEventListener('auxclick', e => {
+      const option = e.target.closest('[role="option"]');
+      if (option && e.button === 1) {
+        e.preventDefault();
+        open(results[Number(option.dataset.i)], true);
+      }
     });
 
     document.addEventListener('keydown', e => {

@@ -821,6 +821,19 @@ footer {
 
 .nav-search-status:empty { display: none; }
 
+/* Live-region copy of the status/result count for screen readers. */
+.nav-search-sr {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 /* ── Compact bar: search button + ☰ Menu below 920px (57.5em) ─────────────
    The full bar needs 894px with Inter (901px with a fallback font); 920px
    leaves headroom. */

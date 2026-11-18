@@ -28,6 +28,7 @@ test('currentPage', () => {
   assert.equal(nav.currentPage('/euroleague-analytics/team.html'), 'team.html');
   assert.equal(nav.currentPage('/series.html'), 'playoffs.html');
   assert.equal(nav.currentPage('/'), 'index.html');
+  assert.equal(nav.currentPage('/euroleague-analytics/team'), 'team.html');
 });
 
 test('NAV_GROUPS', () => {
@@ -50,6 +51,9 @@ test('formatTeamName', () => {
   assert.equal(nav.formatTeamName('FC BARCELONA'), 'FC Barcelona');
   assert.equal(nav.formatTeamName('EA7 EMPORIO ARMANI MILAN'), 'EA7 Emporio Armani Milan');
   assert.equal(nav.formatTeamName('OLYMPIACOS PIRAEUS'), 'Olympiacos Piraeus');
+  assert.equal(nav.formatTeamName('KOSNER BASKONIA VITORIA-GASTEIZ'), 'Kosner Baskonia Vitoria-Gasteiz');
+  assert.equal(nav.formatTeamName('LDLC ASVEL VILLEURBANNE'), 'LDLC ASVEL Villeurbanne');
+  assert.equal(nav.formatTeamName('HAPOEL IBI TEL AVIV'), 'Hapoel IBI Tel Aviv');
 });
 
 test('search matching', () => {
@@ -93,4 +97,10 @@ test('defines no browser globals', () => {
   const sandbox = {};
   vm.runInNewContext(fs.readFileSync(require.resolve('../../docs/nav.js'), 'utf8'), sandbox);
   assert.deepEqual(Object.keys(sandbox), []);
+});
+
+test('normalizeText folds letters NFD cannot decompose', () => {
+  assert.equal(nav.normalizeText('Đorđević'), 'djordjevic');
+  assert.deepEqual(nav.tokens('Łukasz'), ['lukasz']);
+  assert.equal(nav.normalizeText('Weiß Ørn Iı'), 'weiss orn ii');
 });
