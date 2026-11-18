@@ -56,6 +56,81 @@ def load_json(path):
         return None
 
 
+def build_highlights(teams, oracle, game_control, mvp, player_stats, recaps,
+                     career_codes, season, round_num):
+    """Topical defaults for pages that open without a selection (highlights.json).
+
+    Any section that cannot be computed is None.
+    """
+    elo = {t.get('team'): t.get('elo') or 0 for t in (teams or [])}
+
+    headline = None
+    best = None
+    for p in (oracle or {}).get('predictions') or []:
+        home, away = p.get('Local'), p.get('Road')
+        if not home or not away:
+            continue
+        prob = p.get('HomeWinProb')
+        key = (-(elo.get(home, 0) + elo.get(away, 0)),
+               abs((prob if prob is not None else 50) - 50))
+        if best is None or key < best:
+            best = key
+            headline = {'round': p.get('Round'), 'home': home, 'away': away}
+
+    gor = (game_control or {}).get('game_of_round')
+    game_of_round = None
+    if gor:
+        game_of_round = {'season': season}
+        for k in ('gamecode', 'round', 'home', 'away', 'home_score', 'away_score'):
+            game_of_round[k] = gor.get(k)
+
+    leader = next((t['team'] for t in (teams or []) if t.get('position') == 1), None)
+
+    code_by_name = {p.get('name'): p.get('code') for p in (player_stats or [])}
+    top2 = []
+    for row in mvp or []:
+        code = code_by_name.get(row.get('player'))
+        if code and code in career_codes:
+            top2.append({'name': row['player'], 'code': code})
+            if len(top2) == 2:
+                break
+    mvp_top2 = top2 if len(top2) == 2 else None
+
+    top_performers = None
+    rounds = (recaps or {}).get('rounds') or {}
+    played = [int(r) for r, games in rounds.items() if games]
+    if played:
+        latest = max(played)
+        players = []
+        for g in rounds[str(latest)]:
+            tp = g.get('topPerformer')
+            if not tp:
+                continue
+            if any(r.get('name') == tp.get('name') for r in g.get('homeRoster') or []):
+                team = g.get('home')
+            elif any(r.get('name') == tp.get('name') for r in g.get('awayRoster') or []):
+                team = g.get('away')
+            else:
+                continue
+            players.append({
+                'name': tp.get('name'), 'team': team,
+                'pts': tp.get('pts'), 'reb': tp.get('reb'), 'ast': tp.get('ast'),
+                'pir': tp.get('pir'),
+                'game': {'home': g.get('home'), 'away': g.get('away'),
+                         'home_score': g.get('homePts'), 'away_score': g.get('awayPts')},
+            })
+        players.sort(key=lambda p: -(p['pir'] or 0))
+        if players:
+            top_performers = {'round': latest, 'players': players}
+
+    return {
+        'season': season, 'round': round_num,
+        'headline_matchup': headline, 'game_of_round': game_of_round,
+        'standings_leader': leader, 'mvp_top2': mvp_top2,
+        'top_performers': top_performers,
+    }
+
+
 def build_mvp_race(season, round_num, top_n=10, root='.'):
     """MVP race timeline: the top `top_n` of each round's mvp_rankings_{S}_R{N}.json.
 
@@ -3701,6 +3776,20 @@ def main():
         with open(recap_path, 'w', encoding='utf-8') as f:
             json.dump(game_recaps, f, ensure_ascii=False)
         print(f"  Game recaps -> {recap_path}")
+
+    # ── Highlights export (topical defaults for pages with no selection) ───
+    try:
+        with open(os.path.join(out_dir, 'player_index.json'), encoding='utf-8') as f:
+            career_codes = set((json.load(f) or {}).values())
+    except (OSError, ValueError):
+        career_codes = set()
+    highlights = build_highlights(
+        teams, oracle_data, gci_data, mvp_list, player_stats,
+        game_recaps or {}, career_codes, CURRENT_SEASON, round_num)
+    highlights_path = os.path.join(out_dir, 'highlights.json')
+    with open(highlights_path, 'w', encoding='utf-8') as f:
+        json.dump(highlights, f, ensure_ascii=False, separators=(',', ':'))
+    print(f"  Highlights -> {highlights_path}")
 
     # Copy backtest predictions for H2H page
     import shutil
