@@ -13,7 +13,7 @@ import pandas as pd
 REGULATION_PERIODS = 4
 REGULATION_MINUTES = 40
 OT_MINUTES = 5
-OT1_END_MINUTE = 46          # MINUTE value that closes the first overtime
+OT_MINUTE_OFFSET = 41        # MINUTE runs 46, 51, ... at the ends of OT1, OT2, ...
 FTA_WEIGHT = 0.44
 
 FGA_CODES = frozenset({'2FGM', '2FGA', '2FGAB', '3FGM', '3FGA', '3FGAB',
@@ -22,15 +22,19 @@ FTA_CODES = frozenset({'FTM', 'FTA'})
 
 
 def overtimes(rows):
-    """Number of overtime periods played (0 for a game decided in regulation)."""
+    """Number of overtime periods played (0 for a game decided in regulation).
+
+    Counted from the running MINUTE column; without a usable one, from the
+    number of Begin Period rows logged in PERIOD 5 or later.
+    """
     if rows['PERIOD'].max() <= REGULATION_PERIODS:
         return 0
-    if 'MINUTE' not in rows:
-        return 1
-    last = pd.to_numeric(rows['MINUTE'], errors='coerce').max()
+    last = (pd.to_numeric(rows['MINUTE'], errors='coerce').max()
+            if 'MINUTE' in rows else float('nan'))
     if pd.isna(last):
-        return 1
-    return max(1, int((last - OT1_END_MINUTE) // OT_MINUTES) + 1)
+        begins = ((rows['PT'] == 'BP') & (rows['PERIOD'] > REGULATION_PERIODS)).sum()
+        return max(1, int(begins))
+    return max(1, round((last - OT_MINUTE_OFFSET) / OT_MINUTES))
 
 
 def team_possessions(play_types):

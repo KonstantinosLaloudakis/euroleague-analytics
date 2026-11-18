@@ -51,3 +51,14 @@ def test_four_overtimes_scale_by_sixty_minutes():
 def test_overtime_without_minute_column_counts_one():
     r = gp.analyze_clean(_cg(BASE + ev('B', 'TO', period=5)))
     assert (r['ot'], r['minutes']) == (1, 45)
+
+
+@pytest.mark.parametrize('minute, ot', [(45, 1), (50, 2), (55, 3)])
+def test_overtime_count_from_last_minute_inside_period(minute, ot):
+    r = gp.analyze_clean(_cg(BASE + ev('B', 'TO', period=5), minute=minute))
+    assert (r['ot'], r['minutes']) == (ot, 40 + 5 * ot)
+
+
+def test_overtime_without_minute_counts_begin_period_rows():
+    r = gp.analyze_clean(_cg(BASE + ev('A', 'BP', period=5, n=2)))
+    assert (r['ot'], r['minutes']) == (2, 50)
