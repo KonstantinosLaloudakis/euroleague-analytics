@@ -34,7 +34,7 @@ test('currentPage', () => {
 test('NAV_GROUPS', () => {
   assert.deepEqual(nav.NAV_GROUPS.map(g => g.label), ['Season', 'Teams', 'Players', 'History']);
   const links = nav.NAV_GROUPS.flatMap(g => g.links);
-  assert.equal(links.length, 17);
+  assert.equal(links.length, 18);
   assert.ok(!links.some(l => l.href === 'series.html'));
   assert.deepEqual(nav.NAV_ABOUT, { href: 'about.html', text: 'About' });
 });

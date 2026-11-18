@@ -72,7 +72,7 @@ Static site deployed via GitHub Pages from the `docs/` folder.
 - Player links go through `docs/player-links.js` (`PlayerLinks.link/url`; `bindChartClicks` for Plotly charts); links only when a career page exists
 - JS unit tests: `node --test tests/js/*.test.js`
 
-**Pages:** index.html (Season Hub), team.html, players.html, h2h.html, recap.html, shots.html, network.html (Playmaking), replay.html, playoffs.html, mvp.html, about.html
+**Pages:** index.html (Season Hub), team.html, players.html, h2h.html, recap.html, shots.html, network.html (Playmaking), replay.html, playoffs.html, mvp.html, pace.html (Pace), about.html
 
 ### Key Data Files
 
@@ -81,6 +81,7 @@ Static site deployed via GitHub Pages from the `docs/` folder.
 - `data_cache/games_{season}.csv` — Game results with scores
 - `data_cache/pbp_lineups_{season}.csv` — Play-by-play with 5-man lineup arrays
 - `docs/data/current/search_index.json` — Nav search index (players since 2007-08 + current teams), written by `fetch_player_career_stats.py`
+- `docs/data/current/pace.json` — League/team pace by season, written by `calculate_game_records.py`
 - `docs/data/current/dashboard.json` — Aggregated export consumed by the frontend
 
 ### Team Code Conventions

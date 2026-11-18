@@ -19,6 +19,7 @@
     ] },
     { label: 'Teams', links: [
       { href: 'team.html', text: 'Team Deep-Dive' },
+      { href: 'pace.html', text: 'Pace' },
       { href: 'h2h.html', text: 'Head-to-Head' },
       { href: 'game-control.html', text: 'Game Control' },
       { href: 'lineups.html', text: 'Lineups' },
