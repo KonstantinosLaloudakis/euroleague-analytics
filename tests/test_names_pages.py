@@ -1,7 +1,6 @@
 import re
 from pathlib import Path
 
-import pytest
 
 DOCS = Path(__file__).resolve().parent.parent / "docs"
 NAV_PLACEHOLDER = '<nav class="site-nav" id="site-nav" aria-label="Main"></nav>'
@@ -19,7 +18,6 @@ def test_names_js_loads_before_nav_js_on_every_page():
         assert text.count('<script src="names.js"></script>') == 1, p.name
 
 
-@pytest.mark.xfail(reason="removed in Tasks 2-3", strict=True)
 def test_no_local_name_formatters():
     pat = re.compile(r"function\s+(formatName|formatPlayerName|_cleanName)\b|\b_cleanName\s*[=(:]")
     offenders = []

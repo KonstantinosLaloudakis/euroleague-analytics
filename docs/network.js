@@ -209,15 +209,16 @@ function renderChord(teamData, teamCode) {
 
     // ── Draw labels ──────────────────────────────────────────────────────────
     const labelGroup = svgEl('g', { class: 'chord-labels' });
-    arcs.forEach(a => {
+    const chordLabels = PlayerNames.chartLabels(arcs.map(a => a.name));
+    arcs.forEach((a, idx) => {
         const labelR = outerR + 14;
         const midRad = degToRad(a.midDeg);
         const x = cx + labelR * Math.cos(midRad);
         const y = cy + labelR * Math.sin(midRad);
         const anchor = (a.midDeg > 90 && a.midDeg < 270) ? 'end' : 'start';
 
-        // Format name: "LAST, F." → "Last"
-        const display = formatPlayerName(a.name);
+        // Surname, or short form when two of the 8 share a surname
+        const display = chordLabels[idx];
         const rot = (a.midDeg > 90 && a.midDeg < 270) ? a.midDeg + 180 : a.midDeg;
 
         const label = svgEl('text', {
@@ -298,13 +299,6 @@ function getHue(hex) {
     return Math.round(h * 360);
 }
 
-function formatPlayerName(raw) {
-    // "SLOUKAS, KOSTAS" → "Sloukas"
-    const parts = raw.split(',');
-    const last = (parts[0] || '').trim();
-    return last.charAt(0).toUpperCase() + last.slice(1).toLowerCase();
-}
-
 // ── Highlight / pin ──────────────────────────────────────────────────────────
 
 function highlightPlayer(playerId, isPinned) {
@@ -368,8 +362,8 @@ function pinPlayer(playerId) {
 
 function showTooltip(edge, fromArc, toArc, evt) {
     const tip = document.getElementById('chord-tooltip');
-    const passer = formatPlayerName(fromArc.name);
-    const scorer = formatPlayerName(toArc.name);
+    const passer = PlayerNames.short(fromArc.name);
+    const scorer = PlayerNames.short(toArc.name);
 
     // Compute percentages
     const passerPct = fromArc.ast_given > 0 ? (edge.count / fromArc.ast_given * 100).toFixed(1) : '0.0';
@@ -417,7 +411,7 @@ function showPlayerDetail(playerId) {
     const color = teamInk(_selected);
     const teamName = TEAM_NAMES[_selected] || _selected;
 
-    document.getElementById('pd-name').textContent = formatPlayerName(player.name);
+    document.getElementById('pd-name').textContent = PlayerNames.full(player.name);
     const badge = document.getElementById('pd-badge');
     badge.textContent = teamName;
     badge.style.background = color + '22';
@@ -445,7 +439,7 @@ function showPlayerDetail(playerId) {
         <ul class="pd-target-list">
             ${givenEdges.slice(0, 5).map(e => {
                 const scorer = team.players.find(p => p.id === e.to);
-                const name = scorer ? formatPlayerName(scorer.name) : '?';
+                const name = scorer ? PlayerNames.short(scorer.name) : '?';
                 return `<li><span>${name}</span><span class="pd-stat-value">${e.count} (${e.fg2}×2PT, ${e.fg3}×3PT)</span></li>`;
             }).join('')}
         </ul>
@@ -468,7 +462,7 @@ function showPlayerDetail(playerId) {
         <ul class="pd-target-list">
             ${receivedEdges.slice(0, 5).map(e => {
                 const passer = team.players.find(p => p.id === e.from);
-                const name = passer ? formatPlayerName(passer.name) : '?';
+                const name = passer ? PlayerNames.short(passer.name) : '?';
                 return `<li><span>${name}</span><span class="pd-stat-value">${e.count}</span></li>`;
             }).join('')}
         </ul>
@@ -483,8 +477,8 @@ function showPlayerDetail(playerId) {
 
 const COMBO_COLS = [
     { key: '#',        label: '#',       fmt: (_, i) => i + 1 },
-    { key: 'passer',   label: 'Passer',  fmt: (v, i, row) => PlayerLinks.link(v, formatPlayerName(v), {apiId: row.passer_id}) },
-    { key: 'scorer',   label: 'Scorer',  fmt: (v, i, row) => PlayerLinks.link(v, formatPlayerName(v), {apiId: row.scorer_id}) },
+    { key: 'passer',   label: 'Passer',  fmt: (v, i, row) => PlayerLinks.link(v, PlayerNames.short(v), {apiId: row.passer_id}) },
+    { key: 'scorer',   label: 'Scorer',  fmt: (v, i, row) => PlayerLinks.link(v, PlayerNames.short(v), {apiId: row.scorer_id}) },
     { key: 'team',     label: 'Team',    fmt: v => `<span class="tbl-team-badge" style="background:${teamInk(v)}22;color:${teamInk(v)}">${v}</span>` },
     { key: 'count',    label: 'AST',     fmt: v => v },
     { key: 'fg2',      label: '2PT',     fmt: v => v },
@@ -494,12 +488,12 @@ const COMBO_COLS = [
 
 const PLAYMAKER_COLS = [
     { key: '#',              label: '#',          fmt: (_, i) => i + 1 },
-    { key: 'player',         label: 'Player',     fmt: (v, i, row) => PlayerLinks.link(v, formatPlayerName(v), {apiId: row.player_id}) },
+    { key: 'player',         label: 'Player',     fmt: (v, i, row) => PlayerLinks.link(v, PlayerNames.short(v), {apiId: row.player_id}) },
     { key: 'team',           label: 'Team',       fmt: v => `<span class="tbl-team-badge" style="background:${teamInk(v)}22;color:${teamInk(v)}">${v}</span>` },
     { key: 'ast',            label: 'AST',        fmt: v => v },
     { key: 'per_game',       label: '/Game',      fmt: v => v.toFixed(1) },
     { key: 'unique_targets', label: 'Targets',    fmt: v => v },
-    { key: 'top_target',     label: 'Top Target', fmt: v => PlayerLinks.link(v, formatPlayerName(v)) },
+    { key: 'top_target',     label: 'Top Target', fmt: v => PlayerLinks.link(v, PlayerNames.short(v)) },
 ];
 
 let _comboSort  = { key: 'count', asc: false };

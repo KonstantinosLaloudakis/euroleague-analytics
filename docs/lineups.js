@@ -119,7 +119,7 @@ function renderTable() {
     const netColor = net > 0 ? 'var(--accent-green)' : net < 0 ? 'var(--accent-red)' : 'var(--text-muted)';
     const netStr   = (net > 0 ? '+' : '') + net.toFixed(1);
     const names    = Array.isArray(r.players) ? r.players : [r.players];
-    const players  = names.map(n => PlayerLinks.link(n)).join(', ');
+    const players  = names.map(n => PlayerLinks.link(n, PlayerNames.short(n))).join(', ');
     return `<tr>
       <td class="text-left players-cell">${players}</td>
       <td class="text-left">${r.team}</td>

@@ -448,7 +448,7 @@ function renderWPALeaderboard(wpaData, ta, tb, taName, tbName) {
     combined.sort((a, b) => a.wpa - b.wpa);
 
     const labels = combined.map(p => {
-        const short = p.name.split(',')[0];
+        const short = PlayerNames.short(p.name);
         return `${short} <span style="color:#6b7280">(${p.team})</span>`;
     });
     const values = combined.map(p => parseFloat(p.wpa.toFixed(3)));
@@ -459,7 +459,7 @@ function renderWPALeaderboard(wpaData, ta, tb, taName, tbName) {
     );
     const hoverText = combined.map(p => {
         const teamName = p.team === ta ? taName : tbName;
-        return `<b>${p.name}</b><br>${teamName}<br>WPA: ${p.wpa >= 0 ? '+' : ''}${p.wpa.toFixed(3)}`;
+        return `<b>${PlayerNames.full(p.name)}</b><br>${teamName}<br>WPA: ${p.wpa >= 0 ? '+' : ''}${p.wpa.toFixed(3)}`;
     });
 
     const trace = {

@@ -318,12 +318,12 @@ function renderRaceChart() {
         traces.push({
             x: data.rounds.map(r => `R${r}`),
             y: data.scores,
-            name: formatName(name),
+            name: PlayerNames.short(name),
             mode: 'lines+markers',
             line: { color, width: 2.5, shape: 'spline' },
             marker: { size: 6, color },
             customdata: data.rounds.map(() => name),
-            hovertemplate: `<b>${formatName(name)}</b><br>Round %{x}<br>Score: %{y:.1f}` +
+            hovertemplate: `<b>${PlayerNames.full(name)}</b><br>Round %{x}<br>Score: %{y:.1f}` +
                 (PlayerLinks.url(name) ? `<br><i>${PlayerLinks.chartHint()}</i>` : '') + '<extra></extra>',
         });
     }
@@ -346,16 +346,6 @@ function renderRaceChart() {
 
     Plotly.newPlot(container, traces, layout, PLOTLY_CONFIG);
     PlayerLinks.bindChartClicks(container);
-}
-
-// ── Utility ──────────────────────────────────────────────────────────────
-function formatName(allCaps) {
-    // "VEZENKOV, SASHA" → "S. Vezenkov"
-    const parts = allCaps.split(', ');
-    if (parts.length < 2) return allCaps;
-    const last = parts[0].charAt(0) + parts[0].slice(1).toLowerCase();
-    const first = parts[1].charAt(0) + '.';
-    return `${first} ${last}`;
 }
 
 document.addEventListener('DOMContentLoaded', init);
