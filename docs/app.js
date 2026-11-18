@@ -66,7 +66,12 @@ async function applyTopicalDefault() {
         const label = document.createElement('p');
         label.className = 'topical-label';
         label.id = 'topical-label';
-        label.textContent = `Round ${g.round}'s most dramatic game · pick any game`;
+        // highlights' round is max GP, not necessarily this game's round: use the game's own
+        const gm = currentGames.find(x => String(x.gc) === String(g.gamecode));
+        const rnd = gm && typeof gm.rnd === 'number' ? gm.rnd : null;
+        label.textContent = rnd != null
+            ? `Round ${rnd}'s most dramatic game · pick any game`
+            : "This round's most dramatic game · pick any game";
         document.querySelector('.controls').insertAdjacentElement('afterend', label);
     } finally {
         _applyingDefault = false;

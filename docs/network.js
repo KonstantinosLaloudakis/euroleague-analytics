@@ -30,7 +30,8 @@ function restoreFromURL(highlights) {
         selectTeam(team);
     } else {
         // Default: standings leader (topical), else first team alphabetically.
-        // The default never writes ?team=.
+        // The topical default never writes ?team=; the legacy alphabetical fallback
+        // (used when highlights are unavailable) still does.
         const leader = highlights && highlights.standings_leader;
         if (leader && _data.teams[leader]) {
             selectTeam(leader, { explicit: false });

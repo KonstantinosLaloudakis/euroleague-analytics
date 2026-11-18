@@ -56,6 +56,24 @@ def load_json(path):
         return None
 
 
+def safe_build_highlights(out_dir, teams, oracle, game_control, mvp, player_stats,
+                          recaps, season, round_num):
+    """build_highlights that never raises: any failure yields an all-null file."""
+    try:
+        try:
+            with open(os.path.join(out_dir, 'player_index.json'), encoding='utf-8') as f:
+                career_codes = set((json.load(f) or {}).values())
+        except (OSError, ValueError, AttributeError, TypeError):
+            career_codes = set()
+        return build_highlights(teams, oracle, game_control, mvp, player_stats,
+                                recaps, career_codes, season, round_num)
+    except Exception as e:  # noqa: BLE001
+        print(f"  Highlights failed, writing empty file: {e!r}")
+        return {'season': season, 'round': round_num, 'headline_matchup': None,
+                'game_of_round': None, 'standings_leader': None, 'mvp_top2': None,
+                'top_performers': None}
+
+
 def build_highlights(teams, oracle, game_control, mvp, player_stats, recaps,
                      career_codes, season, round_num):
     """Topical defaults for pages that open without a selection (highlights.json).
@@ -3735,6 +3753,30 @@ def main():
         print(f"  Accuracy: {accuracy_data.get('accuracy', '?')}% over {accuracy_data.get('n_games', '?')} games")
     print(f"\nDone! dashboard.json written to {out_path}")
 
+    # ── Game recaps export ─────────────────────────────────────────────────
+    # Built first (right after dashboard.json) so highlights.json is written on
+    # every run and no later builder's failure can leave it stale.
+    print("\n--- Building game recaps ---")
+    try:
+        game_recaps = build_game_recaps()
+    except Exception as e:  # noqa: BLE001 - recaps must not block other outputs
+        print(f"  Game recaps failed: {e!r}")
+        game_recaps = None
+    if game_recaps:
+        recap_path = os.path.join(out_dir, 'game_recaps.json')
+        with open(recap_path, 'w', encoding='utf-8') as f:
+            json.dump(game_recaps, f, ensure_ascii=False)
+        print(f"  Game recaps -> {recap_path}")
+
+    # ── Highlights export (topical defaults for pages with no selection) ───
+    highlights = safe_build_highlights(
+        out_dir, teams, oracle_data, gci_data, mvp_list, player_stats,
+        game_recaps or {}, CURRENT_SEASON, round_num)
+    highlights_path = os.path.join(out_dir, 'highlights.json')
+    with open(highlights_path, 'w', encoding='utf-8') as f:
+        json.dump(highlights, f, ensure_ascii=False, separators=(',', ':'))
+    print(f"  Highlights -> {highlights_path}")
+
     # ── Shot stats export ────────────────────────────────────────────────────
     shot_stats = build_shot_stats()
     if shot_stats:
@@ -3767,29 +3809,6 @@ def main():
         n_teams = len(assist_network.get('teams', {}))
         n_combos = len(assist_network.get('top_combos', []))
         print(f"  Assist network: {n_teams} teams, {n_combos} top combos -> {assist_path}")
-
-    # ── Game recaps export ─────────────────────────────────────────────────
-    print("\n--- Building game recaps ---")
-    game_recaps = build_game_recaps()
-    if game_recaps:
-        recap_path = os.path.join(out_dir, 'game_recaps.json')
-        with open(recap_path, 'w', encoding='utf-8') as f:
-            json.dump(game_recaps, f, ensure_ascii=False)
-        print(f"  Game recaps -> {recap_path}")
-
-    # ── Highlights export (topical defaults for pages with no selection) ───
-    try:
-        with open(os.path.join(out_dir, 'player_index.json'), encoding='utf-8') as f:
-            career_codes = set((json.load(f) or {}).values())
-    except (OSError, ValueError):
-        career_codes = set()
-    highlights = build_highlights(
-        teams, oracle_data, gci_data, mvp_list, player_stats,
-        game_recaps or {}, career_codes, CURRENT_SEASON, round_num)
-    highlights_path = os.path.join(out_dir, 'highlights.json')
-    with open(highlights_path, 'w', encoding='utf-8') as f:
-        json.dump(highlights, f, ensure_ascii=False, separators=(',', ':'))
-    print(f"  Highlights -> {highlights_path}")
 
     # Copy backtest predictions for H2H page
     import shutil

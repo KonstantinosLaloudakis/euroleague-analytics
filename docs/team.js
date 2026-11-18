@@ -73,8 +73,9 @@ function selectTeam(code, { explicit = true } = {}) {
     _selected = code;
     if (explicit) history.replaceState(null, '', '?team=' + code);
 
-    renderDeepDive(team);
+    // Show before rendering: Plotly sizes to the container, and a hidden one measures wide
     document.getElementById('deep-dive').style.display = 'block';
+    renderDeepDive(team);
     if (explicit) document.getElementById('deep-dive').scrollIntoView({ behavior: 'smooth', block: 'start' });
     return true;
 }

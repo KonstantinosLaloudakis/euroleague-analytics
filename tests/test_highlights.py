@@ -1,6 +1,6 @@
 import json
 
-from export_dashboard_data import build_highlights
+from export_dashboard_data import build_highlights, safe_build_highlights
 
 
 def _teams():
@@ -116,3 +116,17 @@ def test_output_is_json_serializable():
                'away': 'B', 'home_score': 1, 'away_score': 2}}, mvp=_mvp(),
               player_stats=_stats(), career_codes={'1', '2'})
     json.dumps(h, ensure_ascii=False)
+
+
+def test_safe_build_highlights_returns_all_null_on_failure(tmp_path):
+    # teams=5 is not iterable -> build_highlights raises; wrapper must swallow it
+    out = safe_build_highlights(str(tmp_path), 5, None, None, None, None, {}, 2026, 12)
+    assert out == {'season': 2026, 'round': 12, 'headline_matchup': None,
+                   'game_of_round': None, 'standings_leader': None,
+                   'mvp_top2': None, 'top_performers': None}
+
+
+def test_safe_build_highlights_tolerates_bad_player_index(tmp_path):
+    (tmp_path / 'player_index.json').write_text('[1, 2]', encoding='utf-8')
+    out = safe_build_highlights(str(tmp_path), [], None, None, [], {}, {}, 2026, 3)
+    assert out['season'] == 2026 and out['round'] == 3
