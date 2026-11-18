@@ -205,6 +205,7 @@ def create_rapm_vs_tpm_chart():
     ax.grid(True, alpha=0.15, color=GRID_COLOR)
 
     plt.tight_layout()
+    round_suffix = os.environ.get('EUROLEAGUE_ROUND_SUFFIX', '')
     outfile = f'rapm_vs_tpm{round_suffix}.png'
     plt.savefig(outfile, dpi=150, facecolor=fig.get_facecolor(), bbox_inches='tight')
     plt.close(fig)
