@@ -14,7 +14,7 @@ let sortState = { col: 'wins', asc: false };
 // ── Init ──────────────────────────────────────────────────────────────────
 async function init() {
     try {
-        const resp = await fetch('data/current/dashboard.json');
+        const [resp] = await Promise.all([fetch('data/current/dashboard.json'), PlayerLinks.ready]);
         if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
         const data = await resp.json();
 
@@ -311,7 +311,7 @@ function renderMVPRace(mvp) {
     const scores = top10.map(p => p.mvp_score);
     const barColors = top10.map(p => teamInk(p.team));
     const hoverText = top10.map(p =>
-        `<b>${p.player}</b><br>Team: ${p.team}<br>MVP Score: ${p.mvp_score.toFixed(1)}<br>Avg PIR: ${p.avg_pir.toFixed(1)}<br>GP: ${p.gp}`
+        `<b>${p.player}</b><br>Team: ${p.team}<br>MVP Score: ${p.mvp_score.toFixed(1)}<br>Avg PIR: ${p.avg_pir.toFixed(1)}<br>GP: ${p.gp}` + (PlayerLinks.url(p.player) ? '<br><i>Click for career</i>' : '')
     );
 
     const trace = {
@@ -325,6 +325,7 @@ function renderMVPRace(mvp) {
         textfont: { color: '#111', size: 11 },
         hovertext: hoverText,
         hoverinfo: 'text',
+        customdata: top10.map(p => p.player),
         marker: {
             color: barColors,
             line: { color: '#1f2029', width: 1 },
@@ -352,7 +353,22 @@ function renderMVPRace(mvp) {
         hovermode: 'closest',
     };
 
-    Plotly.newPlot('mvp-chart', [trace], layout, { displayModeBar: false, responsive: true });
+    const container = document.getElementById('mvp-chart');
+    Plotly.newPlot(container, [trace], layout, { displayModeBar: false, responsive: true });
+
+    // Click a point to open the career page; pointer cursor only over linked players.
+    const drag = () => container.querySelector('.nsewdrag');
+    container.on('plotly_click', ev => {
+        const pt = ev.points && ev.points[0];
+        const href = pt && PlayerLinks.url(pt.customdata);
+        if (href) location.href = href;
+    });
+    container.on('plotly_hover', ev => {
+        const pt = ev.points && ev.points[0];
+        const d = drag();
+        if (d) d.style.cursor = pt && PlayerLinks.url(pt.customdata) ? 'pointer' : '';
+    });
+    container.on('plotly_unhover', () => { const d = drag(); if (d) d.style.cursor = ''; });
 }
 
 // ── Playoff probability grid ──────────────────────────────────────────────

@@ -20,7 +20,7 @@ let _mvpSort = { key: 'mvp_score', dir: 'desc' };
 
 async function init() {
     try {
-        const resp = await fetch('data/current/dashboard.json');
+        const [resp] = await Promise.all([fetch('data/current/dashboard.json'), PlayerLinks.ready]);
         if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
         const data = await resp.json();
 
@@ -119,9 +119,9 @@ function renderLadder() {
             barHtml += `<div class="mvp-bar-seg" style="width:${w}%;background:${comp.color}" title="${comp.label}: ${(pctl * 100).toFixed(0)}th pctl"></div>`;
         }
 
-        html += `<tr onclick="selectPlayer(${i})" class="${_selectedIdx === i ? 'selected' : ''}">
+        html += `<tr onclick="selectPlayer(${i}, event)" class="${_selectedIdx === i ? 'selected' : ''}">
             <td class="mvp-rank-cell ${rankCls}">${m.rank}</td>
-            <td class="mvp-player-cell">${formatName(m.player)}</td>
+            <td class="mvp-player-cell">${PlayerLinks.link(m.player, formatName(m.player))}</td>
             <td><span class="mvp-team-badge" style="background:${teamInk(m.team)}"></span>${m.team}</td>
             <td class="num mvp-score-cell">${m.mvp_score.toFixed(1)}</td>
             <td><div class="mvp-bar-wrap"><div class="mvp-bar-track">${barHtml}</div></div></td>
@@ -154,7 +154,8 @@ function renderLegend() {
 }
 
 // ── Player detail card ───────────────────────────────────────────────────
-function selectPlayer(idx) {
+function selectPlayer(idx, ev) {
+    if (ev && ev.target.closest('a.player-link')) return;  // let the link navigate
     _selectedIdx = _selectedIdx === idx ? null : idx;
     renderLadder();
 
@@ -201,12 +202,15 @@ function selectPlayer(idx) {
 
     // Build SVG radar chart
     const radarSvg = buildRadar(p, pctlMap, color);
+    const careerHtml = PlayerLinks.url(m.player)
+        ? `<div class="mvp-detail-sub">${PlayerLinks.link(m.player, 'View career')}</div>` : '';
 
     detail.innerHTML = `
         <div class="mvp-detail-header">
             <div>
                 <div class="mvp-detail-name" style="color:${color}">#${m.rank} ${formatName(m.player)}</div>
                 <div class="mvp-detail-sub">${TEAM_NAMES[m.team] || m.team} · ${m.gp} GP · MVP Score: ${m.mvp_score.toFixed(1)}</div>
+                ${careerHtml}
             </div>
         </div>
         <div class="mvp-detail-grid">
@@ -318,7 +322,9 @@ function renderRaceChart() {
             mode: 'lines+markers',
             line: { color, width: 2.5, shape: 'spline' },
             marker: { size: 6, color },
-            hovertemplate: `<b>${formatName(name)}</b><br>Round %{x}<br>Score: %{y:.1f}<extra></extra>`,
+            customdata: data.rounds.map(() => name),
+            hovertemplate: `<b>${formatName(name)}</b><br>Round %{x}<br>Score: %{y:.1f}` +
+                (PlayerLinks.url(name) ? '<br><i>Click for career</i>' : '') + '<extra></extra>',
         });
     }
 
@@ -339,6 +345,20 @@ function renderRaceChart() {
     };
 
     Plotly.newPlot(container, traces, layout, PLOTLY_CONFIG);
+
+    // Click a point to open the career page; pointer cursor only over linked players.
+    const drag = () => container.querySelector('.nsewdrag');
+    container.on('plotly_click', ev => {
+        const pt = ev.points && ev.points[0];
+        const href = pt && PlayerLinks.url(pt.customdata);
+        if (href) location.href = href;
+    });
+    container.on('plotly_hover', ev => {
+        const pt = ev.points && ev.points[0];
+        const d = drag();
+        if (d) d.style.cursor = pt && PlayerLinks.url(pt.customdata) ? 'pointer' : '';
+    });
+    container.on('plotly_unhover', () => { const d = drag(); if (d) d.style.cursor = ''; });
 }
 
 // ── Utility ──────────────────────────────────────────────────────────────
