@@ -42,7 +42,12 @@ function getParams() {
   return { a: p.get('a'), b: p.get('b') };
 }
 
+function removeTopicalLabel() {
+  document.getElementById('topical-label')?.remove();
+}
+
 function updateURL() {
+  removeTopicalLabel();   // every visitor-driven slot change comes through here
   const p = new URLSearchParams();
   if (_slotA) p.set('a', _slotA._code);
   if (_slotB) p.set('b', _slotB._code);
@@ -367,4 +372,28 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   syncInputs();
   renderAll();
+
+  // Topical default: not awaited, so the page renders as today first.
+  if (!a && !b) applyTopicalDefault();
 });
+
+// With neither ?a nor ?b, fill both slots with the MVP race's top two.
+// Quiet: no URL write; skipped if the visitor picked a player before highlights arrived.
+async function applyTopicalDefault() {
+  let highlights = null;
+  try { highlights = await fetchJSON('data/current/highlights.json'); } catch { return; }
+  const top = highlights && highlights.mvp_top2;
+  if (!Array.isArray(top) || top.length < 2) return;
+  const [ca, cb] = [top[0] && top[0].code, top[1] && top[1].code];
+  if (!ca || !cb || ca === cb || !_lookup[ca] || !_lookup[cb]) return;
+  if (_slotA || _slotB) return;
+  _slotA = Object.assign({ _code: ca }, _lookup[ca]);
+  _slotB = Object.assign({ _code: cb }, _lookup[cb]);
+  syncInputs();
+  renderAll();
+  const label = document.createElement('p');
+  label.className = 'topical-label';
+  label.id = 'topical-label';
+  label.textContent = 'MVP race #1 vs #2 · pick any two players';
+  document.querySelector('.compare-search-row').insertAdjacentElement('afterend', label);
+}
