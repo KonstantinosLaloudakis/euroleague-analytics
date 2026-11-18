@@ -57,6 +57,9 @@ Ordered by impact within each section. Start with the top section.
 
 11. **Wide tables are cut off with no sign they scroll sideways** (standings, GCI leaderboard, Lineups,
     Player Stats). Add a sticky first column and an edge fade so it's clear there's more.
+11b. **Pages that scroll sideways on phones** (measured 2026-11-18 at 390px): Game Recap with a game expanded
+    (page 624px wide), Compare (481px), and career pages `player.html?code=…` (406px). Present before the name-format
+    work; find the wide element on each and constrain it.
 12. **Game Recap round picker** wraps with round 12 alone on a second line. Make it a single scrollable row
     or a dropdown on phones.
 13. **Small scatter-plot labels overlap** on GCI History / Game Control ("Control vs Drama") and the Season
