@@ -82,6 +82,7 @@ Static site deployed via GitHub Pages from the `docs/` folder.
 - `data_cache/pbp_lineups_{season}.csv` — Play-by-play with 5-man lineup arrays
 - `docs/data/current/search_index.json` — Nav search index (players since 2007-08 + current teams), written by `fetch_player_career_stats.py`
 - `docs/data/current/pace.json` — League/team pace by season, written by `calculate_game_records.py`
+- `docs/data/current/highlights.json` — Topical picks for page defaults (headline matchup, game of the round, standings leader, MVP top 2, top performers), written by `export_dashboard_data.py`
 - `docs/data/current/dashboard.json` — Aggregated export consumed by the frontend
 
 ### Team Code Conventions

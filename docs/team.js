@@ -5,8 +5,11 @@ let _playerStats = [];
 let _selected    = null;
 
 // ── Boot ──────────────────────────────────────────────────────────────────
-fetchJSON('data/current/dashboard.json')
-    .then(data => {
+Promise.all([
+    fetchJSON('data/current/dashboard.json'),
+    fetchJSON('data/current/highlights.json').catch(() => null),
+])
+    .then(([data, highlights]) => {
         _data        = data;
         _playerStats = data.player_stats || [];
 
@@ -23,6 +26,18 @@ fetchJSON('data/current/dashboard.json')
         const params = new URLSearchParams(location.search);
         const team   = params.get('team');
         if (team) selectTeam(team);
+        else {
+            // Topical default: standings leader, opened quietly (no URL write, no scroll)
+            const leader = highlights && highlights.standings_leader;
+            if (leader && selectTeam(leader, { explicit: false })) {
+                const label = document.createElement('p');
+                label.className = 'topical-label';
+                label.id = 'topical-label';
+                label.textContent = 'Standings leader · pick any team';
+                const dd = document.getElementById('deep-dive');
+                dd.insertBefore(label, dd.firstChild);
+            }
+        }
     })
     .catch(err => {
         document.getElementById('team-selector-grid').innerHTML =
@@ -44,20 +59,25 @@ function renderSelector(teams) {
 }
 
 // ── Select team ───────────────────────────────────────────────────────────
-function selectTeam(code) {
+// Returns true when a team was opened. { explicit: false } = quiet default
+// (no ?team= write, no scroll); a visitor's pick also drops the topical label.
+function selectTeam(code, { explicit = true } = {}) {
     const team = (_data.teams || []).find(t => t.team === code);
-    if (!team) return;
+    if (!team) return false;
+    if (explicit) document.getElementById('topical-label')?.remove();
 
     // Update chip highlight
     document.querySelectorAll('.team-chip').forEach(c => c.classList.remove('selected'));
     document.getElementById('chip-' + code)?.classList.add('selected');
 
     _selected = code;
-    history.replaceState(null, '', '?team=' + code);
+    if (explicit) history.replaceState(null, '', '?team=' + code);
 
-    renderDeepDive(team);
+    // Show before rendering: Plotly sizes to the container, and a hidden one measures wide
     document.getElementById('deep-dive').style.display = 'block';
-    document.getElementById('deep-dive').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    renderDeepDive(team);
+    if (explicit) document.getElementById('deep-dive').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    return true;
 }
 
 // ── Deep-dive ─────────────────────────────────────────────────────────────

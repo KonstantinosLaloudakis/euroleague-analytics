@@ -2219,3 +2219,5 @@ footer {
 .compare-hero-cta { margin: 6px 0 0; }
 .player-link:hover,
 .player-link:focus-visible { color: var(--accent-purple); text-decoration: underline; }
+
+.topical-label { margin: 0.5rem 0 0; font-size: 0.75rem; color: var(--text-muted); }

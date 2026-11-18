@@ -8,8 +8,9 @@ let _backtest    = [];
 Promise.all([
     fetchJSON('data/current/dashboard.json'),
     fetchJSON('data/current/oracle_backtest_predictions.json'),
+    fetchJSON('data/current/highlights.json').catch(() => null),
     PlayerLinks.ready,
-]).then(([data, backtest]) => {
+]).then(([data, backtest, highlights]) => {
     _data        = data;
     _playerStats = data.player_stats || [];
     _backtest    = backtest || [];
@@ -29,6 +30,7 @@ Promise.all([
     if (a) document.getElementById('sel-a').value = a;
     if (b) document.getElementById('sel-b').value = b;
     if (a && b) onSelectionChange();
+    else if (!a && !b) applyTopicalDefault(highlights);
 }).catch(err => {
     document.getElementById('h2h-stat-bars').innerHTML =
         `<p style="color:var(--accent-red);padding:1rem">Failed to load data: ${err}</p>`;
@@ -47,7 +49,25 @@ function populateDropdowns(teams) {
     document.getElementById('sel-b').innerHTML = '<option value="">— Choose —</option>' + options;
 }
 
-function onSelectionChange() {
+// Topical default: next round's headline matchup. Quiet: no URL write, no scroll.
+function applyTopicalDefault(highlights) {
+    const m = highlights && highlights.headline_matchup;
+    if (!m || !m.home || !m.away || m.home === m.away) return;
+    const teams = _data.teams || [];
+    if (!teams.some(t => t.team === m.home) || !teams.some(t => t.team === m.away)) return;
+    document.getElementById('sel-a').value = m.home;
+    document.getElementById('sel-b').value = m.away;
+    onSelectionChange({ explicit: false });
+    const label = document.createElement('p');
+    label.className = 'topical-label';
+    label.id = 'topical-label';
+    label.textContent = "Next round's headline matchup · pick any two teams";
+    document.querySelector('.h2h-selector').insertAdjacentElement('afterend', label);
+}
+
+function onSelectionChange({ explicit = true } = {}) {
+    // A visitor's pick (inline onchange passes an Event, which destructures to the default)
+    if (explicit) document.getElementById('topical-label')?.remove();
     const a = document.getElementById('sel-a').value;
     const b = document.getElementById('sel-b').value;
 
@@ -56,7 +76,7 @@ function onSelectionChange() {
         return;
     }
 
-    history.replaceState(null, '', `?a=${a}&b=${b}`);
+    if (explicit) history.replaceState(null, '', `?a=${a}&b=${b}`);
 
     const teamA = (_data.teams || []).find(t => t.team === a);
     const teamB = (_data.teams || []).find(t => t.team === b);
@@ -66,7 +86,7 @@ function onSelectionChange() {
     // and a hidden one has no width (it falls back to 700px and overflows on mobile).
     document.getElementById('h2h-panel').style.display = 'block';
     renderH2H(teamA, teamB);
-    document.getElementById('h2h-panel').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (explicit) document.getElementById('h2h-panel').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 // ── Render all ────────────────────────────────────────────────────────────

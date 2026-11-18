@@ -266,6 +266,36 @@ async function showWelcome() {
     document.addEventListener('click', e => {
         if (!input.contains(e.target) && !drop.contains(e.target)) drop.style.display = 'none';
     });
+
+    addTopPerformers(el);
+}
+
+// Round's top performers under the search box; silently absent on any failure.
+async function addTopPerformers(el) {
+    try {
+        const [hl] = await Promise.all([
+            fetch('data/current/highlights.json').then(r => r.ok ? r.json() : null),
+            PlayerLinks.ready,
+        ]);
+        const tp = hl && hl.top_performers;
+        if (!tp || !Array.isArray(tp.players) || !tp.players.length) return;
+        const esc = v => String(v).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+        const rows = tp.players.map(p => {
+            const g = p.game;
+            const score = g ? `${esc(g.home)} ${esc(g.home_score)}–${esc(g.away_score)} ${esc(g.away)}` : '';
+            return `<div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px;padding:10px 14px;border-bottom:1px solid var(--border);font-size:13px">
+              <span><span style="color:var(--text-primary);font-weight:600">${PlayerLinks.link(p.name, p.name)}</span>
+                <span style="font-size:11px;color:var(--text-muted)"> ${esc(p.team)}</span></span>
+              <span style="color:var(--text-muted);font-size:12px">${esc(p.pir)} PIR · ${esc(p.pts)} pts · ${esc(p.reb)} reb · ${esc(p.ast)} ast
+                ${score ? ' · ' + score : ''}</span></div>`;
+        }).join('');
+        const box = document.createElement('div');
+        box.id = 'top-performers';
+        box.style.cssText = 'max-width:560px;margin:0 auto 60px;text-align:left';
+        box.innerHTML = `<h3 style="font-size:14px;font-weight:700;color:var(--text-primary);margin:0 0 8px">Round ${esc(tp.round)}'s top performers</h3>
+          <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;overflow:hidden">${rows}</div>`;
+        el.appendChild(box);
+    } catch { /* section stays absent */ }
 }
 
 function showError(msg) {

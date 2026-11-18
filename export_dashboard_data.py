@@ -56,6 +56,130 @@ def load_json(path):
         return None
 
 
+def safe_build_highlights(out_dir, teams, oracle, game_control, mvp, player_stats,
+                          recaps, season, round_num):
+    """build_highlights that never raises: any failure yields an all-null file."""
+    try:
+        try:
+            with open(os.path.join(out_dir, 'player_index.json'), encoding='utf-8') as f:
+                career_codes = set((json.load(f) or {}).values())
+        except (OSError, ValueError, AttributeError, TypeError):
+            career_codes = set()
+        return build_highlights(teams, oracle, game_control, mvp, player_stats,
+                                recaps, career_codes, season, round_num)
+    except Exception as e:  # noqa: BLE001
+        print(f"  Highlights failed, writing empty file: {e!r}")
+        return {'season': season, 'round': round_num, 'headline_matchup': None,
+                'game_of_round': None, 'standings_leader': None, 'mvp_top2': None,
+                'top_performers': None}
+
+
+def export_recaps_and_highlights(out_dir, build_recaps, teams, oracle, game_control,
+                                 mvp, player_stats, season, round_num):
+    """Build recaps, always write highlights.json, then re-raise a recaps failure.
+
+    highlights.json is written on every run, but a recaps exception still aborts
+    the export (non-zero exit) so CI never commits stale recaps silently.
+    """
+    print("\n--- Building game recaps ---")
+    recaps_err = None
+    try:
+        game_recaps = build_recaps()
+    except Exception as e:  # noqa: BLE001
+        print(f"  Game recaps failed: {e!r}")
+        recaps_err, game_recaps = e, None
+    if game_recaps:
+        recap_path = os.path.join(out_dir, 'game_recaps.json')
+        with open(recap_path, 'w', encoding='utf-8') as f:
+            json.dump(game_recaps, f, ensure_ascii=False)
+        print(f"  Game recaps -> {recap_path}")
+
+    highlights = safe_build_highlights(
+        out_dir, teams, oracle, game_control, mvp, player_stats,
+        game_recaps or {}, season, round_num)
+    highlights_path = os.path.join(out_dir, 'highlights.json')
+    with open(highlights_path, 'w', encoding='utf-8') as f:
+        json.dump(highlights, f, ensure_ascii=False, separators=(',', ':'))
+    print(f"  Highlights -> {highlights_path}")
+    if recaps_err is not None:
+        raise recaps_err
+
+
+def build_highlights(teams, oracle, game_control, mvp, player_stats, recaps,
+                     career_codes, season, round_num):
+    """Topical defaults for pages that open without a selection (highlights.json).
+
+    Any section that cannot be computed is None.
+    """
+    elo = {t.get('team'): t.get('elo') or 0 for t in (teams or [])}
+
+    headline = None
+    best = None
+    for p in (oracle or {}).get('predictions') or []:
+        home, away = p.get('Local'), p.get('Road')
+        if not home or not away:
+            continue
+        prob = p.get('HomeWinProb')
+        key = (-(elo.get(home, 0) + elo.get(away, 0)),
+               abs((prob if prob is not None else 50) - 50))
+        if best is None or key < best:
+            best = key
+            headline = {'round': p.get('Round'), 'home': home, 'away': away}
+
+    gor = (game_control or {}).get('game_of_round')
+    game_of_round = None
+    if gor:
+        game_of_round = {'season': season}
+        for k in ('gamecode', 'round', 'home', 'away', 'home_score', 'away_score'):
+            game_of_round[k] = gor.get(k)
+
+    leader = next((t['team'] for t in (teams or []) if t.get('position') == 1), None)
+
+    code_by_name = {p.get('name'): p.get('code') for p in (player_stats or [])}
+    top2 = []
+    for row in mvp or []:
+        code = code_by_name.get(row.get('player'))
+        if code and code in career_codes:
+            top2.append({'name': row['player'], 'code': code})
+            if len(top2) == 2:
+                break
+    mvp_top2 = top2 if len(top2) == 2 else None
+
+    top_performers = None
+    rounds = (recaps or {}).get('rounds') or {}
+    played = [int(r) for r, games in rounds.items() if games]
+    if played:
+        latest = max(played)
+        players = []
+        for g in rounds[str(latest)]:
+            tp = g.get('topPerformer')
+            if not tp:
+                continue
+            if any(r.get('name') == tp.get('name') for r in g.get('homeRoster') or []):
+                team = g.get('home')
+            elif any(r.get('name') == tp.get('name') for r in g.get('awayRoster') or []):
+                team = g.get('away')
+            else:
+                continue
+            players.append({
+                'name': tp.get('name'), 'team': team,
+                'pts': tp.get('pts'), 'reb': tp.get('reb'), 'ast': tp.get('ast'),
+                'pir': tp.get('pir'),
+                'game': {'home': g.get('home'), 'away': g.get('away'),
+                         'home_score': g.get('homePts'), 'away_score': g.get('awayPts')},
+            })
+        players.sort(key=lambda p: -(p['pir'] or 0))
+        if players:
+            top_performers = {'round': latest, 'players': players}
+
+    return {
+        'season': season, 'round': round_num,
+        'headline_matchup': headline, 'game_of_round': game_of_round,
+        'standings_leader': leader, 'mvp_top2': mvp_top2,
+        'top_performers': top_performers,
+    }
+
+
 def build_mvp_race(season, round_num, top_n=10, root='.'):
     """MVP race timeline: the top `top_n` of each round's mvp_rankings_{S}_R{N}.json.
 
@@ -3660,6 +3784,11 @@ def main():
         print(f"  Accuracy: {accuracy_data.get('accuracy', '?')}% over {accuracy_data.get('n_games', '?')} games")
     print(f"\nDone! dashboard.json written to {out_path}")
 
+    # ── Game recaps + highlights export ────────────────────────────────────
+    export_recaps_and_highlights(
+        out_dir, build_game_recaps, teams, oracle_data, gci_data, mvp_list,
+        player_stats, CURRENT_SEASON, round_num)
+
     # ── Shot stats export ────────────────────────────────────────────────────
     shot_stats = build_shot_stats()
     if shot_stats:
@@ -3692,15 +3821,6 @@ def main():
         n_teams = len(assist_network.get('teams', {}))
         n_combos = len(assist_network.get('top_combos', []))
         print(f"  Assist network: {n_teams} teams, {n_combos} top combos -> {assist_path}")
-
-    # ── Game recaps export ─────────────────────────────────────────────────
-    print("\n--- Building game recaps ---")
-    game_recaps = build_game_recaps()
-    if game_recaps:
-        recap_path = os.path.join(out_dir, 'game_recaps.json')
-        with open(recap_path, 'w', encoding='utf-8') as f:
-            json.dump(game_recaps, f, ensure_ascii=False)
-        print(f"  Game recaps -> {recap_path}")
 
     # Copy backtest predictions for H2H page
     import shutil

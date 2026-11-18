@@ -28,6 +28,56 @@ const fmtTime = (secs) => {
     return `${m}:${s.toString().padStart(2, '0')}`;
 };
 
+// ── Topical default ──────────────────────────────────────
+// With no ?season/?game, preselect the round's most dramatic game from highlights.json.
+// Quiet: no polling, no URL write, no scroll; never overrides a pick the visitor made first.
+let _applyingDefault = false;
+
+function removeTopicalLabel() {
+    document.getElementById('topical-label')?.remove();
+}
+
+async function applyTopicalDefault() {
+    let highlights = null;
+    try {
+        const resp = await fetch(`${DATA_BASE}/current/highlights.json`);
+        if (resp.ok) highlights = await resp.json();
+    } catch (e) { /* no default */ }
+    const g = highlights && highlights.game_of_round;
+    if (!g || g.season == null || g.gamecode == null) return;
+    const season = String(g.season);
+    // The visitor already chose something while highlights were loading
+    if (seasonSelect.value || gameSelect.value) return;
+    if (!seasonSelect.querySelector(`option[value="${season}"]`)) return;
+
+    _applyingDefault = true;
+    try {
+        seasonSelect.value = season;
+        await loadSeason();
+        // Visitor changed season/filter/game during the games load: leave their pick alone
+        if (seasonSelect.value !== season || gameSelect.value || teamFilter.value) return;
+        if (!gameSelect.querySelector(`option[value="${g.gamecode}"]`)) {
+            seasonSelect.value = '';
+            resetDownstream();
+            return;
+        }
+        gameSelect.value = String(g.gamecode);
+        gameSelect.dispatchEvent(new Event('change'));
+        const label = document.createElement('p');
+        label.className = 'topical-label';
+        label.id = 'topical-label';
+        // highlights' round is max GP, not necessarily this game's round: use the game's own
+        const gm = currentGames.find(x => String(x.gc) === String(g.gamecode));
+        const rnd = gm && typeof gm.rnd === 'number' ? gm.rnd : null;
+        label.textContent = rnd != null
+            ? `Round ${rnd}'s most dramatic game · pick any game`
+            : "This round's most dramatic game · pick any game";
+        document.querySelector('.controls').insertAdjacentElement('afterend', label);
+    } finally {
+        _applyingDefault = false;
+    }
+}
+
 // ── Initialize ───────────────────────────────────────────
 async function init() {
     try {
@@ -65,6 +115,8 @@ async function init() {
                 // Safety timeout: stop polling after 5s
                 setTimeout(() => clearInterval(waitForGames), 5000);
             }
+        } else if (!urlSeason && !urlGame) {
+            applyTopicalDefault();   // not awaited: replay renders as today first
         }
     } catch (err) {
         seasonSelect.innerHTML = '<option value="">Error loading seasons</option>';
@@ -73,7 +125,14 @@ async function init() {
 }
 
 // ── Season Changed ───────────────────────────────────────
-seasonSelect.addEventListener('change', async () => {
+seasonSelect.addEventListener('change', () => {
+    if (!_applyingDefault) removeTopicalLabel();
+    return loadSeason();
+});
+
+// Loads the selected season's games list; resolves once the game select is populated
+// (or has shown an error), so callers can await it instead of polling.
+async function loadSeason() {
     const season = seasonSelect.value;
     if (!season) {
         resetDownstream();
@@ -110,10 +169,13 @@ seasonSelect.addEventListener('change', async () => {
         gameSelect.innerHTML = '<option value="">Error loading games</option>';
         console.error('Failed to load games:', err);
     }
-});
+}
 
 // ── Team Filter Changed ──────────────────────────────────
-teamFilter.addEventListener('change', populateGames);
+teamFilter.addEventListener('change', () => {
+    if (!_applyingDefault) removeTopicalLabel();
+    populateGames();
+});
 
 function populateGames() {
     const filterTeam = teamFilter.value;
@@ -144,6 +206,7 @@ function populateGames() {
 
 // ── Game Selected ────────────────────────────────────────
 gameSelect.addEventListener('change', async () => {
+    if (!_applyingDefault) removeTopicalLabel();
     const gc = gameSelect.value;
     const season = seasonSelect.value;
     if (!gc || !season) return;
