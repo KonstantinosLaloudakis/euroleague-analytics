@@ -14,7 +14,8 @@ def test_collect_runs_every_analyzer_once_per_game():
     g2 = pg.clean_game(build(filler(25, 25, period=4)
                              + ev('B', '3FGM', 4, '00:01', player='P000009', name='SHOOTER, S'),
                              gamecode=8))
-    comebacks, lines, winners = gr.collect([g1, g2])
+    comebacks, lines, winners, paces = gr.collect([g1, g2])
     assert [c['gamecode'] for c in comebacks] == [7, 8]
     assert [l['player'] for l in lines] == ['000009']
     assert [w['gamecode'] for w in winners] == [7, 8]
+    assert [p['gamecode'] for p in paces] == [7, 8]
