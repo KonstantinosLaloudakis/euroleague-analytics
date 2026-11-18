@@ -41,6 +41,7 @@ jobs:
           shot_data_${{ steps.season.outputs.season }}_${{ steps.season.outputs.season }}.csv
           data/shot_data_${{ steps.season.outputs.season }}_${{ steps.season.outputs.season }}.csv
           data_cache/pbp_lineups_${{ steps.season.outputs.season }}.csv
+          data_cache/games_${{ steps.season.outputs.season }}.csv
         key: fetch-cache-${{ steps.season.outputs.season }}-${{ github.run_id }}
         restore-keys: fetch-cache-${{ steps.season.outputs.season }}-
 
@@ -59,6 +60,7 @@ jobs:
           shot_data_${{ steps.season.outputs.season }}_${{ steps.season.outputs.season }}.csv
           data/shot_data_${{ steps.season.outputs.season }}_${{ steps.season.outputs.season }}.csv
           data_cache/pbp_lineups_${{ steps.season.outputs.season }}.csv
+          data_cache/games_${{ steps.season.outputs.season }}.csv
         key: fetch-cache-${{ steps.season.outputs.season }}-${{ github.run_id }}
 
     - name: Commit and push if changed

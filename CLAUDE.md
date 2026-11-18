@@ -53,6 +53,7 @@ Phase 5: Git       → auto-commit round-suffixed files (optional)
 3. Copy `docs/data/current/dashboard.json` to `docs/data/archive/{prev}/dashboard.json`.
 4. Check new teams in `team_aliases.py`, `docs/constants.js`, and the Python color dicts.
 5. Switch the `refresh_data.yml` cron back to Wed–Sat (`'0 1 * * 3,4,5,6'`).
+6. Commit last season's final fetch caches, which are gitignored and live only in the CI cache during the season: `git add -f data_cache/games_{prev}.csv data_cache/pbp_lineups_{prev}.csv` (download them from the last CI cache or rebuild with `fetch_lineups.py`).
 
 ### Round Suffixing
 

@@ -29,6 +29,7 @@ mvp_race_images/
 /shot_data_*_*.csv
 data/shot_data_*_*.csv
 data_cache/pbp_lineups_*.csv
+data_cache/games_*.csv
 
 # Tooling state (Claude Code, Playwright MCP, superpowers)
 .claude/
