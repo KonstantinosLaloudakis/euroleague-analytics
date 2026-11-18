@@ -75,3 +75,14 @@ test('link accepts an extra modifier class', () => {
   assert.strictEqual(PL.link('VEZENKOV, SASHA', 'View career', null, 'player-link--cta'),
     '<a class="player-link player-link--cta" href="player.html?code=003469">View career</a>');
 });
+
+test('link without label uses PlayerNames.responsiveHtml when present', () => {
+  globalThis.PlayerNames = { responsiveHtml: n => '<span class="pn-full">' + n + '</span>' };
+  try {
+    const a = PL.link('VEZENKOV, SASHA');
+    assert.ok(a.includes('pn-full'));
+    assert.ok(a.startsWith('<a class="player-link" href="player.html?code=003469">'));
+    assert.strictEqual(PL.link('VEZENKOV, SASHA', 'View'), '<a class="player-link" href="player.html?code=003469">View</a>');
+    assert.ok(PL.link('NOBODY, X').includes('pn-full'));
+  } finally { delete globalThis.PlayerNames; }
+});

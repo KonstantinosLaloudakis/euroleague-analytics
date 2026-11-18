@@ -4,7 +4,7 @@ from pathlib import Path
 DOCS = Path(__file__).resolve().parent.parent / "docs"
 PAGES = sorted(DOCS.glob("*.html"))
 PLACEHOLDER = re.compile(
-    r'<nav class="site-nav" id="site-nav" aria-label="Main"></nav>\s*<script src="nav.js"></script>'
+    r'<nav class="site-nav" id="site-nav" aria-label="Main"></nav>\s*<script src="names.js"></script>\s*<script src="nav.js"></script>'
 )
 
 
