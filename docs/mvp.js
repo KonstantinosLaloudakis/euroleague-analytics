@@ -345,20 +345,7 @@ function renderRaceChart() {
     };
 
     Plotly.newPlot(container, traces, layout, PLOTLY_CONFIG);
-
-    // Click a point to open the career page; pointer cursor only over linked players.
-    const drag = () => container.querySelector('.nsewdrag');
-    container.on('plotly_click', ev => {
-        const pt = ev.points && ev.points[0];
-        const href = pt && PlayerLinks.url(pt.customdata);
-        if (href) location.href = href;
-    });
-    container.on('plotly_hover', ev => {
-        const pt = ev.points && ev.points[0];
-        const d = drag();
-        if (d) d.style.cursor = pt && PlayerLinks.url(pt.customdata) ? 'pointer' : '';
-    });
-    container.on('plotly_unhover', () => { const d = drag(); if (d) d.style.cursor = ''; });
+    PlayerLinks.bindChartClicks(container);
 }
 
 // ── Utility ──────────────────────────────────────────────────────────────

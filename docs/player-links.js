@@ -50,6 +50,14 @@
         .then(data => { current = createPlayerLinks(data); }, () => {}),
       url: (name, ids) => current.url(name, ids),
       link: (name, label, ids) => current.link(name, label, ids),
+      // container: the Plotly graph div element; each point's customdata is the raw player name.
+      bindChartClicks(container) {
+        const drag = () => container.querySelector('.nsewdrag');
+        const urlOf = ev => { const pt = ev.points && ev.points[0]; return pt ? current.url(pt.customdata) : null; };
+        container.on('plotly_click', ev => { const href = urlOf(ev); if (href) location.href = href; });
+        container.on('plotly_hover', ev => { const d = drag(); if (d) d.style.cursor = urlOf(ev) ? 'pointer' : ''; });
+        container.on('plotly_unhover', () => { const d = drag(); if (d) d.style.cursor = ''; });
+      },
     };
   }
 
