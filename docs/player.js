@@ -60,7 +60,7 @@ function renderHero(player) {
           <span class="tag tag-span">${player.seasons.length} season${player.seasons.length !== 1 ? 's' : ''}${span ? ' · ' + span : ''}</span>
         </div>
       </div>
-      <div class="hero-stats">
+      <div class="hero-card-stats">
         <div class="season-label">${seasonLbl}</div>
         <div class="hero-stats-grid">
           <div class="hero-stat"><div class="val gold">${fmt(current?.ppg)}</div><div class="lbl">PPG</div></div>
