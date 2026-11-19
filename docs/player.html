@@ -27,8 +27,10 @@
       margin-bottom: 20px;
     }
     @media (max-width: 600px) {
-      .hero-card { grid-template-columns: auto 1fr; }
-      .hero-stats-grid { grid-column: 1 / -1; }
+      /* Fixed avatar column + shrinkable text column: an `auto` first column would absorb the
+         full-width stats row's width and push the name off-screen. */
+      .hero-card { grid-template-columns: 88px minmax(0, 1fr); }
+      .hero-stats { grid-column: 1 / -1; }  /* the stats block's wrapper is the grid item */
     }
     .hero-avatar {
       width: 88px; height: 88px; border-radius: 50%;

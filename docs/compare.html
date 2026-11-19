@@ -197,7 +197,8 @@
       gap: 16px;
       margin-top: 24px;
     }
-    .compare-table-wrap {}
+    /* min-width:0 lets the grid track shrink; the table then scrolls inside the card on phones */
+    .compare-table-wrap { min-width: 0; overflow-x: auto; }
     .compare-table-header {
       padding: 10px 12px;
       border-radius: var(--radius) var(--radius) 0 0;
