@@ -228,12 +228,14 @@ function renderTeams() {
             + `Pace ${f1(r.pace)}<br>`
             + (r.prev !== null ? `Last season ${raw ? f1(r.prev) : signed(r.prev, 2)}<br>` : 'No games last season<br>')
             + `${raw ? 'Pace' : 'Adjusted'} rank ${rank} of ${r.teams} (1 = fastest)<br>`
-            + `${r.wins}–${r.gp - r.wins} · net ${signed(r.net, 1)}`;
+            + `${r.wins}–${r.gp - r.wins} · net ${signed(r.net, 1)}`
+            + (CAN_HOVER ? '<br><i>Click for team page</i>' : '');
     });
     const curTrace = {
         x: rows.map(r => r[metric]), y: cats, type: 'scatter', mode: 'markers',
         marker: { size: 12, color: rows.map(r => teamInk(r.team)), line: { color: '#0f1117', width: 1 } },
         text: hover, hovertemplate: '%{text}<extra></extra>', showlegend: false,
+        customdata: rows.map(r => r.team),
     };
 
     const refX = raw ? (cur ? cur.pace : 0) : 0;
@@ -253,6 +255,24 @@ function renderTeams() {
         hovermode: 'closest',
     });
     Plotly.react('teams-chart', [connectors, prevTrace, curTrace], layout, PLOTLY_CONFIG);
+    bindTeamChartClicks();
+}
+
+// Mouse users click a team's dot to open Team Deep-Dive. On touch screens a tap only shows the
+// tooltip (navigating on the first tap would hide it before it can be read).
+const CAN_HOVER = window.matchMedia('(hover: hover)').matches;
+let _teamClicksBound = false;
+function bindTeamChartClicks() {
+    if (_teamClicksBound || !CAN_HOVER) return;   // Plotly.react keeps handlers; bind once
+    const el = document.getElementById('teams-chart');
+    const drag = () => el.querySelector('.nsewdrag');
+    el.on('plotly_click', ev => {
+        const code = ev.points && ev.points[0] && ev.points[0].customdata;
+        if (code) location.href = 'team.html?team=' + encodeURIComponent(code);
+    });
+    el.on('plotly_hover', ev => { const d = drag(); if (d) d.style.cursor = ev.points[0].customdata ? 'pointer' : ''; });
+    el.on('plotly_unhover', () => { const d = drag(); if (d) d.style.cursor = ''; });
+    _teamClicksBound = true;
 }
 
 /* ── 4. Regular season vs playoffs ─────────────────────────────────────── */
@@ -321,7 +341,8 @@ function renderWinning() {
     ];
     const layout = layoutBase({
         margin: { t: 20, r: 24, b: 56, l: 52 },
-        xaxis: Object.assign({}, PLOTLY_THEME.xaxis, { title: { text: 'Pace vs league average (possessions per 40)' }, zeroline: true, zerolinecolor: '#4b5563', tickformat: '+.0f' }),
+        // Shorter title on phones: the full one is wider than the plot and gets clipped.
+        xaxis: Object.assign({}, PLOTLY_THEME.xaxis, { title: { text: window.innerWidth < 640 ? 'Pace vs league avg (per 40)' : 'Pace vs league average (possessions per 40)' }, zeroline: true, zerolinecolor: '#4b5563', tickformat: '+.0f' }),
         yaxis: Object.assign({}, PLOTLY_THEME.yaxis, { title: { text: 'Net rating (per 100 possessions)' }, zeroline: true, zerolinecolor: '#4b5563' }),
         legend: { orientation: 'h', x: 0.5, xanchor: 'center', y: 1.1, font: { color: '#9ca3af' } },
         hovermode: 'closest',
@@ -334,9 +355,12 @@ function gameCell(r) {
     const sep = '–';
     const label = `${esc(r.home)} ${r.home_pts}${sep}${r.away_pts} ${esc(r.away)}`;
     const title = esc(`${teamName(r.home)} vs ${teamName(r.away)}`);
-    return r.has_replay
+    // Full club names under the score: the codes (CSK, LJU…) mean little to most readers and the
+    // title tooltip doesn't work on phones.
+    const names = `<span class="stage">${title}</span>`;
+    return (r.has_replay
         ? `<a href="replay.html?season=${r.season}&game=${r.gamecode}" title="${title} · open replay">${label}</a>`
-        : `<span title="${title}">${label}</span>`;
+        : `<span title="${title}">${label}</span>`) + names;
 }
 
 function extremesTable(title, rows) {

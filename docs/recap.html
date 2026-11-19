@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0f1117">
     <title>Game Recap — Euroleague Analytics</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <meta name="description" content="Euroleague Game Recap: round-by-round results, box scores, top performers, oracle predictions.">
     <meta property="og:title" content="Game Recap — Euroleague Analytics">
     <meta property="og:description" content="Round-by-round results, box scores, top performers, and oracle prediction accuracy.">
@@ -85,6 +86,7 @@
         }
 
         .game-card {
+            min-width: 0;  /* let the grid track shrink; the box score scrolls inside .box-score-table-wrap */
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: var(--radius);

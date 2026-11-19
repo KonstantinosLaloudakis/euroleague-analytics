@@ -37,9 +37,6 @@ the states after picking a team, player or game. Ordered by impact within each s
 
 11. **Wide tables are cut off with no sign they scroll sideways** (standings, GCI leaderboard, Lineups,
     Player Stats). Add a sticky first column and an edge fade so it's clear there's more.
-11b. **Pages that scroll sideways on phones** (measured 2026-11-18 at 390px): Game Recap with a game expanded
-    (page 624px wide), Compare (481px), and career pages `player.html?code=…` (406px). Present before the name-format
-    work; find the wide element on each and constrain it.
 12. **Game Recap round picker** wraps with round 12 alone on a second line. Make it a single scrollable row
     or a dropdown on phones.
 13. **Small scatter-plot labels overlap** on GCI History / Game Control ("Control vs Drama") and the Season
@@ -57,11 +54,6 @@ the states after picking a team, player or game. Ordered by impact within each s
     a message if the game isn't available yet.
 18. **Bare error states:** e.g. Careers shows only "Player not found: P003469" on an empty page. Say what
     happened and link to search.
-19. **Pace page polish** (checked 2026-11-18): the "Pace vs league average" chart's x-axis label is clipped at
-    390px; team names in the team chart and the extremes tables aren't links to Team Deep-Dive; historical clubs
-    show only codes (CSK, LJU, GAL) — add names or a tooltip; the page sits under the Teams menu though it's
-    league-wide (Season or History would fit — owner's call).
-20. **No favicon:** every page logs a 404 for `/favicon.ico`. Add a small icon and a `<link rel="icon">`.
 
 ## Data gaps seen on the site (not UI, but visible)
 
@@ -92,3 +84,8 @@ the states after picking a team, player or game. Ordered by impact within each s
   formatter `docs/names.js`. Follow-ups: Replay's per-game box score / impact quadrant / lineups show surnames from
   the pipeline data (`adv.b/i/l`) — would need a pipeline change to show first names.
   Spec: `superpowers/specs/2026-11-18-name-format-design.md`.
+- **Quick wins** (2026-11-19, branch `fix/quick-wins`): (11b) Recap, Compare and career pages no longer scroll
+  sideways on phones (grid items without `min-width: 0`; the career header's phone rule targeted the wrong element);
+  (19) Pace: team dots open Team Deep-Dive on desktop, full club names under each extremes score, shorter phone
+  axis title; (20) site favicon on every page. Still open from 19: whether Pace belongs under Teams, Season or
+  History in the menu (owner's call).
