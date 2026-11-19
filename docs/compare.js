@@ -79,7 +79,7 @@ function lastTeamOn(player) {
 }
 
 function playerInitials(player) {
-  return player.name.split(/[\s,]+/).filter(Boolean).map(w => w[0]).slice(0, 2).join('');
+  return PlayerNames.full(player.name).split(/[\s,]+/).filter(Boolean).map(w => w[0]).slice(0, 2).join('');
 }
 
 function fmt(v, dec = 1) {
@@ -87,8 +87,8 @@ function fmt(v, dec = 1) {
 }
 
 function syncInputs() {
-  document.getElementById('input-a').value = _slotA ? _slotA.name : '';
-  document.getElementById('input-b').value = _slotB ? _slotB.name : '';
+  document.getElementById('input-a').value = _slotA ? PlayerNames.full(_slotA.name) : '';
+  document.getElementById('input-b').value = _slotB ? PlayerNames.full(_slotB.name) : '';
 }
 
 function renderAll() {
@@ -120,18 +120,18 @@ function setupSearch(slot) {
   }
 
   input.addEventListener('input', () => {
-    const q = input.value.trim().toLowerCase();
+    const q = input.value.trim();
     if (q.length < 1) { hideDropdown(); return; }
 
     const matches = _index
-      .filter(p => p.name.toLowerCase().includes(q))
+      .filter(p => PlayerNames.matches(p.name, q))
       .slice(0, 12);
 
     if (matches.length === 0) { hideDropdown(); return; }
 
     dropdown.innerHTML = matches.map((p, i) => `
       <div class="autocomplete-item" data-code="${p.code}" data-idx="${i}">
-        <span>${p.name}</span>
+        <span>${PlayerNames.responsiveHtml(p.name)}</span>
         <span class="autocomplete-item-meta">${p.current_team || ''} · ${p.seasons} szn${p.seasons !== 1 ? 's' : ''}</span>
       </div>
     `).join('');
@@ -189,7 +189,7 @@ function renderHeroCard(player) {
   });
 
   const avatarHtml = player.image
-    ? `<img class="compare-avatar" src="${player.image}" alt="${player.name}"
+    ? `<img class="compare-avatar" src="${player.image}" alt="${PlayerNames.full(player.name)}"
            style="--team-color:${color}"
            onerror="this.outerHTML='<div class=\\'compare-avatar\\' style=\\'--team-color:${color};color:${onColor}\\'>${initials}</div>'">`
     : `<div class="compare-avatar" style="--team-color:${color};color:${onColor}">${initials}</div>`;
@@ -200,7 +200,7 @@ function renderHeroCard(player) {
     <div class="compare-hero-card" style="--team-color:${ink}">
       ${avatarHtml}
       <div>
-        <div class="compare-hero-name">${player.name}</div>
+        <div class="compare-hero-name">${PlayerNames.responsiveHtml(player.name)}</div>
         <div class="compare-hero-meta">${[player.position, player.nationality].filter(Boolean).join(' · ')}</div>
         <div class="compare-hero-tags">
           ${current ? `<span class="tag tag-team">${current.team_name || current.team_code}</span>` : ''}
@@ -284,8 +284,8 @@ function renderToT() {
     <div class="stat-card">
       <h3>Career Averages</h3>
       <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:4px">
-        <span style="color:${colorA};font-weight:700">${_slotA.name}</span>
-        <span style="color:${colorB};font-weight:700">${_slotB.name}</span>
+        <span style="color:${colorA};font-weight:700">${PlayerNames.responsiveHtml(_slotA.name)}</span>
+        <span style="color:${colorB};font-weight:700">${PlayerNames.responsiveHtml(_slotB.name)}</span>
       </div>
       <div class="tot-rows">${rowsHtml}</div>
     </div>`;
@@ -310,7 +310,7 @@ function buildSeasonTable(player) {
 
   return `
     <div class="compare-table-wrap">
-      <div class="compare-table-header" style="background:${color};color:${lastTeamOn(player)}">${player.name}</div>
+      <div class="compare-table-header" style="background:${color};color:${lastTeamOn(player)}">${PlayerNames.responsiveHtml(player.name)}</div>
       <table class="stat-table">
         <thead>
           <tr>

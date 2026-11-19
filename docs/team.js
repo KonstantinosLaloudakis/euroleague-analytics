@@ -323,7 +323,7 @@ function renderContributors(teamCode) {
     el.innerHTML = players.map(p => `
         <div class="contributor-row">
             <div>
-                <div class="contributor-name">${p.code ? `<a class="player-link" href="player.html?code=${p.code}">${p.name}</a>` : p.name}</div>
+                <div class="contributor-name">${p.code ? `<a class="player-link" href="player.html?code=${p.code}">${PlayerNames.responsiveHtml(p.name)}</a>` : PlayerNames.responsiveHtml(p.name)}</div>
                 <div class="contributor-pos">${p.position || ''} · ${p.gp} GP</div>
             </div>
             <div class="contributor-stats">

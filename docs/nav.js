@@ -2,8 +2,8 @@
    rendering of <nav id="site-nav"> plus the player/team search box.
    Every page includes it right after its empty <nav> placeholder, so the bar is
    built synchronously before the rest of the page renders.
-   Wrapped in an IIFE so it defines no browser globals (other pages declare
-   names like formatPlayerName); loads as a classic script or a CommonJS module,
+   Wrapped in an IIFE so it defines no browser globals (it reads PlayerNames from
+   names.js at render time); loads as a classic script or a CommonJS module,
    where the DOM part is skipped. */
 
 (function () {
@@ -61,22 +61,13 @@
     return normalizeText(s).split(/[^a-z0-9]+/).filter(Boolean);
   }
 
-  const ROMAN_NUMERALS = ['II', 'III', 'IV', 'V'];
-
   function capitalizePart(part) {
     return part.charAt(0).toUpperCase() + part.slice(1).toLowerCase();
   }
 
-  function capitalizeName(word) {
-    if (ROMAN_NUMERALS.includes(word.toUpperCase())) return word.toUpperCase();
-    return word.split(/([-'])/).map(p => (p === '-' || p === "'") ? p : capitalizePart(p)).join('');
-  }
-
-  function formatPlayerName(raw) {
-    const i = raw.indexOf(',');
-    const last = i < 0 ? raw : raw.slice(0, i);
-    const first = i < 0 ? '' : raw.slice(i + 1);
-    return (first + ' ' + last).split(/\s+/).filter(Boolean).map(capitalizeName).join(' ');
+  // names.js (loaded just before this file) owns player-name formatting; read it at call time.
+  function playerLabel(raw) {
+    return typeof PlayerNames !== 'undefined' && PlayerNames.full ? PlayerNames.full(raw) : raw;
   }
 
   const TEAM_ACRONYMS = new Set(['LDLC', 'ASVEL', 'IBI']);
@@ -114,7 +105,7 @@
     const players = scored.map(({ p }) => ({
       type: 'player',
       href: 'player.html?code=' + encodeURIComponent(p.c),
-      label: formatPlayerName(p.n),
+      label: playerLabel(p.n),
       detail: p.t + ' · ' + (p.f === p.l ? p.f : p.f + '–' + p.l),
     }));
     return teams.concat(players).slice(0, limit);
@@ -395,7 +386,7 @@
   if (typeof module === 'object' && module.exports) {
     module.exports = {
       NAV_GROUPS, NAV_ABOUT, currentPage, normalizeText, tokens,
-      formatPlayerName, formatTeamName, search,
+      formatTeamName, search,
     };
   }
 })();

@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const player = careerData.players[code];
     if (!player) { showError(`Player not found: ${code}`); return; }
 
-    document.title = `${player.name} — EL Analytics`;
+    document.title = `${PlayerNames.full(player.name)} — EL Analytics`;
 
     const el = document.getElementById('player-content');
     el.innerHTML = renderHero(player) + renderChart(player.seasons) + renderTableSection(player);
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 // ── Hero card ──────────────────────────────────────────────────────────────────
 function renderHero(player) {
-    const initials = player.name.split(/\s+/).map(w => w[0]).filter(Boolean).slice(0, 2).join('');
+    const initials = PlayerNames.full(player.name).split(/\s+/).map(w => w[0]).filter(Boolean).slice(0, 2).join('');
     const current  = player.seasons[0];
     const first    = player.seasons[player.seasons.length - 1];
     const span     = (first && current && first !== current)
@@ -46,14 +46,14 @@ function renderHero(player) {
     const fmt = (v) => (v != null ? v.toFixed(1) : '—');
 
     const avatarHtml = player.image
-        ? `<img class="hero-avatar" src="${player.image}" alt="${player.name}" onerror="this.outerHTML='<div class=\\'hero-avatar\\'>${initials}</div>'">`
+        ? `<img class="hero-avatar" src="${player.image}" alt="${PlayerNames.full(player.name)}" onerror="this.outerHTML='<div class=\\'hero-avatar\\'>${initials}</div>'">`
         : `<div class="hero-avatar">${initials}</div>`;
 
     return `
     <div class="hero-card">
       ${avatarHtml}
       <div>
-        <div class="hero-name">${player.name}</div>
+        <div class="hero-name">${PlayerNames.responsiveHtml(player.name)}</div>
         <div class="hero-meta">${[player.position, player.nationality].filter(Boolean).join(' · ')}</div>
         <div class="hero-tags">
           ${current ? `<span class="tag tag-team">${current.team_name || current.team_code}</span>` : ''}
@@ -244,15 +244,15 @@ async function showWelcome() {
     input.focus();
 
     input.addEventListener('input', () => {
-        const q = input.value.trim().toLowerCase();
+        const q = input.value.trim();
         drop.innerHTML = '';
         if (q.length < 2) { drop.style.display = 'none'; return; }
-        const matches = index.filter(p => p.name.toLowerCase().includes(q)).slice(0, 12);
+        const matches = index.filter(p => PlayerNames.matches(p.name, q)).slice(0, 12);
         if (!matches.length) { drop.style.display = 'none'; return; }
         matches.forEach(p => {
             const item = document.createElement('div');
             item.style.cssText = 'padding:10px 14px;cursor:pointer;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:13px';
-            item.innerHTML = `<span style="color:var(--text-primary)">${p.name}</span><span style="font-size:11px;color:var(--text-muted)">${p.current_team || ''} · ${p.seasons}s</span>`;
+            item.innerHTML = `<span style="color:var(--text-primary)">${PlayerNames.responsiveHtml(p.name)}</span><span style="font-size:11px;color:var(--text-muted)">${p.current_team || ''} · ${p.seasons}s</span>`;
             item.addEventListener('mouseover', () => item.style.background = 'var(--bg-primary)');
             item.addEventListener('mouseout',  () => item.style.background = '');
             item.addEventListener('click', () => { window.location.href = `player.html?code=${encodeURIComponent(p.code)}`; });
@@ -284,7 +284,7 @@ async function addTopPerformers(el) {
             const g = p.game;
             const score = g ? `${esc(g.home)} ${esc(g.home_score)}–${esc(g.away_score)} ${esc(g.away)}` : '';
             return `<div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px;padding:10px 14px;border-bottom:1px solid var(--border);font-size:13px">
-              <span><span style="color:var(--text-primary);font-weight:600">${PlayerLinks.link(p.name, p.name)}</span>
+              <span><span style="color:var(--text-primary);font-weight:600">${PlayerLinks.link(p.name)}</span>
                 <span style="font-size:11px;color:var(--text-muted)"> ${esc(p.team)}</span></span>
               <span style="color:var(--text-muted);font-size:12px">${esc(p.pir)} PIR · ${esc(p.pts)} pts · ${esc(p.reb)} reb · ${esc(p.ast)} ast
                 ${score ? ' · ' + score : ''}</span></div>`;

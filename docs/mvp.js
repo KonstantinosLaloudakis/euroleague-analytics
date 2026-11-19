@@ -121,7 +121,7 @@ function renderLadder() {
 
         html += `<tr onclick="selectPlayer(${i}, event)" class="${_selectedIdx === i ? 'selected' : ''}">
             <td class="mvp-rank-cell ${rankCls}">${m.rank}</td>
-            <td class="mvp-player-cell">${PlayerLinks.link(m.player, formatName(m.player))}</td>
+            <td class="mvp-player-cell">${PlayerLinks.link(m.player)}</td>
             <td><span class="mvp-team-badge" style="background:${teamInk(m.team)}"></span>${m.team}</td>
             <td class="num mvp-score-cell">${m.mvp_score.toFixed(1)}</td>
             <td><div class="mvp-bar-wrap"><div class="mvp-bar-track">${barHtml}</div></div></td>
@@ -208,7 +208,7 @@ function selectPlayer(idx, ev) {
     detail.innerHTML = `
         <div class="mvp-detail-header">
             <div>
-                <div class="mvp-detail-name" style="color:${color}">#${m.rank} ${formatName(m.player)}</div>
+                <div class="mvp-detail-name" style="color:${color}">#${m.rank} ${PlayerNames.responsiveHtml(m.player)}</div>
                 <div class="mvp-detail-sub">${TEAM_NAMES[m.team] || m.team} · ${m.gp} GP · MVP Score: ${m.mvp_score.toFixed(1)}</div>
                 ${careerHtml}
             </div>
@@ -318,12 +318,12 @@ function renderRaceChart() {
         traces.push({
             x: data.rounds.map(r => `R${r}`),
             y: data.scores,
-            name: formatName(name),
+            name: PlayerNames.short(name),
             mode: 'lines+markers',
             line: { color, width: 2.5, shape: 'spline' },
             marker: { size: 6, color },
             customdata: data.rounds.map(() => name),
-            hovertemplate: `<b>${formatName(name)}</b><br>Round %{x}<br>Score: %{y:.1f}` +
+            hovertemplate: `<b>${PlayerNames.full(name)}</b><br>Round %{x}<br>Score: %{y:.1f}` +
                 (PlayerLinks.url(name) ? `<br><i>${PlayerLinks.chartHint()}</i>` : '') + '<extra></extra>',
         });
     }
@@ -346,16 +346,6 @@ function renderRaceChart() {
 
     Plotly.newPlot(container, traces, layout, PLOTLY_CONFIG);
     PlayerLinks.bindChartClicks(container);
-}
-
-// ── Utility ──────────────────────────────────────────────────────────────
-function formatName(allCaps) {
-    // "VEZENKOV, SASHA" → "S. Vezenkov"
-    const parts = allCaps.split(', ');
-    if (parts.length < 2) return allCaps;
-    const last = parts[0].charAt(0) + parts[0].slice(1).toLowerCase();
-    const first = parts[1].charAt(0) + '.';
-    return `${first} ${last}`;
 }
 
 document.addEventListener('DOMContentLoaded', init);

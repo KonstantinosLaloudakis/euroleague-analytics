@@ -303,15 +303,12 @@ function renderMVPRace(mvp) {
     }
 
     const top10 = mvp.slice(0, 10);
-    // Last name only
-    const names = top10.map(p => {
-        const parts = p.player.split(',');
-        return parts.length > 1 ? parts[0].trim() : p.player;
-    });
+    // Surname per bar (short form where surnames collide)
+    const names = PlayerNames.chartLabels(top10.map(p => p.player));
     const scores = top10.map(p => p.mvp_score);
     const barColors = top10.map(p => teamInk(p.team));
     const hoverText = top10.map(p =>
-        `<b>${p.player}</b><br>Team: ${p.team}<br>MVP Score: ${p.mvp_score.toFixed(1)}<br>Avg PIR: ${p.avg_pir.toFixed(1)}<br>GP: ${p.gp}` + (PlayerLinks.url(p.player) ? `<br><i>${PlayerLinks.chartHint()}</i>` : '')
+        `<b>${PlayerNames.full(p.player)}</b><br>Team: ${p.team}<br>MVP Score: ${p.mvp_score.toFixed(1)}<br>Avg PIR: ${p.avg_pir.toFixed(1)}<br>GP: ${p.gp}` + (PlayerLinks.url(p.player) ? `<br><i>${PlayerLinks.chartHint()}</i>` : '')
     );
 
     const trace = {
@@ -696,7 +693,7 @@ function _renderForecastTable() {
         const haColor = p.IsHome ? 'var(--accent-green)' : 'var(--accent-blue)';
         const teamColor = TEAM_COLORS[p.Team] || '#555';
         const teamName = _forecastTeamNames[p.Team] || p.Team;
-        const lastName = (p.Player || '').split(',')[0].trim();
+        const shortName = PlayerNames.escape(PlayerNames.short(p.Player || ''));
         const formPct = p.FormFactor ? ((p.FormFactor - 1) * 100).toFixed(0) : '0';
         const formColor = p.FormFactor >= 1 ? 'var(--accent-green)' : 'var(--accent-red)';
         const formStr = (p.FormFactor >= 1 ? '+' : '') + formPct + '%';
@@ -704,7 +701,7 @@ function _renderForecastTable() {
 
         html += `<tr style="${rowBg}">
             <td style="color:var(--text-muted);text-align:center">${globalRank}</td>
-            <td style="text-align:left;font-weight:600">${lastName}</td>
+            <td style="text-align:left;font-weight:600">${shortName}</td>
             <td><span class="team-badge sm" style="background:${teamColor};color:${teamOnColor(p.Team)}" title="${teamName}">${p.Team}</span></td>
             <td>${p.Opponent ? `<span class="team-badge sm" style="background:${TEAM_COLORS[p.Opponent]||'#555'};color:${teamOnColor(p.Opponent)}" title="${_forecastTeamNames[p.Opponent]||p.Opponent}">${p.Opponent}</span>` : ''}</td>
             <td style="color:${haColor};font-weight:700;text-align:center">${ha}</td>

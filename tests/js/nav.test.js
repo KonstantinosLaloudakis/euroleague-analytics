@@ -1,6 +1,8 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const nav = require('../../docs/nav.js');
+const realNames = require('../../docs/names.js');
+globalThis.PlayerNames = realNames; // pages load names.js before nav.js
 
 const P = (c, n, t, f, l, s) => ({ c, n, t, f, l, s });
 const INDEX = {
@@ -39,14 +41,6 @@ test('NAV_GROUPS', () => {
   assert.deepEqual(nav.NAV_ABOUT, { href: 'about.html', text: 'About' });
 });
 
-test('formatPlayerName', () => {
-  assert.equal(nav.formatPlayerName('VEZENKOV, SASHA'), 'Sasha Vezenkov');
-  assert.equal(nav.formatPlayerName("BRISSETT, O'SHAE J"), "O'Shae J Brissett");
-  assert.equal(nav.formatPlayerName('HAYES-DAVIS, NIGEL'), 'Nigel Hayes-Davis');
-  assert.equal(nav.formatPlayerName('CLARK III, JIMMY'), 'Jimmy Clark III');
-  assert.equal(nav.formatPlayerName('BACOT JR., ARMANDO'), 'Armando Bacot Jr.');
-});
-
 test('formatTeamName', () => {
   assert.equal(nav.formatTeamName('FC BARCELONA'), 'FC Barcelona');
   assert.equal(nav.formatTeamName('EA7 EMPORIO ARMANI MILAN'), 'EA7 Emporio Armani Milan');
@@ -54,6 +48,14 @@ test('formatTeamName', () => {
   assert.equal(nav.formatTeamName('KOSNER BASKONIA VITORIA-GASTEIZ'), 'Kosner Baskonia Vitoria-Gasteiz');
   assert.equal(nav.formatTeamName('LDLC ASVEL VILLEURBANNE'), 'LDLC ASVEL Villeurbanne');
   assert.equal(nav.formatTeamName('HAPOEL IBI TEL AVIV'), 'Hapoel IBI Tel Aviv');
+});
+
+test('search labels fall back to the raw name without PlayerNames', () => {
+  delete globalThis.PlayerNames;
+  try {
+    assert.equal(nav.search(INDEX, 'vezenkov')[0].label, 'VEZENKOV, SASHA');
+  } finally { globalThis.PlayerNames = realNames; }
+  assert.equal(nav.search(INDEX, 'vezenkov')[0].label, 'Sasha Vezenkov');
 });
 
 test('search matching', () => {

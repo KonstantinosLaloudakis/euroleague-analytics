@@ -49,7 +49,7 @@ function rebuildPlayerDropdown() {
     players.forEach(([name, p]) => {
         const opt = document.createElement('option');
         opt.value = name;
-        opt.textContent = `${name} (${p.total_fga} FGA)`;
+        opt.textContent = `${PlayerNames.full(name)} (${p.total_fga} FGA)`;
         playerSel.appendChild(opt);
     });
 }
@@ -93,7 +93,7 @@ function getActiveZoneData() {
     const team   = document.getElementById('shot-team').value;
 
     if (player && _data.players[player]) {
-        return { zones: _data.players[player].zones, label: player };
+        return { zones: _data.players[player].zones, label: PlayerNames.full(player) };
     }
     if (team && _data.teams[team]) {
         return { zones: _data.teams[team], label: TEAM_NAMES[team] || team };

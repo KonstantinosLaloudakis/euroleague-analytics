@@ -5,6 +5,11 @@
 
 const DATA_BASE = 'data';
 
+// Rewrites only the leading player name of a play description ("BROWN, STERLING (ZAL) — ...").
+function fmtPlayDesc(d) {
+    return String(d).replace(/^(.+?)(\s*\([A-Z]{2,4}\))/, (m, n, t) => PlayerNames.full(n) + t);
+}
+
 // ── State ────────────────────────────────────────────────
 let seasonsData = [];
 let currentGames = [];
@@ -229,7 +234,7 @@ function _buildWPChart(full, ta, tb, taName, tbName) {
     const wpPct = full.map(p => p.w * 100);
 
     const hoverText = full.map(p =>
-        `<b>${p.d}</b><br>` +
+        `<b>${fmtPlayDesc(p.d)}</b><br>` +
         `Score: ${taName} ${p.a} - ${p.b} ${tbName}<br>` +
         `WP (${taName}): ${(p.w * 100).toFixed(1)}%<br>` +
         `Q${p.p} — ${fmtTime(p.s)} remaining`
@@ -270,7 +275,7 @@ function _buildWPChart(full, ta, tb, taName, tbName) {
             mode: 'markers',
             marker: { size: 9, color, symbol: 'circle', line: { color: 'white', width: 1 } },
             showlegend: false,
-            hovertext: `<b>${kp.d}</b><br>WP: ${(kp.w * 100).toFixed(1)}%<br>Shift: ${kp.shift > 0 ? '+' : ''}${kp.shift.toFixed(1)}%<br>Score: ${taName} ${kp.a} - ${kp.b} ${tbName}<br>Q${kp.p} — ${fmtTime(kp.s)} remaining`,
+            hovertext: `<b>${fmtPlayDesc(kp.d)}</b><br>WP: ${(kp.w * 100).toFixed(1)}%<br>Shift: ${kp.shift > 0 ? '+' : ''}${kp.shift.toFixed(1)}%<br>Score: ${taName} ${kp.a} - ${kp.b} ${tbName}<br>Q${kp.p} — ${fmtTime(kp.s)} remaining`,
             hoverinfo: 'text',
         });
     });
@@ -325,7 +330,7 @@ function _buildMarginChart(full, ta, tb, taName, tbName) {
 
     const hoverText = full.map(p => {
         const m = p.a - p.b;
-        return `<b>${p.d}</b><br>` +
+        return `<b>${fmtPlayDesc(p.d)}</b><br>` +
             `Score: ${taName} ${p.a} - ${p.b} ${tbName}<br>` +
             `Margin: ${m > 0 ? '+' : ''}${m}<br>` +
             `Q${p.p} — ${fmtTime(p.s)} remaining`;
@@ -448,7 +453,7 @@ function renderWPALeaderboard(wpaData, ta, tb, taName, tbName) {
     combined.sort((a, b) => a.wpa - b.wpa);
 
     const labels = combined.map(p => {
-        const short = p.name.split(',')[0];
+        const short = PlayerNames.short(p.name);
         return `${short} <span style="color:#6b7280">(${p.team})</span>`;
     });
     const values = combined.map(p => parseFloat(p.wpa.toFixed(3)));
@@ -459,7 +464,7 @@ function renderWPALeaderboard(wpaData, ta, tb, taName, tbName) {
     );
     const hoverText = combined.map(p => {
         const teamName = p.team === ta ? taName : tbName;
-        return `<b>${p.name}</b><br>${teamName}<br>WPA: ${p.wpa >= 0 ? '+' : ''}${p.wpa.toFixed(3)}`;
+        return `<b>${PlayerNames.full(p.name)}</b><br>${teamName}<br>WPA: ${p.wpa >= 0 ? '+' : ''}${p.wpa.toFixed(3)}`;
     });
 
     const trace = {
@@ -544,7 +549,7 @@ function renderChart(data, taName, tbName) {
         const cls = kp.shift > 0 ? 'positive' : 'negative';
         card.className = `key-play-card ${cls}`;
         card.innerHTML = `
-            <div class="key-play-desc">${kp.d}</div>
+            <div class="key-play-desc">${PlayerNames.escape(fmtPlayDesc(kp.d))}</div>
             <div class="key-play-meta">Q${kp.p} · ${fmtTime(kp.s)} · Score: ${taName} ${kp.a}-${kp.b} ${tbName}</div>
             <div class="key-play-shift ${cls}">WP: ${(kp.w * 100).toFixed(1)}% (${kp.shift > 0 ? '+' : ''}${kp.shift.toFixed(1)}%)</div>
         `;

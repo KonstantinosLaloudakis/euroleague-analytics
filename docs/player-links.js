@@ -3,7 +3,7 @@
    the normalized "LAST, FIRST" name via data/current/player_index.json.
    Unlike nav.js this deliberately defines one browser global, PlayerLinks.
    Until the index loads (or if it fails) url() is null and link() is plain
-   escaped text. In Node only createPlayerLinks is exported. */
+   text. With no label, link() shows PlayerNames.responsiveHtml(name) when names.js is loaded. In Node only createPlayerLinks is exported. */
 
 (function () {
   'use strict';
@@ -34,7 +34,10 @@
     }
 
     function link(name, label, ids, extraClass) {
-      const text = escapeHtml(label === undefined || label === null ? name : label);
+      let text;
+      if (label !== undefined && label !== null) text = escapeHtml(label);
+      else if (typeof PlayerNames !== 'undefined' && PlayerNames.responsiveHtml) text = PlayerNames.responsiveHtml(name);
+      else text = escapeHtml(name);
       const href = url(name, ids);
       return href ? '<a class="player-link' + (extraClass ? ' ' + extraClass : '') + '" href="' + href + '">' + text + '</a>' : text;
     }

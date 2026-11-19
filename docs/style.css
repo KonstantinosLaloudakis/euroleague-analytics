@@ -2221,3 +2221,10 @@ footer {
 .player-link:focus-visible { color: var(--accent-purple); text-decoration: underline; }
 
 .topical-label { margin: 0.5rem 0 0; font-size: 0.75rem; color: var(--text-muted); }
+
+/* Player names: PlayerNames.responsiveHtml() emits both forms; phones get the short one. */
+.pn-short { display: none; }
+@media (max-width: 640px) {
+  .pn-full { display: none; }
+  .pn-short { display: inline; }
+}
