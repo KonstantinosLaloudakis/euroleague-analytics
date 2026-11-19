@@ -15,6 +15,13 @@
     'DOS SANTOS, YAGO': 'Yago dos Santos',
     'VAN DEN SPIEGEL, TOMAS': 'Tomas van den Spiegel',
     'DIBARTOLOMEO, JOHN': 'John DiBartolomeo',
+    'LEDAY, ZACH': 'Zach LeDay',
+    'DEJULIUS, DAVID': 'David DeJulius',
+    'THOMAS, DESHAUN': 'DeShaun Thomas',
+    'KANE, DEANDRE': 'DeAndre Kane',
+    'NELSON, DEMARCUS': 'DeMarcus Nelson',
+    'COLLINS, DEJUAN': 'DeJuan Collins',
+    'WILLIAMS, LATAVIOUS': 'LaTavious Williams',
   };
 
   const FOLD = { 'đ': 'dj', 'Đ': 'dj', 'ł': 'l', 'Ł': 'l', 'ø': 'o', 'Ø': 'o', 'ß': 'ss', 'ı': 'i', 'İ': 'i' };
@@ -128,7 +135,7 @@
     return q.every(w => t.some(x => x.startsWith(w)));
   }
 
-  const api = { full, short, surname, responsiveHtml, chartLabels, matches, OVERRIDES };
+  const api = { full, short, surname, escape: escapeHtml, responsiveHtml, chartLabels, matches, OVERRIDES };
   if (typeof window !== 'undefined') window.PlayerNames = api;
   if (typeof module === 'object' && module.exports) module.exports = api;
 })();

@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 // ── Hero card ──────────────────────────────────────────────────────────────────
 function renderHero(player) {
-    const initials = player.name.split(/\s+/).map(w => w[0]).filter(Boolean).slice(0, 2).join('');
+    const initials = PlayerNames.full(player.name).split(/\s+/).map(w => w[0]).filter(Boolean).slice(0, 2).join('');
     const current  = player.seasons[0];
     const first    = player.seasons[player.seasons.length - 1];
     const span     = (first && current && first !== current)

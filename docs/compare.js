@@ -79,7 +79,7 @@ function lastTeamOn(player) {
 }
 
 function playerInitials(player) {
-  return player.name.split(/[\s,]+/).filter(Boolean).map(w => w[0]).slice(0, 2).join('');
+  return PlayerNames.full(player.name).split(/[\s,]+/).filter(Boolean).map(w => w[0]).slice(0, 2).join('');
 }
 
 function fmt(v, dec = 1) {

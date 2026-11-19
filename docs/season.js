@@ -693,7 +693,7 @@ function _renderForecastTable() {
         const haColor = p.IsHome ? 'var(--accent-green)' : 'var(--accent-blue)';
         const teamColor = TEAM_COLORS[p.Team] || '#555';
         const teamName = _forecastTeamNames[p.Team] || p.Team;
-        const shortName = PlayerNames.short(p.Player || '');
+        const shortName = PlayerNames.escape(PlayerNames.short(p.Player || ''));
         const formPct = p.FormFactor ? ((p.FormFactor - 1) * 100).toFixed(0) : '0';
         const formColor = p.FormFactor >= 1 ? 'var(--accent-green)' : 'var(--accent-red)';
         const formStr = (p.FormFactor >= 1 ? '+' : '') + formPct + '%';

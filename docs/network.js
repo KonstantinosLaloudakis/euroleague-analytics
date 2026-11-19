@@ -362,8 +362,8 @@ function pinPlayer(playerId) {
 
 function showTooltip(edge, fromArc, toArc, evt) {
     const tip = document.getElementById('chord-tooltip');
-    const passer = PlayerNames.full(fromArc.name);
-    const scorer = PlayerNames.full(toArc.name);
+    const passer = PlayerNames.escape(PlayerNames.full(fromArc.name));
+    const scorer = PlayerNames.escape(PlayerNames.full(toArc.name));
 
     // Compute percentages
     const passerPct = fromArc.ast_given > 0 ? (edge.count / fromArc.ast_given * 100).toFixed(1) : '0.0';
@@ -439,7 +439,7 @@ function showPlayerDetail(playerId) {
         <ul class="pd-target-list">
             ${givenEdges.slice(0, 5).map(e => {
                 const scorer = team.players.find(p => p.id === e.to);
-                const name = scorer ? PlayerNames.short(scorer.name) : '?';
+                const name = scorer ? PlayerNames.escape(PlayerNames.short(scorer.name)) : '?';
                 return `<li><span>${name}</span><span class="pd-stat-value">${e.count} (${e.fg2}×2PT, ${e.fg3}×3PT)</span></li>`;
             }).join('')}
         </ul>
@@ -462,7 +462,7 @@ function showPlayerDetail(playerId) {
         <ul class="pd-target-list">
             ${receivedEdges.slice(0, 5).map(e => {
                 const passer = team.players.find(p => p.id === e.from);
-                const name = passer ? PlayerNames.short(passer.name) : '?';
+                const name = passer ? PlayerNames.escape(PlayerNames.short(passer.name)) : '?';
                 return `<li><span>${name}</span><span class="pd-stat-value">${e.count}</span></li>`;
             }).join('')}
         </ul>

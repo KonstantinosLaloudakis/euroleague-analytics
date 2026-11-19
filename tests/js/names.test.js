@@ -79,3 +79,24 @@ test('matches', () => {
   assert.ok(N.matches("BRISSETT, O'SHAE J", 'oshae'));
   assert.ok(N.matches('VEZENKOV, SASHA', ''));
 });
+
+test('escape neutralizes HTML', () => {
+  assert.equal(N.escape(`<b>"A&B"</b>'`), '&lt;b&gt;&quot;A&amp;B&quot;&lt;/b&gt;&#39;');
+});
+
+test('camel-case overrides give full, short and surname', () => {
+  const cases = [
+    ['LEDAY, ZACH', 'Zach LeDay', 'Z. LeDay', 'LeDay'],
+    ['DEJULIUS, DAVID', 'David DeJulius', 'D. DeJulius', 'DeJulius'],
+    ['THOMAS, DESHAUN', 'DeShaun Thomas', 'D. Thomas', 'Thomas'],
+    ['KANE, DEANDRE', 'DeAndre Kane', 'D. Kane', 'Kane'],
+    ['NELSON, DEMARCUS', 'DeMarcus Nelson', 'D. Nelson', 'Nelson'],
+    ['COLLINS, DeJUAN', 'DeJuan Collins', 'D. Collins', 'Collins'],
+    ['WILLIAMS, LATAVIOUS', 'LaTavious Williams', 'L. Williams', 'Williams'],
+  ];
+  for (const [raw, f, s, l] of cases) {
+    assert.equal(N.full(raw), f);
+    assert.equal(N.short(raw), s);
+    assert.equal(N.surname(raw), l);
+  }
+});
