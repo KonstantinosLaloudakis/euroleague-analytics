@@ -1844,9 +1844,9 @@
         "code": "MAD",
         "position": 8,
         "wins": 7,
-        "losses": 4,
-        "points_diff": 95,
-        "points_for": 1072
+        "losses": 5,
+        "points_diff": 91,
+        "points_for": 1151
       },
       {
         "code": "RED",
@@ -1873,20 +1873,20 @@
         "points_for": 928
       },
       {
-        "code": "PRS",
+        "code": "BES",
         "position": 12,
+        "wins": 6,
+        "losses": 6,
+        "points_diff": -24,
+        "points_for": 1055
+      },
+      {
+        "code": "PRS",
+        "position": 13,
         "wins": 6,
         "losses": 6,
         "points_diff": -33,
         "points_for": 1071
-      },
-      {
-        "code": "BES",
-        "position": 13,
-        "wins": 5,
-        "losses": 6,
-        "points_diff": -28,
-        "points_for": 972
       },
       {
         "code": "IST",

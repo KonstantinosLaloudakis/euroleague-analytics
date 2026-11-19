@@ -7,7 +7,7 @@
       "LocalName": "Paris Basketball",
       "Road": "HTA",
       "RoadName": "Hapoel Tel Aviv",
-      "Margin": -1.63,
+      "Margin": -1.67,
       "Winner": "HTA",
       "WinnerName": "Hapoel Tel Aviv",
       "HomeWinProb": 47.4,
@@ -20,12 +20,12 @@
       "LocalName": "Barcelona",
       "Road": "RED",
       "RoadName": "Crvena Zvezda",
-      "Margin": 1.0,
+      "Margin": 1.21,
       "Winner": "BAR",
       "WinnerName": "Barcelona",
       "HomeWinProb": 66.6,
       "Conf": 66.6,
-      "Insight": "\u2696\ufe0f Evenly matched (Adj Net gap: 0.9)\nAdj Net: +2.2 v +3.1  |  Elo: 1547 v 1513\nL5: 4-1 v 3-2  |  H: 3-3 v A: 3-3\nKey players \u2014 H: Robinson  |  A: Nwora"
+      "Insight": "\u2696\ufe0f Evenly matched (Adj Net gap: 0.6)\nAdj Net: +2.3 v +2.9  |  Elo: 1547 v 1513\nL5: 4-1 v 3-2  |  H: 3-3 v A: 3-3\nKey players \u2014 H: Robinson  |  A: Nwora"
     },
     {
       "Round": 13,
@@ -33,12 +33,12 @@
       "LocalName": "Anadolu Efes",
       "Road": "ASV",
       "RoadName": "ASVEL",
-      "Margin": 7.8,
+      "Margin": 7.88,
       "Winner": "IST",
       "WinnerName": "Anadolu Efes",
       "HomeWinProb": 79.9,
       "Conf": 79.9,
-      "Insight": "\ud83d\udcc8 Anadolu Efes +6.1 Adj Net advantage\nAdj Net: -0.7 v -6.8  |  Elo: 1473 v 1422\nL5: 2-3 v 2-3  |  H: 4-2 v A: 1-4\nKey players \u2014 H: Saric  |  A: Mills"
+      "Insight": "\ud83d\udcc8 Anadolu Efes +6.2 Adj Net advantage\nAdj Net: -0.7 v -6.8  |  Elo: 1473 v 1422\nL5: 2-3 v 2-3  |  H: 4-2 v A: 1-4\nKey players \u2014 H: Saric  |  A: Mills"
     },
     {
       "Round": 13,
@@ -46,12 +46,12 @@
       "LocalName": "Zalgiris",
       "Road": "PAN",
       "RoadName": "Panathinaikos",
-      "Margin": -0.65,
+      "Margin": -0.46,
       "Winner": "ZAL",
       "WinnerName": "Zalgiris",
       "HomeWinProb": 58.5,
       "Conf": 58.5,
-      "Insight": "\ud83d\udd25 Zalgiris Won 6 Straight\nAdj Net: +2.5 v +5.2  |  Elo: 1521 v 1535\nL5: 5-0 v 2-3  |  H: 3-2 v A: 2-2\nKey players \u2014 H: Edwards  |  A: Nunn"
+      "Insight": "\ud83d\udd25 Zalgiris Won 6 Straight\nAdj Net: +2.6 v +5.0  |  Elo: 1521 v 1535\nL5: 5-0 v 2-3  |  H: 3-2 v A: 2-2\nKey players \u2014 H: Edwards  |  A: Nunn"
     },
     {
       "Round": 13,
@@ -59,12 +59,12 @@
       "LocalName": "Olympiacos",
       "Road": "MAD",
       "RoadName": "Real Madrid",
-      "Margin": 0.57,
+      "Margin": 1.92,
       "Winner": "OLY",
       "WinnerName": "Olympiacos",
-      "HomeWinProb": 59.7,
-      "Conf": 59.7,
-      "Insight": "\u2696\ufe0f Evenly matched (Adj Net gap: 2.3)\nAdj Net: +6.5 v +8.8  |  Elo: 1588 v 1563\nL5: 4-1 v 4-1  |  H: 3-2 v A: 3-3\nKey players \u2014 H: Vezenkov  |  A: Feliz"
+      "HomeWinProb": 66.6,
+      "Conf": 66.6,
+      "Insight": "\u2696\ufe0f Evenly matched (Adj Net gap: 0.6)\nAdj Net: +6.6 v +7.2  |  Elo: 1588 v 1558\nL5: 4-1 v 3-2  |  H: 3-2 v A: 3-4\nKey players \u2014 H: Vezenkov  |  A: Feliz"
     },
     {
       "Round": 13,
@@ -72,12 +72,12 @@
       "LocalName": "Maccabi",
       "Road": "DUB",
       "RoadName": "Dubai BC",
-      "Margin": -2.97,
+      "Margin": -2.96,
       "Winner": "DUB",
       "WinnerName": "Dubai BC",
       "HomeWinProb": 30.7,
       "Conf": 69.3,
-      "Insight": "\u2708\ufe0f Dubai BC 67% Away Win Rate\nAdj Net: -5.6 v +0.8  |  Elo: 1470 v 1527\nL5: 1-4 v 3-2  |  H: 2-4 v A: 4-2\nKey players \u2014 H: Clark Iii  |  A: Bacon"
+      "Insight": "\u2708\ufe0f Dubai BC 67% Away Win Rate\nAdj Net: -5.7 v +0.7  |  Elo: 1470 v 1527\nL5: 1-4 v 3-2  |  H: 2-4 v A: 4-2\nKey players \u2014 H: Clark Iii  |  A: Bacon"
     },
     {
       "Round": 13,
@@ -85,12 +85,12 @@
       "LocalName": "Valencia",
       "Road": "VIR",
       "RoadName": "Virtus Bologna",
-      "Margin": 10.52,
+      "Margin": 10.48,
       "Winner": "PAM",
       "WinnerName": "Valencia",
-      "HomeWinProb": 91.7,
-      "Conf": 91.7,
-      "Insight": "\ud83d\udcc8 Valencia +10.7 Adj Net advantage\nAdj Net: +6.3 v -4.4  |  Elo: 1547 v 1463\nL5: 4-1 v 1-4  |  H: 4-2 v A: 2-4\nKey players \u2014 H: Shorts  |  A: Carr"
+      "HomeWinProb": 91.0,
+      "Conf": 91.0,
+      "Insight": "\ud83d\udcc8 Valencia +10.6 Adj Net advantage\nAdj Net: +6.4 v -4.2  |  Elo: 1547 v 1463\nL5: 4-1 v 1-4  |  H: 4-2 v A: 2-4\nKey players \u2014 H: Shorts  |  A: Carr"
     },
     {
       "Round": 13,
@@ -98,12 +98,12 @@
       "LocalName": "EA7 Milan",
       "Road": "ULK",
       "RoadName": "Fenerbahce",
-      "Margin": -7.16,
+      "Margin": -7.13,
       "Winner": "ULK",
       "WinnerName": "Fenerbahce",
       "HomeWinProb": 28.3,
       "Conf": 71.7,
-      "Insight": "\ud83d\udcc8 Fenerbahce +10.8 Adj Net advantage\nAdj Net: -4.2 v +6.7  |  Elo: 1464 v 1584\nL5: 1-4 v 2-3  |  H: 2-5 v A: 1-4\nKey players \u2014 H: Hall  |  A: Shields"
+      "Insight": "\ud83d\udcc8 Fenerbahce +10.8 Adj Net advantage\nAdj Net: -4.3 v +6.5  |  Elo: 1464 v 1584\nL5: 1-4 v 2-3  |  H: 2-5 v A: 1-4\nKey players \u2014 H: Hall  |  A: Shields"
     },
     {
       "Round": 13,
@@ -111,12 +111,12 @@
       "LocalName": "Bayern",
       "Road": "BAS",
       "RoadName": "Baskonia",
-      "Margin": 3.88,
+      "Margin": 4.0,
       "Winner": "MUN",
       "WinnerName": "Bayern",
       "HomeWinProb": 75.1,
       "Conf": 75.1,
-      "Insight": "\u2744\ufe0f Baskonia Lost 9 Straight\nAdj Net: -7.5 v -9.8  |  Elo: 1466 v 1419\nL5: 1-4 v 0-5  |  H: 0-4 v A: 0-6\nKey players \u2014 H: Thiemann  |  A: Duarte"
+      "Insight": "\u2744\ufe0f Baskonia Lost 9 Straight\nAdj Net: -7.4 v -9.8  |  Elo: 1466 v 1419\nL5: 1-4 v 0-5  |  H: 0-4 v A: 0-6\nKey players \u2014 H: Thiemann  |  A: Duarte"
     },
     {
       "Round": 13,
@@ -124,15 +124,35 @@
       "LocalName": "Partizan",
       "Road": "BES",
       "RoadName": "Besiktas",
-      "Margin": 5.38,
+      "Margin": 4.21,
       "Winner": "PAR",
       "WinnerName": "Partizan",
-      "HomeWinProb": 69.1,
-      "Conf": 69.1,
-      "Insight": "\u2708\ufe0f Besiktas 67% Away Win Rate\nAdj Net: +0.2 v -4.4  |  Elo: 1476 v 1495\nL5: 2-3 v 2-3  |  H: 4-2 v A: 4-2\nKey players \u2014 H: Jones  |  A: Wilbekin"
+      "HomeWinProb": 61.0,
+      "Conf": 61.0,
+      "Insight": "\u2708\ufe0f Besiktas 67% Away Win Rate\nAdj Net: +0.1 v -3.0  |  Elo: 1476 v 1501\nL5: 2-3 v 3-2  |  H: 4-2 v A: 4-2\nKey players \u2014 H: Jones  |  A: Wilbekin"
     }
   ],
   "mvp_candidates": [
+    {
+      "Player": "VEZENKOV, SASHA",
+      "Team": "OLY",
+      "GP": 12,
+      "AvgPIR": 24.7,
+      "MaxPIR": 41.0,
+      "AvgPTS": 20.7,
+      "WinProb": 66.6,
+      "ExpectedPIR": 21.6
+    },
+    {
+      "Player": "MONTERO, JEAN",
+      "Team": "OLY",
+      "GP": 6,
+      "AvgPIR": 20.3,
+      "MaxPIR": 35.0,
+      "AvgPTS": 15.5,
+      "WinProb": 66.6,
+      "ExpectedPIR": 21.5
+    },
     {
       "Player": "KABENGELE, MFIONDU",
       "Team": "DUB",
@@ -142,26 +162,6 @@
       "AvgPTS": 14.7,
       "WinProb": 69.3,
       "ExpectedPIR": 21.5
-    },
-    {
-      "Player": "VEZENKOV, SASHA",
-      "Team": "OLY",
-      "GP": 12,
-      "AvgPIR": 24.7,
-      "MaxPIR": 41.0,
-      "AvgPTS": 20.7,
-      "WinProb": 59.7,
-      "ExpectedPIR": 21.4
-    },
-    {
-      "Player": "MONTERO, JEAN",
-      "Team": "OLY",
-      "GP": 6,
-      "AvgPIR": 20.3,
-      "MaxPIR": 35.0,
-      "AvgPTS": 15.5,
-      "WinProb": 59.7,
-      "ExpectedPIR": 21.3
     },
     {
       "Player": "FERNANDO, BRUNO",
@@ -180,18 +180,8 @@
       "AvgPIR": 19.8,
       "MaxPIR": 33.0,
       "AvgPTS": 16.2,
-      "WinProb": 91.7,
+      "WinProb": 91.0,
       "ExpectedPIR": 20.8
-    },
-    {
-      "Player": "HAYES, KEVARRIUS",
-      "Team": "PAR",
-      "GP": 9,
-      "AvgPIR": 10.7,
-      "MaxPIR": 21.0,
-      "AvgPTS": 9.1,
-      "WinProb": 69.1,
-      "ExpectedPIR": 19.7
     },
     {
       "Player": "MALCOLM, COLLIN",
@@ -202,6 +192,16 @@
       "AvgPTS": 11.2,
       "WinProb": 79.9,
       "ExpectedPIR": 19.4
+    },
+    {
+      "Player": "HAYES, KEVARRIUS",
+      "Team": "PAR",
+      "GP": 9,
+      "AvgPIR": 10.7,
+      "MaxPIR": 21.0,
+      "AvgPTS": 9.1,
+      "WinProb": 61.0,
+      "ExpectedPIR": 19.3
     },
     {
       "Player": "VALANCIUNAS, JONAS",
@@ -224,32 +224,17 @@
       "ExpectedPIR": 18.9
     },
     {
-      "Player": "JONES, CARLIK",
-      "Team": "PAR",
+      "Player": "SARIC, DARIO",
+      "Team": "IST",
       "GP": 12,
-      "AvgPIR": 16.2,
-      "MaxPIR": 33.0,
-      "AvgPTS": 14.4,
-      "WinProb": 69.1,
-      "ExpectedPIR": 18.7
+      "AvgPIR": 14.9,
+      "MaxPIR": 28.0,
+      "AvgPTS": 11.8,
+      "WinProb": 79.9,
+      "ExpectedPIR": 18.4
     }
   ],
   "player_forecasts": [
-    {
-      "Player": "KABENGELE, MFIONDU",
-      "Team": "DUB",
-      "Opponent": "TEL",
-      "IsHome": false,
-      "GP": 12,
-      "AvgPIR": 18.6,
-      "MaxPIR": 29.0,
-      "AvgPTS": 14.7,
-      "FormFactor": 1.007,
-      "DefFactor": 1.037,
-      "WinProb": 69.3,
-      "PredictedPIR": 21.5,
-      "PredictedPTS": 15.8
-    },
     {
       "Player": "VEZENKOV, SASHA",
       "Team": "OLY",
@@ -260,10 +245,10 @@
       "MaxPIR": 41.0,
       "AvgPTS": 20.7,
       "FormFactor": 1.031,
-      "DefFactor": 0.995,
-      "WinProb": 59.7,
-      "PredictedPIR": 21.4,
-      "PredictedPTS": 21.5
+      "DefFactor": 0.994,
+      "WinProb": 66.6,
+      "PredictedPIR": 21.6,
+      "PredictedPTS": 21.7
     },
     {
       "Player": "MONTERO, JEAN",
@@ -275,10 +260,25 @@
       "MaxPIR": 35.0,
       "AvgPTS": 15.5,
       "FormFactor": 1.004,
-      "DefFactor": 0.995,
-      "WinProb": 59.7,
-      "PredictedPIR": 21.3,
-      "PredictedPTS": 15.7
+      "DefFactor": 0.994,
+      "WinProb": 66.6,
+      "PredictedPIR": 21.5,
+      "PredictedPTS": 15.9
+    },
+    {
+      "Player": "KABENGELE, MFIONDU",
+      "Team": "DUB",
+      "Opponent": "TEL",
+      "IsHome": false,
+      "GP": 12,
+      "AvgPIR": 18.6,
+      "MaxPIR": 29.0,
+      "AvgPTS": 14.7,
+      "FormFactor": 1.007,
+      "DefFactor": 1.038,
+      "WinProb": 69.3,
+      "PredictedPIR": 21.5,
+      "PredictedPTS": 15.8
     },
     {
       "Player": "FERNANDO, BRUNO",
@@ -290,7 +290,7 @@
       "MaxPIR": 24.0,
       "AvgPTS": 8.2,
       "FormFactor": 1.098,
-      "DefFactor": 1.076,
+      "DefFactor": 1.077,
       "WinProb": 79.9,
       "PredictedPIR": 21.2,
       "PredictedPTS": 10.1
@@ -305,25 +305,10 @@
       "MaxPIR": 33.0,
       "AvgPTS": 16.2,
       "FormFactor": 0.986,
-      "DefFactor": 1.029,
-      "WinProb": 91.7,
+      "DefFactor": 1.03,
+      "WinProb": 91.0,
       "PredictedPIR": 20.8,
       "PredictedPTS": 17.5
-    },
-    {
-      "Player": "HAYES, KEVARRIUS",
-      "Team": "PAR",
-      "Opponent": "BES",
-      "IsHome": true,
-      "GP": 9,
-      "AvgPIR": 10.7,
-      "MaxPIR": 21.0,
-      "AvgPTS": 9.1,
-      "FormFactor": 1.111,
-      "DefFactor": 1.056,
-      "WinProb": 69.1,
-      "PredictedPIR": 19.7,
-      "PredictedPTS": 11.0
     },
     {
       "Player": "MALCOLM, COLLIN",
@@ -335,10 +320,25 @@
       "MaxPIR": 22.0,
       "AvgPTS": 11.2,
       "FormFactor": 1.078,
-      "DefFactor": 1.076,
+      "DefFactor": 1.077,
       "WinProb": 79.9,
       "PredictedPIR": 19.4,
       "PredictedPTS": 13.5
+    },
+    {
+      "Player": "HAYES, KEVARRIUS",
+      "Team": "PAR",
+      "Opponent": "BES",
+      "IsHome": true,
+      "GP": 9,
+      "AvgPIR": 10.7,
+      "MaxPIR": 21.0,
+      "AvgPTS": 9.1,
+      "FormFactor": 1.111,
+      "DefFactor": 1.046,
+      "WinProb": 61.0,
+      "PredictedPIR": 19.3,
+      "PredictedPTS": 10.8
     },
     {
       "Player": "VALANCIUNAS, JONAS",
@@ -350,10 +350,10 @@
       "MaxPIR": 36.0,
       "AvgPTS": 12.8,
       "FormFactor": 1.053,
-      "DefFactor": 0.923,
+      "DefFactor": 0.924,
       "WinProb": 58.5,
       "PredictedPIR": 19.1,
-      "PredictedPTS": 12.5
+      "PredictedPTS": 12.6
     },
     {
       "Player": "FARIED, KENNETH",
@@ -365,25 +365,10 @@
       "MaxPIR": 29.0,
       "AvgPTS": 8.7,
       "FormFactor": 1.073,
-      "DefFactor": 1.088,
+      "DefFactor": 1.089,
       "WinProb": 24.9,
       "PredictedPIR": 18.9,
       "PredictedPTS": 9.8
-    },
-    {
-      "Player": "JONES, CARLIK",
-      "Team": "PAR",
-      "Opponent": "BES",
-      "IsHome": true,
-      "GP": 12,
-      "AvgPIR": 16.2,
-      "MaxPIR": 33.0,
-      "AvgPTS": 14.4,
-      "FormFactor": 0.93,
-      "DefFactor": 1.056,
-      "WinProb": 69.1,
-      "PredictedPIR": 18.7,
-      "PredictedPTS": 14.6
     },
     {
       "Player": "SARIC, DARIO",
@@ -395,7 +380,7 @@
       "MaxPIR": 28.0,
       "AvgPTS": 11.8,
       "FormFactor": 0.953,
-      "DefFactor": 1.076,
+      "DefFactor": 1.077,
       "WinProb": 79.9,
       "PredictedPIR": 18.4,
       "PredictedPTS": 12.6
@@ -410,10 +395,40 @@
       "MaxPIR": 31.0,
       "AvgPTS": 19.7,
       "FormFactor": 1.034,
-      "DefFactor": 0.966,
+      "DefFactor": 0.967,
       "WinProb": 41.5,
       "PredictedPIR": 18.4,
       "PredictedPTS": 19.4
+    },
+    {
+      "Player": "PAYNE, CAMERON",
+      "Team": "IST",
+      "Opponent": "ASV",
+      "IsHome": true,
+      "GP": 9,
+      "AvgPIR": 12.2,
+      "MaxPIR": 29.0,
+      "AvgPTS": 15.2,
+      "FormFactor": 0.99,
+      "DefFactor": 1.077,
+      "WinProb": 79.9,
+      "PredictedPIR": 18.3,
+      "PredictedPTS": 16.9
+    },
+    {
+      "Player": "JONES, CARLIK",
+      "Team": "PAR",
+      "Opponent": "BES",
+      "IsHome": true,
+      "GP": 12,
+      "AvgPIR": 16.2,
+      "MaxPIR": 33.0,
+      "AvgPTS": 14.4,
+      "FormFactor": 0.93,
+      "DefFactor": 1.046,
+      "WinProb": 61.0,
+      "PredictedPIR": 18.3,
+      "PredictedPTS": 14.3
     },
     {
       "Player": "BRYANT, ELIJAH",
@@ -425,7 +440,7 @@
       "MaxPIR": 40.0,
       "AvgPTS": 14.6,
       "FormFactor": 0.977,
-      "DefFactor": 1.069,
+      "DefFactor": 1.07,
       "WinProb": 52.6,
       "PredictedPIR": 18.2,
       "PredictedPTS": 15.3
@@ -440,25 +455,25 @@
       "MaxPIR": 23.0,
       "AvgPTS": 14.2,
       "FormFactor": 1.038,
-      "DefFactor": 0.996,
+      "DefFactor": 0.997,
       "WinProb": 33.4,
       "PredictedPIR": 18.2,
       "PredictedPTS": 14.4
     },
     {
-      "Player": "PAYNE, CAMERON",
-      "Team": "IST",
-      "Opponent": "ASV",
-      "IsHome": true,
-      "GP": 9,
-      "AvgPIR": 12.2,
-      "MaxPIR": 29.0,
-      "AvgPTS": 15.2,
-      "FormFactor": 0.99,
-      "DefFactor": 1.076,
-      "WinProb": 79.9,
-      "PredictedPIR": 18.2,
-      "PredictedPTS": 16.9
+      "Player": "MALEDON, THEO",
+      "Team": "MAD",
+      "Opponent": "OLY",
+      "IsHome": false,
+      "GP": 10,
+      "AvgPIR": 21.0,
+      "MaxPIR": 40.0,
+      "AvgPTS": 16.9,
+      "FormFactor": 1.006,
+      "DefFactor": 0.939,
+      "WinProb": 33.4,
+      "PredictedPIR": 18.0,
+      "PredictedPTS": 15.6
     },
     {
       "Player": "JEKIRI, TONYE",
@@ -470,10 +485,10 @@
       "MaxPIR": 25.0,
       "AvgPTS": 10.9,
       "FormFactor": 0.958,
-      "DefFactor": 1.056,
-      "WinProb": 69.1,
-      "PredictedPIR": 17.9,
-      "PredictedPTS": 11.3
+      "DefFactor": 1.046,
+      "WinProb": 61.0,
+      "PredictedPIR": 17.6,
+      "PredictedPTS": 11.1
     },
     {
       "Player": "ROBINSON, JUSTIN",
@@ -491,21 +506,6 @@
       "PredictedPTS": 15.0
     },
     {
-      "Player": "MALEDON, THEO",
-      "Team": "MAD",
-      "Opponent": "OLY",
-      "IsHome": false,
-      "GP": 9,
-      "AvgPIR": 20.4,
-      "MaxPIR": 40.0,
-      "AvgPTS": 16.3,
-      "FormFactor": 1.005,
-      "DefFactor": 0.938,
-      "WinProb": 40.3,
-      "PredictedPIR": 17.2,
-      "PredictedPTS": 15.2
-    },
-    {
       "Player": "SEDEKERSKIS, TADAS",
       "Team": "BAS",
       "Opponent": "MUN",
@@ -515,7 +515,7 @@
       "MaxPIR": 19.0,
       "AvgPTS": 10.1,
       "FormFactor": 0.968,
-      "DefFactor": 1.088,
+      "DefFactor": 1.089,
       "WinProb": 24.9,
       "PredictedPIR": 17.2,
       "PredictedPTS": 10.3
@@ -530,7 +530,7 @@
       "MaxPIR": 22.0,
       "AvgPTS": 8.8,
       "FormFactor": 1.064,
-      "DefFactor": 1.052,
+      "DefFactor": 1.053,
       "WinProb": 75.1,
       "PredictedPIR": 16.7,
       "PredictedPTS": 10.2
@@ -545,7 +545,7 @@
       "MaxPIR": 30.0,
       "AvgPTS": 11.7,
       "FormFactor": 0.966,
-      "DefFactor": 0.966,
+      "DefFactor": 0.967,
       "WinProb": 41.5,
       "PredictedPIR": 16.4,
       "PredictedPTS": 10.8
@@ -560,10 +560,10 @@
       "MaxPIR": 31.0,
       "AvgPTS": 16.3,
       "FormFactor": 1.001,
-      "DefFactor": 1.037,
+      "DefFactor": 1.038,
       "WinProb": 69.3,
       "PredictedPIR": 16.4,
-      "PredictedPTS": 17.4
+      "PredictedPTS": 17.5
     },
     {
       "Player": "OTURU, DAN",
@@ -575,25 +575,10 @@
       "MaxPIR": 32.0,
       "AvgPTS": 11.2,
       "FormFactor": 1.096,
-      "DefFactor": 1.069,
+      "DefFactor": 1.07,
       "WinProb": 52.6,
       "PredictedPIR": 15.9,
       "PredictedPTS": 13.2
-    },
-    {
-      "Player": "TAVARES, WALTER",
-      "Team": "MAD",
-      "Opponent": "OLY",
-      "IsHome": false,
-      "GP": 11,
-      "AvgPIR": 15.3,
-      "MaxPIR": 27.0,
-      "AvgPTS": 9.9,
-      "FormFactor": 1.014,
-      "DefFactor": 0.938,
-      "WinProb": 40.3,
-      "PredictedPIR": 15.6,
-      "PredictedPTS": 9.3
     },
     {
       "Player": "DIARRA, ALIOU",
@@ -606,7 +591,7 @@
       "AvgPTS": 12.3,
       "FormFactor": 0.99,
       "DefFactor": 0.992,
-      "WinProb": 8.3,
+      "WinProb": 9.0,
       "PredictedPIR": 15.5,
       "PredictedPTS": 11.4
     },
@@ -620,7 +605,7 @@
       "MaxPIR": 25.0,
       "AvgPTS": 12.2,
       "FormFactor": 1.038,
-      "DefFactor": 0.923,
+      "DefFactor": 0.924,
       "WinProb": 58.5,
       "PredictedPIR": 15.3,
       "PredictedPTS": 11.8
@@ -635,8 +620,8 @@
       "MaxPIR": 24.0,
       "AvgPTS": 13.0,
       "FormFactor": 0.948,
-      "DefFactor": 1.029,
-      "WinProb": 91.7,
+      "DefFactor": 1.03,
+      "WinProb": 91.0,
       "PredictedPIR": 15.1,
       "PredictedPTS": 13.5
     },
@@ -680,40 +665,10 @@
       "MaxPIR": 25.0,
       "AvgPTS": 8.9,
       "FormFactor": 0.969,
-      "DefFactor": 0.996,
+      "DefFactor": 0.997,
       "WinProb": 33.4,
       "PredictedPIR": 14.6,
       "PredictedPTS": 8.4
-    },
-    {
-      "Player": "STEVENS, LAMAR",
-      "Team": "PAR",
-      "Opponent": "BES",
-      "IsHome": true,
-      "GP": 9,
-      "AvgPIR": 11.3,
-      "MaxPIR": 22.0,
-      "AvgPTS": 10.2,
-      "FormFactor": 1.012,
-      "DefFactor": 1.056,
-      "WinProb": 69.1,
-      "PredictedPIR": 14.5,
-      "PredictedPTS": 11.2
-    },
-    {
-      "Player": "HIFI, NADIR",
-      "Team": "PRS",
-      "Opponent": "HTA",
-      "IsHome": true,
-      "GP": 9,
-      "AvgPIR": 19.7,
-      "MaxPIR": 39.0,
-      "AvgPTS": 21.2,
-      "FormFactor": 1.063,
-      "DefFactor": 0.975,
-      "WinProb": 47.4,
-      "PredictedPIR": 14.2,
-      "PredictedPTS": 21.9
     },
     {
       "Player": "STRAZEL, MATTHEW",
@@ -725,10 +680,25 @@
       "MaxPIR": 22.0,
       "AvgPTS": 11.6,
       "FormFactor": 1.041,
-      "DefFactor": 1.076,
+      "DefFactor": 1.077,
       "WinProb": 79.9,
-      "PredictedPIR": 14.2,
+      "PredictedPIR": 14.3,
       "PredictedPTS": 13.6
+    },
+    {
+      "Player": "HIFI, NADIR",
+      "Team": "PRS",
+      "Opponent": "HTA",
+      "IsHome": true,
+      "GP": 9,
+      "AvgPIR": 19.7,
+      "MaxPIR": 39.0,
+      "AvgPTS": 21.2,
+      "FormFactor": 1.063,
+      "DefFactor": 0.976,
+      "WinProb": 47.4,
+      "PredictedPIR": 14.2,
+      "PredictedPTS": 21.9
     },
     {
       "Player": "CLYBURN, WILL",
@@ -744,6 +714,51 @@
       "WinProb": 71.7,
       "PredictedPIR": 14.2,
       "PredictedPTS": 11.4
+    },
+    {
+      "Player": "STEVENS, LAMAR",
+      "Team": "PAR",
+      "Opponent": "BES",
+      "IsHome": true,
+      "GP": 9,
+      "AvgPIR": 11.3,
+      "MaxPIR": 22.0,
+      "AvgPTS": 10.2,
+      "FormFactor": 1.012,
+      "DefFactor": 1.046,
+      "WinProb": 61.0,
+      "PredictedPIR": 14.2,
+      "PredictedPTS": 11.0
+    },
+    {
+      "Player": "TAVARES, WALTER",
+      "Team": "MAD",
+      "Opponent": "OLY",
+      "IsHome": false,
+      "GP": 12,
+      "AvgPIR": 14.7,
+      "MaxPIR": 27.0,
+      "AvgPTS": 9.5,
+      "FormFactor": 0.99,
+      "DefFactor": 0.939,
+      "WinProb": 33.4,
+      "PredictedPIR": 14.0,
+      "PredictedPTS": 8.6
+    },
+    {
+      "Player": "WALKER IV, LONNIE",
+      "Team": "BES",
+      "Opponent": "PAR",
+      "IsHome": false,
+      "GP": 5,
+      "AvgPIR": 13.2,
+      "MaxPIR": 36.0,
+      "AvgPTS": 14.0,
+      "FormFactor": 1.0,
+      "DefFactor": 0.942,
+      "WinProb": 39.0,
+      "PredictedPIR": 13.9,
+      "PredictedPTS": 13.0
     },
     {
       "Player": "MADAR, YAM",
@@ -785,7 +800,7 @@
       "MaxPIR": 28.0,
       "AvgPTS": 10.3,
       "FormFactor": 0.898,
-      "DefFactor": 1.037,
+      "DefFactor": 1.038,
       "WinProb": 69.3,
       "PredictedPIR": 13.6,
       "PredictedPTS": 9.9
@@ -800,10 +815,25 @@
       "MaxPIR": 20.0,
       "AvgPTS": 13.1,
       "FormFactor": 1.038,
-      "DefFactor": 0.975,
+      "DefFactor": 0.976,
       "WinProb": 47.4,
       "PredictedPIR": 13.5,
       "PredictedPTS": 13.2
+    },
+    {
+      "Player": "EDWARDS, CARSEN",
+      "Team": "ZAL",
+      "Opponent": "PAN",
+      "IsHome": true,
+      "GP": 12,
+      "AvgPIR": 12.1,
+      "MaxPIR": 21.0,
+      "AvgPTS": 16.6,
+      "FormFactor": 0.983,
+      "DefFactor": 0.924,
+      "WinProb": 58.5,
+      "PredictedPIR": 13.1,
+      "PredictedPTS": 15.2
     },
     {
       "Player": "HORTON TUCKER, TALEN",
@@ -830,40 +860,10 @@
       "MaxPIR": 34.0,
       "AvgPTS": 10.9,
       "FormFactor": 1.04,
-      "DefFactor": 1.052,
+      "DefFactor": 1.053,
       "WinProb": 75.1,
       "PredictedPIR": 13.1,
       "PredictedPTS": 12.4
-    },
-    {
-      "Player": "EDWARDS, CARSEN",
-      "Team": "ZAL",
-      "Opponent": "PAN",
-      "IsHome": true,
-      "GP": 12,
-      "AvgPIR": 12.1,
-      "MaxPIR": 21.0,
-      "AvgPTS": 16.6,
-      "FormFactor": 0.983,
-      "DefFactor": 0.923,
-      "WinProb": 58.5,
-      "PredictedPIR": 13.0,
-      "PredictedPTS": 15.2
-    },
-    {
-      "Player": "CAMPAZZO, FACUNDO",
-      "Team": "MAD",
-      "Opponent": "OLY",
-      "IsHome": false,
-      "GP": 9,
-      "AvgPIR": 13.3,
-      "MaxPIR": 28.0,
-      "AvgPTS": 9.7,
-      "FormFactor": 1.042,
-      "DefFactor": 0.938,
-      "WinProb": 40.3,
-      "PredictedPIR": 12.8,
-      "PredictedPTS": 9.3
     },
     {
       "Player": "NORRIS, MILES",
@@ -875,10 +875,25 @@
       "MaxPIR": 17.0,
       "AvgPTS": 5.5,
       "FormFactor": 1.066,
-      "DefFactor": 1.052,
+      "DefFactor": 1.053,
       "WinProb": 75.1,
       "PredictedPIR": 12.8,
       "PredictedPTS": 6.4
+    },
+    {
+      "Player": "CAMPAZZO, FACUNDO",
+      "Team": "MAD",
+      "Opponent": "OLY",
+      "IsHome": false,
+      "GP": 9,
+      "AvgPIR": 13.3,
+      "MaxPIR": 28.0,
+      "AvgPTS": 9.7,
+      "FormFactor": 1.042,
+      "DefFactor": 0.939,
+      "WinProb": 33.4,
+      "PredictedPIR": 12.7,
+      "PredictedPTS": 9.2
     },
     {
       "Player": "BROOKS, ARMONI",
@@ -890,25 +905,10 @@
       "MaxPIR": 29.0,
       "AvgPTS": 14.8,
       "FormFactor": 1.013,
-      "DefFactor": 1.029,
-      "WinProb": 91.7,
+      "DefFactor": 1.03,
+      "WinProb": 91.0,
       "PredictedPIR": 12.7,
       "PredictedPTS": 16.4
-    },
-    {
-      "Player": "FRANKS, ROBERT",
-      "Team": "PAR",
-      "Opponent": "BES",
-      "IsHome": true,
-      "GP": 5,
-      "AvgPIR": 10.4,
-      "MaxPIR": 17.0,
-      "AvgPTS": 7.8,
-      "FormFactor": 1.0,
-      "DefFactor": 1.056,
-      "WinProb": 69.1,
-      "PredictedPIR": 12.7,
-      "PredictedPTS": 8.5
     },
     {
       "Player": "RHODEN, JARED",
@@ -920,25 +920,10 @@
       "MaxPIR": 22.0,
       "AvgPTS": 12.4,
       "FormFactor": 1.088,
-      "DefFactor": 0.975,
+      "DefFactor": 0.976,
       "WinProb": 47.4,
       "PredictedPIR": 12.5,
       "PredictedPTS": 13.1
-    },
-    {
-      "Player": "TAYLOR, KAMERON",
-      "Team": "PAM",
-      "Opponent": "VIR",
-      "IsHome": true,
-      "GP": 12,
-      "AvgPIR": 11.8,
-      "MaxPIR": 24.0,
-      "AvgPTS": 11.8,
-      "FormFactor": 1.05,
-      "DefFactor": 1.029,
-      "WinProb": 91.7,
-      "PredictedPIR": 12.4,
-      "PredictedPTS": 13.5
     },
     {
       "Player": "FOURNIER, EVAN",
@@ -950,10 +935,40 @@
       "MaxPIR": 28.0,
       "AvgPTS": 13.8,
       "FormFactor": 1.019,
-      "DefFactor": 0.995,
-      "WinProb": 59.7,
-      "PredictedPIR": 12.3,
-      "PredictedPTS": 14.2
+      "DefFactor": 0.994,
+      "WinProb": 66.6,
+      "PredictedPIR": 12.5,
+      "PredictedPTS": 14.3
+    },
+    {
+      "Player": "TAYLOR, KAMERON",
+      "Team": "PAM",
+      "Opponent": "VIR",
+      "IsHome": true,
+      "GP": 12,
+      "AvgPIR": 11.8,
+      "MaxPIR": 24.0,
+      "AvgPTS": 11.8,
+      "FormFactor": 1.05,
+      "DefFactor": 1.03,
+      "WinProb": 91.0,
+      "PredictedPIR": 12.4,
+      "PredictedPTS": 13.5
+    },
+    {
+      "Player": "FRANKS, ROBERT",
+      "Team": "PAR",
+      "Opponent": "BES",
+      "IsHome": true,
+      "GP": 5,
+      "AvgPIR": 10.4,
+      "MaxPIR": 17.0,
+      "AvgPTS": 7.8,
+      "FormFactor": 1.0,
+      "DefFactor": 1.046,
+      "WinProb": 61.0,
+      "PredictedPIR": 12.4,
+      "PredictedPTS": 8.3
     },
     {
       "Player": "WRIGHT IV, MCKINLEY",
@@ -965,7 +980,7 @@
       "MaxPIR": 19.0,
       "AvgPTS": 9.5,
       "FormFactor": 1.015,
-      "DefFactor": 1.037,
+      "DefFactor": 1.038,
       "WinProb": 69.3,
       "PredictedPIR": 12.1,
       "PredictedPTS": 10.3
@@ -980,7 +995,7 @@
       "MaxPIR": 17.0,
       "AvgPTS": 10.3,
       "FormFactor": 1.004,
-      "DefFactor": 0.923,
+      "DefFactor": 0.924,
       "WinProb": 58.5,
       "PredictedPIR": 12.0,
       "PredictedPTS": 9.7
@@ -995,7 +1010,7 @@
       "MaxPIR": 19.0,
       "AvgPTS": 6.5,
       "FormFactor": 1.069,
-      "DefFactor": 1.069,
+      "DefFactor": 1.07,
       "WinProb": 52.6,
       "PredictedPIR": 11.9,
       "PredictedPTS": 7.5
@@ -1010,7 +1025,7 @@
       "MaxPIR": 27.0,
       "AvgPTS": 8.4,
       "FormFactor": 1.0,
-      "DefFactor": 1.037,
+      "DefFactor": 1.038,
       "WinProb": 69.3,
       "PredictedPIR": 11.7,
       "PredictedPTS": 9.0
@@ -1025,7 +1040,7 @@
       "MaxPIR": 26.0,
       "AvgPTS": 14.5,
       "FormFactor": 1.101,
-      "DefFactor": 1.069,
+      "DefFactor": 1.07,
       "WinProb": 52.6,
       "PredictedPIR": 11.6,
       "PredictedPTS": 17.1
@@ -1040,25 +1055,10 @@
       "MaxPIR": 19.0,
       "AvgPTS": 6.5,
       "FormFactor": 1.057,
-      "DefFactor": 0.975,
+      "DefFactor": 0.976,
       "WinProb": 47.4,
       "PredictedPIR": 11.6,
       "PredictedPTS": 6.7
-    },
-    {
-      "Player": "WILEY, AUSTIN",
-      "Team": "MUN",
-      "Opponent": "BAS",
-      "IsHome": true,
-      "GP": 12,
-      "AvgPIR": 9.7,
-      "MaxPIR": 32.0,
-      "AvgPTS": 7.2,
-      "FormFactor": 1.066,
-      "DefFactor": 1.052,
-      "WinProb": 75.1,
-      "PredictedPIR": 11.6,
-      "PredictedPTS": 8.4
     },
     {
       "Player": "HOARD, JAYLEN",
@@ -1072,8 +1072,23 @@
       "FormFactor": 0.983,
       "DefFactor": 0.968,
       "WinProb": 30.7,
-      "PredictedPIR": 11.5,
+      "PredictedPIR": 11.6,
       "PredictedPTS": 7.3
+    },
+    {
+      "Player": "WILEY, AUSTIN",
+      "Team": "MUN",
+      "Opponent": "BAS",
+      "IsHome": true,
+      "GP": 12,
+      "AvgPIR": 9.7,
+      "MaxPIR": 32.0,
+      "AvgPTS": 7.2,
+      "FormFactor": 1.066,
+      "DefFactor": 1.053,
+      "WinProb": 75.1,
+      "PredictedPIR": 11.6,
+      "PredictedPTS": 8.4
     },
     {
       "Player": "CLARK III, JIMMY",
@@ -1088,22 +1103,22 @@
       "DefFactor": 0.968,
       "WinProb": 30.7,
       "PredictedPIR": 11.5,
-      "PredictedPTS": 12.1
+      "PredictedPTS": 12.2
     },
     {
       "Player": "DOTSON, DEVON",
       "Team": "BES",
       "Opponent": "PAR",
       "IsHome": false,
-      "GP": 9,
-      "AvgPIR": 12.0,
+      "GP": 10,
+      "AvgPIR": 11.1,
       "MaxPIR": 24.0,
-      "AvgPTS": 9.1,
-      "FormFactor": 0.915,
+      "AvgPTS": 8.6,
+      "FormFactor": 0.895,
       "DefFactor": 0.942,
-      "WinProb": 30.9,
-      "PredictedPIR": 11.5,
-      "PredictedPTS": 7.6
+      "WinProb": 39.0,
+      "PredictedPIR": 11.4,
+      "PredictedPTS": 7.1
     },
     {
       "Player": "BALCEROWSKI, OLEK",
@@ -1118,7 +1133,7 @@
       "DefFactor": 0.944,
       "WinProb": 66.6,
       "PredictedPIR": 11.3,
-      "PredictedPTS": 7.3
+      "PredictedPTS": 7.4
     },
     {
       "Player": "WASHINGTON JR, TYTY",
@@ -1145,10 +1160,10 @@
       "MaxPIR": 17.0,
       "AvgPTS": 6.3,
       "FormFactor": 1.016,
-      "DefFactor": 0.975,
+      "DefFactor": 0.976,
       "WinProb": 47.4,
       "PredictedPIR": 11.2,
-      "PredictedPTS": 6.2
+      "PredictedPTS": 6.3
     },
     {
       "Player": "EVANS, KEENAN",
@@ -1160,7 +1175,7 @@
       "MaxPIR": 13.0,
       "AvgPTS": 5.8,
       "FormFactor": 1.0,
-      "DefFactor": 0.923,
+      "DefFactor": 0.924,
       "WinProb": 58.5,
       "PredictedPIR": 11.2,
       "PredictedPTS": 5.4
@@ -1175,8 +1190,8 @@
       "MaxPIR": 20.0,
       "AvgPTS": 6.6,
       "FormFactor": 1.156,
-      "DefFactor": 1.029,
-      "WinProb": 91.7,
+      "DefFactor": 1.03,
+      "WinProb": 91.0,
       "PredictedPIR": 11.2,
       "PredictedPTS": 8.3
     },
@@ -1190,7 +1205,7 @@
       "MaxPIR": 17.0,
       "AvgPTS": 8.3,
       "FormFactor": 1.032,
-      "DefFactor": 1.088,
+      "DefFactor": 1.089,
       "WinProb": 24.9,
       "PredictedPIR": 11.2,
       "PredictedPTS": 9.0
@@ -1200,30 +1215,45 @@
       "Team": "BES",
       "Opponent": "PAR",
       "IsHome": false,
-      "GP": 11,
-      "AvgPIR": 11.0,
+      "GP": 12,
+      "AvgPIR": 11.2,
       "MaxPIR": 18.0,
-      "AvgPTS": 13.5,
-      "FormFactor": 0.896,
+      "AvgPTS": 13.7,
+      "FormFactor": 0.892,
       "DefFactor": 0.942,
-      "WinProb": 30.9,
-      "PredictedPIR": 11.1,
-      "PredictedPTS": 11.1
+      "WinProb": 39.0,
+      "PredictedPIR": 11.2,
+      "PredictedPTS": 11.3
     },
     {
-      "Player": "OMORUYI, EUGENE",
-      "Team": "BES",
-      "Opponent": "PAR",
+      "Player": "FELIZ, ANDRES",
+      "Team": "MAD",
+      "Opponent": "OLY",
       "IsHome": false,
-      "GP": 11,
-      "AvgPIR": 9.9,
-      "MaxPIR": 23.0,
-      "AvgPTS": 10.3,
-      "FormFactor": 1.118,
-      "DefFactor": 0.942,
-      "WinProb": 30.9,
+      "GP": 12,
+      "AvgPIR": 14.8,
+      "MaxPIR": 30.0,
+      "AvgPTS": 13.3,
+      "FormFactor": 1.011,
+      "DefFactor": 0.939,
+      "WinProb": 33.4,
       "PredictedPIR": 11.1,
-      "PredictedPTS": 10.5
+      "PredictedPTS": 12.3
+    },
+    {
+      "Player": "MILLER-MCINTYRE, CODI",
+      "Team": "OLY",
+      "Opponent": "MAD",
+      "IsHome": true,
+      "GP": 12,
+      "AvgPIR": 8.9,
+      "MaxPIR": 19.0,
+      "AvgPTS": 7.9,
+      "FormFactor": 1.023,
+      "DefFactor": 0.994,
+      "WinProb": 66.6,
+      "PredictedPIR": 11.0,
+      "PredictedPTS": 8.3
     },
     {
       "Player": "LOYD, JORDAN",
@@ -1235,7 +1265,7 @@
       "MaxPIR": 28.0,
       "AvgPTS": 9.9,
       "FormFactor": 1.042,
-      "DefFactor": 1.076,
+      "DefFactor": 1.077,
       "WinProb": 79.9,
       "PredictedPIR": 10.9,
       "PredictedPTS": 11.6
@@ -1256,21 +1286,6 @@
       "PredictedPTS": 9.1
     },
     {
-      "Player": "MILLER-MCINTYRE, CODI",
-      "Team": "OLY",
-      "Opponent": "MAD",
-      "IsHome": true,
-      "GP": 12,
-      "AvgPIR": 8.9,
-      "MaxPIR": 19.0,
-      "AvgPTS": 7.9,
-      "FormFactor": 1.023,
-      "DefFactor": 0.995,
-      "WinProb": 59.7,
-      "PredictedPIR": 10.9,
-      "PredictedPTS": 8.2
-    },
-    {
       "Player": "PUNTER, KEVIN",
       "Team": "BAR",
       "Opponent": "RED",
@@ -1286,21 +1301,6 @@
       "PredictedPTS": 14.3
     },
     {
-      "Player": "FELIZ, ANDRES",
-      "Team": "MAD",
-      "Opponent": "OLY",
-      "IsHome": false,
-      "GP": 11,
-      "AvgPIR": 14.8,
-      "MaxPIR": 30.0,
-      "AvgPTS": 13.4,
-      "FormFactor": 1.02,
-      "DefFactor": 0.938,
-      "WinProb": 40.3,
-      "PredictedPIR": 10.8,
-      "PredictedPTS": 12.6
-    },
-    {
       "Player": "KOLOKO, CHRISTIAN",
       "Team": "RED",
       "Opponent": "BAR",
@@ -1310,7 +1310,7 @@
       "MaxPIR": 19.0,
       "AvgPTS": 7.2,
       "FormFactor": 1.0,
-      "DefFactor": 0.996,
+      "DefFactor": 0.997,
       "WinProb": 33.4,
       "PredictedPIR": 10.7,
       "PredictedPTS": 7.0
@@ -1325,7 +1325,7 @@
       "MaxPIR": 13.0,
       "AvgPTS": 5.2,
       "FormFactor": 1.102,
-      "DefFactor": 1.088,
+      "DefFactor": 1.089,
       "WinProb": 24.9,
       "PredictedPIR": 10.6,
       "PredictedPTS": 6.0
@@ -1341,9 +1341,24 @@
       "AvgPTS": 11.3,
       "FormFactor": 0.942,
       "DefFactor": 0.992,
-      "WinProb": 8.3,
+      "WinProb": 9.0,
       "PredictedPIR": 10.5,
       "PredictedPTS": 9.9
+    },
+    {
+      "Player": "OMORUYI, EUGENE",
+      "Team": "BES",
+      "Opponent": "PAR",
+      "IsHome": false,
+      "GP": 12,
+      "AvgPIR": 9.2,
+      "MaxPIR": 23.0,
+      "AvgPTS": 9.4,
+      "FormFactor": 1.05,
+      "DefFactor": 0.942,
+      "WinProb": 39.0,
+      "PredictedPIR": 10.5,
+      "PredictedPTS": 9.2
     },
     {
       "Player": "PETRUSEV, FILIP",
@@ -1355,7 +1370,7 @@
       "MaxPIR": 26.0,
       "AvgPTS": 7.6,
       "FormFactor": 1.072,
-      "DefFactor": 1.037,
+      "DefFactor": 1.038,
       "WinProb": 69.3,
       "PredictedPIR": 10.3,
       "PredictedPTS": 8.7
@@ -1370,10 +1385,10 @@
       "MaxPIR": 18.0,
       "AvgPTS": 9.0,
       "FormFactor": 1.098,
-      "DefFactor": 1.088,
+      "DefFactor": 1.089,
       "WinProb": 24.9,
       "PredictedPIR": 10.2,
-      "PredictedPTS": 10.3
+      "PredictedPTS": 10.4
     },
     {
       "Player": "GRIGONIS, MARIUS",
@@ -1385,25 +1400,10 @@
       "MaxPIR": 17.0,
       "AvgPTS": 8.8,
       "FormFactor": 1.034,
-      "DefFactor": 0.923,
+      "DefFactor": 0.924,
       "WinProb": 58.5,
       "PredictedPIR": 10.1,
       "PredictedPTS": 8.5
-    },
-    {
-      "Player": "TANASKOVIC, NIKOLA",
-      "Team": "PAR",
-      "Opponent": "BES",
-      "IsHome": true,
-      "GP": 12,
-      "AvgPIR": 9.1,
-      "MaxPIR": 19.0,
-      "AvgPTS": 7.8,
-      "FormFactor": 1.129,
-      "DefFactor": 1.056,
-      "WinProb": 69.1,
-      "PredictedPIR": 10.0,
-      "PredictedPTS": 9.6
     },
     {
       "Player": "NEBO, JOSH",
@@ -1419,6 +1419,21 @@
       "WinProb": 66.6,
       "PredictedPIR": 9.8,
       "PredictedPTS": 7.6
+    },
+    {
+      "Player": "TANASKOVIC, NIKOLA",
+      "Team": "PAR",
+      "Opponent": "BES",
+      "IsHome": true,
+      "GP": 12,
+      "AvgPIR": 9.1,
+      "MaxPIR": 19.0,
+      "AvgPTS": 7.8,
+      "FormFactor": 1.129,
+      "DefFactor": 1.046,
+      "WinProb": 61.0,
+      "PredictedPIR": 9.8,
+      "PredictedPTS": 9.4
     },
     {
       "Player": "LUNDBERG, IFFE",
@@ -1448,7 +1463,7 @@
       "DefFactor": 0.925,
       "WinProb": 28.3,
       "PredictedPIR": 9.7,
-      "PredictedPTS": 8.9
+      "PredictedPTS": 9.0
     },
     {
       "Player": "WATERS, TREMONT",
@@ -1475,10 +1490,25 @@
       "MaxPIR": 22.0,
       "AvgPTS": 10.8,
       "FormFactor": 0.956,
-      "DefFactor": 0.966,
+      "DefFactor": 0.967,
       "WinProb": 41.5,
       "PredictedPIR": 9.6,
       "PredictedPTS": 9.9
+    },
+    {
+      "Player": "WARD, TYSON",
+      "Team": "OLY",
+      "Opponent": "MAD",
+      "IsHome": true,
+      "GP": 12,
+      "AvgPIR": 9.2,
+      "MaxPIR": 17.0,
+      "AvgPTS": 8.2,
+      "FormFactor": 1.034,
+      "DefFactor": 0.994,
+      "WinProb": 66.6,
+      "PredictedPIR": 9.5,
+      "PredictedPTS": 8.6
     },
     {
       "Player": "SAKO, NEAL",
@@ -1490,8 +1520,8 @@
       "MaxPIR": 16.0,
       "AvgPTS": 6.2,
       "FormFactor": 1.086,
-      "DefFactor": 1.029,
-      "WinProb": 91.7,
+      "DefFactor": 1.03,
+      "WinProb": 91.0,
       "PredictedPIR": 9.5,
       "PredictedPTS": 7.4
     },
@@ -1509,21 +1539,6 @@
       "WinProb": 66.6,
       "PredictedPIR": 9.4,
       "PredictedPTS": 8.8
-    },
-    {
-      "Player": "WARD, TYSON",
-      "Team": "OLY",
-      "Opponent": "MAD",
-      "IsHome": true,
-      "GP": 12,
-      "AvgPIR": 9.2,
-      "MaxPIR": 17.0,
-      "AvgPTS": 8.2,
-      "FormFactor": 1.034,
-      "DefFactor": 0.995,
-      "WinProb": 59.7,
-      "PredictedPIR": 9.4,
-      "PredictedPTS": 8.5
     },
     {
       "Player": "GIBSON, UMOJA",
@@ -1550,8 +1565,8 @@
       "MaxPIR": 14.0,
       "AvgPTS": 8.4,
       "FormFactor": 1.046,
-      "DefFactor": 1.029,
-      "WinProb": 91.7,
+      "DefFactor": 1.03,
+      "WinProb": 91.0,
       "PredictedPIR": 9.2,
       "PredictedPTS": 9.6
     },
@@ -1580,7 +1595,7 @@
       "MaxPIR": 20.0,
       "AvgPTS": 8.1,
       "FormFactor": 1.077,
-      "DefFactor": 1.052,
+      "DefFactor": 1.053,
       "WinProb": 75.1,
       "PredictedPIR": 9.1,
       "PredictedPTS": 9.5
@@ -1595,7 +1610,7 @@
       "MaxPIR": 16.0,
       "AvgPTS": 4.7,
       "FormFactor": 1.026,
-      "DefFactor": 1.069,
+      "DefFactor": 1.07,
       "WinProb": 52.6,
       "PredictedPIR": 9.0,
       "PredictedPTS": 5.2
@@ -1610,7 +1625,7 @@
       "MaxPIR": 16.0,
       "AvgPTS": 8.0,
       "FormFactor": 1.094,
-      "DefFactor": 1.052,
+      "DefFactor": 1.053,
       "WinProb": 75.1,
       "PredictedPIR": 9.0,
       "PredictedPTS": 9.6
@@ -1670,7 +1685,7 @@
       "MaxPIR": 12.0,
       "AvgPTS": 5.3,
       "FormFactor": 1.168,
-      "DefFactor": 0.966,
+      "DefFactor": 0.967,
       "WinProb": 41.5,
       "PredictedPIR": 8.9,
       "PredictedPTS": 5.9
@@ -1700,7 +1715,7 @@
       "MaxPIR": 33.0,
       "AvgPTS": 10.2,
       "FormFactor": 0.855,
-      "DefFactor": 1.069,
+      "DefFactor": 1.07,
       "WinProb": 52.6,
       "PredictedPIR": 8.7,
       "PredictedPTS": 9.4
@@ -1761,24 +1776,24 @@
       "AvgPTS": 5.8,
       "FormFactor": 1.052,
       "DefFactor": 0.992,
-      "WinProb": 8.3,
+      "WinProb": 9.0,
       "PredictedPIR": 8.5,
       "PredictedPTS": 5.6
     },
     {
-      "Player": "JANTUNEN, MIKAEL",
-      "Team": "MAD",
-      "Opponent": "OLY",
+      "Player": "GABRIEL, WENYEN",
+      "Team": "BES",
+      "Opponent": "PAR",
       "IsHome": false,
-      "GP": 9,
-      "AvgPIR": 7.4,
-      "MaxPIR": 14.0,
-      "AvgPTS": 6.3,
-      "FormFactor": 1.03,
-      "DefFactor": 0.938,
-      "WinProb": 40.3,
+      "GP": 12,
+      "AvgPIR": 7.6,
+      "MaxPIR": 18.0,
+      "AvgPTS": 8.1,
+      "FormFactor": 1.23,
+      "DefFactor": 0.942,
+      "WinProb": 39.0,
       "PredictedPIR": 8.4,
-      "PredictedPTS": 6.0
+      "PredictedPTS": 9.2
     },
     {
       "Player": "HERRERA, SEBASTIAN",
@@ -1790,7 +1805,7 @@
       "MaxPIR": 15.0,
       "AvgPTS": 9.7,
       "FormFactor": 1.087,
-      "DefFactor": 0.975,
+      "DefFactor": 0.976,
       "WinProb": 47.4,
       "PredictedPIR": 8.3,
       "PredictedPTS": 10.2
@@ -1805,10 +1820,25 @@
       "MaxPIR": 26.0,
       "AvgPTS": 10.4,
       "FormFactor": 1.165,
-      "DefFactor": 0.996,
+      "DefFactor": 0.997,
       "WinProb": 33.4,
       "PredictedPIR": 8.3,
       "PredictedPTS": 11.8
+    },
+    {
+      "Player": "JANTUNEN, MIKAEL",
+      "Team": "MAD",
+      "Opponent": "OLY",
+      "IsHome": false,
+      "GP": 9,
+      "AvgPIR": 7.4,
+      "MaxPIR": 14.0,
+      "AvgPTS": 6.3,
+      "FormFactor": 1.03,
+      "DefFactor": 0.939,
+      "WinProb": 33.4,
+      "PredictedPIR": 8.3,
+      "PredictedPTS": 6.0
     },
     {
       "Player": "ALSTON JR. , DERRICK",
@@ -1821,7 +1851,7 @@
       "AvgPTS": 11.9,
       "FormFactor": 1.01,
       "DefFactor": 0.992,
-      "WinProb": 8.3,
+      "WinProb": 9.0,
       "PredictedPIR": 8.3,
       "PredictedPTS": 11.2
     },
@@ -1835,25 +1865,10 @@
       "MaxPIR": 18.0,
       "AvgPTS": 3.0,
       "FormFactor": 0.917,
-      "DefFactor": 0.995,
-      "WinProb": 59.7,
+      "DefFactor": 0.994,
+      "WinProb": 66.6,
       "PredictedPIR": 8.2,
       "PredictedPTS": 2.8
-    },
-    {
-      "Player": "PAJOLA, ALESSANDRO",
-      "Team": "PAR",
-      "Opponent": "BES",
-      "IsHome": true,
-      "GP": 12,
-      "AvgPIR": 6.8,
-      "MaxPIR": 14.0,
-      "AvgPTS": 4.4,
-      "FormFactor": 1.002,
-      "DefFactor": 1.056,
-      "WinProb": 69.1,
-      "PredictedPIR": 8.2,
-      "PredictedPTS": 4.8
     },
     {
       "Player": "BLAKENEY, ANTONIO",
@@ -1865,7 +1880,7 @@
       "MaxPIR": 35.0,
       "AvgPTS": 12.8,
       "FormFactor": 0.929,
-      "DefFactor": 1.069,
+      "DefFactor": 1.07,
       "WinProb": 52.6,
       "PredictedPIR": 8.1,
       "PredictedPTS": 12.7
@@ -1880,25 +1895,10 @@
       "MaxPIR": 27.0,
       "AvgPTS": 13.8,
       "FormFactor": 0.893,
-      "DefFactor": 0.966,
+      "DefFactor": 0.967,
       "WinProb": 41.5,
       "PredictedPIR": 8.1,
       "PredictedPTS": 11.7
-    },
-    {
-      "Player": "ABALDE, ALBERTO",
-      "Team": "MAD",
-      "Opponent": "OLY",
-      "IsHome": false,
-      "GP": 11,
-      "AvgPIR": 8.2,
-      "MaxPIR": 23.0,
-      "AvgPTS": 7.9,
-      "FormFactor": 1.191,
-      "DefFactor": 0.938,
-      "WinProb": 40.3,
-      "PredictedPIR": 8.1,
-      "PredictedPTS": 8.7
     },
     {
       "Player": "BLOSSOMGAME, JARON",
@@ -1910,7 +1910,7 @@
       "MaxPIR": 16.0,
       "AvgPTS": 6.1,
       "FormFactor": 0.934,
-      "DefFactor": 1.037,
+      "DefFactor": 1.038,
       "WinProb": 69.3,
       "PredictedPIR": 8.0,
       "PredictedPTS": 6.1
@@ -1931,19 +1931,19 @@
       "PredictedPTS": 6.9
     },
     {
-      "Player": "OKEKE, CHUMA",
-      "Team": "MAD",
-      "Opponent": "OLY",
-      "IsHome": false,
-      "GP": 10,
-      "AvgPIR": 9.2,
-      "MaxPIR": 20.0,
-      "AvgPTS": 7.1,
-      "FormFactor": 0.98,
-      "DefFactor": 0.938,
-      "WinProb": 40.3,
-      "PredictedPIR": 7.8,
-      "PredictedPTS": 6.4
+      "Player": "PAJOLA, ALESSANDRO",
+      "Team": "PAR",
+      "Opponent": "BES",
+      "IsHome": true,
+      "GP": 12,
+      "AvgPIR": 6.8,
+      "MaxPIR": 14.0,
+      "AvgPTS": 4.4,
+      "FormFactor": 1.002,
+      "DefFactor": 1.046,
+      "WinProb": 61.0,
+      "PredictedPIR": 8.0,
+      "PredictedPTS": 4.7
     },
     {
       "Player": "WASHINGTON, DUANE",
@@ -1955,10 +1955,25 @@
       "MaxPIR": 25.0,
       "AvgPTS": 16.2,
       "FormFactor": 0.958,
-      "DefFactor": 1.052,
+      "DefFactor": 1.053,
       "WinProb": 75.1,
       "PredictedPIR": 7.8,
-      "PredictedPTS": 16.9
+      "PredictedPTS": 17.0
+    },
+    {
+      "Player": "ABALDE, ALBERTO",
+      "Team": "MAD",
+      "Opponent": "OLY",
+      "IsHome": false,
+      "GP": 12,
+      "AvgPIR": 8.2,
+      "MaxPIR": 23.0,
+      "AvgPTS": 7.8,
+      "FormFactor": 1.119,
+      "DefFactor": 0.939,
+      "WinProb": 33.4,
+      "PredictedPIR": 7.6,
+      "PredictedPTS": 8.0
     },
     {
       "Player": "SORKIN, ROMAN",
@@ -1986,7 +2001,7 @@
       "AvgPTS": 11.8,
       "FormFactor": 0.894,
       "DefFactor": 0.992,
-      "WinProb": 8.3,
+      "WinProb": 9.0,
       "PredictedPIR": 7.6,
       "PredictedPTS": 9.8
     },
@@ -2001,7 +2016,7 @@
       "AvgPTS": 6.3,
       "FormFactor": 0.977,
       "DefFactor": 0.992,
-      "WinProb": 8.3,
+      "WinProb": 9.0,
       "PredictedPIR": 7.6,
       "PredictedPTS": 5.7
     },
@@ -2018,7 +2033,7 @@
       "DefFactor": 1.029,
       "WinProb": 71.7,
       "PredictedPIR": 7.6,
-      "PredictedPTS": 8.9
+      "PredictedPTS": 9.0
     },
     {
       "Player": "BOLOMBOY, JOEL",
@@ -2036,19 +2051,19 @@
       "PredictedPTS": 6.1
     },
     {
-      "Player": "BROWN, ANTHONY",
-      "Team": "BES",
-      "Opponent": "PAR",
-      "IsHome": false,
+      "Player": "JOSEPH, CORY",
+      "Team": "OLY",
+      "Opponent": "MAD",
+      "IsHome": true,
       "GP": 11,
-      "AvgPIR": 8.1,
-      "MaxPIR": 24.0,
-      "AvgPTS": 8.3,
-      "FormFactor": 0.945,
-      "DefFactor": 0.942,
-      "WinProb": 30.9,
+      "AvgPIR": 4.6,
+      "MaxPIR": 14.0,
+      "AvgPTS": 5.5,
+      "FormFactor": 1.308,
+      "DefFactor": 0.994,
+      "WinProb": 66.6,
       "PredictedPIR": 7.5,
-      "PredictedPTS": 7.1
+      "PredictedPTS": 7.4
     },
     {
       "Player": "OJELEYE, SEMI",
@@ -2060,25 +2075,10 @@
       "MaxPIR": 18.0,
       "AvgPTS": 8.4,
       "FormFactor": 0.812,
-      "DefFactor": 0.996,
+      "DefFactor": 0.997,
       "WinProb": 33.4,
       "PredictedPIR": 7.4,
       "PredictedPTS": 6.6
-    },
-    {
-      "Player": "JOSEPH, CORY",
-      "Team": "OLY",
-      "Opponent": "MAD",
-      "IsHome": true,
-      "GP": 11,
-      "AvgPIR": 4.6,
-      "MaxPIR": 14.0,
-      "AvgPTS": 5.5,
-      "FormFactor": 1.308,
-      "DefFactor": 0.995,
-      "WinProb": 59.7,
-      "PredictedPIR": 7.4,
-      "PredictedPTS": 7.3
     },
     {
       "Player": "FRAZIER, TRENT",
@@ -2091,7 +2091,7 @@
       "AvgPTS": 9.2,
       "FormFactor": 1.138,
       "DefFactor": 0.992,
-      "WinProb": 8.3,
+      "WinProb": 9.0,
       "PredictedPIR": 7.4,
       "PredictedPTS": 9.7
     },
@@ -2126,21 +2126,6 @@
       "PredictedPTS": 3.4
     },
     {
-      "Player": "GABRIEL, WENYEN",
-      "Team": "BES",
-      "Opponent": "PAR",
-      "IsHome": false,
-      "GP": 11,
-      "AvgPIR": 6.9,
-      "MaxPIR": 18.0,
-      "AvgPTS": 7.8,
-      "FormFactor": 1.091,
-      "DefFactor": 0.942,
-      "WinProb": 30.9,
-      "PredictedPIR": 7.3,
-      "PredictedPTS": 7.8
-    },
-    {
       "Player": "MASSA, BODIAN",
       "Team": "ASV",
       "Opponent": "IST",
@@ -2165,7 +2150,7 @@
       "MaxPIR": 15.0,
       "AvgPTS": 4.8,
       "FormFactor": 1.014,
-      "DefFactor": 1.088,
+      "DefFactor": 1.089,
       "WinProb": 24.9,
       "PredictedPIR": 7.2,
       "PredictedPTS": 5.1
@@ -2186,6 +2171,21 @@
       "PredictedPTS": 4.7
     },
     {
+      "Player": "BROWN, ANTHONY",
+      "Team": "BES",
+      "Opponent": "PAR",
+      "IsHome": false,
+      "GP": 12,
+      "AvgPIR": 7.3,
+      "MaxPIR": 24.0,
+      "AvgPTS": 7.6,
+      "FormFactor": 0.88,
+      "DefFactor": 0.942,
+      "WinProb": 39.0,
+      "PredictedPIR": 7.1,
+      "PredictedPTS": 6.2
+    },
+    {
       "Player": "YABUSELE, GUERSCHON",
       "Team": "PAN",
       "Opponent": "ZAL",
@@ -2195,25 +2195,10 @@
       "MaxPIR": 16.0,
       "AvgPTS": 8.3,
       "FormFactor": 0.915,
-      "DefFactor": 0.966,
+      "DefFactor": 0.967,
       "WinProb": 41.5,
       "PredictedPIR": 7.0,
       "PredictedPTS": 7.3
-    },
-    {
-      "Player": "ZIZIC, ANTE",
-      "Team": "BES",
-      "Opponent": "PAR",
-      "IsHome": false,
-      "GP": 11,
-      "AvgPIR": 9.9,
-      "MaxPIR": 28.0,
-      "AvgPTS": 6.4,
-      "FormFactor": 0.754,
-      "DefFactor": 0.942,
-      "WinProb": 30.9,
-      "PredictedPIR": 7.0,
-      "PredictedPTS": 4.4
     },
     {
       "Player": "CORBALAN, GONZALO",
@@ -2225,10 +2210,25 @@
       "MaxPIR": 21.0,
       "AvgPTS": 4.5,
       "FormFactor": 0.955,
-      "DefFactor": 1.029,
-      "WinProb": 91.7,
+      "DefFactor": 1.03,
+      "WinProb": 91.0,
       "PredictedPIR": 6.9,
       "PredictedPTS": 4.7
+    },
+    {
+      "Player": "ZIZIC, ANTE",
+      "Team": "BES",
+      "Opponent": "PAR",
+      "IsHome": false,
+      "GP": 12,
+      "AvgPIR": 9.4,
+      "MaxPIR": 28.0,
+      "AvgPTS": 6.2,
+      "FormFactor": 0.732,
+      "DefFactor": 0.942,
+      "WinProb": 39.0,
+      "PredictedPIR": 6.9,
+      "PredictedPTS": 4.2
     },
     {
       "Player": "BOOKER, DEVIN",
@@ -2255,10 +2255,25 @@
       "MaxPIR": 27.0,
       "AvgPTS": 13.9,
       "FormFactor": 0.797,
-      "DefFactor": 0.975,
+      "DefFactor": 0.976,
       "WinProb": 47.4,
       "PredictedPIR": 6.6,
       "PredictedPTS": 10.8
+    },
+    {
+      "Player": "OKEKE, CHUMA",
+      "Team": "MAD",
+      "Opponent": "OLY",
+      "IsHome": false,
+      "GP": 11,
+      "AvgPIR": 8.5,
+      "MaxPIR": 20.0,
+      "AvgPTS": 6.5,
+      "FormFactor": 0.946,
+      "DefFactor": 0.939,
+      "WinProb": 33.4,
+      "PredictedPIR": 6.5,
+      "PredictedPTS": 5.7
     },
     {
       "Player": "LAWSON, A.J.",
@@ -2270,7 +2285,7 @@
       "MaxPIR": 20.0,
       "AvgPTS": 11.2,
       "FormFactor": 0.985,
-      "DefFactor": 1.088,
+      "DefFactor": 1.089,
       "WinProb": 24.9,
       "PredictedPIR": 6.5,
       "PredictedPTS": 11.6
@@ -2285,10 +2300,25 @@
       "MaxPIR": 13.0,
       "AvgPTS": 4.1,
       "FormFactor": 1.036,
-      "DefFactor": 0.923,
+      "DefFactor": 0.924,
       "WinProb": 58.5,
       "PredictedPIR": 6.4,
       "PredictedPTS": 4.0
+    },
+    {
+      "Player": "MORGAN, CONOR",
+      "Team": "BES",
+      "Opponent": "PAR",
+      "IsHome": false,
+      "GP": 12,
+      "AvgPIR": 7.8,
+      "MaxPIR": 15.0,
+      "AvgPTS": 7.2,
+      "FormFactor": 1.037,
+      "DefFactor": 0.942,
+      "WinProb": 39.0,
+      "PredictedPIR": 6.4,
+      "PredictedPTS": 7.0
     },
     {
       "Player": "YUSTA, SANTI",
@@ -2300,10 +2330,25 @@
       "MaxPIR": 14.0,
       "AvgPTS": 4.9,
       "FormFactor": 1.196,
-      "DefFactor": 1.076,
+      "DefFactor": 1.077,
       "WinProb": 79.9,
       "PredictedPIR": 6.3,
       "PredictedPTS": 6.6
+    },
+    {
+      "Player": "JONES, DAMIAN",
+      "Team": "MAD",
+      "Opponent": "OLY",
+      "IsHome": false,
+      "GP": 12,
+      "AvgPIR": 6.5,
+      "MaxPIR": 20.0,
+      "AvgPTS": 6.8,
+      "FormFactor": 1.078,
+      "DefFactor": 0.939,
+      "WinProb": 33.4,
+      "PredictedPIR": 6.3,
+      "PredictedPTS": 6.7
     },
     {
       "Player": "BACOT JR., ARMANDO",
@@ -2390,25 +2435,10 @@
       "MaxPIR": 12.0,
       "AvgPTS": 4.6,
       "FormFactor": 0.967,
-      "DefFactor": 0.923,
+      "DefFactor": 0.924,
       "WinProb": 58.5,
       "PredictedPIR": 6.0,
       "PredictedPTS": 4.1
-    },
-    {
-      "Player": "JONES, DAMIAN",
-      "Team": "MAD",
-      "Opponent": "OLY",
-      "IsHome": false,
-      "GP": 11,
-      "AvgPIR": 6.5,
-      "MaxPIR": 20.0,
-      "AvgPTS": 7.0,
-      "FormFactor": 1.025,
-      "DefFactor": 0.938,
-      "WinProb": 40.3,
-      "PredictedPIR": 6.0,
-      "PredictedPTS": 6.6
     },
     {
       "Player": "PUERTO, JOSEP",
@@ -2420,8 +2450,8 @@
       "MaxPIR": 13.0,
       "AvgPTS": 6.3,
       "FormFactor": 0.828,
-      "DefFactor": 1.029,
-      "WinProb": 91.7,
+      "DefFactor": 1.03,
+      "WinProb": 91.0,
       "PredictedPIR": 5.9,
       "PredictedPTS": 5.7
     },
@@ -2435,7 +2465,7 @@
       "MaxPIR": 28.0,
       "AvgPTS": 6.8,
       "FormFactor": 1.075,
-      "DefFactor": 1.052,
+      "DefFactor": 1.053,
       "WinProb": 75.1,
       "PredictedPIR": 5.9,
       "PredictedPTS": 8.0
@@ -2450,10 +2480,25 @@
       "MaxPIR": 15.0,
       "AvgPTS": 5.9,
       "FormFactor": 0.949,
-      "DefFactor": 0.923,
+      "DefFactor": 0.924,
       "WinProb": 58.5,
       "PredictedPIR": 5.8,
       "PredictedPTS": 5.2
+    },
+    {
+      "Player": "SMITH JR, NICK",
+      "Team": "MAD",
+      "Opponent": "OLY",
+      "IsHome": false,
+      "GP": 9,
+      "AvgPIR": 5.4,
+      "MaxPIR": 13.0,
+      "AvgPTS": 8.2,
+      "FormFactor": 0.998,
+      "DefFactor": 0.939,
+      "WinProb": 33.4,
+      "PredictedPIR": 5.8,
+      "PredictedPTS": 7.5
     },
     {
       "Player": "OSETKOWSKI, DYLAN",
@@ -2465,25 +2510,10 @@
       "MaxPIR": 20.0,
       "AvgPTS": 6.3,
       "FormFactor": 0.844,
-      "DefFactor": 1.029,
-      "WinProb": 91.7,
+      "DefFactor": 1.03,
+      "WinProb": 91.0,
       "PredictedPIR": 5.8,
       "PredictedPTS": 5.8
-    },
-    {
-      "Player": "MORGAN, CONOR",
-      "Team": "BES",
-      "Opponent": "PAR",
-      "IsHome": false,
-      "GP": 11,
-      "AvgPIR": 7.6,
-      "MaxPIR": 15.0,
-      "AvgPTS": 7.5,
-      "FormFactor": 0.959,
-      "DefFactor": 0.942,
-      "WinProb": 30.9,
-      "PredictedPIR": 5.8,
-      "PredictedPTS": 6.5
     },
     {
       "Player": "WAINRIGHT, ISH",
@@ -2495,7 +2525,7 @@
       "MaxPIR": 14.0,
       "AvgPTS": 4.1,
       "FormFactor": 0.991,
-      "DefFactor": 1.069,
+      "DefFactor": 1.07,
       "WinProb": 52.6,
       "PredictedPIR": 5.7,
       "PredictedPTS": 4.3
@@ -2510,10 +2540,10 @@
       "MaxPIR": 29.0,
       "AvgPTS": 8.4,
       "FormFactor": 0.905,
-      "DefFactor": 0.995,
-      "WinProb": 59.7,
+      "DefFactor": 0.994,
+      "WinProb": 66.6,
       "PredictedPIR": 5.7,
-      "PredictedPTS": 7.7
+      "PredictedPTS": 7.8
     },
     {
       "Player": "EDWARDS, KESSLER",
@@ -2526,9 +2556,39 @@
       "AvgPTS": 3.6,
       "FormFactor": 0.943,
       "DefFactor": 0.992,
-      "WinProb": 8.3,
+      "WinProb": 9.0,
       "PredictedPIR": 5.7,
       "PredictedPTS": 3.1
+    },
+    {
+      "Player": "DEJULIUS, DAVID",
+      "Team": "BES",
+      "Opponent": "PAR",
+      "IsHome": false,
+      "GP": 12,
+      "AvgPIR": 4.6,
+      "MaxPIR": 17.0,
+      "AvgPTS": 4.8,
+      "FormFactor": 1.368,
+      "DefFactor": 0.942,
+      "WinProb": 39.0,
+      "PredictedPIR": 5.7,
+      "PredictedPTS": 6.1
+    },
+    {
+      "Player": "NOWELL, JAYLEN",
+      "Team": "BES",
+      "Opponent": "PAR",
+      "IsHome": false,
+      "GP": 10,
+      "AvgPIR": 7.8,
+      "MaxPIR": 23.0,
+      "AvgPTS": 11.3,
+      "FormFactor": 1.062,
+      "DefFactor": 0.942,
+      "WinProb": 39.0,
+      "PredictedPIR": 5.7,
+      "PredictedPTS": 11.1
     },
     {
       "Player": "KOKILA, KEVIN",
@@ -2541,7 +2601,7 @@
       "AvgPTS": 4.4,
       "FormFactor": 1.092,
       "DefFactor": 0.992,
-      "WinProb": 8.3,
+      "WinProb": 9.0,
       "PredictedPIR": 5.6,
       "PredictedPTS": 4.5
     },
@@ -2561,21 +2621,6 @@
       "PredictedPTS": 5.0
     },
     {
-      "Player": "NOWELL, JAYLEN",
-      "Team": "BES",
-      "Opponent": "PAR",
-      "IsHome": false,
-      "GP": 10,
-      "AvgPIR": 7.8,
-      "MaxPIR": 23.0,
-      "AvgPTS": 11.3,
-      "FormFactor": 1.062,
-      "DefFactor": 0.942,
-      "WinProb": 30.9,
-      "PredictedPIR": 5.6,
-      "PredictedPTS": 11.0
-    },
-    {
       "Player": "AYAYI, JOEL",
       "Team": "PRS",
       "Opponent": "HTA",
@@ -2585,7 +2630,7 @@
       "MaxPIR": 9.0,
       "AvgPTS": 4.6,
       "FormFactor": 0.988,
-      "DefFactor": 0.975,
+      "DefFactor": 0.976,
       "WinProb": 47.4,
       "PredictedPIR": 5.5,
       "PredictedPTS": 4.4
@@ -2600,7 +2645,7 @@
       "MaxPIR": 14.0,
       "AvgPTS": 4.3,
       "FormFactor": 1.002,
-      "DefFactor": 0.996,
+      "DefFactor": 0.997,
       "WinProb": 33.4,
       "PredictedPIR": 5.5,
       "PredictedPTS": 4.2
@@ -2630,7 +2675,7 @@
       "MaxPIR": 14.0,
       "AvgPTS": 2.9,
       "FormFactor": 0.859,
-      "DefFactor": 1.076,
+      "DefFactor": 1.077,
       "WinProb": 79.9,
       "PredictedPIR": 5.5,
       "PredictedPTS": 2.8
@@ -2660,10 +2705,25 @@
       "MaxPIR": 31.0,
       "AvgPTS": 9.6,
       "FormFactor": 0.93,
-      "DefFactor": 0.996,
+      "DefFactor": 0.997,
       "WinProb": 33.4,
       "PredictedPIR": 5.4,
       "PredictedPTS": 8.7
+    },
+    {
+      "Player": "HALL, DONTA",
+      "Team": "OLY",
+      "Opponent": "MAD",
+      "IsHome": true,
+      "GP": 11,
+      "AvgPIR": 7.2,
+      "MaxPIR": 23.0,
+      "AvgPTS": 3.8,
+      "FormFactor": 1.059,
+      "DefFactor": 0.994,
+      "WinProb": 66.6,
+      "PredictedPIR": 5.4,
+      "PredictedPTS": 4.1
     },
     {
       "Player": "JONES, TYRIQUE",
@@ -2675,10 +2735,10 @@
       "MaxPIR": 22.0,
       "AvgPTS": 5.9,
       "FormFactor": 1.06,
-      "DefFactor": 0.995,
-      "WinProb": 59.7,
+      "DefFactor": 0.994,
+      "WinProb": 66.6,
       "PredictedPIR": 5.4,
-      "PredictedPTS": 6.3
+      "PredictedPTS": 6.4
     },
     {
       "Player": "HOLLATZ, JUSTUS",
@@ -2690,25 +2750,10 @@
       "MaxPIR": 9.0,
       "AvgPTS": 1.5,
       "FormFactor": 1.98,
-      "DefFactor": 1.052,
+      "DefFactor": 1.053,
       "WinProb": 75.1,
       "PredictedPIR": 5.4,
       "PredictedPTS": 3.2
-    },
-    {
-      "Player": "DEJULIUS, DAVID",
-      "Team": "BES",
-      "Opponent": "PAR",
-      "IsHome": false,
-      "GP": 11,
-      "AvgPIR": 4.7,
-      "MaxPIR": 17.0,
-      "AvgPTS": 4.8,
-      "FormFactor": 1.309,
-      "DefFactor": 0.942,
-      "WinProb": 30.9,
-      "PredictedPIR": 5.4,
-      "PredictedPTS": 5.8
     },
     {
       "Player": "COFFEY, AMIR",
@@ -2720,7 +2765,7 @@
       "MaxPIR": 18.0,
       "AvgPTS": 6.0,
       "FormFactor": 0.851,
-      "DefFactor": 1.069,
+      "DefFactor": 1.07,
       "WinProb": 52.6,
       "PredictedPIR": 5.3,
       "PredictedPTS": 5.5
@@ -2741,36 +2786,6 @@
       "PredictedPTS": 5.3
     },
     {
-      "Player": "HALL, DONTA",
-      "Team": "OLY",
-      "Opponent": "MAD",
-      "IsHome": true,
-      "GP": 11,
-      "AvgPIR": 7.2,
-      "MaxPIR": 23.0,
-      "AvgPTS": 3.8,
-      "FormFactor": 1.059,
-      "DefFactor": 0.995,
-      "WinProb": 59.7,
-      "PredictedPIR": 5.3,
-      "PredictedPTS": 4.1
-    },
-    {
-      "Player": "LUWAWU-CABARROT, TIMOTHE",
-      "Team": "MAD",
-      "Opponent": "OLY",
-      "IsHome": false,
-      "GP": 11,
-      "AvgPIR": 4.5,
-      "MaxPIR": 24.0,
-      "AvgPTS": 9.8,
-      "FormFactor": 1.32,
-      "DefFactor": 0.938,
-      "WinProb": 40.3,
-      "PredictedPIR": 5.3,
-      "PredictedPTS": 12.0
-    },
-    {
       "Player": "BERTANS, DAVIS",
       "Team": "DUB",
       "Opponent": "TEL",
@@ -2780,7 +2795,7 @@
       "MaxPIR": 13.0,
       "AvgPTS": 3.2,
       "FormFactor": 1.039,
-      "DefFactor": 1.037,
+      "DefFactor": 1.038,
       "WinProb": 69.3,
       "PredictedPIR": 5.3,
       "PredictedPTS": 3.6
@@ -2795,25 +2810,10 @@
       "MaxPIR": 21.0,
       "AvgPTS": 6.4,
       "FormFactor": 0.85,
-      "DefFactor": 1.052,
+      "DefFactor": 1.053,
       "WinProb": 75.1,
       "PredictedPIR": 5.3,
       "PredictedPTS": 5.9
-    },
-    {
-      "Player": "THOMPSON, ETHAN",
-      "Team": "PAR",
-      "Opponent": "BES",
-      "IsHome": true,
-      "GP": 11,
-      "AvgPIR": 7.0,
-      "MaxPIR": 21.0,
-      "AvgPTS": 8.3,
-      "FormFactor": 1.111,
-      "DefFactor": 1.056,
-      "WinProb": 69.1,
-      "PredictedPIR": 5.3,
-      "PredictedPTS": 10.0
     },
     {
       "Player": "JOHNSON, ALIZE",
@@ -2825,25 +2825,40 @@
       "MaxPIR": 21.0,
       "AvgPTS": 4.6,
       "FormFactor": 1.069,
-      "DefFactor": 0.975,
+      "DefFactor": 0.976,
       "WinProb": 47.4,
       "PredictedPIR": 5.2,
       "PredictedPTS": 4.8
     },
     {
-      "Player": "PRADILLA, JAIME",
-      "Team": "MAD",
-      "Opponent": "OLY",
-      "IsHome": false,
+      "Player": "THOMPSON, ETHAN",
+      "Team": "PAR",
+      "Opponent": "BES",
+      "IsHome": true,
       "GP": 11,
-      "AvgPIR": 6.8,
-      "MaxPIR": 15.0,
-      "AvgPTS": 4.7,
-      "FormFactor": 0.982,
-      "DefFactor": 0.938,
-      "WinProb": 40.3,
+      "AvgPIR": 7.0,
+      "MaxPIR": 21.0,
+      "AvgPTS": 8.3,
+      "FormFactor": 1.111,
+      "DefFactor": 1.046,
+      "WinProb": 61.0,
+      "PredictedPIR": 5.2,
+      "PredictedPTS": 9.8
+    },
+    {
+      "Player": "DORSEY, TYLER",
+      "Team": "OLY",
+      "Opponent": "MAD",
+      "IsHome": true,
+      "GP": 5,
+      "AvgPIR": 12.0,
+      "MaxPIR": 29.0,
+      "AvgPTS": 12.6,
+      "FormFactor": 1.0,
+      "DefFactor": 0.994,
+      "WinProb": 66.6,
       "PredictedPIR": 5.1,
-      "PredictedPTS": 4.3
+      "PredictedPTS": 12.8
     },
     {
       "Player": "GUDURIC, MARKO",
@@ -2870,40 +2885,25 @@
       "MaxPIR": 17.0,
       "AvgPTS": 5.5,
       "FormFactor": 1.002,
-      "DefFactor": 1.052,
+      "DefFactor": 1.053,
       "WinProb": 75.1,
       "PredictedPIR": 5.1,
       "PredictedPTS": 6.0
-    },
-    {
-      "Player": "DORSEY, TYLER",
-      "Team": "OLY",
-      "Opponent": "MAD",
-      "IsHome": true,
-      "GP": 5,
-      "AvgPIR": 12.0,
-      "MaxPIR": 29.0,
-      "AvgPTS": 12.6,
-      "FormFactor": 1.0,
-      "DefFactor": 0.995,
-      "WinProb": 59.7,
-      "PredictedPIR": 5.0,
-      "PredictedPTS": 12.7
     },
     {
       "Player": "KORKMAZ, FURKAN",
       "Team": "BES",
       "Opponent": "PAR",
       "IsHome": false,
-      "GP": 6,
-      "AvgPIR": 4.7,
+      "GP": 7,
+      "AvgPIR": 4.0,
       "MaxPIR": 11.0,
-      "AvgPTS": 4.5,
-      "FormFactor": 0.919,
+      "AvgPTS": 3.9,
+      "FormFactor": 0.91,
       "DefFactor": 0.942,
-      "WinProb": 30.9,
-      "PredictedPIR": 5.0,
-      "PredictedPTS": 3.8
+      "WinProb": 39.0,
+      "PredictedPIR": 5.1,
+      "PredictedPTS": 3.3
     },
     {
       "Player": "SLEVA, DUSTIN",
@@ -2915,10 +2915,25 @@
       "MaxPIR": 16.0,
       "AvgPTS": 6.2,
       "FormFactor": 1.0,
-      "DefFactor": 0.923,
+      "DefFactor": 0.924,
       "WinProb": 58.5,
       "PredictedPIR": 4.9,
       "PredictedPTS": 5.8
+    },
+    {
+      "Player": "PRADILLA, JAIME",
+      "Team": "MAD",
+      "Opponent": "OLY",
+      "IsHome": false,
+      "GP": 12,
+      "AvgPIR": 6.6,
+      "MaxPIR": 15.0,
+      "AvgPTS": 4.5,
+      "FormFactor": 0.983,
+      "DefFactor": 0.939,
+      "WinProb": 33.4,
+      "PredictedPIR": 4.9,
+      "PredictedPTS": 4.0
     },
     {
       "Player": "DIAKITE, MAMADI",
@@ -2930,7 +2945,7 @@
       "MaxPIR": 13.0,
       "AvgPTS": 4.9,
       "FormFactor": 0.758,
-      "DefFactor": 1.037,
+      "DefFactor": 1.038,
       "WinProb": 69.3,
       "PredictedPIR": 4.9,
       "PredictedPTS": 4.0
@@ -2975,7 +2990,7 @@
       "MaxPIR": 20.0,
       "AvgPTS": 11.4,
       "FormFactor": 0.987,
-      "DefFactor": 1.052,
+      "DefFactor": 1.053,
       "WinProb": 75.1,
       "PredictedPIR": 4.8,
       "PredictedPTS": 12.3
@@ -3005,7 +3020,7 @@
       "MaxPIR": 18.0,
       "AvgPTS": 6.8,
       "FormFactor": 0.958,
-      "DefFactor": 1.076,
+      "DefFactor": 1.077,
       "WinProb": 79.9,
       "PredictedPIR": 4.7,
       "PredictedPTS": 7.3
@@ -3036,7 +3051,7 @@
       "AvgPTS": 3.0,
       "FormFactor": 0.967,
       "DefFactor": 0.992,
-      "WinProb": 8.3,
+      "WinProb": 9.0,
       "PredictedPIR": 4.5,
       "PredictedPTS": 2.7
     },
@@ -3050,7 +3065,7 @@
       "MaxPIR": 17.0,
       "AvgPTS": 2.7,
       "FormFactor": 0.78,
-      "DefFactor": 1.052,
+      "DefFactor": 1.053,
       "WinProb": 75.1,
       "PredictedPIR": 4.5,
       "PredictedPTS": 2.3
@@ -3065,7 +3080,7 @@
       "MaxPIR": 12.0,
       "AvgPTS": 3.1,
       "FormFactor": 1.012,
-      "DefFactor": 0.996,
+      "DefFactor": 0.997,
       "WinProb": 33.4,
       "PredictedPIR": 4.4,
       "PredictedPTS": 3.1
@@ -3080,7 +3095,7 @@
       "MaxPIR": 12.0,
       "AvgPTS": 5.7,
       "FormFactor": 1.0,
-      "DefFactor": 0.996,
+      "DefFactor": 0.997,
       "WinProb": 33.4,
       "PredictedPIR": 4.3,
       "PredictedPTS": 5.5
@@ -3095,7 +3110,7 @@
       "MaxPIR": 14.0,
       "AvgPTS": 4.8,
       "FormFactor": 0.953,
-      "DefFactor": 0.966,
+      "DefFactor": 0.967,
       "WinProb": 41.5,
       "PredictedPIR": 4.3,
       "PredictedPTS": 4.3
@@ -3110,7 +3125,7 @@
       "MaxPIR": 12.0,
       "AvgPTS": 4.2,
       "FormFactor": 1.037,
-      "DefFactor": 1.088,
+      "DefFactor": 1.089,
       "WinProb": 24.9,
       "PredictedPIR": 4.3,
       "PredictedPTS": 4.6
@@ -3126,9 +3141,9 @@
       "AvgPTS": 6.2,
       "FormFactor": 1.143,
       "DefFactor": 0.992,
-      "WinProb": 8.3,
+      "WinProb": 9.0,
       "PredictedPIR": 4.1,
-      "PredictedPTS": 6.6
+      "PredictedPTS": 6.7
     },
     {
       "Player": "KEY, BRAXTON",
@@ -3143,7 +3158,7 @@
       "DefFactor": 1.029,
       "WinProb": 71.7,
       "PredictedPIR": 4.1,
-      "PredictedPTS": 6.9
+      "PredictedPTS": 7.0
     },
     {
       "Player": "SPAGNOLO, MATTEO",
@@ -3155,7 +3170,7 @@
       "MaxPIR": 18.0,
       "AvgPTS": 4.4,
       "FormFactor": 0.762,
-      "DefFactor": 1.088,
+      "DefFactor": 1.089,
       "WinProb": 24.9,
       "PredictedPIR": 4.1,
       "PredictedPTS": 3.5
@@ -3170,7 +3185,7 @@
       "MaxPIR": 12.0,
       "AvgPTS": 6.2,
       "FormFactor": 0.896,
-      "DefFactor": 1.088,
+      "DefFactor": 1.089,
       "WinProb": 24.9,
       "PredictedPIR": 4.1,
       "PredictedPTS": 5.8
@@ -3185,25 +3200,25 @@
       "MaxPIR": 15.0,
       "AvgPTS": 1.9,
       "FormFactor": 0.815,
-      "DefFactor": 0.966,
+      "DefFactor": 0.967,
       "WinProb": 41.5,
       "PredictedPIR": 3.9,
       "PredictedPTS": 1.5
     },
     {
-      "Player": "SMITH JR, NICK",
+      "Player": "LUWAWU-CABARROT, TIMOTHE",
       "Team": "MAD",
       "Opponent": "OLY",
       "IsHome": false,
-      "GP": 8,
-      "AvgPIR": 4.5,
-      "MaxPIR": 10.0,
-      "AvgPTS": 7.2,
-      "FormFactor": 0.887,
-      "DefFactor": 0.938,
-      "WinProb": 40.3,
+      "GP": 12,
+      "AvgPIR": 4.0,
+      "MaxPIR": 24.0,
+      "AvgPTS": 9.7,
+      "FormFactor": 1.18,
+      "DefFactor": 0.939,
+      "WinProb": 33.4,
       "PredictedPIR": 3.9,
-      "PredictedPTS": 5.9
+      "PredictedPTS": 10.4
     },
     {
       "Player": "MARTIN, TYRESE",
@@ -3230,7 +3245,7 @@
       "MaxPIR": 15.0,
       "AvgPTS": 6.2,
       "FormFactor": 0.939,
-      "DefFactor": 0.966,
+      "DefFactor": 0.967,
       "WinProb": 41.5,
       "PredictedPIR": 3.8,
       "PredictedPTS": 5.5
@@ -3245,10 +3260,10 @@
       "MaxPIR": 13.0,
       "AvgPTS": 3.2,
       "FormFactor": 0.883,
-      "DefFactor": 0.995,
-      "WinProb": 59.7,
+      "DefFactor": 0.994,
+      "WinProb": 66.6,
       "PredictedPIR": 3.8,
-      "PredictedPTS": 2.8
+      "PredictedPTS": 2.9
     },
     {
       "Player": "MINTZ, DAVION",
@@ -3260,7 +3275,7 @@
       "MaxPIR": 12.0,
       "AvgPTS": 2.3,
       "FormFactor": 1.111,
-      "DefFactor": 1.037,
+      "DefFactor": 1.038,
       "WinProb": 69.3,
       "PredictedPIR": 3.8,
       "PredictedPTS": 2.7
@@ -3290,8 +3305,8 @@
       "MaxPIR": 9.0,
       "AvgPTS": 3.4,
       "FormFactor": 0.993,
-      "DefFactor": 1.029,
-      "WinProb": 91.7,
+      "DefFactor": 1.03,
+      "WinProb": 91.0,
       "PredictedPIR": 3.7,
       "PredictedPTS": 3.7
     },
@@ -3305,7 +3320,7 @@
       "MaxPIR": 12.0,
       "AvgPTS": 2.2,
       "FormFactor": 1.098,
-      "DefFactor": 0.996,
+      "DefFactor": 0.997,
       "WinProb": 33.4,
       "PredictedPIR": 3.6,
       "PredictedPTS": 2.4
@@ -3335,7 +3350,7 @@
       "MaxPIR": 12.0,
       "AvgPTS": 4.4,
       "FormFactor": 0.92,
-      "DefFactor": 0.966,
+      "DefFactor": 0.967,
       "WinProb": 41.5,
       "PredictedPIR": 3.5,
       "PredictedPTS": 3.9
@@ -3350,7 +3365,7 @@
       "MaxPIR": 10.0,
       "AvgPTS": 3.0,
       "FormFactor": 1.091,
-      "DefFactor": 0.975,
+      "DefFactor": 0.976,
       "WinProb": 47.4,
       "PredictedPIR": 3.4,
       "PredictedPTS": 3.2
@@ -3365,7 +3380,7 @@
       "MaxPIR": 12.0,
       "AvgPTS": 2.6,
       "FormFactor": 0.931,
-      "DefFactor": 0.975,
+      "DefFactor": 0.976,
       "WinProb": 47.4,
       "PredictedPIR": 3.3,
       "PredictedPTS": 2.4
@@ -3395,7 +3410,7 @@
       "MaxPIR": 14.0,
       "AvgPTS": 3.4,
       "FormFactor": 0.863,
-      "DefFactor": 1.076,
+      "DefFactor": 1.077,
       "WinProb": 79.9,
       "PredictedPIR": 3.1,
       "PredictedPTS": 3.3
@@ -3410,7 +3425,7 @@
       "MaxPIR": 15.0,
       "AvgPTS": 5.1,
       "FormFactor": 0.808,
-      "DefFactor": 0.966,
+      "DefFactor": 0.967,
       "WinProb": 41.5,
       "PredictedPIR": 3.1,
       "PredictedPTS": 3.9
@@ -3425,7 +3440,7 @@
       "MaxPIR": 31.0,
       "AvgPTS": 10.2,
       "FormFactor": 0.905,
-      "DefFactor": 1.088,
+      "DefFactor": 1.089,
       "WinProb": 24.9,
       "PredictedPIR": 3.1,
       "PredictedPTS": 9.7
@@ -3440,7 +3455,7 @@
       "MaxPIR": 14.0,
       "AvgPTS": 2.5,
       "FormFactor": 0.736,
-      "DefFactor": 0.975,
+      "DefFactor": 0.976,
       "WinProb": 47.4,
       "PredictedPIR": 3.0,
       "PredictedPTS": 1.8
@@ -3470,7 +3485,7 @@
       "MaxPIR": 18.0,
       "AvgPTS": 6.5,
       "FormFactor": 1.16,
-      "DefFactor": 1.037,
+      "DefFactor": 1.038,
       "WinProb": 69.3,
       "PredictedPIR": 3.0,
       "PredictedPTS": 8.1
@@ -3485,7 +3500,7 @@
       "MaxPIR": 10.0,
       "AvgPTS": 1.8,
       "FormFactor": 1.24,
-      "DefFactor": 1.037,
+      "DefFactor": 1.038,
       "WinProb": 69.3,
       "PredictedPIR": 3.0,
       "PredictedPTS": 2.4
@@ -3500,7 +3515,7 @@
       "MaxPIR": 10.0,
       "AvgPTS": 3.5,
       "FormFactor": 0.752,
-      "DefFactor": 0.975,
+      "DefFactor": 0.976,
       "WinProb": 47.4,
       "PredictedPIR": 2.9,
       "PredictedPTS": 2.5
@@ -3530,10 +3545,10 @@
       "MaxPIR": 13.0,
       "AvgPTS": 4.6,
       "FormFactor": 1.0,
-      "DefFactor": 1.056,
-      "WinProb": 69.1,
-      "PredictedPIR": 2.9,
-      "PredictedPTS": 5.0
+      "DefFactor": 1.046,
+      "WinProb": 61.0,
+      "PredictedPIR": 2.8,
+      "PredictedPTS": 4.9
     },
     {
       "Player": "TOPPIN, JACOB",
@@ -3545,7 +3560,7 @@
       "MaxPIR": 14.0,
       "AvgPTS": 2.4,
       "FormFactor": 0.796,
-      "DefFactor": 1.069,
+      "DefFactor": 1.07,
       "WinProb": 52.6,
       "PredictedPIR": 2.6,
       "PredictedPTS": 2.0
@@ -3560,8 +3575,8 @@
       "MaxPIR": 12.0,
       "AvgPTS": 3.3,
       "FormFactor": 0.736,
-      "DefFactor": 1.029,
-      "WinProb": 91.7,
+      "DefFactor": 1.03,
+      "WinProb": 91.0,
       "PredictedPIR": 2.4,
       "PredictedPTS": 2.6
     },
@@ -3575,7 +3590,7 @@
       "MaxPIR": 9.0,
       "AvgPTS": 4.9,
       "FormFactor": 0.956,
-      "DefFactor": 0.996,
+      "DefFactor": 0.997,
       "WinProb": 33.4,
       "PredictedPIR": 2.3,
       "PredictedPTS": 4.5
@@ -3605,7 +3620,7 @@
       "MaxPIR": 6.0,
       "AvgPTS": 3.0,
       "FormFactor": 1.0,
-      "DefFactor": 1.052,
+      "DefFactor": 1.053,
       "WinProb": 75.1,
       "PredictedPIR": 2.2,
       "PredictedPTS": 3.3
@@ -3620,10 +3635,10 @@
       "MaxPIR": 21.0,
       "AvgPTS": 6.6,
       "FormFactor": 0.901,
-      "DefFactor": 1.056,
-      "WinProb": 69.1,
+      "DefFactor": 1.046,
+      "WinProb": 61.0,
       "PredictedPIR": 2.1,
-      "PredictedPTS": 6.4
+      "PredictedPTS": 6.3
     },
     {
       "Player": "AKOBUNDU-EHIOGU, KAODIRICHI",
@@ -3635,7 +3650,7 @@
       "MaxPIR": 4.0,
       "AvgPTS": 1.2,
       "FormFactor": 1.0,
-      "DefFactor": 0.923,
+      "DefFactor": 0.924,
       "WinProb": 58.5,
       "PredictedPIR": 1.9,
       "PredictedPTS": 1.1
@@ -3650,7 +3665,7 @@
       "MaxPIR": 15.0,
       "AvgPTS": 4.0,
       "FormFactor": 1.131,
-      "DefFactor": 1.069,
+      "DefFactor": 1.07,
       "WinProb": 52.6,
       "PredictedPIR": 1.8,
       "PredictedPTS": 4.9
@@ -3665,8 +3680,8 @@
       "MaxPIR": 5.0,
       "AvgPTS": 0.3,
       "FormFactor": 1.06,
-      "DefFactor": 0.995,
-      "WinProb": 59.7,
+      "DefFactor": 0.994,
+      "WinProb": 66.6,
       "PredictedPIR": 1.8,
       "PredictedPTS": 0.4
     },
@@ -3680,7 +3695,7 @@
       "MaxPIR": 10.0,
       "AvgPTS": 7.7,
       "FormFactor": 1.099,
-      "DefFactor": 1.088,
+      "DefFactor": 1.089,
       "WinProb": 24.9,
       "PredictedPIR": 1.8,
       "PredictedPTS": 8.9
@@ -3695,8 +3710,8 @@
       "MaxPIR": 10.0,
       "AvgPTS": 3.2,
       "FormFactor": 1.142,
-      "DefFactor": 1.029,
-      "WinProb": 91.7,
+      "DefFactor": 1.03,
+      "WinProb": 91.0,
       "PredictedPIR": 1.7,
       "PredictedPTS": 4.0
     },
@@ -3710,25 +3725,10 @@
       "MaxPIR": 15.0,
       "AvgPTS": 4.4,
       "FormFactor": 1.158,
-      "DefFactor": 0.996,
+      "DefFactor": 0.997,
       "WinProb": 33.4,
       "PredictedPIR": 1.6,
       "PredictedPTS": 4.9
-    },
-    {
-      "Player": "PROCIDA, GABRIELE",
-      "Team": "MAD",
-      "Opponent": "OLY",
-      "IsHome": false,
-      "GP": 9,
-      "AvgPIR": 5.9,
-      "MaxPIR": 22.0,
-      "AvgPTS": 5.1,
-      "FormFactor": 1.148,
-      "DefFactor": 0.938,
-      "WinProb": 40.3,
-      "PredictedPIR": 1.6,
-      "PredictedPTS": 5.4
     },
     {
       "Player": "LEAF, TJ",
@@ -3755,8 +3755,8 @@
       "MaxPIR": 10.0,
       "AvgPTS": 4.1,
       "FormFactor": 0.7,
-      "DefFactor": 1.056,
-      "WinProb": 69.1,
+      "DefFactor": 1.046,
+      "WinProb": 61.0,
       "PredictedPIR": 1.5,
       "PredictedPTS": 3.1
     },
@@ -3765,15 +3765,15 @@
       "Team": "BES",
       "Opponent": "PAR",
       "IsHome": false,
-      "GP": 11,
-      "AvgPIR": 2.5,
+      "GP": 12,
+      "AvgPIR": 2.1,
       "MaxPIR": 11.0,
-      "AvgPTS": 2.7,
-      "FormFactor": 1.189,
+      "AvgPTS": 2.8,
+      "FormFactor": 1.046,
       "DefFactor": 0.942,
-      "WinProb": 30.9,
-      "PredictedPIR": 1.4,
-      "PredictedPTS": 3.0
+      "WinProb": 39.0,
+      "PredictedPIR": 1.3,
+      "PredictedPTS": 2.7
     },
     {
       "Player": "WALKUP, THOMAS",
@@ -3785,7 +3785,7 @@
       "MaxPIR": 10.0,
       "AvgPTS": 1.9,
       "FormFactor": 0.862,
-      "DefFactor": 1.037,
+      "DefFactor": 1.038,
       "WinProb": 69.3,
       "PredictedPIR": 1.2,
       "PredictedPTS": 1.7
@@ -3800,7 +3800,7 @@
       "MaxPIR": 2.0,
       "AvgPTS": 1.3,
       "FormFactor": 1.06,
-      "DefFactor": 1.052,
+      "DefFactor": 1.053,
       "WinProb": 75.1,
       "PredictedPIR": 1.2,
       "PredictedPTS": 1.5
@@ -3815,10 +3815,10 @@
       "MaxPIR": 3.0,
       "AvgPTS": 1.2,
       "FormFactor": 1.0,
-      "DefFactor": 1.076,
+      "DefFactor": 1.077,
       "WinProb": 79.9,
       "PredictedPIR": 1.1,
-      "PredictedPTS": 1.3
+      "PredictedPTS": 1.4
     },
     {
       "Player": "LO, MAODO",
@@ -3830,10 +3830,25 @@
       "MaxPIR": 7.0,
       "AvgPTS": 2.1,
       "FormFactor": 1.162,
-      "DefFactor": 0.923,
+      "DefFactor": 0.924,
       "WinProb": 58.5,
       "PredictedPIR": 1.1,
       "PredictedPTS": 2.3
+    },
+    {
+      "Player": "PROCIDA, GABRIELE",
+      "Team": "MAD",
+      "Opponent": "OLY",
+      "IsHome": false,
+      "GP": 10,
+      "AvgPIR": 5.2,
+      "MaxPIR": 22.0,
+      "AvgPTS": 4.6,
+      "FormFactor": 1.196,
+      "DefFactor": 0.939,
+      "WinProb": 33.4,
+      "PredictedPIR": 1.1,
+      "PredictedPTS": 5.0
     },
     {
       "Player": "RICCI, GIAMPAOLO",
@@ -3860,8 +3875,8 @@
       "MaxPIR": 6.0,
       "AvgPTS": 0.6,
       "FormFactor": 1.0,
-      "DefFactor": 0.995,
-      "WinProb": 59.7,
+      "DefFactor": 0.994,
+      "WinProb": 66.6,
       "PredictedPIR": 1.0,
       "PredictedPTS": 0.6
     },
@@ -3875,7 +3890,7 @@
       "MaxPIR": 12.0,
       "AvgPTS": 3.4,
       "FormFactor": 1.276,
-      "DefFactor": 1.069,
+      "DefFactor": 1.07,
       "WinProb": 52.6,
       "PredictedPIR": 0.9,
       "PredictedPTS": 4.7
@@ -3890,7 +3905,7 @@
       "MaxPIR": 19.0,
       "AvgPTS": 7.2,
       "FormFactor": 0.949,
-      "DefFactor": 0.966,
+      "DefFactor": 0.967,
       "WinProb": 41.5,
       "PredictedPIR": 0.9,
       "PredictedPTS": 6.5
@@ -3905,7 +3920,7 @@
       "MaxPIR": 3.0,
       "AvgPTS": 1.9,
       "FormFactor": 0.98,
-      "DefFactor": 0.923,
+      "DefFactor": 0.924,
       "WinProb": 58.5,
       "PredictedPIR": 0.9,
       "PredictedPTS": 1.7
@@ -3920,8 +3935,8 @@
       "MaxPIR": 6.0,
       "AvgPTS": 2.6,
       "FormFactor": 0.751,
-      "DefFactor": 1.056,
-      "WinProb": 69.1,
+      "DefFactor": 1.046,
+      "WinProb": 61.0,
       "PredictedPIR": 0.7,
       "PredictedPTS": 2.1
     },
@@ -3935,7 +3950,7 @@
       "MaxPIR": 12.0,
       "AvgPTS": 3.2,
       "FormFactor": 1.0,
-      "DefFactor": 0.996,
+      "DefFactor": 0.997,
       "WinProb": 33.4,
       "PredictedPIR": 0.5,
       "PredictedPTS": 3.1
@@ -3950,7 +3965,7 @@
       "MaxPIR": 5.0,
       "AvgPTS": 1.0,
       "FormFactor": 1.0,
-      "DefFactor": 1.037,
+      "DefFactor": 1.038,
       "WinProb": 69.3,
       "PredictedPIR": 0.5,
       "PredictedPTS": 1.1
@@ -3966,9 +3981,9 @@
       "AvgPTS": 2.9,
       "FormFactor": 1.167,
       "DefFactor": 0.992,
-      "WinProb": 8.3,
+      "WinProb": 9.0,
       "PredictedPIR": 0.5,
-      "PredictedPTS": 3.1
+      "PredictedPTS": 3.2
     },
     {
       "Player": "LAUVERGNE, JOFFREY",
@@ -3980,8 +3995,8 @@
       "MaxPIR": 4.0,
       "AvgPTS": 1.7,
       "FormFactor": 1.78,
-      "DefFactor": 1.056,
-      "WinProb": 69.1,
+      "DefFactor": 1.046,
+      "WinProb": 61.0,
       "PredictedPIR": 0.5,
       "PredictedPTS": 3.2
     },
@@ -3995,7 +4010,7 @@
       "MaxPIR": 6.0,
       "AvgPTS": 1.5,
       "FormFactor": 0.7,
-      "DefFactor": 1.076,
+      "DefFactor": 1.077,
       "WinProb": 79.9,
       "PredictedPIR": 0.4,
       "PredictedPTS": 1.2
@@ -4010,7 +4025,7 @@
       "MaxPIR": 10.0,
       "AvgPTS": 1.5,
       "FormFactor": 0.62,
-      "DefFactor": 0.966,
+      "DefFactor": 0.967,
       "WinProb": 41.5,
       "PredictedPIR": 0.2,
       "PredictedPTS": 0.9
@@ -4025,7 +4040,7 @@
       "MaxPIR": 14.0,
       "AvgPTS": 2.9,
       "FormFactor": 0.998,
-      "DefFactor": 0.975,
+      "DefFactor": 0.976,
       "WinProb": 47.4,
       "PredictedPIR": 0.0,
       "PredictedPTS": 2.8
@@ -4055,10 +4070,10 @@
       "MaxPIR": 7.0,
       "AvgPTS": 1.4,
       "FormFactor": 0.793,
-      "DefFactor": 0.995,
-      "WinProb": 59.7,
+      "DefFactor": 0.994,
+      "WinProb": 66.6,
       "PredictedPIR": 0.0,
-      "PredictedPTS": 1.1
+      "PredictedPTS": 1.2
     },
     {
       "Player": "TONUT, STEFANO",
@@ -4100,7 +4115,7 @@
       "MaxPIR": 0.0,
       "AvgPTS": 0.0,
       "FormFactor": 1.0,
-      "DefFactor": 1.088,
+      "DefFactor": 1.089,
       "WinProb": 24.9,
       "PredictedPIR": 0.0,
       "PredictedPTS": 0.0
@@ -4115,10 +4130,10 @@
       "MaxPIR": 5.0,
       "AvgPTS": 0.8,
       "FormFactor": 1.06,
-      "DefFactor": 1.056,
-      "WinProb": 69.1,
+      "DefFactor": 1.046,
+      "WinProb": 61.0,
       "PredictedPIR": 0.0,
-      "PredictedPTS": 1.0
+      "PredictedPTS": 0.9
     },
     {
       "Player": "NAKIC, MARIO",
@@ -4130,8 +4145,8 @@
       "MaxPIR": 6.0,
       "AvgPTS": 0.7,
       "FormFactor": 1.33,
-      "DefFactor": 1.056,
-      "WinProb": 69.1,
+      "DefFactor": 1.046,
+      "WinProb": 61.0,
       "PredictedPIR": 0.0,
       "PredictedPTS": 1.0
     },
@@ -4146,7 +4161,7 @@
       "AvgPTS": 0.6,
       "FormFactor": -0.26,
       "DefFactor": 0.992,
-      "WinProb": 8.3,
+      "WinProb": 9.0,
       "PredictedPIR": -0.1,
       "PredictedPTS": -0.2
     },
@@ -4160,7 +4175,7 @@
       "MaxPIR": 18.0,
       "AvgPTS": 9.0,
       "FormFactor": 0.941,
-      "DefFactor": 0.996,
+      "DefFactor": 0.997,
       "WinProb": 33.4,
       "PredictedPIR": -0.2,
       "PredictedPTS": 8.2
@@ -4190,7 +4205,7 @@
       "MaxPIR": 9.0,
       "AvgPTS": 0.2,
       "FormFactor": 1.3,
-      "DefFactor": 1.076,
+      "DefFactor": 1.077,
       "WinProb": 79.9,
       "PredictedPIR": -0.3,
       "PredictedPTS": 0.3
@@ -4206,7 +4221,7 @@
       "AvgPTS": 1.6,
       "FormFactor": 1.086,
       "DefFactor": 0.942,
-      "WinProb": 30.9,
+      "WinProb": 39.0,
       "PredictedPIR": -0.4,
       "PredictedPTS": 1.6
     },
@@ -4220,7 +4235,7 @@
       "MaxPIR": 18.0,
       "AvgPTS": 4.2,
       "FormFactor": 1.06,
-      "DefFactor": 0.966,
+      "DefFactor": 0.967,
       "WinProb": 41.5,
       "PredictedPIR": -0.5,
       "PredictedPTS": 4.2
@@ -4250,7 +4265,7 @@
       "MaxPIR": 0.0,
       "AvgPTS": 0.3,
       "FormFactor": 1.06,
-      "DefFactor": 0.923,
+      "DefFactor": 0.924,
       "WinProb": 58.5,
       "PredictedPIR": -0.7,
       "PredictedPTS": 0.3

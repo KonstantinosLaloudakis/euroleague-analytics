@@ -2,23 +2,19 @@
     {
         "Team": "MAD",
         "Rank": 1,
-        "Record": "7-4",
+        "Record": "7-5",
         "Wins": 7,
-        "Losses": 4,
-        "Adj_Off": 102.32,
-        "Adj_Def": 93.5,
-        "Adj_Net": 8.82,
-        "Raw_Net": 8.36,
-        "Remaining_SOS": 52.44,
-        "SOS_WinPct": 0.5244,
-        "Remaining_Games": 27,
+        "Losses": 5,
+        "Adj_Off": 99.76,
+        "Adj_Def": 92.57,
+        "Adj_Net": 7.19,
+        "Raw_Net": 7.33,
+        "Remaining_SOS": 53.46,
+        "SOS_WinPct": 0.5346,
+        "Remaining_Games": 26,
         "Home_Games": 14,
-        "Away_Games": 13,
+        "Away_Games": 12,
         "Remaining_Opponents": [
-            {
-                "team": "BES",
-                "loc": "away"
-            },
             {
                 "team": "OLY",
                 "loc": "away"
@@ -126,139 +122,17 @@
         ]
     },
     {
-        "Team": "ULK",
-        "Rank": 2,
-        "Record": "8-4",
-        "Wins": 8,
-        "Losses": 4,
-        "Adj_Off": 84.6,
-        "Adj_Def": 77.94,
-        "Adj_Net": 6.66,
-        "Raw_Net": 6.75,
-        "Remaining_SOS": 49.34,
-        "SOS_WinPct": 0.4934,
-        "Remaining_Games": 26,
-        "Home_Games": 12,
-        "Away_Games": 14,
-        "Remaining_Opponents": [
-            {
-                "team": "MIL",
-                "loc": "away"
-            },
-            {
-                "team": "BAR",
-                "loc": "away"
-            },
-            {
-                "team": "RED",
-                "loc": "home"
-            },
-            {
-                "team": "IST",
-                "loc": "home"
-            },
-            {
-                "team": "HTA",
-                "loc": "home"
-            },
-            {
-                "team": "TEL",
-                "loc": "home"
-            },
-            {
-                "team": "BES",
-                "loc": "away"
-            },
-            {
-                "team": "PAN",
-                "loc": "home"
-            },
-            {
-                "team": "IST",
-                "loc": "away"
-            },
-            {
-                "team": "DUB",
-                "loc": "away"
-            },
-            {
-                "team": "PAR",
-                "loc": "away"
-            },
-            {
-                "team": "BES",
-                "loc": "home"
-            },
-            {
-                "team": "MAD",
-                "loc": "home"
-            },
-            {
-                "team": "BAS",
-                "loc": "away"
-            },
-            {
-                "team": "ASV",
-                "loc": "away"
-            },
-            {
-                "team": "MIL",
-                "loc": "home"
-            },
-            {
-                "team": "RED",
-                "loc": "away"
-            },
-            {
-                "team": "VIR",
-                "loc": "away"
-            },
-            {
-                "team": "PAM",
-                "loc": "home"
-            },
-            {
-                "team": "PRS",
-                "loc": "home"
-            },
-            {
-                "team": "HTA",
-                "loc": "away"
-            },
-            {
-                "team": "BAR",
-                "loc": "home"
-            },
-            {
-                "team": "TEL",
-                "loc": "away"
-            },
-            {
-                "team": "OLY",
-                "loc": "home"
-            },
-            {
-                "team": "MUN",
-                "loc": "away"
-            },
-            {
-                "team": "ZAL",
-                "loc": "away"
-            }
-        ]
-    },
-    {
         "Team": "OLY",
-        "Rank": 3,
+        "Rank": 2,
         "Record": "9-3",
         "Wins": 9,
         "Losses": 3,
-        "Adj_Off": 89.19,
-        "Adj_Def": 82.65,
-        "Adj_Net": 6.54,
+        "Adj_Off": 89.24,
+        "Adj_Def": 82.6,
+        "Adj_Net": 6.63,
         "Raw_Net": 7.25,
-        "Remaining_SOS": 53.16,
-        "SOS_WinPct": 0.5316,
+        "Remaining_SOS": 52.83,
+        "SOS_WinPct": 0.5283,
         "Remaining_Games": 26,
         "Home_Games": 14,
         "Away_Games": 12,
@@ -370,17 +244,139 @@
         ]
     },
     {
+        "Team": "ULK",
+        "Rank": 3,
+        "Record": "8-4",
+        "Wins": 8,
+        "Losses": 4,
+        "Adj_Off": 84.58,
+        "Adj_Def": 78.05,
+        "Adj_Net": 6.52,
+        "Raw_Net": 6.75,
+        "Remaining_SOS": 49.35,
+        "SOS_WinPct": 0.4935,
+        "Remaining_Games": 26,
+        "Home_Games": 12,
+        "Away_Games": 14,
+        "Remaining_Opponents": [
+            {
+                "team": "MIL",
+                "loc": "away"
+            },
+            {
+                "team": "BAR",
+                "loc": "away"
+            },
+            {
+                "team": "RED",
+                "loc": "home"
+            },
+            {
+                "team": "IST",
+                "loc": "home"
+            },
+            {
+                "team": "HTA",
+                "loc": "home"
+            },
+            {
+                "team": "TEL",
+                "loc": "home"
+            },
+            {
+                "team": "BES",
+                "loc": "away"
+            },
+            {
+                "team": "PAN",
+                "loc": "home"
+            },
+            {
+                "team": "IST",
+                "loc": "away"
+            },
+            {
+                "team": "DUB",
+                "loc": "away"
+            },
+            {
+                "team": "PAR",
+                "loc": "away"
+            },
+            {
+                "team": "BES",
+                "loc": "home"
+            },
+            {
+                "team": "MAD",
+                "loc": "home"
+            },
+            {
+                "team": "BAS",
+                "loc": "away"
+            },
+            {
+                "team": "ASV",
+                "loc": "away"
+            },
+            {
+                "team": "MIL",
+                "loc": "home"
+            },
+            {
+                "team": "RED",
+                "loc": "away"
+            },
+            {
+                "team": "VIR",
+                "loc": "away"
+            },
+            {
+                "team": "PAM",
+                "loc": "home"
+            },
+            {
+                "team": "PRS",
+                "loc": "home"
+            },
+            {
+                "team": "HTA",
+                "loc": "away"
+            },
+            {
+                "team": "BAR",
+                "loc": "home"
+            },
+            {
+                "team": "TEL",
+                "loc": "away"
+            },
+            {
+                "team": "OLY",
+                "loc": "home"
+            },
+            {
+                "team": "MUN",
+                "loc": "away"
+            },
+            {
+                "team": "ZAL",
+                "loc": "away"
+            }
+        ]
+    },
+    {
         "Team": "PAM",
         "Rank": 4,
         "Record": "9-3",
         "Wins": 9,
         "Losses": 3,
-        "Adj_Off": 92.97,
-        "Adj_Def": 86.68,
-        "Adj_Net": 6.29,
+        "Adj_Off": 93.01,
+        "Adj_Def": 86.64,
+        "Adj_Net": 6.36,
         "Raw_Net": 7.83,
-        "Remaining_SOS": 53.64,
-        "SOS_WinPct": 0.5364,
+        "Remaining_SOS": 53.29,
+        "SOS_WinPct": 0.5329,
         "Remaining_Games": 26,
         "Home_Games": 13,
         "Away_Games": 13,
@@ -497,12 +493,12 @@
         "Record": "8-4",
         "Wins": 8,
         "Losses": 4,
-        "Adj_Off": 84.35,
-        "Adj_Def": 79.17,
-        "Adj_Net": 5.18,
+        "Adj_Off": 84.32,
+        "Adj_Def": 79.28,
+        "Adj_Net": 5.04,
         "Raw_Net": 6.83,
-        "Remaining_SOS": 51.27,
-        "SOS_WinPct": 0.5127,
+        "Remaining_SOS": 51.25,
+        "SOS_WinPct": 0.5125,
         "Remaining_Games": 26,
         "Home_Games": 11,
         "Away_Games": 15,
@@ -619,9 +615,9 @@
         "Record": "7-5",
         "Wins": 7,
         "Losses": 5,
-        "Adj_Off": 81.17,
-        "Adj_Def": 78.1,
-        "Adj_Net": 3.07,
+        "Adj_Off": 81.14,
+        "Adj_Def": 78.23,
+        "Adj_Net": 2.91,
         "Raw_Net": 3.92,
         "Remaining_SOS": 49.67,
         "SOS_WinPct": 0.4967,
@@ -741,12 +737,12 @@
         "Record": "7-5",
         "Wins": 7,
         "Losses": 5,
-        "Adj_Off": 89.35,
-        "Adj_Def": 86.73,
-        "Adj_Net": 2.61,
+        "Adj_Off": 89.49,
+        "Adj_Def": 86.84,
+        "Adj_Net": 2.65,
         "Raw_Net": 3.17,
-        "Remaining_SOS": 48.67,
-        "SOS_WinPct": 0.4867,
+        "Remaining_SOS": 49.01,
+        "SOS_WinPct": 0.4901,
         "Remaining_Games": 26,
         "Home_Games": 13,
         "Away_Games": 13,
@@ -863,12 +859,12 @@
         "Record": "8-4",
         "Wins": 8,
         "Losses": 4,
-        "Adj_Off": 88.58,
-        "Adj_Def": 86.12,
-        "Adj_Net": 2.46,
+        "Adj_Off": 88.66,
+        "Adj_Def": 86.09,
+        "Adj_Net": 2.57,
         "Raw_Net": 3.25,
-        "Remaining_SOS": 50.33,
-        "SOS_WinPct": 0.5033,
+        "Remaining_SOS": 50.0,
+        "SOS_WinPct": 0.5,
         "Remaining_Games": 26,
         "Home_Games": 14,
         "Away_Games": 12,
@@ -985,12 +981,12 @@
         "Record": "8-4",
         "Wins": 8,
         "Losses": 4,
-        "Adj_Off": 88.57,
-        "Adj_Def": 86.38,
-        "Adj_Net": 2.19,
+        "Adj_Off": 88.65,
+        "Adj_Def": 86.35,
+        "Adj_Net": 2.3,
         "Raw_Net": 1.83,
-        "Remaining_SOS": 47.37,
-        "SOS_WinPct": 0.4737,
+        "Remaining_SOS": 47.06,
+        "SOS_WinPct": 0.4706,
         "Remaining_Games": 26,
         "Home_Games": 13,
         "Away_Games": 13,
@@ -1107,12 +1103,12 @@
         "Record": "8-4",
         "Wins": 8,
         "Losses": 4,
-        "Adj_Off": 85.13,
-        "Adj_Def": 84.33,
-        "Adj_Net": 0.8,
+        "Adj_Off": 85.08,
+        "Adj_Def": 84.35,
+        "Adj_Net": 0.73,
         "Raw_Net": 1.25,
-        "Remaining_SOS": 49.03,
-        "SOS_WinPct": 0.4903,
+        "Remaining_SOS": 49.36,
+        "SOS_WinPct": 0.4936,
         "Remaining_Games": 26,
         "Home_Games": 13,
         "Away_Games": 13,
@@ -1229,12 +1225,12 @@
         "Record": "6-6",
         "Wins": 6,
         "Losses": 6,
-        "Adj_Off": 76.76,
-        "Adj_Def": 76.59,
-        "Adj_Net": 0.18,
+        "Adj_Off": 76.7,
+        "Adj_Def": 76.64,
+        "Adj_Net": 0.06,
         "Raw_Net": 0.58,
-        "Remaining_SOS": 52.2,
-        "SOS_WinPct": 0.522,
+        "Remaining_SOS": 52.17,
+        "SOS_WinPct": 0.5217,
         "Remaining_Games": 26,
         "Home_Games": 13,
         "Away_Games": 13,
@@ -1351,12 +1347,12 @@
         "Record": "5-7",
         "Wins": 5,
         "Losses": 7,
-        "Adj_Off": 84.64,
-        "Adj_Def": 85.37,
-        "Adj_Net": -0.72,
+        "Adj_Off": 84.82,
+        "Adj_Def": 85.48,
+        "Adj_Net": -0.66,
         "Raw_Net": -1.83,
-        "Remaining_SOS": 48.08,
-        "SOS_WinPct": 0.4808,
+        "Remaining_SOS": 48.41,
+        "SOS_WinPct": 0.4841,
         "Remaining_Games": 26,
         "Home_Games": 13,
         "Away_Games": 13,
@@ -1473,12 +1469,12 @@
         "Record": "6-6",
         "Wins": 6,
         "Losses": 6,
-        "Adj_Off": 94.22,
-        "Adj_Def": 95.33,
-        "Adj_Net": -1.12,
+        "Adj_Off": 94.07,
+        "Adj_Def": 95.21,
+        "Adj_Net": -1.14,
         "Raw_Net": -2.58,
-        "Remaining_SOS": 48.37,
-        "SOS_WinPct": 0.4837,
+        "Remaining_SOS": 48.39,
+        "SOS_WinPct": 0.4839,
         "Remaining_Games": 26,
         "Home_Games": 13,
         "Away_Games": 13,
@@ -1590,17 +1586,261 @@
         ]
     },
     {
-        "Team": "MIL",
+        "Team": "BES",
         "Rank": 14,
+        "Record": "6-6",
+        "Wins": 6,
+        "Losses": 6,
+        "Adj_Off": 84.92,
+        "Adj_Def": 87.91,
+        "Adj_Net": -2.99,
+        "Raw_Net": -2.0,
+        "Remaining_SOS": 46.67,
+        "SOS_WinPct": 0.4667,
+        "Remaining_Games": 26,
+        "Home_Games": 13,
+        "Away_Games": 13,
+        "Remaining_Opponents": [
+            {
+                "team": "PAR",
+                "loc": "away"
+            },
+            {
+                "team": "PRS",
+                "loc": "home"
+            },
+            {
+                "team": "PAN",
+                "loc": "home"
+            },
+            {
+                "team": "DUB",
+                "loc": "away"
+            },
+            {
+                "team": "MIL",
+                "loc": "home"
+            },
+            {
+                "team": "RED",
+                "loc": "away"
+            },
+            {
+                "team": "ULK",
+                "loc": "home"
+            },
+            {
+                "team": "MUN",
+                "loc": "away"
+            },
+            {
+                "team": "BAR",
+                "loc": "away"
+            },
+            {
+                "team": "PAR",
+                "loc": "home"
+            },
+            {
+                "team": "BAS",
+                "loc": "home"
+            },
+            {
+                "team": "ULK",
+                "loc": "away"
+            },
+            {
+                "team": "RED",
+                "loc": "home"
+            },
+            {
+                "team": "PRS",
+                "loc": "away"
+            },
+            {
+                "team": "ZAL",
+                "loc": "away"
+            },
+            {
+                "team": "DUB",
+                "loc": "home"
+            },
+            {
+                "team": "PAN",
+                "loc": "away"
+            },
+            {
+                "team": "ASV",
+                "loc": "home"
+            },
+            {
+                "team": "OLY",
+                "loc": "away"
+            },
+            {
+                "team": "IST",
+                "loc": "home"
+            },
+            {
+                "team": "PAM",
+                "loc": "away"
+            },
+            {
+                "team": "MAD",
+                "loc": "away"
+            },
+            {
+                "team": "MIL",
+                "loc": "away"
+            },
+            {
+                "team": "HTA",
+                "loc": "home"
+            },
+            {
+                "team": "TEL",
+                "loc": "home"
+            },
+            {
+                "team": "VIR",
+                "loc": "home"
+            }
+        ]
+    },
+    {
+        "Team": "VIR",
+        "Rank": 15,
+        "Record": "5-7",
+        "Wins": 5,
+        "Losses": 7,
+        "Adj_Off": 86.21,
+        "Adj_Def": 90.46,
+        "Adj_Net": -4.25,
+        "Raw_Net": -3.83,
+        "Remaining_SOS": 48.08,
+        "SOS_WinPct": 0.4808,
+        "Remaining_Games": 26,
+        "Home_Games": 13,
+        "Away_Games": 13,
+        "Remaining_Opponents": [
+            {
+                "team": "PAM",
+                "loc": "away"
+            },
+            {
+                "team": "RED",
+                "loc": "away"
+            },
+            {
+                "team": "PAR",
+                "loc": "home"
+            },
+            {
+                "team": "TEL",
+                "loc": "home"
+            },
+            {
+                "team": "ASV",
+                "loc": "home"
+            },
+            {
+                "team": "BAR",
+                "loc": "away"
+            },
+            {
+                "team": "MAD",
+                "loc": "home"
+            },
+            {
+                "team": "MIL",
+                "loc": "home"
+            },
+            {
+                "team": "BAS",
+                "loc": "away"
+            },
+            {
+                "team": "IST",
+                "loc": "home"
+            },
+            {
+                "team": "BAR",
+                "loc": "home"
+            },
+            {
+                "team": "ZAL",
+                "loc": "away"
+            },
+            {
+                "team": "PRS",
+                "loc": "home"
+            },
+            {
+                "team": "TEL",
+                "loc": "away"
+            },
+            {
+                "team": "DUB",
+                "loc": "away"
+            },
+            {
+                "team": "MUN",
+                "loc": "home"
+            },
+            {
+                "team": "HTA",
+                "loc": "home"
+            },
+            {
+                "team": "ULK",
+                "loc": "home"
+            },
+            {
+                "team": "MAD",
+                "loc": "away"
+            },
+            {
+                "team": "ASV",
+                "loc": "away"
+            },
+            {
+                "team": "PAR",
+                "loc": "away"
+            },
+            {
+                "team": "OLY",
+                "loc": "away"
+            },
+            {
+                "team": "RED",
+                "loc": "home"
+            },
+            {
+                "team": "PAM",
+                "loc": "home"
+            },
+            {
+                "team": "PAN",
+                "loc": "away"
+            },
+            {
+                "team": "BES",
+                "loc": "away"
+            }
+        ]
+    },
+    {
+        "Team": "MIL",
+        "Rank": 16,
         "Record": "2-10",
         "Wins": 2,
         "Losses": 10,
-        "Adj_Off": 84.16,
-        "Adj_Def": 88.31,
-        "Adj_Net": -4.15,
+        "Adj_Off": 84.12,
+        "Adj_Def": 88.38,
+        "Adj_Net": -4.26,
         "Raw_Net": -6.17,
-        "Remaining_SOS": 48.68,
-        "SOS_WinPct": 0.4868,
+        "Remaining_SOS": 49.02,
+        "SOS_WinPct": 0.4902,
         "Remaining_Games": 26,
         "Home_Games": 12,
         "Away_Games": 14,
@@ -1712,265 +1952,17 @@
         ]
     },
     {
-        "Team": "BES",
-        "Rank": 15,
-        "Record": "5-6",
-        "Wins": 5,
-        "Losses": 6,
-        "Adj_Off": 85.78,
-        "Adj_Def": 90.15,
-        "Adj_Net": -4.37,
-        "Raw_Net": -2.55,
-        "Remaining_SOS": 46.79,
-        "SOS_WinPct": 0.4679,
-        "Remaining_Games": 27,
-        "Home_Games": 14,
-        "Away_Games": 13,
-        "Remaining_Opponents": [
-            {
-                "team": "MAD",
-                "loc": "home"
-            },
-            {
-                "team": "PAR",
-                "loc": "away"
-            },
-            {
-                "team": "PRS",
-                "loc": "home"
-            },
-            {
-                "team": "PAN",
-                "loc": "home"
-            },
-            {
-                "team": "DUB",
-                "loc": "away"
-            },
-            {
-                "team": "MIL",
-                "loc": "home"
-            },
-            {
-                "team": "RED",
-                "loc": "away"
-            },
-            {
-                "team": "ULK",
-                "loc": "home"
-            },
-            {
-                "team": "MUN",
-                "loc": "away"
-            },
-            {
-                "team": "BAR",
-                "loc": "away"
-            },
-            {
-                "team": "PAR",
-                "loc": "home"
-            },
-            {
-                "team": "BAS",
-                "loc": "home"
-            },
-            {
-                "team": "ULK",
-                "loc": "away"
-            },
-            {
-                "team": "RED",
-                "loc": "home"
-            },
-            {
-                "team": "PRS",
-                "loc": "away"
-            },
-            {
-                "team": "ZAL",
-                "loc": "away"
-            },
-            {
-                "team": "DUB",
-                "loc": "home"
-            },
-            {
-                "team": "PAN",
-                "loc": "away"
-            },
-            {
-                "team": "ASV",
-                "loc": "home"
-            },
-            {
-                "team": "OLY",
-                "loc": "away"
-            },
-            {
-                "team": "IST",
-                "loc": "home"
-            },
-            {
-                "team": "PAM",
-                "loc": "away"
-            },
-            {
-                "team": "MAD",
-                "loc": "away"
-            },
-            {
-                "team": "MIL",
-                "loc": "away"
-            },
-            {
-                "team": "HTA",
-                "loc": "home"
-            },
-            {
-                "team": "TEL",
-                "loc": "home"
-            },
-            {
-                "team": "VIR",
-                "loc": "home"
-            }
-        ]
-    },
-    {
-        "Team": "VIR",
-        "Rank": 16,
-        "Record": "5-7",
-        "Wins": 5,
-        "Losses": 7,
-        "Adj_Off": 86.09,
-        "Adj_Def": 90.46,
-        "Adj_Net": -4.37,
-        "Raw_Net": -3.83,
-        "Remaining_SOS": 48.05,
-        "SOS_WinPct": 0.4805,
-        "Remaining_Games": 26,
-        "Home_Games": 13,
-        "Away_Games": 13,
-        "Remaining_Opponents": [
-            {
-                "team": "PAM",
-                "loc": "away"
-            },
-            {
-                "team": "RED",
-                "loc": "away"
-            },
-            {
-                "team": "PAR",
-                "loc": "home"
-            },
-            {
-                "team": "TEL",
-                "loc": "home"
-            },
-            {
-                "team": "ASV",
-                "loc": "home"
-            },
-            {
-                "team": "BAR",
-                "loc": "away"
-            },
-            {
-                "team": "MAD",
-                "loc": "home"
-            },
-            {
-                "team": "MIL",
-                "loc": "home"
-            },
-            {
-                "team": "BAS",
-                "loc": "away"
-            },
-            {
-                "team": "IST",
-                "loc": "home"
-            },
-            {
-                "team": "BAR",
-                "loc": "home"
-            },
-            {
-                "team": "ZAL",
-                "loc": "away"
-            },
-            {
-                "team": "PRS",
-                "loc": "home"
-            },
-            {
-                "team": "TEL",
-                "loc": "away"
-            },
-            {
-                "team": "DUB",
-                "loc": "away"
-            },
-            {
-                "team": "MUN",
-                "loc": "home"
-            },
-            {
-                "team": "HTA",
-                "loc": "home"
-            },
-            {
-                "team": "ULK",
-                "loc": "home"
-            },
-            {
-                "team": "MAD",
-                "loc": "away"
-            },
-            {
-                "team": "ASV",
-                "loc": "away"
-            },
-            {
-                "team": "PAR",
-                "loc": "away"
-            },
-            {
-                "team": "OLY",
-                "loc": "away"
-            },
-            {
-                "team": "RED",
-                "loc": "home"
-            },
-            {
-                "team": "PAM",
-                "loc": "home"
-            },
-            {
-                "team": "PAN",
-                "loc": "away"
-            },
-            {
-                "team": "BES",
-                "loc": "away"
-            }
-        ]
-    },
-    {
         "Team": "TEL",
         "Rank": 17,
         "Record": "3-9",
         "Wins": 3,
         "Losses": 9,
-        "Adj_Off": 85.98,
-        "Adj_Def": 91.62,
-        "Adj_Net": -5.64,
+        "Adj_Off": 86.13,
+        "Adj_Def": 91.83,
+        "Adj_Net": -5.7,
         "Raw_Net": -7.33,
-        "Remaining_SOS": 47.68,
-        "SOS_WinPct": 0.4768,
+        "Remaining_SOS": 48.03,
+        "SOS_WinPct": 0.4803,
         "Remaining_Games": 26,
         "Home_Games": 13,
         "Away_Games": 13,
@@ -2087,9 +2079,9 @@
         "Record": "4-8",
         "Wins": 4,
         "Losses": 8,
-        "Adj_Off": 88.26,
-        "Adj_Def": 95.06,
-        "Adj_Net": -6.8,
+        "Adj_Off": 88.43,
+        "Adj_Def": 95.27,
+        "Adj_Net": -6.84,
         "Raw_Net": -7.08,
         "Remaining_SOS": 49.67,
         "SOS_WinPct": 0.4967,
@@ -2209,12 +2201,12 @@
         "Record": "3-9",
         "Wins": 3,
         "Losses": 9,
-        "Adj_Off": 91.3,
-        "Adj_Def": 98.84,
-        "Adj_Net": -7.54,
+        "Adj_Off": 91.35,
+        "Adj_Def": 98.79,
+        "Adj_Net": -7.44,
         "Raw_Net": -7.92,
-        "Remaining_SOS": 47.4,
-        "SOS_WinPct": 0.474,
+        "Remaining_SOS": 47.1,
+        "SOS_WinPct": 0.471,
         "Remaining_Games": 26,
         "Home_Games": 15,
         "Away_Games": 11,
@@ -2331,12 +2323,12 @@
         "Record": "1-11",
         "Wins": 1,
         "Losses": 11,
-        "Adj_Off": 80.77,
-        "Adj_Def": 90.55,
-        "Adj_Net": -9.78,
+        "Adj_Off": 80.89,
+        "Adj_Def": 90.73,
+        "Adj_Net": -9.84,
         "Raw_Net": -11.25,
-        "Remaining_SOS": 47.33,
-        "SOS_WinPct": 0.4733,
+        "Remaining_SOS": 47.68,
+        "SOS_WinPct": 0.4768,
         "Remaining_Games": 26,
         "Home_Games": 13,
         "Away_Games": 13,

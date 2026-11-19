@@ -10,23 +10,23 @@
         "TPM_Rank":1
     },
     {
-        "player.code":"014006",
-        "player.name":"OKEKE, CHUMA",
-        "player.team.code":"MAD",
-        "gamesPlayed":10,
-        "mins_played":18.1683333333,
-        "Total_PM":77.0,
-        "TPM_40":16.9525731584,
-        "TPM_Rank":2
-    },
-    {
         "player.code":"003733",
         "player.name":"ABALDE, ALBERTO",
         "player.team.code":"MAD",
+        "gamesPlayed":12,
+        "mins_played":18.7736111111,
+        "Total_PM":89.0,
+        "TPM_40":15.8023230007,
+        "TPM_Rank":2
+    },
+    {
+        "player.code":"014006",
+        "player.name":"OKEKE, CHUMA",
+        "player.team.code":"MAD",
         "gamesPlayed":11,
-        "mins_played":18.2257575758,
-        "Total_PM":82.0,
-        "TPM_40":16.3604622163,
+        "mins_played":17.8909090909,
+        "Total_PM":76.0,
+        "TPM_40":15.4471544715,
         "TPM_Rank":3
     },
     {
@@ -40,6 +40,16 @@
         "TPM_Rank":4
     },
     {
+        "player.code":"007027",
+        "player.name":"MALEDON, THEO",
+        "player.team.code":"MAD",
+        "gamesPlayed":10,
+        "mins_played":23.3416666667,
+        "Total_PM":90.0,
+        "TPM_40":15.4230631917,
+        "TPM_Rank":5
+    },
+    {
         "player.code":"012608",
         "player.name":"SHORTS, TJ",
         "player.team.code":"PAM",
@@ -47,16 +57,6 @@
         "mins_played":23.1680555556,
         "Total_PM":107.0,
         "TPM_40":15.394760506,
-        "TPM_Rank":5
-    },
-    {
-        "player.code":"011247",
-        "player.name":"FELIZ, ANDRES",
-        "player.team.code":"MAD",
-        "gamesPlayed":11,
-        "mins_played":21.7590909091,
-        "Total_PM":81.0,
-        "TPM_40":13.5366617924,
         "TPM_Rank":6
     },
     {
@@ -110,6 +110,16 @@
         "TPM_Rank":11
     },
     {
+        "player.code":"011247",
+        "player.name":"FELIZ, ANDRES",
+        "player.team.code":"MAD",
+        "gamesPlayed":12,
+        "mins_played":22.0222222222,
+        "Total_PM":73.0,
+        "TPM_40":11.049445005,
+        "TPM_Rank":12
+    },
+    {
         "player.code":"012515",
         "player.name":"TARPEY, TERRY",
         "player.team.code":"PRS",
@@ -117,7 +127,7 @@
         "mins_played":16.37,
         "Total_PM":44.0,
         "TPM_40":10.7513744655,
-        "TPM_Rank":12
+        "TPM_Rank":13
     },
     {
         "player.code":"007527",
@@ -127,7 +137,7 @@
         "mins_played":17.6763888889,
         "Total_PM":56.0,
         "TPM_40":10.5602262906,
-        "TPM_Rank":13
+        "TPM_Rank":14
     },
     {
         "player.code":"002849",
@@ -137,7 +147,7 @@
         "mins_played":20.2466666667,
         "Total_PM":53.0,
         "TPM_40":10.4708594007,
-        "TPM_Rank":14
+        "TPM_Rank":15
     },
     {
         "player.code":"009863",
@@ -147,7 +157,7 @@
         "mins_played":22.9347222222,
         "Total_PM":71.0,
         "TPM_40":10.3191424938,
-        "TPM_Rank":15
+        "TPM_Rank":16
     },
     {
         "player.code":"012201",
@@ -157,17 +167,17 @@
         "mins_played":20.2939393939,
         "Total_PM":57.0,
         "TPM_40":10.2135284456,
-        "TPM_Rank":16
+        "TPM_Rank":17
     },
     {
         "player.code":"005791",
         "player.name":"TAVARES, WALTER",
         "player.team.code":"MAD",
-        "gamesPlayed":11,
-        "mins_played":20.7196969697,
-        "Total_PM":57.0,
-        "TPM_40":10.0036563071,
-        "TPM_Rank":17
+        "gamesPlayed":12,
+        "mins_played":21.2333333333,
+        "Total_PM":61.0,
+        "TPM_40":9.5761381476,
+        "TPM_Rank":18
     },
     {
         "player.code":"002968",
@@ -177,7 +187,7 @@
         "mins_played":11.615,
         "Total_PM":27.0,
         "TPM_40":9.2983211365,
-        "TPM_Rank":18
+        "TPM_Rank":19
     },
     {
         "player.code":"010545",
@@ -187,7 +197,7 @@
         "mins_played":16.8152777778,
         "Total_PM":45.0,
         "TPM_40":8.9204592385,
-        "TPM_Rank":19
+        "TPM_Rank":20
     },
     {
         "player.code":"006760",
@@ -197,7 +207,7 @@
         "mins_played":18.56,
         "Total_PM":41.0,
         "TPM_40":8.8362068966,
-        "TPM_Rank":20
+        "TPM_Rank":21
     },
     {
         "player.code":"012610",
@@ -207,7 +217,7 @@
         "mins_played":23.7722222222,
         "Total_PM":61.0,
         "TPM_40":8.5534003272,
-        "TPM_Rank":21
+        "TPM_Rank":22
     },
     {
         "player.code":"012606",
@@ -217,7 +227,17 @@
         "mins_played":24.6583333333,
         "Total_PM":63.0,
         "TPM_40":8.5163906725,
-        "TPM_Rank":22
+        "TPM_Rank":23
+    },
+    {
+        "player.code":"013383",
+        "player.name":"GABRIEL, WENYEN",
+        "player.team.code":"BES",
+        "gamesPlayed":12,
+        "mins_played":16.5763888889,
+        "Total_PM":42.0,
+        "TPM_40":8.4457478006,
+        "TPM_Rank":24
     },
     {
         "player.code":"011204",
@@ -227,7 +247,7 @@
         "mins_played":14.6233333333,
         "Total_PM":30.0,
         "TPM_40":8.206063369,
-        "TPM_Rank":23
+        "TPM_Rank":25
     },
     {
         "player.code":"014741",
@@ -237,7 +257,7 @@
         "mins_played":12.3933333333,
         "Total_PM":25.0,
         "TPM_40":8.0688542227,
-        "TPM_Rank":24
+        "TPM_Rank":26
     },
     {
         "player.code":"014316",
@@ -247,7 +267,7 @@
         "mins_played":18.2606060606,
         "Total_PM":39.0,
         "TPM_40":7.7663458347,
-        "TPM_Rank":25
+        "TPM_Rank":27
     },
     {
         "player.code":"003469",
@@ -257,7 +277,7 @@
         "mins_played":27.8166666667,
         "Total_PM":64.0,
         "TPM_40":7.6692630318,
-        "TPM_Rank":26
+        "TPM_Rank":28
     },
     {
         "player.code":"015139",
@@ -267,7 +287,7 @@
         "mins_played":15.7625,
         "Total_PM":36.0,
         "TPM_40":7.6130055511,
-        "TPM_Rank":27
+        "TPM_Rank":29
     },
     {
         "player.code":"011981",
@@ -277,7 +297,7 @@
         "mins_played":13.4666666667,
         "Total_PM":30.0,
         "TPM_40":7.4257425743,
-        "TPM_Rank":28
+        "TPM_Rank":30
     },
     {
         "player.code":"007831",
@@ -287,7 +307,7 @@
         "mins_played":23.3597222222,
         "Total_PM":52.0,
         "TPM_40":7.4201795588,
-        "TPM_Rank":29
+        "TPM_Rank":31
     },
     {
         "player.code":"003842",
@@ -297,7 +317,7 @@
         "mins_played":23.3958333333,
         "Total_PM":52.0,
         "TPM_40":7.4087266251,
-        "TPM_Rank":30
+        "TPM_Rank":32
     },
     {
         "player.code":"005368",
@@ -307,7 +327,7 @@
         "mins_played":12.9545454545,
         "Total_PM":25.0,
         "TPM_40":7.0175438596,
-        "TPM_Rank":31
+        "TPM_Rank":33
     },
     {
         "player.code":"011214",
@@ -317,7 +337,7 @@
         "mins_played":15.8166666667,
         "Total_PM":33.0,
         "TPM_40":6.9546891465,
-        "TPM_Rank":32
+        "TPM_Rank":34
     },
     {
         "player.code":"015140",
@@ -327,7 +347,7 @@
         "mins_played":13.1569444444,
         "Total_PM":27.0,
         "TPM_40":6.8404940357,
-        "TPM_Rank":33
+        "TPM_Rank":35
     },
     {
         "player.code":"011194",
@@ -337,7 +357,7 @@
         "mins_played":15.6333333333,
         "Total_PM":29.0,
         "TPM_40":6.7454933127,
-        "TPM_Rank":34
+        "TPM_Rank":36
     },
     {
         "player.code":"012788",
@@ -347,7 +367,7 @@
         "mins_played":21.3222222222,
         "Total_PM":42.0,
         "TPM_40":6.5659197499,
-        "TPM_Rank":35
+        "TPM_Rank":37
     },
     {
         "player.code":"011823",
@@ -357,7 +377,7 @@
         "mins_played":13.9333333333,
         "Total_PM":25.0,
         "TPM_40":6.5245759026,
-        "TPM_Rank":36
+        "TPM_Rank":38
     },
     {
         "player.code":"012611",
@@ -367,7 +387,7 @@
         "mins_played":20.4819444444,
         "Total_PM":40.0,
         "TPM_40":6.5097986031,
-        "TPM_Rank":37
+        "TPM_Rank":39
     },
     {
         "player.code":"009992",
@@ -377,7 +397,7 @@
         "mins_played":18.5893939394,
         "Total_PM":33.0,
         "TPM_40":6.45529383,
-        "TPM_Rank":38
+        "TPM_Rank":40
     },
     {
         "player.code":"012403",
@@ -387,7 +407,7 @@
         "mins_played":17.05,
         "Total_PM":33.0,
         "TPM_40":6.4516129032,
-        "TPM_Rank":39
+        "TPM_Rank":41
     },
     {
         "player.code":"014802",
@@ -397,7 +417,7 @@
         "mins_played":13.9722222222,
         "Total_PM":27.0,
         "TPM_40":6.4413518887,
-        "TPM_Rank":40
+        "TPM_Rank":42
     },
     {
         "player.code":"000898",
@@ -407,7 +427,7 @@
         "mins_played":20.9958333333,
         "Total_PM":40.0,
         "TPM_40":6.3504663624,
-        "TPM_Rank":41
+        "TPM_Rank":43
     },
     {
         "player.code":"013367",
@@ -417,7 +437,7 @@
         "mins_played":17.6222222222,
         "Total_PM":33.0,
         "TPM_40":6.2421185372,
-        "TPM_Rank":42
+        "TPM_Rank":44
     },
     {
         "player.code":"007975",
@@ -427,7 +447,7 @@
         "mins_played":23.1652777778,
         "Total_PM":41.0,
         "TPM_40":5.8996342706,
-        "TPM_Rank":43
+        "TPM_Rank":45
     },
     {
         "player.code":"013402",
@@ -437,17 +457,7 @@
         "mins_played":21.1430555556,
         "Total_PM":37.0,
         "TPM_40":5.8332785916,
-        "TPM_Rank":44
-    },
-    {
-        "player.code":"010393",
-        "player.name":"PRADILLA, JAIME",
-        "player.team.code":"MAD",
-        "gamesPlayed":11,
-        "mins_played":14.3621212121,
-        "Total_PM":23.0,
-        "TPM_40":5.8233990927,
-        "TPM_Rank":45
+        "TPM_Rank":46
     },
     {
         "player.code":"014163",
@@ -457,16 +467,6 @@
         "mins_played":16.1893939394,
         "Total_PM":25.0,
         "TPM_40":5.6153486196,
-        "TPM_Rank":46
-    },
-    {
-        "player.code":"013383",
-        "player.name":"GABRIEL, WENYEN",
-        "player.team.code":"BES",
-        "gamesPlayed":11,
-        "mins_played":16.346969697,
-        "Total_PM":25.0,
-        "TPM_40":5.5612197609,
         "TPM_Rank":47
     },
     {
@@ -550,6 +550,16 @@
         "TPM_Rank":55
     },
     {
+        "player.code":"010393",
+        "player.name":"PRADILLA, JAIME",
+        "player.team.code":"MAD",
+        "gamesPlayed":12,
+        "mins_played":14.7777777778,
+        "Total_PM":21.0,
+        "TPM_40":4.7368421053,
+        "TPM_Rank":56
+    },
+    {
         "player.code":"011305",
         "player.name":"CARTER, TYSON",
         "player.team.code":"RED",
@@ -557,7 +567,7 @@
         "mins_played":19.2041666667,
         "Total_PM":24.0,
         "TPM_40":4.1657626383,
-        "TPM_Rank":56
+        "TPM_Rank":57
     },
     {
         "player.code":"011196",
@@ -567,7 +577,7 @@
         "mins_played":13.5378787879,
         "Total_PM":15.0,
         "TPM_40":4.0290990487,
-        "TPM_Rank":57
+        "TPM_Rank":58
     },
     {
         "player.code":"013363",
@@ -577,7 +587,7 @@
         "mins_played":22.8694444444,
         "Total_PM":27.0,
         "TPM_40":3.9353819993,
-        "TPM_Rank":58
+        "TPM_Rank":59
     },
     {
         "player.code":"015163",
@@ -587,7 +597,7 @@
         "mins_played":21.4333333333,
         "Total_PM":21.0,
         "TPM_40":3.9191290824,
-        "TPM_Rank":59
+        "TPM_Rank":60
     },
     {
         "player.code":"011286",
@@ -597,7 +607,7 @@
         "mins_played":27.5277777778,
         "Total_PM":32.0,
         "TPM_40":3.8748738648,
-        "TPM_Rank":60
+        "TPM_Rank":61
     },
     {
         "player.code":"014124",
@@ -607,7 +617,7 @@
         "mins_played":19.9944444444,
         "Total_PM":23.0,
         "TPM_40":3.834398444,
-        "TPM_Rank":61
+        "TPM_Rank":62
     },
     {
         "player.code":"008192",
@@ -617,7 +627,7 @@
         "mins_played":23.5944444444,
         "Total_PM":26.0,
         "TPM_40":3.673181069,
-        "TPM_Rank":62
+        "TPM_Rank":63
     },
     {
         "player.code":"002329",
@@ -627,7 +637,7 @@
         "mins_played":15.5833333333,
         "Total_PM":16.0,
         "TPM_40":3.422459893,
-        "TPM_Rank":63
+        "TPM_Rank":64
     },
     {
         "player.code":"012731",
@@ -637,7 +647,7 @@
         "mins_played":16.5861111111,
         "Total_PM":17.0,
         "TPM_40":3.4165131469,
-        "TPM_Rank":64
+        "TPM_Rank":65
     },
     {
         "player.code":"006739",
@@ -647,7 +657,7 @@
         "mins_played":20.625,
         "Total_PM":20.0,
         "TPM_40":3.2323232323,
-        "TPM_Rank":65
+        "TPM_Rank":66
     },
     {
         "player.code":"011987",
@@ -657,7 +667,7 @@
         "mins_played":22.7347222222,
         "Total_PM":20.0,
         "TPM_40":2.9323721669,
-        "TPM_Rank":66
+        "TPM_Rank":67
     },
     {
         "player.code":"004888",
@@ -667,7 +677,7 @@
         "mins_played":21.5861111111,
         "Total_PM":18.0,
         "TPM_40":2.7795650495,
-        "TPM_Rank":67
+        "TPM_Rank":68
     },
     {
         "player.code":"009846",
@@ -677,7 +687,7 @@
         "mins_played":29.3708333333,
         "Total_PM":24.0,
         "TPM_40":2.7237906086,
-        "TPM_Rank":68
+        "TPM_Rank":69
     },
     {
         "player.code":"012720",
@@ -687,7 +697,7 @@
         "mins_played":19.0486111111,
         "Total_PM":15.0,
         "TPM_40":2.6248632884,
-        "TPM_Rank":69
+        "TPM_Rank":70
     },
     {
         "player.code":"013290",
@@ -697,7 +707,7 @@
         "mins_played":15.5954545455,
         "Total_PM":11.0,
         "TPM_40":2.564849898,
-        "TPM_Rank":70
+        "TPM_Rank":71
     },
     {
         "player.code":"009048",
@@ -707,7 +717,7 @@
         "mins_played":22.2236111111,
         "Total_PM":17.0,
         "TPM_40":2.549840635,
-        "TPM_Rank":71
+        "TPM_Rank":72
     },
     {
         "player.code":"013369",
@@ -717,7 +727,7 @@
         "mins_played":27.7486111111,
         "Total_PM":21.0,
         "TPM_40":2.5226487812,
-        "TPM_Rank":72
+        "TPM_Rank":73
     },
     {
         "player.code":"010357",
@@ -727,7 +737,17 @@
         "mins_played":23.9680555556,
         "Total_PM":15.0,
         "TPM_40":2.0861099844,
-        "TPM_Rank":73
+        "TPM_Rank":74
+    },
+    {
+        "player.code":"013285",
+        "player.name":"DOTSON, DEVON",
+        "player.team.code":"BES",
+        "gamesPlayed":10,
+        "mins_played":21.3566666667,
+        "Total_PM":11.0,
+        "TPM_40":2.0602466053,
+        "TPM_Rank":75
     },
     {
         "player.code":"009035",
@@ -737,7 +757,7 @@
         "mins_played":18.5090909091,
         "Total_PM":10.0,
         "TPM_40":1.9646365422,
-        "TPM_Rank":74
+        "TPM_Rank":76
     },
     {
         "player.code":"007201",
@@ -747,7 +767,7 @@
         "mins_played":13.5015151515,
         "Total_PM":6.0,
         "TPM_40":1.6159802491,
-        "TPM_Rank":75
+        "TPM_Rank":77
     },
     {
         "player.code":"013667",
@@ -757,7 +777,7 @@
         "mins_played":19.1136363636,
         "Total_PM":8.0,
         "TPM_40":1.5219976219,
-        "TPM_Rank":76
+        "TPM_Rank":78
     },
     {
         "player.code":"008962",
@@ -767,7 +787,7 @@
         "mins_played":27.2216666667,
         "Total_PM":10.0,
         "TPM_40":1.4694177432,
-        "TPM_Rank":77
+        "TPM_Rank":79
     },
     {
         "player.code":"015166",
@@ -777,7 +797,7 @@
         "mins_played":23.1883333333,
         "Total_PM":8.0,
         "TPM_40":1.3800043125,
-        "TPM_Rank":78
+        "TPM_Rank":80
     },
     {
         "player.code":"014168",
@@ -787,7 +807,7 @@
         "mins_played":21.8545454545,
         "Total_PM":8.0,
         "TPM_40":1.3311148087,
-        "TPM_Rank":79
+        "TPM_Rank":81
     },
     {
         "player.code":"005637",
@@ -797,7 +817,7 @@
         "mins_played":20.0,
         "Total_PM":7.0,
         "TPM_40":1.1666666667,
-        "TPM_Rank":80
+        "TPM_Rank":82
     },
     {
         "player.code":"011212",
@@ -807,17 +827,17 @@
         "mins_played":26.175,
         "Total_PM":7.0,
         "TPM_40":0.8914358485,
-        "TPM_Rank":81
+        "TPM_Rank":83
     },
     {
-        "player.code":"015103",
-        "player.name":"JONES, DAMIAN",
-        "player.team.code":"MAD",
-        "gamesPlayed":11,
-        "mins_played":12.5757575758,
-        "Total_PM":2.0,
-        "TPM_40":0.578313253,
-        "TPM_Rank":82
+        "player.code":"014207",
+        "player.name":"OMORUYI, EUGENE",
+        "player.team.code":"BES",
+        "gamesPlayed":12,
+        "mins_played":19.4791666667,
+        "Total_PM":4.0,
+        "TPM_40":0.6844919786,
+        "TPM_Rank":84
     },
     {
         "player.code":"015138",
@@ -827,7 +847,17 @@
         "mins_played":23.6805555556,
         "Total_PM":4.0,
         "TPM_40":0.5630498534,
-        "TPM_Rank":83
+        "TPM_Rank":85
+    },
+    {
+        "player.code":"006661",
+        "player.name":"WILBEKIN, SCOTTIE",
+        "player.team.code":"BES",
+        "gamesPlayed":12,
+        "mins_played":22.9583333333,
+        "Total_PM":3.0,
+        "TPM_40":0.4355716878,
+        "TPM_Rank":86
     },
     {
         "player.code":"013506",
@@ -837,7 +867,7 @@
         "mins_played":17.3424242424,
         "Total_PM":1.0,
         "TPM_40":0.2096802376,
-        "TPM_Rank":84
+        "TPM_Rank":87
     },
     {
         "player.code":"010391",
@@ -847,7 +877,7 @@
         "mins_played":19.5819444444,
         "Total_PM":0.0,
         "TPM_40":0.0,
-        "TPM_Rank":85
+        "TPM_Rank":88
     },
     {
         "player.code":"003958",
@@ -857,17 +887,7 @@
         "mins_played":20.9597222222,
         "Total_PM":-1.0,
         "TPM_40":-0.1590351865,
-        "TPM_Rank":86
-    },
-    {
-        "player.code":"012080",
-        "player.name":"LUWAWU-CABARROT, TIMOTHE",
-        "player.team.code":"MAD",
-        "gamesPlayed":11,
-        "mins_played":18.1227272727,
-        "Total_PM":-1.0,
-        "TPM_40":-0.2006521194,
-        "TPM_Rank":87
+        "TPM_Rank":89
     },
     {
         "player.code":"015160",
@@ -877,7 +897,7 @@
         "mins_played":14.89,
         "Total_PM":-2.0,
         "TPM_40":-0.5372733378,
-        "TPM_Rank":88
+        "TPM_Rank":90
     },
     {
         "player.code":"014027",
@@ -887,7 +907,7 @@
         "mins_played":11.4416666667,
         "Total_PM":-2.0,
         "TPM_40":-0.5826656956,
-        "TPM_Rank":89
+        "TPM_Rank":91
     },
     {
         "player.code":"014786",
@@ -897,17 +917,7 @@
         "mins_played":21.6866666667,
         "Total_PM":-4.0,
         "TPM_40":-0.7377805103,
-        "TPM_Rank":90
-    },
-    {
-        "player.code":"014207",
-        "player.name":"OMORUYI, EUGENE",
-        "player.team.code":"BES",
-        "gamesPlayed":11,
-        "mins_played":19.0424242424,
-        "Total_PM":-4.0,
-        "TPM_40":-0.7638446849,
-        "TPM_Rank":91
+        "TPM_Rank":92
     },
     {
         "player.code":"007553",
@@ -917,7 +927,17 @@
         "mins_played":15.7944444444,
         "Total_PM":-5.0,
         "TPM_40":-1.0552233556,
-        "TPM_Rank":92
+        "TPM_Rank":93
+    },
+    {
+        "player.code":"012080",
+        "player.name":"LUWAWU-CABARROT, TIMOTHE",
+        "player.team.code":"MAD",
+        "gamesPlayed":12,
+        "mins_played":18.4027777778,
+        "Total_PM":-6.0,
+        "TPM_40":-1.0867924528,
+        "TPM_Rank":94
     },
     {
         "player.code":"001255",
@@ -927,7 +947,7 @@
         "mins_played":15.9590909091,
         "Total_PM":-5.0,
         "TPM_40":-1.1392765594,
-        "TPM_Rank":93
+        "TPM_Rank":95
     },
     {
         "player.code":"014107",
@@ -937,7 +957,7 @@
         "mins_played":13.145,
         "Total_PM":-4.0,
         "TPM_40":-1.217192849,
-        "TPM_Rank":94
+        "TPM_Rank":96
     },
     {
         "player.code":"014737",
@@ -947,7 +967,7 @@
         "mins_played":22.9375,
         "Total_PM":-9.0,
         "TPM_40":-1.3079019074,
-        "TPM_Rank":95
+        "TPM_Rank":97
     },
     {
         "player.code":"002939",
@@ -957,7 +977,7 @@
         "mins_played":21.9424242424,
         "Total_PM":-9.0,
         "TPM_40":-1.491506698,
-        "TPM_Rank":96
+        "TPM_Rank":98
     },
     {
         "player.code":"004132",
@@ -967,17 +987,7 @@
         "mins_played":18.5966666667,
         "Total_PM":-7.0,
         "TPM_40":-1.5056461731,
-        "TPM_Rank":97
-    },
-    {
-        "player.code":"006661",
-        "player.name":"WILBEKIN, SCOTTIE",
-        "player.team.code":"BES",
-        "gamesPlayed":11,
-        "mins_played":22.5515151515,
-        "Total_PM":-10.0,
-        "TPM_40":-1.6124697662,
-        "TPM_Rank":98
+        "TPM_Rank":99
     },
     {
         "player.code":"014008",
@@ -987,7 +997,7 @@
         "mins_played":21.5097222222,
         "Total_PM":-11.0,
         "TPM_40":-1.7046555175,
-        "TPM_Rank":99
+        "TPM_Rank":100
     },
     {
         "player.code":"008985",
@@ -997,7 +1007,7 @@
         "mins_played":23.1916666667,
         "Total_PM":-12.0,
         "TPM_40":-1.724757456,
-        "TPM_Rank":100
+        "TPM_Rank":101
     },
     {
         "player.code":"007947",
@@ -1007,7 +1017,17 @@
         "mins_played":18.8416666667,
         "Total_PM":-10.0,
         "TPM_40":-1.7691287041,
-        "TPM_Rank":101
+        "TPM_Rank":102
+    },
+    {
+        "player.code":"015103",
+        "player.name":"JONES, DAMIAN",
+        "player.team.code":"MAD",
+        "gamesPlayed":12,
+        "mins_played":12.3652777778,
+        "Total_PM":-7.0,
+        "TPM_40":-1.8870043805,
+        "TPM_Rank":103
     },
     {
         "player.code":"003112",
@@ -1017,7 +1037,7 @@
         "mins_played":26.1277777778,
         "Total_PM":-16.0,
         "TPM_40":-2.0412502658,
-        "TPM_Rank":102
+        "TPM_Rank":104
     },
     {
         "player.code":"011231",
@@ -1027,7 +1047,7 @@
         "mins_played":17.2958333333,
         "Total_PM":-11.0,
         "TPM_40":-2.1199710913,
-        "TPM_Rank":103
+        "TPM_Rank":105
     },
     {
         "player.code":"009754",
@@ -1037,7 +1057,7 @@
         "mins_played":24.0527777778,
         "Total_PM":-16.0,
         "TPM_40":-2.2173461139,
-        "TPM_Rank":104
+        "TPM_Rank":106
     },
     {
         "player.code":"015164",
@@ -1047,7 +1067,7 @@
         "mins_played":18.5319444444,
         "Total_PM":-13.0,
         "TPM_40":-2.3383047291,
-        "TPM_Rank":105
+        "TPM_Rank":107
     },
     {
         "player.code":"015143",
@@ -1057,7 +1077,7 @@
         "mins_played":20.1121212121,
         "Total_PM":-15.0,
         "TPM_40":-2.7120687057,
-        "TPM_Rank":106
+        "TPM_Rank":108
     },
     {
         "player.code":"007464",
@@ -1067,17 +1087,7 @@
         "mins_played":23.6727272727,
         "Total_PM":-18.0,
         "TPM_40":-2.7649769585,
-        "TPM_Rank":107
-    },
-    {
-        "player.code":"009025",
-        "player.name":"BROWN, ANTHONY",
-        "player.team.code":"BES",
-        "gamesPlayed":11,
-        "mins_played":22.3984848485,
-        "Total_PM":-18.0,
-        "TPM_40":-2.9222755868,
-        "TPM_Rank":108
+        "TPM_Rank":109
     },
     {
         "player.code":"008099",
@@ -1087,7 +1097,7 @@
         "mins_played":22.7222222222,
         "Total_PM":-20.0,
         "TPM_40":-2.9339853301,
-        "TPM_Rank":109
+        "TPM_Rank":110
     },
     {
         "player.code":"014782",
@@ -1097,7 +1107,7 @@
         "mins_played":14.7555555556,
         "Total_PM":-13.0,
         "TPM_40":-2.936746988,
-        "TPM_Rank":110
+        "TPM_Rank":111
     },
     {
         "player.code":"012710",
@@ -1107,7 +1117,7 @@
         "mins_played":14.65,
         "Total_PM":-13.0,
         "TPM_40":-2.9579067122,
-        "TPM_Rank":111
+        "TPM_Rank":112
     },
     {
         "player.code":"007736",
@@ -1117,7 +1127,7 @@
         "mins_played":14.1636363636,
         "Total_PM":-13.0,
         "TPM_40":-3.3376123235,
-        "TPM_Rank":112
+        "TPM_Rank":113
     },
     {
         "player.code":"002676",
@@ -1127,7 +1137,7 @@
         "mins_played":19.7541666667,
         "Total_PM":-21.0,
         "TPM_40":-3.5435562118,
-        "TPM_Rank":113
+        "TPM_Rank":114
     },
     {
         "player.code":"009783",
@@ -1137,7 +1147,7 @@
         "mins_played":20.4569444444,
         "Total_PM":-22.0,
         "TPM_40":-3.5847647498,
-        "TPM_Rank":114
+        "TPM_Rank":115
     },
     {
         "player.code":"013284",
@@ -1147,7 +1157,17 @@
         "mins_played":16.25,
         "Total_PM":-18.0,
         "TPM_40":-3.6923076923,
-        "TPM_Rank":115
+        "TPM_Rank":116
+    },
+    {
+        "player.code":"009025",
+        "player.name":"BROWN, ANTHONY",
+        "player.team.code":"BES",
+        "gamesPlayed":12,
+        "mins_played":21.2097222222,
+        "Total_PM":-24.0,
+        "TPM_40":-3.7718551503,
+        "TPM_Rank":117
     },
     {
         "player.code":"012609",
@@ -1157,7 +1177,7 @@
         "mins_played":25.5583333333,
         "Total_PM":-29.0,
         "TPM_40":-3.7821975872,
-        "TPM_Rank":116
+        "TPM_Rank":118
     },
     {
         "player.code":"014738",
@@ -1167,7 +1187,7 @@
         "mins_played":19.0696969697,
         "Total_PM":-20.0,
         "TPM_40":-3.8137613221,
-        "TPM_Rank":117
+        "TPM_Rank":119
     },
     {
         "player.code":"013929",
@@ -1177,7 +1197,17 @@
         "mins_played":18.9833333333,
         "Total_PM":-22.0,
         "TPM_40":-3.8630377524,
-        "TPM_Rank":118
+        "TPM_Rank":120
+    },
+    {
+        "player.code":"009680",
+        "player.name":"MORGAN, CONOR",
+        "player.team.code":"BES",
+        "gamesPlayed":12,
+        "mins_played":19.325,
+        "Total_PM":-24.0,
+        "TPM_40":-4.1397153946,
+        "TPM_Rank":121
     },
     {
         "player.code":"013699",
@@ -1187,7 +1217,7 @@
         "mins_played":22.2763888889,
         "Total_PM":-29.0,
         "TPM_40":-4.3394226573,
-        "TPM_Rank":119
+        "TPM_Rank":122
     },
     {
         "player.code":"014005",
@@ -1197,7 +1227,7 @@
         "mins_played":21.4486111111,
         "Total_PM":-28.0,
         "TPM_40":-4.3514861102,
-        "TPM_Rank":120
+        "TPM_Rank":123
     },
     {
         "player.code":"011219",
@@ -1207,7 +1237,7 @@
         "mins_played":16.6527777778,
         "Total_PM":-23.0,
         "TPM_40":-4.6038365304,
-        "TPM_Rank":121
+        "TPM_Rank":124
     },
     {
         "player.code":"006482",
@@ -1217,7 +1247,7 @@
         "mins_played":13.5303030303,
         "Total_PM":-18.0,
         "TPM_40":-4.8376259798,
-        "TPM_Rank":122
+        "TPM_Rank":125
     },
     {
         "player.code":"012707",
@@ -1227,17 +1257,7 @@
         "mins_played":21.7333333333,
         "Total_PM":-32.0,
         "TPM_40":-4.9079754601,
-        "TPM_Rank":123
-    },
-    {
-        "player.code":"009680",
-        "player.name":"MORGAN, CONOR",
-        "player.team.code":"BES",
-        "gamesPlayed":11,
-        "mins_played":19.8787878788,
-        "Total_PM":-27.0,
-        "TPM_40":-4.9390243902,
-        "TPM_Rank":124
+        "TPM_Rank":126
     },
     {
         "player.code":"014783",
@@ -1247,7 +1267,7 @@
         "mins_played":15.3606060606,
         "Total_PM":-21.0,
         "TPM_40":-4.9713947524,
-        "TPM_Rank":125
+        "TPM_Rank":127
     },
     {
         "player.code":"006643",
@@ -1257,7 +1277,7 @@
         "mins_played":14.9916666667,
         "Total_PM":-23.0,
         "TPM_40":-5.1139521957,
-        "TPM_Rank":126
+        "TPM_Rank":128
     },
     {
         "player.code":"014102",
@@ -1267,7 +1287,7 @@
         "mins_played":14.7152777778,
         "Total_PM":-23.0,
         "TPM_40":-5.2100047192,
-        "TPM_Rank":127
+        "TPM_Rank":129
     },
     {
         "player.code":"015029",
@@ -1277,7 +1297,7 @@
         "mins_played":21.7041666667,
         "Total_PM":-36.0,
         "TPM_40":-5.5288923018,
-        "TPM_Rank":128
+        "TPM_Rank":130
     },
     {
         "player.code":"004004",
@@ -1287,7 +1307,7 @@
         "mins_played":19.9621212121,
         "Total_PM":-35.0,
         "TPM_40":-6.375711575,
-        "TPM_Rank":129
+        "TPM_Rank":131
     },
     {
         "player.code":"003526",
@@ -1297,7 +1317,7 @@
         "mins_played":12.1015151515,
         "Total_PM":-23.0,
         "TPM_40":-6.91123075,
-        "TPM_Rank":130
+        "TPM_Rank":132
     },
     {
         "player.code":"011244",
@@ -1307,7 +1327,7 @@
         "mins_played":18.895,
         "Total_PM":-33.0,
         "TPM_40":-6.9859751257,
-        "TPM_Rank":131
+        "TPM_Rank":133
     },
     {
         "player.code":"001288",
@@ -1317,7 +1337,7 @@
         "mins_played":18.6303030303,
         "Total_PM":-36.0,
         "TPM_40":-7.0266753416,
-        "TPM_Rank":132
+        "TPM_Rank":134
     },
     {
         "player.code":"011980",
@@ -1327,7 +1347,7 @@
         "mins_played":13.7527777778,
         "Total_PM":-29.0,
         "TPM_40":-7.0288830539,
-        "TPM_Rank":133
+        "TPM_Rank":135
     },
     {
         "player.code":"014736",
@@ -1337,7 +1357,7 @@
         "mins_played":19.6,
         "Total_PM":-40.0,
         "TPM_40":-7.4211502783,
-        "TPM_Rank":134
+        "TPM_Rank":136
     },
     {
         "player.code":"001133",
@@ -1347,7 +1367,7 @@
         "mins_played":15.2409090909,
         "Total_PM":-32.0,
         "TPM_40":-7.6349537727,
-        "TPM_Rank":135
+        "TPM_Rank":137
     },
     {
         "player.code":"014740",
@@ -1357,7 +1377,7 @@
         "mins_played":14.3516666667,
         "Total_PM":-29.0,
         "TPM_40":-8.0826849379,
-        "TPM_Rank":136
+        "TPM_Rank":138
     },
     {
         "player.code":"011078",
@@ -1367,7 +1387,7 @@
         "mins_played":18.6444444444,
         "Total_PM":-49.0,
         "TPM_40":-8.7604290822,
-        "TPM_Rank":137
+        "TPM_Rank":139
     },
     {
         "player.code":"011052",
@@ -1377,7 +1397,7 @@
         "mins_played":21.1722222222,
         "Total_PM":-57.0,
         "TPM_40":-8.9740225663,
-        "TPM_Rank":138
+        "TPM_Rank":140
     },
     {
         "player.code":"013373",
@@ -1387,7 +1407,7 @@
         "mins_played":12.8318181818,
         "Total_PM":-32.0,
         "TPM_40":-9.0683669855,
-        "TPM_Rank":139
+        "TPM_Rank":141
     },
     {
         "player.code":"014416",
@@ -1397,7 +1417,7 @@
         "mins_played":21.9777777778,
         "Total_PM":-60.0,
         "TPM_40":-9.1001011122,
-        "TPM_Rank":140
+        "TPM_Rank":142
     },
     {
         "player.code":"014010",
@@ -1407,7 +1427,7 @@
         "mins_played":18.8305555556,
         "Total_PM":-52.0,
         "TPM_40":-9.2048974775,
-        "TPM_Rank":141
+        "TPM_Rank":143
     },
     {
         "player.code":"014178",
@@ -1417,7 +1437,7 @@
         "mins_played":21.1,
         "Total_PM":-49.0,
         "TPM_40":-9.2890995261,
-        "TPM_Rank":142
+        "TPM_Rank":144
     },
     {
         "player.code":"014115",
@@ -1427,17 +1447,7 @@
         "mins_played":11.6636363636,
         "Total_PM":-30.0,
         "TPM_40":-9.3530787217,
-        "TPM_Rank":143
-    },
-    {
-        "player.code":"004554",
-        "player.name":"ZIZIC, ANTE",
-        "player.team.code":"BES",
-        "gamesPlayed":10,
-        "mins_played":16.555,
-        "Total_PM":-39.0,
-        "TPM_40":-9.4231350045,
-        "TPM_Rank":144
+        "TPM_Rank":145
     },
     {
         "player.code":"014732",
@@ -1447,7 +1457,7 @@
         "mins_played":19.5766666667,
         "Total_PM":-47.0,
         "TPM_40":-9.603269198,
-        "TPM_Rank":145
+        "TPM_Rank":146
     },
     {
         "player.code":"013370",
@@ -1457,7 +1467,7 @@
         "mins_played":20.7116666667,
         "Total_PM":-50.0,
         "TPM_40":-9.6563933371,
-        "TPM_Rank":146
+        "TPM_Rank":147
     },
     {
         "player.code":"008829",
@@ -1467,7 +1477,7 @@
         "mins_played":22.7696969697,
         "Total_PM":-61.0,
         "TPM_40":-9.7418152781,
-        "TPM_Rank":147
+        "TPM_Rank":148
     },
     {
         "player.code":"006835",
@@ -1477,7 +1487,7 @@
         "mins_played":25.2777777778,
         "Total_PM":-74.0,
         "TPM_40":-9.7582417582,
-        "TPM_Rank":148
+        "TPM_Rank":149
     },
     {
         "player.code":"011205",
@@ -1487,7 +1497,7 @@
         "mins_played":24.725,
         "Total_PM":-80.0,
         "TPM_40":-10.7853050219,
-        "TPM_Rank":149
+        "TPM_Rank":150
     },
     {
         "player.code":"014127",
@@ -1497,7 +1507,7 @@
         "mins_played":23.6694444444,
         "Total_PM":-78.0,
         "TPM_40":-10.9846262176,
-        "TPM_Rank":150
+        "TPM_Rank":151
     },
     {
         "player.code":"001844",
@@ -1507,7 +1517,7 @@
         "mins_played":13.7566666667,
         "Total_PM":-39.0,
         "TPM_40":-11.3399563848,
-        "TPM_Rank":151
+        "TPM_Rank":152
     },
     {
         "player.code":"015161",
@@ -1517,7 +1527,17 @@
         "mins_played":12.7606060606,
         "Total_PM":-40.0,
         "TPM_40":-11.3987176443,
-        "TPM_Rank":152
+        "TPM_Rank":153
+    },
+    {
+        "player.code":"004554",
+        "player.name":"ZIZIC, ANTE",
+        "player.team.code":"BES",
+        "gamesPlayed":11,
+        "mins_played":15.9757575758,
+        "Total_PM":-53.0,
+        "TPM_40":-12.0637329287,
+        "TPM_Rank":154
     },
     {
         "player.code":"007519",
@@ -1527,7 +1547,7 @@
         "mins_played":18.9393939394,
         "Total_PM":-65.0,
         "TPM_40":-12.48,
-        "TPM_Rank":153
+        "TPM_Rank":155
     },
     {
         "player.code":"013374",
@@ -1537,7 +1557,7 @@
         "mins_played":12.4638888889,
         "Total_PM":-47.0,
         "TPM_40":-12.569645643,
-        "TPM_Rank":154
+        "TPM_Rank":156
     },
     {
         "player.code":"012618",
@@ -1547,7 +1567,7 @@
         "mins_played":14.3458333333,
         "Total_PM":-55.0,
         "TPM_40":-12.7795527157,
-        "TPM_Rank":155
+        "TPM_Rank":157
     },
     {
         "player.code":"010431",
@@ -1557,7 +1577,7 @@
         "mins_played":12.4319444444,
         "Total_PM":-49.0,
         "TPM_40":-13.1381968495,
-        "TPM_Rank":156
+        "TPM_Rank":158
     },
     {
         "player.code":"012878",
@@ -1567,7 +1587,7 @@
         "mins_played":22.4375,
         "Total_PM":-89.0,
         "TPM_40":-13.2219127205,
-        "TPM_Rank":157
+        "TPM_Rank":159
     },
     {
         "player.code":"014152",
@@ -1577,7 +1597,7 @@
         "mins_played":22.2909090909,
         "Total_PM":-83.0,
         "TPM_40":-13.5399673736,
-        "TPM_Rank":158
+        "TPM_Rank":160
     },
     {
         "player.code":"004508",
@@ -1587,7 +1607,7 @@
         "mins_played":25.5055555556,
         "Total_PM":-107.0,
         "TPM_40":-13.9838815073,
-        "TPM_Rank":159
+        "TPM_Rank":161
     },
     {
         "player.code":"014734",
@@ -1597,7 +1617,7 @@
         "mins_played":23.1916666667,
         "Total_PM":-104.0,
         "TPM_40":-14.9478979519,
-        "TPM_Rank":160
+        "TPM_Rank":162
     },
     {
         "player.code":"015085",
@@ -1607,7 +1627,7 @@
         "mins_played":16.4819444444,
         "Total_PM":-77.0,
         "TPM_40":-15.5725962754,
-        "TPM_Rank":161
+        "TPM_Rank":163
     },
     {
         "player.code":"013900",
@@ -1617,7 +1637,7 @@
         "mins_played":21.3305555556,
         "Total_PM":-100.0,
         "TPM_40":-15.6270347702,
-        "TPM_Rank":162
+        "TPM_Rank":164
     },
     {
         "player.code":"015165",
@@ -1627,7 +1647,7 @@
         "mins_played":18.8212121212,
         "Total_PM":-81.0,
         "TPM_40":-15.64965384,
-        "TPM_Rank":163
+        "TPM_Rank":165
     },
     {
         "player.code":"008173",
@@ -1637,7 +1657,7 @@
         "mins_played":14.9151515152,
         "Total_PM":-65.0,
         "TPM_40":-15.8472165786,
-        "TPM_Rank":164
+        "TPM_Rank":166
     },
     {
         "player.code":"013278",
@@ -1647,7 +1667,7 @@
         "mins_played":15.8166666667,
         "Total_PM":-69.0,
         "TPM_40":-15.8635884663,
-        "TPM_Rank":165
+        "TPM_Rank":167
     },
     {
         "player.code":"011284",
@@ -1657,7 +1677,7 @@
         "mins_played":21.9803030303,
         "Total_PM":-100.0,
         "TPM_40":-16.543737506,
-        "TPM_Rank":166
+        "TPM_Rank":168
     },
     {
         "player.code":"012700",
@@ -1667,7 +1687,7 @@
         "mins_played":23.9138888889,
         "Total_PM":-135.0,
         "TPM_40":-18.8175165524,
-        "TPM_Rank":167
+        "TPM_Rank":169
     },
     {
         "player.code":"014134",
@@ -1677,7 +1697,7 @@
         "mins_played":16.2466666667,
         "Total_PM":-84.0,
         "TPM_40":-20.6811653673,
-        "TPM_Rank":168
+        "TPM_Rank":170
     },
     {
         "player.code":"014012",
@@ -1687,6 +1707,6 @@
         "mins_played":10.5933333333,
         "Total_PM":-63.0,
         "TPM_40":-23.7885462555,
-        "TPM_Rank":169
+        "TPM_Rank":171
     }
 ]
