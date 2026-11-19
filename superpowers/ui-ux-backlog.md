@@ -6,9 +6,7 @@ the states after picking a team, player or game. Ordered by impact within each s
 
 ## Make the site work like a reference site
 
-3. **One name format everywhere** — *in progress on branch `feat/name-format`* (spec:
-   `superpowers/specs/2026-11-18-name-format-design.md`). "Sasha Vezenkov" where there's room, "S. Vezenkov" when
-   narrow or on phones, surname inside charts; one shared formatter (`docs/names.js`).
+*(Items 1–3 done — see "Done" below.)*
 
 ## Consistency and first impression
 
@@ -88,3 +86,9 @@ the states after picking a team, player or game. Ordered by impact within each s
 - **2. Topical defaults for pages that open empty** (2026-11-18, merge `8be674e7`): H2H headline matchup, Replay
   game of the round, Careers top performers, Compare MVP #1 vs #2, Team/Playmaking standings leader — from
   `highlights.json`. Spec: `superpowers/specs/2026-11-18-topical-defaults-design.md`.
+- **3. One name format everywhere** (2026-11-19, branch `feat/name-format`): "Sasha Vezenkov" where there's room,
+  "S. Vezenkov" when narrow or on phones, surnames inside charts (short on collision), nickname initials kept whole
+  (TJ Shorts, KC Rivers), camel-case overrides (LeDay, DeShaun Thomas…); searches accept either form; one shared
+  formatter `docs/names.js`. Follow-ups: Replay's per-game box score / impact quadrant / lineups show surnames from
+  the pipeline data (`adv.b/i/l`) — would need a pipeline change to show first names.
+  Spec: `superpowers/specs/2026-11-18-name-format-design.md`.
