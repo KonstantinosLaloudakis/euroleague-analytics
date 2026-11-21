@@ -4,16 +4,16 @@
             "Player": "ROBINSON, JUSTIN",
             "Team": "BAR",
             "Season": 2026,
-            "ClutchPoints": 42,
-            "ClutchFGM": 14,
-            "ClutchFGA": 24,
+            "ClutchPoints": 49,
+            "ClutchFGM": 17,
+            "ClutchFGA": 31,
             "ClutchFTM": 4,
-            "ClutchFTA": 5,
-            "Clutch3PM": 10,
-            "ClutchFoulsDrawn": 6,
-            "ClutchTurnovers": 2,
-            "FG%": "58.3%",
-            "FT%": "80.0%"
+            "ClutchFTA": 6,
+            "Clutch3PM": 11,
+            "ClutchFoulsDrawn": 7,
+            "ClutchTurnovers": 3,
+            "FG%": "54.8%",
+            "FT%": "66.7%"
         },
         {
             "Player": "HIFI, NADIR",
@@ -106,6 +106,21 @@
             "FT%": "80.0%"
         },
         {
+            "Player": "JONES, CARLIK",
+            "Team": "PAR",
+            "Season": 2026,
+            "ClutchPoints": 21,
+            "ClutchFGM": 8,
+            "ClutchFGA": 17,
+            "ClutchFTM": 4,
+            "ClutchFTA": 5,
+            "Clutch3PM": 1,
+            "ClutchFoulsDrawn": 5,
+            "ClutchTurnovers": 1,
+            "FG%": "47.1%",
+            "FT%": "80.0%"
+        },
+        {
             "Player": "SHORTS, TJ",
             "Team": "PAM",
             "Season": 2026,
@@ -119,6 +134,21 @@
             "ClutchTurnovers": 2,
             "FG%": "40.0%",
             "FT%": "87.5%"
+        },
+        {
+            "Player": "WILBEKIN, SCOTTIE",
+            "Team": "BES",
+            "Season": 2026,
+            "ClutchPoints": 19,
+            "ClutchFGM": 7,
+            "ClutchFGA": 18,
+            "ClutchFTM": 0,
+            "ClutchFTA": 0,
+            "Clutch3PM": 5,
+            "ClutchFoulsDrawn": 0,
+            "ClutchTurnovers": 1,
+            "FG%": "38.9%",
+            "FT%": "N/A"
         },
         {
             "Player": "LESSORT, MATHIAS",
@@ -166,6 +196,21 @@
             "FT%": "50.0%"
         },
         {
+            "Player": "BUTLER, JARED",
+            "Team": "RED",
+            "Season": 2026,
+            "ClutchPoints": 17,
+            "ClutchFGM": 6,
+            "ClutchFGA": 12,
+            "ClutchFTM": 4,
+            "ClutchFTA": 4,
+            "Clutch3PM": 1,
+            "ClutchFoulsDrawn": 3,
+            "ClutchTurnovers": 2,
+            "FG%": "50.0%",
+            "FT%": "100.0%"
+        },
+        {
             "Player": "BALDWIN IV, WADE",
             "Team": "ULK",
             "Season": 2026,
@@ -196,6 +241,21 @@
             "FT%": "83.3%"
         },
         {
+            "Player": "CARTER, TYSON",
+            "Team": "RED",
+            "Season": 2026,
+            "ClutchPoints": 16,
+            "ClutchFGM": 3,
+            "ClutchFGA": 9,
+            "ClutchFTM": 9,
+            "ClutchFTA": 11,
+            "Clutch3PM": 1,
+            "ClutchFoulsDrawn": 5,
+            "ClutchTurnovers": 1,
+            "FG%": "33.3%",
+            "FT%": "81.8%"
+        },
+        {
             "Player": "PUNTER, KEVIN",
             "Team": "BAR",
             "Season": 2026,
@@ -209,6 +269,21 @@
             "ClutchTurnovers": 1,
             "FG%": "30.0%",
             "FT%": "100.0%"
+        },
+        {
+            "Player": "WALKER IV, LONNIE",
+            "Team": "BES",
+            "Season": 2026,
+            "ClutchPoints": 16,
+            "ClutchFGM": 6,
+            "ClutchFGA": 9,
+            "ClutchFTM": 0,
+            "ClutchFTA": 1,
+            "Clutch3PM": 4,
+            "ClutchFoulsDrawn": 1,
+            "ClutchTurnovers": 0,
+            "FG%": "66.7%",
+            "FT%": "0.0%"
         },
         {
             "Player": "TUBELIS, AZUOLAS",
@@ -286,21 +361,6 @@
             "FT%": "100.0%"
         },
         {
-            "Player": "WILBEKIN, SCOTTIE",
-            "Team": "BES",
-            "Season": 2026,
-            "ClutchPoints": 14,
-            "ClutchFGM": 5,
-            "ClutchFGA": 13,
-            "ClutchFTM": 0,
-            "ClutchFTA": 0,
-            "Clutch3PM": 4,
-            "ClutchFoulsDrawn": 0,
-            "ClutchTurnovers": 1,
-            "FG%": "38.5%",
-            "FT%": "N/A"
-        },
-        {
             "Player": "DIARRA, ALIOU",
             "Team": "VIR",
             "Season": 2026,
@@ -356,7 +416,7 @@
             "ClutchFTA": 0,
             "Clutch3PM": 1,
             "ClutchFoulsDrawn": 0,
-            "ClutchTurnovers": 0,
+            "ClutchTurnovers": 1,
             "FG%": "60.0%",
             "FT%": "N/A"
         },
@@ -374,6 +434,21 @@
             "ClutchTurnovers": 0,
             "FG%": "36.4%",
             "FT%": "100.0%"
+        },
+        {
+            "Player": "BRIZUELA, DARIO",
+            "Team": "BAR",
+            "Season": 2026,
+            "ClutchPoints": 13,
+            "ClutchFGM": 5,
+            "ClutchFGA": 8,
+            "ClutchFTM": 2,
+            "ClutchFTA": 4,
+            "Clutch3PM": 1,
+            "ClutchFoulsDrawn": 2,
+            "ClutchTurnovers": 1,
+            "FG%": "62.5%",
+            "FT%": "50.0%"
         },
         {
             "Player": "TAYLOR, KAMERON",
@@ -421,21 +496,6 @@
             "FT%": "100.0%"
         },
         {
-            "Player": "JONES, CARLIK",
-            "Team": "PAR",
-            "Season": 2026,
-            "ClutchPoints": 13,
-            "ClutchFGM": 5,
-            "ClutchFGA": 13,
-            "ClutchFTM": 2,
-            "ClutchFTA": 3,
-            "Clutch3PM": 1,
-            "ClutchFoulsDrawn": 3,
-            "ClutchTurnovers": 1,
-            "FG%": "38.5%",
-            "FT%": "66.7%"
-        },
-        {
             "Player": "ETIENNE, TYSON",
             "Team": "PRS",
             "Season": 2026,
@@ -461,7 +521,7 @@
             "ClutchFTA": 7,
             "Clutch3PM": 0,
             "ClutchFoulsDrawn": 4,
-            "ClutchTurnovers": 0,
+            "ClutchTurnovers": 1,
             "FG%": "75.0%",
             "FT%": "85.7%"
         },
@@ -496,21 +556,6 @@
             "FT%": "N/A"
         },
         {
-            "Player": "BUTLER, JARED",
-            "Team": "RED",
-            "Season": 2026,
-            "ClutchPoints": 11,
-            "ClutchFGM": 5,
-            "ClutchFGA": 9,
-            "ClutchFTM": 0,
-            "ClutchFTA": 0,
-            "Clutch3PM": 1,
-            "ClutchFoulsDrawn": 1,
-            "ClutchTurnovers": 1,
-            "FG%": "55.6%",
-            "FT%": "N/A"
-        },
-        {
             "Player": "JOKUBAITIS, ROKAS",
             "Team": "MUN",
             "Season": 2026,
@@ -541,6 +586,21 @@
             "FT%": "100.0%"
         },
         {
+            "Player": "BALCEROWSKI, OLEK",
+            "Team": "BAR",
+            "Season": 2026,
+            "ClutchPoints": 11,
+            "ClutchFGM": 5,
+            "ClutchFGA": 5,
+            "ClutchFTM": 1,
+            "ClutchFTA": 2,
+            "Clutch3PM": 0,
+            "ClutchFoulsDrawn": 2,
+            "ClutchTurnovers": 0,
+            "FG%": "100.0%",
+            "FT%": "50.0%"
+        },
+        {
             "Player": "MADAR, YAM",
             "Team": "TEL",
             "Season": 2026,
@@ -554,6 +614,21 @@
             "ClutchTurnovers": 2,
             "FG%": "25.0%",
             "FT%": "100.0%"
+        },
+        {
+            "Player": "MORGAN, CONOR",
+            "Team": "BES",
+            "Season": 2026,
+            "ClutchPoints": 10,
+            "ClutchFGM": 3,
+            "ClutchFGA": 3,
+            "ClutchFTM": 2,
+            "ClutchFTA": 3,
+            "Clutch3PM": 2,
+            "ClutchFoulsDrawn": 3,
+            "ClutchTurnovers": 0,
+            "FG%": "100.0%",
+            "FT%": "66.7%"
         },
         {
             "Player": "CARR, MARCUS",
@@ -571,19 +646,34 @@
             "FT%": "66.7%"
         },
         {
-            "Player": "BALCEROWSKI, OLEK",
+            "Player": "NWORA, JORDAN",
+            "Team": "RED",
+            "Season": 2026,
+            "ClutchPoints": 9,
+            "ClutchFGM": 2,
+            "ClutchFGA": 12,
+            "ClutchFTM": 5,
+            "ClutchFTA": 6,
+            "Clutch3PM": 0,
+            "ClutchFoulsDrawn": 3,
+            "ClutchTurnovers": 2,
+            "FG%": "16.7%",
+            "FT%": "83.3%"
+        },
+        {
+            "Player": "PARRA, JOEL",
             "Team": "BAR",
             "Season": 2026,
             "ClutchPoints": 9,
-            "ClutchFGM": 4,
-            "ClutchFGA": 4,
+            "ClutchFGM": 3,
+            "ClutchFGA": 6,
             "ClutchFTM": 1,
-            "ClutchFTA": 2,
-            "Clutch3PM": 0,
+            "ClutchFTA": 3,
+            "Clutch3PM": 2,
             "ClutchFoulsDrawn": 2,
             "ClutchTurnovers": 0,
-            "FG%": "100.0%",
-            "FT%": "50.0%"
+            "FG%": "50.0%",
+            "FT%": "33.3%"
         },
         {
             "Player": "WARD, TYSON",
@@ -676,34 +766,19 @@
             "FT%": "50.0%"
         },
         {
-            "Player": "CARTER, TYSON",
-            "Team": "RED",
+            "Player": "JEFFRIES, DAQUAN",
+            "Team": "BES",
             "Season": 2026,
-            "ClutchPoints": 8,
-            "ClutchFGM": 2,
-            "ClutchFGA": 6,
-            "ClutchFTM": 3,
-            "ClutchFTA": 4,
-            "Clutch3PM": 1,
-            "ClutchFoulsDrawn": 3,
-            "ClutchTurnovers": 1,
-            "FG%": "33.3%",
-            "FT%": "75.0%"
-        },
-        {
-            "Player": "BRIZUELA, DARIO",
-            "Team": "BAR",
-            "Season": 2026,
-            "ClutchPoints": 8,
+            "ClutchPoints": 9,
             "ClutchFGM": 3,
             "ClutchFGA": 5,
             "ClutchFTM": 2,
-            "ClutchFTA": 4,
-            "Clutch3PM": 0,
-            "ClutchFoulsDrawn": 2,
-            "ClutchTurnovers": 1,
+            "ClutchFTA": 2,
+            "Clutch3PM": 1,
+            "ClutchFoulsDrawn": 1,
+            "ClutchTurnovers": 0,
             "FG%": "60.0%",
-            "FT%": "50.0%"
+            "FT%": "100.0%"
         },
         {
             "Player": "MARTIN, TYRESE",
@@ -711,13 +786,13 @@
             "Season": 2026,
             "ClutchPoints": 8,
             "ClutchFGM": 3,
-            "ClutchFGA": 6,
+            "ClutchFGA": 7,
             "ClutchFTM": 0,
             "ClutchFTA": 0,
             "Clutch3PM": 2,
             "ClutchFoulsDrawn": 0,
-            "ClutchTurnovers": 2,
-            "FG%": "50.0%",
+            "ClutchTurnovers": 5,
+            "FG%": "42.9%",
             "FT%": "N/A"
         },
         {
@@ -749,21 +824,6 @@
             "ClutchTurnovers": 0,
             "FG%": "50.0%",
             "FT%": "100.0%"
-        },
-        {
-            "Player": "MORGAN, CONOR",
-            "Team": "BES",
-            "Season": 2026,
-            "ClutchPoints": 8,
-            "ClutchFGM": 2,
-            "ClutchFGA": 2,
-            "ClutchFTM": 2,
-            "ClutchFTA": 3,
-            "Clutch3PM": 2,
-            "ClutchFoulsDrawn": 3,
-            "ClutchTurnovers": 0,
-            "FG%": "100.0%",
-            "FT%": "66.7%"
         },
         {
             "Player": "GUDURIC, MARKO",
@@ -871,36 +931,6 @@
             "FT%": "N/A"
         },
         {
-            "Player": "WALKER IV, LONNIE",
-            "Team": "BES",
-            "Season": 2026,
-            "ClutchPoints": 8,
-            "ClutchFGM": 3,
-            "ClutchFGA": 3,
-            "ClutchFTM": 0,
-            "ClutchFTA": 0,
-            "Clutch3PM": 2,
-            "ClutchFoulsDrawn": 0,
-            "ClutchTurnovers": 0,
-            "FG%": "100.0%",
-            "FT%": "N/A"
-        },
-        {
-            "Player": "NWORA, JORDAN",
-            "Team": "RED",
-            "Season": 2026,
-            "ClutchPoints": 7,
-            "ClutchFGM": 1,
-            "ClutchFGA": 10,
-            "ClutchFTM": 5,
-            "ClutchFTA": 6,
-            "Clutch3PM": 0,
-            "ClutchFoulsDrawn": 3,
-            "ClutchTurnovers": 1,
-            "FG%": "10.0%",
-            "FT%": "83.3%"
-        },
-        {
             "Player": "SARIC, DARIO",
             "Team": "IST",
             "Season": 2026,
@@ -959,6 +989,21 @@
             "ClutchTurnovers": 0,
             "FG%": "33.3%",
             "FT%": "50.0%"
+        },
+        {
+            "Player": "ALLMAN, KYLE",
+            "Team": "PAR",
+            "Season": 2026,
+            "ClutchPoints": 7,
+            "ClutchFGM": 1,
+            "ClutchFGA": 3,
+            "ClutchFTM": 4,
+            "ClutchFTA": 4,
+            "Clutch3PM": 1,
+            "ClutchFoulsDrawn": 2,
+            "ClutchTurnovers": 0,
+            "FG%": "33.3%",
+            "FT%": "100.0%"
         },
         {
             "Player": "GACH, BOTH",
@@ -1049,21 +1094,6 @@
             "ClutchTurnovers": 2,
             "FG%": "40.0%",
             "FT%": "33.3%"
-        },
-        {
-            "Player": "JEFFRIES, DAQUAN",
-            "Team": "BES",
-            "Season": 2026,
-            "ClutchPoints": 7,
-            "ClutchFGM": 2,
-            "ClutchFGA": 3,
-            "ClutchFTM": 2,
-            "ClutchFTA": 2,
-            "Clutch3PM": 1,
-            "ClutchFoulsDrawn": 1,
-            "ClutchTurnovers": 0,
-            "FG%": "66.7%",
-            "FT%": "100.0%"
         },
         {
             "Player": "KABENGELE, MFIONDU",
@@ -1216,6 +1246,21 @@
             "FT%": "100.0%"
         },
         {
+            "Player": "HAYES, KEVARRIUS",
+            "Team": "PAR",
+            "Season": 2026,
+            "ClutchPoints": 6,
+            "ClutchFGM": 2,
+            "ClutchFGA": 5,
+            "ClutchFTM": 2,
+            "ClutchFTA": 4,
+            "Clutch3PM": 0,
+            "ClutchFoulsDrawn": 2,
+            "ClutchTurnovers": 0,
+            "FG%": "40.0%",
+            "FT%": "50.0%"
+        },
+        {
             "Player": "LUCIC, VLADIMIR",
             "Team": "MUN",
             "Season": 2026,
@@ -1226,6 +1271,36 @@
             "ClutchFTA": 4,
             "Clutch3PM": 0,
             "ClutchFoulsDrawn": 2,
+            "ClutchTurnovers": 0,
+            "FG%": "100.0%",
+            "FT%": "100.0%"
+        },
+        {
+            "Player": "NEBO, JOSH",
+            "Team": "BAR",
+            "Season": 2026,
+            "ClutchPoints": 6,
+            "ClutchFGM": 1,
+            "ClutchFGA": 3,
+            "ClutchFTM": 4,
+            "ClutchFTA": 6,
+            "Clutch3PM": 0,
+            "ClutchFoulsDrawn": 4,
+            "ClutchTurnovers": 1,
+            "FG%": "33.3%",
+            "FT%": "66.7%"
+        },
+        {
+            "Player": "DAVIDOVAC, DEJAN",
+            "Team": "RED",
+            "Season": 2026,
+            "ClutchPoints": 6,
+            "ClutchFGM": 1,
+            "ClutchFGA": 1,
+            "ClutchFTM": 4,
+            "ClutchFTA": 4,
+            "Clutch3PM": 0,
+            "ClutchFoulsDrawn": 3,
             "ClutchTurnovers": 0,
             "FG%": "100.0%",
             "FT%": "100.0%"
@@ -1456,21 +1531,6 @@
             "FT%": "100.0%"
         },
         {
-            "Player": "NEBO, JOSH",
-            "Team": "BAR",
-            "Season": 2026,
-            "ClutchPoints": 5,
-            "ClutchFGM": 1,
-            "ClutchFGA": 2,
-            "ClutchFTM": 3,
-            "ClutchFTA": 4,
-            "Clutch3PM": 0,
-            "ClutchFoulsDrawn": 3,
-            "ClutchTurnovers": 1,
-            "FG%": "50.0%",
-            "FT%": "75.0%"
-        },
-        {
             "Player": "LUNDBERG, IFFE",
             "Team": "TEL",
             "Season": 2026,
@@ -1596,13 +1656,13 @@
             "Season": 2026,
             "ClutchPoints": 4,
             "ClutchFGM": 1,
-            "ClutchFGA": 1,
+            "ClutchFGA": 2,
             "ClutchFTM": 2,
             "ClutchFTA": 2,
             "Clutch3PM": 0,
             "ClutchFoulsDrawn": 2,
             "ClutchTurnovers": 0,
-            "FG%": "100.0%",
+            "FG%": "50.0%",
             "FT%": "100.0%"
         },
         {
@@ -1619,21 +1679,6 @@
             "ClutchTurnovers": 1,
             "FG%": "20.0%",
             "FT%": "100.0%"
-        },
-        {
-            "Player": "HAYES, KEVARRIUS",
-            "Team": "PAR",
-            "Season": 2026,
-            "ClutchPoints": 4,
-            "ClutchFGM": 1,
-            "ClutchFGA": 4,
-            "ClutchFTM": 2,
-            "ClutchFTA": 4,
-            "Clutch3PM": 0,
-            "ClutchFoulsDrawn": 2,
-            "ClutchTurnovers": 0,
-            "FG%": "25.0%",
-            "FT%": "50.0%"
         },
         {
             "Player": "SLEVA, DUSTIN",
@@ -1726,6 +1771,21 @@
             "FT%": "N/A"
         },
         {
+            "Player": "NUNEZ, JUAN",
+            "Team": "BAR",
+            "Season": 2026,
+            "ClutchPoints": 4,
+            "ClutchFGM": 2,
+            "ClutchFGA": 2,
+            "ClutchFTM": 0,
+            "ClutchFTA": 0,
+            "Clutch3PM": 0,
+            "ClutchFoulsDrawn": 0,
+            "ClutchTurnovers": 1,
+            "FG%": "100.0%",
+            "FT%": "N/A"
+        },
+        {
             "Player": "KOLOKO, CHRISTIAN",
             "Team": "RED",
             "Season": 2026,
@@ -1736,7 +1796,7 @@
             "ClutchFTA": 0,
             "Clutch3PM": 0,
             "ClutchFoulsDrawn": 0,
-            "ClutchTurnovers": 0,
+            "ClutchTurnovers": 1,
             "FG%": "66.7%",
             "FT%": "N/A"
         },
@@ -1861,21 +1921,6 @@
             "FT%": "100.0%"
         },
         {
-            "Player": "PARRA, JOEL",
-            "Team": "BAR",
-            "Season": 2026,
-            "ClutchPoints": 3,
-            "ClutchFGM": 1,
-            "ClutchFGA": 3,
-            "ClutchFTM": 1,
-            "ClutchFTA": 3,
-            "Clutch3PM": 0,
-            "ClutchFoulsDrawn": 2,
-            "ClutchTurnovers": 0,
-            "FG%": "33.3%",
-            "FT%": "33.3%"
-        },
-        {
             "Player": "MALCOLM, COLLIN",
             "Team": "IST",
             "Season": 2026,
@@ -1956,13 +2001,13 @@
             "Season": 2026,
             "ClutchPoints": 3,
             "ClutchFGM": 1,
-            "ClutchFGA": 4,
+            "ClutchFGA": 5,
             "ClutchFTM": 0,
             "ClutchFTA": 2,
             "Clutch3PM": 1,
             "ClutchFoulsDrawn": 2,
             "ClutchTurnovers": 0,
-            "FG%": "25.0%",
+            "FG%": "20.0%",
             "FT%": "0.0%"
         },
         {
@@ -2061,13 +2106,13 @@
             "Season": 2026,
             "ClutchPoints": 3,
             "ClutchFGM": 1,
-            "ClutchFGA": 1,
+            "ClutchFGA": 2,
             "ClutchFTM": 0,
             "ClutchFTA": 0,
             "Clutch3PM": 1,
             "ClutchFoulsDrawn": 0,
             "ClutchTurnovers": 0,
-            "FG%": "100.0%",
+            "FG%": "50.0%",
             "FT%": "N/A"
         },
         {
@@ -2083,6 +2128,21 @@
             "ClutchFoulsDrawn": 0,
             "ClutchTurnovers": 0,
             "FG%": "100.0%",
+            "FT%": "N/A"
+        },
+        {
+            "Player": "WEILER-BABB, NICK",
+            "Team": "RED",
+            "Season": 2026,
+            "ClutchPoints": 2,
+            "ClutchFGM": 1,
+            "ClutchFGA": 4,
+            "ClutchFTM": 0,
+            "ClutchFTA": 0,
+            "Clutch3PM": 0,
+            "ClutchFoulsDrawn": 0,
+            "ClutchTurnovers": 0,
+            "FG%": "25.0%",
             "FT%": "N/A"
         },
         {
@@ -2431,21 +2491,6 @@
             "FT%": "N/A"
         },
         {
-            "Player": "NUNEZ, JUAN",
-            "Team": "BAR",
-            "Season": 2026,
-            "ClutchPoints": 2,
-            "ClutchFGM": 1,
-            "ClutchFGA": 1,
-            "ClutchFTM": 0,
-            "ClutchFTA": 0,
-            "Clutch3PM": 0,
-            "ClutchFoulsDrawn": 0,
-            "ClutchTurnovers": 1,
-            "FG%": "100.0%",
-            "FT%": "N/A"
-        },
-        {
             "Player": "WASHINGTON JR, TYTY",
             "Team": "ASV",
             "Season": 2026,
@@ -2617,21 +2662,6 @@
             "ClutchPoints": 0,
             "ClutchFGM": 0,
             "ClutchFGA": 1,
-            "ClutchFTM": 0,
-            "ClutchFTA": 0,
-            "Clutch3PM": 0,
-            "ClutchFoulsDrawn": 0,
-            "ClutchTurnovers": 0,
-            "FG%": "0.0%",
-            "FT%": "N/A"
-        },
-        {
-            "Player": "WEILER-BABB, NICK",
-            "Team": "RED",
-            "Season": 2026,
-            "ClutchPoints": 0,
-            "ClutchFGM": 0,
-            "ClutchFGA": 3,
             "ClutchFTM": 0,
             "ClutchFTA": 0,
             "Clutch3PM": 0,
@@ -2866,21 +2896,6 @@
             "FT%": "N/A"
         },
         {
-            "Player": "ALLMAN, KYLE",
-            "Team": "PAR",
-            "Season": 2026,
-            "ClutchPoints": 0,
-            "ClutchFGM": 0,
-            "ClutchFGA": 1,
-            "ClutchFTM": 0,
-            "ClutchFTA": 0,
-            "Clutch3PM": 0,
-            "ClutchFoulsDrawn": 0,
-            "ClutchTurnovers": 0,
-            "FG%": "0.0%",
-            "FT%": "N/A"
-        },
-        {
             "Player": "LAKIC, ARIJAN",
             "Team": "PAR",
             "Season": 2026,
@@ -3097,6 +3112,36 @@
             "ClutchPoints": 0,
             "ClutchFGM": 0,
             "ClutchFGA": 2,
+            "ClutchFTM": 0,
+            "ClutchFTA": 0,
+            "Clutch3PM": 0,
+            "ClutchFoulsDrawn": 0,
+            "ClutchTurnovers": 0,
+            "FG%": "0.0%",
+            "FT%": "N/A"
+        },
+        {
+            "Player": "MARINKOVIC, VANJA",
+            "Team": "PAR",
+            "Season": 2026,
+            "ClutchPoints": 0,
+            "ClutchFGM": 0,
+            "ClutchFGA": 1,
+            "ClutchFTM": 0,
+            "ClutchFTA": 0,
+            "Clutch3PM": 0,
+            "ClutchFoulsDrawn": 0,
+            "ClutchTurnovers": 0,
+            "FG%": "0.0%",
+            "FT%": "N/A"
+        },
+        {
+            "Player": "JEKIRI, TONYE",
+            "Team": "PAR",
+            "Season": 2026,
+            "ClutchPoints": 0,
+            "ClutchFGM": 0,
+            "ClutchFGA": 1,
             "ClutchFTM": 0,
             "ClutchFTA": 0,
             "Clutch3PM": 0,

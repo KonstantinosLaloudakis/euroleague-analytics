@@ -1,38 +1,38 @@
 {
-  "n_games": 222,
-  "accuracy": 64.4,
-  "brier_score": 0.2146,
-  "log_loss": 0.615,
+  "n_games": 230,
+  "accuracy": 64.8,
+  "brier_score": 0.2117,
+  "log_loss": 0.6087,
   "calibration": [
     {
       "Bucket": "50-60%",
-      "Count": 80,
-      "Accuracy": 56.2,
-      "AvgConfidence": 56.8
+      "Count": 78,
+      "Accuracy": 55.1,
+      "AvgConfidence": 56.5
     },
     {
       "Bucket": "60-70%",
-      "Count": 51,
-      "Accuracy": 52.9,
-      "AvgConfidence": 65.5
+      "Count": 57,
+      "Accuracy": 52.6,
+      "AvgConfidence": 66.1
     },
     {
       "Bucket": "70-80%",
-      "Count": 49,
-      "Accuracy": 71.4,
-      "AvgConfidence": 75.4
+      "Count": 51,
+      "Accuracy": 72.5,
+      "AvgConfidence": 75.2
     },
     {
       "Bucket": "80-90%",
-      "Count": 21,
-      "Accuracy": 76.2,
-      "AvgConfidence": 84.1
+      "Count": 26,
+      "Accuracy": 84.6,
+      "AvgConfidence": 84.0
     },
     {
       "Bucket": "90%+",
-      "Count": 21,
-      "Accuracy": 95.2,
-      "AvgConfidence": 92.2
+      "Count": 18,
+      "Accuracy": 94.4,
+      "AvgConfidence": 92.7
     }
   ],
   "per_round": [
@@ -64,7 +64,7 @@
     {
       "Round": 6,
       "Games": 30,
-      "Accuracy": 56.7
+      "Accuracy": 60.0
     },
     {
       "Round": 7,
@@ -94,12 +94,12 @@
     {
       "Round": 12,
       "Games": 10,
-      "Accuracy": 70.0
+      "Accuracy": 60.0
     },
     {
       "Round": 13,
-      "Games": 12,
-      "Accuracy": 58.3
+      "Games": 20,
+      "Accuracy": 65.0
     }
   ]
 }
