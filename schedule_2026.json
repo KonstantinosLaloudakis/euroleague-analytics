@@ -1962,7 +1962,7 @@
     "arenaname": "TURKCELL BASKETBALL DEVELOPMENT CENTER",
     "confirmeddate": "true",
     "confirmedtime": "true",
-    "played": "false"
+    "played": "true"
   },
   {
     "gameday": "14",
@@ -2007,7 +2007,7 @@
     "arenaname": "PALAU BLAUGRANA",
     "confirmeddate": "true",
     "confirmedtime": "true",
-    "played": "false"
+    "played": "true"
   },
   {
     "gameday": "14",
@@ -2022,7 +2022,7 @@
     "arenaname": "BELGRADE ARENA",
     "confirmeddate": "true",
     "confirmedtime": "true",
-    "played": "false"
+    "played": "true"
   },
   {
     "gameday": "14",
@@ -2052,7 +2052,7 @@
     "arenaname": "LDLC ARENA",
     "confirmeddate": "true",
     "confirmedtime": "true",
-    "played": "false"
+    "played": "true"
   },
   {
     "gameday": "14",
@@ -2067,7 +2067,7 @@
     "arenaname": "ROIG ARENA",
     "confirmeddate": "true",
     "confirmedtime": "true",
-    "played": "false"
+    "played": "true"
   },
   {
     "gameday": "14",
@@ -2097,7 +2097,7 @@
     "arenaname": "SAP GARDEN",
     "confirmeddate": "true",
     "confirmedtime": "true",
-    "played": "false"
+    "played": "true"
   },
   {
     "gameday": "15",
@@ -2162,8 +2162,8 @@
   {
     "gameday": "15",
     "round": "RS",
-    "date": "Dec 04, 2026",
-    "startime": "20:30",
+    "date": "Dec 03, 2026",
+    "startime": "21:00",
     "gamecode": "E2026_148",
     "hometeam": "KOSNER BASKONIA VITORIA-GASTEIZ",
     "homecode": "BAS",
@@ -2523,7 +2523,7 @@
     "gameday": "17",
     "round": "RS",
     "date": "Dec 15, 2026",
-    "startime": "21:00",
+    "startime": "18:00",
     "gamecode": "E2026_161",
     "hometeam": "MACCABI RAPYD TEL AVIV",
     "homecode": "TEL",
@@ -2958,7 +2958,7 @@
     "gameday": "20",
     "round": "RS",
     "date": "Dec 29, 2026",
-    "startime": "19:00",
+    "startime": "20:00",
     "gamecode": "E2026_191",
     "hometeam": "HAPOEL IBI TEL AVIV",
     "homecode": "HTA",
@@ -3392,7 +3392,7 @@
   {
     "gameday": "23",
     "round": "RS",
-    "date": "Jan 15, 2027",
+    "date": "Jan 26, 2027",
     "startime": "20:15",
     "gamecode": "E2026_230",
     "hometeam": "OLYMPIACOS PIRAEUS",
@@ -5268,7 +5268,7 @@
     "gameday": "36",
     "round": "RS",
     "date": "Apr 06, 2027",
-    "startime": "19:45",
+    "startime": "19:30",
     "gamecode": "E2026_356",
     "hometeam": "FENERBAHCE TARFIN ISTANBUL",
     "homecode": "ULK",
@@ -5328,7 +5328,7 @@
     "gameday": "36",
     "round": "RS",
     "date": "Apr 06, 2027",
-    "startime": "20:45",
+    "startime": "21:00",
     "gamecode": "E2026_357",
     "hometeam": "PARIS BASKETBALL",
     "homecode": "PRS",
