@@ -1,13 +1,36 @@
 {
- "generated": "2026-11-21",
+ "generated": "2026-11-25",
  "seasons": [
   2011,
   2026
  ],
  "current_season": 2026,
- "games_scanned": 5157,
+ "games_scanned": 5163,
  "window_seconds": 10,
  "all": [
+  {
+   "season": 2026,
+   "phase": "RS",
+   "round": 14,
+   "gamecode": 135,
+   "player": "008962",
+   "player_name": "HAYES-DAVIS, NIGEL",
+   "team": "PAN",
+   "opp": "PAM",
+   "home": false,
+   "quarter": 4,
+   "clock": "00:01",
+   "seconds_left": 1,
+   "points": 3,
+   "shot": "3PT",
+   "before": "83-83",
+   "after": "86-83",
+   "final": "86-83",
+   "ot": false,
+   "buzzer": true,
+   "season_label": "2026-27",
+   "has_replay": true
+  },
   {
    "season": 2026,
    "phase": "RS",
@@ -4245,6 +4268,29 @@
   {
    "season": 2026,
    "phase": "RS",
+   "round": 14,
+   "gamecode": 135,
+   "player": "008962",
+   "player_name": "HAYES-DAVIS, NIGEL",
+   "team": "PAN",
+   "opp": "PAM",
+   "home": false,
+   "quarter": 4,
+   "clock": "00:01",
+   "seconds_left": 1,
+   "points": 3,
+   "shot": "3PT",
+   "before": "83-83",
+   "after": "86-83",
+   "final": "86-83",
+   "ot": false,
+   "buzzer": true,
+   "season_label": "2026-27",
+   "has_replay": true
+  },
+  {
+   "season": 2026,
+   "phase": "RS",
    "round": 12,
    "gamecode": 113,
    "player": "014316",
@@ -6436,6 +6482,16 @@
   {
    "rank": 6,
    "tied": true,
+   "player": "008962",
+   "player_name": "HAYES-DAVIS, NIGEL",
+   "count": 3,
+   "buzzer_count": 3,
+   "last_season": 2026,
+   "last_season_label": "2026-27"
+  },
+  {
+   "rank": 6,
+   "tied": true,
    "player": "TGB",
    "player_name": "LLULL, SERGIO",
    "count": 3,
@@ -6484,7 +6540,7 @@
    "last_season_label": "2024-25"
   },
   {
-   "rank": 11,
+   "rank": 12,
    "tied": true,
    "player": "010568",
    "player_name": "JONES, CHRIS",
@@ -6494,7 +6550,7 @@
    "last_season_label": "2026-27"
   },
   {
-   "rank": 11,
+   "rank": 12,
    "tied": true,
    "player": "012774",
    "player_name": "NUNN, KENDRICK",
@@ -6504,17 +6560,7 @@
    "last_season_label": "2025-26"
   },
   {
-   "rank": 11,
-   "tied": true,
-   "player": "008962",
-   "player_name": "HAYES-DAVIS, NIGEL",
-   "count": 2,
-   "buzzer_count": 2,
-   "last_season": 2025,
-   "last_season_label": "2025-26"
-  },
-  {
-   "rank": 11,
+   "rank": 12,
    "tied": true,
    "player": "009048",
    "player_name": "MILLER-MCINTYRE, CODI",
@@ -6524,7 +6570,7 @@
    "last_season_label": "2023-24"
   },
   {
-   "rank": 11,
+   "rank": 12,
    "tied": true,
    "player": "002100",
    "player_name": "DE COLO, NANDO",
@@ -6534,7 +6580,7 @@
    "last_season_label": "2022-23"
   },
   {
-   "rank": 11,
+   "rank": 12,
    "tied": true,
    "player": "009862",
    "player_name": "PUNTER, KEVIN",
@@ -6544,7 +6590,7 @@
    "last_season_label": "2022-23"
   },
   {
-   "rank": 11,
+   "rank": 12,
    "tied": true,
    "player": "014008",
    "player_name": "ROBINSON, JUSTIN",
@@ -6554,7 +6600,7 @@
    "last_season_label": "2026-27"
   },
   {
-   "rank": 11,
+   "rank": 12,
    "tied": true,
    "player": "007975",
    "player_name": "FRANCISCO, SYLVAIN",
@@ -6564,7 +6610,7 @@
    "last_season_label": "2024-25"
   },
   {
-   "rank": 11,
+   "rank": 12,
    "tied": true,
    "player": "009622",
    "player_name": "BROWN, LORENZO",
@@ -6574,7 +6620,7 @@
    "last_season_label": "2020-21"
   },
   {
-   "rank": 11,
+   "rank": 12,
    "tied": true,
    "player": "001960",
    "player_name": "CARROLL, JAYCEE",
@@ -6584,7 +6630,7 @@
    "last_season_label": "2019-20"
   },
   {
-   "rank": 11,
+   "rank": 12,
    "tied": true,
    "player": "BMT",
    "player_name": "FERNANDEZ, RUDY",
@@ -6594,7 +6640,7 @@
    "last_season_label": "2018-19"
   },
   {
-   "rank": 11,
+   "rank": 12,
    "tied": true,
    "player": "JUO",
    "player_name": "SPANOULIS, VASSILIS",
@@ -6604,7 +6650,7 @@
    "last_season_label": "2014-15"
   },
   {
-   "rank": 11,
+   "rank": 12,
    "tied": true,
    "player": "CPR",
    "player_name": "SIMON, KRUNOSLAV",
@@ -6614,7 +6660,7 @@
    "last_season_label": "2013-14"
   },
   {
-   "rank": 11,
+   "rank": 12,
    "tied": true,
    "player": "JKO",
    "player_name": "DIAMANTIDIS, DIMITRIS",
@@ -6624,7 +6670,7 @@
    "last_season_label": "2012-13"
   },
   {
-   "rank": 11,
+   "rank": 12,
    "tied": true,
    "player": "000848",
    "player_name": "NEDOVIC, NEMANJA",
