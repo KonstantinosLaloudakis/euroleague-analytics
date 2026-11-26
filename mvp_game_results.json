@@ -1086,5 +1086,37 @@
         "LocalScore":91.0,
         "RoadScore":95.0,
         "Winner":"MIL"
+    },
+    {
+        "GameCode":137,
+        "LocalTeam":"DUB",
+        "RoadTeam":"PAR",
+        "LocalScore":71.0,
+        "RoadScore":84.0,
+        "Winner":"PAR"
+    },
+    {
+        "GameCode":138,
+        "LocalTeam":"BAS",
+        "RoadTeam":"IST",
+        "LocalScore":86.0,
+        "RoadScore":81.0,
+        "Winner":"BAS"
+    },
+    {
+        "GameCode":139,
+        "LocalTeam":"MAD",
+        "RoadTeam":"ZAL",
+        "LocalScore":108.0,
+        "RoadScore":93.0,
+        "Winner":"MAD"
+    },
+    {
+        "GameCode":140,
+        "LocalTeam":"OLY",
+        "RoadTeam":"HTA",
+        "LocalScore":104.0,
+        "RoadScore":79.0,
+        "Winner":"OLY"
     }
 ]
