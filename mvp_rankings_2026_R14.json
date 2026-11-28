@@ -3809,20 +3809,6 @@
     },
     {
         "MVP_Rank":273,
-        "PlayerName":"SOUZA, PEDRO",
-        "TeamCode":"BAS",
-        "MVP_Score":28.4547761762,
-        "AvgPIR":0.0,
-        "AvgGmSc":0.0,
-        "WPA":0.0,
-        "TeamWinPct":0.1428571429,
-        "ClutchPoints":0.0,
-        "ClutchEff":0.0,
-        "Consistency":1.0,
-        "GP":7
-    },
-    {
-        "MVP_Rank":274,
         "PlayerName":"ALVES DE SOUZA, THIERRY HENRY",
         "TeamCode":"BAS",
         "MVP_Score":28.4547761762,
@@ -3834,6 +3820,20 @@
         "ClutchEff":0.0,
         "Consistency":1.0,
         "GP":5
+    },
+    {
+        "MVP_Rank":274,
+        "PlayerName":"SOUZA, PEDRO",
+        "TeamCode":"BAS",
+        "MVP_Score":28.4547761762,
+        "AvgPIR":0.0,
+        "AvgGmSc":0.0,
+        "WPA":0.0,
+        "TeamWinPct":0.1428571429,
+        "ClutchPoints":0.0,
+        "ClutchEff":0.0,
+        "Consistency":1.0,
+        "GP":7
     },
     {
         "MVP_Rank":275,
